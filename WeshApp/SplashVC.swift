@@ -15,10 +15,12 @@ import WeshAppLibrary
 
 class SplashVC: UIViewController {
     
-  
+    private var connectionIsSet: Bool = false
+
     private var appDelegate: AppDelegate{
         return UIApplication.sharedApplication().delegate! as AppDelegate
     }
+    
     @IBOutlet weak var handleTextField: UITextField!
     @IBOutlet weak var containerView: UIView!
     
@@ -40,25 +42,24 @@ class SplashVC: UIViewController {
     
     
     
-//    @IBOutlet weak var signInView: UIView!
-  //  var playerLayer:AVPlayerLayer!
+    // @IBOutlet weak var signInView: UIView!
+    // var playerLayer:AVPlayerLayer!
     
     override func viewWillAppear(animated: Bool) {
         
         //Create peerID if one does not exist else retrive it from object graph model
-      
         if let handle = NSUserDefaults.standardUserDefaults().stringForKey("handle"){
-            println("here")
-           appDelegate.sessionMngr.setUpConnection(handleTextField.text)
-              
-            
-            
+            connectionIsSet = true
+            appDelegate.sessionMngr.setUpConnection(handleTextField.text)
         }else{
-             containerView.hidden = false
+            containerView.hidden = false
         }
+       
     }
-    override func viewDidLoad() {
-        
+    override func viewDidAppear(animated: Bool) {
+      if connectionIsSet{
+            self.performSegueWithIdentifier("toChannels", sender:self)
+        }
     }
         
     
@@ -86,20 +87,15 @@ class SplashVC: UIViewController {
 
     }
 
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toChannels" {
-            let localChannel = segue.destinationViewController as ChannelPageVC
-            
-            let indexPath = self.tableView.indexPathForSelectedRow()
-            let channel = fetchedResultsController.objectAtIndexPath(indexPath!) as Channel
-            channelPageVC.channel = channel
-            channelPageVC.coreDataStack = coreDataStack
-            channelPageVC.sessionMngr = sessionMngr
+            println("prepare")
+           
         }
-        
+
     }
-    */
-    
+
     func destruct(){
        // self.performSegueWithIdentifier("toTotem", sender:self)
       // playerLayer!.removeFromSuperlayer()

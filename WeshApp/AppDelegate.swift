@@ -20,42 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        
+             
         if let cds = coreDataStack {
             
             // Check if we are running as test or not
             let environment = NSProcessInfo.processInfo().environment as [String : AnyObject]
             let isTest = (environment["XCInjectBundle"] as? String)?.pathExtension == "xctest"
-             var storyboard = UIStoryboard(name:"Main", bundle:NSBundle(forClass: self.dynamicType))
             // Create the module name
             if !isTest{
                 sessionMngr = SessionMngr(coreDataStack: cds)
-                var vc = storyboard.instantiateViewControllerWithIdentifier("splashVC") as UIViewController
-                
-                // Set root view controller and make windows visible
-                if let window = self.window {
-                
-                    window.rootViewController = vc
-                    window.makeKeyAndVisible()
-                }
-               println("here")
             }else{
               
-
-                var vc = storyboard.instantiateViewControllerWithIdentifier("splashVC") as UIViewController
-                
-                
+                var storyboard = UIStoryboard(name:"Main", bundle:NSBundle(forClass: self.dynamicType))
+                var vc = storyboard.instantiateViewControllerWithIdentifier("SplashVC") as UIViewController
                 vc.loadView()
-                
                 // Set root view controller and make windows visible
                 //window = UIWindow(frame:UIScreen.mainScreen().bounds)
-               
                window!.rootViewController = vc
                window!.makeKeyAndVisible()  
                return true
             }
-            
-            
           //sessionMngr = SessionMngr(coreDataStack: cds)
         
         
