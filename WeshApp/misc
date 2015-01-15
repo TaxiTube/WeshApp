@@ -1,0 +1,65 @@
+/*
+File: Transcript.swift
+
+Abstract:
+This model class keeps the state of sent/receive text messages, image resources, and resource progress.  It is used as data source element for the main iOS messages like table view.
+
+
+WeshApp
+
+Created by r@bzu on 28/10/2014.
+
+Copyright (c) 2014 WeshApp. All rights reserved.
+*/
+
+import Foundation
+import MultipeerConnectivity
+
+
+// Enumeration of transcript directions
+enum TranscriptDirection{
+case Send
+case Receive
+case Local // for admin messages. i.e. "<name> connected"
+}
+
+struct Transcript{
+
+let senderPeer: MCPeerID
+let msg: String
+let direction: TranscriptDirection
+//let date: NSDate
+
+// Initializer used for sent/received text messages
+init(senderPeer: MCPeerID, msg: String, direction: TranscriptDirection){
+self.senderPeer = senderPeer
+self.msg = msg
+self.direction = direction
+}
+
+
+}
+
+
+//
+//  Channel.swift
+//  WeshApp
+//
+//  Created by rabzu on 04/11/2014.
+//  Copyright (c) 2014 WeshApp. All rights reserved.
+//
+
+import Foundation
+
+struct Channel {
+
+let author: String
+let name: String
+
+
+init(author: String, name:String){
+self.author = author
+self.name = name
+}
+
+}
