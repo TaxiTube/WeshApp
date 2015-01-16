@@ -14,14 +14,13 @@ import WeshAppLibrary
 class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate {
     
     @IBOutlet weak var titleTV: UITextField!
-    @IBOutlet weak var descTV: BorderTextView!
+    //@IBOutlet weak var descTV: BorderTextView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var plusimage: UIImageView!
+    @IBOutlet weak var descTV: UITextView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
      
-    var picker: UIImagePickerController? = UIImagePickerController()
-    var popover: UIPopoverController? = nil
-    
-    //MARK: Properties
+    @IBOutlet weak var containerView: UIView!
+       //MARK: Properties
     var appDelegate: AppDelegate {
        return UIApplication.sharedApplication().delegate! as AppDelegate
     }
@@ -41,6 +40,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     @IBAction func goLive(sender: AnyObject) {
+        /*
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
         
@@ -55,11 +55,15 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         // channelMngr.save(coreDataStack!.mainContext!)
         
         sessionMngr.broadcastNewChannel(channel)
+        */
     }
     override func viewDidLoad() {
+        super.viewDidLoad()
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
+        blur.frame = view.frame
+        self.view.addSubview(blur)
         descTV.delegate = self
         placeHolderText = descTV.text
-        picker!.delegate = self
      }
     
     override func viewDidAppear(animated: Bool) {
@@ -104,71 +108,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             titleTV.text = placeHolderText
          }
     }
-    //MARK: Image Picker
-    @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            
-            var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default){
-                    UIAlertAction in
-                    self.openCamera()
-            }
-            var gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default){
-                    UIAlertAction in
-                    self.openGallary()
-            }
-            var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel)
-            {
-                    UIAlertAction in
-            }
-            // Add the actions
-            alert.addAction(cameraAction)
-            alert.addAction(gallaryAction)
-            alert.addAction(cancelAction)
-            // Present the actionsheet
-            if UIDevice.currentDevice().userInterfaceIdiom == .Phone{
-                self.presentViewController(alert, animated: true, completion: nil)
-            }else{
-                popover=UIPopoverController(contentViewController: alert)
-                popover!.presentPopoverFromRect(plusimage.frame,
-                                                          inView: self.view,
-                                        permittedArrowDirections: UIPopoverArrowDirection.Any,
-                                                        animated: true)
-            }
-            
-        }
-    }
+
     
-    func openCamera()
-    {
-        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
-        {
-            picker!.sourceType = UIImagePickerControllerSourceType.Camera
-            self .presentViewController(picker!, animated: true, completion: nil)
-        }
-    }
-    func openGallary()
-    {
-        picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone
-        {
-            self.presentViewController(picker!, animated: true, completion: nil)
-        }
-        else
-        {
-            popover=UIPopoverController(contentViewController: picker!)
-            popover!.presentPopoverFromRect(plusimage.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
-        }
-    }
-    
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!)
-    {
-        picker .dismissViewControllerAnimated(true, completion: nil)
-        imageView.image=info[UIImagePickerControllerOriginalImage] as? UIImage
-    }
-    func imagePickerControllerDidCancel(picker: UIImagePickerController!)
-    {
-        println("picker cancel.")
-    }
-   
 }

@@ -63,3 +63,181 @@ self.name = name
 }
 
 }
+
+
+
+//
+//  CreateChannelVC.swift
+//  WeshApp
+//
+//  Created by z.kakabadze on 25/10/2014.
+//  Copyright (c) 2014 WeshApp. All rights reserved.
+//
+
+import UIKit
+import QuartzCore
+import CoreData
+import WeshAppLibrary
+
+class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate {
+
+@IBOutlet weak var titleTV: UITextField!
+@IBOutlet weak var descTV: BorderTextView!
+@IBOutlet weak var imageView: UIImageView!
+@IBOutlet weak var plusimage: UIImageView!
+
+// var picker: UIImagePickerController? = UIImagePickerController()
+// var popover: UIPopoverController? = nil
+
+//MARK: Properties
+var appDelegate: AppDelegate {
+return UIApplication.sharedApplication().delegate! as AppDelegate
+}
+var coreDataStack: CoreDataStack?{
+return  appDelegate.coreDataStack
+}
+var sessionMngr: SessionMngr {
+return appDelegate.sessionMngr
+}
+var text: String = ""
+var placeHolderText: String = ""
+
+
+//MARK: Actions
+@IBAction func channelModalDone(sender: AnyObject) {
+dismissViewControllerAnimated(true, completion: nil)
+}
+
+@IBAction func goLive(sender: AnyObject) {
+let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
+coreDataStack: coreDataStack!)
+
+let channel = channelMngr.createChannel(titleTV.text,
+desc: descTV.text,
+date: NSDate(),
+author: sessionMngr.myBadge!)
+
+// photo: UIImageJPEGRepresentation(imageView.image, 0.5)
+// println(sessionMngr.myProfileMngr.insertChannel(sessionMngr.profile!, channel: <#Channel#>))
+// println(sessionMngr.profile!.channels.count)
+// channelMngr.save(coreDataStack!.mainContext!)
+
+sessionMngr.broadcastNewChannel(channel)
+}
+override func viewDidLoad() {
+descTV.delegate = self
+placeHolderText = descTV.text
+//picker!.delegate = self
+}
+
+override func viewDidAppear(animated: Bool) {
+UIApplication.sharedApplication().statusBarHidden = true
+
+}
+override func viewWillDisappear(animated: Bool) {
+UIApplication.sharedApplication().statusBarHidden = false
+
+}
+
+
+override func touchesBegan(touches: NSSet, withEvent event: UIEvent){
+titleTV.resignFirstResponder()
+descTV.resignFirstResponder()
+}
+
+
+
+//MARK: textField delegate methods
+func textFieldShouldReturn(textField: UITextField!) -> Bool
+{
+titleTV.resignFirstResponder()
+descTV.resignFirstResponder()
+return true
+}
+
+func textViewDidBeginEditing(textView: UITextView) -> Bool{
+
+descTV.text = text
+descTV.textColor = UIColor.blackColor()
+
+return true
+}
+//TODO: Placeholder colour changes after text entry
+func textViewDidEndEditing(textView: UITextView){
+text = descTV.text
+if text == "" {
+let grey80 = UIColor(white:0.80, alpha:1)
+
+titleTV.textColor = grey80
+titleTV.text = placeHolderText
+}
+}
+//MARK: Image Picker
+@IBAction func handleTap(sender: UITapGestureRecognizer) {
+if sender.state == .Ended {
+var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+
+var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default){
+UIAlertAction in
+self.openCamera()
+}
+var gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default){
+UIAlertAction in
+self.openGallary()
+}
+var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel)
+{
+UIAlertAction in
+}
+// Add the actions
+alert.addAction(cameraAction)
+alert.addAction(gallaryAction)
+alert.addAction(cancelAction)
+// Present the actionsheet
+if UIDevice.currentDevice().userInterfaceIdiom == .Phone{
+self.presentViewController(alert, animated: true, completion: nil)
+}else{
+// popover=UIPopoverController(contentViewController: alert)
+/* popover!.presentPopoverFromRect(plusimage.frame,
+inView: self.view,
+permittedArrowDirections: UIPopoverArrowDirection.Any,
+animated: true)
+*/
+}
+
+}
+}
+
+func openCamera()
+{
+if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera))
+{
+picker!.sourceType = UIImagePickerControllerSourceType.Camera
+self .presentViewController(picker!, animated: true, completion: nil)
+}
+}
+func openGallary()
+{
+picker!.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+if UIDevice.currentDevice().userInterfaceIdiom == .Phone
+{
+self.presentViewController(picker!, animated: true, completion: nil)
+}
+else
+{
+popover=UIPopoverController(contentViewController: picker!)
+popover!.presentPopoverFromRect(plusimage.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+}
+}
+
+func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!)
+{
+picker .dismissViewControllerAnimated(true, completion: nil)
+imageView.image=info[UIImagePickerControllerOriginalImage] as? UIImage
+}
+func imagePickerControllerDidCancel(picker: UIImagePickerController!)
+{
+println("picker cancel.")
+}
+
+}
