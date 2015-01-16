@@ -23,12 +23,12 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     private let coreDataStack: CoreDataStack!
     //private let myProfileMngr: ProfileMngr!
     private let badgeMngr: BadgeMngr!
-    private let transcriptMngr: TranscriptMngr!
+    private let postMngr: PostMngr!
     private let channelMngr: ChannelMngr!
     
     //let profile: Profile?
     var myBadge: Badge?
-    private let transcript: Transcript?
+    private let post: Post?
   
    
     
@@ -51,7 +51,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
         //TODO: Lazy initialisation
         badgeMngr = BadgeMngr(managedObjectContext: coreDataStack.mainContext!,
                                          coreDataStack: coreDataStack)
-        transcriptMngr = TranscriptMngr(managedObjectContext: coreDataStack.mainContext!,
+        postMngr = PostMngr(managedObjectContext: coreDataStack.mainContext!,
                                                coreDataStack: coreDataStack)
         channelMngr = ChannelMngr(managedObjectContext: coreDataStack.mainContext!,
                                          coreDataStack: coreDataStack)
@@ -63,7 +63,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             myPeerID = NSKeyedUnarchiver.unarchiveObjectWithData(peerIDData) as MCPeerID
             sessionContainer = SessionContainer(myPeerID: myPeerID)
             myBadge = badgeMngr.getBadge(myPeerID)
-            println("old PeerID \(myBadge!.peerID.displayName)")
+            //println("old PeerID \(myBadge!.peerID.displayName)")
         } else {
             myPeerID = MCPeerID(displayName: handle)
             //start a session
@@ -75,7 +75,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             //To Do: Creating profile
             myBadge = badgeMngr.createBadge(handle, peerID: myPeerID, totem: totem)
             badgeMngr.save(coreDataStack.mainContext!)
-            println("new peerID created \(myPeerID.displayName)" )
+            //println("new peerID created \(myPeerID.displayName)" )
         }
         activatePeer()
         return true
@@ -94,18 +94,10 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
   // MARK: SessionContainer delegate method implementations
     // Outgoing data
     func deviceConnected(newPeerID: MCPeerID){
-       //1. Send my profile
-       //2. send my channels
     
-       //TODO: 
-       //1.get handle from PeerID
-       //2.save handle in a NSManagedobject
-        
-        
-        
-        
-        
-        
+       //1. send my channels
+    
+     
         /*
         //if profile!.channels.count > 0{
            
@@ -126,7 +118,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
 
         */
     }
-    
+     
      func broadcastNewChannel(channel: Channel?){
         
         if let newChannel = channel{
@@ -134,7 +126,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             var channelDict = newChannel.toDictionary()
             //do not transmit author or transcirpts
             channelDict.removeValueForKey("author")
-            channelDict.removeValueForKey("transcripts")
+            channelDict.removeValueForKey("posts")
             //TODO:Image transmision must be imlimented
             //channelDict.removeValueForKey("photo")
             
@@ -142,22 +134,22 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             //println("Channel data size: \(data.length)")
             sessionContainer.multicastMsg(data)
             
-        }else{
+        }else{ 
             println("Channel Empty")
         }
      }
-    func broadcastNewTranscript(transcriptMessage: Transcript?, receiverProfiles: [Profile]? = nil){
+    func broadcastNewPost(post: Post?, receiverProfiles: [Profile]? = nil){
         if let receivers = receiverProfiles{
             // one receiver: privet message.
         }else{
             //wall post: Multicast
-            if let transcript = transcriptMessage{
-                var transcriptDict = transcript.toDictionary()
-                transcriptDict.removeValueForKey("channel")
-                transcriptDict.removeValueForKey("sender")
-                transcriptDict.removeValueForKey("receivers")
+            if let p = post{
+                var postDict = p.toDictionary()
+                postDict.removeValueForKey("channel")
+                postDict.removeValueForKey("sender")
+                postDict.removeValueForKey("receivers")
                 
-                let data = NSKeyedArchiver.archivedDataWithRootObject(transcriptDict)
+                let data = NSKeyedArchiver.archivedDataWithRootObject(postDict)
                 sessionContainer.multicastMsg(data)
             }
         }
@@ -200,15 +192,15 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
                         
                     }
             
-            case let transcriptObject as Transcript:
-               let channel = channelMngr.getChannelByID(transcriptObject.channelID)
+            case let postObject as Post:
+               let channel = channelMngr.getChannelByID(postObject.channelID)
                if let c = channel {
-                    //println("transcript for channel \(c.title) transcript message: \(transcriptObject.message)")
-                    transcriptMngr.addTranscript(transcriptObject.message,
+                    //println("post for channel \(c.title) post message: \(postObject.message)")
+                    postMngr.addPost(postObject.message,
                         channel: channel,
-                        date: transcriptObject.date,
-                        sender: transcriptObject.sender,
-                        receivers: transcriptObject.receivers.allObjects as? [Profile])
+                        date: postObject.date,
+                        sender: postObject.sender,
+                        receivers: postObject.receivers.allObjects as? [Profile])
                     //TODO: Save context once channel is followed
                 }else{
                     println("No channel found")
@@ -277,6 +269,9 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             let connectedPeers =  sessionContainer.session.connectedPeers as [MCPeerID]
             if !contains(connectedPeers, peerID!){
                 invitationHandler(true, sessionContainer.session)
+                //TODO: create a new badge
+                //TODO: Receive Totem Via Context
+                badgeMngr.createBadge(peerID.displayName, peerID: peerID, totem: "")
             }
     }
     

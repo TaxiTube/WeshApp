@@ -41,8 +41,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     @IBAction func goLive(sender: AnyObject) {
-        let channelMngr: ChannelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
-            coreDataStack: coreDataStack!)
+        let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
+                                             coreDataStack: coreDataStack!)
         
         let channel = channelMngr.createChannel(titleTV.text,
                                                     desc: descTV.text,

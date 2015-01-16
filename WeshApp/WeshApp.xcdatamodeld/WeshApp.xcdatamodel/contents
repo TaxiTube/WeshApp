@@ -6,7 +6,7 @@
         <attribute name="totem" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="channels" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Channel" inverseName="author" inverseEntity="Channel" syncable="YES"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="badge" inverseEntity="Profile" syncable="YES"/>
-        <relationship name="sentMsgs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transcript" inverseName="sender" inverseEntity="Transcript" syncable="YES"/>
+        <relationship name="sentMsgs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="sender" inverseEntity="Post" syncable="YES"/>
     </entity>
     <entity name="Channel" representedClassName="Channel" syncable="YES">
         <attribute name="channelID" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,8 +14,15 @@
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Badge" inverseName="channels" inverseEntity="Badge" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="channel" inverseEntity="Post" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tags" inverseName="channel" inverseEntity="Tags" syncable="YES"/>
-        <relationship name="transcripts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transcript" inverseName="channel" inverseEntity="Transcript" syncable="YES"/>
+    </entity>
+    <entity name="Post" representedClassName="Post" syncable="YES">
+        <attribute name="channelID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="post" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="channel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Channel" inverseName="posts" inverseEntity="Channel" syncable="YES"/>
+        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Badge" inverseName="sentMsgs" inverseEntity="Badge" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,19 +39,12 @@
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="channel" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Channel" inverseName="tags" inverseEntity="Channel" syncable="YES"/>
     </entity>
-    <entity name="Transcript" representedClassName="Transcript" syncable="YES">
-        <attribute name="channelID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="channel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Channel" inverseName="transcripts" inverseEntity="Channel" syncable="YES"/>
-        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Badge" inverseName="sentMsgs" inverseEntity="Badge" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="Badge" positionX="36" positionY="164" width="128" height="133"/>
-        <element name="Channel" positionX="0" positionY="-124" width="128" height="148"/>
-        <element name="Profile" positionX="513" positionY="432" width="126" height="118"/>
-        <element name="ProfilePhoto" positionX="313" positionY="612" width="128" height="73"/>
+        <element name="Badge" positionX="36" positionY="119" width="128" height="133"/>
+        <element name="Channel" positionX="108" positionY="-126" width="128" height="148"/>
+        <element name="Profile" positionX="387" positionY="288" width="126" height="118"/>
+        <element name="ProfilePhoto" positionX="234" positionY="413" width="128" height="73"/>
         <element name="Tags" positionX="-164" positionY="-1" width="101" height="73"/>
-        <element name="Transcript" positionX="396" positionY="81" width="128" height="118"/>
+        <element name="Post" positionX="351" positionY="-27" width="128" height="118"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@ import Foundation
 import CoreData
 
 
-  struct TranscriptMngr{
+  struct PostMngr{
     
     let managedObjectContext: NSManagedObjectContext!
     let coreDataStack: CoreDataStack!
@@ -17,22 +17,22 @@ import CoreData
         coreDataStack.saveContext(context)
     }
     
-    func createTranscript(msg: String, channel: Channel?, date: NSDate, sender: Badge?)->Transcript?{
+    func createPost(msg: String, channel: Channel?, date: NSDate, sender: Badge?)->Post?{
         
-        let transcript =  NSEntityDescription.insertNewObjectForEntityForName("Transcript", inManagedObjectContext: self.managedObjectContext) as Transcript
+        let post =  NSEntityDescription.insertNewObjectForEntityForName("Post", inManagedObjectContext: self.managedObjectContext) as Post
 
-        transcript.message = msg
-        transcript.date = date
+        post.post = msg
+        post.date = date
 
-        if let s = sender {
-            transcript.sender = s
+        if let s = sender { 
+            post.sender = s
         }
         
         if let c = channel{
-            transcript.channel = c
-            transcript.channelID = c.channelID
+            post.channel = c
+            post.channelID = c.channelID
         }
-        return transcript
+        return post
     }
     
     

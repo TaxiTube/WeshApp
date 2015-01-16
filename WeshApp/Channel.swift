@@ -2,7 +2,7 @@
 //  Channel.swift
 //  WeshApp
 //
-//  Created by Zuka on 1/14/15.
+//  Created by Zuka on 1/16/15.
 //  Copyright (c) 2015 WeshApp. All rights reserved.
 //
 
@@ -17,6 +17,6 @@ class Channel: NSManagedObject {
     @NSManaged var title: String
     @NSManaged var author: Badge
     @NSManaged var tags: NSSet
-    @NSManaged var transcripts: NSSet
+    @NSManaged var posts: NSSet
 
 }

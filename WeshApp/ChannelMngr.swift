@@ -39,15 +39,7 @@ import WeshAppLibrary
         //TO DO: Add Tags
         return channel
     }
-   /*
-   
-      func insertTranscript(transcript: Transcript, channel: Channel){
-        
-        var transcriptSet = channel.transcripts.mutableCopy() as NSMutableOrderedSet
-        transcriptSet.addObject(transcript)
-        channel.transcripts = transcriptSet.copy() as NSSet
-    }
-   */
+
     func insertBadge(channel: Channel, badge: Badge)->Channel?{
         channel.author = badge
         return channel
@@ -86,5 +78,4 @@ import WeshAppLibrary
         
      }
     
-      func getTranscripts(){}
 }

@@ -16,18 +16,12 @@
 		B366706A19F9C1CC00927EEB /* CreateChannel.png in Resources */ = {isa = PBXBuildFile; fileRef = B366706719F9C1CC00927EEB /* CreateChannel.png */; };
 		B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
 		B3B149571A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
-		B3B1495C1A6534FA00E08EAA /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1495B1A6534FA00E08EAA /* Badge.swift */; };
-		B3B1495D1A6534FA00E08EAA /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1495B1A6534FA00E08EAA /* Badge.swift */; };
-		B3B1495F1A6534FB00E08EAA /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1495E1A6534FB00E08EAA /* Tags.swift */; };
-		B3B149601A6534FB00E08EAA /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1495E1A6534FB00E08EAA /* Tags.swift */; };
-		B3B149651A6534FB00E08EAA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149641A6534FB00E08EAA /* Profile.swift */; };
-		B3B149661A6534FB00E08EAA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149641A6534FB00E08EAA /* Profile.swift */; };
-		B3B1496B1A6534FB00E08EAA /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1496A1A6534FB00E08EAA /* ProfilePhoto.swift */; };
-		B3B1496C1A6534FB00E08EAA /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1496A1A6534FB00E08EAA /* ProfilePhoto.swift */; };
-		B3B1496E1A6550CD00E08EAA /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1496D1A6550CD00E08EAA /* Transcript.swift */; };
-		B3B1496F1A6550CD00E08EAA /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B1496D1A6550CD00E08EAA /* Transcript.swift */; };
-		B3B6CC421A66A3D40016B859 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CC411A66A3D40016B859 /* Channel.swift */; };
-		B3B6CC431A66A4510016B859 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B6CC411A66A3D40016B859 /* Channel.swift */; };
+		B3CB2E241A690CCC00FBFED1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E231A690CCC00FBFED1 /* Channel.swift */; };
+		B3CB2E261A690CCD00FBFED1 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */; };
+		B3CB2E281A690CCD00FBFED1 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E271A690CCD00FBFED1 /* Tags.swift */; };
+		B3CB2E2A1A690CCD00FBFED1 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E291A690CCD00FBFED1 /* Badge.swift */; };
+		B3CB2E2C1A690CCD00FBFED1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */; };
+		B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
 		B3D6CBC319FBC5890025140E /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3D6CBC219FBC5890025140E /* plus@2x.png */; };
 		B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */; };
 		B3D6CBC919FBE76F0025140E /* Plus_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = B3D6CBC819FBE76F0025140E /* Plus_Image.png */; };
@@ -125,13 +119,13 @@
 		D81FE27F1A2377B4006F8E62 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
 		D81FFDC11A0BF94500C6294B /* misc in Resources */ = {isa = PBXBuildFile; fileRef = D81FFDC01A0BF94500C6294B /* misc */; };
 		D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
-		D85A86571A17AFE000398153 /* TranscriptMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* TranscriptMngr.swift */; };
+		D85A86571A17AFE000398153 /* PostMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* PostMngr.swift */; };
 		D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */; };
 		D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D85A86671A1972A700398153 /* ChannelMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86661A1972A700398153 /* ChannelMngrTest.swift */; };
 		D871CB581A1FD97E0024C7B7 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
 		D871CB591A1FD9890024C7B7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
-		D871CB5A1A1FD9890024C7B7 /* TranscriptMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* TranscriptMngr.swift */; };
+		D871CB5A1A1FD9890024C7B7 /* PostMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* PostMngr.swift */; };
 		D871CB5B1A1FD9890024C7B7 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D87C9BA11A2B88D1002834C3 /* messi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D87C9BA01A2B88D1002834C3 /* messi.jpg */; };
 		D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
@@ -200,12 +194,12 @@
 		B366706619F9C1CC00927EEB /* ChannelPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChannelPage.png; sourceTree = "<group>"; };
 		B366706719F9C1CC00927EEB /* CreateChannel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CreateChannel.png; sourceTree = "<group>"; };
 		B3B149551A65348300E08EAA /* BadgeMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeMngr.swift; sourceTree = "<group>"; };
-		B3B1495B1A6534FA00E08EAA /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
-		B3B1495E1A6534FB00E08EAA /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
-		B3B149641A6534FB00E08EAA /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		B3B1496A1A6534FB00E08EAA /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
-		B3B1496D1A6550CD00E08EAA /* Transcript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
-		B3B6CC411A66A3D40016B859 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		B3CB2E231A690CCC00FBFED1 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
+		B3CB2E271A690CCD00FBFED1 /* Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		B3CB2E291A690CCD00FBFED1 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		B3CB2E331A690ECE00FBFED1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B3D6CBC219FBC5890025140E /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
 		B3D6CBC819FBE76F0025140E /* Plus_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plus_Image.png; sourceTree = "<group>"; };
@@ -305,7 +299,7 @@
 		D81FE27C1A236BC9006F8E62 /* SessionMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngrTest.swift; sourceTree = "<group>"; };
 		D81FFDC01A0BF94500C6294B /* misc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = misc; sourceTree = "<group>"; };
 		D84BDF791A09494E004390D8 /* SessionMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngr.swift; sourceTree = "<group>"; };
-		D85A86561A17AFE000398153 /* TranscriptMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptMngr.swift; sourceTree = "<group>"; };
+		D85A86561A17AFE000398153 /* PostMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMngr.swift; sourceTree = "<group>"; };
 		D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptMngrTest.swift; sourceTree = "<group>"; };
 		D85A86601A196C3100398153 /* ChannelMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngr.swift; sourceTree = "<group>"; };
 		D85A86661A1972A700398153 /* ChannelMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngrTest.swift; sourceTree = "<group>"; };
@@ -387,7 +381,7 @@
 				D8C0FD361A112C3300F40134 /* CoreDataStack.swift */,
 				D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */,
 				B3B149551A65348300E08EAA /* BadgeMngr.swift */,
-				D85A86561A17AFE000398153 /* TranscriptMngr.swift */,
+				D85A86561A17AFE000398153 /* PostMngr.swift */,
 				D85A86601A196C3100398153 /* ChannelMngr.swift */,
 				D81FE2661A224E44006F8E62 /* CoreData */,
 			);
@@ -553,12 +547,12 @@
 			isa = PBXGroup;
 			children = (
 				B362BD011A5A667D0028B280 /* WeshApp.xcdatamodeld */,
-				B3B6CC411A66A3D40016B859 /* Channel.swift */,
-				B3B1496D1A6550CD00E08EAA /* Transcript.swift */,
-				B3B1496A1A6534FB00E08EAA /* ProfilePhoto.swift */,
-				B3B149641A6534FB00E08EAA /* Profile.swift */,
-				B3B1495E1A6534FB00E08EAA /* Tags.swift */,
-				B3B1495B1A6534FA00E08EAA /* Badge.swift */,
+				B3CB2E331A690ECE00FBFED1 /* Post.swift */,
+				B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */,
+				B3CB2E291A690CCD00FBFED1 /* Badge.swift */,
+				B3CB2E271A690CCD00FBFED1 /* Tags.swift */,
+				B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */,
+				B3CB2E231A690CCC00FBFED1 /* Channel.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -878,21 +872,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */,
-				B3B6CC421A66A3D40016B859 /* Channel.swift in Sources */,
-				B3B1495C1A6534FA00E08EAA /* Badge.swift in Sources */,
-				B3B1495F1A6534FB00E08EAA /* Tags.swift in Sources */,
-				B3B149651A6534FB00E08EAA /* Profile.swift in Sources */,
 				B3D6CBF319FC5F9F0025140E /* ChannelPageVC.swift in Sources */,
-				B3B1496E1A6550CD00E08EAA /* Transcript.swift in Sources */,
+				B3CB2E281A690CCD00FBFED1 /* Tags.swift in Sources */,
+				B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */,
+				B3CB2E2C1A690CCD00FBFED1 /* Profile.swift in Sources */,
+				B3CB2E241A690CCC00FBFED1 /* Channel.swift in Sources */,
 				B3E5E66419FD6226000B8FB1 /* ProfileVC.swift in Sources */,
-				D85A86571A17AFE000398153 /* TranscriptMngr.swift in Sources */,
-				B3B1496B1A6534FB00E08EAA /* ProfilePhoto.swift in Sources */,
+				B3CB2E261A690CCD00FBFED1 /* ProfilePhoto.swift in Sources */,
+				D85A86571A17AFE000398153 /* PostMngr.swift in Sources */,
 				D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */,
 				B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */,
 				B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */,
 				D8C6422E1A47594A004A604A /* ChannelWallTVC.swift in Sources */,
 				B3D6CBE919FC4E510025140E /* LocalChannelTVC.swift in Sources */,
 				B3D9F5CE19F93C4500BF6257 /* SplashVC.swift in Sources */,
+				B3CB2E2A1A690CCD00FBFED1 /* Badge.swift in Sources */,
 				D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */,
 				B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */,
 				B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */,
@@ -909,26 +903,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C0FD6D1A12855200F40134 /* TestCoreDataStack.swift in Sources */,
-				B3B149661A6534FB00E08EAA /* Profile.swift in Sources */,
-				B3B149601A6534FB00E08EAA /* Tags.swift in Sources */,
 				D81FE27E1A237266006F8E62 /* SessionMngr.swift in Sources */,
 				D871CB591A1FD9890024C7B7 /* CoreDataStack.swift in Sources */,
-				D871CB5A1A1FD9890024C7B7 /* TranscriptMngr.swift in Sources */,
+				D871CB5A1A1FD9890024C7B7 /* PostMngr.swift in Sources */,
 				B3B149571A65348300E08EAA /* BadgeMngr.swift in Sources */,
 				D8C642261A46074E004A604A /* ChannelPageVC.swift in Sources */,
-				B3B1495D1A6534FA00E08EAA /* Badge.swift in Sources */,
-				B3B1496C1A6534FB00E08EAA /* ProfilePhoto.swift in Sources */,
 				D871CB581A1FD97E0024C7B7 /* ProfileMngr.swift in Sources */,
 				D8D9342D1A288DB00055079E /* NSManageObjectSerializationTest.swift in Sources */,
 				D81FE27F1A2377B4006F8E62 /* SessionContainer.swift in Sources */,
 				D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */,
 				D85A86671A1972A700398153 /* ChannelMngrTest.swift in Sources */,
 				D8C642601A4C7725004A604A /* WallPostTableViewCell.swift in Sources */,
-				B3B6CC431A66A4510016B859 /* Channel.swift in Sources */,
 				D81FE27D1A236BC9006F8E62 /* SessionMngrTest.swift in Sources */,
 				D871CB5B1A1FD9890024C7B7 /* ChannelMngr.swift in Sources */,
 				D8C6422F1A47594A004A604A /* ChannelWallTVC.swift in Sources */,
-				B3B1496F1A6550CD00E08EAA /* Transcript.swift in Sources */,
 				D8CADF0A1A2F311E00DD43C8 /* LocalChannelTVC.swift in Sources */,
 				D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */,
 				D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */,

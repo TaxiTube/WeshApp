@@ -17,10 +17,10 @@ protocol SessionContainerDelegate{
     //Method used to signal when device is connected
     func deviceConnected(newPeerID: MCPeerID)
     //Method used to transmit incoming Transcrpts/messages
-    func broadcastNewTranscript(transcriptMessage: Transcript?, receiverProfiles: [Profile]?)
+    func broadcastNewPost(postMessage: Post?, receiverProfiles: [Profile]?)
     //deletes a profile from NSManagedObjectContext
     func deleteProfile(profileID: MCPeerID)
-    //func updateTranscript(transcript: Transcript)
+    //func updatePost(post: Post)
 }
 
  class SessionContainer:NSObject, MCSessionDelegate{

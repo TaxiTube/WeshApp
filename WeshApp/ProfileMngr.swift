@@ -55,14 +55,6 @@ import WeshAppLibrary
     }
   
     
-     func addReceivedMsg(receivedMsg: Transcript){
-        
-    }
-    
-     func addSentdMsg(receivedMsg: Transcript){
-        
-    }
-    
     //MARK: Retrieve Operations
     func getProfile(peerID: MCPeerID) -> Profile?{
         

@@ -14,7 +14,7 @@ class ChannelPageVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     var channel: Channel?
     var coreDataStack: CoreDataStack?
     var sessionMngr: SessionMngr?
-    var transcriptMngr: TranscriptMngr?
+    var postMngr: PostMngr?
     
    
     @IBOutlet weak var scrollView: UIScrollView!
@@ -32,21 +32,21 @@ class ChannelPageVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
         if textField.text != "" {
         
 
-            let transcript = transcriptMngr!.createTranscript(textField.text,
+            let post = postMngr!.createPost(textField.text,
                                                                   channel: channel,
                                                                      date: NSDate(),
                                                                    sender: sessionMngr!.myBadge)
             
             textField.text = ""
             //TODO: Decide whether after commenting on a channel wall, the channle persists
-            //transcriptMngr!.save(coreDataStack!.mainContext!)
-            sessionMngr!.broadcastNewTranscript(transcript)
+            //postsMngr!.save(coreDataStack!.mainContext!)
+            sessionMngr!.broadcastNewPost(post)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         transcriptMngr = TranscriptMngr(managedObjectContext: coreDataStack!.mainContext!,
+         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
             coreDataStack: coreDataStack!)
     }
     
