@@ -32,7 +32,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
         let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
         coreDataStack = appDelegate.coreDataStack!
         let managedObjectContext = appDelegate.coreDataStack!.mainContext!
-        let fetchRequest = NSFetchRequest(entityName: "Transcript")
+        let fetchRequest = NSFetchRequest(entityName: "Post")
         fetchRequest.predicate = NSPredicate(format: "channel == %@", channel!)
         
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -77,16 +77,16 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as WallPostTableViewCell
-        let transcript = fetchedResultsController.objectAtIndexPath(indexPath) as Transcript
+        let post = fetchedResultsController.objectAtIndexPath(indexPath) as Post
 
-        //cell.nameLabel.text = transcript.sender.firstName
-        cell.wallPost.text = transcript.message
+        //cell.nameLabel.text = post.sender.firstName
+        cell.wallPost.text = post.post
         
         let formatter = NSDateFormatter()
         formatter.dateStyle = .LongStyle
         formatter.timeStyle = .NoStyle
 
-        cell.date.text = formatter.stringFromDate(transcript.date)
+        cell.date.text = formatter.stringFromDate(post.date)
         return cell
     }
     

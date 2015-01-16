@@ -17,7 +17,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     @IBOutlet weak var descTV: BorderTextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var plusimage: UIImageView!
-    
+     
     var picker: UIImagePickerController? = UIImagePickerController()
     var popover: UIPopoverController? = nil
     
