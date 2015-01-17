@@ -17,8 +17,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     //@IBOutlet weak var descTV: BorderTextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descTV: UITextView!
-    @IBOutlet weak var blurView: UIVisualEffectView!
-     
     @IBOutlet weak var containerView: UIView!
        //MARK: Properties
     var appDelegate: AppDelegate {
@@ -59,9 +57,26 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
-        blur.frame = view.frame
-        self.view.addSubview(blur)
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
+        blurView.frame = containerView.frame
+        blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        containerView.insertSubview(blurView, atIndex: 0)
+        
+        var constraints = [NSLayoutConstraint]()
+       
+        constraints.append(NSLayoutConstraint(item: blurView,
+            attribute: .Height, relatedBy: .Equal, toItem: containerView,
+            attribute: .Height, multiplier: 1, constant: 0))
+        constraints.append(NSLayoutConstraint(item: blurView,
+            attribute: .Width, relatedBy: .Equal, toItem: view,
+            attribute: .Width, multiplier: 1, constant: 0))
+        
+        constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
+        
+        constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
+        
+        view.addConstraints(constraints)
+        
         descTV.delegate = self
         placeHolderText = descTV.text
      }
