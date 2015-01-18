@@ -34,6 +34,20 @@
                ReferencedContainer = "container:WeshApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B36E68031A6C3A46002B951A"
+               BuildableName = "DesignablesTests.xctest"
+               BlueprintName = "DesignablesTests"
+               ReferencedContainer = "container:WeshApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -56,6 +70,16 @@
                   Identifier = "ProfileMngrTest">
                </Test>
             </SkippedTests>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B36E68031A6C3A46002B951A"
+               BuildableName = "DesignablesTests.xctest"
+               BlueprintName = "DesignablesTests"
+               ReferencedContainer = "container:WeshApp.xcodeproj">
+            </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>

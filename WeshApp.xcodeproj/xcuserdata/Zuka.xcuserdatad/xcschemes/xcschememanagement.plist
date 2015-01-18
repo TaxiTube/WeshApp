@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Designables.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>WeshApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,36 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>B36E67F91A6C3A46002B951A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B36E68031A6C3A46002B951A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B36E681D1A6C3A79002B951A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B36E68271A6C3A79002B951A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B36E68411A6C3AF7002B951A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B36E684B1A6C3AF7002B951A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B3D9F5A019F93AA400BF6257</key>
 		<dict>
 			<key>primary</key>
