@@ -57,6 +57,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
         blurView.frame = containerView.frame
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -79,6 +80,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
         descTV.delegate = self
         placeHolderText = descTV.text
+
+        
      }
     
     override func viewDidAppear(animated: Bool) {
