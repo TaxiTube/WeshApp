@@ -13,12 +13,13 @@ import WeshAppLibrary
 
 class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate {
     
-    @IBOutlet weak var titleTV: UITextField!
+    @IBOutlet weak var titleTF: UITextField!
     //@IBOutlet weak var descTV: BorderTextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descTV: UITextView!
     @IBOutlet weak var containerView: UIView!
-       //MARK: Properties
+    @IBOutlet weak var handleLable: UILabel!
+    //MARK: Properties
     var appDelegate: AppDelegate {
        return UIApplication.sharedApplication().delegate! as AppDelegate
     }
@@ -29,82 +30,81 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         return appDelegate.sessionMngr
     }
     var text: String = ""
-    var placeHolderText: String = ""
-     
+    var placeHolderTextTV: String = ""
+    
      
     //MARK: Actions
     @IBAction func channelModalDone(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
     }
-    
     @IBAction func goLive(sender: AnyObject) {
-        /*
+        
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
-        
-        let channel = channelMngr.createChannel(titleTV.text,
+        let channel = channelMngr.createChannel(titleTF.text,
                                                     desc: descTV.text,
                                                     date: NSDate(),
                                                   author: sessionMngr.myBadge!)
-       
-        // photo: UIImageJPEGRepresentation(imageView.image, 0.5)
-        // println(sessionMngr.myProfileMngr.insertChannel(sessionMngr.profile!, channel: <#Channel#>))
-        // println(sessionMngr.profile!.channels.count)
-        // channelMngr.save(coreDataStack!.mainContext!)
-        
         sessionMngr.broadcastNewChannel(channel)
-        */
+        dismissViewControllerAnimated(true, completion: nil)
+
     }
+    override func viewWillAppear(animated: Bool) {
+        //TODO: get totem image from the array
+        handleLable.text = "#" + sessionMngr.myBadge!.handle
+        
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBlur()
+        descTV.delegate = self
+        placeHolderTextTV = descTV.text
         
+        
+     }
+    
+    override func viewDidAppear(animated: Bool) {
+       // UIApplication.sharedApplication().statusBarHidden = true
+
+    }
+    override func viewWillDisappear(animated: Bool) {
+       // UIApplication.sharedApplication().statusBarHidden = false
+
+    }
+    
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent){
+        titleTF.resignFirstResponder()
+        descTV.resignFirstResponder()
+    }
+    
+    //MARK: Blur
+    private func addBlur(){
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
         blurView.frame = containerView.frame
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         containerView.insertSubview(blurView, atIndex: 0)
         
         var constraints = [NSLayoutConstraint]()
-       
+        //Size constraints
         constraints.append(NSLayoutConstraint(item: blurView,
             attribute: .Height, relatedBy: .Equal, toItem: containerView,
             attribute: .Height, multiplier: 1, constant: 0))
         constraints.append(NSLayoutConstraint(item: blurView,
             attribute: .Width, relatedBy: .Equal, toItem: view,
             attribute: .Width, multiplier: 1, constant: 0))
-        
+        //Center alignment
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
-        
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
         
         view.addConstraints(constraints)
         
-        descTV.delegate = self
-        placeHolderText = descTV.text
-
-        
-     }
-    
-    override func viewDidAppear(animated: Bool) {
-        UIApplication.sharedApplication().statusBarHidden = true
-
     }
-    override func viewWillDisappear(animated: Bool) {
-        UIApplication.sharedApplication().statusBarHidden = false
-
-    }
-    
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent){
-        titleTV.resignFirstResponder()
-        descTV.resignFirstResponder()
-    }
-    
-    
     
     //MARK: textField delegate methods
     func textFieldShouldReturn(textField: UITextField!) -> Bool
     {
-        titleTV.resignFirstResponder()
+        titleTF.resignFirstResponder()
         descTV.resignFirstResponder()
         return true
     }
@@ -122,10 +122,46 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         if text == "" {
             let grey80 = UIColor(white:0.80, alpha:1)
 
-            titleTV.textColor = grey80
-            titleTV.text = placeHolderText
+            descTV.textColor = grey80
+            descTV.text = placeHolderTextTV
          }
     }
-
     
+    //MARK: View scrolling
+  /*
+    override func viewWillAppear(animated: Bool) {
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardWillShow:"),
+            name: UIKeyboardWillShowNotification,
+            object: nil);
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardWillHide:"),
+            name: UIKeyboardWillHideNotification,
+            object: nil)
+    }
+    
+    
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let info: NSDictionary = notification.userInfo!
+        let s: NSValue = info.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue;
+        let keyboardRect :CGRect = s.CGRectValue();
+        var containerViewOrigin = containerView.frame.origin
+        var containerViewHeight = containerView.frame.size.height
+        var visibleRect = self.view.frame
+        visibleRect.size.height -= keyboardRect.height
+        
+        if (!CGRectContainsPoint(visibleRect, containerViewOrigin)){
+            var scrollPoint = CGPointMake(0.0, containerViewOrigin.y - visibleRect.size.height + containerViewHeight);
+            scrollView.setContentOffset(scrollPoint, animated: true)
+        }
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        scrollView.setContentOffset(CGPointZero, animated:true)
+    }
+
+    */
 }

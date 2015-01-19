@@ -12,6 +12,12 @@
 		B36E68591A6C3AF7002B951A /* Designables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36E68421A6C3AF7002B951A /* Designables.framework */; };
 		B36E685A1A6C3AF7002B951A /* Designables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B36E68421A6C3AF7002B951A /* Designables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E68611A6C3B88002B951A /* WeshappTextField.swift */; };
+		B36E686A1A6C4798002B951A /* TitilliumText25L.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68641A6C4798002B951A /* TitilliumText25L.otf */; };
+		B36E686B1A6C4798002B951A /* TitilliumText25L001.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68651A6C4798002B951A /* TitilliumText25L001.otf */; };
+		B36E686C1A6C4798002B951A /* TitilliumText25L002.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68661A6C4798002B951A /* TitilliumText25L002.otf */; };
+		B36E686D1A6C4798002B951A /* TitilliumText25L003.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68671A6C4798002B951A /* TitilliumText25L003.otf */; };
+		B36E686E1A6C4798002B951A /* TitilliumText25L004.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68681A6C4798002B951A /* TitilliumText25L004.otf */; };
+		B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68691A6C4798002B951A /* TitilliumText25L005.otf */; };
 		B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
 		B3B149571A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
 		B3CB2E241A690CCC00FBFED1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E231A690CCC00FBFED1 /* Channel.swift */; };
@@ -133,8 +139,6 @@
 		D8DA2A391A693F630098C5E6 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E271A690CCD00FBFED1 /* Tags.swift */; };
 		D8DA2A3A1A693F660098C5E6 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */; };
 		D8DA2A3E1A6945480098C5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DA2A3D1A6945480098C5E6 /* Main.storyboard */; };
-		D8DA2A711A6972900098C5E6 /* TitilliumText25L.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */; };
-		D8DA2A721A6972900098C5E6 /* TitilliumText25L.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */; };
 		D8DC68551A337CC800AAF16D /* WeshAppLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8DC68671A337CC800AAF16D /* WeshAppLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; };
 		D8DC68681A337CC800AAF16D /* WeshAppLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -197,6 +201,12 @@
 		B36E68451A6C3AF7002B951A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B36E68461A6C3AF7002B951A /* Designables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Designables.h; sourceTree = "<group>"; };
 		B36E68611A6C3B88002B951A /* WeshappTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappTextField.swift; sourceTree = "<group>"; };
+		B36E68641A6C4798002B951A /* TitilliumText25L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L.otf; sourceTree = "<group>"; };
+		B36E68651A6C4798002B951A /* TitilliumText25L001.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L001.otf; sourceTree = "<group>"; };
+		B36E68661A6C4798002B951A /* TitilliumText25L002.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L002.otf; sourceTree = "<group>"; };
+		B36E68671A6C4798002B951A /* TitilliumText25L003.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L003.otf; sourceTree = "<group>"; };
+		B36E68681A6C4798002B951A /* TitilliumText25L004.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L004.otf; sourceTree = "<group>"; };
+		B36E68691A6C4798002B951A /* TitilliumText25L005.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L005.otf; sourceTree = "<group>"; };
 		B3B149551A65348300E08EAA /* BadgeMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeMngr.swift; sourceTree = "<group>"; };
 		B3CB2E231A690CCC00FBFED1 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
@@ -317,7 +327,6 @@
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
 		D8DA2A3D1A6945480098C5E6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L.otf; sourceTree = "<group>"; };
 		D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeshAppLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DC68531A337CC800AAF16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeshAppLibrary.h; sourceTree = "<group>"; };
@@ -385,6 +394,19 @@
 				B36E68451A6C3AF7002B951A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B36E68631A6C4798002B951A /* Titillium */ = {
+			isa = PBXGroup;
+			children = (
+				B36E68641A6C4798002B951A /* TitilliumText25L.otf */,
+				B36E68651A6C4798002B951A /* TitilliumText25L001.otf */,
+				B36E68661A6C4798002B951A /* TitilliumText25L002.otf */,
+				B36E68671A6C4798002B951A /* TitilliumText25L003.otf */,
+				B36E68681A6C4798002B951A /* TitilliumText25L004.otf */,
+				B36E68691A6C4798002B951A /* TitilliumText25L005.otf */,
+			);
+			path = Titillium;
 			sourceTree = "<group>";
 		};
 		B3C41DA719F96F5700E1C6BD /* Images */ = {
@@ -486,7 +508,7 @@
 		B3D9F6D419F9645000BF6257 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */,
+				B36E68631A6C4798002B951A /* Titillium */,
 				B3D9F6D519F9645000BF6257 /* Helvetica */,
 				B3D9F70919F9645000BF6257 /* Roboto */,
 			);
@@ -830,12 +852,12 @@
 				B3D9F71819F9645000BF6257 /* HelveticaNeueLTPro-BdCnO.otf in Resources */,
 				B3D9F71E19F9645000BF6257 /* HelveticaNeueLTPro-BlkCn.otf in Resources */,
 				B3D9F74119F9645000BF6257 /* HelveticaNeueLTPro-UltLt.otf in Resources */,
+				B36E686D1A6C4798002B951A /* TitilliumText25L003.otf in Resources */,
 				B3D9F72A19F9645000BF6257 /* HelveticaNeueLTPro-HvEx.otf in Resources */,
 				B3D9F74C19F9645000BF6257 /* Roboto-BoldItalic.ttf in Resources */,
 				B3D9F74419F9645000BF6257 /* HelveticaNeueLTPro-UltLtEx.otf in Resources */,
 				B3D9F74919F9645000BF6257 /* Roboto-Black.ttf in Resources */,
 				B3D9F72719F9645000BF6257 /* HelveticaNeueLTPro-Hv.otf in Resources */,
-				D8DA2A711A6972900098C5E6 /* TitilliumText25L.otf in Resources */,
 				B3D9F72419F9645000BF6257 /* HelveticaNeueLTPro-CnO.otf in Resources */,
 				B3D9F75019F9645000BF6257 /* Roboto-Medium.ttf in Resources */,
 				B3D9F73F19F9645000BF6257 /* HelveticaNeueLTPro-ThExO.otf in Resources */,
@@ -843,6 +865,7 @@
 				B3D9F72019F9645000BF6257 /* HelveticaNeueLTPro-BlkEx.otf in Resources */,
 				B3D9F73B19F9645000BF6257 /* HelveticaNeueLTPro-Th.otf in Resources */,
 				B3D9F72619F9645000BF6257 /* HelveticaNeueLTPro-ExO.otf in Resources */,
+				B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */,
 				B3D9F71619F9645000BF6257 /* HelveticaNeueLTPro-Bd.otf in Resources */,
 				D81FFDC11A0BF94500C6294B /* misc in Resources */,
 				B3D9F72C19F9645000BF6257 /* HelveticaNeueLTPro-HvIt.otf in Resources */,
@@ -851,6 +874,8 @@
 				B3D9F74B19F9645000BF6257 /* Roboto-Bold.ttf in Resources */,
 				B3D9F72919F9645000BF6257 /* HelveticaNeueLTPro-HvCnO.otf in Resources */,
 				B3D9F72B19F9645000BF6257 /* HelveticaNeueLTPro-HvExO.otf in Resources */,
+				B36E686A1A6C4798002B951A /* TitilliumText25L.otf in Resources */,
+				B36E686B1A6C4798002B951A /* TitilliumText25L001.otf in Resources */,
 				B3D9F71F19F9645000BF6257 /* HelveticaNeueLTPro-BlkCnO.otf in Resources */,
 				B3D9F73519F9645000BF6257 /* HelveticaNeueLTPro-MdCn.otf in Resources */,
 				B3D9F73C19F9645000BF6257 /* HelveticaNeueLTPro-ThCn.otf in Resources */,
@@ -859,7 +884,9 @@
 				B3D9F72219F9645000BF6257 /* HelveticaNeueLTPro-BlkIt.otf in Resources */,
 				B3D9F71C19F9645000BF6257 /* HelveticaNeueLTPro-BdOu.otf in Resources */,
 				B3D9F72D19F9645000BF6257 /* HelveticaNeueLTPro-It.otf in Resources */,
+				B36E686E1A6C4798002B951A /* TitilliumText25L004.otf in Resources */,
 				B3D9F73919F9645000BF6257 /* HelveticaNeueLTPro-MdIt.otf in Resources */,
+				B36E686C1A6C4798002B951A /* TitilliumText25L002.otf in Resources */,
 				B3D9F74319F9645000BF6257 /* HelveticaNeueLTPro-UltLtCnO.otf in Resources */,
 				B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */,
 				B3D9F74D19F9645000BF6257 /* Roboto-Italic.ttf in Resources */,
@@ -901,7 +928,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8DA2A721A6972900098C5E6 /* TitilliumText25L.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
