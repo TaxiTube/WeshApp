@@ -40,11 +40,13 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
-        let channel = channelMngr.createChannel(titleTF.text,
-                                                    desc: descTV.text,
-                                                    date: NSDate(),
-                                                  author: sessionMngr.myBadge!)
-        sessionMngr.broadcastNewChannel(channel)
+        if titleTF.text != "" {
+            let channel = channelMngr.createChannel(titleTF.text,
+                desc: descTV.text,
+                date: NSDate(),
+                author: sessionMngr.myBadge!)
+            sessionMngr.broadcastNewChannel(channel)
+        }
         dismissViewControllerAnimated(true, completion: nil)
 
     }
