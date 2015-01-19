@@ -17,7 +17,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     //@IBOutlet weak var descTV: BorderTextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descTV: UITextView!
-    @IBOutlet weak var containerView: UIView!
+   // @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var handleLable: UILabel!
     //MARK: Properties
     var appDelegate: AppDelegate {
@@ -53,12 +53,12 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     override func viewWillAppear(animated: Bool) {
         //TODO: get totem image from the array
         handleLable.text = "#" + sessionMngr.myBadge!.handle
-        
+        handleLable.adjustsFontSizeToFitWidth = true
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBlur()
+        //addBlur()
         descTV.delegate = self
         placeHolderTextTV = descTV.text
         
@@ -81,6 +81,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     //MARK: Blur
+    /*
     private func addBlur(){
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
         blurView.frame = containerView.frame
@@ -102,7 +103,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         view.addConstraints(constraints)
         
     }
-    
+    */
     //MARK: textField delegate methods
     func textFieldShouldReturn(textField: UITextField!) -> Bool
     {

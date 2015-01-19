@@ -1300,6 +1300,7 @@
 				B36E685D1A6C3AF7002B951A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3D9F59C19F93AA400BF6257 /* Build configuration list for PBXProject "WeshApp" */ = {
 			isa = XCConfigurationList;
