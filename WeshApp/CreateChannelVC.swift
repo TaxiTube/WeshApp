@@ -58,7 +58,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //addBlur()
+        addBlur()
         descTV.delegate = self
         placeHolderTextTV = descTV.text
         
@@ -81,17 +81,17 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     //MARK: Blur
-    /*
+    
     private func addBlur(){
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
-        blurView.frame = containerView.frame
+        blurView.frame = view.frame
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        containerView.insertSubview(blurView, atIndex: 0)
+        view.insertSubview(blurView, atIndex: 0)
         
         var constraints = [NSLayoutConstraint]()
         //Size constraints
         constraints.append(NSLayoutConstraint(item: blurView,
-            attribute: .Height, relatedBy: .Equal, toItem: containerView,
+            attribute: .Height, relatedBy: .Equal, toItem: view,
             attribute: .Height, multiplier: 1, constant: 0))
         constraints.append(NSLayoutConstraint(item: blurView,
             attribute: .Width, relatedBy: .Equal, toItem: view,
@@ -103,7 +103,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         view.addConstraints(constraints)
         
     }
-    */
+    
     //MARK: textField delegate methods
     func textFieldShouldReturn(textField: UITextField!) -> Bool
     {
