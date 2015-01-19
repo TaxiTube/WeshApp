@@ -91,32 +91,29 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     }
 
 
-  // MARK: SessionContainer delegate method implementations
+    // MARK: SessionContainer delegate method implementations
     // Outgoing data
     func deviceConnected(newPeerID: MCPeerID){
     
        //1. send my channels
     
-     
-        /*
-        //if profile!.channels.count > 0{
+     /*
+        
+        if myBadge!.channels.count > 0{
            
             var profileDict = profile!.toDictionary()
-            profileDict.removeValueForKey("photo")
-            profileDict.removeValueForKey("receivedMsg")
-            profileDict.removeValueForKey("sentMsg")
-           // profileDict.removeValueForKey("channel")
+            
             
 
             let data = NSKeyedArchiver.archivedDataWithRootObject(profileDict)
             //println("data siza: \(data.length)")
             sessionContainer.multicastMsg(data)
         
-        // }else{
-        //       println("\(profile!.firstName) has no Channels")
-      //  }
-
+         }else{
+               println("\(profile!.firstName) has no Channels")
+        }
         */
+    
     }
      
      func broadcastNewChannel(channel: Channel?){
@@ -127,9 +124,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             //do not transmit author or transcirpts
             channelDict.removeValueForKey("author")
             channelDict.removeValueForKey("posts")
-            //TODO:Image transmision must be imlimented
-            //channelDict.removeValueForKey("photo")
-            
+          
             let data = NSKeyedArchiver.archivedDataWithRootObject(channelDict)
             //println("Channel data size: \(data.length)")
             sessionContainer.multicastMsg(data)
@@ -162,7 +157,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     
     //Incoming
     func receivedData(#senderPeer: MCPeerID, data: NSData){
-     /*
+     
         let unserializedDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as [String: AnyObject]
         
         //unserializedDict["channelID"]
@@ -176,7 +171,8 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
         
         switch object{
             case let profileObject as Profile:
-            println("profile received \(profileObject.firstName)")
+                //TODO: Profiel received when data is Requested
+                println("profile received \(profileObject.firstName)")
             case let channelObject as Channel:
                 //get profile(using peerID) and insert the channel in its array
                 //TODO: Perform fetchign on privateQ
@@ -184,9 +180,9 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
                 
                 //println(channelObject.author.firstName)
                 
-                    if let senderProfile = myProfileMngr.getProfile(senderPeer){
+                    if let senderBadge = badgeMngr.getBadge(senderPeer){
                        // myProfileMngr.insertChannel(senderProfile, channel: channelObject)
-                        channelMngr.insertProfile(channelObject, profile: senderProfile)
+                        channelMngr.insertBadge(channelObject, badge: senderBadge)
                     }else{
                         println("NO SUCH PROFILE DETECTED IN CORE DATA!")
                         
@@ -196,19 +192,18 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
                let channel = channelMngr.getChannelByID(postObject.channelID)
                if let c = channel {
                     //println("post for channel \(c.title) post message: \(postObject.message)")
-                    postMngr.addPost(postObject.message,
-                        channel: channel,
-                        date: postObject.date,
-                        sender: postObject.sender,
-                        receivers: postObject.receivers.allObjects as? [Profile])
-                    //TODO: Save context once channel is followed
+                    postMngr.createPost(postObject.post,
+                                        channel: channel,
+                                           date: postObject.date,
+                                         sender: postObject.sender)
+                    //TODO: Save context once channel is followed 
                 }else{
                     println("No channel found")
             }
             
             default: break
         }
-        */
+        
         //println(unserializedDictProfile.firstName)
     }
     

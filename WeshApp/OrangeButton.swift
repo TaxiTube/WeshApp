@@ -21,11 +21,7 @@ public class OrangeButton: UIButton{
         )
     }
   public  override func drawRect(rect: CGRect){
-    
-     self.layer.backgroundColor =  UIColorFromRGB(0xff5959).CGColor
+    self.layer.backgroundColor =  UIColorFromRGB(0xff5959).CGColor
     // self.layer.cornerRadius = 5
-
-
-    
     }
 }

@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B362BD031A5A667D0028B280 /* WeshApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B362BD011A5A667D0028B280 /* WeshApp.xcdatamodeld */; };
+		B36E68471A6C3AF7002B951A /* Designables.h in Headers */ = {isa = PBXBuildFile; fileRef = B36E68461A6C3AF7002B951A /* Designables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B36E68591A6C3AF7002B951A /* Designables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36E68421A6C3AF7002B951A /* Designables.framework */; };
+		B36E685A1A6C3AF7002B951A /* Designables.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B36E68421A6C3AF7002B951A /* Designables.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36E68611A6C3B88002B951A /* WeshappTextField.swift */; };
+		B36E686A1A6C4798002B951A /* TitilliumText25L.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68641A6C4798002B951A /* TitilliumText25L.otf */; };
+		B36E686B1A6C4798002B951A /* TitilliumText25L001.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68651A6C4798002B951A /* TitilliumText25L001.otf */; };
+		B36E686C1A6C4798002B951A /* TitilliumText25L002.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68661A6C4798002B951A /* TitilliumText25L002.otf */; };
+		B36E686D1A6C4798002B951A /* TitilliumText25L003.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68671A6C4798002B951A /* TitilliumText25L003.otf */; };
+		B36E686E1A6C4798002B951A /* TitilliumText25L004.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68681A6C4798002B951A /* TitilliumText25L004.otf */; };
+		B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68691A6C4798002B951A /* TitilliumText25L005.otf */; };
 		B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
 		B3B149571A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
 		B3CB2E241A690CCC00FBFED1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E231A690CCC00FBFED1 /* Channel.swift */; };
@@ -129,8 +139,6 @@
 		D8DA2A391A693F630098C5E6 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E271A690CCD00FBFED1 /* Tags.swift */; };
 		D8DA2A3A1A693F660098C5E6 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */; };
 		D8DA2A3E1A6945480098C5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8DA2A3D1A6945480098C5E6 /* Main.storyboard */; };
-		D8DA2A711A6972900098C5E6 /* TitilliumText25L.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */; };
-		D8DA2A721A6972900098C5E6 /* TitilliumText25L.otf in Resources */ = {isa = PBXBuildFile; fileRef = D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */; };
 		D8DC68551A337CC800AAF16D /* WeshAppLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8DC68671A337CC800AAF16D /* WeshAppLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; };
 		D8DC68681A337CC800AAF16D /* WeshAppLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -144,6 +152,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B36E68571A6C3AF7002B951A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3D9F59919F93AA400BF6257 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B36E68411A6C3AF7002B951A;
+			remoteInfo = Designables;
+		};
 		B3D9F5BA19F93AA400BF6257 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3D9F59919F93AA400BF6257 /* Project object */;
@@ -167,6 +182,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B36E685A1A6C3AF7002B951A /* Designables.framework in Embed Frameworks */,
 				D8DC68681A337CC800AAF16D /* WeshAppLibrary.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -181,6 +197,16 @@
 		B366706519F9C1CC00927EEB /* ChannelList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChannelList.png; sourceTree = "<group>"; };
 		B366706619F9C1CC00927EEB /* ChannelPage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChannelPage.png; sourceTree = "<group>"; };
 		B366706719F9C1CC00927EEB /* CreateChannel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CreateChannel.png; sourceTree = "<group>"; };
+		B36E68421A6C3AF7002B951A /* Designables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Designables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B36E68451A6C3AF7002B951A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B36E68461A6C3AF7002B951A /* Designables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Designables.h; sourceTree = "<group>"; };
+		B36E68611A6C3B88002B951A /* WeshappTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappTextField.swift; sourceTree = "<group>"; };
+		B36E68641A6C4798002B951A /* TitilliumText25L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L.otf; sourceTree = "<group>"; };
+		B36E68651A6C4798002B951A /* TitilliumText25L001.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L001.otf; sourceTree = "<group>"; };
+		B36E68661A6C4798002B951A /* TitilliumText25L002.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L002.otf; sourceTree = "<group>"; };
+		B36E68671A6C4798002B951A /* TitilliumText25L003.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L003.otf; sourceTree = "<group>"; };
+		B36E68681A6C4798002B951A /* TitilliumText25L004.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L004.otf; sourceTree = "<group>"; };
+		B36E68691A6C4798002B951A /* TitilliumText25L005.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L005.otf; sourceTree = "<group>"; };
 		B3B149551A65348300E08EAA /* BadgeMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeMngr.swift; sourceTree = "<group>"; };
 		B3CB2E231A690CCC00FBFED1 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
@@ -301,24 +327,31 @@
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
 		D8DA2A3D1A6945480098C5E6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L.otf; sourceTree = "<group>"; };
 		D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeshAppLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DC68531A337CC800AAF16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeshAppLibrary.h; sourceTree = "<group>"; };
 		D8DC68701A337D7B00AAF16D /* ObjCWrapperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCWrapperFunctions.swift; sourceTree = "<group>"; };
-		D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTextView.swift; sourceTree = "<group>"; };
-		D8DC687C1A338FAA00AAF16D /* GreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
-		D8DC687D1A338FAA00AAF16D /* NavBarDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarDesign.swift; sourceTree = "<group>"; };
-		D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeButton.swift; sourceTree = "<group>"; };
-		D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSendView.swift; sourceTree = "<group>"; };
+		D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderTextView.swift; path = ../WeshApp/BorderTextView.swift; sourceTree = "<group>"; };
+		D8DC687C1A338FAA00AAF16D /* GreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreenButton.swift; path = ../WeshApp/GreenButton.swift; sourceTree = "<group>"; };
+		D8DC687D1A338FAA00AAF16D /* NavBarDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavBarDesign.swift; path = ../WeshApp/NavBarDesign.swift; sourceTree = "<group>"; };
+		D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrangeButton.swift; path = ../WeshApp/OrangeButton.swift; sourceTree = "<group>"; };
+		D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldSendView.swift; path = ../WeshApp/TextFieldSendView.swift; sourceTree = "<group>"; };
 		D8DC68871A33910E00AAF16D /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B36E683E1A6C3AF7002B951A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3D9F59E19F93AA400BF6257 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36E68591A6C3AF7002B951A /* Designables.framework in Frameworks */,
 				D8DC68671A337CC800AAF16D /* WeshAppLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +373,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B36E68431A6C3AF7002B951A /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				B36E68461A6C3AF7002B951A /* Designables.h */,
+				D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */,
+				D8DC687C1A338FAA00AAF16D /* GreenButton.swift */,
+				D8DC687D1A338FAA00AAF16D /* NavBarDesign.swift */,
+				D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */,
+				D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */,
+				B36E68441A6C3AF7002B951A /* Supporting Files */,
+				B36E68611A6C3B88002B951A /* WeshappTextField.swift */,
+			);
+			path = Designables;
+			sourceTree = "<group>";
+		};
+		B36E68441A6C3AF7002B951A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B36E68451A6C3AF7002B951A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B36E68631A6C4798002B951A /* Titillium */ = {
+			isa = PBXGroup;
+			children = (
+				B36E68641A6C4798002B951A /* TitilliumText25L.otf */,
+				B36E68651A6C4798002B951A /* TitilliumText25L001.otf */,
+				B36E68661A6C4798002B951A /* TitilliumText25L002.otf */,
+				B36E68671A6C4798002B951A /* TitilliumText25L003.otf */,
+				B36E68681A6C4798002B951A /* TitilliumText25L004.otf */,
+				B36E68691A6C4798002B951A /* TitilliumText25L005.otf */,
+			);
+			path = Titillium;
+			sourceTree = "<group>";
+		};
 		B3C41DA719F96F5700E1C6BD /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,19 +417,6 @@
 			);
 			name = Images;
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		B3D6CC0019FC6F430025140E /* IBDesignable */ = {
-			isa = PBXGroup;
-			children = (
-				D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */,
-				D8DC687C1A338FAA00AAF16D /* GreenButton.swift */,
-				D8DC687D1A338FAA00AAF16D /* NavBarDesign.swift */,
-				D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */,
-				D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */,
-			);
-			name = IBDesignable;
-			path = ../WeshApp;
 			sourceTree = "<group>";
 		};
 		B3D8495C1A01106100D4286A /* Model */ = {
@@ -384,6 +440,7 @@
 				B3D9F5A319F93AA400BF6257 /* WeshApp */,
 				B3D9F5BC19F93AA400BF6257 /* WeshAppTests */,
 				D8DC68511A337CC800AAF16D /* WeshAppLibrary */,
+				B36E68431A6C3AF7002B951A /* Designables */,
 				B3D9F5A219F93AA400BF6257 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -394,6 +451,7 @@
 				B3D9F5A119F93AA400BF6257 /* WeshApp.app */,
 				B3D9F5B919F93AA400BF6257 /* WeshAppTests.xctest */,
 				D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */,
+				B36E68421A6C3AF7002B951A /* Designables.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,8 +462,8 @@
 				B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */,
 				B3D8495C1A01106100D4286A /* Model */,
 				D81FFDBF1A0BEBA900C6294B /* Controller */,
-				B3D9F5B219F93AA400BF6257 /* LaunchScreen.xib */,
 				D8DA2A3D1A6945480098C5E6 /* Main.storyboard */,
+				B3D9F5B219F93AA400BF6257 /* LaunchScreen.xib */,
 				B3D9F5B019F93AA400BF6257 /* Images.xcassets */,
 				B3D9F5A419F93AA400BF6257 /* Supporting Files */,
 				D81FFDC01A0BF94500C6294B /* misc */,
@@ -450,7 +508,7 @@
 		B3D9F6D419F9645000BF6257 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D8DA2A701A6972890098C5E6 /* TitilliumText25L.otf */,
+				B36E68631A6C4798002B951A /* Titillium */,
 				B3D9F6D519F9645000BF6257 /* Helvetica */,
 				B3D9F70919F9645000BF6257 /* Roboto */,
 			);
@@ -606,7 +664,6 @@
 			children = (
 				D8DC68701A337D7B00AAF16D /* ObjCWrapperFunctions.swift */,
 				D8DC68721A337D9B00AAF16D /* CoreData */,
-				B3D6CC0019FC6F430025140E /* IBDesignable */,
 				D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */,
 				D8DC68521A337CC800AAF16D /* Supporting Files */,
 			);
@@ -632,6 +689,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		B36E683F1A6C3AF7002B951A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B36E68471A6C3AF7002B951A /* Designables.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8DC684D1A337CC800AAF16D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,6 +708,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B36E68411A6C3AF7002B951A /* Designables */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B36E685B1A6C3AF7002B951A /* Build configuration list for PBXNativeTarget "Designables" */;
+			buildPhases = (
+				B36E683D1A6C3AF7002B951A /* Sources */,
+				B36E683E1A6C3AF7002B951A /* Frameworks */,
+				B36E683F1A6C3AF7002B951A /* Headers */,
+				B36E68401A6C3AF7002B951A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Designables;
+			productName = Designables;
+			productReference = B36E68421A6C3AF7002B951A /* Designables.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		B3D9F5A019F93AA400BF6257 /* WeshApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3D9F5C319F93AA400BF6257 /* Build configuration list for PBXNativeTarget "WeshApp" */;
@@ -656,6 +739,7 @@
 			);
 			dependencies = (
 				D8DC68661A337CC800AAF16D /* PBXTargetDependency */,
+				B36E68581A6C3AF7002B951A /* PBXTargetDependency */,
 			);
 			name = WeshApp;
 			productName = WeshApp;
@@ -707,6 +791,10 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = WeshApp;
 				TargetAttributes = {
+					B36E68411A6C3AF7002B951A = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = JGQSB4L9G4;
+					};
 					B3D9F5A019F93AA400BF6257 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = JGQSB4L9G4;
@@ -737,11 +825,19 @@
 				B3D9F5A019F93AA400BF6257 /* WeshApp */,
 				B3D9F5B819F93AA400BF6257 /* WeshAppTests */,
 				D8DC684F1A337CC800AAF16D /* WeshAppLibrary */,
+				B36E68411A6C3AF7002B951A /* Designables */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B36E68401A6C3AF7002B951A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3D9F59F19F93AA400BF6257 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -756,12 +852,12 @@
 				B3D9F71819F9645000BF6257 /* HelveticaNeueLTPro-BdCnO.otf in Resources */,
 				B3D9F71E19F9645000BF6257 /* HelveticaNeueLTPro-BlkCn.otf in Resources */,
 				B3D9F74119F9645000BF6257 /* HelveticaNeueLTPro-UltLt.otf in Resources */,
+				B36E686D1A6C4798002B951A /* TitilliumText25L003.otf in Resources */,
 				B3D9F72A19F9645000BF6257 /* HelveticaNeueLTPro-HvEx.otf in Resources */,
 				B3D9F74C19F9645000BF6257 /* Roboto-BoldItalic.ttf in Resources */,
 				B3D9F74419F9645000BF6257 /* HelveticaNeueLTPro-UltLtEx.otf in Resources */,
 				B3D9F74919F9645000BF6257 /* Roboto-Black.ttf in Resources */,
 				B3D9F72719F9645000BF6257 /* HelveticaNeueLTPro-Hv.otf in Resources */,
-				D8DA2A711A6972900098C5E6 /* TitilliumText25L.otf in Resources */,
 				B3D9F72419F9645000BF6257 /* HelveticaNeueLTPro-CnO.otf in Resources */,
 				B3D9F75019F9645000BF6257 /* Roboto-Medium.ttf in Resources */,
 				B3D9F73F19F9645000BF6257 /* HelveticaNeueLTPro-ThExO.otf in Resources */,
@@ -769,6 +865,7 @@
 				B3D9F72019F9645000BF6257 /* HelveticaNeueLTPro-BlkEx.otf in Resources */,
 				B3D9F73B19F9645000BF6257 /* HelveticaNeueLTPro-Th.otf in Resources */,
 				B3D9F72619F9645000BF6257 /* HelveticaNeueLTPro-ExO.otf in Resources */,
+				B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */,
 				B3D9F71619F9645000BF6257 /* HelveticaNeueLTPro-Bd.otf in Resources */,
 				D81FFDC11A0BF94500C6294B /* misc in Resources */,
 				B3D9F72C19F9645000BF6257 /* HelveticaNeueLTPro-HvIt.otf in Resources */,
@@ -777,6 +874,8 @@
 				B3D9F74B19F9645000BF6257 /* Roboto-Bold.ttf in Resources */,
 				B3D9F72919F9645000BF6257 /* HelveticaNeueLTPro-HvCnO.otf in Resources */,
 				B3D9F72B19F9645000BF6257 /* HelveticaNeueLTPro-HvExO.otf in Resources */,
+				B36E686A1A6C4798002B951A /* TitilliumText25L.otf in Resources */,
+				B36E686B1A6C4798002B951A /* TitilliumText25L001.otf in Resources */,
 				B3D9F71F19F9645000BF6257 /* HelveticaNeueLTPro-BlkCnO.otf in Resources */,
 				B3D9F73519F9645000BF6257 /* HelveticaNeueLTPro-MdCn.otf in Resources */,
 				B3D9F73C19F9645000BF6257 /* HelveticaNeueLTPro-ThCn.otf in Resources */,
@@ -785,7 +884,9 @@
 				B3D9F72219F9645000BF6257 /* HelveticaNeueLTPro-BlkIt.otf in Resources */,
 				B3D9F71C19F9645000BF6257 /* HelveticaNeueLTPro-BdOu.otf in Resources */,
 				B3D9F72D19F9645000BF6257 /* HelveticaNeueLTPro-It.otf in Resources */,
+				B36E686E1A6C4798002B951A /* TitilliumText25L004.otf in Resources */,
 				B3D9F73919F9645000BF6257 /* HelveticaNeueLTPro-MdIt.otf in Resources */,
+				B36E686C1A6C4798002B951A /* TitilliumText25L002.otf in Resources */,
 				B3D9F74319F9645000BF6257 /* HelveticaNeueLTPro-UltLtCnO.otf in Resources */,
 				B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */,
 				B3D9F74D19F9645000BF6257 /* Roboto-Italic.ttf in Resources */,
@@ -827,7 +928,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8DA2A721A6972900098C5E6 /* TitilliumText25L.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +941,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B36E683D1A6C3AF7002B951A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3D9F59D19F93AA400BF6257 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -921,6 +1029,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B36E68581A6C3AF7002B951A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B36E68411A6C3AF7002B951A /* Designables */;
+			targetProxy = B36E68571A6C3AF7002B951A /* PBXContainerItemProxy */;
+		};
 		B3D9F5BB19F93AA400BF6257 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3D9F5A019F93AA400BF6257 /* WeshApp */;
@@ -945,6 +1058,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B36E685C1A6C3AF7002B951A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Designables/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B36E685D1A6C3AF7002B951A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Designables/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		B3D9F5C119F93AA400BF6257 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1133,6 +1293,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B36E685B1A6C3AF7002B951A /* Build configuration list for PBXNativeTarget "Designables" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B36E685C1A6C3AF7002B951A /* Debug */,
+				B36E685D1A6C3AF7002B951A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B3D9F59C19F93AA400BF6257 /* Build configuration list for PBXProject "WeshApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
