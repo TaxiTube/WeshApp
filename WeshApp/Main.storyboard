@@ -165,6 +165,9 @@
                             <connections>
                                 <segue destination="6mx-hf-rr5" kind="popoverPresentation" popoverAnchorBarButtonItem="AMf-Bu-aYd" id="CKO-xR-sKT">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    <popoverPassthroughViews>
+                                        <tableView reference="axa-jK-QYu"/>
+                                    </popoverPassthroughViews>
                                 </segue>
                             </connections>
                         </barButtonItem>
@@ -529,7 +532,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="12A-CD-vJW">
-                        <barButtonItem key="rightBarButtonItem" image="12C188BB-2A42-4B03-B188-31BABF0A54D4" style="done" id="I9h-vW-JG6"/>
+                        <barButtonItem key="rightBarButtonItem" image="DCD31617-E4F9-4EA2-A0AA-FF70B74B5C95" style="done" id="I9h-vW-JG6"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9b-Ge-Q8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -623,6 +626,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="riY-wA-0E3" secondAttribute="width" id="5mI-E8-UU8"/>
@@ -641,7 +645,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4bH-M2-x3g" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.77" id="8s1-iY-A6C"/>
@@ -748,7 +752,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="12C188BB-2A42-4B03-B188-31BABF0A54D4" width="20" height="20">
+        <image name="DCD31617-E4F9-4EA2-A0AA-FF70B74B5C95" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
