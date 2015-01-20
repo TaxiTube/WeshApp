@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */; };
 		B31FB3C31A6DAEC800A2D734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31FB3C21A6DAEC800A2D734 /* Main.storyboard */; };
+		B34689C31A6E4AAA0031977E /* WeshappSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34689C21A6E4AAA0031977E /* WeshappSK.swift */; };
 		B362BD031A5A667D0028B280 /* WeshApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B362BD011A5A667D0028B280 /* WeshApp.xcdatamodeld */; };
 		B36E68471A6C3AF7002B951A /* Designables.h in Headers */ = {isa = PBXBuildFile; fileRef = B36E68461A6C3AF7002B951A /* Designables.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B36E68591A6C3AF7002B951A /* Designables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36E68421A6C3AF7002B951A /* Designables.framework */; };
@@ -102,7 +103,7 @@
 		B3D9F75219F9645000BF6257 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F71319F9645000BF6257 /* Roboto-Regular.ttf */; };
 		B3D9F75319F9645000BF6257 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F71419F9645000BF6257 /* Roboto-Thin.ttf */; };
 		B3D9F75419F9645000BF6257 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F71519F9645000BF6257 /* Roboto-ThinItalic.ttf */; };
-		B3E0EBB31A6DB032004D472B /* WeshappStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E0EBB21A6DB032004D472B /* WeshappStyleKit.swift */; };
+		B3E0EBB51A6E2BAB004D472B /* blurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E0EBB41A6E2BAB004D472B /* blurView.swift */; };
 		B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */; };
 		B3E5E66419FD6226000B8FB1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */; };
 		B3E5E68119FD9D02000B8FB1 /* msg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E5E67E19FD9D02000B8FB1 /* msg@2x.png */; };
@@ -195,6 +196,7 @@
 /* Begin PBXFileReference section */
 		B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButton.swift; sourceTree = "<group>"; };
 		B31FB3C21A6DAEC800A2D734 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B34689C21A6E4AAA0031977E /* WeshappSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappSK.swift; sourceTree = "<group>"; };
 		B353957619FD2CA1001BD46D /* profile-pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-pic.png"; sourceTree = "<group>"; };
 		B362BD021A5A667D0028B280 /* WeshApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeshApp.xcdatamodel; sourceTree = "<group>"; };
 		B366705F19F9994B00927EEB /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
@@ -302,7 +304,7 @@
 		B3D9F71319F9645000BF6257 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B3D9F71419F9645000BF6257 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B3D9F71519F9645000BF6257 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		B3E0EBB21A6DB032004D472B /* WeshappStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappStyleKit.swift; sourceTree = "<group>"; };
+		B3E0EBB41A6E2BAB004D472B /* blurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blurView.swift; sourceTree = "<group>"; };
 		B3E5E65319FD2ED3000B8FB1 /* hs2-cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hs2-cell.png"; sourceTree = "<group>"; };
 		B3E5E65519FD2EE2000B8FB1 /* pizza-cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizza-cell.png"; sourceTree = "<group>"; };
 		B3E5E65919FD454F000B8FB1 /* pizza-pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizza-pic.png"; sourceTree = "<group>"; };
@@ -380,7 +382,7 @@
 		B36E68431A6C3AF7002B951A /* Designables */ = {
 			isa = PBXGroup;
 			children = (
-				B3E0EBB21A6DB032004D472B /* WeshappStyleKit.swift */,
+				B34689C21A6E4AAA0031977E /* WeshappSK.swift */,
 				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
 				B36E68461A6C3AF7002B951A /* Designables.h */,
 				D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */,
@@ -390,6 +392,7 @@
 				D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */,
 				B36E68611A6C3B88002B951A /* WeshappTextField.swift */,
 				B36E68441A6C3AF7002B951A /* Supporting Files */,
+				B3E0EBB41A6E2BAB004D472B /* blurView.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -951,8 +954,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34689C31A6E4AAA0031977E /* WeshappSK.swift in Sources */,
 				B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */,
-				B3E0EBB31A6DB032004D472B /* WeshappStyleKit.swift in Sources */,
+				B3E0EBB51A6E2BAB004D472B /* blurView.swift in Sources */,
 				B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

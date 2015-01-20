@@ -1,5 +1,5 @@
 //
-//  WeshappRedButton.swift
+//  blurView.swift
 //  WeshApp
 //
 //  Created by Zuka on 1/20/15.
@@ -8,15 +8,14 @@
 
 import UIKit
 
-@IBDesignable
-public class WeshappRedButton: UIView {
+class blurView: UIView {
 
-    
+    /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override public func drawRect(rect: CGRect) {
-        WeshappSK.drawCanvas1(frame: self.bounds)
+    override func drawRect(rect: CGRect) {
+        // Drawing code
     }
-    
+    */
 
 }

@@ -11,14 +11,16 @@ import QuartzCore
 import CoreData
 import WeshAppLibrary
 
-class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate {
+class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTF: UITextField!
     //@IBOutlet weak var descTV: BorderTextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descTV: UITextView!
    // @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var handleLable: UILabel!
+    @IBOutlet weak var handleLable: UILabel! 
+    @IBOutlet weak var containerView: UIView!
     //MARK: Properties
     var appDelegate: AppDelegate {
        return UIApplication.sharedApplication().delegate! as AppDelegate
@@ -54,12 +56,23 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //TODO: get totem image from the array
         handleLable.text = "#" + sessionMngr.myBadge!.handle
         handleLable.adjustsFontSizeToFitWidth = true
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardWillShow:"),
+            name: UIKeyboardWillShowNotification,
+            object: nil);
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardWillHide:"),
+            name: UIKeyboardWillHideNotification,
+            object: nil)
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBlur()
         descTV.delegate = self
+        titleTF.delegate = self
         placeHolderTextTV = descTV.text
         
         
@@ -74,17 +87,28 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
     }
     
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent){
+       @IBAction func onTap(sender: AnyObject) {
         titleTF.resignFirstResponder()
+          self.view.endEditing(true)
         descTV.resignFirstResponder()
     }
+
+  //MARK: UITextField delegate methods
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        titleTF.resignFirstResponder()
+        return true;
+    }
+    
     
     //MARK: Blur
     
     private func addBlur(){
+        //view.backgroundColor = UIColor.clearColor()
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
         blurView.frame = view.frame
+       
+
+        //view = blurView
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.insertSubview(blurView, atIndex: 0)
         
@@ -111,11 +135,19 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.resignFirstResponder()
         return true
     }
+    func textViewDidChange(textView: UITextView) {
+        
+            descTV.text = text
+            descTV.textColor = UIColor.blackColor()
+        
+        
+    }
+
     
     func textViewDidBeginEditing(textView: UITextView) -> Bool{
         
-        descTV.text = text
-        descTV.textColor = UIColor.blackColor()
+        //descTV.text = text
+        //descTV.textColor = UIColor.blackColor()
 
         return true
     }
@@ -131,40 +163,26 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     //MARK: View scrolling
-  /*
-    override func viewWillAppear(animated: Bool) {
-        
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-            selector: Selector("keyboardWillShow:"),
-            name: UIKeyboardWillShowNotification,
-            object: nil);
-        
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-            selector: Selector("keyboardWillHide:"),
-            name: UIKeyboardWillHideNotification,
-            object: nil)
-    }
-    
-    
-    
     func keyboardWillShow(notification: NSNotification) {
         let info: NSDictionary = notification.userInfo!
         let s: NSValue = info.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue;
         let keyboardRect :CGRect = s.CGRectValue();
         var containerViewOrigin = containerView.frame.origin
         var containerViewHeight = containerView.frame.size.height
-        var visibleRect = self.view.frame
+        var visibleRect = view.frame
         visibleRect.size.height -= keyboardRect.height
         
-        if (!CGRectContainsPoint(visibleRect, containerViewOrigin)){
+        
             var scrollPoint = CGPointMake(0.0, containerViewOrigin.y - visibleRect.size.height + containerViewHeight);
             scrollView.setContentOffset(scrollPoint, animated: true)
-        }
+        
     }
     
     func keyboardWillHide(sender: NSNotification) {
         scrollView.setContentOffset(CGPointZero, animated:true)
     }
-
-    */
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
 }
