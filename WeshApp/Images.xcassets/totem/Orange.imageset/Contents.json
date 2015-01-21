@@ -2,18 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Orange-1-1.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Orange-1.png"
+      "filename" : "Orange.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "Orange.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

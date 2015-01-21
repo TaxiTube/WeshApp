@@ -33,11 +33,11 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
         return .OverFullScreen
     }
-  /*
+
     func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
         return UINavigationController(rootViewController: controller.presentedViewController)
     }
-*/
+
 
     
     override func viewDidLoad() {

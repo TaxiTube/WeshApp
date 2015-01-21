@@ -38,7 +38,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     //MARK: Actions
     
     @IBAction func goLive(sender: AnyObject) {
-        
+        UIApplication.sharedApplication().statusBarHidden = false
+
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
         if titleTF.text != "" {
@@ -56,7 +57,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //TODO: Move image processing else where
         
        
-        imageView.image = getTotemImage()
+       // imageView.image = getTotemImage()
         
         
         //TODO: get totem image from the array
@@ -84,9 +85,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
     }
     
+    /*
     func getTotemImage()-> UIImage{
-        
-        
+    
         // 2.
         let bytesPerPixel = 4;
         let bytesPerRow = bytesPerPixel * width;
@@ -107,8 +108,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
         let faceImageAspectRatio = faceImage!.size.width/faceImage!.size.height
         
-        
     }
+        */
     
     
     func dismissPressed(sender: AnyObject) {
@@ -147,7 +148,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.insertSubview(blurView, atIndex: 0)
-        view.sendSubviewToBack(blurView)
+        //view.sendSubviewToBack(blurView)
         
         
         
@@ -162,6 +163,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //Center alignment
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
+        //margins
+        constraints.append(NSLayoutConstraint(item: blurView, attribute: .TopMargin, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
         
         view.addConstraints(constraints)
         
