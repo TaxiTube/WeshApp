@@ -36,8 +36,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     
      
     //MARK: Actions
-    @IBAction func channelModalDone(sender: AnyObject) {
-    }
+    
     @IBAction func goLive(sender: AnyObject) {
         
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
@@ -53,6 +52,13 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
     }
     override func viewWillAppear(animated: Bool) {
+        
+        //TODO: Move image processing else where
+        
+       
+        imageView.image = getTotemImage()
+        
+        
         //TODO: get totem image from the array
         handleLable.text = "#" + sessionMngr.myBadge!.handle
         handleLable.adjustsFontSizeToFitWidth = true
@@ -74,9 +80,40 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.delegate = self
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
+      //  self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "dismissPressed:")
+        
+    }
+    
+    func getTotemImage()-> UIImage{
         
         
-     }
+        // 2.
+        let bytesPerPixel = 4;
+        let bytesPerRow = bytesPerPixel * width;
+        let bitsPerComponent = 8;
+        
+        //Convert the UIImage to a CGImage object, which is needed for the Core Graphics calls. Also, get the image’s width and height.
+        var faceImage = UIImage(named: "Lion")
+        var wallpaperImage = UIImage(named: "Orange")
+        
+        var faceCGImage: CGImageRef = faceImage!.CGImage
+        var wallpaperCGImage = wallpaperImage!.CGImage
+        
+        var faceWidth = CGImageGetWidth(faceCGImage);
+        var faceHeight = CGImageGetHeight(faceCGImage);
+        
+        var wallpaperWidth = CGImageGetWidth(wallpaperCGImage);
+        var wallpaperHeight = CGImageGetHeight(wallpaperCGImage);
+        
+        let faceImageAspectRatio = faceImage!.size.width/faceImage!.size.height
+        
+        
+    }
+    
+    
+    func dismissPressed(sender: AnyObject) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewDidAppear(animated: Bool) {
        // UIApplication.sharedApplication().statusBarHidden = true
@@ -103,14 +140,16 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     //MARK: Blur
     
     private func addBlur(){
-        //view.backgroundColor = UIColor.clearColor()
-        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.ExtraLight))
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = view.frame
        
 
-        //view = blurView
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.insertSubview(blurView, atIndex: 0)
+        view.sendSubviewToBack(blurView)
+        
+        
         
         var constraints = [NSLayoutConstraint]()
         //Size constraints
@@ -135,19 +174,11 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.resignFirstResponder()
         return true
     }
-    func textViewDidChange(textView: UITextView) {
-        
-            descTV.text = text
-            descTV.textColor = UIColor.blackColor()
-        
-        
-    }
-
-    
+   
     func textViewDidBeginEditing(textView: UITextView) -> Bool{
         
-        //descTV.text = text
-        //descTV.textColor = UIColor.blackColor()
+        descTV.text = text
+        descTV.textColor = UIColor.blackColor()
 
         return true
     }

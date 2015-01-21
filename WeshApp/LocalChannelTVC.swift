@@ -10,11 +10,35 @@ import UIKit
 import CoreData
 
 
-class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate {
+class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate {
 
     var fetchedResultsController : NSFetchedResultsController!
     var coreDataStack: CoreDataStack!
     var sessionMngr: SessionMngr?
+    
+    @IBAction func handlePopover(sender: UIBarButtonItem) {
+        let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
+        popoverVC.modalPresentationStyle = .Popover
+        if let popoverController = popoverVC.popoverPresentationController {
+            popoverController.barButtonItem = sender
+            //popoverController.sourceRect = sender.bounds
+            popoverController.permittedArrowDirections = .Any
+          
+            popoverController.delegate = self
+        }
+        presentViewController(popoverVC, animated: true, completion: nil)
+        
+    }
+    // MARK: - UIPopoverPresentationControllerDelegate
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+        return .OverFullScreen
+    }
+  /*
+    func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+        return UINavigationController(rootViewController: controller.presentedViewController)
+    }
+*/
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
