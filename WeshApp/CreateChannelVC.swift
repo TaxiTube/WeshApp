@@ -57,7 +57,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //TODO: Move image processing else where
         
        
-       // imageView.image = getTotemImage()
+        imageView.image = getTotemImage()
         
         
         //TODO: get totem image from the array
@@ -81,35 +81,28 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.delegate = self
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
-      //  self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "dismissPressed:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "dismissPressed:")
         
     }
     
-    /*
+
+    
+    
+    
     func getTotemImage()-> UIImage{
     
-        // 2.
-        let bytesPerPixel = 4;
-        let bytesPerRow = bytesPerPixel * width;
-        let bitsPerComponent = 8;
         
+        //Create Context
+        let context = CIContext(options:nil)
         //Convert the UIImage to a CGImage object, which is needed for the Core Graphics calls. Also, get the image’s width and height.
-        var faceImage = UIImage(named: "Lion")
-        var wallpaperImage = UIImage(named: "Orange")
+        let faceImage = CIImage(image: UIImage(named: "Lion"))
+        let wallpaperImage = CIImage(image: UIImage(named: "Orange"))
         
-        var faceCGImage: CGImageRef = faceImage!.CGImage
-        var wallpaperCGImage = wallpaperImage!.CGImage
-        
-        var faceWidth = CGImageGetWidth(faceCGImage);
-        var faceHeight = CGImageGetHeight(faceCGImage);
-        
-        var wallpaperWidth = CGImageGetWidth(wallpaperCGImage);
-        var wallpaperHeight = CGImageGetHeight(wallpaperCGImage);
-        
-        let faceImageAspectRatio = faceImage!.size.width/faceImage!.size.height
-        
+        let totemImage = compositeSourceOver(wallpaperImage)(faceImage)
+       
+        return UIImage(CIImage: totemImage)!
     }
-        */
+    
     
     
     func dismissPressed(sender: AnyObject) {
@@ -163,8 +156,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //Center alignment
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
-        //margins
-        constraints.append(NSLayoutConstraint(item: blurView, attribute: .TopMargin, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
+        
         
         view.addConstraints(constraints)
         
@@ -217,6 +209,42 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+}
+
+
+typealias Filter = CIImage -> CIImage
+typealias Parameters = Dictionary<String, AnyObject>
+
+extension CIFilter {
+    convenience init(name: String, parameters: Parameters){
+        self.init(name:name)
+        setDefaults()
+        for(key, value: AnyObject) in parameters{
+            setValue(value, forKey: key)
+        }
+    }
+    var outputImage: CIImage{
+        return self.valueForKey(kCIOutputImageKey) as CIImage
+    }
+}
+
+func compositeSourceOver(overlay: CIImage) -> Filter{
+    
+    return { image in
+        
+        let parameters: Parameters = [
+        kCIInputImage: image,
+            "inputBackgroundImage": image
+        ]
+        let filter = CIFilter(name:"CISourceAtopCompositing", parameters: parameters)
+        let cropRect = image.extent()
+        
+        return filter.outputImage.imageByCroppingToRect(cropRect)
+        
+        
+        
     }
     
 }
