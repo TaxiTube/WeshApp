@@ -119,6 +119,8 @@
 		D871CB5A1A1FD9890024C7B7 /* PostMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* PostMngr.swift */; };
 		D871CB5B1A1FD9890024C7B7 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D87C9BA11A2B88D1002834C3 /* messi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D87C9BA01A2B88D1002834C3 /* messi.jpg */; };
+		D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A21A714436008D8D75 /* CrossBarItem.swift */; };
+		D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A41A71485F008D8D75 /* CrossIconSK.swift */; };
 		D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
 		D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
 		D8C0FD611A127B5D00F40134 /* ProfileMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD601A127B5D00F40134 /* ProfileMngrTest.swift */; };
@@ -300,6 +302,8 @@
 		D85A86601A196C3100398153 /* ChannelMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngr.swift; sourceTree = "<group>"; };
 		D85A86661A1972A700398153 /* ChannelMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngrTest.swift; sourceTree = "<group>"; };
 		D87C9BA01A2B88D1002834C3 /* messi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = messi.jpg; sourceTree = "<group>"; };
+		D89144A21A714436008D8D75 /* CrossBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossBarItem.swift; sourceTree = "<group>"; };
+		D89144A41A71485F008D8D75 /* CrossIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossIconSK.swift; sourceTree = "<group>"; };
 		D8C0FD361A112C3300F40134 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D8C0FD541A11423B00F40134 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMngr.swift; sourceTree = "<group>"; };
@@ -357,9 +361,11 @@
 		B36E68431A6C3AF7002B951A /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				B36E68461A6C3AF7002B951A /* Designables.h */,
+				D89144A41A71485F008D8D75 /* CrossIconSK.swift */,
 				B34689C21A6E4AAA0031977E /* WeshappSK.swift */,
 				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
-				B36E68461A6C3AF7002B951A /* Designables.h */,
+				D89144A21A714436008D8D75 /* CrossBarItem.swift */,
 				D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */,
 				D8DC687C1A338FAA00AAF16D /* GreenButton.swift */,
 				D8DC687D1A338FAA00AAF16D /* NavBarDesign.swift */,
@@ -907,6 +913,8 @@
 				B34689C31A6E4AAA0031977E /* WeshappSK.swift in Sources */,
 				B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */,
 				B3E0EBB51A6E2BAB004D472B /* blurView.swift in Sources */,
+				D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */,
+				D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */,
 				B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

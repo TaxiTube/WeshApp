@@ -13,6 +13,16 @@ import UIKit
     //@IBInspectable public var borderColor: UIColor = UIColor.whiteColor()
     public  override func drawRect(rect: CGRect){
         self.layer.borderColor = UIColor.blueColor().CGColor
+        
     }
+
+    public override func textRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset( bounds , 10 , 10 );
+    }
+    
+    public override func editingRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset( bounds , 10 , 10 );
+    }
+
 }
  
