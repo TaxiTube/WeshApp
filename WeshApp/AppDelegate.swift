@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navBarAppearence.backgroundColor =  AppDelegate.UIColorFromRGB(0x51c1d2)
         navBarAppearence.barTintColor = AppDelegate.UIColorFromRGB(0x51c1d2)
         navBarAppearence.tintColor = AppDelegate.UIColorFromRGB(0xffffff)
-        let font = UIFont(name: "Roboto-Regular", size: 15.0)!
+        let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         navBarAppearence.titleTextAttributes = titleDict
