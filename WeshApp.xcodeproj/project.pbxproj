@@ -10,6 +10,7 @@
 		B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */; };
 		B31FB3C31A6DAEC800A2D734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B31FB3C21A6DAEC800A2D734 /* Main.storyboard */; };
 		B34689C31A6E4AAA0031977E /* WeshappSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34689C21A6E4AAA0031977E /* WeshappSK.swift */; };
+		B35D0AF81A7252E200B95A9B /* WeshappFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D0AF71A7252E200B95A9B /* WeshappFilters.swift */; };
 		B362BD031A5A667D0028B280 /* WeshApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B362BD011A5A667D0028B280 /* WeshApp.xcdatamodeld */; };
 		B36E68471A6C3AF7002B951A /* Designables.h in Headers */ = {isa = PBXBuildFile; fileRef = B36E68461A6C3AF7002B951A /* Designables.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B36E68591A6C3AF7002B951A /* Designables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36E68421A6C3AF7002B951A /* Designables.framework */; };
@@ -195,6 +196,7 @@
 		B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButton.swift; sourceTree = "<group>"; };
 		B31FB3C21A6DAEC800A2D734 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B34689C21A6E4AAA0031977E /* WeshappSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappSK.swift; sourceTree = "<group>"; };
+		B35D0AF71A7252E200B95A9B /* WeshappFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappFilters.swift; sourceTree = "<group>"; };
 		B362BD021A5A667D0028B280 /* WeshApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeshApp.xcdatamodel; sourceTree = "<group>"; };
 		B36E68421A6C3AF7002B951A /* Designables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Designables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36E68451A6C3AF7002B951A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 				D8DC68721A337D9B00AAF16D /* CoreData */,
 				D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */,
 				D8DC68521A337CC800AAF16D /* Supporting Files */,
+				B35D0AF71A7252E200B95A9B /* WeshappFilters.swift */,
 			);
 			path = WeshAppLibrary;
 			sourceTree = "<group>";
@@ -986,6 +989,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35D0AF81A7252E200B95A9B /* WeshappFilters.swift in Sources */,
 				D8DC68861A338FAA00AAF16D /* TextFieldSendView.swift in Sources */,
 				D8DC68851A338FAA00AAF16D /* OrangeButton.swift in Sources */,
 				D8DC68711A337D7B00AAF16D /* ObjCWrapperFunctions.swift in Sources */,

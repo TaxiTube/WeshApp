@@ -58,7 +58,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //TODO: Move image processing else where
         
        
-      //  imageView.image = getTotemImage()
+        imageView.image = getTotemImage()
         
         
         //TODO: get totem image from the array
@@ -82,40 +82,35 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.delegate = self
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: CrossBarItem())
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"), style: .Done, target: self, action: "dismissPressed:")
 
-       
-        /*
-        var constraints = [NSLayoutConstraint]()
-
-        constraints.append(NSLayoutConstraint(item: barButtonItem,
-            attribute: .Height, relatedBy: .Equal, toItem: view,
-            attribute: .Height, multiplier: 0.06, constant: 0))
-        constraints.append(NSLayoutConstraint(item: barButtonItem,
-            attribute: .Width, relatedBy: .Equal, toItem: view,
-            attribute: .Width, multiplier: 0.04, constant: 0))
-        view.addConstraints(constraints)
-        */
     }
     
 
     
     
-   /*
+   
     func getTotemImage()-> UIImage{
     
         
         //Create Context
-        let context = CIContext(options:nil)
+        //let context = CIContext(options:nil)
         //Convert the UIImage to a CGImage object, which is needed for the Core Graphics calls. Also, get the image’s width and height.
         let faceImage = CIImage(image: UIImage(named: "Lion"))
         let wallpaperImage = CIImage(image: UIImage(named: "Orange"))
         
-       // let totemImage = compositeSourceOver(wallpaperImage)(faceImage)
+        /*
+        let filter = CIFilter(name: "CISourceAtopCompositing")
+        filter.setValue(faceImage, forKey: "InputImage")
+        filter.setValue(wallpaperImage, forKey: "inputBackgroundImage")
+        */
+
+        let totemImage = WeshappFilters.compositeSourceOver(wallpaperImage)(faceImage)
        
+        //return UIImage(CIImage: filter.outputImage)!
         return UIImage(CIImage: totemImage)!
     }
-    */
+
     
     
     func dismissPressed(sender: AnyObject) {
@@ -137,7 +132,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.resignFirstResponder()
     }
 
-  //MARK: UITextField delegate methods
+    //MARK: UITextField delegate methods
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         titleTF.resignFirstResponder()
         return true;
@@ -154,10 +149,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.insertSubview(blurView, atIndex: 0)
-        //view.sendSubviewToBack(blurView)
-        
-        
-        
         var constraints = [NSLayoutConstraint]()
         //Size constraints
         constraints.append(NSLayoutConstraint(item: blurView,
@@ -227,37 +218,4 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 }
 
 
-typealias Filter = CIImage -> CIImage
-typealias Parameters = Dictionary<String, AnyObject>
 
-extension CIFilter {
-    convenience init(name: String, parameters: Parameters){
-        self.init(name:name)
-        setDefaults()
-        for(key, value: AnyObject) in parameters{
-            setValue(value, forKey: key)
-        }
-    }
-    var outputImage: CIImage{
-        return self.valueForKey(kCIOutputImageKey) as CIImage
-    }
-}
-
-func compositeSourceOver(overlay: CIImage) -> Filter{
-    
-    return { image in
-        
-        let parameters: Parameters = [
-        "InputImage": image,
-            "inputBackgroundImage": image
-        ]
-        let filter = CIFilter(name:"CISourceAtopCompositing", parameters: parameters)
-        let cropRect = image.extent()
-        
-        return filter.outputImage.imageByCroppingToRect(cropRect)
-        
-        
-        
-    }
-    
-}
