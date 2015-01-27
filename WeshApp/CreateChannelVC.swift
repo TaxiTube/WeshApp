@@ -83,33 +83,10 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"), style: .Done, target: self, action: "dismissPressed:")
-
+        
+        
     }
     
-
-    
-    
-   
-    func getTotemImage()-> UIImage{
-    
-        
-        //Create Context
-        //let context = CIContext(options:nil)
-        //Convert the UIImage to a CGImage object, which is needed for the Core Graphics calls. Also, get the image’s width and height.
-        let faceImage = CIImage(image: UIImage(named: "Lion"))
-        let wallpaperImage = CIImage(image: UIImage(named: "Orange"))
-        
-        /*
-        let filter = CIFilter(name: "CISourceAtopCompositing")
-        filter.setValue(faceImage, forKey: "InputImage")
-        filter.setValue(wallpaperImage, forKey: "inputBackgroundImage")
-        */
-
-        let totemImage = WeshappFilters.compositeSourceOver(wallpaperImage)(faceImage)
-       
-        //return UIImage(CIImage: filter.outputImage)!
-        return UIImage(CIImage: totemImage)!
-    }
 
     
     
@@ -138,9 +115,28 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         return true;
     }
     
-    
+   //MARK: Image Processing
+    func getTotemImage()-> UIImage{
+        
+        
+        //Create Context
+        //let context = CIContext(options:nil)
+        //Convert the UIImage to a CGImage object, which is needed for the Core Graphics calls. Also, get the image’s width and height.
+        let faceImage = CIImage(image: UIImage(named: "Lion"))
+        let wallpaperImage = CIImage(image: UIImage(named: "Orange"))
+        
+        /*
+        let filter = CIFilter(name: "CISourceAtopCompositing")
+        filter.setValue(faceImage, forKey: "InputImage")
+        filter.setValue(wallpaperImage, forKey: "inputBackgroundImage")
+        */
+        
+        let totemImage = WeshappFilters.compositeSourceOver(wallpaperImage)(faceImage)
+        
+        //return UIImage(CIImage: filter.outputImage)!
+        return UIImage(CIImage: totemImage)!
+    }
     //MARK: Blur
-    
     private func addBlur(){
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
         let blurView = UIVisualEffectView(effect: blurEffect)
