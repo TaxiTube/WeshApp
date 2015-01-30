@@ -23,7 +23,7 @@ public class WeshappSegControl: UISegmentedControl {
 
         setTitleTextAttributes(titleDict, forState: UIControlState.Selected)
        
-        font = UIFont(name: "TitilliumText25L-250wt", size: 14.0)!
+        font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
         setTitleTextAttributes([NSFontAttributeName: font ], forState: UIControlState.Normal)
 
         

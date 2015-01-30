@@ -537,7 +537,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="12A-CD-vJW">
-                        <barButtonItem key="rightBarButtonItem" image="BD3A81B9-2E78-4DF9-B4CD-F909299D8520" style="done" id="I9h-vW-JG6"/>
+                        <barButtonItem key="rightBarButtonItem" image="192D572E-6B2E-406B-8650-27E80AB5A6D5" style="done" id="I9h-vW-JG6"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                 </viewController>
@@ -774,7 +774,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BD3A81B9-2E78-4DF9-B4CD-F909299D8520" width="20" height="20">
+        <image name="192D572E-6B2E-406B-8650-27E80AB5A6D5" width="20" height="20">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

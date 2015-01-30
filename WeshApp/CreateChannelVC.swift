@@ -64,8 +64,10 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //TODO: get totem image from the array
        
         handleLable.text = "#" + sessionMngr.myBadge!.handle
+        handleLable.minimumScaleFactor = 0.5
         handleLable.adjustsFontSizeToFitWidth = true
-        
+        handleLable = UIFont(name: "TitilliumText25L-250wt", size: 29.0)!
+
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("keyboardWillShow:"),
             name: UIKeyboardWillShowNotification,
