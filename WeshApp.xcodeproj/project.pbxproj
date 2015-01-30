@@ -24,7 +24,6 @@
 		B36E686E1A6C4798002B951A /* TitilliumText25L004.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68681A6C4798002B951A /* TitilliumText25L004.otf */; };
 		B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */ = {isa = PBXBuildFile; fileRef = B36E68691A6C4798002B951A /* TitilliumText25L005.otf */; };
 		B39062621A72875E00F6B048 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687C1A338FAA00AAF16D /* GreenButton.swift */; };
-		B39062681A7293C500F6B048 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39062671A7293C500F6B048 /* TestViewController.swift */; };
 		B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
 		B3B149571A65348300E08EAA /* BadgeMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B149551A65348300E08EAA /* BadgeMngr.swift */; };
 		B3CB2E241A690CCC00FBFED1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E231A690CCC00FBFED1 /* Channel.swift */; };
@@ -105,7 +104,6 @@
 		B3D9F75219F9645000BF6257 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F71319F9645000BF6257 /* Roboto-Regular.ttf */; };
 		B3D9F75319F9645000BF6257 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F71419F9645000BF6257 /* Roboto-Thin.ttf */; };
 		B3D9F75419F9645000BF6257 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F71519F9645000BF6257 /* Roboto-ThinItalic.ttf */; };
-		B3E0EBB51A6E2BAB004D472B /* blurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E0EBB41A6E2BAB004D472B /* blurView.swift */; };
 		B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */; };
 		B3E5E66419FD6226000B8FB1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */; };
 		B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
@@ -118,11 +116,13 @@
 		D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */; };
 		D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D85A86671A1972A700398153 /* ChannelMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86661A1972A700398153 /* ChannelMngrTest.swift */; };
+		D865D2461A7BD041006EDA87 /* ChannelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865D2451A7BD041006EDA87 /* ChannelTVCell.swift */; };
 		D871CB581A1FD97E0024C7B7 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
 		D871CB591A1FD9890024C7B7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
 		D871CB5A1A1FD9890024C7B7 /* PostMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* PostMngr.swift */; };
 		D871CB5B1A1FD9890024C7B7 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D87C9BA11A2B88D1002834C3 /* messi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D87C9BA01A2B88D1002834C3 /* messi.jpg */; };
+		D87D58FE1A7A536C002ADA13 /* WeshappSegControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87D58FD1A7A536C002ADA13 /* WeshappSegControl.swift */; };
 		D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A21A714436008D8D75 /* CrossBarItem.swift */; };
 		D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A41A71485F008D8D75 /* CrossIconSK.swift */; };
 		D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
@@ -211,7 +211,6 @@
 		B36E68671A6C4798002B951A /* TitilliumText25L003.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L003.otf; sourceTree = "<group>"; };
 		B36E68681A6C4798002B951A /* TitilliumText25L004.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L004.otf; sourceTree = "<group>"; };
 		B36E68691A6C4798002B951A /* TitilliumText25L005.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitilliumText25L005.otf; sourceTree = "<group>"; };
-		B39062671A7293C500F6B048 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B3B149551A65348300E08EAA /* BadgeMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeMngr.swift; sourceTree = "<group>"; };
 		B3CB2E231A690CCC00FBFED1 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePhoto.swift; sourceTree = "<group>"; };
@@ -296,7 +295,6 @@
 		B3D9F71319F9645000BF6257 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B3D9F71419F9645000BF6257 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B3D9F71519F9645000BF6257 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		B3E0EBB41A6E2BAB004D472B /* blurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = blurView.swift; sourceTree = "<group>"; };
 		B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullAddVC.swift; sourceTree = "<group>"; };
 		B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		B3EB823E1A028CE500235E03 /* SessionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContainer.swift; sourceTree = "<group>"; };
@@ -307,7 +305,9 @@
 		D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptMngrTest.swift; sourceTree = "<group>"; };
 		D85A86601A196C3100398153 /* ChannelMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngr.swift; sourceTree = "<group>"; };
 		D85A86661A1972A700398153 /* ChannelMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngrTest.swift; sourceTree = "<group>"; };
+		D865D2451A7BD041006EDA87 /* ChannelTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTVCell.swift; sourceTree = "<group>"; };
 		D87C9BA01A2B88D1002834C3 /* messi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = messi.jpg; sourceTree = "<group>"; };
+		D87D58FD1A7A536C002ADA13 /* WeshappSegControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappSegControl.swift; sourceTree = "<group>"; };
 		D89144A21A714436008D8D75 /* CrossBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossBarItem.swift; sourceTree = "<group>"; };
 		D89144A41A71485F008D8D75 /* CrossIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossIconSK.swift; sourceTree = "<group>"; };
 		D8C0FD361A112C3300F40134 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -377,8 +377,8 @@
 				D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */,
 				B36E68611A6C3B88002B951A /* WeshappTextField.swift */,
 				B36E68441A6C3AF7002B951A /* Supporting Files */,
-				B3E0EBB41A6E2BAB004D472B /* blurView.swift */,
 				B32E559F1A74EC13007F88B0 /* WeshappNavBar.swift */,
+				D87D58FD1A7A536C002ADA13 /* WeshappSegControl.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -621,7 +621,7 @@
 				B3D6CBFE19FC6B4E0025140E /* PageChatTVC.swift */,
 				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
-				B39062671A7293C500F6B048 /* TestViewController.swift */,
+				D865D2451A7BD041006EDA87 /* ChannelTVCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -638,10 +638,10 @@
 			isa = PBXGroup;
 			children = (
 				D8DC68701A337D7B00AAF16D /* ObjCWrapperFunctions.swift */,
-				D8DC68721A337D9B00AAF16D /* CoreData */,
+				D8DC68871A33910E00AAF16D /* NSManagedObject.swift */,
+				B35D0AF71A7252E200B95A9B /* WeshappFilters.swift */,
 				D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */,
 				D8DC68521A337CC800AAF16D /* Supporting Files */,
-				B35D0AF71A7252E200B95A9B /* WeshappFilters.swift */,
 			);
 			path = WeshAppLibrary;
 			sourceTree = "<group>";
@@ -652,14 +652,6 @@
 				D8DC68531A337CC800AAF16D /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D8DC68721A337D9B00AAF16D /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				D8DC68871A33910E00AAF16D /* NSManagedObject.swift */,
-			);
-			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -921,10 +913,10 @@
 				B34689C31A6E4AAA0031977E /* WeshappSK.swift in Sources */,
 				B39062621A72875E00F6B048 /* GreenButton.swift in Sources */,
 				B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */,
-				B3E0EBB51A6E2BAB004D472B /* blurView.swift in Sources */,
 				D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */,
 				D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */,
 				B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */,
+				D87D58FE1A7A536C002ADA13 /* WeshappSegControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,7 +934,6 @@
 				B3CB2E261A690CCD00FBFED1 /* ProfilePhoto.swift in Sources */,
 				D85A86571A17AFE000398153 /* PostMngr.swift in Sources */,
 				D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */,
-				B39062681A7293C500F6B048 /* TestViewController.swift in Sources */,
 				B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */,
 				B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */,
 				D8C6422E1A47594A004A604A /* ChannelWallTVC.swift in Sources */,
@@ -953,6 +944,7 @@
 				B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */,
 				B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */,
 				B3D6CBFF19FC6B4E0025140E /* PageChatTVC.swift in Sources */,
+				D865D2461A7BD041006EDA87 /* ChannelTVCell.swift in Sources */,
 				D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */,
 				D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */,
 				B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */,

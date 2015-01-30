@@ -59,9 +59,10 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
        
         imageView.image = getTotemImage()
-        
-        
+       
+
         //TODO: get totem image from the array
+       
         handleLable.text = "#" + sessionMngr.myBadge!.handle
         handleLable.adjustsFontSizeToFitWidth = true
         
@@ -75,7 +76,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             name: UIKeyboardWillHideNotification,
             object: nil)
     }
-   
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addBlur()
@@ -86,10 +88,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
         
     }
-    
-
-    
-    
     func dismissPressed(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -109,11 +107,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.resignFirstResponder()
     }
 
-    //MARK: UITextField delegate methods
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        titleTF.resignFirstResponder()
-        return true;
-    }
     
    //MARK: Image Processing
     func getTotemImage()-> UIImage{
@@ -125,16 +118,11 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         let faceImage = CIImage(image: UIImage(named: "Lion"))
         let wallpaperImage = CIImage(image: UIImage(named: "Orange"))
         
-        /*
-        let filter = CIFilter(name: "CISourceAtopCompositing")
-        filter.setValue(faceImage, forKey: "InputImage")
-        filter.setValue(wallpaperImage, forKey: "inputBackgroundImage")
-        */
-        
+       
         let totemImage = WeshappFilters.compositeSourceOver(wallpaperImage)(faceImage)
         
         //return UIImage(CIImage: filter.outputImage)!
-        return UIImage(CIImage: totemImage)!
+        return WeshappFilters.roundImage(UIImage(CIImage: totemImage)!)
     }
     //MARK: Blur
     private func addBlur(){
@@ -177,6 +165,12 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
         return true
     }
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let oldString = textField.text as NSString
+        let newString = oldString.stringByReplacingCharactersInRange(range, withString: string) as NSString
+        let stringSize = newString.sizeWithAttributes([NSFontAttributeName:textField.font])
+        return stringSize.width < textField.editingRectForBounds(textField.bounds).size.width
+    }
     //TODO: Placeholder colour changes after text entry
     func textViewDidEndEditing(textView: UITextView){
         text = descTV.text
@@ -186,6 +180,17 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             descTV.textColor = grey80
             descTV.text = placeHolderTextTV
          }
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        titleTF.resignFirstResponder()
+        return true;
+    }
+    //MARK: TextView
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        let combinedString = textView.attributedText!.mutableCopy() as NSMutableAttributedString
+        combinedString.replaceCharactersInRange(range, withString: text)
+        return combinedString.size().width < textView.bounds.size.width
+
     }
     
     //MARK: View scrolling
@@ -210,6 +215,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
+    
+    
     
 }
 

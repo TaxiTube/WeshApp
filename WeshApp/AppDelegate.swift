@@ -60,7 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         navBarAppearence.titleTextAttributes = titleDict
-            
+           */
+            /*
             let nav = UINavigationController().navigationBar
             nav.frame = CGRectMake(0.0, 0.0, 320, 380);
             */

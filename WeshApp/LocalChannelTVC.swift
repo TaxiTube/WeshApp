@@ -8,14 +8,20 @@
 
 import UIKit
 import CoreData
-
+import Designables
 
 class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate {
 
     var fetchedResultsController : NSFetchedResultsController!
     var coreDataStack: CoreDataStack!
     var sessionMngr: SessionMngr?
+    let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+
+    @IBOutlet weak var segControl: UISegmentedControl!
     
+    @IBAction func segmentChanged(sender: UISegmentedControl) {
+       
+    }
     @IBAction func handlePopover(sender: UIBarButtonItem) {
         let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
         popoverVC.modalPresentationStyle = .Popover
@@ -26,18 +32,27 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
           
             popoverController.delegate = self
         }
+        //self.navigationController!.pushViewController(popoverVC, animated: true)
         presentViewController(popoverVC, animated: true, completion: nil)
-        
+
     }
+
     // MARK: - UIPopoverPresentationControllerDelegate
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
         return .OverFullScreen
     }
+    
 
-    func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
-        return UINavigationController(rootViewController: controller.presentedViewController)
+    func presentationController(              controller: UIPresentationController!,
+        viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+            
+            var navbar = navigationController!.navigationBar
+            var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)
+            
+            nav.pushViewController(controller.presentedViewController, animated: true)
+            return nav
+ 
     }
-
 
     
     override func viewDidLoad() {
@@ -59,7 +74,6 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         self.navigationItem.backBarButtonItem = backButton
         
         
-        let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
         sessionMngr = appDelegate.sessionMngr
         coreDataStack = appDelegate.coreDataStack!
         let fetchRequest = NSFetchRequest(entityName: "Channel")
@@ -74,8 +88,11 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         var error: NSError? = nil
         if (!fetchedResultsController.performFetch(&error)) {
             println("Error: \(error?.localizedDescription)") }
+        
+        
+      
+        
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

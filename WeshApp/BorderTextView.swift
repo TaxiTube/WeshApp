@@ -20,7 +20,7 @@ public class BorderTextView: UITextView{
         //self.layer.cornerRadius = 8
         //self.font = UIFont(name: "Roboto-light", size: 14.0)!
         textColor = grey80
-        textContainerInset = UIEdgeInsetsMake(8, 7, 8, 7);
+        textContainerInset = UIEdgeInsetsMake(8, 6, 8, 6);
 
     }
     

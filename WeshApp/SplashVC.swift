@@ -48,6 +48,7 @@ class SplashVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         
         //Create peerID if one does not exist else retrive it from object graph model
+        
         if let handle = NSUserDefaults.standardUserDefaults().stringForKey("handle"){
             connectionIsSet = true
             appDelegate.sessionMngr.setUpConnection(handleTextField.text)

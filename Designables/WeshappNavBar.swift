@@ -7,18 +7,20 @@
 //
 
 import UIKit
-@IBDesignable public
-class WeshappNavBar: UINavigationBar {
+public class WeshappNavBar: UINavigationBar{
+    let proportion: CGFloat = 0.083
+    
+     public override init(frame: CGRect){
+        let screenSize  = UIScreen.mainScreen().bounds.size
+        super.init(frame: frame)
 
+        
+        self.frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
+        
+          //Removes nav bar 1 px shadow
+         shadowImage = UIImage()
+         setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
 
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    public override func drawRect(rect: CGRect) {
-        
-       
-        
-        shadowImage = UIImage()
-        setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         backgroundColor =  UIColorFromRGB(0x51c1d2)
         barTintColor = UIColorFromRGB(0x51c1d2)
         tintColor = UIColorFromRGB(0xffffff)
@@ -28,18 +30,44 @@ class WeshappNavBar: UINavigationBar {
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: font ]
         titleTextAttributes = titleDict
-        
-        // let screenSize  = UIScreen.mainScreen().bounds.size
-        frame = CGRectMake(0.0, 0.0, 320, 70);
+    }
+    
+    required public init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        //barStyle = UIBarStyle.Black
+        //translucent = true
+        let screenSize  = UIScreen.mainScreen().bounds.size
 
+        frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
+        
+        //Removes nav bar 1 px shadow
+        shadowImage = UIImage()
+        setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        
+        backgroundColor =  UIColorFromRGB(0x51c1d2)
+       barTintColor = UIColorFromRGB(0x51c1d2)
+        tintColor = UIColorFromRGB(0xffffff)
+        
+        
+        let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                                                  NSFontAttributeName: font ]
+        titleTextAttributes = titleDict
         
     }
+    
+
+   
+    // Only override drawRect: if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
    
     
     public override func sizeThatFits(size: CGSize) -> CGSize {
-        let newSize = CGSizeMake(320,70);
-        //frame = CGRectMake(0.0, 0.0, 320, 70);
-        return newSize;
+        
+        let screenSize  = UIScreen.mainScreen().bounds.size
+        let newSize = CGSizeMake(screenSize.width, screenSize.height * proportion )
+        
+        return newSize
     }
      func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
