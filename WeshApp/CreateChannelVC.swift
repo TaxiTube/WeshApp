@@ -14,6 +14,7 @@ import Designables
 
 class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var button: WeshappRedButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTF: UITextField!
     //@IBOutlet weak var descTV: BorderTextView!
@@ -64,9 +65,10 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //TODO: get totem image from the array
        
         handleLable.text = "#" + sessionMngr.myBadge!.handle
-        handleLable.minimumScaleFactor = 0.5
-        handleLable.adjustsFontSizeToFitWidth = true
-        handleLable = UIFont(name: "TitilliumText25L-250wt", size: 29.0)!
+       // handleLable.minimumScaleFactor = 0.5
+      //  handleLable.adjustsFontSizeToFitWidth = true
+        //handleLable = UIFont(name: "TitilliumText25L-250wt", size: 29.0)!
+       // adjustFontSize(handleLable, text: handleLable.text!)
 
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("keyboardWillShow:"),
@@ -78,7 +80,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             name: UIKeyboardWillHideNotification,
             object: nil)
     }
-  
+
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,16 +91,24 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"), style: .Done, target: self, action: "dismissPressed:")
-        
-        
+        self.view.layoutIfNeeded()
+        println("View 1: \(view.frame.size.width)")
+        println("button width:\(button.frame.width) height:\(button.frame.height)")
+         println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
+        println("image: \(imageView.frame.height)")
+        println("textbox: \(titleTF.frame.size.height)")
+        println("handle: \(handleLable.frame.size.height)")
+        println("scrollview height: \(scrollView.frame.height)  space: \(view.frame.size.height - scrollView.frame.height)")
+       
     }
     func dismissPressed(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+   
     override func viewDidAppear(animated: Bool) {
        // UIApplication.sharedApplication().statusBarHidden = true
-
+        
     }
     override func viewWillDisappear(animated: Bool) {
        // UIApplication.sharedApplication().statusBarHidden = false
@@ -217,8 +229,44 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
+    /*
+    func adjustFontSize(label: UILabel, text: String) {
+        let maxFontSize = 50.0
+        var tmpRange = NSMakeRange(0, countElements(text))
+        var paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        paragraph.alignment = NSTextAlignment.Center
+        paragraph.maximumLineHeight = CGFloat(maxFontSize)
+        paragraph.lineSpacing = 0;
     
+        var attString = NSMutableAttributedString(string: text)
+        attString.addAttribute( NSParagraphStyleAttributeName,
+                              value: paragraph,
+                              range: tmpRange)
+        attString.addAttribute(NSForegroundColorAttributeName,
+                    value: UIColor.blackColor(),
+                    range: tmpRange)
     
+        var constraintSize = CGSizeMake(label.frame.size.width, CGFloat.max);
+    
+        for var i = maxFontSize; i > 8; i - 1 {
+    
+        attString.addAttribute(NSFontAttributeName, value: UIFont(name: "TitilliumText25L-250wt", size: CGFloat(i))!, range: tmpRange)
+    
+            
+        label.attributedText = attString
+            
+        var labelSize = label.attributedText.boundingRectWithSize(constraintSize,
+            options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+            context: nil)
+           
+            if(labelSize.size.height < label.frame.size.height){
+            
+                break
+            }
+        }
+    }
+    */
     
 }
 
