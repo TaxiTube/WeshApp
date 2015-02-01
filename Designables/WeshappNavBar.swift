@@ -8,7 +8,7 @@
 
 import UIKit
 public class WeshappNavBar: UINavigationBar{
-    let proportion: CGFloat = 0.083
+    let proportion: CGFloat = 0.094
     
      public override init(frame: CGRect){
         let screenSize  = UIScreen.mainScreen().bounds.size
@@ -30,8 +30,10 @@ public class WeshappNavBar: UINavigationBar{
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: font ]
         titleTextAttributes = titleDict
+        self.layoutIfNeeded()
+    //println("navigation br height: \(self.frame.height)")
     }
-    
+     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         //barStyle = UIBarStyle.Black

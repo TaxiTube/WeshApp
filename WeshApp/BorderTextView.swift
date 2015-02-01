@@ -11,7 +11,12 @@ import UIKit
 @IBDesignable
 public class BorderTextView: UITextView{
     
-    
+    /*
+    required public init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        //setTranslatesAutoresizingMaskIntoConstraints(false)
+    }
+    */
    public override func drawRect(rect: CGRect){
         
         let grey80 = UIColor(white:0.80, alpha:1)

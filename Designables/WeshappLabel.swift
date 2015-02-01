@@ -13,10 +13,14 @@ public class WeshappLabel: UILabel {
 
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-       
-        super.layoutSubviews()
+      // setTranslatesAutoresizingMaskIntoConstraints(false)
+       // super.layoutSubviews()
        // self.font = adjustFont()
-
+       // adjustsFontSizeToFitWidth = true
+        
+        //println("init label \(self.frame.size.height)")
+        
+        self.font = adjustFont()
 
     }
     /*
@@ -28,17 +32,22 @@ public class WeshappLabel: UILabel {
     */
   
     override public func layoutSubviews() {
-        println(" frame1: \(self.frame.size.height) " )
+        //println(" frame1: \(self.frame.size.height) " )
 
-        super.layoutSubviews()
-        println(" frame2: \(self.frame.size.height) " )
+       // println(" frame2: \(self.frame.size.height) " )
+      //  println("prefemaxwidth \(self.preferredMaxLayoutWidth)" )
+    
 
-        //self.preferredMaxLayoutWidth = self.frame.size.width
-        //self.font = adjustFont()
-        super.layoutSubviews()
-
+        
     }
+    override public class func requiresConstraintBasedLayout() -> Bool {
+        return true
+    }
+    override public func intrinsicContentSize() -> CGSize {
+        let screenSize  = UIScreen.mainScreen().bounds.size
 
+        return CGSizeMake(screenSize.width, screenSize.height * 0.03)
+    }
     func adjustFont() -> UIFont{
         let MAX = 35
         let MIN = 3

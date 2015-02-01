@@ -12,6 +12,8 @@ import UIKit
 public class WeshappRedButton: UIView {
     var isPressed:Bool = false
     
+  
+    
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override public func drawRect(rect: CGRect) {

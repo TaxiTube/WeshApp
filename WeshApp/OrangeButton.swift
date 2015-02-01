@@ -12,6 +12,20 @@ import UIKit
 
 @IBDesignable
 public class OrangeButton: UIButton{
+    
+  
+
+   public required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+       // setTranslatesAutoresizingMaskIntoConstraints(false)
+    }
+
+
+  public  override func drawRect(rect: CGRect){
+    self.layer.backgroundColor =  UIColorFromRGB(0xff5959).CGColor
+    // self.layer.cornerRadius = 5
+    }
+    
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
@@ -20,8 +34,5 @@ public class OrangeButton: UIButton{
             alpha: CGFloat(1.0)
         )
     }
-  public  override func drawRect(rect: CGRect){
-    self.layer.backgroundColor =  UIColorFromRGB(0xff5959).CGColor
-    // self.layer.cornerRadius = 5
-    }
+
 }

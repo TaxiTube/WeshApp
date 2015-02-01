@@ -14,6 +14,7 @@ import Designables
 
 class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var button: WeshappRedButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTF: UITextField!
@@ -41,7 +42,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     
     @IBAction func goLive(sender: AnyObject) {
         UIApplication.sharedApplication().statusBarHidden = false
-
+//        topConstraint.constant = topConstraint.constant + 20
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
         if titleTF.text != "" {
@@ -55,16 +56,19 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
     }
     override func viewWillAppear(animated: Bool) {
+        //self.view.layoutIfNeeded()
+        println("viewWillAppear")
+        
+       // println("button width:\(button.frame.width) height:\(button.frame.height)")
+        println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
+       // println("image: \(imageView.frame)")
+       // println("textfield : \(titleTF.frame.size)")
+       // println("handle: \(handleLable.frame.size.height)")
+       // println("contaier height: \(containerView.frame.height)  space: \(view.frame.size.height - containerView.frame.height)")
         
         //TODO: Move image processing else where
         
        
-        imageView.image = getTotemImage()
-       
-
-        //TODO: get totem image from the array
-       
-        handleLable.text = "#" + sessionMngr.myBadge!.handle
        // handleLable.minimumScaleFactor = 0.5
       //  handleLable.adjustsFontSizeToFitWidth = true
         //handleLable = UIFont(name: "TitilliumText25L-250wt", size: 29.0)!
@@ -86,33 +90,61 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBlur()
+        println("viewDidLoad")
+        // imageView.image = getTotemImage()
+        
+        
+        //TODO: get totem image from the array
+        
+        //        handleLable.text = "#" + sessionMngr.myBadge!.handle
+
+        //addBlur()
         descTV.delegate = self
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"), style: .Done, target: self, action: "dismissPressed:")
+        //self.view.needsUpdateConstraints()
         self.view.layoutIfNeeded()
-        println("View 1: \(view.frame.size.width)")
-        println("button width:\(button.frame.width) height:\(button.frame.height)")
-         println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
-        println("image: \(imageView.frame.height)")
-        println("textbox: \(titleTF.frame.size.height)")
+        //self.view.setNeedsDisplay()
+       // println("button width:\(button.frame.width) height:\(button.frame.height)")
+        println("DIDLoadtext view: width\(descTV.frame.width) height:\(descTV.frame.height)")
+      //  println("image: \(imageView.frame)")
+      //  println("textfield : \(titleTF.frame.size)")
         println("handle: \(handleLable.frame.size.height)")
-        println("scrollview height: \(scrollView.frame.height)  space: \(view.frame.size.height - scrollView.frame.height)")
-       
+      //  println("contaier height: \(containerView.frame.height)  space: \(view.frame.size.height - containerView.frame.height)")
     }
+    
+    
+    
     func dismissPressed(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-   
+    
+    
+    override func viewDidLayoutSubviews() {
+        println("viewDidLayoutSubviews")
+        println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
+
+    }
     override func viewDidAppear(animated: Bool) {
+        println("viewDidAppear")
        // UIApplication.sharedApplication().statusBarHidden = true
+        //self.view.layoutIfNeeded()
+//            println("button width:\(button.frame.width) height:\(button.frame.height)")
+             println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
+ //          println("image: \(imageView.frame)")
+   //       println("textfield : \(titleTF.frame.size)")
+    //    println("handle: \(handleLable.frame.size.height)")
+     //     println("contaier height: \(containerView.frame.height)  space: \(view.frame.size.height - containerView.frame.height)")
+        
         
     }
+    
+    
     override func viewWillDisappear(animated: Bool) {
        // UIApplication.sharedApplication().statusBarHidden = false
-
+      
     }
     
        @IBAction func onTap(sender: AnyObject) {
@@ -224,7 +256,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     func keyboardWillHide(sender: NSNotification) {
+    
         scrollView.setContentOffset(CGPointZero, animated:true)
+       
     }
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);

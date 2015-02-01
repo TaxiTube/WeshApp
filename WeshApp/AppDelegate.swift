@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           //sessionMngr = SessionMngr(coreDataStack: cds)
         
         
-        
+        println("status bar height \(UIApplication.sharedApplication().statusBarFrame.height)")
         
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent,
                                                   animated: false)

@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable public class WeshappTextField: UITextField{
     
+    
+    
     //@IBInspectable public var borderColor: UIColor = UIColor.whiteColor()
     public  override func drawRect(rect: CGRect){
         self.layer.borderColor = UIColor.blueColor().CGColor

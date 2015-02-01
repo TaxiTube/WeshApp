@@ -12,10 +12,12 @@ public class WeshappSegControl: UISegmentedControl {
     
     public override init(frame: CGRect){
      super.init(frame: frame)
+       // setTranslatesAutoresizingMaskIntoConstraints(false)
     }
     
     required public init(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
+        //setTranslatesAutoresizingMaskIntoConstraints(false)
         
         var font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
