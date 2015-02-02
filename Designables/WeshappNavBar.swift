@@ -8,30 +8,24 @@
 
 import UIKit
 public class WeshappNavBar: UINavigationBar{
+    
     let proportion: CGFloat = 0.094
     
-     public override init(frame: CGRect){
+    public override init(frame: CGRect){
         let screenSize  = UIScreen.mainScreen().bounds.size
         super.init(frame: frame)
-
-        
         self.frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
-        
-          //Removes nav bar 1 px shadow
-         shadowImage = UIImage()
-         setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-
+        //Removes nav bar 1 px shadow
+        shadowImage = UIImage()
+        setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         backgroundColor =  UIColorFromRGB(0x51c1d2)
         barTintColor = UIColorFromRGB(0x51c1d2)
         tintColor = UIColorFromRGB(0xffffff)
-        
-        
         let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: font ]
+                                                  NSFontAttributeName: font ]
         titleTextAttributes = titleDict
-        self.layoutIfNeeded()
-    //println("navigation br height: \(self.frame.height)")
+        //println("navigation br height: \(self.frame.height)")
     }
      
     required public init(coder aDecoder: NSCoder) {
@@ -47,7 +41,7 @@ public class WeshappNavBar: UINavigationBar{
         setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         
         backgroundColor =  UIColorFromRGB(0x51c1d2)
-       barTintColor = UIColorFromRGB(0x51c1d2)
+        barTintColor = UIColorFromRGB(0x51c1d2)
         tintColor = UIColorFromRGB(0xffffff)
         
         
@@ -58,20 +52,13 @@ public class WeshappNavBar: UINavigationBar{
         
     }
     
-
-   
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-   
-    
     public override func sizeThatFits(size: CGSize) -> CGSize {
-        
         let screenSize  = UIScreen.mainScreen().bounds.size
         let newSize = CGSizeMake(screenSize.width, screenSize.height * proportion )
-        
         return newSize
     }
-     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,

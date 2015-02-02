@@ -12,18 +12,16 @@ import CoreData
 import WeshAppLibrary
 import Designables
 
-class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate {
+class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate {
     
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var button: WeshappRedButton!
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTF: UITextField!
-    //@IBOutlet weak var descTV: BorderTextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descTV: UITextView!
-   // @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var handleLable: UILabel! 
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var handleLable: UILabel!
+
     //MARK: Properties
     var appDelegate: AppDelegate {
        return UIApplication.sharedApplication().delegate! as AppDelegate
@@ -42,7 +40,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     
     @IBAction func goLive(sender: AnyObject) {
         UIApplication.sharedApplication().statusBarHidden = false
-//        topConstraint.constant = topConstraint.constant + 20
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
         if titleTF.text != "" {
@@ -55,106 +52,49 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         dismissViewControllerAnimated(true, completion: nil)
 
     }
-    override func viewWillAppear(animated: Bool) {
-        //self.view.layoutIfNeeded()
-        println("viewWillAppear")
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-       // println("button width:\(button.frame.width) height:\(button.frame.height)")
-        println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
-       // println("image: \(imageView.frame)")
-       // println("textfield : \(titleTF.frame.size)")
-       // println("handle: \(handleLable.frame.size.height)")
-       // println("contaier height: \(containerView.frame.height)  space: \(view.frame.size.height - containerView.frame.height)")
         
-        //TODO: Move image processing else where
-        
-       
-       // handleLable.minimumScaleFactor = 0.5
-      //  handleLable.adjustsFontSizeToFitWidth = true
-        //handleLable = UIFont(name: "TitilliumText25L-250wt", size: 29.0)!
-       // adjustFontSize(handleLable, text: handleLable.text!)
-
         NSNotificationCenter.defaultCenter().addObserver(     self,
-            selector: Selector("keyboardWillShow:"),
+            selector: Selector("animateTextFieldWithKeyboard:"),
             name: UIKeyboardWillShowNotification,
             object: nil);
         
         NSNotificationCenter.defaultCenter().addObserver(     self,
-            selector: Selector("keyboardWillHide:"),
+            selector: Selector("animateTextFieldWithKeyboard:"),
             name: UIKeyboardWillHideNotification,
             object: nil)
-    }
-
-   
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        println("viewDidLoad")
-        // imageView.image = getTotemImage()
         
-        
+        imageView.image = getTotemImage()
         //TODO: get totem image from the array
         
-        //        handleLable.text = "#" + sessionMngr.myBadge!.handle
-
-        //addBlur()
+        handleLable.text = "#" + sessionMngr.myBadge!.handle
+        addBlur()
         descTV.delegate = self
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"), style: .Done, target: self, action: "dismissPressed:")
-        //self.view.needsUpdateConstraints()
-        self.view.layoutIfNeeded()
-        //self.view.setNeedsDisplay()
-       // println("button width:\(button.frame.width) height:\(button.frame.height)")
-        println("DIDLoadtext view: width\(descTV.frame.width) height:\(descTV.frame.height)")
-      //  println("image: \(imageView.frame)")
-      //  println("textfield : \(titleTF.frame.size)")
-        println("handle: \(handleLable.frame.size.height)")
-      //  println("contaier height: \(containerView.frame.height)  space: \(view.frame.size.height - containerView.frame.height)")
+         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburgerIcon.png"), style: .Done, target: self, action: "dismissPressed:")
+      
     }
-    
+    override func viewDidAppear(animated: Bool) {
+        println(imageView.frame.size)
+    }
     
     
     func dismissPressed(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    
-    override func viewDidLayoutSubviews() {
-        println("viewDidLayoutSubviews")
-        println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
-
-    }
-    override func viewDidAppear(animated: Bool) {
-        println("viewDidAppear")
-       // UIApplication.sharedApplication().statusBarHidden = true
-        //self.view.layoutIfNeeded()
-//            println("button width:\(button.frame.width) height:\(button.frame.height)")
-             println("text view: width\(descTV.frame.width) height:\(descTV.frame.height)")
- //          println("image: \(imageView.frame)")
-   //       println("textfield : \(titleTF.frame.size)")
-    //    println("handle: \(handleLable.frame.size.height)")
-     //     println("contaier height: \(containerView.frame.height)  space: \(view.frame.size.height - containerView.frame.height)")
-        
-        
-    }
-    
-    
-    override func viewWillDisappear(animated: Bool) {
-       // UIApplication.sharedApplication().statusBarHidden = false
-      
-    }
-    
-       @IBAction func onTap(sender: AnyObject) {
+    @IBAction func onTap(sender: AnyObject) {
         titleTF.resignFirstResponder()
-          self.view.endEditing(true)
+        self.view.endEditing(true)
         descTV.resignFirstResponder()
     }
 
     
-   //MARK: Image Processing
+    //MARK: Image Processing
     func getTotemImage()-> UIImage{
         
         
@@ -170,6 +110,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //return UIImage(CIImage: filter.outputImage)!
         return WeshappFilters.roundImage(UIImage(CIImage: totemImage)!)
     }
+    
     //MARK: Blur
     private func addBlur(){
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
@@ -179,7 +120,17 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.insertSubview(blurView, atIndex: 0)
-        var constraints = [NSLayoutConstraint]()
+        let viewsDictionary = ["top":topLayoutGuide,"bottom":button, "blur": blurView]
+     
+
+        //Margin constraints
+        let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-(-8)-[blur]-(-8)-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|[top]-(-8)-[blur]-(-8)-[bottom]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+       view.addConstraints(hConstraints)
+        view.addConstraints(vConstraints)
+        
+        
+        /*
         //Size constraints
         constraints.append(NSLayoutConstraint(item: blurView,
             attribute: .Height, relatedBy: .Equal, toItem: view,
@@ -190,9 +141,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         //Center alignment
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
         constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
-        
-        
-        view.addConstraints(constraints)
+        */
+      
+        view.layoutIfNeeded()
         
     }
     
@@ -239,6 +190,37 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
     }
     
+    func animateTextFieldWithKeyboard(notification: NSNotification) {
+        
+        let userInfo = notification.userInfo!
+        
+        let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as Double
+        let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as UInt
+            
+        // baseContraint is your Auto Layout constraint that pins the
+        // text view to the bottom of the superview.
+        let screenSize  = UIScreen.mainScreen().bounds.size
+        let offset = screenSize.height - keyboardSize.height - (descTV.frame.origin.y + descTV.frame.height)
+     
+        if notification.name == UIKeyboardWillShowNotification && offset < 0 {
+            bottomConstraint.constant = -offset  // move up
+        }
+        else {
+            bottomConstraint.constant = 0 // move down
+        }
+            view.setNeedsUpdateConstraints()
+            
+            let options = UIViewAnimationOptions(curve << 16)
+            UIView.animateWithDuration(duration, delay: 0, options: options,
+                animations: {
+                    self.view.layoutIfNeeded()
+                },
+                completion: nil
+            )
+    }
+ 
+    /*
     //MARK: View scrolling
     func keyboardWillShow(notification: NSNotification) {
         let info: NSDictionary = notification.userInfo!
@@ -255,11 +237,14 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
     }
     
+    
+    
     func keyboardWillHide(sender: NSNotification) {
     
         scrollView.setContentOffset(CGPointZero, animated:true)
-       
+    
     }
+    */
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
