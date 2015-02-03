@@ -11,35 +11,29 @@ public class WeshappNavBar: UINavigationBar{
     
     let proportion: CGFloat = 0.094
     
+    
     public override init(frame: CGRect){
         let screenSize  = UIScreen.mainScreen().bounds.size
         super.init(frame: frame)
-        self.frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
-        //Removes nav bar 1 px shadow
-        shadowImage = UIImage()
-        setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        backgroundColor =  UIColorFromRGB(0x51c1d2)
-        barTintColor = UIColorFromRGB(0x51c1d2)
-        tintColor = UIColorFromRGB(0xffffff)
-        let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                                                  NSFontAttributeName: font ]
-        titleTextAttributes = titleDict
-        //println("navigation br height: \(self.frame.height)")
+        setUp()
     }
+    
      
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        //barStyle = UIBarStyle.Black
-        //translucent = true
-        let screenSize  = UIScreen.mainScreen().bounds.size
-
-        frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
+        setUp()
         
+    }
+    func setUp(){
+        let screenSize  = UIScreen.mainScreen().bounds.size
+        
+        frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
+      //  barStyle     = UIBarStyle.BlackTranslucent
         //Removes nav bar 1 px shadow
         shadowImage = UIImage()
         setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        
+        translucent = true
+        //opaque = true
         backgroundColor =  UIColorFromRGB(0x51c1d2)
         barTintColor = UIColorFromRGB(0x51c1d2)
         tintColor = UIColorFromRGB(0xffffff)
@@ -47,8 +41,36 @@ public class WeshappNavBar: UINavigationBar{
         
         let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                                                  NSFontAttributeName: font ]
+            NSFontAttributeName: font ]
         titleTextAttributes = titleDict
+        
+        
+        let stView = UIView()
+        stView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        // stView.intrinsicContentSize()
+        stView.backgroundColor = UIColorFromRGB(0x51c1d2)
+        let viewsDictionary = ["statusBar": stView]
+       // stView.
+        self.addSubview(stView)
+        
+        self.layoutMargins = UIEdgeInsetsZero
+        //Margin constraints
+      //  let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-[statusBar]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+       // let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[statusBar]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        
+        let heightConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:[statusBar(20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        
+       // self.addConstraint(NSLayoutConstraint(item: stView,
+        //attribute: .Height, relatedBy: .Equal, toItem: self,
+        //attribute: .Height, multiplier: 5, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: stView,
+            attribute: .Width, relatedBy: .Equal, toItem: self,
+            attribute: .Width, multiplier: 1, constant: 0))
+     //   self.addConstraints(hConstraints)
+      // self.addConstraints(vConstraints)
+        self.addConstraints(heightConstraints)
+        
+        
         
     }
     

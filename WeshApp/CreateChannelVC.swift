@@ -54,8 +54,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        //self.extendedLayoutIncludesOpaqueBars = true
+        //self.edgesForExtendedLayout = UIRectEdge.
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("animateTextFieldWithKeyboard:"),
             name: UIKeyboardWillShowNotification,
@@ -78,8 +78,17 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
          self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburgerIcon.png"), style: .Done, target: self, action: "dismissPressed:")
       
     }
+    
+    
     override func viewDidAppear(animated: Bool) {
-        println(imageView.frame.size)
+        super.viewDidAppear(animated)
+        println(descTV.frame.size)
+        navigationController?.hidesBarsWhenKeyboardAppears = true
+        navigationController?.hidesBarsOnTap = true
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.hidesBarsWhenVerticallyCompact = true
+        
+
     }
     
     
@@ -120,12 +129,20 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.insertSubview(blurView, atIndex: 0)
-        let viewsDictionary = ["top":topLayoutGuide,"bottom":button, "blur": blurView]
+        
      
+        self.view.layoutMargins = UIEdgeInsetsZero
+        
+        println(blurView.layoutMargins.right)
+        button.layoutMargins = UIEdgeInsetsZero
+        blurView.layoutMargins = UIEdgeInsetsZero
+        println(blurView.layoutMargins.right)
+
+        let viewsDictionary = ["top":topLayoutGuide,"bottom":button, "blur": blurView]
 
         //Margin constraints
         let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-(-8)-[blur]-(-8)-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-        let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|[top]-(-8)-[blur]-(-8)-[bottom]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[blur]-(-8)-[bottom]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
        view.addConstraints(hConstraints)
         view.addConstraints(vConstraints)
         

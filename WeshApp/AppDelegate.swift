@@ -43,9 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           //sessionMngr = SessionMngr(coreDataStack: cds)
         
         
+            
         
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent,
                                                   animated: false)
+            
+            
         /*
          var navBarAppearence =  UINavigationBar.appearance()
         navBarAppearence.shadowImage = UIImage()
