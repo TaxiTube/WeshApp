@@ -32,19 +32,20 @@ public class WeshappNavBar: UINavigationBar{
         //Removes nav bar 1 px shadow
         shadowImage = UIImage()
         setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        translucent = true
+        //translucent = true
         //opaque = true
+        
         backgroundColor =  UIColorFromRGB(0x51c1d2)
         barTintColor = UIColorFromRGB(0x51c1d2)
         tintColor = UIColorFromRGB(0xffffff)
         
-        
         let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: font ]
+                                                  NSFontAttributeName: font ]
         titleTextAttributes = titleDict
+       // self.setTitleVerticalPositionAdjustment(-10.9, forBarMetrics: UIBarMetrics.Default)
         
-        
+      /*
         let stView = UIView()
         stView.setTranslatesAutoresizingMaskIntoConstraints(false)
         // stView.intrinsicContentSize()
@@ -70,15 +71,23 @@ public class WeshappNavBar: UINavigationBar{
       // self.addConstraints(vConstraints)
         self.addConstraints(heightConstraints)
         
-        
-        
+        */
+
     }
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+     //  self.backItem?.leftBarButtonItem?.
+//        topItem?.prompt=""
+
+    }
+    
     
     public override func sizeThatFits(size: CGSize) -> CGSize {
         let screenSize  = UIScreen.mainScreen().bounds.size
         let newSize = CGSizeMake(screenSize.width, screenSize.height * proportion )
         return newSize
     }
+
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(

@@ -47,27 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent,
                                                   animated: false)
-            
-            
-        /*
-         var navBarAppearence =  UINavigationBar.appearance()
-        navBarAppearence.shadowImage = UIImage()
-        navBarAppearence.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navBarAppearence.backgroundColor =  AppDelegate.UIColorFromRGB(0x51c1d2)
-        navBarAppearence.barTintColor = AppDelegate.UIColorFromRGB(0x51c1d2)
-        navBarAppearence.tintColor = AppDelegate.UIColorFromRGB(0xffffff)
-           
-            
-        let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                                                  NSFontAttributeName: font ]
-        navBarAppearence.titleTextAttributes = titleDict
-           */
-            /*
-            let nav = UINavigationController().navigationBar
-            nav.frame = CGRectMake(0.0, 0.0, 320, 380);
-            */
-
+     
         } else {
             abort()
         }

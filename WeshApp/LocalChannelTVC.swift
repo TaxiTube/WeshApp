@@ -48,7 +48,6 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             
             var navbar = navigationController!.navigationBar
             var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)
-            
             nav.pushViewController(controller.presentedViewController, animated: true)
             return nav
  
@@ -57,7 +56,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.hidesBarsOnTap
           UIApplication.sharedApplication().statusBarHidden = false
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

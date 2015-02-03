@@ -54,6 +54,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+
         //self.extendedLayoutIncludesOpaqueBars = true
         //self.edgesForExtendedLayout = UIRectEdge.
         NSNotificationCenter.defaultCenter().addObserver(     self,
@@ -83,10 +84,11 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         println(descTV.frame.size)
+        //navigationController?.
         navigationController?.hidesBarsWhenKeyboardAppears = true
-        navigationController?.hidesBarsOnTap = true
-        navigationController?.hidesBarsOnSwipe = false
-        navigationController?.hidesBarsWhenVerticallyCompact = true
+        //navigationController?.hidesBarsOnTap = true
+      //  navigationController?.hidesBarsOnSwipe = false
+      //  navigationController?.hidesBarsWhenVerticallyCompact = true
         
 
     }
@@ -138,13 +140,15 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         blurView.layoutMargins = UIEdgeInsetsZero
         println(blurView.layoutMargins.right)
 
+
         let viewsDictionary = ["top":topLayoutGuide,"bottom":button, "blur": blurView]
 
         //Margin constraints
-        let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-(-8)-[blur]-(-8)-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
         let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[blur]-(-8)-[bottom]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-       view.addConstraints(hConstraints)
+        let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-(-8)-[blur]-(-8)-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+       
         view.addConstraints(vConstraints)
+        view.addConstraints(hConstraints)
         
         
         /*
@@ -217,14 +221,22 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             
         // baseContraint is your Auto Layout constraint that pins the
         // text view to the bottom of the superview.
-        let screenSize  = UIScreen.mainScreen().bounds.size
-        let offset = screenSize.height - keyboardSize.height - (descTV.frame.origin.y + descTV.frame.height)
+        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navigationController!.navigationBar.frame.height
+        let offset = (descTV.frame.origin.y + descTV.frame.height) - (screenHeight - keyboardSize.height)
      
-        if notification.name == UIKeyboardWillShowNotification && offset < 0 {
-            bottomConstraint.constant = -offset  // move up
+        if notification.name == UIKeyboardWillShowNotification && offset > 0 {
+            bottomConstraint.constant =   bottomConstraint.constant + offset  // move up
+           // navigationController?.navigationBarHidden = true
+
+            UIApplication.sharedApplication().statusBarHidden = true
+
         }
         else {
             bottomConstraint.constant = 0 // move down
+            navigationController?.navigationBarHidden = false
+            UIApplication.sharedApplication().statusBarHidden = false
+
+
         }
             view.setNeedsUpdateConstraints()
             
