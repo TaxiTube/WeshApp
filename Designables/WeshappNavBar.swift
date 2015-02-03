@@ -9,7 +9,7 @@
 import UIKit
 public class WeshappNavBar: UINavigationBar{
     
-    let proportion: CGFloat = 0.094
+    let proportion: CGFloat = 0.095
     
     
     public override init(frame: CGRect){
@@ -43,8 +43,11 @@ public class WeshappNavBar: UINavigationBar{
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         titleTextAttributes = titleDict
-       // self.setTitleVerticalPositionAdjustment(-10.9, forBarMetrics: UIBarMetrics.Default)
-        
+
+         let titleYPos = self.titleVerticalPositionAdjustmentForBarMetrics(UIBarMetrics.Default)
+       // println(" titleYPos \(titleYPos)")
+       //  let middleYPos = (self.frame.height + 20) / 2.0
+        self.setTitleVerticalPositionAdjustment(-5, forBarMetrics: UIBarMetrics.Default)
       /*
         let stView = UIView()
         stView.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -76,8 +79,24 @@ public class WeshappNavBar: UINavigationBar{
     }
     public override func layoutSubviews() {
         super.layoutSubviews()
-     //  self.backItem?.leftBarButtonItem?.
-//        topItem?.prompt=""
+        
+        if let tv = topItem?.title?{
+            
+          //  println("item................ :\(topItem?.)")
+        }
+
+        for  barView in self.subviews{
+            switch barView{
+                
+            case let item as UIButton:
+                item.frame = CGRect(origin: CGPoint(x: item.frame.origin.x, y: (self.frame.height - 20) / 2.0), size: item.frame.size)
+        
+             default: break
+            }
+        }
+        
+
+        layoutIfNeeded()
 
     }
     

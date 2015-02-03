@@ -48,6 +48,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             
             var navbar = navigationController!.navigationBar
             var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)
+
             nav.pushViewController(controller.presentedViewController, animated: true)
             return nav
  
