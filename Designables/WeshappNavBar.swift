@@ -38,11 +38,9 @@ public class WeshappNavBar: UINavigationBar{
         tintColor = UIColorFromRGB(0xffffff)
        
          if let  var tv = topItem?.titleView{
-            println("FRAME HEIGHT: \(self.frame.height)")
             let titleLableY = tv.frame.origin.y + tv.frame.size.height/2
             let middleYPos = (self.frame.height) / 2.0
             let  ajdustHeight =  middleYPos - titleLableY
-            println("midpoint: \(middleYPos), titleY \(titleLableY), adjustheihg: \(ajdustHeight)")
             self.setTitleVerticalPositionAdjustment(-ajdustHeight, forBarMetrics: UIBarMetrics.Default)
         }
         

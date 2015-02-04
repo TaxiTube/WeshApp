@@ -35,6 +35,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     var text: String = ""
     var placeHolderTextTV: String = ""
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
      
     //MARK: Actions
     
@@ -98,14 +101,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println(descTV.frame.size)
-        //navigationController?.
-        navigationController?.hidesBarsWhenKeyboardAppears = true
-        //navigationController?.hidesBarsOnTap = true
-      //  navigationController?.hidesBarsOnSwipe = false
-      //  navigationController?.hidesBarsWhenVerticallyCompact = true
+      
         
-
+        navigationController?.hidesBarsWhenKeyboardAppears = true
     }
     
     
@@ -150,12 +148,10 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
      
         self.view.layoutMargins = UIEdgeInsetsZero
         
-        println(blurView.layoutMargins.right)
+       
         button.layoutMargins = UIEdgeInsetsZero
         blurView.layoutMargins = UIEdgeInsetsZero
-        println(blurView.layoutMargins.right)
-
-
+       
         let viewsDictionary = ["top":topLayoutGuide,"bottom":button, "blur": blurView]
 
         //Margin constraints
@@ -218,14 +214,16 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         titleTF.resignFirstResponder()
         return true;
     }
+   
     //MARK: TextView
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        let combinedString = textView.attributedText!.mutableCopy() as NSMutableAttributedString
-        combinedString.replaceCharactersInRange(range, withString: text)
-        return combinedString.size().width < textView.bounds.size.width
-
+       
+        return descTV.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) + text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) < 300
     }
+
     
+
+    //MARK: Keyboard
     func animateTextFieldWithKeyboard(notification: NSNotification) {
         
         let userInfo = notification.userInfo!
@@ -264,34 +262,32 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             )
     }
  
+    
     /*
     //MARK: View scrolling
     func keyboardWillShow(notification: NSNotification) {
-        let info: NSDictionary = notification.userInfo!
-        let s: NSValue = info.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue;
-        let keyboardRect :CGRect = s.CGRectValue();
-        var containerViewOrigin = containerView.frame.origin
-        var containerViewHeight = containerView.frame.size.height
-        var visibleRect = view.frame
-        visibleRect.size.height -= keyboardRect.height
-        
-        
-            var scrollPoint = CGPointMake(0.0, containerViewOrigin.y - visibleRect.size.height + containerViewHeight);
-            scrollView.setContentOffset(scrollPoint, animated: true)
-        
+    let info: NSDictionary = notification.userInfo!
+    let s: NSValue = info.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue;
+    let keyboardRect :CGRect = s.CGRectValue();
+    var containerViewOrigin = containerView.frame.origin
+    var containerViewHeight = containerView.frame.size.height
+    var visibleRect = view.frame
+    visibleRect.size.height -= keyboardRect.height
+    
+    
+    var scrollPoint = CGPointMake(0.0, containerViewOrigin.y - visibleRect.size.height + containerViewHeight);
+    scrollView.setContentOffset(scrollPoint, animated: true)
+    
     }
     
     
     
     func keyboardWillHide(sender: NSNotification) {
     
-        scrollView.setContentOffset(CGPointZero, animated:true)
+    scrollView.setContentOffset(CGPointZero, animated:true)
     
     }
     */
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self);
-    }
     /*
     func adjustFontSize(label: UILabel, text: String) {
         let maxFontSize = 50.0
