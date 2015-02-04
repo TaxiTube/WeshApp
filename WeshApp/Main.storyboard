@@ -130,7 +130,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="hamburgerIcon" id="gO3-Ix-Pem"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="nA4-eu-Wvw" customClass="WeshappSegControl" customModule="Designables">
-                            <rect key="frame" x="172" y="7" width="256" height="30"/>
+                            <rect key="frame" x="176" y="6.5" width="248" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Habitat"/>
@@ -153,7 +153,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyj-mL-zA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4393" y="659"/>
+            <point key="canvasLocation" x="4390" y="659"/>
         </scene>
         <!--Channel PageVC-->
         <scene sceneID="6RC-1q-qWc">
@@ -419,7 +419,7 @@
             </objects>
             <point key="canvasLocation" x="5960" y="659.5"/>
         </scene>
-        <!--Creating Habitat-->
+        <!--Create ChannelVC-->
         <scene sceneID="Q5o-eI-WnD">
             <objects>
                 <viewController storyboardIdentifier="createChannelPopover" id="6mx-hf-rr5" customClass="CreateChannelVC" customModule="WeshApp" sceneMemberID="viewController">
@@ -522,7 +522,9 @@
                         </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Creating Habitat" id="h9C-Fk-Lgg"/>
+                    <navigationItem key="navigationItem" id="h9C-Fk-Lgg">
+                        <nil key="title"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
@@ -547,7 +549,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4393" y="1409"/>
+            <point key="canvasLocation" x="4494" y="1405"/>
         </scene>
         <!--Home-->
         <scene sceneID="M5p-XC-axY">

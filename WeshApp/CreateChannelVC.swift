@@ -52,9 +52,24 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         dismissViewControllerAnimated(true, completion: nil)
 
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        /*
+        var titleLabel = UILabel(frame: CGRect(x: 40, y: 40, width: 40, height: 40))
+        let font = UIFont(name: "TitilliumText25L-250wt", size: 22.0)!
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                                                  NSFontAttributeName: font ]
+        titleLabel.attributedText = NSAttributedString(string: "Create Habitat", attributes: titleDict)
+        titleLabel.sizeToFit()
+        titleLabel.textAlignment = NSTextAlignment.Center
+        //titleLabel.adjustsFontSizeToFitWidth    = true
+        self.navigationItem.titleView = titleLabel
+        */
+        
+       // self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-20, forBarMetrics: UIBarMetrics.Default)
+        
+        
         //self.extendedLayoutIncludesOpaqueBars = true
         //self.edgesForExtendedLayout = UIRectEdge.
         NSNotificationCenter.defaultCenter().addObserver(     self,

@@ -26,9 +26,7 @@ public class WeshappNavBar: UINavigationBar{
     }
     func setUp(){
         let screenSize  = UIScreen.mainScreen().bounds.size
-        
         frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
-      //  barStyle     = UIBarStyle.BlackTranslucent
         //Removes nav bar 1 px shadow
         shadowImage = UIImage()
         setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -38,66 +36,32 @@ public class WeshappNavBar: UINavigationBar{
         backgroundColor =  UIColorFromRGB(0x51c1d2)
         barTintColor = UIColorFromRGB(0x51c1d2)
         tintColor = UIColorFromRGB(0xffffff)
+       
+         if let  var tv = topItem?.titleView{
+            println("FRAME HEIGHT: \(self.frame.height)")
+            let titleLableY = tv.frame.origin.y + tv.frame.size.height/2
+            let middleYPos = (self.frame.height) / 2.0
+            let  ajdustHeight =  middleYPos - titleLableY
+            println("midpoint: \(middleYPos), titleY \(titleLableY), adjustheihg: \(ajdustHeight)")
+            self.setTitleVerticalPositionAdjustment(-ajdustHeight, forBarMetrics: UIBarMetrics.Default)
+        }
         
         let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         titleTextAttributes = titleDict
-
-         let titleYPos = self.titleVerticalPositionAdjustmentForBarMetrics(UIBarMetrics.Default)
-       // println(" titleYPos \(titleYPos)")
-       //  let middleYPos = (self.frame.height + 20) / 2.0
-        self.setTitleVerticalPositionAdjustment(-5, forBarMetrics: UIBarMetrics.Default)
-      /*
-        let stView = UIView()
-        stView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        // stView.intrinsicContentSize()
-        stView.backgroundColor = UIColorFromRGB(0x51c1d2)
-        let viewsDictionary = ["statusBar": stView]
-       // stView.
-        self.addSubview(stView)
-        
-        self.layoutMargins = UIEdgeInsetsZero
-        //Margin constraints
-      //  let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-[statusBar]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-       // let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[statusBar]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-        
-        let heightConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:[statusBar(20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-        
-       // self.addConstraint(NSLayoutConstraint(item: stView,
-        //attribute: .Height, relatedBy: .Equal, toItem: self,
-        //attribute: .Height, multiplier: 5, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: stView,
-            attribute: .Width, relatedBy: .Equal, toItem: self,
-            attribute: .Width, multiplier: 1, constant: 0))
-     //   self.addConstraints(hConstraints)
-      // self.addConstraints(vConstraints)
-        self.addConstraints(heightConstraints)
-        
-        */
-
     }
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
-        if let tv = topItem?.title?{
-            
-          //  println("item................ :\(topItem?.)")
-        }
-
         for  barView in self.subviews{
             switch barView{
-                
-            case let item as UIButton:
-                item.frame = CGRect(origin: CGPoint(x: item.frame.origin.x, y: (self.frame.height - 20) / 2.0), size: item.frame.size)
-        
-             default: break
+                case let item as UIButton:
+                    item.frame.origin.y = ((self.frame.height) / 2.0) - item.frame.size.height/2
+                default: break
             }
         }
-        
-
         layoutIfNeeded()
-
     }
     
     
@@ -116,4 +80,38 @@ public class WeshappNavBar: UINavigationBar{
             alpha: CGFloat(1.0)
         )
     }
+    
+
 }
+
+
+//  let titleYPos = self.titleVerticalPositionAdjustmentForBarMetrics(UIBarMetrics.Default)
+// println(" titleYPos \(titleYPos)")
+/*
+ADD STATUS BAR VIEW
+let stView = UIView()
+stView.setTranslatesAutoresizingMaskIntoConstraints(false)
+// stView.intrinsicContentSize()
+stView.backgroundColor = UIColorFromRGB(0x51c1d2)
+let viewsDictionary = ["statusBar": stView]
+// stView.
+self.addSubview(stView)
+
+self.layoutMargins = UIEdgeInsetsZero
+//Margin constraints
+//  let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-[statusBar]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+// let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[statusBar]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+
+let heightConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:[statusBar(20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+
+// self.addConstraint(NSLayoutConstraint(item: stView,
+//attribute: .Height, relatedBy: .Equal, toItem: self,
+//attribute: .Height, multiplier: 5, constant: 0))
+self.addConstraint(NSLayoutConstraint(item: stView,
+attribute: .Width, relatedBy: .Equal, toItem: self,
+attribute: .Width, multiplier: 1, constant: 0))
+//   self.addConstraints(hConstraints)
+// self.addConstraints(vConstraints)
+self.addConstraints(heightConstraints)
+
+*/

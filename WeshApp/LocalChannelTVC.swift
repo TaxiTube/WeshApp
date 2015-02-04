@@ -47,8 +47,26 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
             
             var navbar = navigationController!.navigationBar
-            var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)
+            var titleLabel = UILabel()
+            let font = UIFont(name: "TitilliumText25L-250wt", size: 22.0)!
+            let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                                                      NSFontAttributeName: font ]
+            titleLabel.attributedText = NSAttributedString(string: "Create Habitat",
+                                                       attributes: titleDict)
+            titleLabel.sizeToFit()
+           // titleLabel.textAlignment = NSTextAlignment.Center
 
+            var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)
+            let midY = (nav.navigationBar.frame.height - 20) / 2.0
+            
+            //let titleLableY = label.frame.origin.y
+            let screenSize  = UIScreen.mainScreen().bounds.size.width
+            
+            let midX = (screenSize/2) - (titleLabel.frame.width / 2)
+
+            titleLabel.frame.origin = CGPoint(x: midX, y: midY)
+
+            nav.navigationBar.addSubview(titleLabel)
             nav.pushViewController(controller.presentedViewController, animated: true)
             return nav
  
