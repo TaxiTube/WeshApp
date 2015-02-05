@@ -15,7 +15,6 @@ public class WeshappLabel: UILabel {
         super.init(coder: aDecoder)
     
         adjustsFontSizeToFitWidth = true
-        println(text! )
     }
    
   
@@ -28,15 +27,15 @@ public class WeshappLabel: UILabel {
         super.layoutSubviews()
         font = adjustFont()
         
-            let rect = self.textRectForBounds(self.bounds, limitedToNumberOfLines: 1)
-        println("me \(rect.size) font \(self.font.pointSize)")
+        let rect = self.textRectForBounds(self.bounds, limitedToNumberOfLines: 1)
+       // println("me \(rect.size) font \(self.font.pointSize)")
         var attributedText = NSAttributedString(string: text!, attributes: [NSFontAttributeName: font])
         
         var rectSize = attributedText.boundingRectWithSize(
             CGSizeMake(self.frame.size.width, CGFloat.max),
             options: NSStringDrawingOptions.UsesLineFragmentOrigin,
             context:nil)
-        println("diff: \(rect.size.height - rectSize.size.height)")
+      //  println("diff: \(rect.size.height - rectSize.size.height)")
 
 
         
@@ -63,16 +62,17 @@ public class WeshappLabel: UILabel {
             var font = UIFont(name: "TitilliumText25L-250wt", size: CGFloat(i))!
           //  println(i)
 
-            var attributedText = NSAttributedString(string: text!, attributes: [NSFontAttributeName: font])
+            var attributedText = NSAttributedString(string: text!,
+                                                attributes: [NSFontAttributeName: font])
         
             var rectSize = attributedText.boundingRectWithSize(
                 CGSizeMake(self.frame.size.width, CGFloat.max),
                 options: NSStringDrawingOptions.UsesLineFragmentOrigin,
                 context:nil)
 
-            //println("fontrect: \(rectSize.size.height) - frame: \(self.bounds.size.height) " )
+          //    println("fontrect: \(rectSize.size.height) - frame: \(self.bounds.size.height) " )
             
-            if (rectSize.size.height <= self.frame.size.height + 10) {
+            if (rectSize.size.height <= self.bounds.height + 10) {
                 return UIFont(name: self.font.fontName, size: CGFloat(i))!
             }
         }

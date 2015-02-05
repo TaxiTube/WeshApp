@@ -133,6 +133,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             println("Channel Empty")
         }
      }
+    
     func broadcastNewPost(post: Post?, receiverProfiles: [Profile]? = nil){
         if let receivers = receiverProfiles{
             // one receiver: privet message.
@@ -150,7 +151,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
         }
     }
     func deleteProfile(peerID: MCPeerID){
-        badgeMngr.deletePeer(peerID)
+        //badgeMngr.deletePeer(peerID)
     }
 
     

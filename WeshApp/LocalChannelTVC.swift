@@ -12,71 +12,49 @@ import Designables
 
 class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate {
 
-    var fetchedResultsController : NSFetchedResultsController!
+    var badgeFetchedRC: NSFetchedResultsController!
+    var channelFetechedRC: NSFetchedResultsController!
+    var currentFetchedRC : NSFetchedResultsController!
     var coreDataStack: CoreDataStack!
     var sessionMngr: SessionMngr?
     let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    let screenSize  = UIScreen.mainScreen().bounds.size
+
 
     @IBOutlet weak var segControl: UISegmentedControl!
     
+    //MARK: Segmentation Control
     @IBAction func segmentChanged(sender: UISegmentedControl) {
-       
-    }
-    @IBAction func handlePopover(sender: UIBarButtonItem) {
-        let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
-        popoverVC.modalPresentationStyle = .Popover
-        if let popoverController = popoverVC.popoverPresentationController {
-            popoverController.barButtonItem = sender
-            //popoverController.sourceRect = sender.bounds
-            popoverController.permittedArrowDirections = .Any
-          
-            popoverController.delegate = self
+        switch segControl.selectedSegmentIndex
+        {
+        case 0:
+           currentFetchedRC = channelFetechedRC
+           var error: NSError? = nil
+           if (!currentFetchedRC.performFetch(&error))  {
+            println("Error: \(error?.localizedDescription)") }
+           
+           tableView.reloadData()
+        case 1:
+            currentFetchedRC = badgeFetchedRC
+            var error: NSError? = nil
+            if (!currentFetchedRC.performFetch(&error))  {
+                println("Error: \(error?.localizedDescription)") }
+        
+        tableView.reloadData()
+        default:
+            break; 
         }
-        //self.navigationController!.pushViewController(popoverVC, animated: true)
-        presentViewController(popoverVC, animated: true, completion: nil)
-
-    }
-
-    // MARK: - UIPopoverPresentationControllerDelegate
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
-        return .OverFullScreen
+    
+    
     }
     
-
-    func presentationController(              controller: UIPresentationController!,
-        viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
-            
-            var navbar = navigationController!.navigationBar
-            var titleLabel = UILabel()
-            let font = UIFont(name: "TitilliumText25L-250wt", size: 22.0)!
-            let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                                                      NSFontAttributeName: font ]
-            titleLabel.attributedText = NSAttributedString(string: "Create Habitat",
-                                                       attributes: titleDict)
-            titleLabel.sizeToFit()
-           // titleLabel.textAlignment = NSTextAlignment.Center
-
-            var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)
-            let midY = (nav.navigationBar.frame.height - 20) / 2.0
-            
-            //let titleLableY = label.frame.origin.y
-            let screenSize  = UIScreen.mainScreen().bounds.size.width
-            
-            let midX = (screenSize/2) - (titleLabel.frame.width / 2)
-
-            titleLabel.frame.origin = CGPoint(x: midX, y: midY)
-
-            nav.navigationBar.addSubview(titleLabel)
-            nav.pushViewController(controller.presentedViewController, animated: true)
-            return nav
  
-    }
 
-    
+    //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.hidesBarsOnTap
-          UIApplication.sharedApplication().statusBarHidden = false
+        UIApplication.sharedApplication().statusBarHidden = false
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -94,23 +72,37 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         
         sessionMngr = appDelegate.sessionMngr
         coreDataStack = appDelegate.coreDataStack!
-        let fetchRequest = NSFetchRequest(entityName: "Channel")
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+      
+        let channelFetchRequest = NSFetchRequest(entityName: "Channel")
+        let channelSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        channelFetchRequest.sortDescriptors = [channelSortDescriptor]
+        channelFetechedRC = NSFetchedResultsController(fetchRequest: channelFetchRequest,
                                                       managedObjectContext: appDelegate.coreDataStack!.mainContext!,
                                                         sectionNameKeyPath: nil,
                                                                  cacheName: nil)
-        fetchedResultsController.delegate = self
+       
+        //TODO: Filter my badge out
+        let badgeFetchRequest = NSFetchRequest(entityName: "Badge")
+        let badgeSortDescriptor = NSSortDescriptor(key: "handle", ascending: true)
+
+        badgeFetchRequest.sortDescriptors = [badgeSortDescriptor]
+        badgeFetchedRC = NSFetchedResultsController(fetchRequest: badgeFetchRequest,
+                                            managedObjectContext: appDelegate.coreDataStack!.mainContext!,
+                                              sectionNameKeyPath: nil,
+                                                       cacheName: nil)
+        
+        
+        currentFetchedRC  = channelFetechedRC
+        currentFetchedRC.delegate = self
         
         var error: NSError? = nil
-        if (!fetchedResultsController.performFetch(&error)) {
+        if (!currentFetchedRC.performFetch(&error))  {
             println("Error: \(error?.localizedDescription)") }
-        
         
       
         
     }
+  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -118,19 +110,33 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
 
     // MARK: - Number of Sections
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fetchedResultsController.sections!.count
+        return currentFetchedRC.sections!.count
     }
     // MARK: - Number of Rows
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        let sectionInfo = currentFetchedRC.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     // MARK: - Cell for Row at IndexPath
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-        let channel = fetchedResultsController.objectAtIndexPath(indexPath) as Channel
-        cell.textLabel!.text = channel.title
-        return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? ChannelTableViewCell
+        switch segControl.selectedSegmentIndex
+        {
+            case 0:
+                let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
+                // cell.textLabel!.text = channel.title
+            case 1:
+                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
+                //cell.textLabel!.text = badge.handle
+            default:
+                break;
+        }
+        
+        return cell!
+    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return screenSize.height * 0.15
     }
     
     //MARK: - Segue
@@ -139,7 +145,8 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
                 let channelPageVC = segue.destinationViewController as ChannelPageVC
                 
                 let indexPath = self.tableView.indexPathForSelectedRow()
-                let channel = fetchedResultsController.objectAtIndexPath(indexPath!) as Channel
+                //If as Channel else as Profile
+                let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
                 channelPageVC.channel = channel
                 channelPageVC.coreDataStack = coreDataStack
                 channelPageVC.sessionMngr = sessionMngr
@@ -175,6 +182,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         tableView.endUpdates()
     }
 
+   
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -219,5 +227,53 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    //MARK: Popover controller
+    @IBAction func handlePopover(sender: UIBarButtonItem) {
+        let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
+        popoverVC.modalPresentationStyle = .Popover
+        if let popoverController = popoverVC.popoverPresentationController {
+            popoverController.barButtonItem = sender
+            //popoverController.sourceRect = sender.bounds
+            popoverController.permittedArrowDirections = .Any
+            
+            popoverController.delegate = self
+        }
+        //self.navigationController!.pushViewController(popoverVC, animated: true)
+        presentViewController(popoverVC, animated: true, completion: nil)
+        
+    }
+    
+    // MARK: - UIPopoverPresentationControllerDelegate
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+        return .OverFullScreen
+    }
+    
+    
+    func presentationController(              controller: UIPresentationController!,
+        viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+            
+            var navbar = navigationController!.navigationBar
+            var titleLabel = UILabel()
+            let font = UIFont(name: "TitilliumText25L-250wt", size: 22.0)!
+            let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName: font ]
+            titleLabel.attributedText = NSAttributedString(string: "Create Habitat",
+                attributes: titleDict)
+            titleLabel.sizeToFit()
+            
+            var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)
+            let midY = (nav.navigationBar.frame.height - 20) / 2.0
+            
+            let screenSize  = UIScreen.mainScreen().bounds.size.width
+            
+            let midX = (screenSize/2) - (titleLabel.frame.width / 2)
+            
+            titleLabel.frame.origin = CGPoint(x: midX, y: midY)
+            
+            nav.navigationBar.addSubview(titleLabel)
+            nav.pushViewController(controller.presentedViewController, animated: true)
+            return nav
+            
+    }
 
 }

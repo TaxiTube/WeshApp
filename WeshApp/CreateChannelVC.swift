@@ -35,55 +35,41 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     var text: String = ""
     var placeHolderTextTV: String = ""
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self);
-    }
      
     //MARK: Actions
-    
     @IBAction func goLive(sender: AnyObject) {
         UIApplication.sharedApplication().statusBarHidden = false
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
         if titleTF.text != "" {
             let channel = channelMngr.createChannel(titleTF.text,
-                desc: descTV.text,
-                date: NSDate(),
-                author: sessionMngr.myBadge!)
+                                                    desc: descTV.text,
+                                                    date: NSDate(),
+                                                  author: sessionMngr.myBadge!)
             sessionMngr.broadcastNewChannel(channel)
         }
         dismissViewControllerAnimated(true, completion: nil)
 
     }
     
+    @IBAction func onTap(sender: AnyObject) {
+        titleTF.resignFirstResponder()
+        self.view.endEditing(true)
+        descTV.resignFirstResponder()
+    }
+    
+    //MARK: Initialisation
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        var titleLabel = UILabel(frame: CGRect(x: 40, y: 40, width: 40, height: 40))
-        let font = UIFont(name: "TitilliumText25L-250wt", size: 22.0)!
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                                                  NSFontAttributeName: font ]
-        titleLabel.attributedText = NSAttributedString(string: "Create Habitat", attributes: titleDict)
-        titleLabel.sizeToFit()
-        titleLabel.textAlignment = NSTextAlignment.Center
-        //titleLabel.adjustsFontSizeToFitWidth    = true
-        self.navigationItem.titleView = titleLabel
-        */
-        
-       // self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(-20, forBarMetrics: UIBarMetrics.Default)
-        
-        
-        //self.extendedLayoutIncludesOpaqueBars = true
-        //self.edgesForExtendedLayout = UIRectEdge.
         NSNotificationCenter.defaultCenter().addObserver(     self,
-            selector: Selector("animateTextFieldWithKeyboard:"),
-            name: UIKeyboardWillShowNotification,
-            object: nil);
+                                                         selector: Selector("animateTextFieldWithKeyboard:"),
+                                                             name: UIKeyboardWillShowNotification,
+                                                           object: nil);
         
         NSNotificationCenter.defaultCenter().addObserver(     self,
-            selector: Selector("animateTextFieldWithKeyboard:"),
-            name: UIKeyboardWillHideNotification,
-            object: nil)
+                                                         selector: Selector("animateTextFieldWithKeyboard:"),
+                                                             name: UIKeyboardWillHideNotification,
+                                                           object: nil)
         
         imageView.image = getTotemImage()
         //TODO: get totem image from the array
@@ -93,42 +79,47 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.delegate = self
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"), style: .Done, target: self, action: "dismissPressed:")
-         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburgerIcon.png"), style: .Done, target: self, action: "dismissPressed:")
-      
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"),
+                                                                 style: .Done,
+                                                                target: self,
+                                                                action: "dismissPressed:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburgerIcon.png"),
+                                                                style: .Done,
+                                                               target: self,
+                                                               action: "dismissPressed:")
     }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-      
-        
-        navigationController?.hidesBarsWhenKeyboardAppears = true
+       //navigationController?.hidesBarsWhenKeyboardAppears = true
+      //  navigationController?.hidesBarsOnTap = true
+    
+    }
+    override func viewDidDisappear(animated: Bool) {
+       // navigationController?.hidesBarsWhenKeyboardAppears = false
+         //        navigationController?.hidesBarsOnTap = false
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+
+    }
     
     func dismissPressed(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func onTap(sender: AnyObject) {
-        titleTF.resignFirstResponder()
-        self.view.endEditing(true)
-        descTV.resignFirstResponder()
-    }
-
+ 
     
     //MARK: Image Processing
     func getTotemImage()-> UIImage{
         
-        
-        //Create Context
-        //let context = CIContext(options:nil)
         //Convert the UIImage to a CGImage object, which is needed for the Core Graphics calls. Also, get the image’s width and height.
         let faceImage = CIImage(image: UIImage(named: "Lion"))
         let wallpaperImage = CIImage(image: UIImage(named: "Orange"))
         
-       
         let totemImage = WeshappFilters.compositeSourceOver(wallpaperImage)(faceImage)
         
         //return UIImage(CIImage: filter.outputImage)!
@@ -145,10 +136,8 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.insertSubview(blurView, atIndex: 0)
         
-     
         self.view.layoutMargins = UIEdgeInsetsZero
         
-       
         button.layoutMargins = UIEdgeInsetsZero
         blurView.layoutMargins = UIEdgeInsetsZero
        
@@ -161,25 +150,11 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         view.addConstraints(vConstraints)
         view.addConstraints(hConstraints)
         
-        
-        /*
-        //Size constraints
-        constraints.append(NSLayoutConstraint(item: blurView,
-            attribute: .Height, relatedBy: .Equal, toItem: view,
-            attribute: .Height, multiplier: 1, constant: 0))
-        constraints.append(NSLayoutConstraint(item: blurView,
-            attribute: .Width, relatedBy: .Equal, toItem: view,
-            attribute: .Width, multiplier: 1, constant: 0))
-        //Center alignment
-        constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0))
-        constraints.append(NSLayoutConstraint(item: blurView, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1, constant: 0))
-        */
-      
         view.layoutIfNeeded()
         
     }
     
-    //MARK: textField delegate methods
+    //MARK: TextField delegate methods
     func textFieldShouldReturn(textField: UITextField!) -> Bool
     {
         titleTF.resignFirstResponder()
@@ -200,7 +175,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         let stringSize = newString.sizeWithAttributes([NSFontAttributeName:textField.font])
         return stringSize.width < textField.editingRectForBounds(textField.bounds).size.width
     }
-    //TODO: Placeholder colour changes after text entry
+
     func textViewDidEndEditing(textView: UITextView){
         text = descTV.text
         if text == "" {
@@ -212,13 +187,12 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         titleTF.resignFirstResponder()
-        return true;
+        return true
     }
    
     //MARK: TextView
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-       
-        return descTV.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) + text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) < 300
+       return descTV.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) + text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) < 300
     }
 
     
@@ -239,14 +213,15 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
      
         if notification.name == UIKeyboardWillShowNotification && offset > 0 {
             bottomConstraint.constant =   bottomConstraint.constant + offset  // move up
-           // navigationController?.navigationBarHidden = true
+           navigationController?.setNavigationBarHidden(true, animated: true)
 
             UIApplication.sharedApplication().statusBarHidden = true
 
         }
         else {
             bottomConstraint.constant = 0 // move down
-            navigationController?.navigationBarHidden = false
+            navigationController?.setNavigationBarHidden(false, animated: true)
+
             UIApplication.sharedApplication().statusBarHidden = false
 
 
@@ -262,9 +237,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             )
     }
  
+}
     
     /*
-    //MARK: View scrolling
     func keyboardWillShow(notification: NSNotification) {
     let info: NSDictionary = notification.userInfo!
     let s: NSValue = info.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue;
@@ -273,19 +248,19 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     var containerViewHeight = containerView.frame.size.height
     var visibleRect = view.frame
     visibleRect.size.height -= keyboardRect.height
-    
-    
+
+
     var scrollPoint = CGPointMake(0.0, containerViewOrigin.y - visibleRect.size.height + containerViewHeight);
     scrollView.setContentOffset(scrollPoint, animated: true)
-    
+
     }
-    
-    
-    
+
+
+
     func keyboardWillHide(sender: NSNotification) {
-    
+
     scrollView.setContentOffset(CGPointZero, animated:true)
-    
+
     }
     */
     /*
@@ -297,7 +272,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         paragraph.alignment = NSTextAlignment.Center
         paragraph.maximumLineHeight = CGFloat(maxFontSize)
         paragraph.lineSpacing = 0;
-    
+
         var attString = NSMutableAttributedString(string: text)
         attString.addAttribute( NSParagraphStyleAttributeName,
                               value: paragraph,
@@ -305,29 +280,28 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         attString.addAttribute(NSForegroundColorAttributeName,
                     value: UIColor.blackColor(),
                     range: tmpRange)
-    
+
         var constraintSize = CGSizeMake(label.frame.size.width, CGFloat.max);
-    
+
         for var i = maxFontSize; i > 8; i - 1 {
-    
+
         attString.addAttribute(NSFontAttributeName, value: UIFont(name: "TitilliumText25L-250wt", size: CGFloat(i))!, range: tmpRange)
-    
-            
+
+
         label.attributedText = attString
-            
+
         var labelSize = label.attributedText.boundingRectWithSize(constraintSize,
             options: NSStringDrawingOptions.UsesLineFragmentOrigin,
             context: nil)
-           
+
             if(labelSize.size.height < label.frame.size.height){
-            
+
                 break
             }
         }
     }
     */
-    
-}
+
 
 
 

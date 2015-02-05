@@ -1,14 +1,14 @@
 //
-//  ChannelTVCell.swift
+//  ChannelTableViewCell.swift
 //  WeshApp
 //
-//  Created by rabzu on 30/01/2015.
+//  Created by rabzu on 05/02/2015.
 //  Copyright (c) 2015 WeshApp. All rights reserved.
 //
 
 import UIKit
 
-class ChannelTVCell: UITableViewCell {
+class ChannelTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -115,7 +115,6 @@
 		D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */; };
 		D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D85A86671A1972A700398153 /* ChannelMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86661A1972A700398153 /* ChannelMngrTest.swift */; };
-		D865D2461A7BD041006EDA87 /* ChannelTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D865D2451A7BD041006EDA87 /* ChannelTVCell.swift */; };
 		D870518A1A7C3E000081484A /* WeshappLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87051891A7C3E000081484A /* WeshappLabel.swift */; };
 		D871CB581A1FD97E0024C7B7 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
 		D871CB591A1FD9890024C7B7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
@@ -129,6 +128,10 @@
 		D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
 		D8C0FD611A127B5D00F40134 /* ProfileMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD601A127B5D00F40134 /* ProfileMngrTest.swift */; };
 		D8C0FD6D1A12855200F40134 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD541A11423B00F40134 /* TestCoreDataStack.swift */; };
+		D8C224461A83E68F00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
+		D8C224471A83E6DE00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
+		D8C224481A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
+		D8C224491A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
 		D8C642261A46074E004A604A /* ChannelPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBF219FC5F9F0025140E /* ChannelPageVC.swift */; };
 		D8C6422E1A47594A004A604A /* ChannelWallTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */; };
 		D8C6422F1A47594A004A604A /* ChannelWallTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */; };
@@ -304,7 +307,6 @@
 		D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptMngrTest.swift; sourceTree = "<group>"; };
 		D85A86601A196C3100398153 /* ChannelMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngr.swift; sourceTree = "<group>"; };
 		D85A86661A1972A700398153 /* ChannelMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngrTest.swift; sourceTree = "<group>"; };
-		D865D2451A7BD041006EDA87 /* ChannelTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTVCell.swift; sourceTree = "<group>"; };
 		D87051891A7C3E000081484A /* WeshappLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappLabel.swift; sourceTree = "<group>"; };
 		D87C9BA01A2B88D1002834C3 /* messi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = messi.jpg; sourceTree = "<group>"; };
 		D87D58FD1A7A536C002ADA13 /* WeshappSegControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappSegControl.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		D8C0FD541A11423B00F40134 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMngr.swift; sourceTree = "<group>"; };
 		D8C0FD601A127B5D00F40134 /* ProfileMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMngrTest.swift; sourceTree = "<group>"; };
+		D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelWallTVC.swift; sourceTree = "<group>"; };
 		D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostTableViewCell.swift; sourceTree = "<group>"; };
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
@@ -613,7 +616,7 @@
 				B3D6CBFE19FC6B4E0025140E /* PageChatTVC.swift */,
 				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
-				D865D2451A7BD041006EDA87 /* ChannelTVCell.swift */,
+				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				D870518A1A7C3E000081484A /* WeshappLabel.swift in Sources */,
 				B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */,
 				D87D58FE1A7A536C002ADA13 /* WeshappSegControl.swift in Sources */,
+				D8C224491A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +924,7 @@
 				B3D6CBF319FC5F9F0025140E /* ChannelPageVC.swift in Sources */,
 				B3CB2E281A690CCD00FBFED1 /* Tags.swift in Sources */,
 				B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */,
+				D8C224461A83E68F00CD083B /* ChannelTableViewCell.swift in Sources */,
 				B3CB2E2C1A690CCD00FBFED1 /* Profile.swift in Sources */,
 				B3CB2E241A690CCC00FBFED1 /* Channel.swift in Sources */,
 				B3E5E66419FD6226000B8FB1 /* ProfileVC.swift in Sources */,
@@ -936,7 +941,6 @@
 				B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */,
 				B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */,
 				B3D6CBFF19FC6B4E0025140E /* PageChatTVC.swift in Sources */,
-				D865D2461A7BD041006EDA87 /* ChannelTVCell.swift in Sources */,
 				D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */,
 				D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */,
 				B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */,
@@ -949,6 +953,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C0FD6D1A12855200F40134 /* TestCoreDataStack.swift in Sources */,
+				D8C224471A83E6DE00CD083B /* ChannelTableViewCell.swift in Sources */,
 				D81FE27E1A237266006F8E62 /* SessionMngr.swift in Sources */,
 				D871CB591A1FD9890024C7B7 /* CoreDataStack.swift in Sources */,
 				D8DA2A381A693F600098C5E6 /* Profile.swift in Sources */,
@@ -981,6 +986,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B35D0AF81A7252E200B95A9B /* WeshappFilters.swift in Sources */,
+				D8C224481A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */,
 				D8DC68861A338FAA00AAF16D /* TextFieldSendView.swift in Sources */,
 				D8DC68851A338FAA00AAF16D /* OrangeButton.swift in Sources */,
 				D8DC68711A337D7B00AAF16D /* ObjCWrapperFunctions.swift in Sources */,
