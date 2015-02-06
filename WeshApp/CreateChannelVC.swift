@@ -34,7 +34,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     var text: String = ""
     var placeHolderTextTV: String = ""
-    
+    var placeHolderTF: String = ""
      
     //MARK: Actions
     @IBAction func goLive(sender: AnyObject) {
@@ -71,7 +71,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
                                                              name: UIKeyboardWillHideNotification,
                                                            object: nil)
         
-        imageView.image = getTotemImage()
+        //imageView.image = getTotemImage()
         //TODO: get totem image from the array
         
         handleLable.text = "#" + sessionMngr.myBadge!.handle
@@ -79,6 +79,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         descTV.delegate = self
         titleTF.delegate = self
         placeHolderTextTV = descTV.text
+        placeHolderTF = titleTF.placeholder!
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"),
                                                                  style: .Done,
@@ -162,20 +163,29 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         return true
     }
    
-    func textViewDidBeginEditing(textView: UITextView) -> Bool{
-        
-        descTV.text = text
-        descTV.textColor = UIColor.blackColor()
-
-        return true
-    }
+  
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let oldString = textField.text as NSString
         let newString = oldString.stringByReplacingCharactersInRange(range, withString: string) as NSString
         let stringSize = newString.sizeWithAttributes([NSFontAttributeName:textField.font])
         return stringSize.width < textField.editingRectForBounds(textField.bounds).size.width
     }
-
+    func textFieldDidBeginEditing(textField: UITextField) {
+        titleTF.placeholder = nil
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        titleTF.placeholder = placeHolderTF
+    }
+    
+    //MARK: TextView
+    func textViewDidBeginEditing(textView: UITextView) -> Bool{
+        
+        descTV.text = text
+        descTV.textColor = UIColor.blackColor()
+        
+        return true
+    }
     func textViewDidEndEditing(textView: UITextView){
         text = descTV.text
         if text == "" {
@@ -190,7 +200,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         return true
     }
    
-    //MARK: TextView
+  
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
        return descTV.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) + text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) < 300
     }

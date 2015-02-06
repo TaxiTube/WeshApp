@@ -254,7 +254,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             
             var navbar = navigationController!.navigationBar
             var titleLabel = UILabel()
-            let font = UIFont(name: "TitilliumText25L-250wt", size: 22.0)!
+            let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
             let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                 NSFontAttributeName: font ]
             titleLabel.attributedText = NSAttributedString(string: "Create Habitat",

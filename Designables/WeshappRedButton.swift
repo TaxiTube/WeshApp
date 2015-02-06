@@ -17,7 +17,7 @@ public class WeshappRedButton: UIView {
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override public func drawRect(rect: CGRect) {
-        WeshappSK.drawCanvas1(frame: bounds, btnClicked: isPressed)
+        WeshappRedButtonSK.drawDrawRedButton(redButtonFrame: bounds, btnClicked: isPressed)
     }
     
     public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
