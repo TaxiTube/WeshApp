@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import Designables
 
 class ChannelTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var totem: UIImageView!
+    @IBOutlet weak var title: WeshappLabel!
+    @IBOutlet weak var subTitle: WeshappLabel!
+    @IBOutlet weak var counter: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()

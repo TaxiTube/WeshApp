@@ -12,7 +12,7 @@ class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let font = UIFont(name: "Roboto-Regular", size: 15.0)!
+        let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: font ]
         

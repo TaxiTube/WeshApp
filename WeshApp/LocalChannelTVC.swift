@@ -60,7 +60,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let font = UIFont(name: "Roboto-Regular", size: 5.0)!
+        let font = UIFont(name: "TitilliumText25L-250wt", size: 5.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: font ]
         
@@ -102,7 +102,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
       
         
     }
-  
+     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -120,11 +120,20 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     // MARK: - Cell for Row at IndexPath
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? ChannelTableViewCell
+        cell!.layoutSubviews()
+        cell!.accessoryView = WeshappCellArrow(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.02 , height: screenSize.height * 0.02 ))
+        cell!.accessoryView!.backgroundColor = UIColor.whiteColor()
+        
         switch segControl.selectedSegmentIndex
         {
             case 0:
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
-                // cell.textLabel!.text = channel.title
+                cell!.title.text = channel.title
+                //TODO if name is known show real name instead
+                cell!.subTitle.text = channel.author.handle
+            
+                //TODO: cell!.image =
+                
             case 1:
                 let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
                 //cell.textLabel!.text = badge.handle

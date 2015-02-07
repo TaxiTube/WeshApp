@@ -108,58 +108,59 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="br7-IC-shW" id="Lpg-BX-d0r">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView">
-                                            <rect key="frame" x="0.0" y="0.0" width="604" height="373"/>
+                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView">
+                                            <rect key="frame" x="0.0" y="0.0" width="571" height="373"/>
                                             <subviews>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="leading-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-vK-TFa" userLabel="leading-spacer-image">
-                                                    <rect key="frame" x="0.0" y="14" width="30" height="345"/>
+                                                <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="leading-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-vK-TFa" userLabel="leading-spacer-image">
+                                                    <rect key="frame" x="0.0" y="14" width="28.5" height="345"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-lS-0df">
-                                                    <rect key="frame" x="30" y="141" width="90.5" height="90.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="ay7-lS-0df" secondAttribute="height" multiplier="1:1" id="Xsy-m1-rc1"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-Tf-nOc" userLabel="image-spacer-label">
-                                                    <rect key="frame" x="120" y="-150" width="24" height="672"/>
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-Tf-nOc" userLabel="image-spacer-label">
+                                                    <rect key="frame" x="114" y="-150" width="23" height="672"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-A1-4YR" userLabel="navigation-spacer-text">
-                                                    <rect key="frame" x="0.0" y="0.0" width="604" height="123"/>
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-A1-4YR" userLabel="navigation-spacer-text">
+                                                    <rect key="frame" x="0.0" y="0.0" width="571" height="123"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="Title" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmf-DG-atO" userLabel="Title" customClass="WeshappLabel" customModule="Designables">
-                                                    <rect key="frame" x="144" y="123" width="368" height="63.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmf-DG-atO" userLabel="Title" customClass="WeshappLabel" customModule="Designables">
+                                                    <rect key="frame" x="137" y="123" width="341.5" height="63.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="subTitle" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-NO-5Mc" userLabel="subTitle" customClass="WeshappLabel" customModule="Designables">
-                                                    <rect key="frame" x="144" y="205" width="460" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="subTitle" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-NO-5Mc" userLabel="subTitle" customClass="WeshappLabel" customModule="Designables">
+                                                    <rect key="frame" x="137" y="216" width="434" height="20"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.30980392156862746" green="0.76470588235294112" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="A5W-cf-mId">
-                                                    <rect key="frame" x="144" y="186" width="43" height="18.5"/>
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" restorationIdentifier="title-spacer-subtitle" translatesAutoresizingMaskIntoConstraints="NO" id="A5W-cf-mId" userLabel="title-spacer-subtitle">
+                                                    <rect key="frame" x="137" y="186" width="43" height="30"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" translatesAutoresizingMaskIntoConstraints="NO" id="1lX-Vw-l6n">
-                                                    <rect key="frame" x="554" y="172" width="17" height="29"/>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge" translatesAutoresizingMaskIntoConstraints="NO" id="1lX-Vw-l6n" userLabel="14-spacer-rightEdge">
+                                                    <rect key="frame" x="530" y="172" width="41" height="29"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB9-gd-3c8">
-                                                    <rect key="frame" x="535.5" y="175" width="18.5" height="20.5"/>
+                                                    <rect key="frame" x="511" y="175" width="18.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.65098039215686276" green="0.65490196078431373" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-lS-0df">
+                                                    <rect key="frame" x="28" y="143" width="85.5" height="85.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ay7-lS-0df" secondAttribute="height" multiplier="1:1" id="Xsy-m1-rc1"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Qn2-NO-5Mc" secondAttribute="trailing" id="321-8G-9y2"/>
                                                 <constraint firstAttribute="centerY" secondItem="ay7-lS-0df" secondAttribute="centerY" id="50e-z6-eg5"/>
                                                 <constraint firstItem="ay7-lS-0df" firstAttribute="leading" secondItem="xNP-vK-TFa" secondAttribute="trailing" id="5eg-nA-qEC"/>
+                                                <constraint firstItem="1lX-Vw-l6n" firstAttribute="width" secondItem="4hk-x2-Ts8" secondAttribute="height" multiplier="0.11" id="6Mu-to-2rw"/>
                                                 <constraint firstItem="Qn2-NO-5Mc" firstAttribute="top" secondItem="A5W-cf-mId" secondAttribute="bottom" id="9HC-GP-Vdu"/>
                                                 <constraint firstItem="A5W-cf-mId" firstAttribute="top" secondItem="bmf-DG-atO" secondAttribute="bottom" id="A3q-OC-uiW"/>
                                                 <constraint firstItem="1lX-Vw-l6n" firstAttribute="leading" secondItem="iB9-gd-3c8" secondAttribute="trailing" id="CaI-oj-axM"/>
@@ -180,12 +181,11 @@
                                                 <constraint firstItem="Qn2-NO-5Mc" firstAttribute="leading" secondItem="p4R-Tf-nOc" secondAttribute="trailing" id="fhW-Kv-jgZ"/>
                                                 <constraint firstItem="x9p-A1-4YR" firstAttribute="top" secondItem="4hk-x2-Ts8" secondAttribute="top" id="hWG-ZX-jyN"/>
                                                 <constraint firstItem="bmf-DG-atO" firstAttribute="leading" secondItem="p4R-Tf-nOc" secondAttribute="trailing" id="lOx-RB-5cy"/>
-                                                <constraint firstItem="A5W-cf-mId" firstAttribute="height" secondItem="4hk-x2-Ts8" secondAttribute="height" multiplier="0.05" id="m96-DN-BRe"/>
+                                                <constraint firstItem="A5W-cf-mId" firstAttribute="height" secondItem="4hk-x2-Ts8" secondAttribute="height" multiplier="0.08" id="m96-DN-BRe"/>
                                                 <constraint firstItem="x9p-A1-4YR" firstAttribute="height" secondItem="4hk-x2-Ts8" secondAttribute="height" multiplier="0.33" id="nWD-i6-q68"/>
                                                 <constraint firstAttribute="width" secondItem="Qn2-NO-5Mc" secondAttribute="height" multiplier="604:21" id="pIt-uE-Zqw"/>
                                                 <constraint firstItem="bmf-DG-atO" firstAttribute="top" secondItem="x9p-A1-4YR" secondAttribute="bottom" id="ue2-WC-ff7"/>
                                                 <constraint firstAttribute="centerY" secondItem="1lX-Vw-l6n" secondAttribute="centerY" id="vJ8-wF-3BJ"/>
-                                                <constraint firstItem="1lX-Vw-l6n" firstAttribute="width" secondItem="4hk-x2-Ts8" secondAttribute="width" multiplier="0.03" id="w87-gm-efZ"/>
                                                 <constraint firstItem="xNP-vK-TFa" firstAttribute="width" secondItem="4hk-x2-Ts8" secondAttribute="width" multiplier="0.05" id="we1-aV-te5"/>
                                             </constraints>
                                         </view>
@@ -197,6 +197,12 @@
                                         <constraint firstItem="4hk-x2-Ts8" firstAttribute="leading" secondItem="Lpg-BX-d0r" secondAttribute="leading" id="zg2-Av-jHD"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="counter" destination="LaK-yb-f7A" id="4uh-SO-QYh"/>
+                                    <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
+                                    <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
+                                    <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
