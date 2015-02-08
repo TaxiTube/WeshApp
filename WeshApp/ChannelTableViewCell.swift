@@ -9,15 +9,22 @@
 import UIKit
 import Designables
 
+protocol ChannelTableViewCellProtocol{
+    //when paus action is pressed perform channel pause
+    func pauseAction()
+}
 class ChannelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var totem: UIImageView!
     @IBOutlet weak var title: WeshappLabel!
     @IBOutlet weak var subTitle: WeshappLabel!
     @IBOutlet weak var counter: NSLayoutConstraint!
-
+    
+    var delegate: ChannelTableViewCell?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        //self.setEditing(true, animated: true)// = UITableViewCellEditingStyle.Delete
         // Initialization code
     }
 

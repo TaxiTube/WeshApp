@@ -120,10 +120,26 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     // MARK: - Cell for Row at IndexPath
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? ChannelTableViewCell
+        cell
         cell!.layoutSubviews()
-        cell!.accessoryView = WeshappCellArrow(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.02 , height: screenSize.height * 0.02 ))
-        cell!.accessoryView!.backgroundColor = UIColor.whiteColor()
+       // cell!.setEditing(true, animated: true)
+       // cell!.editingStyle = UITableViewCellEditingStyle.Delete
         
+       //for ipad
+        if screenSize.height > 736.00{
+            cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0215 ))
+            
+        }else{
+            
+            cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0213 ))
+            
+        }
+        
+        
+        //println(cell!.accessoryView!.frame.size)
+        
+        cell!.accessoryView!.backgroundColor = UIColor.whiteColor()
+        cell!.accessoryView!.tintColor = UIColor.whiteColor()
         switch segControl.selectedSegmentIndex
         {
             case 0:
@@ -132,11 +148,17 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
                 //TODO if name is known show real name instead
                 cell!.subTitle.text = channel.author.handle
             
-                //TODO: cell!.image =
+                //TODO: cell!.image     =
+                //Todo Count number of posts the channe has cell!.counter =
                 
             case 1:
                 let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
-                //cell.textLabel!.text = badge.handle
+                cell!.title.text  = badge.handle
+                //TODO if name is known show real name instead
+                //TODO: cell!.image =
+                //Todo Count number of channels the authork has cell!.counter =
+
+
             default:
                 break;
         }
@@ -192,15 +214,15 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     }
 
    
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
-        return true
+        return false
     }
-    */
 
-    /*
+
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -210,7 +232,9 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        <#code#>
+    }
 
     /*
     // Override to support rearranging the table view.

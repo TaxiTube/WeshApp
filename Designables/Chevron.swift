@@ -1,16 +1,17 @@
 //
-//  WeshappCellArrow.swift
+//  Chevron.swift
 //  WeshApp
 //
-//  Created by rabzu on 07/02/2015.
+//  Created by rabzu on 08/02/2015.
 //  Copyright (c) 2015 WeshApp. All rights reserved.
 //
 
 import UIKit
 
-public class WeshappCellArrow: UIView {
+public class Chevron: UIView {
 
-  public  override init(frame: CGRect) {
+
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
@@ -18,12 +19,12 @@ public class WeshappCellArrow: UIView {
         super.init(coder: aDecoder)
     }
     
+    
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override public func drawRect(rect: CGRect) {
-        // Drawing code
-        WeshappListArrowSK.drawLinkArrowCanvas(arrowFrame: rect)
-    
+    public override func drawRect(rect: CGRect) {
+        WeshappChevronSK.drawChevronCanvas(chevronFrame: rect)
     }
-   
+
+
 }

@@ -103,53 +103,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" editingAccessoryType="detailButton" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="br7-IC-shW" id="Lpg-BX-d0r">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView">
+                                        <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView">
                                             <rect key="frame" x="0.0" y="0.0" width="571" height="373"/>
                                             <subviews>
-                                                <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="leading-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-vK-TFa" userLabel="leading-spacer-image">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="leading-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-vK-TFa" userLabel="leading-spacer-image">
                                                     <rect key="frame" x="0.0" y="14" width="28.5" height="345"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-Tf-nOc" userLabel="image-spacer-label">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-Tf-nOc" userLabel="image-spacer-label">
                                                     <rect key="frame" x="114" y="-150" width="23" height="672"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-A1-4YR" userLabel="navigation-spacer-text">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text" translatesAutoresizingMaskIntoConstraints="NO" id="x9p-A1-4YR" userLabel="navigation-spacer-text">
                                                     <rect key="frame" x="0.0" y="0.0" width="571" height="123"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmf-DG-atO" userLabel="Title" customClass="WeshappLabel" customModule="Designables">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="Title" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmf-DG-atO" userLabel="Title" customClass="WeshappLabel" customModule="Designables">
                                                     <rect key="frame" x="137" y="123" width="341.5" height="63.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="subTitle" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-NO-5Mc" userLabel="subTitle" customClass="WeshappLabel" customModule="Designables">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="subTitle" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-NO-5Mc" userLabel="subTitle" customClass="WeshappLabel" customModule="Designables">
                                                     <rect key="frame" x="137" y="216" width="434" height="20"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.30980392156862746" green="0.76470588235294112" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" restorationIdentifier="title-spacer-subtitle" translatesAutoresizingMaskIntoConstraints="NO" id="A5W-cf-mId" userLabel="title-spacer-subtitle">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" restorationIdentifier="title-spacer-subtitle" translatesAutoresizingMaskIntoConstraints="NO" id="A5W-cf-mId" userLabel="title-spacer-subtitle">
                                                     <rect key="frame" x="137" y="186" width="43" height="30"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge" translatesAutoresizingMaskIntoConstraints="NO" id="1lX-Vw-l6n" userLabel="14-spacer-rightEdge">
+                                                <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge" translatesAutoresizingMaskIntoConstraints="NO" id="1lX-Vw-l6n" userLabel="14-spacer-rightEdge">
                                                     <rect key="frame" x="530" y="172" width="41" height="29"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB9-gd-3c8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB9-gd-3c8">
                                                     <rect key="frame" x="511" y="175" width="18.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.65098039215686276" green="0.65490196078431373" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-lS-0df">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-lS-0df">
                                                     <rect key="frame" x="28" y="143" width="85.5" height="85.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ay7-lS-0df" secondAttribute="height" multiplier="1:1" id="Xsy-m1-rc1"/>
@@ -255,13 +255,13 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVz-70-ykB">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVz-70-ykB">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4o-Ue-Gxm">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4o-Ue-Gxm">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" customClass="TextViewSendView" customModule="WeshAppLibrary">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" customClass="TextViewSendView" customModule="WeshAppLibrary">
                                                 <rect key="frame" x="0.0" y="496" width="600" height="40"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-UG-uen">
@@ -295,7 +295,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="yFJ-ck-0To" secondAttribute="trailing" constant="10" id="vVQ-OP-Hki"/>
                                                 </constraints>
                                             </view>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5Z-jR-SMG">
+                                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T5Z-jR-SMG">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="497"/>
                                                 <connections>
                                                     <segue destination="l7D-dj-VuI" kind="embed" identifier="ChannelContainerSegue" id="2Lk-km-9ck"/>
