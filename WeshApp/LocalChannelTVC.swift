@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Designables
 
-class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate {
+class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
 
     var badgeFetchedRC: NSFetchedResultsController!
     var channelFetechedRC: NSFetchedResultsController!
@@ -127,19 +127,19 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         
        //for ipad
         if screenSize.height > 736.00{
-            cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0215 ))
+       //     cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0215 ))
             
         }else{
             
-            cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0213 ))
+         //   cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0213 ))
             
         }
         
-        
+        cell!.delegate = self
         //println(cell!.accessoryView!.frame.size)
         
-        cell!.accessoryView!.backgroundColor = UIColor.whiteColor()
-        cell!.accessoryView!.tintColor = UIColor.whiteColor()
+       // cell!.accessoryView!.backgroundColor = UIColor.whiteColor()
+        //cell!.accessoryView!.tintColor = UIColor.whiteColor()
         switch segControl.selectedSegmentIndex
         {
             case 0:
@@ -225,16 +225,31 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
     }
+    //MARK: ChannetlTableViewCellDelegate
+    func pauseAction(){
+        println("Pause Action pressed")
+    }
+    func cellDidClose() {
+        //continue scrolling
+    }
+    
+    func cellDidOpen() {
+        //stop scrolling
+    }
+    /*
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        <#code#>
+        let pauseClosure = {
+            (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            println("Pause the Channel")
+        }
+        let pauseAction = UITableViewRowAction(style: .Default, title:"     ", handler: pauseClosure)
+        pauseAction.backgroundColor = UIColor(patternImage: UIImage(named:"Pause.png")!  )
+        pauseAction.backgroundEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.Light))
+        
+        return [pauseAction]
     }
+    */
 
     /*
     // Override to support rearranging the table view.

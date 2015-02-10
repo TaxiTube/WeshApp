@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+@IBDesignable
 public class Chevron: UIView {
 
 
