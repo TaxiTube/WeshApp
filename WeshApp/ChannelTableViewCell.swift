@@ -9,6 +9,7 @@
 import UIKit
 import Designables
 
+//MARK: Protocol
 protocol ChannetlTableViewCellDelegate{
         func pauseAction()
         func cellDidOpen(cell: ChannelTableViewCell)
@@ -17,51 +18,57 @@ protocol ChannetlTableViewCellDelegate{
 
 class ChannelTableViewCell: UITableViewCell {
     
-    let kBounceValue: CGFloat = 20.0
- 
-    @IBOutlet weak var pauseView: UIView!
+    private let kBounceValue: CGFloat = 20.0
+    //MARK: Outlets
+    @IBOutlet weak var leftView: UIView?
+    
+    @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var totem: UIImageView!
-    @IBOutlet weak var title: WeshappLabel!
-    @IBOutlet weak var subTitle: WeshappLabel!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
     @IBOutlet weak var counter: NSLayoutConstraint!
     @IBOutlet weak var contentViewRightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentViewLeftConstraint: NSLayoutConstraint!
-      
-    var delegate: ChannetlTableViewCellDelegate?
-    var panRecognizer: UIPanGestureRecognizer?
-    var panStartPoint: CGPoint?
-    var startingRightConstant: CGFloat?
     
+    //MARK properties
+    var delegate: ChannetlTableViewCellDelegate?
+    private var panRecognizer: UIPanGestureRecognizer?
+    private var panStartPoint: CGPoint?
+    private var startingRightConstant: CGFloat?
+    
+    //MARK: Initialisation
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpPan()
         
         
-        }
+    }
+    override  init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setUpPan()
+    }
+    
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpPan()
 
     }
     
-    func openCell(){
-        setConstraintToShowAllButtons(false, notifyDelegate: false)
+    private func setUpPan(){
+        panRecognizer = UIPanGestureRecognizer(target: self, action: "panThisCell:")
+        panRecognizer!.delegate = self
+        addGestureRecognizer(panRecognizer!)
     }
-    
+    //MARK: Superview functions
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    
-    func setUpPan(){
-        panRecognizer = UIPanGestureRecognizer(target: self, action: "panThisCell:")
-        panRecognizer!.delegate = self
-        addGestureRecognizer(panRecognizer!)
-    }
-
-     func panThisCell(pan: UIPanGestureRecognizer){
+   //MARK: Handle Pan Gesures
+    func panThisCell(pan: UIPanGestureRecognizer){
         
         switch pan.state{
             case .Began:
@@ -86,7 +93,8 @@ class ChannelTableViewCell: UITableViewCell {
             default:
                 break
             }
-        }
+    }
+    //Handle Change in Pan gesture
     private func handlePanChange(pan: UIPanGestureRecognizer){
         var currentPoint = pan.translationInView(contentView)
         var deltaX = currentPoint.x - panStartPoint!.x
@@ -145,15 +153,15 @@ class ChannelTableViewCell: UITableViewCell {
         //8. set the left cell
         contentViewLeftConstraint.constant = -contentViewRightConstraint.constant
     }
-
+    //Handle Pan Gesture ending
     private func handePanEnded(pan: UIPanGestureRecognizer){
         //1.Check whether the cell was laready open
         if startingRightConstant == 0 {
             //Cell was opening
             //2.if the cell was closed and its being open
-            var halfPauseView = CGRectGetWidth(pauseView.frame) / 2
+            var halfrightView = CGRectGetWidth(rightView.frame) / 2
             //3. if cell has been opend more than the half oway of the pause view then open
-            if contentViewRightConstraint.constant >= halfPauseView{
+            if contentViewRightConstraint.constant >= halfrightView{
                 //open all the way
                     setConstraintToShowAllButtons(true, notifyDelegate: true)
             } else{
@@ -161,25 +169,40 @@ class ChannelTableViewCell: UITableViewCell {
                 resetConstraintToZero(true, notifyDelegate: true)
             }
         } else {
-        //Cell was closing
-        var pauseViewWidth = CGRectGetWidth(pauseView.frame) / 2
-        if contentViewRightConstraint.constant >= pauseViewWidth{
-            //Re-open all the way
-            setConstraintToShowAllButtons(true, notifyDelegate: true)
-        } else {
-            resetConstraintToZero(true, notifyDelegate: true)
+            var buttonOnePlusHalfOfButton2 :CGFloat = 0.0
+            //Cell was closing
+            if let leftViewFrame = leftView?.frame{
+                  buttonOnePlusHalfOfButton2 = CGRectGetWidth(rightView.frame) + CGRectGetWidth(leftViewFrame) / 2
+            } else{
+                
+                 buttonOnePlusHalfOfButton2 = CGRectGetWidth(rightView.frame) / 2
+            }
+          
+            if contentViewRightConstraint.constant >= buttonOnePlusHalfOfButton2{
+                //Re-open all the way
+                setConstraintToShowAllButtons(true, notifyDelegate: true)
+            } else {
+                resetConstraintToZero(true, notifyDelegate: true)
             }
         }
 
     }
     
     //how far should the cell slide
-    func buttonTotalWidth()->CGFloat{
-        return CGRectGetWidth(frame) - CGRectGetMinX(pauseView.frame)
+   private  func buttonTotalWidth()->CGFloat{
+    
+        if let leftViewFrame = leftView?.frame{
+            return CGRectGetWidth(frame) - CGRectGetMinX(leftViewFrame)
+        } else{
+        
+        return CGRectGetWidth(frame) - CGRectGetMinX(rightView.frame)
+        }
+    
     }
     
+    //MARK: Constraint handling
     //Close the cell
-    func resetConstraintToZero(animated: Bool, notifyDelegate: Bool){
+   private  func resetConstraintToZero(animated: Bool, notifyDelegate: Bool){
         
         //Delegate
         if (notifyDelegate) {
@@ -215,7 +238,7 @@ class ChannelTableViewCell: UITableViewCell {
     }
     
     //Open the cell
-    func setConstraintToShowAllButtons(animated: Bool, notifyDelegate: Bool){
+   private func setConstraintToShowAllButtons(animated: Bool, notifyDelegate: Bool){
 
         //Delegate
         if (notifyDelegate) {
@@ -242,11 +265,11 @@ class ChannelTableViewCell: UITableViewCell {
                 
                 }
                 
-)
+            )
         }
     }
     //Animation method
-    func updateConstraintsIfNeeded(animated: Bool, completion:  Bool->()) {
+   private func updateConstraintsIfNeeded(animated: Bool, completion:  Bool->()) {
 
         var duration = 0.0
         if animated { duration = 0.1 }
@@ -258,6 +281,14 @@ class ChannelTableViewCell: UITableViewCell {
                                            options: UIViewAnimationOptions.CurveEaseOut,
                                         animations: animations,
                                         completion: completion)
+    }
+    
+    
+    func openCell(){
+        setConstraintToShowAllButtons(true, notifyDelegate: false)
+    }
+    func closeCell(){
+        resetConstraintToZero(true, notifyDelegate: false)
     }
     
     //MARK: UIGestureRecogniserDelegate
@@ -273,14 +304,7 @@ class ChannelTableViewCell: UITableViewCell {
         }
         return false
     }
-    override func gestureRecognizer(                            gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return false
-    }
-    override func gestureRecognizer(                       gestureRecognizer: UIGestureRecognizer,
-            shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        
-                return false
-    }
+    //MARK: Reuse methods
     override func prepareForReuse() {
         super.prepareForReuse()
         resetConstraintToZero(false, notifyDelegate: false)

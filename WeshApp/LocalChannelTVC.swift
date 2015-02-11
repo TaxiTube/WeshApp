@@ -12,6 +12,7 @@ import Designables
 
 class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
 
+    @IBOutlet weak var leftView: UIView!
     var badgeFetchedRC: NSFetchedResultsController!
     var channelFetechedRC: NSFetchedResultsController!
     var currentFetchedRC : NSFetchedResultsController!
@@ -19,7 +20,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     var sessionMngr: SessionMngr?
     let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
     let screenSize  = UIScreen.mainScreen().bounds.size
-    var cellsCurrentlyEditing: NSMutableSet?
+  //  var cellsCurrentlyEditing: NSMutableSet?
     var openedCell: ChannelTableViewCell?
 
     @IBOutlet weak var segControl: UISegmentedControl!
@@ -54,6 +55,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationController?.hidesBarsOnTap
         UIApplication.sharedApplication().statusBarHidden = false
         // Uncomment the following line to preserve selection between presentations
@@ -100,7 +102,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         if (!currentFetchedRC.performFetch(&error))  {
             println("Error: \(error?.localizedDescription)") }
         
-        cellsCurrentlyEditing = NSMutableSet()
+       // cellsCurrentlyEditing = NSMutableSet()
 
         
     }
@@ -123,23 +125,15 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
      
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? ChannelTableViewCell
-        cell
-        cell!.layoutSubviews()
+        
+        
+        //cell!.layoutSubviews()
        // cell!.setEditing(true, animated: true)
        // cell!.editingStyle = UITableViewCellEditingStyle.Delete
         
-       //for ipad
-        if screenSize.height > 736.00{
-       //     cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0215 ))
-            
-        }else{
-            
-         //   cell!.accessoryView = Chevron(frame: CGRect(x: 0, y: 0, width: screenSize.width * 0.0203 , height: screenSize.height * 0.0213 ))
-            
-        }
+     
         
-        cell!.delegate = self
+        var cell: ChannelTableViewCell?
         //println(cell!.accessoryView!.frame.size)
         
        // cell!.accessoryView!.backgroundColor = UIColor.whiteColor()
@@ -147,6 +141,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         switch segControl.selectedSegmentIndex
         {
             case 0:
+                 cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
                 cell!.title.text = channel.title
                 //TODO if name is known show real name instead
@@ -156,6 +151,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
                 //Todo Count number of posts the channe has cell!.counter =
                 
             case 1:
+                 cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
                 let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
                 cell!.title.text  = badge.handle
                 //TODO if name is known show real name instead
@@ -166,11 +162,12 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             default:
                 break;
         }
-        
+         cell!.delegate = self
+        /*
         if cellsCurrentlyEditing!.containsObject(indexPath){
             cell!.openCell()
         }
-        
+        */
         return cell!
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -243,26 +240,27 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         if cell != openedCell{
             if let oc = openedCell?{
                 
-                openedCell!.resetConstraintToZero(true, notifyDelegate: true)
+                openedCell!.closeCell()
             }
             openedCell = cell
         }
         
         //stop scrolling
         var currentEditingIndexPath = tableView.indexPathForCell(cell)
-        self.cellsCurrentlyEditing?.addObject(currentEditingIndexPath!)
-        //tableView.scrollEnabled = false
+        //self.cellsCurrentlyEditing?.addObject(currentEditingIndexPath!)
     }
     func cellDidClose(cell: ChannelTableViewCell) {
-         openedCell = nil
+        if cell == openedCell{
+            openedCell = nil
+        }
         //continue scrolling
         var currentEditingIndexPath = tableView.indexPathForCell(cell)
-        self.cellsCurrentlyEditing?.removeObject(currentEditingIndexPath!)
+       // self.cellsCurrentlyEditing?.removeObject(currentEditingIndexPath!)
          //tableView.scrollEnabled = true
     }
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if let oc = openedCell?{
-            oc.resetConstraintToZero(true, notifyDelegate: true)
+            oc.closeCell()
         }
     }
     
