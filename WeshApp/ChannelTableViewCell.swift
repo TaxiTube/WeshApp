@@ -11,8 +11,8 @@ import Designables
 
 protocol ChannetlTableViewCellDelegate{
         func pauseAction()
-        func cellDidOpen()
-        func cellDidClose()
+        func cellDidOpen(cell: ChannelTableViewCell)
+        func cellDidClose(cell: ChannelTableViewCell)
 }
 
 class ChannelTableViewCell: UITableViewCell {
@@ -31,7 +31,6 @@ class ChannelTableViewCell: UITableViewCell {
     var panRecognizer: UIPanGestureRecognizer?
     var panStartPoint: CGPoint?
     var startingRightConstant: CGFloat?
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +44,9 @@ class ChannelTableViewCell: UITableViewCell {
 
     }
     
-    
+    func openCell(){
+        setConstraintToShowAllButtons(false, notifyDelegate: false)
+    }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -76,7 +77,7 @@ class ChannelTableViewCell: UITableViewCell {
                 
                 if startingRightConstant == 0 {
                     //Cell was closed - reset everything to 0
-                    resetConstraintToZero(true, endEditing: true)
+                    resetConstraintToZero(true, notifyDelegate: true)
                 } else {
                     setConstraintToShowAllButtons(true, notifyDelegate: true)
                 }
@@ -102,7 +103,7 @@ class ChannelTableViewCell: UITableViewCell {
                 //left to right swipe results positiv value
                 var constant = max(-deltaX, 0)
                 if constant == 0 { //4. if constant is zero handle cell closing
-                    resetConstraintToZero(true, endEditing: true)
+                    resetConstraintToZero(true, notifyDelegate: true)
                 }else{ // 5. if not zero then set right hand side constraint
                     contentViewRightConstraint.constant = constant
                 }
@@ -125,7 +126,7 @@ class ChannelTableViewCell: UITableViewCell {
                 var constant = max(adjustment, 0)
                 //3. cell is closed
                 if(constant == 0){
-                    resetConstraintToZero(true, endEditing: false)
+                    resetConstraintToZero(true, notifyDelegate: false)
                 } else {
                     contentViewRightConstraint.constant = constant
                 }
@@ -157,7 +158,7 @@ class ChannelTableViewCell: UITableViewCell {
                     setConstraintToShowAllButtons(true, notifyDelegate: true)
             } else{
                 //if cell is not being open more than half oway of the view then re-close
-                resetConstraintToZero(true, endEditing: true)
+                resetConstraintToZero(true, notifyDelegate: true)
             }
         } else {
         //Cell was closing
@@ -166,7 +167,7 @@ class ChannelTableViewCell: UITableViewCell {
             //Re-open all the way
             setConstraintToShowAllButtons(true, notifyDelegate: true)
         } else {
-            resetConstraintToZero(true, endEditing: true)
+            resetConstraintToZero(true, notifyDelegate: true)
             }
         }
 
@@ -176,10 +177,14 @@ class ChannelTableViewCell: UITableViewCell {
     func buttonTotalWidth()->CGFloat{
         return CGRectGetWidth(frame) - CGRectGetMinX(pauseView.frame)
     }
+    
     //Close the cell
-    func resetConstraintToZero(animated: Bool, endEditing: Bool){
+    func resetConstraintToZero(animated: Bool, notifyDelegate: Bool){
         
-        //TODO: Delegate
+        //Delegate
+        if (notifyDelegate) {
+            delegate!.cellDidClose(self)
+        }
         
         //1 If the cell started open and the constraint is already at the full open value, just bail
         if(startingRightConstant == 0 && contentViewRightConstraint.constant == 0){
@@ -208,10 +213,14 @@ class ChannelTableViewCell: UITableViewCell {
          self.updateConstraintsIfNeeded(true, completion: completion)
 
     }
+    
     //Open the cell
     func setConstraintToShowAllButtons(animated: Bool, notifyDelegate: Bool){
 
-        //TODO: Delegate
+        //Delegate
+        if (notifyDelegate) {
+            delegate!.cellDidOpen(self)
+        }
 
         //1. If the cell started open and the constraint is already at the full open value, just bail
         if !(startingRightConstant == buttonTotalWidth() && contentViewRightConstraint.constant == buttonTotalWidth()) {
@@ -253,16 +262,27 @@ class ChannelTableViewCell: UITableViewCell {
     
     //MARK: UIGestureRecogniserDelegate
     //First, your UIPanGestureRecognizer can sometimes interfere with the one which handles the scroll action on the UITableView
-    override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-    override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
+            let translation = panGestureRecognizer.translationInView(superview!)
+            if fabs(translation.x) > fabs(translation.y)  {
+                return true
+            }
+            return false
+        }
         return false
     }
-  
+    override func gestureRecognizer(                            gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+    override func gestureRecognizer(                       gestureRecognizer: UIGestureRecognizer,
+            shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+                return false
+    }
     override func prepareForReuse() {
         super.prepareForReuse()
-        resetConstraintToZero(false, endEditing: false)
+        resetConstraintToZero(false, notifyDelegate: false)
     }
-
 }

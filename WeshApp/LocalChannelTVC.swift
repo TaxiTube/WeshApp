@@ -19,7 +19,8 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     var sessionMngr: SessionMngr?
     let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
     let screenSize  = UIScreen.mainScreen().bounds.size
-
+    var cellsCurrentlyEditing: NSMutableSet?
+    var openedCell: ChannelTableViewCell?
 
     @IBOutlet weak var segControl: UISegmentedControl!
     
@@ -99,7 +100,8 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         if (!currentFetchedRC.performFetch(&error))  {
             println("Error: \(error?.localizedDescription)") }
         
-      
+        cellsCurrentlyEditing = NSMutableSet()
+
         
     }
      
@@ -119,6 +121,8 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     }
     // MARK: - Cell for Row at IndexPath
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? ChannelTableViewCell
         cell
         cell!.layoutSubviews()
@@ -163,12 +167,16 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
                 break;
         }
         
+        if cellsCurrentlyEditing!.containsObject(indexPath){
+            cell!.openCell()
+        }
+        
         return cell!
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return screenSize.height * 0.15
-    }
+    } 
     
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -230,13 +238,34 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     func pauseAction(){
         println("Pause Action pressed")
     }
-    func cellDidClose() {
+    func cellDidOpen(cell: ChannelTableViewCell) {
+
+        if cell != openedCell{
+            if let oc = openedCell?{
+                
+                openedCell!.resetConstraintToZero(true, notifyDelegate: true)
+            }
+            openedCell = cell
+        }
+        
+        //stop scrolling
+        var currentEditingIndexPath = tableView.indexPathForCell(cell)
+        self.cellsCurrentlyEditing?.addObject(currentEditingIndexPath!)
+        //tableView.scrollEnabled = false
+    }
+    func cellDidClose(cell: ChannelTableViewCell) {
+         openedCell = nil
         //continue scrolling
+        var currentEditingIndexPath = tableView.indexPathForCell(cell)
+        self.cellsCurrentlyEditing?.removeObject(currentEditingIndexPath!)
+         //tableView.scrollEnabled = true
+    }
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if let oc = openedCell?{
+            oc.resetConstraintToZero(true, notifyDelegate: true)
+        }
     }
     
-    func cellDidOpen() {
-        //stop scrolling
-    }
     /*
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         let pauseClosure = {

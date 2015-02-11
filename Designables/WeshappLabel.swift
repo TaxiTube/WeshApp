@@ -14,7 +14,7 @@ public class WeshappLabel: UILabel {
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     
-        adjustsFontSizeToFitWidth = true
+        //adjustsFontSizeToFitWidth = true
     }
    
   
@@ -24,12 +24,12 @@ public class WeshappLabel: UILabel {
 
         //println(" after layout: \(self.frame.size) " )
         
-        super.layoutSubviews()
-        font = adjustFont()
+        //super.layoutSubviews()
+        //font = adjustFont()
         
-        let rect = self.textRectForBounds(self.bounds, limitedToNumberOfLines: 1)
+        //let rect = self.textRectForBounds(self.bounds, limitedToNumberOfLines: 1)
        // println("me \(rect.size) font \(self.font.pointSize)")
-        var attributedText = NSAttributedString(string: text!, attributes: [NSFontAttributeName: font])
+        //var attributedText = NSAttributedString(string: text!, attributes: [NSFontAttributeName: font])
         
         var rectSize = attributedText.boundingRectWithSize(
             CGSizeMake(self.frame.size.width, CGFloat.max),

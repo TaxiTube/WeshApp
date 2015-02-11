@@ -46,8 +46,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
                                                     desc: descTV.text,
                                                     date: NSDate(),
                                                   author: sessionMngr.myBadge!)
-            sessionMngr.broadcastNewChannel(channel)
+            //sessionMngr.broadcastNewChannel(channel)
         }
+        channelMngr.save(coreDataStack!.mainContext!)
         dismissViewControllerAnimated(true, completion: nil)
 
     }
