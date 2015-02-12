@@ -40,7 +40,7 @@ class ChannelTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpPan()
-        
+       
         
     }
     override  init(style: UITableViewCellStyle, reuseIdentifier: String?) {

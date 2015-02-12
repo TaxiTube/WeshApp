@@ -103,7 +103,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             println("Error: \(error?.localizedDescription)") }
         
        // cellsCurrentlyEditing = NSMutableSet()
-
+    
         
     }
      
@@ -123,21 +123,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     }
     // MARK: - Cell for Row at IndexPath
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     
-        
-        
-        
-        //cell!.layoutSubviews()
-       // cell!.setEditing(true, animated: true)
-       // cell!.editingStyle = UITableViewCellEditingStyle.Delete
-        
-     
-        
         var cell: ChannelTableViewCell?
-        //println(cell!.accessoryView!.frame.size)
-        
-       // cell!.accessoryView!.backgroundColor = UIColor.whiteColor()
-        //cell!.accessoryView!.tintColor = UIColor.whiteColor()
         switch segControl.selectedSegmentIndex
         {
             case 0:
@@ -162,6 +148,8 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             default:
                 break;
         }
+        
+        cell!.layoutSubviews()
          cell!.delegate = self
         /*
         if cellsCurrentlyEditing!.containsObject(indexPath){
@@ -170,6 +158,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         */
         return cell!
     }
+    //Is called before cellForRowAtIndexPath
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return screenSize.height * 0.15
