@@ -12,7 +12,6 @@ import Designables
 
 class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
 
-    @IBOutlet weak var leftView: UIView!
     var badgeFetchedRC: NSFetchedResultsController!
     var channelFetechedRC: NSFetchedResultsController!
     var currentFetchedRC : NSFetchedResultsController!
@@ -23,6 +22,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
   //  var cellsCurrentlyEditing: NSMutableSet?
     var openedCell: ChannelTableViewCell?
 
+    @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var segControl: UISegmentedControl!
     
     //MARK: Segmentation Control
@@ -35,10 +35,10 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
            if (!currentFetchedRC.performFetch(&error))  {
             println("Error: \(error?.localizedDescription)") }
            //animation
-           UIView.transitionWithView(self.tableView, duration: 0.35, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: {
-                (v:Bool) in ()
-           
-           })
+           UIView.transitionWithView(self.tableView, duration: 0.35,
+                                                      options: UIViewAnimationOptions.TransitionFlipFromLeft,
+                                                   animations: {self.tableView.reloadData()},
+                                                   completion: { (v:Bool) in ()})
           
         case 1:
             currentFetchedRC = badgeFetchedRC
@@ -46,13 +46,13 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             if (!currentFetchedRC.performFetch(&error))  {
                 println("Error: \(error?.localizedDescription)") }
             //animation
-            UIView.transitionWithView(self.tableView, duration: 0.35, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: {
-                (v:Bool) in ()
-                
-            })
+            UIView.transitionWithView(self.tableView, duration: 0.35,
+                options: UIViewAnimationOptions.TransitionFlipFromRight,
+                animations: {self.tableView.reloadData()},
+                completion: { (v:Bool) in ()})
        
         default:
-            break; 
+            break;
         }
     
     
@@ -169,7 +169,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     //Is called before cellForRowAtIndexPath
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return screenSize.height * 0.15
+        return screenSize.width / 4.11
     } 
     
     //MARK: - Segue

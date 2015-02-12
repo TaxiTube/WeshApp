@@ -15,6 +15,8 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
     var channel: Channel?
     var fetchedResultsController : NSFetchedResultsController!
     var coreDataStack: CoreDataStack!
+    let screenSize  = UIScreen.mainScreen().bounds.size
+
 
     @IBOutlet weak var channelBanner: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
@@ -23,7 +25,9 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
     
     
     override func viewDidLoad() {
+      
         super.viewDidLoad()
+      
         channelTitle.text = channel!.title
         channelDesc.text = channel!.desc
         //channelBanner.image = UIImage(data: channel!.photo.photo)
@@ -89,6 +93,9 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
         cell.date.text = formatter.stringFromDate(post.date)
         return cell
     }
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return screenSize.width / 1.18
+    }
     
     //MARK: NSFetchedResultsController Delegate methods
     func controllerWillChangeContent(controller: NSFetchedResultsController!) {
@@ -130,6 +137,8 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
             tableView.scrollToRowAtIndexPath(iPath, atScrollPosition: .Bottom, animated: animated)
         }
     }
+   
+    
     /*
     Self Sizing:
     */
