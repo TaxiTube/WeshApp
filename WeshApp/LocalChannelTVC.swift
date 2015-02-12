@@ -34,15 +34,23 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
            var error: NSError? = nil
            if (!currentFetchedRC.performFetch(&error))  {
             println("Error: \(error?.localizedDescription)") }
+           //animation
+           UIView.transitionWithView(self.tableView, duration: 0.35, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: {
+                (v:Bool) in ()
            
-           tableView.reloadData()
+           })
+          
         case 1:
             currentFetchedRC = badgeFetchedRC
             var error: NSError? = nil
             if (!currentFetchedRC.performFetch(&error))  {
                 println("Error: \(error?.localizedDescription)") }
-        
-        tableView.reloadData()
+            //animation
+            UIView.transitionWithView(self.tableView, duration: 0.35, options: UIViewAnimationOptions.TransitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: {
+                (v:Bool) in ()
+                
+            })
+       
         default:
             break; 
         }
@@ -50,7 +58,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     
     }
     
- 
+
 
     //MARK: Set up
     override func viewDidLoad() {

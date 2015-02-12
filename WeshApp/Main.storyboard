@@ -251,14 +251,14 @@
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView">
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView">
                                             <rect key="frame" x="-142.5" y="-3" width="373" height="373"/>
                                             <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                         <view contentMode="scaleToFill" restorationIdentifier="elementContainerView2" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-tR-kUz" userLabel="elementContainerView2">
                                             <rect key="frame" x="0.0" y="0.0" width="604" height="373"/>
                                             <subviews>
-                                                <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="leading-spacer-image2" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-pE-cfK" userLabel="leading-spacer-image2">
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="345" restorationIdentifier="leading-spacer-image2" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-pE-cfK" userLabel="leading-spacer-image2">
                                                     <rect key="frame" x="0.0" y="14" width="30" height="345"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
@@ -325,7 +325,6 @@
                                                 <constraint firstAttribute="centerY" secondItem="FTK-LA-sWr" secondAttribute="centerY" id="FJ4-Ti-Dtz"/>
                                                 <constraint firstItem="Vhl-Tb-Q8F" firstAttribute="leading" secondItem="e1O-Vo-bXk" secondAttribute="trailing" id="GrJ-Tb-fAh"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qqf-Ba-wGq" secondAttribute="trailing" id="IIH-LK-oZ5"/>
-                                                <constraint firstAttribute="bottom" secondItem="n5d-pE-cfK" secondAttribute="bottom" constant="14" id="OHg-K1-57r"/>
                                                 <constraint firstAttribute="trailing" secondItem="x2i-P6-RjS" secondAttribute="trailing" id="Qog-Dw-p8V"/>
                                                 <constraint firstItem="Tza-hb-HdO" firstAttribute="top" secondItem="J0w-Jf-HFC" secondAttribute="bottom" id="RBu-ke-d1Q"/>
                                                 <constraint firstItem="Qqf-Ba-wGq" firstAttribute="leading" secondItem="gRh-tR-kUz" secondAttribute="leading" id="Rmp-ij-zv6"/>
