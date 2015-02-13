@@ -8,20 +8,22 @@
 
 import UIKit
 
-class ChannelPageVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
+class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
 
-    
+    //MARK: Properties
     var channel: Channel?
     var coreDataStack: CoreDataStack?
     var sessionMngr: SessionMngr?
     var postMngr: PostMngr?
     
-   
+    //MARK:
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var navigationBar: UINavigationItem!
   
+    
+    //MARK: IBACTIONS
    @IBAction func hideKeyboard(sender: AnyObject) {
      textField.resignFirstResponder()
     }
@@ -30,12 +32,9 @@ class ChannelPageVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     @IBAction func postMessage(sender: AnyObject) {
         
         if textField.text != "" {
-        
-
-            let post = postMngr!.createPost(textField.text,
-                                                                  channel: channel,
-                                                                     date: NSDate(),
-                                                                   sender: sessionMngr!.myBadge)
+            let post = postMngr!.createPost(textField.text, channel: channel,
+                                                               date: NSDate(),
+                                                             sender: sessionMngr!.myBadge)
             
             textField.text = ""
             //TODO: Decide whether after commenting on a channel wall, the channle persists
@@ -46,16 +45,17 @@ class ChannelPageVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
-            coreDataStack: coreDataStack!)
+        postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
+                                    coreDataStack: coreDataStack!)
     }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
+    
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ChannelContainerSegue" {
+        if segue.identifier == "toChannelWallVC" {
             let channelWallTVC = segue.destinationViewController as ChannelWallTVC
             channelWallTVC.channel = channel
         }

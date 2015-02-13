@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Designables
 
-class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
+class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
 
     var badgeFetchedRC: NSFetchedResultsController!
     var channelFetechedRC: NSFetchedResultsController!
@@ -37,7 +37,9 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
            //animation
            UIView.transitionWithView(self.tableView, duration: 0.35,
                                                       options: UIViewAnimationOptions.TransitionFlipFromLeft,
-                                                   animations: {self.tableView.reloadData()},
+                                                   animations: {
+                                                    self.tableView.reloadData()
+                                                    },
                                                    completion: { (v:Bool) in ()})
           
         case 1:
@@ -48,7 +50,9 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
             //animation
             UIView.transitionWithView(self.tableView, duration: 0.35,
                 options: UIViewAnimationOptions.TransitionFlipFromRight,
-                animations: {self.tableView.reloadData()},
+                animations: {
+                    self.tableView.reloadData()
+                },
                 completion: { (v:Bool) in ()})
        
         default:
@@ -157,7 +161,7 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
                 break;
         }
         
-        cell!.layoutSubviews()
+         cell!.layoutSubviews()
          cell!.delegate = self
         /*
         if cellsCurrentlyEditing!.containsObject(indexPath){
@@ -172,17 +176,17 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
         return screenSize.width / 4.11
     } 
     
-    //MARK: - Segue
+    //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "ChannelDescriptionSegue" {
-                let channelPageVC = segue.destinationViewController as ChannelPageVC
+            if segue.identifier == "toChannelVC" {
+                let channelVC = segue.destinationViewController as ChannelVC
                 
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 //If as Channel else as Profile
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
-                channelPageVC.channel = channel
-                channelPageVC.coreDataStack = coreDataStack
-                channelPageVC.sessionMngr = sessionMngr
+                channelVC.channel = channel
+                channelVC.coreDataStack = coreDataStack
+                channelVC.sessionMngr = sessionMngr
             }
     }
     
@@ -192,10 +196,10 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     }
     
     func controller (controller: NSFetchedResultsController,
-      didChangeObject anObject: AnyObject,
-         atIndexPath indexPath: NSIndexPath!,
-            forChangeType type: NSFetchedResultsChangeType,
-        newIndexPath: NSIndexPath!) {
+       didChangeObject anObject: AnyObject,
+          atIndexPath indexPath: NSIndexPath!,
+             forChangeType type: NSFetchedResultsChangeType,
+                   newIndexPath: NSIndexPath!) {
     
         switch type {
             case .Insert:
@@ -224,10 +228,6 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     }
 
 
-    
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    }
     //MARK: ChannetlTableViewCellDelegate
     func pauseAction(){
         println("Pause Action pressed")
@@ -290,15 +290,8 @@ class LocalChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
     //MARK: Popover controller
     @IBAction func handlePopover(sender: UIBarButtonItem) {
         let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController

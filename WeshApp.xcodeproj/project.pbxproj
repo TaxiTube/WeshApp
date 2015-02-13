@@ -32,7 +32,7 @@
 		B3CB2E2C1A690CCD00FBFED1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */; };
 		B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
 		B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */; };
-		B3D6CBE919FC4E510025140E /* LocalChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* LocalChannelTVC.swift */; };
+		B3D6CBE919FC4E510025140E /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
 		B3D6CBF319FC5F9F0025140E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */; };
 		B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
 		B3D9F5B119F93AA400BF6257 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F5B019F93AA400BF6257 /* Images.xcassets */; };
@@ -75,7 +75,7 @@
 		D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */; };
 		D8C642601A4C7725004A604A /* WallPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */; };
 		D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */; };
-		D8CADF0A1A2F311E00DD43C8 /* LocalChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* LocalChannelTVC.swift */; };
+		D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
 		D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
 		D8D2A1031A84DF32008DC0AF /* WeshappRedButtonSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2A1021A84DF32008DC0AF /* WeshappRedButtonSK.swift */; };
 		D8D9342D1A288DB00055079E /* NSManageObjectSerializationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */; };
@@ -159,7 +159,7 @@
 		B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		B3CB2E331A690ECE00FBFED1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
-		B3D6CBE819FC4E510025140E /* LocalChannelTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelTVC.swift; sourceTree = "<group>"; };
+		B3D6CBE819FC4E510025140E /* NearbyTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyTVC.swift; sourceTree = "<group>"; };
 		B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		B3D9F5A119F93AA400BF6257 /* WeshApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeshApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D9F5A519F93AA400BF6257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */,
-				B3D6CBE819FC4E510025140E /* LocalChannelTVC.swift */,
+				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
 				B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */,
 				D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */,
@@ -669,7 +669,7 @@
 				B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */,
 				B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */,
 				D8C6422E1A47594A004A604A /* ChannelWallTVC.swift in Sources */,
-				B3D6CBE919FC4E510025140E /* LocalChannelTVC.swift in Sources */,
+				B3D6CBE919FC4E510025140E /* NearbyTVC.swift in Sources */,
 				B3D9F5CE19F93C4500BF6257 /* SplashVC.swift in Sources */,
 				B3CB2E2A1A690CCD00FBFED1 /* Badge.swift in Sources */,
 				D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */,
@@ -706,7 +706,7 @@
 				D81FE27D1A236BC9006F8E62 /* SessionMngrTest.swift in Sources */,
 				D871CB5B1A1FD9890024C7B7 /* ChannelMngr.swift in Sources */,
 				D8C6422F1A47594A004A604A /* ChannelWallTVC.swift in Sources */,
-				D8CADF0A1A2F311E00DD43C8 /* LocalChannelTVC.swift in Sources */,
+				D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */,
 				D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */,
 				D8DA2A391A693F630098C5E6 /* Tags.swift in Sources */,
 				D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */,

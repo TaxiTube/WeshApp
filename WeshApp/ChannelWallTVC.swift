@@ -18,7 +18,6 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
     let screenSize  = UIScreen.mainScreen().bounds.size
 
 
-    @IBOutlet weak var channelBanner: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var channelDesc: UITextView!
     @IBOutlet weak var channelTitle: UILabel!
@@ -28,8 +27,8 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
       
         super.viewDidLoad()
       
-        channelTitle.text = channel!.title
-        channelDesc.text = channel!.desc
+        channelTitle.text = channel?.title
+        channelDesc.text = channel?.desc
         //channelBanner.image = UIImage(data: channel!.photo.photo)
         //profileImage.image = UIImage(data: channel!.author.photo.photo)
         

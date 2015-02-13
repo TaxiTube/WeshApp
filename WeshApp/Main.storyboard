@@ -92,17 +92,17 @@
                     <connections>
                         <outlet property="containerView" destination="O3Z-1o-vvS" id="a2f-44-B0u"/>
                         <outlet property="handleTextField" destination="xBD-sq-joc" id="5fb-mf-8g0"/>
-                        <segue destination="anB-Gd-xtO" kind="show" identifier="toChannels" id="jf2-kL-dNR"/>
+                        <segue destination="anB-Gd-xtO" kind="show" identifier="toNearby" id="jf2-kL-dNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sv-Df-yY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2542" y="660"/>
         </scene>
-        <!--Local ChannelTVC-->
+        <!--NearbyTVC-->
         <scene sceneID="e3h-X4-9HJ">
             <objects>
-                <tableViewController storyboardIdentifier="LocalChannelsTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rzE-5d-Xks" customClass="LocalChannelTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NearbyTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rzE-5d-Xks" customClass="NearbyTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="373" sectionHeaderHeight="22" sectionFooterHeight="22" id="axa-jK-QYu">
                         <rect key="frame" x="0.0" y="64" width="604" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
                                     <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
-                                    <segue destination="L5T-Ia-3KY" kind="show" id="gT9-nk-gC3"/>
+                                    <segue destination="L5T-Ia-3KY" kind="show" identifier="toChannelVC" id="gT9-nk-gC3"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="373" id="MDR-oS-7Yl" customClass="ChannelTableViewCell" customModule="WeshApp">
@@ -420,12 +420,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyj-mL-zA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4208" y="761"/>
+            <point key="canvasLocation" x="4211" y="658"/>
         </scene>
         <!--ChannelVC-->
         <scene sceneID="6RC-1q-qWc">
             <objects>
-                <viewController id="L5T-Ia-3KY" customClass="ChannelVC" sceneMemberID="viewController">
+                <viewController id="L5T-Ia-3KY" customClass="ChannelVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fz4-GA-OEs"/>
                         <viewControllerLayoutGuide type="bottom" id="ujz-4l-T0Q"/>
@@ -477,7 +477,7 @@
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5Z-jR-SMG">
                                                 <rect key="frame" x="0.0" y="0.0" width="604" height="497"/>
                                                 <connections>
-                                                    <segue destination="l7D-dj-VuI" kind="embed" identifier="ChannelContainerSegue" id="2Lk-km-9ck"/>
+                                                    <segue destination="l7D-dj-VuI" kind="embed" identifier="toChannelWallVC" id="2Lk-km-9ck"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
@@ -547,7 +547,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHJ-cL-8ho" userLabel="HeaderViewHolder">
                                     <rect key="frame" x="0.0" y="0.0" width="604" height="335"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="596" placeholderIntrinsicHeight="166" translatesAutoresizingMaskIntoConstraints="NO" id="oI5-4C-juQ" customClass="BorderTextView" customModule="WeshAppLibrary">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="596" placeholderIntrinsicHeight="166" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="oI5-4C-juQ">
                                             <rect key="frame" x="0.0" y="238" width="604" height="96.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -691,6 +691,11 @@
                             <outlet property="delegate" destination="l7D-dj-VuI" id="F31-iq-Izi"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="channelDesc" destination="oI5-4C-juQ" id="lF7-4I-loN"/>
+                        <outlet property="channelTitle" destination="Zv2-AZ-BIn" id="6vY-Vx-2IJ"/>
+                        <outlet property="profileImage" destination="iaw-AO-HHJ" id="nUl-LK-Mn1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbZ-eH-YS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

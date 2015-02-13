@@ -34,7 +34,7 @@ class SplashVC: UIViewController {
             NSUserDefaults.standardUserDefaults().synchronize()
             println(NSUserDefaults.standardUserDefaults().dataForKey("handle"))
 
-            self.performSegueWithIdentifier("toChannels", sender:self)
+            self.performSegueWithIdentifier("toNearby", sender:self)
         }
     }
     
@@ -59,7 +59,7 @@ class SplashVC: UIViewController {
     }
     override func viewDidAppear(animated: Bool) {
       if connectionIsSet{
-            self.performSegueWithIdentifier("toChannels", sender:self)
+            self.performSegueWithIdentifier("toNearby", sender:self)
         }
     }
         
