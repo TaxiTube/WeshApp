@@ -255,7 +255,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView">
-                                            <rect key="frame" x="-142.5" y="0.0" width="373" height="373"/>
+                                            <rect key="frame" x="-142" y="0.0" width="373" height="373"/>
                                             <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UEr-a1-zz9" secondAttribute="height" multiplier="1:1" id="nI2-Dl-5z0"/>
@@ -268,8 +268,8 @@
                                                     <rect key="frame" x="0.0" y="14" width="30" height="345"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label2" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-Tb-Q8F" userLabel="image-spacer-label2">
-                                                    <rect key="frame" x="120" y="-150" width="24" height="672"/>
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label2" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-Tb-Q8F" userLabel="image-spacer-label2">
+                                                    <rect key="frame" x="121" y="-150" width="24" height="672"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title2" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zon-lv-Pu1" userLabel="Title2">
@@ -288,28 +288,28 @@
                                                     <rect key="frame" x="145" y="186" width="43" height="30"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge2" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-LA-sWr" userLabel="14-spacer-rightEdge2">
-                                                    <rect key="frame" x="514" y="172" width="41" height="29"/>
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge2" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-LA-sWr" userLabel="14-spacer-rightEdge2">
+                                                    <rect key="frame" x="515" y="172" width="41" height="29"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tV-ld-9BM">
-                                                    <rect key="frame" x="495" y="176" width="18.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tV-ld-9BM">
+                                                    <rect key="frame" x="496" y="176" width="18.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.65098039220000004" green="0.65490196079999996" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="e1O-Vo-bXk">
-                                                    <rect key="frame" x="29" y="140" width="91" height="90.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="e1O-Vo-bXk">
+                                                    <rect key="frame" x="30" y="141" width="91" height="90.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="e1O-Vo-bXk" secondAttribute="height" multiplier="1:1" id="kI0-a3-zn1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="12" placeholderIntrinsicHeight="81" restorationIdentifier="chevron-spacer-edge2" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-P6-RjS" userLabel="chevron-spacer-edge2">
-                                                    <rect key="frame" x="567" y="123" width="36" height="250"/>
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="12" placeholderIntrinsicHeight="81" restorationIdentifier="chevron-spacer-edge2" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-P6-RjS" userLabel="chevron-spacer-edge2">
+                                                    <rect key="frame" x="568" y="123" width="36" height="250"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="4ge-CC-wek" customClass="Chevron" customModule="Designables">
-                                                    <rect key="frame" x="555" y="160" width="12" height="52"/>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="4ge-CC-wek" customClass="Chevron" customModule="Designables">
+                                                    <rect key="frame" x="556" y="160" width="12" height="52"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text2" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-Ba-wGq" userLabel="navigation-spacer-text2">
@@ -587,15 +587,15 @@
                                                     <color key="textColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="257" placeholderIntrinsicHeight="23" translatesAutoresizingMaskIntoConstraints="NO" id="xh8-lI-za2" userLabel="Title-spacer-subtitle">
-                                                    <rect key="frame" x="276" y="101" width="50" height="18"/>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="257" placeholderIntrinsicHeight="23" translatesAutoresizingMaskIntoConstraints="NO" id="xh8-lI-za2" userLabel="Title-spacer-subtitle">
+                                                    <rect key="frame" x="277" y="101" width="50" height="18"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="ZNV-Mm-elf"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="29" restorationIdentifier="Title" text="#GreenPanda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv2-AZ-BIn" userLabel="Title">
-                                                    <rect key="frame" x="177.5" y="72" width="426" height="29"/>
+                                                    <rect key="frame" x="178" y="72" width="426" height="29"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
