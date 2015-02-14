@@ -108,14 +108,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="364" selectionStyle="default" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
+                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="364" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="br7-IC-shW" id="Lpg-BX-d0r">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-bv-wbR" userLabel="rightView">
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-bv-wbR" userLabel="rightView" customClass="PlayPause" customModule="Designables">
                                             <rect key="frame" x="230.5" y="0.0" width="373" height="373"/>
-                                            <color key="backgroundColor" red="1" green="0.3370362777" blue="0.14325110860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bOL-bv-wbR" secondAttribute="height" multiplier="1:1" id="t8p-Id-WKz"/>
                                             </constraints>
@@ -239,7 +238,7 @@
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
                                     <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
-                                    <segue destination="L5T-Ia-3KY" kind="show" identifier="toChannelVC" id="gT9-nk-gC3"/>
+                                    <segue destination="L5T-Ia-3KY" kind="show" identifier="toChannelVC" id="Nxx-q4-UtH"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="373" id="MDR-oS-7Yl" customClass="ChannelTableViewCell" customModule="WeshApp">
@@ -247,16 +246,15 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MDR-oS-7Yl" id="6vJ-TP-HXy">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="z70-Xy-vkL" userLabel="rightView2">
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="z70-Xy-vkL" userLabel="rightView2" customClass="MsgIcon" customModule="Designables">
                                             <rect key="frame" x="231" y="0.0" width="373" height="373"/>
                                             <color key="backgroundColor" red="1" green="0.3370362777" blue="0.14325110860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView">
+                                        <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
                                             <rect key="frame" x="-142" y="0.0" width="373" height="373"/>
-                                            <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UEr-a1-zz9" secondAttribute="height" multiplier="1:1" id="nI2-Dl-5z0"/>
                                             </constraints>
@@ -272,12 +270,6 @@
                                                     <rect key="frame" x="121" y="-150" width="24" height="672"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title2" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zon-lv-Pu1" userLabel="Title2">
-                                                    <rect key="frame" x="145" y="123" width="367" height="63.5"/>
-                                                    <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
-                                                    <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="subTitle2" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-hb-HdO" userLabel="subTitle2">
                                                     <rect key="frame" x="145" y="216" width="459" height="21"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
@@ -316,6 +308,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="604" height="123"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title2" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zon-lv-Pu1" userLabel="Title2">
+                                                    <rect key="frame" x="145" y="123" width="367" height="63.5"/>
+                                                    <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
