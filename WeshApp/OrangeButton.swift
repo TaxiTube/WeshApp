@@ -22,8 +22,10 @@ public class OrangeButton: UIButton{
 
 
   public  override func drawRect(rect: CGRect){
-    self.layer.backgroundColor =  UIColorFromRGB(0xff5959).CGColor
-    // self.layer.cornerRadius = 5
+    layer.backgroundColor =  UIColorFromRGB(0xff5959).CGColor
+    layer.cornerRadius = 2
+    titleLabel?.font =  UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
+    tintColor = UIColor.whiteColor()
     }
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {

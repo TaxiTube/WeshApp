@@ -27,7 +27,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
       
         super.viewDidLoad()
       
-        channelTitle.text = channel?.title
+        channelTitle.text = channel?.author.handle
         channelDesc.text = channel?.desc
         //channelBanner.image = UIImage(data: channel!.photo.photo)
         //profileImage.image = UIImage(data: channel!.author.photo.photo)

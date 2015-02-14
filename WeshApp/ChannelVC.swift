@@ -46,7 +46,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
-                                    coreDataStack: coreDataStack!)
+                                   coreDataStack: coreDataStack!)
     }
     
     deinit {

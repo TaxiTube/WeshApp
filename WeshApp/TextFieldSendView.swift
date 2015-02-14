@@ -14,7 +14,7 @@ public class TextViewSendView: UIView{
     
    public override func drawRect(rect: CGRect){
         let grey80 = UIColor(white:0.80, alpha:1)
-        self.layer.borderWidth = 0.5
+        self.layer.borderWidth = 0.0
         self.layer.borderColor = grey80.CGColor
         
     }
