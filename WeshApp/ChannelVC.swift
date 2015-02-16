@@ -15,20 +15,21 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     var coreDataStack: CoreDataStack?
     var sessionMngr: SessionMngr?
     var postMngr: PostMngr?
+    var channelWallTVC: ChannelWallTVC?
     
-    //MARK:
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    //MARK: IBOutlets
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var navigationBar: UINavigationItem!
+    //@IBOutlet weak var containerView: UIView!
+    //@IBOutlet weak var navigationBar: UINavigationItem!
   
-    
+
     //MARK: IBACTIONS
    @IBAction func hideKeyboard(sender: AnyObject) {
      textField.resignFirstResponder()
     }
-    
-    
+
     @IBAction func postMessage(sender: AnyObject) {
         
         if textField.text != "" {
@@ -45,6 +46,17 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("animateTextFieldWithKeyboard:"),
+            name: UIKeyboardWillShowNotification,
+            object: nil);
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("animateTextFieldWithKeyboard:"),
+            name: UIKeyboardWillHideNotification,
+            object: nil)
+        
         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
                                    coreDataStack: coreDataStack!)
     }
@@ -56,44 +68,53 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toChannelWallVC" {
-            let channelWallTVC = segue.destinationViewController as ChannelWallTVC
-            channelWallTVC.channel = channel
+            channelWallTVC = segue.destinationViewController as? ChannelWallTVC
+            channelWallTVC?.channel = channel
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
+    //MARK: Keyboard
+    func animateTextFieldWithKeyboard(notification: NSNotification) {
         
-            NSNotificationCenter.defaultCenter().addObserver(     self,
-                                                        selector: Selector("keyboardWillShow:"),
-                                                            name: UIKeyboardWillShowNotification,
-                                                          object: nil);
+        let userInfo = notification.userInfo!
         
-            NSNotificationCenter.defaultCenter().addObserver(     self,
-                                                        selector: Selector("keyboardWillHide:"),
-                                                            name: UIKeyboardWillHideNotification,
-                                                          object: nil)
-    }
-    
- 
-    
-    func keyboardWillShow(notification: NSNotification) {
-            let info: NSDictionary = notification.userInfo!
-            let s: NSValue = info.valueForKey(UIKeyboardFrameEndUserInfoKey) as NSValue;
-            let keyboardRect :CGRect = s.CGRectValue();
-            var containerViewOrigin = containerView.frame.origin
-            var containerViewHeight = containerView.frame.size.height
-            var visibleRect = self.view.frame
-            visibleRect.size.height -= keyboardRect.height
+        let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as Double
+        let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as UInt
         
-            if (!CGRectContainsPoint(visibleRect, containerViewOrigin)){
-                var scrollPoint = CGPointMake(0.0, containerViewOrigin.y - visibleRect.size.height + containerViewHeight);
-                scrollView.setContentOffset(scrollPoint, animated: true)
+        // baseContraint is your Auto Layout constraint that pins the
+        // text view to the bottom of the superview.
+        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navigationController!.navigationBar.frame.height
+        let offset =  keyboardSize.height
+        
+        if notification.name == UIKeyboardWillShowNotification {
+            bottomConstraint.constant = bottomConstraint.constant + offset  // move up
+            //topConstraint.constant = topConstraint.constant - offset
+            channelWallTVC?.scrollEntireTableTo(true, animated: true)
+            //navigationController?.setNavigationBarHidden(true, animated: true)
+            
+            //UIApplication.sharedApplication().statusBarHidden = true
+            
         }
+        else {
+            bottomConstraint.constant = 0 // move down
+            //topConstraint.constant = 0
+            channelWallTVC?.scrollEntireTableTo(false, animated: true)
+            //navigationController?.setNavigationBarHidden(false, animated: true)
+            
+            //UIApplication.sharedApplication().statusBarHidden = false
+        }
+        view.setNeedsUpdateConstraints()
+        
+        let options = UIViewAnimationOptions(curve << 16)
+        UIView.animateWithDuration(duration, delay: 0, options: options,
+            animations: {
+                self.view.layoutIfNeeded()
+            },
+            completion: nil
+        )
     }
  
-    func keyboardWillHide(sender: NSNotification) {
-             scrollView.setContentOffset(CGPointZero, animated:true)
-    }
   
     
   }

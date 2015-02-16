@@ -67,6 +67,8 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 44
+        
         
         navigationController?.hidesBarsOnTap
         UIApplication.sharedApplication().statusBarHidden = false
@@ -170,12 +172,14 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         */
         return cell!
     }
+    
     //Is called before cellForRowAtIndexPath
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return screenSize.width / 4.11
-    } 
+    }
     
+  
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "toChannelVC" {
@@ -261,36 +265,9 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         }
     }
     
-    /*
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        let pauseClosure = {
-            (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-            println("Pause the Channel")
-        }
-        let pauseAction = UITableViewRowAction(style: .Default, title:"     ", handler: pauseClosure)
-        pauseAction.backgroundColor = UIColor(patternImage: UIImage(named:"Pause.png")!  )
-        pauseAction.backgroundEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.Light))
-        
-        return [pauseAction]
-    }
-    */
+  
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
 
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     
     //MARK: Popover controller
     @IBAction func handlePopover(sender: UIBarButtonItem) {

@@ -92,18 +92,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
                                                                action: "dismissPressed:")
     }
     
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-       //navigationController?.hidesBarsWhenKeyboardAppears = true
-      //  navigationController?.hidesBarsOnTap = true
-    
-    }
-    override func viewDidDisappear(animated: Bool) {
-       // navigationController?.hidesBarsWhenKeyboardAppears = false
-         //        navigationController?.hidesBarsOnTap = false
-    }
-    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
 
@@ -224,6 +212,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
      
         if notification.name == UIKeyboardWillShowNotification && offset > 0 {
             bottomConstraint.constant =   bottomConstraint.constant + offset  // move up
+            
            navigationController?.setNavigationBarHidden(true, animated: true)
 
             UIApplication.sharedApplication().statusBarHidden = true

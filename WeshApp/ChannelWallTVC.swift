@@ -18,8 +18,10 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
     let screenSize  = UIScreen.mainScreen().bounds.size
 
 
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerViewHolder: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var channelDesc: UITextView!
     @IBOutlet weak var channelTitle: UILabel!
     
     
@@ -28,7 +30,11 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
         super.viewDidLoad()
       
         channelTitle.text = channel?.author.handle
-        channelDesc.text = channel?.desc
+        descriptionLabel.text = channel?.desc
+//        descriptionLabel.sizeToFit()
+       // headerViewHolder.sizeToFit()
+        //headerView.sizeToFit()
+        
         //channelBanner.image = UIImage(data: channel!.photo.photo)
         //profileImage.image = UIImage(data: channel!.author.photo.photo)
         
@@ -52,6 +58,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
         if (!fetchedResultsController.performFetch(&error)) {
             println("Error: \(error?.localizedDescription)") }
         
+        sizeHeaderToFit()
        
 
     }
@@ -92,10 +99,11 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
         cell.date.text = formatter.stringFromDate(post.date)
         return cell
     }
+    /*
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return screenSize.width / 1.18
     }
-    
+    */
     //MARK: NSFetchedResultsController Delegate methods
     func controllerWillChangeContent(controller: NSFetchedResultsController!) {
         tableView.beginUpdates()
@@ -116,75 +124,71 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
                 let cell = tableView.cellForRowAtIndexPath(indexPath) //as TeamCell
                 //configureCell(cell, indexPath: indexPath)
             case .Move: tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+                        tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
             default: break
         }
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
         tableView.endUpdates()
-        scrollToBottom(true)
+        scrollWallTo(true, animated: true)
     }
    
-    private func scrollToBottom(animated: Bool){
+    func scrollWallTo(bottom:Bool, animated: Bool){
     
         let sectionInfo = fetchedResultsController.sections![0] as NSFetchedResultsSectionInfo
         if sectionInfo.numberOfObjects != 0 {
-            
-            let iPath = NSIndexPath(forRow: sectionInfo.numberOfObjects - 1,
-                inSection: fetchedResultsController.sections!.count - 1)
-            tableView.scrollToRowAtIndexPath(iPath, atScrollPosition: .Bottom, animated: animated)
+            var iPath: NSIndexPath?
+            if bottom{
+                
+                 iPath = NSIndexPath(forRow: sectionInfo.numberOfObjects - 1,
+                                     inSection: fetchedResultsController.sections!.count - 1)
+                tableView.scrollToRowAtIndexPath(iPath!, atScrollPosition: .Bottom, animated: animated)
+
+            } else{
+                
+                iPath = NSIndexPath(forRow: 0, inSection: 0)
+                tableView.scrollToRowAtIndexPath(iPath!, atScrollPosition: .Top, animated: animated)
+            }
         }
     }
-   
+    func scrollEntireTableTo(bottom: Bool, animated: Bool){
+        if bottom{
+            
+            var yOffset: CGFloat  = 0.0
+                    
+            if (tableView.contentSize.height > tableView.bounds.size.height) {
+                yOffset = tableView.contentSize.height - tableView.bounds.size.height
+            }
+                    
+               tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentSize.height ), animated: animated)
+         } else {
+            
+            tableView.setContentOffset(CGPoint(x: 0, y: 0 - tableView.contentInset.top), animated: animated)
+        }
+
+    }
+    func sizeHeaderToFit(){
+        
+    var header = tableView.tableHeaderView!
     
-    /*
-    Self Sizing:
-    */
+    header.setNeedsLayout()
+    header.layoutIfNeeded()
+        
+     var height = header.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+     var frm = header.frame
+     
+        frm.size.height = height
+        header.frame = frm
+        tableView.tableHeaderView = header
+    }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+//    override func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+//        <#code#>
+//    }
+//    
+//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 10
+//    }
 }
