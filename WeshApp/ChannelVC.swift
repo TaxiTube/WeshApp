@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
+class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, ChannelWallDelegate {
 
     //MARK: Properties
     var channel: Channel?
@@ -16,6 +16,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     var sessionMngr: SessionMngr?
     var postMngr: PostMngr?
     var channelWallTVC: ChannelWallTVC?
+    var navController: UINavigationController?
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
@@ -23,12 +24,11 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     //@IBOutlet weak var containerView: UIView!
     //@IBOutlet weak var navigationBar: UINavigationItem!
-  
 
-    //MARK: IBACTIONS
-   @IBAction func hideKeyboard(sender: AnyObject) {
-     textField.resignFirstResponder()
+     func hideKeyboard() {
+        textField.resignFirstResponder()
     }
+
 
     @IBAction func postMessage(sender: AnyObject) {
         
@@ -59,6 +59,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
         
         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
                                    coreDataStack: coreDataStack!)
+        
     }
     
     deinit {
@@ -69,6 +70,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toChannelWallVC" {
             channelWallTVC = segue.destinationViewController as? ChannelWallTVC
+            channelWallTVC?.delegate = self
             channelWallTVC?.channel = channel
         }
     }

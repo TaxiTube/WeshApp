@@ -10,12 +10,18 @@ import UIKit
 import CoreData
 
 
-class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate {
+protocol ChannelWallDelegate{
+    func hideKeyboard()
+}
+
+class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate {
 
     var channel: Channel?
     var fetchedResultsController : NSFetchedResultsController!
     var coreDataStack: CoreDataStack!
     let screenSize  = UIScreen.mainScreen().bounds.size
+    var delegate: ChannelWallDelegate?
+    
 
 
     @IBOutlet weak var headerView: UIView!
@@ -31,11 +37,13 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
       
         channelTitle.text = channel?.author.handle
         descriptionLabel.text = channel?.desc
-//        descriptionLabel.sizeToFit()
-       // headerViewHolder.sizeToFit()
-        //headerView.sizeToFit()
+        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         
-        //channelBanner.image = UIImage(data: channel!.photo.photo)
+        recognizer.delegate = self
+        view.addGestureRecognizer(recognizer)
+        
+        
+        
         //profileImage.image = UIImage(data: channel!.author.photo.photo)
         
         let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
@@ -99,6 +107,11 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
         cell.date.text = formatter.stringFromDate(post.date)
         return cell
     }
+    
+    
+    func handleTap(recognizer: UITapGestureRecognizer){
+        delegate!.hideKeyboard()
+    }
     /*
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return screenSize.width / 1.18
@@ -151,7 +164,9 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
                 tableView.scrollToRowAtIndexPath(iPath!, atScrollPosition: .Top, animated: animated)
             }
         }
-    }
+     }
+    
+    
     func scrollEntireTableTo(bottom: Bool, animated: Bool){
         if bottom{
             
@@ -160,14 +175,15 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate 
             if (tableView.contentSize.height > tableView.bounds.size.height) {
                 yOffset = tableView.contentSize.height - tableView.bounds.size.height
             }
-                    
-               tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentSize.height ), animated: animated)
+            tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentSize.height ), animated: animated)
          } else {
-            
             tableView.setContentOffset(CGPoint(x: 0, y: 0 - tableView.contentInset.top), animated: animated)
         }
 
     }
+    
+    
+    
     func sizeHeaderToFit(){
         
     var header = tableView.tableHeaderView!

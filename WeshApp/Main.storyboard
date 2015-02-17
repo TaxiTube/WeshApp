@@ -241,7 +241,7 @@
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
                                     <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
-                                    <segue destination="L5T-Ia-3KY" kind="show" identifier="toChannelVC" id="Nxx-q4-UtH"/>
+                                    <segue destination="L5T-Ia-3KY" kind="show" identifier="toChannelVC" id="oFT-Fm-uwz"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="373" id="MDR-oS-7Yl" customClass="ChannelTableViewCell" customModule="WeshApp">
@@ -439,15 +439,12 @@
                                 <rect key="frame" x="0.0" y="500" width="604" height="80.5"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-UG-uen">
-                                        <rect key="frame" x="0.0" y="0.0" width="495.5" height="80.5"/>
+                                        <rect key="frame" x="0.0" y="-30" width="495.5" height="80.5"/>
                                         <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                        <connections>
-                                            <action selector="hideKeyboard:" destination="L5T-Ia-3KY" eventType="editingDidEnd" id="gi0-oP-E8X"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="70.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ck-0To" customClass="OrangeButton" customModule="Designables">
-                                        <rect key="frame" x="503.5" y="13" width="90.5" height="54.5"/>
+                                        <rect key="frame" x="499" y="13" width="90.5" height="54.5"/>
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -496,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gk3-UO-ozy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5157" y="754"/>
+            <point key="canvasLocation" x="5158" y="681"/>
         </scene>
         <!--Channel WallTVC-->
         <scene sceneID="EiG-zE-HHZ">
@@ -511,33 +508,33 @@
                             <rect key="frame" x="0.0" y="0.0" width="604" height="392"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHJ-cL-8ho" userLabel="HeaderViewHolder">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHJ-cL-8ho" userLabel="HeaderViewHolder">
                                     <rect key="frame" x="0.0" y="0.0" width="604" height="381"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="166" translatesAutoresizingMaskIntoConstraints="NO" id="9sc-nV-71c" userLabel="TopView" customClass="BorderView" customModule="Designables">
                                             <rect key="frame" x="0.0" y="0.0" width="604" height="241.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="113.5" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="iaw-AO-HHJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="113.5" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="iaw-AO-HHJ">
                                                     <rect key="frame" x="31.5" y="62" width="115.5" height="115.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="iaw-AO-HHJ" secondAttribute="height" multiplier="1:1" id="pB5-An-Cck"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="edge-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-Sd-VZS" userLabel="Edge-spacer-Image">
+                                                <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-Sd-VZS" userLabel="Edge-spacer-Image">
                                                     <rect key="frame" x="0.0" y="84" width="31.5" height="71"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="71" id="ffC-nF-2n4"/>
                                                     </constraints>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="71" restorationIdentifier="image-spacer-labels" translatesAutoresizingMaskIntoConstraints="NO" id="dJi-ic-30l" userLabel="image-spacer-labels">
+                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="71" restorationIdentifier="image-spacer-labels" translatesAutoresizingMaskIntoConstraints="NO" id="dJi-ic-30l" userLabel="image-spacer-labels">
                                                     <rect key="frame" x="146.5" y="84" width="48.5" height="71"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="71" id="mqa-En-Rf9"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="20.5" restorationIdentifier="subTitle" text="Sarah Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqs-Px-dWC" userLabel="subTitle">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="20.5" restorationIdentifier="subTitle" text="Sarah Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqs-Px-dWC" userLabel="subTitle">
                                                     <rect key="frame" x="194.5" y="130" width="409" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -550,7 +547,7 @@
                                                         <constraint firstAttribute="width" constant="50" id="ZNV-Mm-elf"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="29" restorationIdentifier="Title" text="#GreenPanda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv2-AZ-BIn" userLabel="Title">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="29" restorationIdentifier="Title" text="#GreenPanda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv2-AZ-BIn" userLabel="Title">
                                                     <rect key="frame" x="194.5" y="83" width="409" height="29"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -576,7 +573,7 @@
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidht">
+                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                                     <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
@@ -674,7 +671,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbZ-eH-YS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5911" y="835"/>
+            <point key="canvasLocation" x="5909" y="681"/>
         </scene>
         <!--Create ChannelVC-->
         <scene sceneID="Q5o-eI-WnD">
@@ -714,7 +711,7 @@
                                 <rect key="frame" x="254" y="111" width="93" height="25"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-yN-ogm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-yN-ogm">
                                 <rect key="frame" x="240" y="-18" width="119" height="119.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Omf-yN-ogm" secondAttribute="height" multiplier="1:1" id="0hN-Zs-s4C"/>
