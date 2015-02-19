@@ -8,52 +8,49 @@
 
 import UIKit
 
-public class PlayPause: UIView {
+public class PlayPause: UIView, UIGestureRecognizerDelegate {
     
+      var isPlay: Bool = false
       var isPlayPressed: Bool = false
       var isPausePressed: Bool = false
       var isPause: Bool = true
     
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override public func drawRect(rect: CGRect) {
-        WeshappPlayPauseSK.drawPauseCanvas(frame: bounds,
-                                  playBtnClicked: isPlayPressed,
-                                 pauseBtnClicked: isPausePressed,
-                                    channelState: !isPause )
-    }
-    
- public override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
-
-        if isPause {
-            isPausePressed = false
-        }else{
-            isPlayPressed = false
-        }
-        isPause = !isPause
-        setNeedsDisplay()
-    }
-
-    
-    public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    public required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        let recognizer = UILongPressGestureRecognizer (target: self, action:Selector("handleTap:"))
+        recognizer.minimumPressDuration = 0.01
+        recognizer.delegate = self
         
-        if isPause {
-            isPausePressed = true
-        }else{
-            isPlayPressed = true
-        }
-        setNeedsDisplay()
+        self.addGestureRecognizer(recognizer)
     }
-    public override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        if isPause {
-            isPausePressed = false
-        }else{
-            isPlayPressed = false
-        }
-        isPause = !isPause
-        setNeedsDisplay()
+    override public func drawRect(rect: CGRect) {
+        WeshappPlayPauseSK.drawPlayPauseBtnCanvas(frame: rect,
+                                               pauseBtn: isPause,
+                                        pauseBtnClicked: isPausePressed,
+                                                playBtn: isPlay,
+                                         playBtnClicked: isPlayPressed)
     }
     
-
-
+    
+    public  func handleTap(recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state  == UIGestureRecognizerState.Began{
+            if isPause {
+                isPausePressed = true
+                isPause = false
+            }else if isPlay{
+                isPlayPressed = true
+                isPlay = false
+            }
+        }else if recognizer.state  == UIGestureRecognizerState.Ended{
+            if isPausePressed {
+                isPausePressed = false
+                isPlay = true
+            
+            } else if isPlayPressed{
+                isPlayPressed = false
+                isPause = true
+            }
+        }
+        setNeedsDisplay()
+    }
 }

@@ -121,6 +121,7 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-bv-wbR" userLabel="rightView" customClass="PlayPause" customModule="Designables">
                                             <rect key="frame" x="231" y="0.0" width="373" height="373"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="bOL-bv-wbR" secondAttribute="height" multiplier="1:1" id="t8p-Id-WKz"/>
                                             </constraints>
@@ -256,7 +257,7 @@
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
+                                        <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
                                             <rect key="frame" x="-142" y="0.0" width="373" height="373"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UEr-a1-zz9" secondAttribute="height" multiplier="1:1" id="nI2-Dl-5z0"/>
@@ -420,6 +421,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyj-mL-zA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="i5W-9f-hgo"/>
             </objects>
             <point key="canvasLocation" x="4211" y="658"/>
         </scene>
@@ -671,7 +673,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbZ-eH-YS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5909" y="681"/>
+            <point key="canvasLocation" x="5858" y="681"/>
         </scene>
         <!--Create ChannelVC-->
         <scene sceneID="Q5o-eI-WnD">

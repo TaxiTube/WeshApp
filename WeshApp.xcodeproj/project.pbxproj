@@ -85,7 +85,6 @@
 		D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */; };
 		D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
 		D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
-		D8D2A1031A84DF32008DC0AF /* WeshappRedButtonSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D2A1021A84DF32008DC0AF /* WeshappRedButtonSK.swift */; };
 		D8D9342D1A288DB00055079E /* NSManageObjectSerializationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */; };
 		D8DA2A351A693F410098C5E6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
 		D8DA2A361A693F4F0098C5E6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E291A690CCD00FBFED1 /* Badge.swift */; };
@@ -93,6 +92,7 @@
 		D8DA2A381A693F600098C5E6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */; };
 		D8DA2A391A693F630098C5E6 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E271A690CCD00FBFED1 /* Tags.swift */; };
 		D8DA2A3A1A693F660098C5E6 /* ProfilePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E251A690CCD00FBFED1 /* ProfilePhoto.swift */; };
+		D8DAE4B81A94D65100AAF247 /* WeshappRedButtonSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */; };
 		D8DC68551A337CC800AAF16D /* WeshAppLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8DC68671A337CC800AAF16D /* WeshAppLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; };
 		D8DC68681A337CC800AAF16D /* WeshAppLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -208,8 +208,8 @@
 		D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelWallTVC.swift; sourceTree = "<group>"; };
 		D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostTableViewCell.swift; sourceTree = "<group>"; };
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
-		D8D2A1021A84DF32008DC0AF /* WeshappRedButtonSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButtonSK.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
+		D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButtonSK.swift; sourceTree = "<group>"; };
 		D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeshAppLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DC68531A337CC800AAF16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeshAppLibrary.h; sourceTree = "<group>"; };
@@ -258,6 +258,8 @@
 		B36E68431A6C3AF7002B951A /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */,
+				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
 				D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */,
 				D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */,
 				D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */,
@@ -266,8 +268,6 @@
 				D885E88D1A8F695800BD8E48 /* PlayPause.swift */,
 				D877FA8C1A87B6EB00C0334B /* WeshappChevronSK.swift */,
 				D877FA8E1A87B71500C0334B /* Chevron.swift */,
-				D8D2A1021A84DF32008DC0AF /* WeshappRedButtonSK.swift */,
-				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
 				B36E68461A6C3AF7002B951A /* Designables.h */,
 				D89144A41A71485F008D8D75 /* CrossIconSK.swift */,
 				D89144A21A714436008D8D75 /* CrossBarItem.swift */,
@@ -426,14 +426,14 @@
 			isa = PBXGroup;
 			children = (
 				B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */,
-				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
+				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
+				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
+				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */,
 				D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */,
-				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
-				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -658,7 +658,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D877FA8D1A87B6EB00C0334B /* WeshappChevronSK.swift in Sources */,
-				D8D2A1031A84DF32008DC0AF /* WeshappRedButtonSK.swift in Sources */,
 				B32E55A01A74EC13007F88B0 /* WeshappNavBar.swift in Sources */,
 				B39062621A72875E00F6B048 /* GreenButton.swift in Sources */,
 				B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */,
@@ -675,6 +674,7 @@
 				D885E8901A8F74F000BD8E48 /* FriendRequest.swift in Sources */,
 				D87D58FE1A7A536C002ADA13 /* WeshappSegControl.swift in Sources */,
 				D8C224491A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */,
+				D8DAE4B81A94D65100AAF247 /* WeshappRedButtonSK.swift in Sources */,
 				D885E8921A8F754500BD8E48 /* WeshappFriendRequestSK.swift in Sources */,
 				D885E88C1A8F691A00BD8E48 /* WeshappPlayPauseSK.swift in Sources */,
 			);

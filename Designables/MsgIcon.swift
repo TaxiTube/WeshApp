@@ -8,29 +8,30 @@
 
 import UIKit
 
-public class MsgIcon: UIView {
+public class MsgIcon: UIView, UIGestureRecognizerDelegate {
     var isPressed = false
     
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+    public required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        let recognizer = UILongPressGestureRecognizer (target: self, action:Selector("handleTap:"))
+        recognizer.minimumPressDuration = 0.01
+        recognizer.delegate = self
+        
+        self.addGestureRecognizer(recognizer)
+    }
+    
     public override func drawRect(rect: CGRect) {
         WeshappMsgIconSK.drawMsgCanvas(msgFrame: bounds, sendMsgBtnClicked: isPressed)
     }
-
-   
-    public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
-        isPressed = true
+    
+    public  func handleTap(recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state  == UIGestureRecognizerState.Began{
+            
+            isPressed = true
+        }else if recognizer.state  == UIGestureRecognizerState.Ended{
+            isPressed = false
+        }
         setNeedsDisplay()
     }
-    public override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        
-        isPressed = false
-        setNeedsDisplay()
-    }
-    public override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
-        
-        isPressed = false
-        setNeedsDisplay()
-    }
+ 
 }

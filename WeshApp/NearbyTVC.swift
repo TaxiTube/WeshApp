@@ -265,8 +265,6 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         }
     }
     
-  
-
 
     
     //MARK: Popover controller

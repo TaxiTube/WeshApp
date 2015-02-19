@@ -141,10 +141,3 @@ public class WeshappFriendRequestSK : NSObject {
 
 }
 
-@objc protocol StyleKitSettableImage {
-    func setImage(image: UIImage!)
-}
-
-@objc protocol StyleKitSettableSelectedImage {
-    func setSelectedImage(image: UIImage!)
-}
