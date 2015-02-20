@@ -9,17 +9,17 @@
 import UIKit
 
 @IBDesignable
-public class WeshappRedButton: UIView, UIGestureRecognizerDelegate {
+public class WeshappRedButton: UIView {
     var isPressed:Bool = false
     
   
     public required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        let recognizer = UILongPressGestureRecognizer (target: self, action:Selector("handleTap:"))
-        recognizer.minimumPressDuration = 0.01
-        recognizer.delegate = self
-
-        self.addGestureRecognizer(recognizer)
+//        let recognizer = UILongPressGestureRecognizer (target: self, action:Selector("handleTap:"))
+//        recognizer.minimumPressDuration = 0.01
+//        recognizer.delegate = self
+//
+//        self.addGestureRecognizer(recognizer)
     }
     
     
@@ -31,19 +31,19 @@ public class WeshappRedButton: UIView, UIGestureRecognizerDelegate {
     }
     
 
-
-    public  func handleTap(recognizer: UILongPressGestureRecognizer) {
-        if recognizer.state  == UIGestureRecognizerState.Began{
-            
-            isPressed = true
-        }else if recognizer.state  == UIGestureRecognizerState.Ended{
-            isPressed = false
-        }
-        
-        println("hadn \(recognizer.state.rawValue)")
-        setNeedsDisplay()
-    }
-//   
+//
+//    public  func handleTap(recognizer: UILongPressGestureRecognizer) {
+//        if recognizer.state  == UIGestureRecognizerState.Began{
+//            
+//            isPressed = true
+//        }else if recognizer.state  == UIGestureRecognizerState.Ended{
+//            isPressed = false
+//        }
+//        
+//        println("hadn \(recognizer.state.rawValue)")
+//        setNeedsDisplay()
+//    }
+//
 //    public override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
 //        isPressed = false
 //        setNeedsDisplay()   
