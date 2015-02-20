@@ -111,7 +111,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         if notification.name == UIKeyboardWillShowNotification {
             bottomConstraint.constant = bottomConstraint.constant + offset  // move up
             //topConstraint.constant = topConstraint.constant - offset
-            channelWallTVC?.scrollEntireTableTo(true, animated: true)
+            //channelWallTVC?.scrollEntireTableTo(true, animated: true)
             //navigationController?.setNavigationBarHidden(true, animated: true)
             
             //UIApplication.sharedApplication().statusBarHidden = true
@@ -120,7 +120,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         else {
             bottomConstraint.constant = 0 // move down
             //topConstraint.constant = 0
-            channelWallTVC?.scrollEntireTableTo(false, animated: true)
+            //channelWallTVC?.scrollEntireTableTo(false, animated: true)
             //navigationController?.setNavigationBarHidden(false, animated: true)
             
             //UIApplication.sharedApplication().statusBarHidden = false

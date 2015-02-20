@@ -33,7 +33,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
     override func viewDidLoad() {
       
         super.viewDidLoad()
-      
+        descriptionLabel.preferredMaxLayoutWidth = screenSize.width
         channelTitle.text = channel?.author.handle
         descriptionLabel.text = channel?.desc
         
@@ -64,7 +64,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         var error: NSError? = nil
         if (!fetchedResultsController.performFetch(&error)) {
             println("Error: \(error?.localizedDescription)") }
-        
+
         sizeHeaderToFit()
        
 
@@ -111,11 +111,14 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
     func handleTap(recognizer: UITapGestureRecognizer){
         delegate!.hideKeyboard()
     }
-    /*
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return screenSize.width / 1.18
+    
+//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return screenSize.width / 1.18
+//    }
+
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
     }
-    */
     //MARK: NSFetchedResultsController Delegate methods
     func controllerWillChangeContent(controller: NSFetchedResultsController!) {
         tableView.beginUpdates()
@@ -186,22 +189,28 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
     func sizeHeaderToFit(){
         
     var header = tableView.tableHeaderView!
+//    header.setTranslatesAutoresizingMaskIntoConstraints(false)
     
-    header.setNeedsLayout()
-    header.layoutIfNeeded()
+        header.setNeedsLayout()
+        header.layoutIfNeeded()
         
+        
+//     header.sizeToFit()
      var height = header.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-     var frm = header.frame
-     
+        println(height)
+        var frm = header.frame
         frm.size.height = height
         header.frame = frm
         tableView.tableHeaderView = header
+
+    
+
     }
     
     
-//    override func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-//        <#code#>
-//    }
+    override func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return screenSize.width / 1.18
+    }
 //    
 //    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return 10

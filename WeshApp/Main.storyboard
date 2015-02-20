@@ -28,7 +28,7 @@
         <!--SplashVC-->
         <scene sceneID="HH7-Xf-ygZ">
             <objects>
-                <viewController storyboardIdentifier="SplashVC" id="b6R-pb-CYx" customClass="SplashVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashVC" id="b6R-pb-CYx" customClass="SplashVC" customModule="WeshApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ge4-jG-kwa"/>
                         <viewControllerLayoutGuide type="bottom" id="61l-5n-pM8"/>
@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3Z-1o-vvS">
-                                <rect key="frame" x="150" y="252" width="300" height="95"/>
+                                <rect key="frame" x="150" y="84" width="300" height="95"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your handle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBD-sq-joc">
                                         <rect key="frame" x="77" y="33" width="147" height="30"/>
@@ -87,10 +87,17 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="O3Z-1o-vvS" secondAttribute="centerX" id="Ney-iM-6nZ"/>
                             <constraint firstAttribute="centerY" secondItem="O3Z-1o-vvS" secondAttribute="centerY" id="cB3-rI-r21"/>
+                            <constraint firstItem="O3Z-1o-vvS" firstAttribute="top" secondItem="ge4-jG-kwa" secondAttribute="bottom" constant="64" id="eI5-96-q0n"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cB3-rI-r21"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="RbA-u9-i5C"/>
                     <connections>
@@ -256,7 +263,7 @@
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
                                             <rect key="frame" x="-142" y="0.0" width="373" height="373"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UEr-a1-zz9" secondAttribute="height" multiplier="1:1" id="nI2-Dl-5z0"/>
@@ -518,16 +525,16 @@
         <scene sceneID="EiG-zE-HHZ">
             <objects>
                 <tableViewController id="l7D-dj-VuI" customClass="ChannelWallTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" id="hR2-L4-WTz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="21" id="hR2-L4-WTz">
                         <rect key="frame" x="0.0" y="0.0" width="604" height="455.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.56848069300296289" green="1" blue="0.15079586542297241" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="odC-aJ-fA6" userLabel="HeaderView">
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="100" id="odC-aJ-fA6" userLabel="HeaderView">
                             <rect key="frame" x="0.0" y="0.0" width="604" height="392"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHJ-cL-8ho" userLabel="HeaderViewHolder">
+                                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="LHJ-cL-8ho" userLabel="HeaderViewHolder" customClass="BorderView" customModule="Designables">
                                     <rect key="frame" x="0.0" y="0.0" width="604" height="381"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="166" translatesAutoresizingMaskIntoConstraints="NO" id="9sc-nV-71c" userLabel="TopView" customClass="BorderView" customModule="Designables">
@@ -540,7 +547,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-Sd-VZS" userLabel="Edge-spacer-Image">
-                                                    <rect key="frame" x="0.0" y="85.5" width="36" height="71"/>
+                                                    <rect key="frame" x="0.0" y="85" width="36" height="71"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="71" id="ffC-nF-2n4"/>
@@ -606,7 +613,7 @@
                                         </label>
                                         <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="183" placeholderIntrinsicHeight="46" restorationIdentifier="top-spacer-desc" translatesAutoresizingMaskIntoConstraints="NO" id="JZs-dw-4ni" userLabel="top-spacer-desc">
                                             <rect key="frame" x="0.0" y="241" width="604" height="56.5"/>
-                                            <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -627,6 +634,12 @@
                                         <constraint firstItem="9sc-nV-71c" firstAttribute="top" secondItem="LHJ-cL-8ho" secondAttribute="top" id="zc3-Gk-ASd"/>
                                         <constraint firstItem="LaR-RS-51A" firstAttribute="top" secondItem="JZs-dw-4ni" secondAttribute="bottom" id="ztU-1I-SrE"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
