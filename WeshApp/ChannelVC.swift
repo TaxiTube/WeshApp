@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, ChannelWallDelegate {
+class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, ChannelWallDelegate, UINavigationControllerDelegate {
 
     //MARK: Properties
     var channel: Channel?
@@ -17,6 +17,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     var postMngr: PostMngr?
     var channelWallTVC: ChannelWallTVC?
     var navController: UINavigationController?
+
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
@@ -57,14 +58,28 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
             name: UIKeyboardWillHideNotification,
             object: nil)
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"),
+            style: .Done,
+            target: self,
+            action: "dismissPressed:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburgerIcon.png"),
+            style: .Done,
+            target: self,
+            action: "dismissPressed:")
+        
         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
                                    coreDataStack: coreDataStack!)
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        navController = navigationController
+    }
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
+    
     
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -86,7 +101,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         
         // baseContraint is your Auto Layout constraint that pins the
         // text view to the bottom of the superview.
-        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navigationController!.navigationBar.frame.height
+//        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navController!.navigationBar.frame.height
         let offset =  keyboardSize.height
         
         if notification.name == UIKeyboardWillShowNotification {
@@ -117,6 +132,11 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         )
     }
  
-  
+    //MARK: Navbar actions
+    func dismissPressed(sender: AnyObject) {
+        navigationController?.popToRootViewControllerAnimated(true)
+        println( navigationController )
+    }
+    
     
   }

@@ -252,7 +252,6 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="z70-Xy-vkL" userLabel="rightView2" customClass="MsgIcon" customModule="Designables">
                                             <rect key="frame" x="231" y="0.0" width="373" height="373"/>
-                                            <color key="backgroundColor" red="1" green="0.3370362777" blue="0.14325110860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
@@ -438,15 +437,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" customClass="TextViewSendView" customModule="WeshAppLibrary">
-                                <rect key="frame" x="0.0" y="500" width="604" height="80.5"/>
+                                <rect key="frame" x="0.0" y="455" width="604" height="80.5"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-UG-uen">
-                                        <rect key="frame" x="0.0" y="-30" width="495.5" height="80.5"/>
-                                        <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="70.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ck-0To" customClass="OrangeButton" customModule="Designables">
-                                        <rect key="frame" x="499" y="13" width="90.5" height="54.5"/>
+                                        <rect key="frame" x="503" y="13" width="90.5" height="54.5"/>
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -454,21 +448,42 @@
                                             <action selector="postMessage:" destination="L5T-Ia-3KY" eventType="touchUpInside" id="TN2-Nl-8st"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="360" placeholderIntrinsicHeight="60" restorationIdentifier="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="9XO-Xe-nfr" userLabel="Smiley" customClass="SmileyIcon" customModule="Designables">
+                                        <rect key="frame" x="36" y="24.5" width="30" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9XO-Xe-nfr" secondAttribute="height" multiplier="1:1" id="0ZM-YU-LuB"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-UG-uen" customClass="WeshappTextField" customModule="Designables">
+                                        <rect key="frame" x="66" y="0.0" width="428.5" height="80.5"/>
+                                        <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-smile" translatesAutoresizingMaskIntoConstraints="NO" id="lI0-7W-UbV" userLabel="Edge-spacer-Image">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="80.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="lI0-7W-UbV" firstAttribute="leading" secondItem="pdO-vX-GrO" secondAttribute="leading" id="5dM-en-7Pz"/>
                                     <constraint firstItem="yFJ-ck-0To" firstAttribute="centerY" secondItem="pdO-vX-GrO" secondAttribute="centerY" id="B4S-6w-WH0"/>
-                                    <constraint firstItem="fzU-UG-uen" firstAttribute="leading" secondItem="pdO-vX-GrO" secondAttribute="leading" id="QiF-ay-grY"/>
+                                    <constraint firstItem="lI0-7W-UbV" firstAttribute="top" secondItem="pdO-vX-GrO" secondAttribute="top" id="KKq-dE-ciq"/>
+                                    <constraint firstAttribute="bottom" secondItem="lI0-7W-UbV" secondAttribute="bottom" id="TEt-pK-VL3"/>
+                                    <constraint firstItem="fzU-UG-uen" firstAttribute="leading" secondItem="9XO-Xe-nfr" secondAttribute="trailing" id="Uhk-dI-GcF"/>
+                                    <constraint firstItem="9XO-Xe-nfr" firstAttribute="leading" secondItem="lI0-7W-UbV" secondAttribute="trailing" id="XjY-Nl-CVx"/>
                                     <constraint firstAttribute="height" secondItem="fzU-UG-uen" secondAttribute="height" id="Zyb-qo-9UF"/>
                                     <constraint firstItem="yFJ-ck-0To" firstAttribute="leading" secondItem="fzU-UG-uen" secondAttribute="trailing" constant="8" symbolic="YES" id="b6M-dO-Jrt"/>
                                     <constraint firstAttribute="centerY" secondItem="fzU-UG-uen" secondAttribute="centerY" id="ds0-wc-OWP"/>
+                                    <constraint firstAttribute="centerY" secondItem="9XO-Xe-nfr" secondAttribute="centerY" id="px8-UO-gVY"/>
                                     <constraint firstAttribute="trailing" secondItem="yFJ-ck-0To" secondAttribute="trailing" constant="10" id="vVQ-OP-Hki"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="500" translatesAutoresizingMaskIntoConstraints="NO" id="T5Z-jR-SMG">
-                                <rect key="frame" x="0.0" y="-18" width="604" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="604" height="455.5"/>
                                 <connections>
-                                    <segue destination="l7D-dj-VuI" kind="embed" identifier="toChannelWallVC" id="2Lk-km-9ck"/>
+                                    <segue destination="l7D-dj-VuI" kind="embed" identifier="toChannelWallVC" id="hfu-iZ-1ib"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -478,12 +493,14 @@
                             <constraint firstItem="T5Z-jR-SMG" firstAttribute="top" secondItem="Fz4-GA-OEs" secondAttribute="bottom" id="5wk-As-Izw"/>
                             <constraint firstItem="pdO-vX-GrO" firstAttribute="leading" secondItem="bHI-fM-JvT" secondAttribute="leading" id="8HZ-HF-hzH"/>
                             <constraint firstItem="T5Z-jR-SMG" firstAttribute="leading" secondItem="bHI-fM-JvT" secondAttribute="leading" id="9E8-Ei-9Iq"/>
+                            <constraint firstItem="lI0-7W-UbV" firstAttribute="width" secondItem="bHI-fM-JvT" secondAttribute="width" multiplier="0.06" id="DRG-Jw-fFr"/>
                             <constraint firstAttribute="trailing" secondItem="pdO-vX-GrO" secondAttribute="trailing" id="Jnr-hT-H6g"/>
                             <constraint firstAttribute="bottom" secondItem="pdO-vX-GrO" secondAttribute="bottom" id="NHf-rZ-5FK"/>
                             <constraint firstItem="pdO-vX-GrO" firstAttribute="top" secondItem="T5Z-jR-SMG" secondAttribute="bottom" id="VGb-aj-73F"/>
                             <constraint firstAttribute="width" secondItem="pdO-vX-GrO" secondAttribute="height" multiplier="7.5" id="WXh-0H-Vxz"/>
                             <constraint firstAttribute="trailing" secondItem="T5Z-jR-SMG" secondAttribute="trailing" id="Zzs-m5-Udl"/>
                             <constraint firstAttribute="width" secondItem="yFJ-ck-0To" secondAttribute="height" multiplier="11.03" id="c3m-u3-8N5"/>
+                            <constraint firstItem="9XO-Xe-nfr" firstAttribute="width" secondItem="bHI-fM-JvT" secondAttribute="width" multiplier="0.05" id="reg-oL-S3a"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -495,14 +512,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gk3-UO-ozy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5158" y="681"/>
+            <point key="canvasLocation" x="5155" y="718"/>
         </scene>
         <!--Channel WallTVC-->
         <scene sceneID="EiG-zE-HHZ">
             <objects>
                 <tableViewController id="l7D-dj-VuI" customClass="ChannelWallTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" id="hR2-L4-WTz">
-                        <rect key="frame" x="0.0" y="0.0" width="604" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="604" height="455.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.56848069300296289" green="1" blue="0.15079586542297241" alpha="1" colorSpace="calibratedRGB"/>
@@ -523,7 +540,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-Sd-VZS" userLabel="Edge-spacer-Image">
-                                                    <rect key="frame" x="0.0" y="84" width="31.5" height="71"/>
+                                                    <rect key="frame" x="0.0" y="85.5" width="36" height="71"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="71" id="ffC-nF-2n4"/>

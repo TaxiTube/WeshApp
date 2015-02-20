@@ -61,14 +61,13 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     
     
     }
-    
+
 
 
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 44
-        
         
         navigationController?.hidesBarsOnTap
         UIApplication.sharedApplication().statusBarHidden = false
@@ -236,6 +235,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     func pauseAction(){
         println("Pause Action pressed")
     }
+    
     func cellDidOpen(cell: ChannelTableViewCell) {
 
         if cell != openedCell{
@@ -250,6 +250,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         var currentEditingIndexPath = tableView.indexPathForCell(cell)
         //self.cellsCurrentlyEditing?.addObject(currentEditingIndexPath!)
     }
+    
     func cellDidClose(cell: ChannelTableViewCell) {
         if cell == openedCell{
             openedCell = nil
@@ -259,6 +260,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
        // self.cellsCurrentlyEditing?.removeObject(currentEditingIndexPath!)
          //tableView.scrollEnabled = true
     }
+    
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if let oc = openedCell?{
             oc.closeCell()

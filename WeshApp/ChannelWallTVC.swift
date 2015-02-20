@@ -21,7 +21,6 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
     var coreDataStack: CoreDataStack!
     let screenSize  = UIScreen.mainScreen().bounds.size
     var delegate: ChannelWallDelegate?
-    
 
 
     @IBOutlet weak var headerView: UIView!
@@ -37,8 +36,8 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
       
         channelTitle.text = channel?.author.handle
         descriptionLabel.text = channel?.desc
-        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         
+        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         recognizer.delegate = self
         view.addGestureRecognizer(recognizer)
         

@@ -101,6 +101,8 @@
 		D8DC68821A338FAA00AAF16D /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687C1A338FAA00AAF16D /* GreenButton.swift */; };
 		D8DC68861A338FAA00AAF16D /* TextFieldSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */; };
 		D8DC68881A33910E00AAF16D /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68871A33910E00AAF16D /* NSManagedObject.swift */; };
+		D8EF20931A96C57F0033230C /* WeshappSmileIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */; };
+		D8EF20951A96C5930033230C /* SmileyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EF20941A96C5930033230C /* SmileyIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +221,8 @@
 		D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrangeButton.swift; path = ../WeshApp/OrangeButton.swift; sourceTree = "<group>"; };
 		D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldSendView.swift; path = ../WeshApp/TextFieldSendView.swift; sourceTree = "<group>"; };
 		D8DC68871A33910E00AAF16D /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
+		D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappSmileIconSK.swift; sourceTree = "<group>"; };
+		D8EF20941A96C5930033230C /* SmileyIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmileyIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,8 @@
 		B36E68431A6C3AF7002B951A /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */,
+				D8EF20941A96C5930033230C /* SmileyIcon.swift */,
 				D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */,
 				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
 				D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */,
@@ -429,8 +435,8 @@
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
 				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
 				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
-				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */,
+				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */,
 				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
@@ -666,11 +672,13 @@
 				D885E8941A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift in Sources */,
 				D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */,
 				D885E88E1A8F695800BD8E48 /* PlayPause.swift in Sources */,
+				D8EF20951A96C5930033230C /* SmileyIcon.swift in Sources */,
 				D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */,
 				D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */,
 				D885E8961A8F7C1F00BD8E48 /* MsgIcon.swift in Sources */,
 				D870518A1A7C3E000081484A /* WeshappLabel.swift in Sources */,
 				B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */,
+				D8EF20931A96C57F0033230C /* WeshappSmileIconSK.swift in Sources */,
 				D885E8901A8F74F000BD8E48 /* FriendRequest.swift in Sources */,
 				D87D58FE1A7A536C002ADA13 /* WeshappSegControl.swift in Sources */,
 				D8C224491A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */,
