@@ -47,7 +47,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("animateTextFieldWithKeyboard:"),
             name: UIKeyboardWillShowNotification,
@@ -66,14 +66,18 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
             style: .Done,
             target: self,
             action: "dismissPressed:")
+        self.navigationItem.title = channel?.title
+
+        
         
         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
                                    coreDataStack: coreDataStack!)
         
     }
-    
+   
     override func viewDidAppear(animated: Bool) {
         navController = navigationController
+
     }
     
     deinit {
@@ -135,7 +139,6 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     //MARK: Navbar actions
     func dismissPressed(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
-        println( navigationController )
     }
     
     

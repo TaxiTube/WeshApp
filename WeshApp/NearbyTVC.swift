@@ -190,6 +190,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
                 channelVC.channel = channel
                 channelVC.coreDataStack = coreDataStack
                 channelVC.sessionMngr = sessionMngr
+
             }
     }
     
