@@ -18,15 +18,21 @@ class ChannelHeaderVC: UIViewController {
     var coreDataStack: CoreDataStack!
     let screenSize  = UIScreen.mainScreen().bounds.size
     
-        @IBOutlet weak var descriptionLabel: UILabel!
-//        @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var handle: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-                descriptionLabel.preferredMaxLayoutWidth = screenSize.width
-//                channelTitle.text = channel?.author.handle
-                descriptionLabel.text = channel?.desc
+        
+        descriptionLabel.preferredMaxLayoutWidth = screenSize.width
+        handle.text = "#\(channel!.author.handle)"
+//        if let firstname = channel?.author.profile.firstName {
+//            nameLabel.text = "\(firstname) \(channel?.author.profile.lastName)"
+//        }
+        descriptionLabel.text = channel?.desc
         
 
     }

@@ -778,7 +778,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="604" height="241.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="113.5" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="RLW-VR-3pL">
-                                                <rect key="frame" x="36" y="62.5" width="116" height="115.5"/>
+                                                <rect key="frame" x="36" y="62" width="116" height="115.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RLW-VR-3pL" secondAttribute="height" multiplier="1:1" id="06H-4k-KOo"/>
                                                 </constraints>
@@ -798,13 +798,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="20.5" restorationIdentifier="subTitle" text="Sarah Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEH-A3-uod" userLabel="subTitle">
-                                                <rect key="frame" x="200.5" y="110.5" width="403.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
+                                                <rect key="frame" x="200" y="110" width="403.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="14"/>
                                                 <color key="textColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="29" restorationIdentifier="Title" text="#GreenPanda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2h-x9-M4g" userLabel="Title">
-                                                <rect key="frame" x="200.5" y="79.5" width="403.5" height="29"/>
+                                                <rect key="frame" x="200" y="79" width="403.5" height="29"/>
                                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                 <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -839,11 +839,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="183" placeholderIntrinsicHeight="46" restorationIdentifier="top-spacer-desc" translatesAutoresizingMaskIntoConstraints="NO" id="1GE-Es-qkX" userLabel="top-spacer-desc">
-                                        <rect key="frame" x="0.0" y="241.5" width="604" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="241" width="604" height="56.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="G0g-pv-E5d"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="G0g-pv-E5d"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="183" placeholderIntrinsicHeight="46" restorationIdentifier="bottom-spacer-desc" translatesAutoresizingMaskIntoConstraints="NO" id="dgM-pG-G4E" userLabel="bottom-spacer-desc">
                                         <rect key="frame" x="0.0" y="335" width="604" height="56.5"/>
@@ -851,6 +856,11 @@
                                         <constraints>
                                             <constraint firstAttribute="height" id="9TD-ln-rIV"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9TD-ln-rIV"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -881,12 +891,6 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="xs8-NN-50Y"/>
-                                        <exclude reference="myi-8h-LIG"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -900,6 +904,9 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="descriptionLabel" destination="PZn-Ha-quZ" id="j5F-L0-82o"/>
+                        <outlet property="handle" destination="V2h-x9-M4g" id="gea-Zk-Cqh"/>
+                        <outlet property="nameLabel" destination="NEH-A3-uod" id="doj-w0-sfV"/>
+                        <outlet property="profileImage" destination="RLW-VR-3pL" id="oGI-F6-i3K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KuP-iU-KeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
