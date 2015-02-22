@@ -206,7 +206,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         
 //     header.sizeToFit()
      var height = header.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-        println(height)
+//        println(height)
         var frm = header.frame
         frm.size.height = height
         header.frame = frm

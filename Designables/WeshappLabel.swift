@@ -39,7 +39,7 @@ public class WeshappLabel: UILabel {
 
 
         //adjustsFontSizeToFitWidth = true
-        sizeToFit()
+//        sizeToFit()
         super.layoutSubviews()
 
         
