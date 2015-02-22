@@ -437,13 +437,13 @@
 				B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */,
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
 				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
-				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
 				B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */,
-				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */,
+				D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */,
+				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
+				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
-				D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

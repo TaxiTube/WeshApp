@@ -31,7 +31,9 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
       
         super.viewDidLoad()
 
-        
+        tableView.estimatedRowHeight = 88.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         recognizer.delegate = self
         view.addGestureRecognizer(recognizer)
@@ -90,13 +92,13 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         let post = fetchedResultsController.objectAtIndexPath(indexPath) as Post
 
         //cell.nameLabel.text = post.sender.firstName
-        cell.wallPost.text = post.post
+        cell.post?.text = post.post
         
         let formatter = NSDateFormatter()
         formatter.dateStyle = .LongStyle
         formatter.timeStyle = .NoStyle
 
-        cell.date.text = formatter.stringFromDate(post.date)
+        cell.date?.text = formatter.stringFromDate(post.date)
         return cell
     }
     
