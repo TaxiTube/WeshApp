@@ -15,7 +15,6 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     var coreDataStack: CoreDataStack?
     var sessionMngr: SessionMngr?
     var postMngr: PostMngr?
-    var channelWallTVC: ChannelWallTVC?
     var navController: UINavigationController?
 
     
@@ -88,7 +87,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toChannelWallVC" {
-            channelWallTVC = segue.destinationViewController as? ChannelWallTVC
+            var channelWallTVC = segue.destinationViewController as? ChannelWallTVC
             channelWallTVC?.delegate = self
             channelWallTVC?.channel = channel
         }

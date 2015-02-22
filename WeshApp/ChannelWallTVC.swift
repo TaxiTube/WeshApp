@@ -24,26 +24,19 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
 
 
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerViewHolder: UIView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var channelTitle: UILabel!
+
     
     
     override func viewDidLoad() {
       
         super.viewDidLoad()
-        descriptionLabel.preferredMaxLayoutWidth = screenSize.width
-        channelTitle.text = channel?.author.handle
-        descriptionLabel.text = channel?.desc
+
         
         let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         recognizer.delegate = self
         view.addGestureRecognizer(recognizer)
         
         
-        
-        //profileImage.image = UIImage(data: channel!.author.photo.photo)
         
         let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
         coreDataStack = appDelegate.coreDataStack!
@@ -106,6 +99,22 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         cell.date.text = formatter.stringFromDate(post.date)
         return cell
     }
+    
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toChannelHeaderVC" {
+            var channelHeaderVC = segue.destinationViewController as? ChannelHeaderVC
+
+            channelHeaderVC?.channel = channel
+        }
+    }
+
+    
+    
     
     
     func handleTap(recognizer: UITapGestureRecognizer){
@@ -188,7 +197,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
     
     func sizeHeaderToFit(){
         
-    var header = tableView.tableHeaderView!
+        var header = tableView.tableHeaderView!
 //    header.setTranslatesAutoresizingMaskIntoConstraints(false)
     
         header.setNeedsLayout()
@@ -202,17 +211,11 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         frm.size.height = height
         header.frame = frm
         tableView.tableHeaderView = header
-
-    
-
     }
     
+   
+
     
-    override func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return screenSize.width / 1.18
-    }
-//    
-//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 10
-//    }
+    
+    
 }
