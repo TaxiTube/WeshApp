@@ -39,11 +39,14 @@ public class WeshappLabel: UILabel {
 
 
         //adjustsFontSizeToFitWidth = true
-//        sizeToFit()
+       // super.layoutSubviews()
+       // sizeToFit()
         super.layoutSubviews()
 
         
     }
+    
+  
     
     
 //    var topInset:       CGFloat = 10

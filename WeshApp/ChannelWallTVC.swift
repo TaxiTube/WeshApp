@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import WeshAppLibrary
 
 protocol ChannelWallDelegate{
     func hideKeyboard()
@@ -62,7 +62,6 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
 
         sizeHeaderToFit()
        
-
     }
     override func viewWillAppear(animated: Bool) {
         // scrollToBottom(false)
@@ -95,20 +94,16 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         //cell.nameLabel.text = post.sender.firstName
         cell.post?.text = post.post
         
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .LongStyle
-        formatter.timeStyle = .NoStyle
-
-        cell.date?.text = formatter.stringFromDate(post.date)
+//        let formatter = NSDateFormatter()
+//        formatter.dateStyle = .LongStyle
+//        formatter.timeStyle = .NoStyle
+//
+//        cell.date?.text = formatter.stringFromDate(post.date)
+        
+        cell.date?.text = timeAgoSinceDate(post.date, true)
         
         cell.backgroundColor = UIColor.clearColor()
-        let backgroundImageView = UIImageView()
-        cell.backgroundView = backgroundImageView
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = CGRectMake(0, 0, cell.bounds.width, cell.bounds.height)
-        backgroundImageView.addSubview(blurView)
+       
         
         return cell
     }

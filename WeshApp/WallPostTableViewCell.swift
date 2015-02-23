@@ -48,6 +48,7 @@ class WallPostTableViewCell: UITableViewCell {
         handle.preferredMaxLayoutWidth = handle.bounds.size.width
         date.preferredMaxLayoutWidth = date.bounds.size.width
         
+        
         post.sizeToFit()
         
         addBlur()
