@@ -72,6 +72,7 @@
 		D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A41A71485F008D8D75 /* CrossIconSK.swift */; };
 		D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89497841A92AB8C00A491F6 /* BorderView.swift */; };
 		D8A842451A9BB817001F1030 /* WeshappUsefullFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A842441A9BB817001F1030 /* WeshappUsefullFunctions.swift */; };
+		D8A8424B1A9BBD2D001F1030 /* WallPostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */; };
 		D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
 		D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
 		D8C0FD611A127B5D00F40134 /* ProfileMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD601A127B5D00F40134 /* ProfileMngrTest.swift */; };
@@ -209,6 +210,7 @@
 		D89144A41A71485F008D8D75 /* CrossIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossIconSK.swift; sourceTree = "<group>"; };
 		D89497841A92AB8C00A491F6 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		D8A842441A9BB817001F1030 /* WeshappUsefullFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappUsefullFunctions.swift; sourceTree = "<group>"; };
+		D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostLabel.swift; sourceTree = "<group>"; };
 		D8C0FD361A112C3300F40134 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D8C0FD541A11423B00F40134 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMngr.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				D87051891A7C3E000081484A /* WeshappLabel.swift */,
 				D89497841A92AB8C00A491F6 /* BorderView.swift */,
 				D8F3343B1A9AB0A40028918C /* HeartIcon.swift */,
+				D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				D885E8921A8F754500BD8E48 /* WeshappFriendRequestSK.swift in Sources */,
 				D885E88C1A8F691A00BD8E48 /* WeshappPlayPauseSK.swift in Sources */,
 				D8F3343A1A9AB0890028918C /* WeshappHeartSK.swift in Sources */,
+				D8A8424B1A9BBD2D001F1030 /* WallPostLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
