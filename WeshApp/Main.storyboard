@@ -767,7 +767,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="huilhl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WB-Aj-uVR" userLabel="descriptionLabel">
                                                     <rect key="frame" x="145" y="252" width="428.5" height="35"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.65098039215686276" green="0.65490196078431373" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
