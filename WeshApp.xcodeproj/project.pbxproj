@@ -105,6 +105,8 @@
 		D8DC68881A33910E00AAF16D /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68871A33910E00AAF16D /* NSManagedObject.swift */; };
 		D8EF20931A96C57F0033230C /* WeshappSmileIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */; };
 		D8EF20951A96C5930033230C /* SmileyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EF20941A96C5930033230C /* SmileyIcon.swift */; };
+		D8F3343A1A9AB0890028918C /* WeshappHeartSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F334391A9AB0890028918C /* WeshappHeartSK.swift */; };
+		D8F3343C1A9AB0A40028918C /* HeartIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F3343B1A9AB0A40028918C /* HeartIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +228,8 @@
 		D8DC68871A33910E00AAF16D /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappSmileIconSK.swift; sourceTree = "<group>"; };
 		D8EF20941A96C5930033230C /* SmileyIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmileyIcon.swift; sourceTree = "<group>"; };
+		D8F334391A9AB0890028918C /* WeshappHeartSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappHeartSK.swift; sourceTree = "<group>"; };
+		D8F3343B1A9AB0A40028918C /* HeartIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +269,7 @@
 		B36E68431A6C3AF7002B951A /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				D8F334391A9AB0890028918C /* WeshappHeartSK.swift */,
 				D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */,
 				D8EF20941A96C5930033230C /* SmileyIcon.swift */,
 				D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */,
@@ -290,6 +295,7 @@
 				D87D58FD1A7A536C002ADA13 /* WeshappSegControl.swift */,
 				D87051891A7C3E000081484A /* WeshappLabel.swift */,
 				D89497841A92AB8C00A491F6 /* BorderView.swift */,
+				D8F3343B1A9AB0A40028918C /* HeartIcon.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -674,6 +680,7 @@
 				D877FA8F1A87B71500C0334B /* Chevron.swift in Sources */,
 				D885E8971A9005ED00BD8E48 /* OrangeButton.swift in Sources */,
 				D885E8941A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift in Sources */,
+				D8F3343C1A9AB0A40028918C /* HeartIcon.swift in Sources */,
 				D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */,
 				D885E88E1A8F695800BD8E48 /* PlayPause.swift in Sources */,
 				D8EF20951A96C5930033230C /* SmileyIcon.swift in Sources */,
@@ -689,6 +696,7 @@
 				D8DAE4B81A94D65100AAF247 /* WeshappRedButtonSK.swift in Sources */,
 				D885E8921A8F754500BD8E48 /* WeshappFriendRequestSK.swift in Sources */,
 				D885E88C1A8F691A00BD8E48 /* WeshappPlayPauseSK.swift in Sources */,
+				D8F3343A1A9AB0890028918C /* WeshappHeartSK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -557,7 +557,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="gZH-X7-VLp" userLabel="image-spacer-label">
-                                                    <rect key="frame" x="127" y="0.0" width="18" height="672"/>
+                                                    <rect key="frame" x="127" y="0.0" width="18" height="287"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="oJj-Bw-05Y" userLabel="Title">
@@ -577,7 +577,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="top-spacer-heart" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-2N-T2V" userLabel="top-spacer-heart">
-                                                    <rect key="frame" x="490" y="0.0" width="41" height="37"/>
+                                                    <rect key="frame" x="532.5" y="0.0" width="41" height="72.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="41" id="rnD-J4-7Vm"/>
@@ -590,11 +590,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="12" placeholderIntrinsicHeight="81" restorationIdentifier="chevron-spacer-edge" translatesAutoresizingMaskIntoConstraints="NO" id="wkf-Kw-bOF" userLabel="chevron-spacer-edge">
-                                                    <rect key="frame" x="531" y="0.0" width="72.5" height="287"/>
+                                                    <rect key="frame" x="573.5" y="0.0" width="30" height="287"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="ufn-c1-igr" customClass="Chevron" customModule="Designables">
-                                                    <rect key="frame" x="495" y="37" width="36" height="32"/>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="ufn-c1-igr" customClass="HeartIcon" customModule="Designables">
+                                                    <rect key="frame" x="537.5" y="72.5" width="36" height="32"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" restorationIdentifier="top-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="LyX-FJ-RBG" userLabel="top-spacer-image">
@@ -602,23 +602,23 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" restorationIdentifier="date-spacer-desc" translatesAutoresizingMaskIntoConstraints="NO" id="EPu-Om-0j7" userLabel="date-spacer-desc">
-                                                    <rect key="frame" x="145" y="222" width="386.5" height="30"/>
+                                                    <rect key="frame" x="145" y="222" width="429" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="huilhl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xic-Hm-n6o" userLabel="descriptionLabel" customClass="WeshappLabel" customModule="Designables">
-                                                    <rect key="frame" x="145" y="252" width="386" height="35"/>
-                                                    <color key="backgroundColor" red="0.56848069300000004" green="1" blue="0.15079586540000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="huilhl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xic-Hm-n6o" userLabel="descriptionLabel">
+                                                    <rect key="frame" x="145" y="252" width="428.5" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.65634563482145292" blue="0.6995668976406072" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="gZH-X7-VLp" firstAttribute="top" secondItem="yBN-Qp-KTk" secondAttribute="top" id="0dd-64-ATJ"/>
                                                 <constraint firstItem="gZH-X7-VLp" firstAttribute="leading" secondItem="LyX-FJ-RBG" secondAttribute="trailing" id="17A-aH-XOA"/>
                                                 <constraint firstItem="LyX-FJ-RBG" firstAttribute="top" secondItem="yBN-Qp-KTk" secondAttribute="top" id="1ac-TH-MZg"/>
-                                                <constraint firstAttribute="width" secondItem="9Ks-2N-T2V" secondAttribute="height" multiplier="16.3" id="29r-8o-efh"/>
+                                                <constraint firstAttribute="width" secondItem="9Ks-2N-T2V" secondAttribute="height" multiplier="8.33" id="29r-8o-efh"/>
                                                 <constraint firstItem="Rrm-9U-es2" firstAttribute="leading" secondItem="yBN-Qp-KTk" secondAttribute="leading" id="4vu-1A-TeD"/>
                                                 <constraint firstItem="dLZ-cJ-3bU" firstAttribute="top" secondItem="wX3-LL-LuT" secondAttribute="bottom" id="62d-qL-gL6"/>
                                                 <constraint firstAttribute="bottom" secondItem="gZH-X7-VLp" secondAttribute="bottom" id="A2e-5G-cDH"/>
@@ -634,7 +634,7 @@
                                                 <constraint firstItem="Azw-qC-cm1" firstAttribute="leading" secondItem="Rrm-9U-es2" secondAttribute="trailing" id="Syl-ng-QNk"/>
                                                 <constraint firstItem="Azw-qC-cm1" firstAttribute="width" secondItem="yBN-Qp-KTk" secondAttribute="width" multiplier="0.15" id="T2D-lO-oWq"/>
                                                 <constraint firstItem="Xic-Hm-n6o" firstAttribute="leading" secondItem="gZH-X7-VLp" secondAttribute="trailing" id="Uu4-lT-Ekg"/>
-                                                <constraint firstItem="wkf-Kw-bOF" firstAttribute="width" secondItem="yBN-Qp-KTk" secondAttribute="width" multiplier="0.12" id="WFi-t6-WFZ"/>
+                                                <constraint firstItem="wkf-Kw-bOF" firstAttribute="width" secondItem="yBN-Qp-KTk" secondAttribute="width" multiplier="0.05" id="WFi-t6-WFZ"/>
                                                 <constraint firstItem="wkf-Kw-bOF" firstAttribute="leading" secondItem="9Ks-2N-T2V" secondAttribute="trailing" id="WKF-Jv-sg4"/>
                                                 <constraint firstItem="gZH-X7-VLp" firstAttribute="width" secondItem="yBN-Qp-KTk" secondAttribute="width" multiplier="0.03" id="WhO-Zf-18W"/>
                                                 <constraint firstItem="Azw-qC-cm1" firstAttribute="top" secondItem="LyX-FJ-RBG" secondAttribute="bottom" id="X1s-DL-Es2"/>
@@ -948,6 +948,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="huilhl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZn-Ha-quZ" userLabel="descriptionLabel" customClass="WeshappLabel" customModule="Designables">
                                         <rect key="frame" x="36" y="298" width="532" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
