@@ -51,7 +51,7 @@ class WallPostTableViewCell: UITableViewCell {
         
        // post.sizeToFit()
         
-        addBlur()
+      //  addBlur()
         
     }
     

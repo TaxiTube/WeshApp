@@ -58,9 +58,25 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
 
         var error: NSError? = nil
         if (!fetchedResultsController.performFetch(&error)) {
-            println("Error: \(error?.localizedDescription)") }
+            println("Error: \(error?.localizedDescription)")
+        }
 
+        
+
+
+        
+        tableView.backgroundColor = UIColor.clearColor()
+        let backgroundImageView = UIImageView()
+         tableView.backgroundView = backgroundImageView
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
+        backgroundImageView.addSubview(blurView)
+        
         sizeHeaderToFit()
+        
+        
        
     }
     override func viewWillAppear(animated: Bool) {
