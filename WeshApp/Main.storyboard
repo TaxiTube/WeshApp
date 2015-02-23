@@ -544,7 +544,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="287" id="292-jg-u8b" customClass="WallPostTableViewCell" customModule="WeshApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="287" id="292-jg-u8b" customClass="WallPostTableViewCell" customModule="WeshApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="292-jg-u8b" id="dzk-Nz-3OV">
                                     <autoresizingMask key="autoresizingMask"/>
