@@ -88,6 +88,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
 
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as WallPostTableViewCell
         let post = fetchedResultsController.objectAtIndexPath(indexPath) as Post
 
@@ -99,6 +100,16 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         formatter.timeStyle = .NoStyle
 
         cell.date?.text = formatter.stringFromDate(post.date)
+        
+        cell.backgroundColor = UIColor.clearColor()
+        let backgroundImageView = UIImageView()
+        cell.backgroundView = backgroundImageView
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRectMake(0, 0, cell.bounds.width, cell.bounds.height)
+        backgroundImageView.addSubview(blurView)
+        
         return cell
     }
     

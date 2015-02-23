@@ -20,17 +20,19 @@ class WallPostTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
  
-        
+//        println("awakfrom nib \(self.post)")
         setUp()
     }
     override  init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        println("style \(self.post)")
     
     }
     
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+//           println("coder \(self.post)")
        
         
     }
@@ -47,7 +49,22 @@ class WallPostTableViewCell: UITableViewCell {
         date.preferredMaxLayoutWidth = date.bounds.size.width
         
         post.sizeToFit()
+        
+        addBlur()
+        
+    }
     
+    
+    //MARK: Blur
+    private func addBlur(){
+        backgroundColor = UIColor.clearColor()
+        let backgroundImageView = UIImageView()
+        backgroundView = backgroundImageView
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRectMake(0, 0, bounds.width, bounds.height)
+        backgroundImageView.addSubview(blurView)
         
     }
 }

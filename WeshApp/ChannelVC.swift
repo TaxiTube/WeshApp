@@ -67,7 +67,6 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
             action: "dismissPressed:")
         self.navigationItem.title = channel?.title
 
-        addBlur()
         
         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
                                    coreDataStack: coreDataStack!)
@@ -92,33 +91,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
             channelWallTVC?.channel = channel
         }
     }
-    
-    //MARK: Blur
-    private func addBlur(){
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = view.frame
-        
-        
-        blurView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        view.insertSubview(blurView, atIndex: 0)
-        
-        self.view.layoutMargins = UIEdgeInsetsZero
-        
-        blurView.layoutMargins = UIEdgeInsetsZero
-        
-        let viewsDictionary = ["top":topLayoutGuide, "blur": blurView]
-        
-        //Margin constraints
-        let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[blur]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-        let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-[blur]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-        
-        view.addConstraints(vConstraints)
-        view.addConstraints(hConstraints)
-        
-        view.layoutIfNeeded()
-        
-    }
+   
 
     //MARK: Keyboard
     func animateTextFieldWithKeyboard(notification: NSNotification) {
