@@ -918,7 +918,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="0.5"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -960,7 +960,6 @@
                                     <constraint firstItem="AuH-kL-zWw" firstAttribute="width" secondItem="fVv-Yv-3jh" secondAttribute="width" multiplier="0.08" id="ynf-v9-GqR"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
