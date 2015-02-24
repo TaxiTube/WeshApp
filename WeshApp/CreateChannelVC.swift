@@ -208,7 +208,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
    
 
-        var descTVPos = button.frame.height + v_button_spacer_tv.frame.height  + bottomConstraint.constant
+        var descTVPos = button.frame.height + v_button_spacer_tv.frame.height 
         
         if notification.name == UIKeyboardWillShowNotification{
             
