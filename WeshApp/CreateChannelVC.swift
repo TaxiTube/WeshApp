@@ -15,6 +15,7 @@ import Designables
 class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate {
     
 
+    @IBOutlet weak var v_button_spacer_tv: UIView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var button: WeshappRedButton!
     @IBOutlet weak var titleTF: UITextField!
@@ -200,25 +201,27 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     func animateTextFieldWithKeyboard(notification: NSNotification) {
         
         let userInfo = notification.userInfo!
-        
-        let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
         let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as Double
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as UInt
-            
-        // baseContraint is your Auto Layout constraint that pins the
-        // text view to the bottom of the superview.
-        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navigationController!.navigationBar.frame.height
-        let offset = (descTV.frame.origin.y + descTV.frame.height) - (screenHeight - keyboardSize.height)
-     
-        if notification.name == UIKeyboardWillShowNotification && offset > 0 {
-            bottomConstraint.constant =   bottomConstraint.constant + offset  // move up
-            
-           navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        
+   
 
+        var descTVPos = button.frame.height + v_button_spacer_tv.frame.height  + bottomConstraint.constant
+        
+        if notification.name == UIKeyboardWillShowNotification{
+            
+            if keyboardSize.height >  descTVPos  {
+                bottomConstraint.constant =  keyboardSize.height - descTVPos // move up
+                
+            }else if keyboardSize.height < descTVPos{
+                bottomConstraint.constant = 0
+            }
+            navigationController?.setNavigationBarHidden(true, animated: true)
             UIApplication.sharedApplication().statusBarHidden = true
 
-        }
-        else {
+        } else {
             bottomConstraint.constant = 0 // move down
             navigationController?.setNavigationBarHidden(false, animated: true)
 

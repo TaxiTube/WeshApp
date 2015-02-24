@@ -107,8 +107,15 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
 //        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navController!.navigationBar.frame.height
         let offset =  keyboardSize.height
         
-        if notification.name == UIKeyboardWillShowNotification {
-            bottomConstraint.constant = bottomConstraint.constant + offset  // move up
+        if notification.name == UIKeyboardWillChangeFrameNotification{
+
+            bottomConstraint.constant = keyboardSize.height
+            
+        } else if notification.name == UIKeyboardWillShowNotification {
+            
+            bottomConstraint.constant = keyboardSize.height
+
+//            bottomConstraint.constant = bottomConstraint.constant + offset  // move up
             //topConstraint.constant = topConstraint.constant - offset
             //channelWallTVC?.scrollEntireTableTo(true, animated: true)
             //navigationController?.setNavigationBarHidden(true, animated: true)

@@ -22,7 +22,7 @@ public class HeartIcon: UIView, UIGestureRecognizerDelegate {
     
     public func handleTap(recognizer: UILongPressGestureRecognizer) {
         
-        println()
+        println("heartshou")
         if recognizer.state  == UIGestureRecognizerState.Began{
             
             isPressed = true

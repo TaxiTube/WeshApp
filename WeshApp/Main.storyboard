@@ -530,51 +530,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="CREATE YOUR HABITAT" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dK2-rq-qnC" customClass="WeshappTextField" customModule="Designables">
-                                <rect key="frame" x="33" y="187" width="534" height="44.5"/>
+                                <rect key="frame" x="33" y="-127" width="534" height="70"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="31" restorationIdentifier="h_label_spacer_tf" translatesAutoresizingMaskIntoConstraints="NO" id="U01-WP-Bxn" userLabel="h_label_spacer_tf">
-                                <rect key="frame" x="253" y="231" width="93" height="26.5"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="31" restorationIdentifier="v_tf_spacer_tv" translatesAutoresizingMaskIntoConstraints="NO" id="U01-WP-Bxn" userLabel="h_label_spacer_tf">
+                                <rect key="frame" x="253" y="-57" width="93" height="41.5"/>
                                 <color key="backgroundColor" red="0.75191035579999999" green="0.1876425639" blue="0.73021213500000004" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="#GreenPanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bf-WE-BrV">
-                                <rect key="frame" x="0.0" y="136" width="600" height="19"/>
+                                <rect key="frame" x="287" y="-206" width="26" height="29"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                 <color key="textColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="WHAT ARE YOU MOOING ABOUT" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-Ik-lut" customClass="BorderTextView" customModule="WeshAppLibrary">
-                                <rect key="frame" x="33" y="258" width="534" height="118"/>
+                                <rect key="frame" x="33" y="-15" width="534" height="186.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="24.5" restorationIdentifier="h_img_spacer_label" translatesAutoresizingMaskIntoConstraints="NO" id="rde-U0-ZfZ" userLabel="h_img_spacer_label">
-                                <rect key="frame" x="254" y="111" width="93" height="25"/>
+                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="24.5" restorationIdentifier="v_img_spacer_label" translatesAutoresizingMaskIntoConstraints="NO" id="rde-U0-ZfZ" userLabel="v_img_spacer_label">
+                                <rect key="frame" x="254" y="-243.5" width="93" height="37.5"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-yN-ogm">
-                                <rect key="frame" x="240" y="-18" width="119" height="119.5"/>
+                                <rect key="frame" x="240" y="-362.5" width="119" height="119.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Omf-yN-ogm" secondAttribute="height" multiplier="1:1" id="0hN-Zs-s4C"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="60" translatesAutoresizingMaskIntoConstraints="NO" id="csR-gG-smV" customClass="WeshappRedButton" customModule="Designables">
-                                <rect key="frame" x="0.0" y="474" width="600" height="62"/>
+                                <rect key="frame" x="0.0" y="439" width="600" height="97"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5Ef-3o-IcT" appends="YES" id="Suc-Ch-L9l"/>
                                 </connections>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="31" restorationIdentifier="h_tv_spacer_tf" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-XP-Vsc" userLabel="h_label_spacer_tf">
-                                <rect key="frame" x="254" y="155" width="93" height="32"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="31" restorationIdentifier="v_tv_spacer_tf" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-XP-Vsc" userLabel="v_label_spacer_tf">
+                                <rect key="frame" x="254" y="-177" width="93" height="50"/>
                                 <color key="backgroundColor" red="0.75191035579999999" green="0.1876425639" blue="0.73021213500000004" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="74" placeholderIntrinsicHeight="56.5" restorationIdentifier="h_button_spacer_tv" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-Ba-U3Q" userLabel="h_button_spacer_tv">
-                                <rect key="frame" x="263" y="376" width="74" height="97.5"/>
-                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="74" placeholderIntrinsicHeight="56.5" restorationIdentifier="v_button_spacer_tv" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-Ba-U3Q" userLabel="v_button_spacer_tv">
+                                <rect key="frame" x="263" y="171" width="74" height="268"/>
+                                <color key="backgroundColor" red="0.35427056829999998" green="1" blue="0.11569668399999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <gestureRecognizers/>
@@ -582,13 +582,13 @@
                             <constraint firstAttribute="centerX" secondItem="vwZ-Ik-lut" secondAttribute="centerX" id="07O-Ye-vRT"/>
                             <constraint firstItem="dK2-rq-qnC" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" multiplier="0.89" id="2Pj-Pi-MiP"/>
                             <constraint firstAttribute="centerX" secondItem="Mek-Ba-U3Q" secondAttribute="centerX" id="4Oy-us-o3f"/>
-                            <constraint firstItem="8bf-WE-BrV" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.035" id="5Io-TZ-AVb"/>
-                            <constraint firstItem="dK2-rq-qnC" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.083" id="5Mh-IG-gcq"/>
+                            <constraint firstAttribute="height" secondItem="8bf-WE-BrV" secondAttribute="width" multiplier="20.56" id="5Io-TZ-AVb"/>
+                            <constraint firstAttribute="width" secondItem="dK2-rq-qnC" secondAttribute="height" multiplier="8.6" id="5Mh-IG-gcq"/>
                             <constraint firstAttribute="trailing" secondItem="csR-gG-smV" secondAttribute="trailing" id="6ck-wH-R2p"/>
-                            <constraint firstItem="Mek-Ba-U3Q" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.182" id="8Rd-VA-mKv"/>
+                            <constraint firstAttribute="width" secondItem="Mek-Ba-U3Q" secondAttribute="height" multiplier="2.24" id="8Rd-VA-mKv"/>
                             <constraint firstItem="8bf-WE-BrV" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" id="9Rb-vy-G51"/>
                             <constraint firstItem="vwZ-Ik-lut" firstAttribute="top" secondItem="U01-WP-Bxn" secondAttribute="bottom" id="9lg-ME-MQT"/>
-                            <constraint firstItem="rde-U0-ZfZ" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.047" id="CqW-cY-XBY"/>
+                            <constraint firstAttribute="width" secondItem="rde-U0-ZfZ" secondAttribute="height" multiplier="16.09" id="CqW-cY-XBY"/>
                             <constraint firstAttribute="centerX" secondItem="rde-U0-ZfZ" secondAttribute="centerX" id="HFA-Sb-fuy"/>
                             <constraint firstItem="Mek-Ba-U3Q" firstAttribute="top" secondItem="vwZ-Ik-lut" secondAttribute="bottom" id="JDl-T7-VfW"/>
                             <constraint firstAttribute="centerX" secondItem="U01-WP-Bxn" secondAttribute="centerX" id="OQz-Lt-RcC"/>
@@ -600,18 +600,23 @@
                             <constraint firstItem="csR-gG-smV" firstAttribute="leading" secondItem="lX2-Ve-iVb" secondAttribute="leading" id="dfd-0h-hHe"/>
                             <constraint firstItem="dK2-rq-qnC" firstAttribute="top" secondItem="BOD-XP-Vsc" secondAttribute="bottom" id="e2Q-W2-Mc1"/>
                             <constraint firstAttribute="centerX" secondItem="8bf-WE-BrV" secondAttribute="centerX" id="gTh-5k-UXK"/>
-                            <constraint firstItem="csR-gG-smV" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.116" id="gd6-qR-S2q"/>
+                            <constraint firstAttribute="width" secondItem="csR-gG-smV" secondAttribute="height" multiplier="6.17" id="gd6-qR-S2q"/>
                             <constraint firstItem="BOD-XP-Vsc" firstAttribute="top" secondItem="8bf-WE-BrV" secondAttribute="bottom" id="hnQ-PJ-goI"/>
                             <constraint firstAttribute="centerX" secondItem="BOD-XP-Vsc" secondAttribute="centerX" id="jGT-5J-sNC"/>
                             <constraint firstItem="csR-gG-smV" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" id="jvc-od-2sQ"/>
-                            <constraint firstItem="vwZ-Ik-lut" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.222" id="lxs-4G-H6p"/>
-                            <constraint firstItem="BOD-XP-Vsc" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.06" id="mF5-e2-h00"/>
+                            <constraint firstAttribute="width" secondItem="vwZ-Ik-lut" secondAttribute="height" multiplier="3.22" id="lxs-4G-H6p"/>
+                            <constraint firstAttribute="width" secondItem="BOD-XP-Vsc" secondAttribute="height" multiplier="11.97" id="mF5-e2-h00"/>
                             <constraint firstItem="U01-WP-Bxn" firstAttribute="top" secondItem="dK2-rq-qnC" secondAttribute="bottom" id="rJs-Qn-tIA"/>
                             <constraint firstAttribute="centerX" secondItem="dK2-rq-qnC" secondAttribute="centerX" id="tCL-Vo-yjN"/>
-                            <constraint firstItem="U01-WP-Bxn" firstAttribute="height" secondItem="lX2-Ve-iVb" secondAttribute="height" multiplier="0.049" id="td0-Ie-3px"/>
+                            <constraint firstAttribute="width" secondItem="U01-WP-Bxn" secondAttribute="height" multiplier="14.51" id="td0-Ie-3px"/>
                             <constraint firstItem="csR-gG-smV" firstAttribute="top" secondItem="Mek-Ba-U3Q" secondAttribute="bottom" id="w4B-pc-DSd"/>
                             <constraint firstItem="Omf-yN-ogm" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" multiplier="0.199" id="w9q-Zy-00U"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Io-TZ-AVb"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="TBM-mw-yH1" appends="YES" id="ksk-gU-qKA"/>
                         </connections>
@@ -629,6 +634,7 @@
                         <outlet property="handleLable" destination="8bf-WE-BrV" id="EcX-0m-hwx"/>
                         <outlet property="imageView" destination="Omf-yN-ogm" id="fQo-Vk-JBV"/>
                         <outlet property="titleTF" destination="dK2-rq-qnC" id="OY0-bc-svM"/>
+                        <outlet property="v_button_spacer_tv" destination="Mek-Ba-U3Q" id="dC4-3T-fFk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVt-Pg-wcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -644,7 +650,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4482" y="1740"/>
+            <point key="canvasLocation" x="4482" y="1740.5"/>
         </scene>
         <!--Home-->
         <scene sceneID="M5p-XC-axY">
