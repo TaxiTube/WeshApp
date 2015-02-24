@@ -214,17 +214,18 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             
             if keyboardSize.height >  descTVPos  {
                 bottomConstraint.constant =  keyboardSize.height - descTVPos // move up
-                
+                navigationController?.setNavigationBarHidden(true, animated: true)
+                UIApplication.sharedApplication().statusBarHidden = true
             }else if keyboardSize.height < descTVPos{
                 bottomConstraint.constant = 0
+                navigationController?.setNavigationBarHidden(false, animated: true)
+                UIApplication.sharedApplication().statusBarHidden = false
             }
-            navigationController?.setNavigationBarHidden(true, animated: true)
-            UIApplication.sharedApplication().statusBarHidden = true
+           
 
         } else {
             bottomConstraint.constant = 0 // move down
             navigationController?.setNavigationBarHidden(false, animated: true)
-
             UIApplication.sharedApplication().statusBarHidden = false
 
 
