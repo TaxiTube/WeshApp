@@ -15,8 +15,9 @@ import Designables
 class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate, UITextFieldDelegate {
     
 
+ 
+    @IBOutlet weak var tv_spacer_button: UIView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    @IBOutlet weak var v_button_spacer_tv: UIView!
     @IBOutlet weak var button: WeshappRedButton!
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -206,24 +207,22 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as UInt
         
         
-        var navbarHeight = navigationController?.navigationBar.frame.height
-        var maxDescTFY = descTV.frame.origin.y  + descTV.frame.height
-        if (navigationController?.navigationBar.hidden == false){
-            
-            maxDescTFY = maxDescTFY + navbarHeight! +  UIApplication.sharedApplication().statusBarFrame.height
-        }
    
-        println("maxdescy \(maxDescTFY)  keyboardY \(keyboardSize.origin.y)")
+        var navbarHeight = navigationController?.navigationBar.frame.height
+        var descTVPos = button.frame.height +  tv_spacer_button.frame.height
+        
         if notification.name == UIKeyboardWillShowNotification{
             
-            if keyboardSize.origin.y <  maxDescTFY  {
-                println("1")
-                topConstraint.constant =   -(maxDescTFY - keyboardSize.origin.y - navbarHeight! -  UIApplication.sharedApplication().statusBarFrame.height)  // move up
-                navigationController?.setNavigationBarHidden(true, animated: true)
-                UIApplication.sharedApplication().statusBarHidden = true
-            }else if keyboardSize.origin.y > maxDescTFY{
-                println("2")
-
+            if keyboardSize.height >  descTVPos  {
+                if  navigationController?.navigationBar.hidden == false{
+                    
+                    topConstraint.constant =  -(keyboardSize.height - descTVPos - navbarHeight! - UIApplication.sharedApplication().statusBarFrame.height) // move up
+                    navigationController?.setNavigationBarHidden(true, animated: true)
+                    UIApplication.sharedApplication().statusBarHidden = true
+                } else {
+                     topConstraint.constant =  -(keyboardSize.height - descTVPos )
+                }
+            }else if keyboardSize.height < descTVPos{
                 topConstraint.constant = 0
                 navigationController?.setNavigationBarHidden(false, animated: true)
                 UIApplication.sharedApplication().statusBarHidden = false
