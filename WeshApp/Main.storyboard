@@ -530,33 +530,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="CREATE YOUR HABITAT" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dK2-rq-qnC" customClass="WeshappTextField" customModule="Designables">
-                                <rect key="frame" x="33" y="-127" width="534" height="70"/>
+                                <rect key="frame" x="33" y="290.5" width="534" height="70"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="31" restorationIdentifier="v_tf_spacer_tv" translatesAutoresizingMaskIntoConstraints="NO" id="U01-WP-Bxn" userLabel="h_label_spacer_tf">
-                                <rect key="frame" x="253" y="-57" width="93" height="41.5"/>
+                                <rect key="frame" x="253" y="360.5" width="93" height="41"/>
                                 <color key="backgroundColor" red="0.75191035579999999" green="0.1876425639" blue="0.73021213500000004" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="#GreenPanda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bf-WE-BrV">
-                                <rect key="frame" x="287" y="-206" width="26" height="29"/>
+                                <rect key="frame" x="0.0" y="211.5" width="600" height="29"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                 <color key="textColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="WHAT ARE YOU MOOING ABOUT" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-Ik-lut" customClass="BorderTextView" customModule="WeshAppLibrary">
-                                <rect key="frame" x="33" y="-15" width="534" height="186.5"/>
+                                <rect key="frame" x="33" y="402" width="534" height="186.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="24.5" restorationIdentifier="v_img_spacer_label" translatesAutoresizingMaskIntoConstraints="NO" id="rde-U0-ZfZ" userLabel="v_img_spacer_label">
-                                <rect key="frame" x="254" y="-243.5" width="93" height="37.5"/>
+                                <rect key="frame" x="254" y="174" width="93" height="37.5"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-yN-ogm">
-                                <rect key="frame" x="240" y="-362.5" width="119" height="119.5"/>
+                                <rect key="frame" x="240" y="55" width="119" height="119.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Omf-yN-ogm" secondAttribute="height" multiplier="1:1" id="0hN-Zs-s4C"/>
                                 </constraints>
@@ -569,11 +569,11 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="31" restorationIdentifier="v_tv_spacer_tf" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-XP-Vsc" userLabel="v_label_spacer_tf">
-                                <rect key="frame" x="254" y="-177" width="93" height="50"/>
+                                <rect key="frame" x="254" y="240.5" width="93" height="50"/>
                                 <color key="backgroundColor" red="0.75191035579999999" green="0.1876425639" blue="0.73021213500000004" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="74" placeholderIntrinsicHeight="56.5" restorationIdentifier="v_button_spacer_tv" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-Ba-U3Q" userLabel="v_button_spacer_tv">
-                                <rect key="frame" x="263" y="171" width="74" height="268"/>
+                                <rect key="frame" x="263" y="0.0" width="74" height="55"/>
                                 <color key="backgroundColor" red="0.35427056829999998" green="1" blue="0.11569668399999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -582,15 +582,14 @@
                             <constraint firstAttribute="centerX" secondItem="vwZ-Ik-lut" secondAttribute="centerX" id="07O-Ye-vRT"/>
                             <constraint firstItem="dK2-rq-qnC" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" multiplier="0.89" id="2Pj-Pi-MiP"/>
                             <constraint firstAttribute="centerX" secondItem="Mek-Ba-U3Q" secondAttribute="centerX" id="4Oy-us-o3f"/>
-                            <constraint firstAttribute="height" secondItem="8bf-WE-BrV" secondAttribute="width" multiplier="20.56" id="5Io-TZ-AVb"/>
                             <constraint firstAttribute="width" secondItem="dK2-rq-qnC" secondAttribute="height" multiplier="8.6" id="5Mh-IG-gcq"/>
                             <constraint firstAttribute="trailing" secondItem="csR-gG-smV" secondAttribute="trailing" id="6ck-wH-R2p"/>
-                            <constraint firstAttribute="width" secondItem="Mek-Ba-U3Q" secondAttribute="height" multiplier="2.24" id="8Rd-VA-mKv"/>
+                            <constraint firstAttribute="width" secondItem="Mek-Ba-U3Q" secondAttribute="height" multiplier="10.88" id="8Rd-VA-mKv"/>
                             <constraint firstItem="8bf-WE-BrV" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" id="9Rb-vy-G51"/>
                             <constraint firstItem="vwZ-Ik-lut" firstAttribute="top" secondItem="U01-WP-Bxn" secondAttribute="bottom" id="9lg-ME-MQT"/>
                             <constraint firstAttribute="width" secondItem="rde-U0-ZfZ" secondAttribute="height" multiplier="16.09" id="CqW-cY-XBY"/>
                             <constraint firstAttribute="centerX" secondItem="rde-U0-ZfZ" secondAttribute="centerX" id="HFA-Sb-fuy"/>
-                            <constraint firstItem="Mek-Ba-U3Q" firstAttribute="top" secondItem="vwZ-Ik-lut" secondAttribute="bottom" id="JDl-T7-VfW"/>
+                            <constraint firstItem="Mek-Ba-U3Q" firstAttribute="bottom" secondItem="Omf-yN-ogm" secondAttribute="top" id="Jpk-8g-Dai"/>
                             <constraint firstAttribute="centerX" secondItem="U01-WP-Bxn" secondAttribute="centerX" id="OQz-Lt-RcC"/>
                             <constraint firstItem="rde-U0-ZfZ" firstAttribute="top" secondItem="Omf-yN-ogm" secondAttribute="bottom" id="Q5a-tA-7QP"/>
                             <constraint firstItem="CFn-xh-fYP" firstAttribute="top" secondItem="csR-gG-smV" secondAttribute="bottom" id="Quv-1c-9n4"/>
@@ -607,16 +606,11 @@
                             <constraint firstAttribute="width" secondItem="vwZ-Ik-lut" secondAttribute="height" multiplier="3.22" id="lxs-4G-H6p"/>
                             <constraint firstAttribute="width" secondItem="BOD-XP-Vsc" secondAttribute="height" multiplier="11.97" id="mF5-e2-h00"/>
                             <constraint firstItem="U01-WP-Bxn" firstAttribute="top" secondItem="dK2-rq-qnC" secondAttribute="bottom" id="rJs-Qn-tIA"/>
+                            <constraint firstItem="Mek-Ba-U3Q" firstAttribute="top" secondItem="reC-pz-gVi" secondAttribute="bottom" id="s3O-wx-SGy"/>
                             <constraint firstAttribute="centerX" secondItem="dK2-rq-qnC" secondAttribute="centerX" id="tCL-Vo-yjN"/>
                             <constraint firstAttribute="width" secondItem="U01-WP-Bxn" secondAttribute="height" multiplier="14.51" id="td0-Ie-3px"/>
-                            <constraint firstItem="csR-gG-smV" firstAttribute="top" secondItem="Mek-Ba-U3Q" secondAttribute="bottom" id="w4B-pc-DSd"/>
                             <constraint firstItem="Omf-yN-ogm" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" multiplier="0.199" id="w9q-Zy-00U"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5Io-TZ-AVb"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="TBM-mw-yH1" appends="YES" id="ksk-gU-qKA"/>
                         </connections>
@@ -628,7 +622,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="bottomConstraint" destination="w4B-pc-DSd" id="vOl-a4-zcl"/>
                         <outlet property="button" destination="csR-gG-smV" id="l6A-vu-s7c"/>
                         <outlet property="descTV" destination="vwZ-Ik-lut" id="ENL-h6-OSf"/>
                         <outlet property="handleLable" destination="8bf-WE-BrV" id="EcX-0m-hwx"/>
