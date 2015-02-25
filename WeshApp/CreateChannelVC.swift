@@ -16,7 +16,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     
 
  
-    @IBOutlet weak var tv_spacer_button: UIView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var button: WeshappRedButton!
     @IBOutlet weak var titleTF: UITextField!
@@ -208,25 +207,24 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         
         
    
-        var navbarHeight = navigationController?.navigationBar.frame.height
-        var descTVPos = button.frame.height +  tv_spacer_button.frame.height
+        var maxTextViewY = descTV.frame.origin.y + descTV.frame.height
+        var minKeyboardY = keyboardSize.origin.y
+        
         
         if notification.name == UIKeyboardWillShowNotification{
             
-            if keyboardSize.height >  descTVPos  {
+         
                 if  navigationController?.navigationBar.hidden == false{
                     
-                    topConstraint.constant =  -(keyboardSize.height - descTVPos - navbarHeight! - UIApplication.sharedApplication().statusBarFrame.height) // move up
-                    navigationController?.setNavigationBarHidden(true, animated: true)
                     UIApplication.sharedApplication().statusBarHidden = true
+                    navigationController?.setNavigationBarHidden(true, animated: true)
+                    topConstraint.constant =  -(maxTextViewY - minKeyboardY) // move up
+
                 } else {
-                     topConstraint.constant =  -(keyboardSize.height - descTVPos )
+
+                     topConstraint.constant =  topConstraint.constant - (maxTextViewY - minKeyboardY  )
                 }
-            }else if keyboardSize.height < descTVPos{
-                topConstraint.constant = 0
-                navigationController?.setNavigationBarHidden(false, animated: true)
-                UIApplication.sharedApplication().statusBarHidden = false
-            }
+            
            
 
         } else {

@@ -577,12 +577,6 @@
                                     <constraint firstAttribute="width" constant="74" id="ki9-wG-nco"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" restorationIdentifier="v-tf-spacer-button-animation" translatesAutoresizingMaskIntoConstraints="NO" id="2OR-TN-A8c" userLabel="v-tf-spacer-button-animation">
-                                <color key="backgroundColor" red="1" green="0.65634563479999997" blue="0.69956689760000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="gUf-tU-J7P"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
@@ -597,20 +591,17 @@
                             <constraint firstAttribute="width" secondItem="rde-U0-ZfZ" secondAttribute="height" multiplier="16.09" id="CqW-cY-XBY"/>
                             <constraint firstAttribute="centerX" secondItem="rde-U0-ZfZ" secondAttribute="centerX" id="HFA-Sb-fuy"/>
                             <constraint firstItem="Mek-Ba-U3Q" firstAttribute="bottom" secondItem="Omf-yN-ogm" secondAttribute="top" id="Jpk-8g-Dai"/>
-                            <constraint firstItem="csR-gG-smV" firstAttribute="top" secondItem="2OR-TN-A8c" secondAttribute="bottom" id="NYl-st-Q61"/>
                             <constraint firstAttribute="centerX" secondItem="U01-WP-Bxn" secondAttribute="centerX" id="OQz-Lt-RcC"/>
                             <constraint firstItem="rde-U0-ZfZ" firstAttribute="top" secondItem="Omf-yN-ogm" secondAttribute="bottom" id="Q5a-tA-7QP"/>
                             <constraint firstItem="CFn-xh-fYP" firstAttribute="top" secondItem="csR-gG-smV" secondAttribute="bottom" id="Quv-1c-9n4"/>
                             <constraint firstAttribute="centerX" secondItem="Omf-yN-ogm" secondAttribute="centerX" id="R2r-p1-JME"/>
                             <constraint firstItem="8bf-WE-BrV" firstAttribute="top" secondItem="rde-U0-ZfZ" secondAttribute="bottom" id="RxY-lF-lLj"/>
                             <constraint firstItem="vwZ-Ik-lut" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" multiplier="0.89" id="VbT-Z6-hlZ"/>
-                            <constraint firstAttribute="centerX" secondItem="2OR-TN-A8c" secondAttribute="centerX" id="WH3-0v-f6f"/>
                             <constraint firstItem="csR-gG-smV" firstAttribute="leading" secondItem="lX2-Ve-iVb" secondAttribute="leading" id="dfd-0h-hHe"/>
                             <constraint firstItem="dK2-rq-qnC" firstAttribute="top" secondItem="BOD-XP-Vsc" secondAttribute="bottom" id="e2Q-W2-Mc1"/>
                             <constraint firstAttribute="centerX" secondItem="8bf-WE-BrV" secondAttribute="centerX" id="gTh-5k-UXK"/>
                             <constraint firstAttribute="width" secondItem="csR-gG-smV" secondAttribute="height" multiplier="6.17" id="gd6-qR-S2q"/>
                             <constraint firstItem="BOD-XP-Vsc" firstAttribute="top" secondItem="8bf-WE-BrV" secondAttribute="bottom" id="hnQ-PJ-goI"/>
-                            <constraint firstItem="vwZ-Ik-lut" firstAttribute="bottom" secondItem="2OR-TN-A8c" secondAttribute="top" id="iRs-cD-M2F"/>
                             <constraint firstAttribute="centerX" secondItem="BOD-XP-Vsc" secondAttribute="centerX" id="jGT-5J-sNC"/>
                             <constraint firstItem="csR-gG-smV" firstAttribute="width" secondItem="lX2-Ve-iVb" secondAttribute="width" id="jvc-od-2sQ"/>
                             <constraint firstAttribute="width" secondItem="vwZ-Ik-lut" secondAttribute="height" multiplier="3.22" id="lxs-4G-H6p"/>
@@ -638,7 +629,6 @@
                         <outlet property="imageView" destination="Omf-yN-ogm" id="fQo-Vk-JBV"/>
                         <outlet property="titleTF" destination="dK2-rq-qnC" id="OY0-bc-svM"/>
                         <outlet property="topConstraint" destination="s3O-wx-SGy" id="s3K-WH-VEe"/>
-                        <outlet property="tv_spacer_button" destination="2OR-TN-A8c" id="jwJ-fY-AFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVt-Pg-wcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
