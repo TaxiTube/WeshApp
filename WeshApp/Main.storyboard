@@ -627,6 +627,7 @@
                         <outlet property="handleLable" destination="8bf-WE-BrV" id="EcX-0m-hwx"/>
                         <outlet property="imageView" destination="Omf-yN-ogm" id="fQo-Vk-JBV"/>
                         <outlet property="titleTF" destination="dK2-rq-qnC" id="OY0-bc-svM"/>
+                        <outlet property="topConstraint" destination="s3O-wx-SGy" id="7gC-Qn-qZT"/>
                         <outlet property="v_button_spacer_tv" destination="Mek-Ba-U3Q" id="dC4-3T-fFk"/>
                     </connections>
                 </viewController>
