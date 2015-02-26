@@ -461,7 +461,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzU-UG-uen" customClass="WeshappTextField" customModule="Designables">
                                         <rect key="frame" x="66" y="0.0" width="428.5" height="80.5"/>
                                         <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-smile" translatesAutoresizingMaskIntoConstraints="NO" id="lI0-7W-UbV" userLabel="Edge-spacer-Image">
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="80.5"/>
@@ -530,10 +530,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="CREATE YOUR HABITAT" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dK2-rq-qnC" customClass="WeshappTextField" customModule="Designables">
-                                <rect key="frame" x="33" y="238" width="534" height="69.5"/>
+                                <rect key="frame" x="33" y="290.5" width="534" height="69.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="31" restorationIdentifier="v_tf_spacer_tv" translatesAutoresizingMaskIntoConstraints="NO" id="U01-WP-Bxn" userLabel="v_label_spacer_tf">
                                 <rect key="frame" x="253" y="307.5" width="93" height="41.5"/>
@@ -548,7 +548,7 @@
                                 <rect key="frame" x="33" y="349.5" width="534" height="186.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="93" placeholderIntrinsicHeight="24.5" restorationIdentifier="v_img_spacer_label" translatesAutoresizingMaskIntoConstraints="NO" id="rde-U0-ZfZ" userLabel="v_img_spacer_label">
                                 <rect key="frame" x="254" y="150.5" width="93" height="37.5"/>
