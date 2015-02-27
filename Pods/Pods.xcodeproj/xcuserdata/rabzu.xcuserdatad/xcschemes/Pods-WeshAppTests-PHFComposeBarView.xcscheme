@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "25541FD3B73827D3A4763CEB"
+               BlueprintIdentifier = "5CCAFE06525E76824C718BE3"
                BuildableName = "libPods-WeshAppTests-PHFComposeBarView.a"
                BlueprintName = "Pods-WeshAppTests-PHFComposeBarView"
                ReferencedContainer = "container:Pods.xcodeproj">

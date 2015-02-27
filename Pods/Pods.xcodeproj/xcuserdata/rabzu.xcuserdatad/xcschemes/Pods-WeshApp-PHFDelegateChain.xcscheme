@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "60D2F7B116C5D9DD71809D30"
+               BlueprintIdentifier = "6206C95B410EBB584BA1F506"
                BuildableName = "libPods-WeshApp-PHFDelegateChain.a"
                BlueprintName = "Pods-WeshApp-PHFDelegateChain"
                ReferencedContainer = "container:Pods.xcodeproj">

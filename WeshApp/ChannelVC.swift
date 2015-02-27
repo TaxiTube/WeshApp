@@ -8,36 +8,39 @@
 
 import UIKit
 
-class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, ChannelWallDelegate, UINavigationControllerDelegate {
+class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     //MARK: Properties
     var channel: Channel?
     var coreDataStack: CoreDataStack?
     var sessionMngr: SessionMngr?
     var postMngr: PostMngr?
-    var navController: UINavigationController?
-
     
+    var navController: UINavigationController?
+    var channelWallTVC: ChannelWallTVC?
+
+
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     //MARK: IBOutlets
-    @IBOutlet weak var textField: UITextField!
+//    @IBOutlet weak var textField: UITextField!
     //@IBOutlet weak var containerView: UIView!
     //@IBOutlet weak var navigationBar: UINavigationItem!
-
-     func hideKeyboard() {
-        textField.resignFirstResponder()
+    
+    func hideKeyboard() {
+//        textField.resignFirstResponder()
     }
 
 
     @IBAction func postMessage(sender: AnyObject) {
         
-        if textField.text != "" {
-            let post = postMngr!.createPost(textField.text, channel: channel,
+        if textView.text != "" {
+            let post = postMngr!.createPost(textView.text, channel: channel,
                                                                date: NSDate(),
                                                              sender: sessionMngr!.myBadge)
             
-            textField.text = ""
+            textView.text = ""
             //TODO: Decide whether after commenting on a channel wall, the channle persists
             //postsMngr!.save(coreDataStack!.mainContext!)
             sessionMngr!.broadcastNewPost(post)
@@ -70,6 +73,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         
         postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
                                    coreDataStack: coreDataStack!)
+
         
     }
    
@@ -86,7 +90,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toChannelWallVC" {
-            var channelWallTVC = segue.destinationViewController as? ChannelWallTVC
+            channelWallTVC = segue.destinationViewController as? ChannelWallTVC
             channelWallTVC?.delegate = self
             channelWallTVC?.channel = channel
         }
@@ -106,30 +110,27 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         // text view to the bottom of the superview.
 //        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navController!.navigationBar.frame.height
         let offset =  keyboardSize.height
-        
-        if notification.name == UIKeyboardWillChangeFrameNotification{
+        println("hey")
+        if notification.name == UIKeyboardWillShowNotification{
 
-            bottomConstraint.constant = keyboardSize.height
-            
-        } else if notification.name == UIKeyboardWillShowNotification {
-            
-            bottomConstraint.constant = keyboardSize.height
-
+//            
+//            bottomConstraint.constant = keyboardSize.height
+//
 //            bottomConstraint.constant = bottomConstraint.constant + offset  // move up
-            //topConstraint.constant = topConstraint.constant - offset
-            //channelWallTVC?.scrollEntireTableTo(true, animated: true)
-            //navigationController?.setNavigationBarHidden(true, animated: true)
+//            topConstraint.constant =  -offset
+            channelWallTVC?.scrollEntireTableTo(true, animated: true)
+            navigationController?.setNavigationBarHidden(true, animated: true)
             
-            //UIApplication.sharedApplication().statusBarHidden = true
+            UIApplication.sharedApplication().statusBarHidden = true
             
         }
         else {
-            bottomConstraint.constant = 0 // move down
-            //topConstraint.constant = 0
-            //channelWallTVC?.scrollEntireTableTo(false, animated: true)
-            //navigationController?.setNavigationBarHidden(false, animated: true)
+//            bottomConstraint.constant = 0 // move down
+//            topConstraint.constant = 0
+            channelWallTVC?.scrollEntireTableTo(false, animated: true)
+            navigationController?.setNavigationBarHidden(false, animated: true)
             
-            //UIApplication.sharedApplication().statusBarHidden = false
+            UIApplication.sharedApplication().statusBarHidden = false
         }
         view.setNeedsUpdateConstraints()
         
