@@ -54,6 +54,7 @@
 		D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */; };
 		D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D85A86671A1972A700398153 /* ChannelMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86661A1972A700398153 /* ChannelMngrTest.swift */; };
+		D86857641AA2C3990003F214 /* WeshappTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */; };
 		D870518A1A7C3E000081484A /* WeshappLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87051891A7C3E000081484A /* WeshappLabel.swift */; };
 		D871CB581A1FD97E0024C7B7 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
 		D871CB591A1FD9890024C7B7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
@@ -103,7 +104,6 @@
 		D8DC68671A337CC800AAF16D /* WeshAppLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; };
 		D8DC68681A337CC800AAF16D /* WeshAppLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8DC68711A337D7B00AAF16D /* ObjCWrapperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68701A337D7B00AAF16D /* ObjCWrapperFunctions.swift */; };
-		D8DC68811A338FAA00AAF16D /* WeshappTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */; };
 		D8DC68821A338FAA00AAF16D /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687C1A338FAA00AAF16D /* GreenButton.swift */; };
 		D8DC68861A338FAA00AAF16D /* TextFieldSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */; };
 		D8DC68881A33910E00AAF16D /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68871A33910E00AAF16D /* NSManagedObject.swift */; };
@@ -792,6 +792,7 @@
 				D885E88E1A8F695800BD8E48 /* PlayPause.swift in Sources */,
 				D8EF20951A96C5930033230C /* SmileyIcon.swift in Sources */,
 				D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */,
+				D86857641AA2C3990003F214 /* WeshappTextView.swift in Sources */,
 				D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */,
 				D885E8961A8F7C1F00BD8E48 /* MsgIcon.swift in Sources */,
 				D870518A1A7C3E000081484A /* WeshappLabel.swift in Sources */,
@@ -885,7 +886,6 @@
 				D8DC68711A337D7B00AAF16D /* ObjCWrapperFunctions.swift in Sources */,
 				D8DC68881A33910E00AAF16D /* NSManagedObject.swift in Sources */,
 				D8DC68821A338FAA00AAF16D /* GreenButton.swift in Sources */,
-				D8DC68811A338FAA00AAF16D /* WeshappTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

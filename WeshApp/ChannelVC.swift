@@ -48,6 +48,8 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
+        
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("animateTextFieldWithKeyboard:"),
             name: UIKeyboardWillChangeFrameNotification,
@@ -111,7 +113,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
 
         
             bottomConstraint.constant = offset
-            channelWallTVC!.setTableBottomInset(offset)
+            channelWallTVC!.setTableBottomInset(offset + (view.frame.width / 7.2))
 //            channelWallTVC!.scrollEntireTableTo(true, animated: true)
 //            bottomConstraint.constant = bottomConstraint.constant + offset  // move up
         //    topConstraint.active = false
