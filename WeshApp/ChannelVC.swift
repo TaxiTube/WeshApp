@@ -123,7 +123,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
         }
         else {
             bottomConstraint.constant = 0 // move down
-            channelWallTVC!.setTableBottomInset(0)
+            channelWallTVC!.setTableBottomInset(view.frame.width / 7.2)
 
           //  topConstraint.active = true
             //channelWallTVC?.scrollEntireTableTo(false, animated: true)

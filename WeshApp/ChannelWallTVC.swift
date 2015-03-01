@@ -33,6 +33,10 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
 
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+                                             left: tableView.contentInset.left,
+                                           bottom: view.frame.width / 7.2,
+                                            right: tableView.contentInset.right)
 
         let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
         recognizer.delegate = self

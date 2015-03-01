@@ -103,7 +103,7 @@
 		D8DC68671A337CC800AAF16D /* WeshAppLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; };
 		D8DC68681A337CC800AAF16D /* WeshAppLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8DC68711A337D7B00AAF16D /* ObjCWrapperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68701A337D7B00AAF16D /* ObjCWrapperFunctions.swift */; };
-		D8DC68811A338FAA00AAF16D /* BorderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */; };
+		D8DC68811A338FAA00AAF16D /* WeshappTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */; };
 		D8DC68821A338FAA00AAF16D /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687C1A338FAA00AAF16D /* GreenButton.swift */; };
 		D8DC68861A338FAA00AAF16D /* TextFieldSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */; };
 		D8DC68881A33910E00AAF16D /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC68871A33910E00AAF16D /* NSManagedObject.swift */; };
@@ -233,7 +233,7 @@
 		D8DC68531A337CC800AAF16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DC68541A337CC800AAF16D /* WeshAppLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeshAppLibrary.h; sourceTree = "<group>"; };
 		D8DC68701A337D7B00AAF16D /* ObjCWrapperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCWrapperFunctions.swift; sourceTree = "<group>"; };
-		D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderTextView.swift; path = ../WeshApp/BorderTextView.swift; sourceTree = "<group>"; };
+		D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeshappTextView.swift; path = ../WeshApp/WeshappTextView.swift; sourceTree = "<group>"; };
 		D8DC687C1A338FAA00AAF16D /* GreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreenButton.swift; path = ../WeshApp/GreenButton.swift; sourceTree = "<group>"; };
 		D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrangeButton.swift; path = ../WeshApp/OrangeButton.swift; sourceTree = "<group>"; };
 		D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldSendView.swift; path = ../WeshApp/TextFieldSendView.swift; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 				B36E68461A6C3AF7002B951A /* Designables.h */,
 				D89144A41A71485F008D8D75 /* CrossIconSK.swift */,
 				D89144A21A714436008D8D75 /* CrossBarItem.swift */,
-				D8DC687B1A338FAA00AAF16D /* BorderTextView.swift */,
+				D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */,
 				D8DC687C1A338FAA00AAF16D /* GreenButton.swift */,
 				D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */,
 				D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */,
@@ -885,7 +885,7 @@
 				D8DC68711A337D7B00AAF16D /* ObjCWrapperFunctions.swift in Sources */,
 				D8DC68881A33910E00AAF16D /* NSManagedObject.swift in Sources */,
 				D8DC68821A338FAA00AAF16D /* GreenButton.swift in Sources */,
-				D8DC68811A338FAA00AAF16D /* BorderTextView.swift in Sources */,
+				D8DC68811A338FAA00AAF16D /* WeshappTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

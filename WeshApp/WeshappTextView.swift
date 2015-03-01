@@ -9,7 +9,13 @@
 import UIKit
 
 @IBDesignable
-public class BorderTextView: UITextView{
+public class WeshappTextView: UITextView{
+    
+    let top: CGFloat = 0
+    let left: CGFloat = 0
+    let bottom: CGFloat = 0
+    let right: CGFloat = 0
+    
     
     /*
     required public init(coder aDecoder: NSCoder) {
@@ -24,8 +30,12 @@ public class BorderTextView: UITextView{
         //self.layer.borderColor = grey80.CGColor
         //self.layer.cornerRadius = 8
         //self.font = UIFont(name: "Roboto-light", size: 14.0)!
+        font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
+
         textColor = grey80
-        textContainerInset = UIEdgeInsetsMake(8, 6, 8, 6);
+        textContainerInset = UIEdgeInsetsMake(top, left, bottom, right)
+//    textContainerInset = UIEdgeInsetsMake(8, 6, 8, 6);
+
 
     }
     
