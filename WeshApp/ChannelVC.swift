@@ -29,7 +29,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
     //@IBOutlet weak var navigationBar: UINavigationItem!
     
     func hideKeyboard() {
-//        textField.resignFirstResponder()
+        textView.resignFirstResponder()
     }
 
 
@@ -53,6 +53,11 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("animateTextFieldWithKeyboard:"),
             name: UIKeyboardWillShowNotification,
+            object: nil);
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("animateTextFieldWithKeyboard:"),
+            name: UIKeyboardDidShowNotification,
             object: nil);
         
         NSNotificationCenter.defaultCenter().addObserver(     self,
@@ -110,27 +115,31 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
         // text view to the bottom of the superview.
 //        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navController!.navigationBar.frame.height
         let offset =  keyboardSize.height
-        println("hey")
+        
         if notification.name == UIKeyboardWillShowNotification{
 
 //            
+            println("offset \(offset)")
+            
 //            bottomConstraint.constant = keyboardSize.height
 //
-//            bottomConstraint.constant = bottomConstraint.constant + offset  // move up
+            bottomConstraint.constant = offset  // move up
 //            topConstraint.constant =  -offset
-            channelWallTVC?.scrollEntireTableTo(true, animated: true)
-            navigationController?.setNavigationBarHidden(true, animated: true)
+//            channelWallTVC!.scrollByOffset(offset, animated: true )
+            channelWallTVC?.scrollWallTo(true, animated: true)
+//            navigationController?.setNavigationBarHidden(true, animated: true)
             
-            UIApplication.sharedApplication().statusBarHidden = true
-            
+//
         }
         else {
-//            bottomConstraint.constant = 0 // move down
+            bottomConstraint.constant = 0 // move down
 //            topConstraint.constant = 0
-            channelWallTVC?.scrollEntireTableTo(false, animated: true)
-            navigationController?.setNavigationBarHidden(false, animated: true)
+//            channelWallTVC?.scrollWallTo(false, animated: true)
+//            navigationController?.setNavigationBarHidden(false, animated: true)
+//            
+//            UIApplication.sharedApplication().statusBarHidden = false
             
-            UIApplication.sharedApplication().statusBarHidden = false
+//            channelWallTVC!.scrollByOffset( 0, animated: true )
         }
         view.setNeedsUpdateConstraints()
         

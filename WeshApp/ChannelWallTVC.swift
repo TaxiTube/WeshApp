@@ -181,14 +181,17 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         tableView.endUpdates()
         scrollWallTo(true, animated: true)
     }
-   
+   /*
+        This scroll only works if there is not keyboard. keyboard interfeers witht the cells
+    
+    */
     func scrollWallTo(bottom:Bool, animated: Bool){
     
         let sectionInfo = fetchedResultsController.sections![0] as NSFetchedResultsSectionInfo
         if sectionInfo.numberOfObjects != 0 {
             var iPath: NSIndexPath?
             if bottom{
-                
+                println(sectionInfo.numberOfObjects )
                  iPath = NSIndexPath(forRow: sectionInfo.numberOfObjects - 1,
                                      inSection: fetchedResultsController.sections!.count - 1)
                 tableView.scrollToRowAtIndexPath(iPath!, atScrollPosition: .Bottom, animated: animated)
@@ -206,15 +209,27 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         if bottom{
             
             var yOffset: CGFloat  = 0.0
-                    
+            
             if (tableView.contentSize.height > tableView.bounds.size.height) {
                 yOffset = tableView.contentSize.height - tableView.bounds.size.height
             }
-            tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentSize.height ), animated: animated)
-         } else {
+            tableView.setContentOffset(CGPoint(x: 0, y: yOffset ), animated: animated)
+        } else {
             tableView.setContentOffset(CGPoint(x: 0, y: 0 - tableView.contentInset.top), animated: animated)
         }
-
+        
+    }
+    func scrollByOffset(offset: CGFloat, animated: Bool ){
+     
+//            tableView.contentInset =  UIEdgeInsets(top: 0, left: 0, bottom: offset, right: 0)
+        self.scrollEntireTableTo(true, animated: true)
+//        
+        println("content size: \(tableView.contentSize.height) table view bounds size \(tableView.bounds.height) total \(offset + tableView.bounds.height) ")
+//        println("content offset: \(tableView.contentOffset.y)")
+//        println("")
+         //tableView.setContentOffset(CGPoint(x: 0, y:   tableView.contentInset.bottom ), animated: animated)
+        
+        
     }
     
     
