@@ -18,26 +18,27 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     var navController: UINavigationController?
 
     
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     //MARK: IBOutlets
-    @IBOutlet weak var textField: UITextField!
+//    @IBOutlet weak var textView: UITextField!
     //@IBOutlet weak var containerView: UIView!
     //@IBOutlet weak var navigationBar: UINavigationItem!
 
      func hideKeyboard() {
-        textField.resignFirstResponder()
+        textView.resignFirstResponder()
     }
 
 
     @IBAction func postMessage(sender: AnyObject) {
         
-        if textField.text != "" {
-            let post = postMngr!.createPost(textField.text, channel: channel,
+        if textView.text != "" {
+            let post = postMngr!.createPost(textView.text, channel: channel,
                                                                date: NSDate(),
                                                              sender: sessionMngr!.myBadge)
             
-            textField.text = ""
+            textView.text = ""
             //TODO: Decide whether after commenting on a channel wall, the channle persists
             //postsMngr!.save(coreDataStack!.mainContext!)
             sessionMngr!.broadcastNewPost(post)
