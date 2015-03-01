@@ -217,7 +217,9 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
 
     }
     
-    
+    func setTableBottomInset(inset: CGFloat){
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: inset, right: 0)
+    }
     
     func sizeHeaderToFit(){
         

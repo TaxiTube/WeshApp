@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, ChannelWallDelegate, UINavigationControllerDelegate {
+class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UINavigationControllerDelegate {
 
     //MARK: Properties
     var channel: Channel?
@@ -16,7 +16,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     var sessionMngr: SessionMngr?
     var postMngr: PostMngr?
     var navController: UINavigationController?
-
+    var channelWallTVC : ChannelWallTVC?
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
@@ -50,7 +50,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
 
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("animateTextFieldWithKeyboard:"),
-            name: UIKeyboardWillShowNotification,
+            name: UIKeyboardWillChangeFrameNotification,
             object: nil);
         
         NSNotificationCenter.defaultCenter().addObserver(     self,
@@ -87,7 +87,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toChannelWallVC" {
-            var channelWallTVC = segue.destinationViewController as? ChannelWallTVC
+            channelWallTVC = segue.destinationViewController as? ChannelWallTVC
             channelWallTVC?.delegate = self
             channelWallTVC?.channel = channel
         }
@@ -102,7 +102,6 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
         let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as Double
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as UInt
-        
         // baseContraint is your Auto Layout constraint that pins the
         // text view to the bottom of the superview.
 //        let screenHeight  = UIScreen.mainScreen().bounds.size.height - navController!.navigationBar.frame.height
@@ -110,23 +109,23 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, UITextFieldDelegate, Ch
         
         if notification.name == UIKeyboardWillChangeFrameNotification{
 
-            bottomConstraint.constant = keyboardSize.height
-            
-        } else if notification.name == UIKeyboardWillShowNotification {
-            
-            bottomConstraint.constant = keyboardSize.height
-
+        
+            bottomConstraint.constant = offset
+            channelWallTVC!.setTableBottomInset(offset)
+//            channelWallTVC!.scrollEntireTableTo(true, animated: true)
 //            bottomConstraint.constant = bottomConstraint.constant + offset  // move up
-            //topConstraint.constant = topConstraint.constant - offset
+        //    topConstraint.active = false
             //channelWallTVC?.scrollEntireTableTo(true, animated: true)
             //navigationController?.setNavigationBarHidden(true, animated: true)
             
             //UIApplication.sharedApplication().statusBarHidden = true
-            
+
         }
         else {
             bottomConstraint.constant = 0 // move down
-            //topConstraint.constant = 0
+            channelWallTVC!.setTableBottomInset(0)
+
+          //  topConstraint.active = true
             //channelWallTVC?.scrollEntireTableTo(false, animated: true)
             //navigationController?.setNavigationBarHidden(false, animated: true)
             
