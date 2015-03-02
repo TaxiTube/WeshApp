@@ -185,7 +185,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
                 
                 
                 let navController = segue.destinationViewController as UINavigationController
-              var channelVC = navController.topViewController as ChannelVC
+              var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 //If as Channel else as Profile
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
@@ -320,5 +320,6 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
             return nav
             
     }
+   
 
 }

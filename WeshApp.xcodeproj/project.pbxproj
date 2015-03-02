@@ -85,8 +85,8 @@
 		D8C224481A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
 		D8C224491A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
 		D8C642261A46074E004A604A /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */; };
-		D8C6422E1A47594A004A604A /* ChannelWallTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */; };
-		D8C6422F1A47594A004A604A /* ChannelWallTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */; };
+		D8C6422E1A47594A004A604A /* ChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelTVC.swift */; };
+		D8C6422F1A47594A004A604A /* ChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelTVC.swift */; };
 		D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */; };
 		D8C642601A4C7725004A604A /* WallPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */; };
 		D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */; };
@@ -224,7 +224,7 @@
 		D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMngr.swift; sourceTree = "<group>"; };
 		D8C0FD601A127B5D00F40134 /* ProfileMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileMngrTest.swift; sourceTree = "<group>"; };
 		D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
-		D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelWallTVC.swift; sourceTree = "<group>"; };
+		D8C6422D1A47594A004A604A /* ChannelTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTVC.swift; sourceTree = "<group>"; };
 		D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostTableViewCell.swift; sourceTree = "<group>"; };
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
@@ -483,7 +483,7 @@
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
 				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
 				B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */,
-				D8C6422D1A47594A004A604A /* ChannelWallTVC.swift */,
+				D8C6422D1A47594A004A604A /* ChannelTVC.swift */,
 				D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */,
 				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
 				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
@@ -827,7 +827,7 @@
 				D82428C71A9A088300CA55D2 /* ChannelHeaderVC.swift in Sources */,
 				B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */,
 				B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */,
-				D8C6422E1A47594A004A604A /* ChannelWallTVC.swift in Sources */,
+				D8C6422E1A47594A004A604A /* ChannelTVC.swift in Sources */,
 				B3D6CBE919FC4E510025140E /* NearbyTVC.swift in Sources */,
 				B3D9F5CE19F93C4500BF6257 /* SplashVC.swift in Sources */,
 				B3CB2E2A1A690CCD00FBFED1 /* Badge.swift in Sources */,
@@ -865,7 +865,7 @@
 				D8DA2A371A693F520098C5E6 /* Channel.swift in Sources */,
 				D81FE27D1A236BC9006F8E62 /* SessionMngrTest.swift in Sources */,
 				D871CB5B1A1FD9890024C7B7 /* ChannelMngr.swift in Sources */,
-				D8C6422F1A47594A004A604A /* ChannelWallTVC.swift in Sources */,
+				D8C6422F1A47594A004A604A /* ChannelTVC.swift in Sources */,
 				D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */,
 				D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */,
 				D8DA2A391A693F630098C5E6 /* Tags.swift in Sources */,

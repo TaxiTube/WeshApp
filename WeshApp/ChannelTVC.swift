@@ -10,26 +10,41 @@ import UIKit
 import CoreData
 import WeshAppLibrary
 
-protocol ChannelWallDelegate{
-    func hideKeyboard()
-}
 
-class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate {
+class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate {
 
     var channel: Channel?
     var fetchedResultsController : NSFetchedResultsController!
     var coreDataStack: CoreDataStack!
     let screenSize  = UIScreen.mainScreen().bounds.size
-    var delegate: ChannelWallDelegate?
+    var postMngr: PostMngr?
+    var sessionMngr: SessionMngr?
 
 
+
+    @IBOutlet weak var textView: UITextView!
+
+    @IBOutlet var accessoryDock: UIView!
     @IBOutlet weak var headerView: UIView!
 
+        @IBAction func postMessage(sender: AnyObject) {
     
+            if textView.text != "" {
+                let post = postMngr!.createPost(textView.text, channel: channel,
+                                                                   date: NSDate(),
+                                                                 sender: sessionMngr!.myBadge)
+    
+                textView.text = ""
+                //TODO: Decide whether after commenting on a channel wall, the channle persists
+                //postsMngr!.save(coreDataStack!.mainContext!)
+                sessionMngr!.broadcastNewPost(post)
+            }
+        }
     
     override func viewDidLoad() {
       
         super.viewDidLoad()
+        navBarItemsSetup()
 
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -38,9 +53,9 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
                                            bottom: view.frame.width / 7.2,
                                             right: tableView.contentInset.right)
 
-        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
-        recognizer.delegate = self
-        view.addGestureRecognizer(recognizer)
+       // let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
+        //recognizer.delegate = self
+       // view.addGestureRecognizer(recognizer)
         
         
         
@@ -49,6 +64,9 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         let managedObjectContext = appDelegate.coreDataStack!.mainContext!
         let fetchRequest = NSFetchRequest(entityName: "Post")
         fetchRequest.predicate = NSPredicate(format: "channel == %@", channel!)
+        
+        postMngr = PostMngr(managedObjectContext: coreDataStack!.mainContext!,
+                                   coreDataStack: coreDataStack!)
         
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -67,7 +85,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
 
         
 
-
+        tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         
         tableView.backgroundColor = UIColor.clearColor()
         let backgroundImageView = UIImageView()
@@ -83,6 +101,28 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         
        
     }
+    //MARK: Navbar actions
+    private func navBarItemsSetup(){
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"),
+            style: .Done,
+            target: self,
+            action: "dismissPressed:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburgerIcon.png"),
+            style: .Done,
+            target: self,
+            action: "dismissPressed:")
+        
+        self.navigationItem.title = channel?.title
+    }
+    
+
+    func dismissPressed(sender: AnyObject) {
+        //        navigationController?.popToRootViewControllerAnimated(true)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     override func viewWillAppear(animated: Bool) {
         // scrollToBottom(false)
     }
@@ -141,13 +181,7 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         }
     }
 
-    
-    
-    
-    
-    func handleTap(recognizer: UITapGestureRecognizer){
-        delegate!.hideKeyboard()
-    }
+
     
 //    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return screenSize.width / 1.18
@@ -243,9 +277,17 @@ class ChannelWallTVC: UITableViewController, NSFetchedResultsControllerDelegate,
         tableView.tableHeaderView = header
     }
     
-   
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
 
-    
-    
+    override var inputAccessoryView: UIView! {
+        return accessoryDock
+    }
+    override func updateViewConstraints() {
+//        let constraint:NSLayoutConstraint = (tableView.inputAccessoryView!.constraints() as NSArray).objectAtIndex(0) as NSLayoutConstraint
+//        constraint.constant = 100
+        super.updateViewConstraints()
+    }
     
 }
