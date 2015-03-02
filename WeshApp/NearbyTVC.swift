@@ -182,8 +182,10 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "toChannelVC" {
-                let channelVC = segue.destinationViewController as ChannelVC
                 
+                
+                let navController = segue.destinationViewController as UINavigationController
+              var channelVC = navController.topViewController as ChannelVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 //If as Channel else as Profile
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel

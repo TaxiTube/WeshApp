@@ -245,7 +245,7 @@
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
                                     <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
-                                    <segue destination="L5T-Ia-3KY" kind="presentation" identifier="toChannelVC" modalPresentationStyle="overFullScreen" id="oFT-Fm-uwz"/>
+                                    <segue destination="lgM-f0-eIl" kind="presentation" identifier="toChannelVC" modalPresentationStyle="overCurrentContext" id="D6B-sN-EcJ"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="373" id="MDR-oS-7Yl" customClass="ChannelTableViewCell" customModule="WeshApp">
@@ -447,7 +447,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="40" restorationIdentifier="elementBox" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" userLabel="elementBox">
-                                <rect key="frame" x="0.0" y="516" width="600" height="83.5"/>
+                                <rect key="frame" x="0.0" y="452" width="600" height="83.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="70.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ck-0To" customClass="OrangeButton" customModule="Designables">
                                         <rect key="frame" x="499" y="14" width="90" height="54.5"/>
@@ -534,8 +534,8 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="RoA-Qd-sJf"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="f7E-Uq-Lmb" id="sdT-of-qAs"/>
@@ -545,7 +545,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gk3-UO-ozy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5104" y="718"/>
+            <point key="canvasLocation" x="5586" y="669"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CMw-N9-EWb">
+            <objects>
+                <navigationController id="lgM-f0-eIl" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hOU-3Z-ZhR" customClass="WeshappNavBar" customModule="Designables">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L5T-Ia-3KY" kind="relationship" relationship="rootViewController" id="ZYQ-rZ-VZ2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81f-Ot-eJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4927" y="669"/>
         </scene>
         <!--Create ChannelVC-->
         <scene sceneID="Q5o-eI-WnD">
@@ -883,7 +901,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kat-Jy-BEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5878" y="717.75"/>
+            <point key="canvasLocation" x="6202" y="669"/>
         </scene>
         <!--Channel HeaderVC-->
         <scene sceneID="wrk-sy-LcI">

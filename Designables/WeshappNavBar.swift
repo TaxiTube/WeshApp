@@ -36,6 +36,7 @@ public class WeshappNavBar: UINavigationBar{
         backgroundColor =  UIColorFromRGB(0x51c1d2)
         barTintColor = UIColorFromRGB(0x51c1d2)
         tintColor = UIColorFromRGB(0xffffff)
+        alpha = 0.8
        
          if let  var tv = topItem?.titleView{
             let titleLableY = tv.frame.origin.y + tv.frame.size.height/2

@@ -30,7 +30,14 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
         textView.resignFirstResponder()
     }
 
+    
+    
+    
+    @IBAction func crossPressed(sender: AnyObject){
+      dismissViewControllerAnimated(true, completion: nil)
 
+}
+    
     @IBAction func postMessage(sender: AnyObject) {
         
         if textView.text != "" {
@@ -68,6 +75,7 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
             style: .Done,
             target: self,
             action: "dismissPressed:")
+        
         self.navigationItem.title = channel?.title
 
         
@@ -146,7 +154,8 @@ class ChannelVC: UIViewController, UIScrollViewDelegate, ChannelWallDelegate, UI
  
     //MARK: Navbar actions
     func dismissPressed(sender: AnyObject) {
-        navigationController?.popToRootViewControllerAnimated(true)
+//        navigationController?.popToRootViewControllerAnimated(true)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
