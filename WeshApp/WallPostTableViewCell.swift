@@ -57,15 +57,15 @@ class WallPostTableViewCell: UITableViewCell {
     
     
     //MARK: Blur
-    private func addBlur(){
-        backgroundColor = UIColor.clearColor()
-        let backgroundImageView = UIImageView()
-        backgroundView = backgroundImageView
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = CGRectMake(0, 0, bounds.width, bounds.height)
-        backgroundImageView.addSubview(blurView)
-        
-    }
+//    private func addBlur(){
+//        backgroundColor = UIColor.clearColor()
+//        let backgroundImageView = UIImageView()
+//        backgroundView = backgroundImageView
+//        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+//        blurView.frame = CGRectMake(0, 0, bounds.width, bounds.height)
+//        backgroundImageView.addSubview(blurView)
+//        
+//    }
 }
