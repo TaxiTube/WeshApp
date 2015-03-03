@@ -8,6 +8,11 @@
 
 import UIKit
 
+public protocol WeshappUITextViewDelegate: UITextViewDelegate{
+    func textViewDidChangeHeight(textView: WeshappTextView)
+}
+
+
 @IBDesignable
 public class WeshappTextView: UITextView{
     
@@ -19,6 +24,10 @@ public class WeshappTextView: UITextView{
     @IBInspectable var realTextColor: UIColor = UIColor.blackColor()
     
     @IBInspectable var placeholderColor: UIColor  = UIColor(white:0.80, alpha:1)
+    
+    public var weshappDelegate: WeshappUITextViewDelegate?
+    
+    var initialSize: CGSize!
 
     public override func awakeFromNib() {
         setUp()
@@ -40,9 +49,25 @@ public class WeshappTextView: UITextView{
     textContainerInset = UIEdgeInsetsMake(top, left, bottom, right)
 
     }
+     public override func layoutSubviews() {
+
+//        if heightDidChange() {
+//            println("text changed")
+//            weshappDelegate!.textViewDidChangeHeight(self)
+//        }
+        
+    }
+    
+    public override func didChange(changeKind: NSKeyValueChange, valuesAtIndexes indexes: NSIndexSet, forKey key: String) {
+        
+      
+    }
+    
     
     func setUp(){
         
+        initialSize = frame.size
+        println(initialSize)
         self.text = placeholder
         self.textColor = placeholderColor
         
@@ -56,10 +81,10 @@ public class WeshappTextView: UITextView{
             name: UITextViewTextDidEndEditingNotification,
             object: nil)
         
-//        NSNotificationCenter.defaultCenter().addObserver(     self,
-//            selector: Selector("editingChanged:"),
-//            name: UITextViewTextDidChangeNotification,
-//            object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("editingChanged:"),
+            name: UITextViewTextDidChangeNotification,
+            object: nil)
         
     }
     
@@ -70,19 +95,28 @@ public class WeshappTextView: UITextView{
             self.textColor = realTextColor
         }
     }
-//    func editingChanged(notification: NSNotification){
-//        if self.text == "" && self.textColor == realTextColor{
-//            self.text = placeholder
-//            self.textColor = placeholderColor
-//            self.selectedRange = NSMakeRange(0, 0)
-//        }
-//    }
+    func editingChanged(notification: NSNotification){
+        println("text changed  \(initialSize.height)")
+        if heightDidChange() {
+//           weshappDelegate!.textViewDidChangeHeight(self)
+        }
+    }
     
     func end(notification: NSNotification){
         if self.text == "" {
             self.text = placeholder
             self.textColor = placeholderColor
         }
+    }
+    func heightDidChange()->Bool{
+        println("\(initialSize.height != self.frame.height)")
+        if initialSize.height != self.frame.height{
+            initialSize = self.frame.size
+            return true
+        } else {
+            return false
+        }
+        
     }
     
 }

@@ -783,15 +783,15 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kat-Jy-BEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="84" id="AlX-qk-58B" userLabel="accessoryDock">
+                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="84" id="AlX-qk-58B" userLabel="accessoryDock">
                     <rect key="frame" x="0.0" y="0.0" width="588" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="40" restorationIdentifier="elementBox" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" userLabel="elementBox">
-                            <rect key="frame" x="0.0" y="0.0" width="604" height="84"/>
+                            <rect key="frame" x="0.0" y="0.0" width="588" height="84"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="70.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ck-0To" customClass="OrangeButton" customModule="Designables">
-                                    <rect key="frame" x="101.5" y="6" width="90.5" height="70.5"/>
+                                    <rect key="frame" x="490" y="6" width="88" height="70.5"/>
                                     <state key="normal" title="Send">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -800,18 +800,18 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="360" placeholderIntrinsicHeight="60" restorationIdentifier="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="9XO-Xe-nfr" userLabel="Smiley" customClass="SmileyIcon" customModule="Designables">
-                                    <rect key="frame" x="36" y="26.5" width="30" height="30.5"/>
+                                    <rect key="frame" x="35" y="27" width="29" height="29.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="9XO-Xe-nfr" secondAttribute="height" multiplier="1:1" id="0ZM-YU-LuB"/>
                                     </constraints>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-smile" translatesAutoresizingMaskIntoConstraints="NO" id="lI0-7W-UbV" userLabel="Edge-spacer-Image">
-                                    <rect key="frame" x="0.0" y="0.0" width="36" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="35" height="84"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cev-6x-vgV" customClass="WeshappTextView" customModule="Designables">
-                                    <rect key="frame" x="65.5" y="0.0" width="36" height="84"/>
+                                    <rect key="frame" x="63.5" y="0.0" width="426.5" height="84"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
@@ -846,15 +846,19 @@
                                 <constraint firstAttribute="bottom" secondItem="lI0-7W-UbV" secondAttribute="bottom" id="TEt-pK-VL3"/>
                                 <constraint firstItem="9XO-Xe-nfr" firstAttribute="leading" secondItem="lI0-7W-UbV" secondAttribute="trailing" id="XjY-Nl-CVx"/>
                                 <constraint firstItem="cev-6x-vgV" firstAttribute="height" secondItem="pdO-vX-GrO" secondAttribute="height" id="ZIH-2B-RYU"/>
-                                <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="cev-6x-vgV" secondAttribute="height" multiplier="7.2" id="Zg8-wx-Xfr"/>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="cev-6x-vgV" secondAttribute="height" multiplier="7.5" id="Zg8-wx-Xfr"/>
                                 <constraint firstItem="9XO-Xe-nfr" firstAttribute="width" secondItem="pdO-vX-GrO" secondAttribute="width" multiplier="0.05" id="dHO-Av-mCV"/>
                                 <constraint firstItem="yFJ-ck-0To" firstAttribute="width" secondItem="pdO-vX-GrO" secondAttribute="width" multiplier="0.15" id="eRL-uD-XGc"/>
                                 <constraint firstAttribute="bottom" secondItem="cev-6x-vgV" secondAttribute="bottom" id="h21-E1-oQk"/>
-                                <constraint firstItem="cev-6x-vgV" firstAttribute="height" secondItem="pdO-vX-GrO" secondAttribute="height" id="hS8-4x-0I6"/>
                                 <constraint firstAttribute="centerY" secondItem="9XO-Xe-nfr" secondAttribute="centerY" id="px8-UO-gVY"/>
                                 <constraint firstAttribute="trailing" secondItem="yFJ-ck-0To" secondAttribute="trailing" constant="10" id="vVQ-OP-Hki"/>
                                 <constraint firstItem="lI0-7W-UbV" firstAttribute="width" secondItem="pdO-vX-GrO" secondAttribute="width" multiplier="0.06" id="wmm-hg-DgC"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="ZIH-2B-RYU"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
