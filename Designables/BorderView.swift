@@ -11,10 +11,13 @@ import UIKit
 @IBDesignable
 class BorderView: UIView {
     
-    @IBInspectable let top: Bool = false
+    @IBInspectable var top: Bool = false
     @IBInspectable var bottom: Bool = false
     @IBInspectable var left: Bool = false
     @IBInspectable var right: Bool = false
+    @IBInspectable var lineColor: UIColor = UIColor.grayColor()
+    
+//    UIColorFromRGB(0xf7f7f7)
     
     @IBInspectable var lineWidth: CGFloat = 0.0
     
@@ -24,7 +27,6 @@ class BorderView: UIView {
     
     override func drawRect(rect:CGRect) {
         
-            let colour =  UIColorFromRGB(0xf7f7f7)
         let context = UIGraphicsGetCurrentContext()
     
         if top {
@@ -48,17 +50,10 @@ class BorderView: UIView {
         }
         
         
-        CGContextSetStrokeColorWithColor(context, colour.CGColor)
-        CGContextSetLineWidth(context, 1.0);
+        CGContextSetStrokeColorWithColor(context, lineColor.CGColor)
+        CGContextSetLineWidth(context, lineWidth);
         CGContextStrokePath(context);
     }
     
-    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
+
 }

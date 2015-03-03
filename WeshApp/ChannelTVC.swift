@@ -100,8 +100,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         backgroundImageView.addSubview(blurView)
         
         sizeHeaderToFit()
-        tableView.layoutSubviews()
-        
+
+
+
     }
     
 //    func handleTap(recognizer: UITapGestureRecognizer) {
@@ -133,8 +134,10 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     
  
     override func viewDidLayoutSubviews() {
-        setUpInputAccessoryView()
         
+        if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
+            self.setUpInputAccessoryView()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -292,114 +295,81 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     
     
     override var inputAccessoryView: UIView! {
-     
-        
+//        println("accessory Dock")
         return accessoryDock
     }
+    
     
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
-     var heightConstraint: NSLayoutConstraint?
     
+    var heightConstraint: NSLayoutConstraint?
+    private var inputAccessoryViewIsSetUp: Bool = false
     
     func setUpInputAccessoryView(){
-        
+//        println("setUpInputAccessoryView")
         textView.delegate = self
-         textView.weshappDelegate = self
+        textView.weshappDelegate = self
+
+//        tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+
         var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
-        println(constraints.count)
+//              println("constraint count before setup \(constraints.count)")
         
        for  (c: NSLayoutConstraint) in constraints{
             if c.firstAttribute == NSLayoutAttribute.Height{
-                    heightConstraint =  c
+                    self.heightConstraint =  c
+//                println("IM INSIDE HEIGHT CONSTRAINT")
                     c.constant = screenSize.width / 7.5
 //                tableView.inputAccessoryView!.removeConstraint(c)
                 break
             }
         }
         
-        
-                accessoryDock.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleBottomMargin
-        
-//        textView.weshappDelegate = self
-//        let heightConstraint = NSLayoutConstraint(item: tableView.inputAccessoryView!,
-//            attribute: NSLayoutAttribute.Height,
-//            relatedBy: NSLayoutRelation.Equal,
-//            toItem: nil,
-//            attribute: NSLayoutAttribute.NotAnAttribute,
-//            multiplier: 1.0,
-//            constant: screenSize.width / 7.2)
-        
-//        let equalityConstraint = NSLayoutConstraint(item: tableView.inputAccessoryView!,
-//            attribute: NSLayoutAttribute.Height,
-//            relatedBy: NSLayoutRelation.Equal,
-//            toItem: textView,
-//            attribute: NSLayoutAttribute.Height,
-//            multiplier: 1.0,
-//            constant: 0)
-//
-//         tableView.inputAccessoryView!.addConstraint(heightConstraint)
-//         tableView.inputAccessoryView!.addConstraint(equalityConstraint)
-        
-        var c = tableView.inputAccessoryView!.constraints() as Array
-        
-        println(c.count)
-
-        updateViewConstraints()
-        tableView.layoutSubviews()
+        inputAccessoryViewIsSetUp = true
     }
     
     func textViewDidChangeHeight(textView: WeshappTextView) {
     
-            heightConstraint!.constant = heightConstraint!.constant + 1
+        var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
+        
+        for  (c: NSLayoutConstraint) in constraints{
+            if c.firstAttribute == NSLayoutAttribute.Height{
+                //Animation
+                c.constant = textView.contentSize.height
+                break
+            }
+        }
     
-            accessoryDock.setNeedsLayout()
-            accessoryDock.layoutIfNeeded()
+//            accessoryDock.setNeedsLayout()
+//            accessoryDock.layoutIfNeeded()
         }
     
     func textViewDidChange(textView: WeshappTextView) {
         
-        textView.weshappDelegate = self
+//        self.heightConstraint?.constant = textView.contentSize.height
         
-        var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
-        println("content size \(textView.contentSize.height)")
-        println("frame size \(textView.frame.height)")
-        println("bound size \(textView.bounds.height)")
-
-        
-        for  (c: NSLayoutConstraint) in constraints{
-            if c.firstAttribute == NSLayoutAttribute.Height{
-                heightConstraint =  c
-                c.constant = textView.contentSize.height
-                //                tableView.inputAccessoryView!.removeConstraint(c)
-                break
-            }
-        }
-   
-        
-        accessoryDock.setNeedsLayout()
-        accessoryDock.layoutIfNeeded()
-    }
-    
-    
-//    func textViewDidChangeHe(textView: UITextView) {
-//        var av = tableView.inputAccessoryView!
-//        textView.sizeToFit()
-//        println(textView.contentSize.height)
-//        println(textView.bounds.height)
-//        println(textView.frame.height)
+       
+//        println("content size \(textView.contentSize.height)")
+//    
+//
+//        var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
 //        
-//        var constraints:[NSLayoutConstraint] = av.constraints() as Array
 //        for  (c: NSLayoutConstraint) in constraints{
 //            if c.firstAttribute == NSLayoutAttribute.Height{
 //                c.constant = textView.contentSize.height
-//                println(c)
+//                break
 //            }
 //        }
-//        
-//        
-//    }
+//   
+//
+//        tableView.inputAccessoryView!.setNeedsLayout()
+//        tableView.inputAccessoryView!.layoutIfNeeded()
+    }
+    
+    
+
     
 
     

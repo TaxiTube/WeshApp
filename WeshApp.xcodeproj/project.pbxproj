@@ -35,7 +35,6 @@
 		B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
 		B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */; };
 		B3D6CBE919FC4E510025140E /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
-		B3D6CBF319FC5F9F0025140E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */; };
 		B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
 		B3D9F5B119F93AA400BF6257 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F5B019F93AA400BF6257 /* Images.xcassets */; };
 		B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F5B219F93AA400BF6257 /* LaunchScreen.xib */; };
@@ -84,7 +83,6 @@
 		D8C224471A83E6DE00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
 		D8C224481A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
 		D8C224491A83E6DF00CD083B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */; };
-		D8C642261A46074E004A604A /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */; };
 		D8C6422E1A47594A004A604A /* ChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelTVC.swift */; };
 		D8C6422F1A47594A004A604A /* ChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6422D1A47594A004A604A /* ChannelTVC.swift */; };
 		D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */; };
@@ -182,7 +180,6 @@
 		B3CB2E331A690ECE00FBFED1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
 		B3D6CBE819FC4E510025140E /* NearbyTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyTVC.swift; sourceTree = "<group>"; };
-		B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		B3D9F5A119F93AA400BF6257 /* WeshApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeshApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D9F5A519F93AA400BF6257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -482,7 +479,6 @@
 				B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */,
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
 				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
-				B3D6CBF219FC5F9F0025140E /* ChannelVC.swift */,
 				D8C6422D1A47594A004A604A /* ChannelTVC.swift */,
 				D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */,
 				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
@@ -814,7 +810,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */,
-				B3D6CBF319FC5F9F0025140E /* ChannelVC.swift in Sources */,
 				B3CB2E281A690CCD00FBFED1 /* Tags.swift in Sources */,
 				B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */,
 				D8C224461A83E68F00CD083B /* ChannelTableViewCell.swift in Sources */,
@@ -852,7 +847,6 @@
 				D8DA2A381A693F600098C5E6 /* Profile.swift in Sources */,
 				D871CB5A1A1FD9890024C7B7 /* PostMngr.swift in Sources */,
 				B3B149571A65348300E08EAA /* BadgeMngr.swift in Sources */,
-				D8C642261A46074E004A604A /* ChannelVC.swift in Sources */,
 				D871CB581A1FD97E0024C7B7 /* ProfileMngr.swift in Sources */,
 				D8DA2A361A693F4F0098C5E6 /* Badge.swift in Sources */,
 				D8DA2A3A1A693F660098C5E6 /* ProfilePhoto.swift in Sources */,
