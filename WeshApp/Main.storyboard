@@ -783,7 +783,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kat-Jy-BEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="84" id="AlX-qk-58B" userLabel="accessoryDock">
+                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="84" id="AlX-qk-58B" userLabel="accessoryDock" customClass="BorderView" customModule="Designables">
                     <rect key="frame" x="0.0" y="0.0" width="588" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -813,10 +813,13 @@
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cev-6x-vgV" customClass="WeshappTextView" customModule="Designables">
                                     <rect key="frame" x="63.5" y="0.0" width="426.5" height="84"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="top">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="left">
                                             <real key="value" value="15"/>
                                         </userDefinedRuntimeAttribute>
@@ -826,16 +829,13 @@
                                         <userDefinedRuntimeAttribute type="number" keyPath="right">
                                             <real key="value" value="15"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Your dumb msg goes here..."/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                             <color key="value" red="0.65098039220000004" green="0.65490196079999996" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                            <color key="value" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="realTextColor">
+                                            <color key="value" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type Here..."/>
                                     </userDefinedRuntimeAttributes>
                                 </textView>
                             </subviews>
@@ -872,6 +872,18 @@
                         <constraint firstItem="pdO-vX-GrO" firstAttribute="top" secondItem="AlX-qk-58B" secondAttribute="top" id="HI5-uF-DZ6"/>
                         <constraint firstAttribute="trailing" secondItem="pdO-vX-GrO" secondAttribute="trailing" id="JGJ-XP-nd3"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </objects>
             <point key="canvasLocation" x="5720" y="669"/>

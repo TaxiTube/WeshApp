@@ -16,18 +16,13 @@ public protocol WeshappUITextViewDelegate: UITextViewDelegate{
 @IBDesignable
 public class WeshappTextView: UITextView{
     
-    @IBInspectable var topInset: CGFloat = 0
-    @IBInspectable var leftInset: CGFloat = 0
-    @IBInspectable var bottomInset: CGFloat = 0
-    @IBInspectable var rightInset: CGFloat = 0
+    @IBInspectable var top: CGFloat = 0
+    @IBInspectable var left: CGFloat = 0
+    @IBInspectable var bottom: CGFloat = 0
+    @IBInspectable var right: CGFloat = 0
     @IBInspectable var placeholder: String = ""
     @IBInspectable var realTextColor: UIColor = UIColor.blackColor()
-    @IBInspectable var top: Bool = false
-    @IBInspectable var bottom: Bool = false
-    @IBInspectable var left: Bool = false
-    @IBInspectable var right: Bool = false
-    @IBInspectable var lineColor: UIColor = UIColor.grayColor()
-    @IBInspectable var lineWidth: CGFloat = 0.0
+    
     @IBInspectable var placeholderColor: UIColor  = UIColor(white:0.80, alpha:1)
     
     public var weshappDelegate: WeshappUITextViewDelegate?
@@ -35,52 +30,24 @@ public class WeshappTextView: UITextView{
     var initialContentSize: CGSize!
 
     public override func awakeFromNib() {
-        println("awakefrom nib")
         setUp()
     }
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        println("init decoder")
-
+        
     }
-  
     
-    //    UIColorFromRGB(0xf7f7f7)
-    
-    
-    let grey80 = UIColor(white:0.80, alpha:1)
-    
-    
-    
-    override public func drawRect(rect:CGRect) {
-        
-        let context = UIGraphicsGetCurrentContext()
-        
-        if top {
-            CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMinY(rect))
-            CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMinY(rect))
-        }
-        
-        if bottom{
-            CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMaxY(rect))
-            CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
-        }
-        
-        if left{
-            CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMinY(rect))
-            CGContextAddLineToPoint(context, CGRectGetMinX(rect), CGRectGetMaxY(rect))
-        }
-        
-        if right{
-            CGContextMoveToPoint(context, CGRectGetMaxX(rect), CGRectGetMinY(rect))
-            CGContextAddLineToPoint(context, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
-        }
-        
-        
-        CGContextSetStrokeColorWithColor(context, lineColor.CGColor)
-        CGContextSetLineWidth(context, lineWidth);
-        CGContextStrokePath(context);
-        textContainerInset = UIEdgeInsetsMake(topInset, leftInset, bottomInset, rightInset)
+    public override func drawRect(rect: CGRect){
+//
+//        let grey80 = UIColor(white:0.80, alpha:1)
+//        //self.layer.borderWidth = 0.5
+//        //self.layer.borderColor = grey80.CGColor
+//        //self.layer.cornerRadius = 8
+//
+
+////    textContainerInset = UIEdgeInsetsMake(8, 6, 8, 6);
+    textContainerInset = UIEdgeInsetsMake(top, left, bottom, right)
+
     }
      public override func layoutSubviews() {
 
@@ -117,7 +84,7 @@ public class WeshappTextView: UITextView{
             name: UITextViewTextDidChangeNotification,
             object: nil)
         
-        println("setting up with content size \(self.contentSize.height)")
+//        println("setting up with content size \(self.contentSize.height)")
         initialContentSize = self.contentSize
     }
     
@@ -129,7 +96,7 @@ public class WeshappTextView: UITextView{
         }
     }
     func editingChanged(notification: NSNotification){
-        println("text changed  \(initialContentSize.height)")
+//        println("text changed  \(initialContentSize.height)")
         if heightDidChange() {
            weshappDelegate!.textViewDidChangeHeight(self)
         }
@@ -143,7 +110,7 @@ public class WeshappTextView: UITextView{
     }
     func heightDidChange()->Bool{
         
-        println("initialContentSize.height = \(initialContentSize.height) self.frame.height = \(self.contentSize.height)    \(initialContentSize.height != self.contentSize.height)")
+//        println("initialContentSize.height = \(initialContentSize.height) self.frame.height = \(self.contentSize.height)    \(initialContentSize.height != self.frame.height)")
         
         if initialContentSize.height != self.contentSize.height{
             initialContentSize = self.contentSize
