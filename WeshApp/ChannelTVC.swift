@@ -22,7 +22,6 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     var sessionMngr: SessionMngr?
 
 
-
     @IBOutlet weak var textView: WeshappTextView!
 
     @IBOutlet var accessoryDock: UIView!
@@ -39,6 +38,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             //TODO: Decide whether after commenting on a channel wall, the channle persists
             //postsMngr!.save(coreDataStack!.mainContext!)
             sessionMngr!.broadcastNewPost(post)
+            changeTextViewHeight(textView)
+       
+
         }
     }
     
@@ -105,6 +107,12 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
     }
     
+    override func viewDidLayoutSubviews() {
+        if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
+            self.setUpInputAccessoryView()
+        }
+    }
+    
 //    func handleTap(recognizer: UITapGestureRecognizer) {
 //        resignFirstResponder()
 //    }
@@ -133,12 +141,6 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     
     
  
-    override func viewDidLayoutSubviews() {
-        
-        if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
-            self.setUpInputAccessoryView()
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -281,9 +283,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         header.layoutIfNeeded()
         
         
-//     header.sizeToFit()
-     var height = header.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-//        println(height)
+
+        var height = header.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+
         var frm = header.frame
         frm.size.height = height
         header.frame = frm
@@ -292,10 +294,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     
    
     //MARK: InputAccessoryView
-    
-    
     override var inputAccessoryView: UIView! {
-//        println("accessory Dock")
         return accessoryDock
     }
     
@@ -308,69 +307,66 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     private var inputAccessoryViewIsSetUp: Bool = false
     
     func setUpInputAccessoryView(){
-//        println("setUpInputAccessoryView")
-        textView.delegate = self
+
+        //Set Weshapp Delagete
         textView.weshappDelegate = self
 
-//        tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+        tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
 
         var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
-//              println("constraint count before setup \(constraints.count)")
-        
-       for  (c: NSLayoutConstraint) in constraints{
+      
+        for (c: NSLayoutConstraint) in constraints{
             if c.firstAttribute == NSLayoutAttribute.Height{
-                    self.heightConstraint =  c
-//                println("IM INSIDE HEIGHT CONSTRAINT")
-                    c.constant = screenSize.width / 7.5
-//                tableView.inputAccessoryView!.removeConstraint(c)
+             
+                  c.constant = screenSize.width / 7.5 + 1
                 break
             }
         }
+    
+        var textViewHeightConstraint = NSLayoutConstraint(item: self.textView,
+                                              attribute: NSLayoutAttribute.Height,
+                                              relatedBy: NSLayoutRelation.Equal,
+                                                 toItem: nil,
+                                              attribute: NSLayoutAttribute.NotAnAttribute,
+                                             multiplier: 1,
+                                               constant: (screenSize.width / 7.5))
+
+        tableView.inputAccessoryView!.addConstraint(textViewHeightConstraint)
+        tableView.updateConstraints()
         
         inputAccessoryViewIsSetUp = true
     }
     
     func textViewDidChangeHeight(textView: WeshappTextView) {
-    
+        changeTextViewHeight(textView)
+    }
+
+    private func changeTextViewHeight(textView: WeshappTextView){
+        var max = CGFloat.max
+        var sizeThatFitsTextView = self.textView.sizeThatFits(CGSizeMake(self.textView.frame.size.width, max ))
+        
         var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
         
         for  (c: NSLayoutConstraint) in constraints{
-            if c.firstAttribute == NSLayoutAttribute.Height{
-                //Animation
-                c.constant = textView.contentSize.height
-                break
+            if c.firstAttribute == NSLayoutAttribute.Height {
+                
+                if textView.numberOfLines() > 1{
+                    UIView.animateWithDuration(0.5){
+                    
+                        self.textViewHeightConstraint!.constant = sizeThatFitsTextView.height
+                        c.constant = sizeThatFitsTextView.height + 1
+                    }
+                    break
+                } else if textView.numberOfLines() == 1{
+                    self.textViewHeightConstraint!.constant = self.screenSize.width / 7.5
+                    c.constant = self.screenSize.width / 7.5 + 1
+                    
+                }
+                
             }
         }
-    
-//            accessoryDock.setNeedsLayout()
-//            accessoryDock.layoutIfNeeded()
-        }
-    
-    func textViewDidChange(textView: WeshappTextView) {
-        
-//        self.heightConstraint?.constant = textView.contentSize.height
-        
-       
-//        println("content size \(textView.contentSize.height)")
-//    
-//
-//        var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
-//        
-//        for  (c: NSLayoutConstraint) in constraints{
-//            if c.firstAttribute == NSLayoutAttribute.Height{
-//                c.constant = textView.contentSize.height
-//                break
-//            }
-//        }
-//   
-//
-//        tableView.inputAccessoryView!.setNeedsLayout()
-//        tableView.inputAccessoryView!.layoutIfNeeded()
+     tableView.layoutIfNeeded()
     }
-    
-    
-
-    
 
     
  

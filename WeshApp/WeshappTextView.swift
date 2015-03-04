@@ -27,7 +27,7 @@ public class WeshappTextView: UITextView{
     
     public var weshappDelegate: WeshappUITextViewDelegate?
     
-    var initialContentSize: CGSize!
+    var initialNumRows: Int!
 
     public override func awakeFromNib() {
         setUp()
@@ -38,36 +38,14 @@ public class WeshappTextView: UITextView{
     }
     
     public override func drawRect(rect: CGRect){
-//
-//        let grey80 = UIColor(white:0.80, alpha:1)
-//        //self.layer.borderWidth = 0.5
-//        //self.layer.borderColor = grey80.CGColor
-//        //self.layer.cornerRadius = 8
-//
-
-////    textContainerInset = UIEdgeInsetsMake(8, 6, 8, 6);
-    textContainerInset = UIEdgeInsetsMake(top, left, bottom, right)
-
+        textContainerInset = UIEdgeInsetsMake(top, left, bottom, right)
     }
-     public override func layoutSubviews() {
 
-//        if heightDidChange() {
-//            println("text changed")
-//            weshappDelegate!.textViewDidChangeHeight(self)
-//        }
-        
-    }
-    
-    public override func didChange(changeKind: NSKeyValueChange, valuesAtIndexes indexes: NSIndexSet, forKey key: String) {
-        
-      
-    }
-    
     
     func setUp(){
-       
-        self.text = placeholder
+
         self.textColor = placeholderColor
+        
         
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("beginEditing:"),
@@ -85,7 +63,7 @@ public class WeshappTextView: UITextView{
             object: nil)
         
 //        println("setting up with content size \(self.contentSize.height)")
-        initialContentSize = self.contentSize
+          initialNumRows = numberOfLines()
     }
     
 
@@ -110,10 +88,10 @@ public class WeshappTextView: UITextView{
     }
     func heightDidChange()->Bool{
         
-//        println("initialContentSize.height = \(initialContentSize.height) self.frame.height = \(self.contentSize.height)    \(initialContentSize.height != self.frame.height)")
+
         
-        if initialContentSize.height != self.contentSize.height{
-            initialContentSize = self.contentSize
+        if initialNumRows != numberOfLines(){
+            initialNumRows = numberOfLines()
             return true
         } else {
             return false
@@ -121,4 +99,13 @@ public class WeshappTextView: UITextView{
         
     }
     
+
+    public func numberOfLines() -> Int{
+        
+        var max = CGFloat.max
+        var sizeThatFitsTextView = sizeThatFits(CGSizeMake(frame.size.width, max ))
+        var rows = round( (sizeThatFitsTextView.height - textContainerInset.top - textContainerInset.bottom) / font.lineHeight )
+        
+        return Int(rows)
+    }
 }

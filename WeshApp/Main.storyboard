@@ -783,15 +783,15 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kat-Jy-BEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="84" id="AlX-qk-58B" userLabel="accessoryDock" customClass="BorderView" customModule="Designables">
+                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" id="AlX-qk-58B" userLabel="accessoryDock" customClass="BorderView" customModule="Designables">
                     <rect key="frame" x="0.0" y="0.0" width="588" height="84"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="40" restorationIdentifier="elementBox" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" userLabel="elementBox">
-                            <rect key="frame" x="0.0" y="0.0" width="588" height="84"/>
+                        <view contentMode="scaleToFill" restorationIdentifier="elementBox" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" userLabel="elementBox">
+                            <rect key="frame" x="0.0" y="1" width="588" height="83"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="70.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ck-0To" customClass="OrangeButton" customModule="Designables">
-                                    <rect key="frame" x="490" y="6" width="88" height="70.5"/>
+                                    <rect key="frame" x="490" y="5.5" width="88" height="70.5"/>
                                     <state key="normal" title="Send">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -800,20 +800,19 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="360" placeholderIntrinsicHeight="60" restorationIdentifier="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="9XO-Xe-nfr" userLabel="Smiley" customClass="SmileyIcon" customModule="Designables">
-                                    <rect key="frame" x="35" y="27" width="29" height="29.5"/>
+                                    <rect key="frame" x="35" y="26.5" width="29" height="29.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="9XO-Xe-nfr" secondAttribute="height" multiplier="1:1" id="0ZM-YU-LuB"/>
                                     </constraints>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-smile" translatesAutoresizingMaskIntoConstraints="NO" id="lI0-7W-UbV" userLabel="Edge-spacer-Image">
-                                    <rect key="frame" x="0.0" y="0.0" width="35" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="35" height="83"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cev-6x-vgV" customClass="WeshappTextView" customModule="Designables">
-                                    <rect key="frame" x="63.5" y="0.0" width="426.5" height="84"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cev-6x-vgV" customClass="WeshappTextView" customModule="Designables">
+                                    <rect key="frame" x="63.5" y="49.5" width="426.5" height="33.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="textColor" red="0.4941176471" green="0.4941176471" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                     <userDefinedRuntimeAttributes>
@@ -849,7 +848,7 @@
                                 <constraint firstItem="cev-6x-vgV" firstAttribute="leading" secondItem="9XO-Xe-nfr" secondAttribute="trailing" id="OMk-NZ-HkW"/>
                                 <constraint firstAttribute="bottom" secondItem="lI0-7W-UbV" secondAttribute="bottom" id="TEt-pK-VL3"/>
                                 <constraint firstItem="9XO-Xe-nfr" firstAttribute="leading" secondItem="lI0-7W-UbV" secondAttribute="trailing" id="XjY-Nl-CVx"/>
-                                <constraint firstItem="cev-6x-vgV" firstAttribute="height" secondItem="pdO-vX-GrO" secondAttribute="height" id="ZIH-2B-RYU"/>
+                                <constraint firstItem="cev-6x-vgV" firstAttribute="height" secondItem="pdO-vX-GrO" secondAttribute="height" priority="250" id="ZIH-2B-RYU"/>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="cev-6x-vgV" secondAttribute="height" multiplier="7.5" id="Zg8-wx-Xfr"/>
                                 <constraint firstItem="9XO-Xe-nfr" firstAttribute="width" secondItem="pdO-vX-GrO" secondAttribute="width" multiplier="0.05" id="dHO-Av-mCV"/>
                                 <constraint firstItem="yFJ-ck-0To" firstAttribute="width" secondItem="pdO-vX-GrO" secondAttribute="width" multiplier="0.15" id="eRL-uD-XGc"/>
@@ -860,6 +859,7 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="9v5-TV-Cdz"/>
                                     <exclude reference="Zg8-wx-Xfr"/>
                                 </mask>
                             </variation>
@@ -869,16 +869,16 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="pdO-vX-GrO" secondAttribute="bottom" id="7Oh-zv-e22"/>
                         <constraint firstItem="pdO-vX-GrO" firstAttribute="leading" secondItem="AlX-qk-58B" secondAttribute="leading" id="9pZ-2g-Mlo"/>
-                        <constraint firstItem="pdO-vX-GrO" firstAttribute="top" secondItem="AlX-qk-58B" secondAttribute="top" id="HI5-uF-DZ6"/>
+                        <constraint firstItem="pdO-vX-GrO" firstAttribute="top" secondItem="AlX-qk-58B" secondAttribute="top" constant="1" id="HI5-uF-DZ6"/>
                         <constraint firstAttribute="trailing" secondItem="pdO-vX-GrO" secondAttribute="trailing" id="JGJ-XP-nd3"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="YES"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="YES"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottom" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="left" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="right" value="NO"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="value" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                             <real key="value" value="2"/>
