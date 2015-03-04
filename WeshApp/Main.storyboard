@@ -259,7 +259,7 @@
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
+                                        <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
                                             <rect key="frame" x="-142" y="0.0" width="373" height="373"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UEr-a1-zz9" secondAttribute="height" multiplier="1:1" id="nI2-Dl-5z0"/>

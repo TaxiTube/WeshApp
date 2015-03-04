@@ -21,7 +21,8 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     var postMngr: PostMngr?
     var sessionMngr: SessionMngr?
 
-
+    var textViewHeightConstraint: NSLayoutConstraint?
+    
     @IBOutlet weak var textView: WeshappTextView!
 
     @IBOutlet var accessoryDock: UIView!
@@ -323,7 +324,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             }
         }
     
-        var textViewHeightConstraint = NSLayoutConstraint(item: self.textView,
+        textViewHeightConstraint = NSLayoutConstraint(item: self.textView,
                                               attribute: NSLayoutAttribute.Height,
                                               relatedBy: NSLayoutRelation.Equal,
                                                  toItem: nil,
@@ -331,7 +332,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
                                              multiplier: 1,
                                                constant: (screenSize.width / 7.5))
 
-        tableView.inputAccessoryView!.addConstraint(textViewHeightConstraint)
+        tableView.inputAccessoryView!.addConstraint(self.textViewHeightConstraint!)
         tableView.updateConstraints()
         
         inputAccessoryViewIsSetUp = true
