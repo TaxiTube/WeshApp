@@ -45,7 +45,7 @@ public class WeshappTextView: UITextView{
     func setUp(){
 
         self.textColor = placeholderColor
-        
+        text = placeholder
         
         NSNotificationCenter.defaultCenter().addObserver(     self,
             selector: Selector("beginEditing:"),
