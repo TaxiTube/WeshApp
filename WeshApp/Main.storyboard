@@ -259,7 +259,7 @@
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
+                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
                                             <rect key="frame" x="-142" y="0.0" width="373" height="373"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UEr-a1-zz9" secondAttribute="height" multiplier="1:1" id="nI2-Dl-5z0"/>
@@ -430,9 +430,8 @@
         <!--Navigation Controller-->
         <scene sceneID="CMw-N9-EWb">
             <objects>
-                <navigationController id="lgM-f0-eIl" sceneMemberID="viewController">
+                <navigationController hidesBarsOnSwipe="YES" id="lgM-f0-eIl" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hOU-3Z-ZhR" customClass="WeshappNavBar" customModule="Designables">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -577,7 +576,7 @@
         <!--Home-->
         <scene sceneID="M5p-XC-axY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="anB-Gd-xtO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="anB-Gd-xtO" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Home" id="Czy-m0-5hw">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="1" vertical="0.0"/>
@@ -608,8 +607,8 @@
         <scene sceneID="GPv-2b-6WJ">
             <objects>
                 <tableViewController id="hVp-4W-3xL" customClass="ChannelTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="21" id="AP2-wG-SE4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="21" id="AP2-wG-SE4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -712,7 +711,7 @@
                                                 <constraint firstItem="Eio-on-4zl" firstAttribute="leading" secondItem="J4t-MH-G8O" secondAttribute="trailing" id="7zJ-OO-w8B"/>
                                                 <constraint firstItem="0WB-Aj-uVR" firstAttribute="leading" secondItem="J4t-MH-G8O" secondAttribute="trailing" id="AAJ-93-5T2"/>
                                                 <constraint firstItem="str-ey-Kkf" firstAttribute="leading" secondItem="lmv-P0-v3j" secondAttribute="leading" id="AIf-vN-yoL"/>
-                                                <constraint firstAttribute="bottom" secondItem="0WB-Aj-uVR" secondAttribute="bottom" constant="5" id="BAq-2m-bfR"/>
+                                                <constraint firstAttribute="bottom" secondItem="0WB-Aj-uVR" secondAttribute="bottom" id="BAq-2m-bfR"/>
                                                 <constraint firstAttribute="bottom" secondItem="gbm-3j-5jH" secondAttribute="bottom" id="Dra-Sx-hUE"/>
                                                 <constraint firstAttribute="width" secondItem="Z7x-y2-BxF" secondAttribute="height" multiplier="11.36" id="EfP-7j-CzT"/>
                                                 <constraint firstAttribute="trailing" secondItem="C9H-j6-UM7" secondAttribute="trailing" id="Efe-yG-Bhd"/>
@@ -773,9 +772,8 @@
                             <outlet property="delegate" destination="hVp-4W-3xL" id="bVs-G1-uu7"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Htd-Vm-lV2"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="accessoryDock" destination="AlX-qk-58B" id="VAc-SI-V0h"/>
                         <outlet property="headerView" destination="6FS-M9-8Tg" id="1rm-YL-8SW"/>
@@ -788,10 +786,10 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" restorationIdentifier="elementBox" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" userLabel="elementBox">
-                            <rect key="frame" x="0.0" y="1" width="588" height="83"/>
+                            <rect key="frame" x="0.0" y="0.0" width="588" height="84"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="70.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFJ-ck-0To" customClass="OrangeButton" customModule="Designables">
-                                    <rect key="frame" x="490" y="5.5" width="88" height="70.5"/>
+                                    <rect key="frame" x="490" y="6" width="88" height="70.5"/>
                                     <state key="normal" title="Send">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -800,18 +798,18 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="360" placeholderIntrinsicHeight="60" restorationIdentifier="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="9XO-Xe-nfr" userLabel="Smiley" customClass="SmileyIcon" customModule="Designables">
-                                    <rect key="frame" x="35" y="26.5" width="29" height="29.5"/>
+                                    <rect key="frame" x="35" y="27" width="29" height="29.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="9XO-Xe-nfr" secondAttribute="height" multiplier="1:1" id="0ZM-YU-LuB"/>
                                     </constraints>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-smile" translatesAutoresizingMaskIntoConstraints="NO" id="lI0-7W-UbV" userLabel="Edge-spacer-Image">
-                                    <rect key="frame" x="0.0" y="0.0" width="35" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="35" height="84"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cev-6x-vgV" customClass="WeshappTextView" customModule="Designables">
-                                    <rect key="frame" x="63.5" y="49.5" width="426.5" height="33.5"/>
+                                    <rect key="frame" x="63.5" y="50.5" width="426.5" height="33.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
@@ -837,9 +835,26 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type Here..."/>
                                     </userDefinedRuntimeAttributes>
                                 </textView>
+                                <view contentMode="scaleToFill" restorationIdentifier="borderView" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-Wk-QlG" userLabel="borderView" customClass="BorderView" customModule="Designables">
+                                    <rect key="frame" x="0.0" y="0.0" width="588" height="1"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="85s-md-UCx"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="top" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                            <real key="value" value="1.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                            <color key="value" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="eJ4-Wk-QlG" firstAttribute="leading" secondItem="pdO-vX-GrO" secondAttribute="leading" id="14t-em-vCQ"/>
                                 <constraint firstItem="yFJ-ck-0To" firstAttribute="leading" secondItem="cev-6x-vgV" secondAttribute="trailing" id="1Xw-ep-NmM"/>
                                 <constraint firstItem="lI0-7W-UbV" firstAttribute="leading" secondItem="pdO-vX-GrO" secondAttribute="leading" id="5dM-en-7Pz"/>
                                 <constraint firstItem="cev-6x-vgV" firstAttribute="top" secondItem="pdO-vX-GrO" secondAttribute="top" id="9v5-TV-Cdz"/>
@@ -847,6 +862,8 @@
                                 <constraint firstItem="lI0-7W-UbV" firstAttribute="top" secondItem="pdO-vX-GrO" secondAttribute="top" id="KKq-dE-ciq"/>
                                 <constraint firstItem="cev-6x-vgV" firstAttribute="leading" secondItem="9XO-Xe-nfr" secondAttribute="trailing" id="OMk-NZ-HkW"/>
                                 <constraint firstAttribute="bottom" secondItem="lI0-7W-UbV" secondAttribute="bottom" id="TEt-pK-VL3"/>
+                                <constraint firstItem="eJ4-Wk-QlG" firstAttribute="top" secondItem="pdO-vX-GrO" secondAttribute="top" id="TNC-q9-uQ6"/>
+                                <constraint firstAttribute="trailing" secondItem="eJ4-Wk-QlG" secondAttribute="trailing" id="VBl-jv-bKS"/>
                                 <constraint firstItem="9XO-Xe-nfr" firstAttribute="leading" secondItem="lI0-7W-UbV" secondAttribute="trailing" id="XjY-Nl-CVx"/>
                                 <constraint firstItem="cev-6x-vgV" firstAttribute="height" secondItem="pdO-vX-GrO" secondAttribute="height" priority="250" id="ZIH-2B-RYU"/>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="cev-6x-vgV" secondAttribute="height" multiplier="7.5" id="Zg8-wx-Xfr"/>
@@ -869,7 +886,7 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="pdO-vX-GrO" secondAttribute="bottom" id="7Oh-zv-e22"/>
                         <constraint firstItem="pdO-vX-GrO" firstAttribute="leading" secondItem="AlX-qk-58B" secondAttribute="leading" id="9pZ-2g-Mlo"/>
-                        <constraint firstItem="pdO-vX-GrO" firstAttribute="top" secondItem="AlX-qk-58B" secondAttribute="top" constant="1" id="HI5-uF-DZ6"/>
+                        <constraint firstItem="pdO-vX-GrO" firstAttribute="top" secondItem="AlX-qk-58B" secondAttribute="top" id="HI5-uF-DZ6"/>
                         <constraint firstAttribute="trailing" secondItem="pdO-vX-GrO" secondAttribute="trailing" id="JGJ-XP-nd3"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>

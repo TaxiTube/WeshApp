@@ -24,6 +24,8 @@ public class WeshappNavBar: UINavigationBar{
         setUp()
         
     }
+    
+    
     func setUp(){
         let screenSize  = UIScreen.mainScreen().bounds.size
         frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)

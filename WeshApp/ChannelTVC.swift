@@ -22,7 +22,8 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     var sessionMngr: SessionMngr?
 
     var textViewHeightConstraint: NSLayoutConstraint?
-    
+    private var inputAccessoryViewIsSetUp: Bool = false
+
     @IBOutlet weak var textView: WeshappTextView!
 
     @IBOutlet var accessoryDock: UIView!
@@ -40,7 +41,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             //postsMngr!.save(coreDataStack!.mainContext!)
             sessionMngr!.broadcastNewPost(post)
             changeTextViewHeight(textView)
-       
+            textView.resignFirstResponder()
 
         }
     }
@@ -107,7 +108,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
 
     }
-    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     override func viewDidLayoutSubviews() {
         if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
             self.setUpInputAccessoryView()
@@ -130,7 +133,11 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             style: .Done,
             target: self,
             action: "dismissPressed:")
-        
+//        self.navigationController?.hidesBarsWhenKeyboardAppears = true
+//        self.navigationController?.hidesBarsOnSwipe = true
+//        self.navigationController?.barHideOnSwipeGestureRecognizer.addTarget(self, action: "")
+//        self.navigationController?.hidesBarsWhenVerticallyCompact = true
+        navigationController?.navigationBar.hidden = false
         self.navigationItem.title = channel?.title
     }
     
@@ -140,16 +147,24 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
- 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - Navigation
+    // Loard Header Cell
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toChannelHeaderVC" {
+            var channelHeaderVC = segue.destinationViewController as? ChannelHeaderVC
+            channelHeaderVC?.channel = channel
+        }
+    }
+
+    
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
@@ -169,40 +184,12 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
         //cell.nameLabel.text = post.sender.firstName
         cell.post?.text = post.post
-        
-//        let formatter = NSDateFormatter()
-//        formatter.dateStyle = .LongStyle
-//        formatter.timeStyle = .NoStyle
-//
-//        cell.date?.text = formatter.stringFromDate(post.date)
-        
         cell.date?.text = timeAgoSinceDate(post.date, true)
-        
         cell.backgroundColor = UIColor.clearColor()
-       
-        
+  
         return cell
     }
     
-    
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toChannelHeaderVC" {
-            var channelHeaderVC = segue.destinationViewController as? ChannelHeaderVC
-
-            channelHeaderVC?.channel = channel
-        }
-    }
-
-
-    
-//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return screenSize.width / 1.18
-//    }
-
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
@@ -236,6 +223,8 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         scrollWallTo(true, animated: true)
     }
    
+    
+    //MARK: Scrolling stuff
     func scrollWallTo(bottom:Bool, animated: Bool){
     
         let sectionInfo = fetchedResultsController.sections![0] as NSFetchedResultsSectionInfo
@@ -243,7 +232,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             var iPath: NSIndexPath?
             if bottom{
                 
-                 iPath = NSIndexPath(forRow: sectionInfo.numberOfObjects - 1,
+                 iPath = NSIndexPath(   forRow: sectionInfo.numberOfObjects - 1,
                                      inSection: fetchedResultsController.sections!.count - 1)
                 tableView.scrollToRowAtIndexPath(iPath!, atScrollPosition: .Bottom, animated: animated)
 
@@ -256,37 +245,16 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
      }
     
     
-    func scrollEntireTableTo(bottom: Bool, animated: Bool){
-        if bottom{
-            
-            var yOffset: CGFloat  = 0.0
-                    
-            if (tableView.contentSize.height > tableView.bounds.size.height) {
-                yOffset = tableView.contentSize.height - tableView.bounds.size.height
-            }
-            tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentSize.height ), animated: animated)
-         } else {
-            tableView.setContentOffset(CGPoint(x: 0, y: 0 - tableView.contentInset.top), animated: animated)
-        }
 
-    }
-    
-    func setTableBottomInset(inset: CGFloat){
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: inset, right: 0)
-    }
+ 
     
     func sizeHeaderToFit(){
         
         var header = tableView.tableHeaderView!
-//    header.setTranslatesAutoresizingMaskIntoConstraints(false)
-    
+//      header.setTranslatesAutoresizingMaskIntoConstraints(false)
         header.setNeedsLayout()
         header.layoutIfNeeded()
-        
-        
-
         var height = header.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
-
         var frm = header.frame
         frm.size.height = height
         header.frame = frm
@@ -295,35 +263,30 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     
    
     //MARK: InputAccessoryView
+    //Return your custom input accessory view
     override var inputAccessoryView: UIView! {
         return accessoryDock
     }
     
-    
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
-    
-    var heightConstraint: NSLayoutConstraint?
-    private var inputAccessoryViewIsSetUp: Bool = false
-    
+    //Used to setup and chang default constraints height
     func setUpInputAccessoryView(){
 
         //Set Weshapp Delagete
         textView.weshappDelegate = self
-
-        tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
-
+        
+        //Not sure when to use this: tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
         var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
-      
+        //find default constraint
         for (c: NSLayoutConstraint) in constraints{
             if c.firstAttribute == NSLayoutAttribute.Height{
-             
-                  c.constant = screenSize.width / 7.5 + 1
+                c.constant = screenSize.width / 7.5
                 break
             }
         }
-    
+        //Add text view height constrain
         textViewHeightConstraint = NSLayoutConstraint(item: self.textView,
                                               attribute: NSLayoutAttribute.Height,
                                               relatedBy: NSLayoutRelation.Equal,
@@ -337,11 +300,12 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         
         inputAccessoryViewIsSetUp = true
     }
-    
+    //WeshappTextView Deleget method, called if textview number of lines change
     func textViewDidChangeHeight(textView: WeshappTextView) {
         changeTextViewHeight(textView)
     }
-
+    
+    //Finds accesoryview and textview constraints and changes there height according to the textview size
     private func changeTextViewHeight(textView: WeshappTextView){
         var max = CGFloat.max
         var sizeThatFitsTextView = self.textView.sizeThatFits(CGSizeMake(self.textView.frame.size.width, max ))
@@ -355,12 +319,12 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
                     UIView.animateWithDuration(0.5){
                     
                         self.textViewHeightConstraint!.constant = sizeThatFitsTextView.height
-                        c.constant = sizeThatFitsTextView.height + 1
+                        c.constant = sizeThatFitsTextView.height
                     }
                     break
                 } else if textView.numberOfLines() == 1{
                     self.textViewHeightConstraint!.constant = self.screenSize.width / 7.5
-                    c.constant = self.screenSize.width / 7.5 + 1
+                    c.constant = self.screenSize.width / 7.5 
                     
                 }
                 
