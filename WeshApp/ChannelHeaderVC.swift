@@ -14,8 +14,6 @@ import CoreData
 class ChannelHeaderVC: UIViewController {
     
     var channel: Channel?
-    var fetchedResultsController : NSFetchedResultsController!
-    var coreDataStack: CoreDataStack!
     let screenSize  = UIScreen.mainScreen().bounds.size
     
     @IBOutlet weak var handle: UILabel!
@@ -29,11 +27,10 @@ class ChannelHeaderVC: UIViewController {
         
         descriptionLabel.preferredMaxLayoutWidth = screenSize.width
         handle.text = "#\(channel!.author.handle)"
+        descriptionLabel.text = channel?.desc
 //        if let firstname = channel?.author.profile.firstName {
 //            nameLabel.text = "\(firstname) \(channel?.author.profile.lastName)"
 //        }
-        descriptionLabel.text = channel?.desc
-        
 
     }
 

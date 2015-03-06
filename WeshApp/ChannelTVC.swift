@@ -47,11 +47,11 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     }
     
     override func viewDidLoad() {
-      
         super.viewDidLoad()
         navBarItemsSetup()
         
-        
+     
+
 
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -144,7 +144,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
     func dismissPressed(sender: AnyObject) {
         //        navigationController?.popToRootViewControllerAnimated(true)
-        dismissViewControllerAnimated(true, completion: nil)
+        NSOperationQueue.mainQueue().addOperationWithBlock(){
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

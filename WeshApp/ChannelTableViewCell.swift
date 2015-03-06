@@ -36,6 +36,11 @@ class ChannelTableViewCell: UITableViewCell {
     private var panStartPoint: CGPoint?
     private var startingRightConstant: CGFloat?
     
+    
+    
+
+
+    
     //MARK: Initialisation
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -56,16 +61,19 @@ class ChannelTableViewCell: UITableViewCell {
     }
     
     private func setUpPan(){
+        self.layer.backgroundColor = UIColor.whiteColor().CGColor
+        
         panRecognizer = UIPanGestureRecognizer(target: self, action: "panThisCell:")
         panRecognizer!.delegate = self
         addGestureRecognizer(panRecognizer!)
     }
     //MARK: Superview functions
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
+//    override func drawRect(rect: CGRect) {
+//        let rectanglePath = UIBezierPath(rect: CGRectMake(frame.minX, frame.minY, frame.width, frame.height))
+//        UIColor.whiteColor().setFill()
+//        rectanglePath.fill()
+//    }
     
    //MARK: Handle Pan Gesures
     func panThisCell(pan: UIPanGestureRecognizer){
@@ -309,4 +317,21 @@ class ChannelTableViewCell: UITableViewCell {
         super.prepareForReuse()
         resetConstraintToZero(false, notifyDelegate: false)
     }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+//        if(selected) {
+//            backgroundColor = UIColor.grayColor()
+//        }
+    }
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+//        if(highlighted) {
+//            backgroundColor = UIColor.whiteColor()
+//        }
+    }
+    
 }

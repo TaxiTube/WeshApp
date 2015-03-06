@@ -126,7 +126,7 @@
                         <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="364" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
+                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="364" selectionStyle="gray" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="br7-IC-shW" id="Lpg-BX-d0r">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -138,7 +138,7 @@
                                                 <constraint firstAttribute="width" secondItem="bOL-bv-wbR" secondAttribute="height" multiplier="1:1" id="t8p-Id-WKz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView">
+                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView" customClass="DVColorLockView" customModule="Designables">
                                             <rect key="frame" x="0.0" y="0.0" width="604" height="373"/>
                                             <subviews>
                                                 <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30.5" placeholderIntrinsicHeight="373" restorationIdentifier="leading-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-vK-TFa" userLabel="leading-spacer-image">
@@ -191,6 +191,7 @@
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Qn2-NO-5Mc" secondAttribute="trailing" id="321-8G-9y2"/>
                                                 <constraint firstItem="xNP-vK-TFa" firstAttribute="top" secondItem="4hk-x2-Ts8" secondAttribute="top" id="3ux-1z-eeV"/>
@@ -236,8 +237,8 @@
                                         <constraint firstItem="4hk-x2-Ts8" firstAttribute="leading" secondItem="Lpg-BX-d0r" secondAttribute="leading" id="zg2-Av-jHD"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <outlet property="contentView" destination="Lpg-BX-d0r" id="TcI-Nc-qjp"/>
                                     <outlet property="contentViewLeftConstraint" destination="zg2-Av-jHD" id="3BG-Xh-TZ7"/>
                                     <outlet property="contentViewRightConstraint" destination="3nB-Nx-df6" id="aZq-yq-ywz"/>
                                     <outlet property="counter" destination="LaK-yb-f7A" id="4uh-SO-QYh"/>
@@ -245,7 +246,7 @@
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
                                     <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
-                                    <segue destination="lgM-f0-eIl" kind="presentation" identifier="toChannelVC" modalPresentationStyle="overCurrentContext" id="D6B-sN-EcJ"/>
+                                    <segue destination="lgM-f0-eIl" kind="presentation" identifier="toChannelTVC" modalPresentationStyle="overCurrentContext" id="D6B-sN-EcJ"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="373" id="MDR-oS-7Yl" customClass="ChannelTableViewCell" customModule="WeshApp">
@@ -423,7 +424,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyj-mL-zA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="i5W-9f-hgo"/>
             </objects>
             <point key="canvasLocation" x="4211" y="658"/>
         </scene>
@@ -608,14 +608,14 @@
             <objects>
                 <tableViewController id="hVp-4W-3xL" customClass="ChannelTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="21" id="AP2-wG-SE4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="100" id="6FS-M9-8Tg" userLabel="HeaderView">
-                            <rect key="frame" x="0.0" y="64" width="600" height="392"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="392"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="71J-UG-YEu">

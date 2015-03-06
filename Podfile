@@ -2,11 +2,11 @@
 # platform :ios, '6.0'
 
 target 'WeshApp' do
-pod 'PHFComposeBarView', '~> 2.0'
+pod 'AMScrollingNavbar', '~> 1.3'
 end
 
 target 'WeshAppTests' do
-pod 'PHFComposeBarView', '~> 2.0'
+pod 'AMScrollingNavbar', '~> 1.3'
 end
 
 target 'WeshAppLibrary' do

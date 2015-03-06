@@ -22,7 +22,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
   //  var cellsCurrentlyEditing: NSMutableSet?
     var openedCell: ChannelTableViewCell?
 
-    @IBOutlet weak var leftView: UIView!
+//    @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var segControl: UISegmentedControl!
     
     //MARK: Segmentation Control
@@ -37,9 +37,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
            //animation
            UIView.transitionWithView(self.tableView, duration: 0.35,
                                                       options: UIViewAnimationOptions.TransitionFlipFromLeft,
-                                                   animations: {
-                                                    self.tableView.reloadData()
-                                                    },
+                                                   animations: { self.tableView.reloadData() },
                                                    completion: { (v:Bool) in ()})
           
         case 1:
@@ -161,9 +159,13 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
             default:
                 break;
         }
-        
-         cell!.layoutSubviews()
-         cell!.delegate = self
+            let view1 = UIView()
+        let v = UIView()
+        v.backgroundColor = UIColor.grayColor()
+        cell?.selectedBackgroundView = v
+        cell!.layoutSubviews()
+        cell!.delegate = self
+        cell!.contentView
         /*
         if cellsCurrentlyEditing!.containsObject(indexPath){
             cell!.openCell()
@@ -172,28 +174,46 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         return cell!
     }
     
+    func darkerColor( color: UIColor) -> UIColor {
+        var h = CGFloat(0)
+        var s = CGFloat(0)
+        var b = CGFloat(0)
+        var a = CGFloat(0)
+        let hueObtained = color.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        if hueObtained {
+            return UIColor(hue: h, saturation: s, brightness: b * 0.75, alpha: a)
+        }
+        return color
+    }
+    
     //Is called before cellForRowAtIndexPath
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return screenSize.width / 4.11
     }
     
-  
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        println("did select")
+        dispatch_async(dispatch_get_main_queue()){
+            self.performSegueWithIdentifier("toChannelTVC", sender: self)
+        }
+    
+    }
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "toChannelVC" {
-                
-                
+            if segue.identifier == "toChannelTVC" {
+                println("here")
                 let navController = segue.destinationViewController as UINavigationController
-              var channelVC = navController.topViewController as ChannelTVC
+                var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
-                //If as Channel else as Profile
+                
+                // If as Channel else as Profile
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
                 channelVC.channel = channel
                 channelVC.coreDataStack = coreDataStack
                 channelVC.sessionMngr = sessionMngr
-
-            }
+                
+        }
     }
     
     //MARK: NSFetchedResultsController Delegate methods

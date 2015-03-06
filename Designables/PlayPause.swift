@@ -53,4 +53,5 @@ public class PlayPause: UIView, UIGestureRecognizerDelegate {
         }
         setNeedsDisplay()
     }
+    
 }

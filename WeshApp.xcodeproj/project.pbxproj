@@ -42,6 +42,7 @@
 		B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */; };
 		B3E5E66419FD6226000B8FB1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */; };
 		B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
+		D81D47F61AA913880085989E /* DVColorLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D47F51AA913880085989E /* DVColorLockView.swift */; };
 		D81FE27D1A236BC9006F8E62 /* SessionMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81FE27C1A236BC9006F8E62 /* SessionMngrTest.swift */; };
 		D81FE27E1A237266006F8E62 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
 		D81FE27F1A2377B4006F8E62 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
@@ -192,6 +193,7 @@
 		B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		B3EB823E1A028CE500235E03 /* SessionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContainer.swift; sourceTree = "<group>"; };
 		D805DD971A9F619000D940A8 /* WeshApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeshApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		D81D47F51AA913880085989E /* DVColorLockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVColorLockView.swift; sourceTree = "<group>"; };
 		D81FE27C1A236BC9006F8E62 /* SessionMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngrTest.swift; sourceTree = "<group>"; };
 		D81FFDC01A0BF94500C6294B /* misc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = misc; sourceTree = "<group>"; };
 		D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelHeaderVC.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 		B36E68431A6C3AF7002B951A /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				D81D47F51AA913880085989E /* DVColorLockView.swift */,
 				D8F334391A9AB0890028918C /* WeshappHeartSK.swift */,
 				D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */,
 				D8EF20941A96C5930033230C /* SmileyIcon.swift */,
@@ -781,6 +784,7 @@
 				B39062621A72875E00F6B048 /* GreenButton.swift in Sources */,
 				B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */,
 				D877FA8F1A87B71500C0334B /* Chevron.swift in Sources */,
+				D81D47F61AA913880085989E /* DVColorLockView.swift in Sources */,
 				D885E8971A9005ED00BD8E48 /* OrangeButton.swift in Sources */,
 				D885E8941A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift in Sources */,
 				D8F3343C1A9AB0A40028918C /* HeartIcon.swift in Sources */,
