@@ -74,6 +74,11 @@
 		D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A21A714436008D8D75 /* CrossBarItem.swift */; };
 		D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A41A71485F008D8D75 /* CrossIconSK.swift */; };
 		D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89497841A92AB8C00A491F6 /* BorderView.swift */; };
+		D89725A01AAA019A003A1A44 /* TLYDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D897259B1AAA019A003A1A44 /* TLYDelegateProxy.m */; };
+		D89725A11AAA019A003A1A44 /* TLYShyNavBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D897259D1AAA019A003A1A44 /* TLYShyNavBarManager.m */; };
+		D89725A21AAA019A003A1A44 /* TLYShyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D897259F1AAA019A003A1A44 /* TLYShyViewController.m */; };
+		D89725A71AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D89725A41AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m */; };
+		D89725A81AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m in Sources */ = {isa = PBXBuildFile; fileRef = D89725A61AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m */; };
 		D8A842451A9BB817001F1030 /* WeshappUsefullFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A842441A9BB817001F1030 /* WeshappUsefullFunctions.swift */; };
 		D8A8424B1A9BBD2D001F1030 /* WallPostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */; };
 		D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
@@ -216,6 +221,16 @@
 		D89144A21A714436008D8D75 /* CrossBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossBarItem.swift; sourceTree = "<group>"; };
 		D89144A41A71485F008D8D75 /* CrossIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossIconSK.swift; sourceTree = "<group>"; };
 		D89497841A92AB8C00A491F6 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		D897259A1AAA019A003A1A44 /* TLYDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYDelegateProxy.h; sourceTree = "<group>"; };
+		D897259B1AAA019A003A1A44 /* TLYDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYDelegateProxy.m; sourceTree = "<group>"; };
+		D897259C1AAA019A003A1A44 /* TLYShyNavBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyNavBarManager.h; sourceTree = "<group>"; };
+		D897259D1AAA019A003A1A44 /* TLYShyNavBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyNavBarManager.m; sourceTree = "<group>"; };
+		D897259E1AAA019A003A1A44 /* TLYShyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyViewController.h; sourceTree = "<group>"; };
+		D897259F1AAA019A003A1A44 /* TLYShyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyViewController.m; sourceTree = "<group>"; };
+		D89725A31AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TLYSwizzlingHelpers.h"; sourceTree = "<group>"; };
+		D89725A41AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TLYSwizzlingHelpers.m"; sourceTree = "<group>"; };
+		D89725A51AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BetterLayoutGuides.h"; sourceTree = "<group>"; };
+		D89725A61AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BetterLayoutGuides.m"; sourceTree = "<group>"; };
 		D8A842441A9BB817001F1030 /* WeshappUsefullFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappUsefullFunctions.swift; sourceTree = "<group>"; };
 		D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostLabel.swift; sourceTree = "<group>"; };
 		D8C0FD361A112C3300F40134 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -408,6 +423,7 @@
 		B3D9F5A319F93AA400BF6257 /* WeshApp */ = {
 			isa = PBXGroup;
 			children = (
+				D89725A91AAA01AA003A1A44 /* TLYShyNavBar */,
 				B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */,
 				B3D8495C1A01106100D4286A /* Model */,
 				D81FFDBF1A0BEBA900C6294B /* Controller */,
@@ -498,6 +514,23 @@
 				D87C9BA01A2B88D1002834C3 /* messi.jpg */,
 			);
 			name = "Test Images";
+			sourceTree = "<group>";
+		};
+		D89725A91AAA01AA003A1A44 /* TLYShyNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				D89725A31AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.h */,
+				D89725A41AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m */,
+				D89725A51AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.h */,
+				D89725A61AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m */,
+				D897259A1AAA019A003A1A44 /* TLYDelegateProxy.h */,
+				D897259B1AAA019A003A1A44 /* TLYDelegateProxy.m */,
+				D897259C1AAA019A003A1A44 /* TLYShyNavBarManager.h */,
+				D897259D1AAA019A003A1A44 /* TLYShyNavBarManager.m */,
+				D897259E1AAA019A003A1A44 /* TLYShyViewController.h */,
+				D897259F1AAA019A003A1A44 /* TLYShyViewController.m */,
+			);
+			name = TLYShyNavBar;
 			sourceTree = "<group>";
 		};
 		D8DC68511A337CC800AAF16D /* WeshAppLibrary */ = {
@@ -813,6 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89725A21AAA019A003A1A44 /* TLYShyViewController.m in Sources */,
 				D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */,
 				B3CB2E281A690CCD00FBFED1 /* Tags.swift in Sources */,
 				B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */,
@@ -829,13 +863,17 @@
 				D8C6422E1A47594A004A604A /* ChannelTVC.swift in Sources */,
 				B3D6CBE919FC4E510025140E /* NearbyTVC.swift in Sources */,
 				B3D9F5CE19F93C4500BF6257 /* SplashVC.swift in Sources */,
+				D89725A81AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m in Sources */,
 				B3CB2E2A1A690CCD00FBFED1 /* Badge.swift in Sources */,
 				D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */,
 				B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */,
 				B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */,
 				D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */,
 				D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */,
+				D89725A11AAA019A003A1A44 /* TLYShyNavBarManager.m in Sources */,
 				B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */,
+				D89725A71AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m in Sources */,
+				D89725A01AAA019A003A1A44 /* TLYDelegateProxy.m in Sources */,
 				B362BD031A5A667D0028B280 /* WeshApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

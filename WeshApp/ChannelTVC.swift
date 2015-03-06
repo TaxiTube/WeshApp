@@ -48,7 +48,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         navBarItemsSetup()
+        self.shyNavBarManager.scrollView = self.tableView
         
      
 
@@ -137,7 +139,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 //        self.navigationController?.hidesBarsOnSwipe = true
 //        self.navigationController?.barHideOnSwipeGestureRecognizer.addTarget(self, action: "")
 //        self.navigationController?.hidesBarsWhenVerticallyCompact = true
-        navigationController?.navigationBar.hidden = false
+//        navigationController?.navigationBar.hidden = false
         self.navigationItem.title = channel?.title
     }
     

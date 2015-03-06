@@ -65,24 +65,23 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.shyNavBarManager.scrollView = self.tableView
+
         tableView.estimatedRowHeight = 44
         
-        navigationController?.hidesBarsOnTap
         UIApplication.sharedApplication().statusBarHidden = false
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+//         self.clearsSelectionOnViewWillAppear = true
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         let font = UIFont(name: "TitilliumText25L-250wt", size: 5.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
             NSFontAttributeName: font ]
         
-        var backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-        backButton.setTitleTextAttributes(titleDict, forState: UIControlState.Normal)
+//        var backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+//        backButton.setTitleTextAttributes(titleDict, forState: UIControlState.Normal)
    
-        self.navigationItem.backBarButtonItem = backButton
-        
+//        self.navigationItem.backBarButtonItem = backButton
+//        
         
         sessionMngr = appDelegate.sessionMngr
         coreDataStack = appDelegate.coreDataStack!
@@ -111,13 +110,16 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         
         var error: NSError? = nil
         if (!currentFetchedRC.performFetch(&error))  {
-            println("Error: \(error?.localizedDescription)") }
+            println("Error: \(error?.localizedDescription)")
+        }
         
        // cellsCurrentlyEditing = NSMutableSet()
-    
-        
     }
-     
+    
+    override func viewDidAppear(animated: Bool) {
+//        self.navigationController!.navigationBarHidden = false
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -127,6 +129,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return currentFetchedRC.sections!.count
     }
+    
     // MARK: - Number of Rows
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = currentFetchedRC.sections![section] as NSFetchedResultsSectionInfo
@@ -202,7 +205,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "toChannelTVC" {
-                println("here")
+//                self.navigationController!.navigationBarHidden = true
                 let navController = segue.destinationViewController as UINavigationController
                 var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()

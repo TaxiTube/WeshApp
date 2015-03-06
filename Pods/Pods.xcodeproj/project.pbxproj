@@ -7,668 +7,389 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		058C73369B8793E4AC0E02B0 /* PHFDelegateChain.h in Headers */ = {isa = PBXBuildFile; fileRef = DA0C9C0BB9AED87415207B28 /* PHFDelegateChain.h */; };
-		08ABEAB10D3D0F17646DEB87 /* PHFComposeBarView_Button.h in Headers */ = {isa = PBXBuildFile; fileRef = 2659C0892EE86C54807DEFD9 /* PHFComposeBarView_Button.h */; };
-		144D2687E02E48254CB7C64F /* PHFComposeBarView_Button.h in Headers */ = {isa = PBXBuildFile; fileRef = 2659C0892EE86C54807DEFD9 /* PHFComposeBarView_Button.h */; };
-		22B6CABDECC1F8616C578CB4 /* PHFDelegateChain.h in Headers */ = {isa = PBXBuildFile; fileRef = DA0C9C0BB9AED87415207B28 /* PHFDelegateChain.h */; };
-		2431F7B68EA6B7B6E91D904F /* Pods-WeshAppTests-PHFComposeBarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B60E3FB894DF5777870EED /* Pods-WeshAppTests-PHFComposeBarView-dummy.m */; };
-		2BF9295516636C70405DB6B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F92C43558BABEF72A3581 /* Foundation.framework */; };
-		3C27B2344FC596892917AF96 /* Pods-WeshApp-PHFComposeBarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC89982EE51563DF0F3206 /* Pods-WeshApp-PHFComposeBarView-dummy.m */; };
-		4E71F7D31CBF04D0EBF9D041 /* Pods-WeshApp-PHFDelegateChain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B947EA73EC568626F6B4AC /* Pods-WeshApp-PHFDelegateChain-dummy.m */; };
-		5315B0AC4615A97596E411DF /* PHFDelegateChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A520AD37AB9A0EB0A91F104 /* PHFDelegateChain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6392A8B41BE2CE9B017FE123 /* PHFComposeBarView_Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDD65897F0F7F4FBB0E08CF /* PHFComposeBarView_Button.m */; };
-		70E4D5DEF3CEF3A879262393 /* Pods-WeshAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9E83F31A281B390A13213F /* Pods-WeshAppTests-dummy.m */; };
-		756AFF4EC57EF92F9D988DB1 /* PHFComposeBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1B8EC1AE237C3E92F0800D /* PHFComposeBarView.m */; };
-		7F389FA9D3C9B5F8F587BC57 /* PHFComposeBarView_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F465CF9B15239872555F8D /* PHFComposeBarView_TextView.m */; };
-		857AA84E8D06270E43311D37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F92C43558BABEF72A3581 /* Foundation.framework */; };
-		958B3517B0FB9C6780F160D1 /* PHFComposeBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A081739E159CAA09114AA69 /* PHFComposeBarView.h */; };
-		9DF033944A16DDC489EE8CA2 /* PHFComposeBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1B8EC1AE237C3E92F0800D /* PHFComposeBarView.m */; };
-		9E0CE394F9BFAFBB069AF93D /* Pods-WeshAppTests-PHFDelegateChain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F52D9DD976A5D071178BAE /* Pods-WeshAppTests-PHFDelegateChain-dummy.m */; };
-		A0683DC1AA9A7845D03798A7 /* PHFDelegateChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A520AD37AB9A0EB0A91F104 /* PHFDelegateChain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A2C23A00613A4E104069E6E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F92C43558BABEF72A3581 /* Foundation.framework */; };
-		B4DEBFAB25223DE540A32D7E /* PHFComposeBarView_TextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F18BA5779EB443EA72E6309 /* PHFComposeBarView_TextView.h */; };
-		D1A8FA57C24748D6634C6FB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F92C43558BABEF72A3581 /* Foundation.framework */; };
-		D1E84B23B58E84E519CF6D63 /* PHFComposeBarView_Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDD65897F0F7F4FBB0E08CF /* PHFComposeBarView_Button.m */; };
-		D7C79FD05D3CE8D400F5CD87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F92C43558BABEF72A3581 /* Foundation.framework */; };
-		DD17935D8114ED57234A4F4B /* PHFComposeBarView_TextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F18BA5779EB443EA72E6309 /* PHFComposeBarView_TextView.h */; };
-		EE2BDFE24DEAE7E312AA2360 /* PHFComposeBarView_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F465CF9B15239872555F8D /* PHFComposeBarView_TextView.m */; };
-		F0775EC509A627356B421B5B /* PHFComposeBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A081739E159CAA09114AA69 /* PHFComposeBarView.h */; };
-		F75C1BED249E076BB4A47D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F92C43558BABEF72A3581 /* Foundation.framework */; };
-		FEB9DBA8DAEE3CD930310B38 /* Pods-WeshApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D59250768E3A4D058AB785CB /* Pods-WeshApp-dummy.m */; };
+		029E36F0403AD531490401FF /* UIViewController+ScrollingNavbar.h in Headers */ = {isa = PBXBuildFile; fileRef = E8236F2CADF7CD79BB369C55 /* UIViewController+ScrollingNavbar.h */; };
+		181E24923D9D657797FE01EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5CEAC48A6C60E3C8A941DE /* Foundation.framework */; };
+		5D6A03569BAC747E39084518 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4858C09629A406C879F7EA11 /* UIViewController+ScrollingNavbar.m */; };
+		65D6A2FF6E544105B36A4C59 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4858C09629A406C879F7EA11 /* UIViewController+ScrollingNavbar.m */; };
+		6BCD97549841FAA9D94D8C4A /* Pods-WeshApp-AMScrollingNavbar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3C5754A7F9494BA62EA71 /* Pods-WeshApp-AMScrollingNavbar-dummy.m */; };
+		6E718292E07F8171A147BC61 /* Pods-WeshAppTests-AMScrollingNavbar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA007B841C1CC8513733738 /* Pods-WeshAppTests-AMScrollingNavbar-dummy.m */; };
+		83C3E941EAB5C799C760B564 /* Pods-WeshAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 611D32563E5596683670E95A /* Pods-WeshAppTests-dummy.m */; };
+		A566EA6D469363CA49CFFADB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5CEAC48A6C60E3C8A941DE /* Foundation.framework */; };
+		A9AC617B64C985E20D30AECE /* Pods-WeshApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4EC69A903EDF7402106A69 /* Pods-WeshApp-dummy.m */; };
+		DC0BA6544D3E3C6B27C3D04A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5CEAC48A6C60E3C8A941DE /* Foundation.framework */; };
+		E53F81CBAA9769EFEF0A1C1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5CEAC48A6C60E3C8A941DE /* Foundation.framework */; };
+		FAAF19A7542447726C3EAAC2 /* UIViewController+ScrollingNavbar.h in Headers */ = {isa = PBXBuildFile; fileRef = E8236F2CADF7CD79BB369C55 /* UIViewController+ScrollingNavbar.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		13E099DFCDE1AE2F77BD8C26 /* PBXContainerItemProxy */ = {
+		10C96C9F0689347484A9EA12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 446612E25E0BCE879FB6D81B /* Project object */;
+			containerPortal = EBD282A3EA15E2452F136C42 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DD6CA87A607C98DCAB6B881A;
-			remoteInfo = "Pods-WeshAppTests-PHFDelegateChain";
+			remoteGlobalIDString = C4170FD72E3CF6248328A12A;
+			remoteInfo = "Pods-WeshAppTests-AMScrollingNavbar";
 		};
-		3A9DE0F30706AF96C931576A /* PBXContainerItemProxy */ = {
+		123200B58D37E2B953FB0548 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 446612E25E0BCE879FB6D81B /* Project object */;
+			containerPortal = EBD282A3EA15E2452F136C42 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 60D2F7B116C5D9DD71809D30;
-			remoteInfo = "Pods-WeshApp-PHFDelegateChain";
-		};
-		547A74DEEA3F058AD662EE0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 446612E25E0BCE879FB6D81B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD6CA87A607C98DCAB6B881A;
-			remoteInfo = "Pods-WeshAppTests-PHFDelegateChain";
-		};
-		85F456F07BB29D35DFBB72B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 446612E25E0BCE879FB6D81B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E9AD215A19EB8D3CA5A0CEA;
-			remoteInfo = "Pods-WeshApp-PHFComposeBarView";
-		};
-		A29EC0C583F361D16B4C5EF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 446612E25E0BCE879FB6D81B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 60D2F7B116C5D9DD71809D30;
-			remoteInfo = "Pods-WeshApp-PHFDelegateChain";
-		};
-		B00A027CF9AE2503C735D665 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 446612E25E0BCE879FB6D81B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 25541FD3B73827D3A4763CEB;
-			remoteInfo = "Pods-WeshAppTests-PHFComposeBarView";
+			remoteGlobalIDString = 1E3683AFC801240D60DE3589;
+			remoteInfo = "Pods-WeshApp-AMScrollingNavbar";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E9E83F31A281B390A13213F /* Pods-WeshAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshAppTests-dummy.m"; sourceTree = "<group>"; };
-		113DD32EA922B1BF5F369227 /* Pods-WeshAppTests-PHFComposeBarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-PHFComposeBarView.xcconfig"; path = "../Pods-WeshAppTests-PHFComposeBarView/Pods-WeshAppTests-PHFComposeBarView.xcconfig"; sourceTree = "<group>"; };
-		13681F167BE76468015A3407 /* libPods-WeshApp-PHFComposeBarView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshApp-PHFComposeBarView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		18D862C46BFDC1317190FB23 /* Pods-WeshApp-PHFComposeBarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-PHFComposeBarView-prefix.pch"; sourceTree = "<group>"; };
-		1E8426E596C3CD8704F9BDFB /* Pods-WeshAppTests-PHFDelegateChain-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-PHFDelegateChain-Private.xcconfig"; path = "../Pods-WeshAppTests-PHFDelegateChain/Pods-WeshAppTests-PHFDelegateChain-Private.xcconfig"; sourceTree = "<group>"; };
-		2659C0892EE86C54807DEFD9 /* PHFComposeBarView_Button.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PHFComposeBarView_Button.h; path = Classes/PHFComposeBarView_Button.h; sourceTree = "<group>"; };
-		2FDD65897F0F7F4FBB0E08CF /* PHFComposeBarView_Button.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PHFComposeBarView_Button.m; path = Classes/PHFComposeBarView_Button.m; sourceTree = "<group>"; };
-		3C1B8EC1AE237C3E92F0800D /* PHFComposeBarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PHFComposeBarView.m; path = Classes/PHFComposeBarView.m; sourceTree = "<group>"; };
-		5309610E141EB001D2D769C0 /* Pods-WeshApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		562F9CA2BFA7844F0B3E6CC7 /* Pods-WeshApp-PHFDelegateChain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-PHFDelegateChain.xcconfig"; sourceTree = "<group>"; };
-		582E5D19C9F33C5B3F3EA31E /* Pods-WeshApp-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-environment.h"; sourceTree = "<group>"; };
-		5B06772BF1C1F3E415524C62 /* Pods-WeshAppTests-PHFComposeBarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-PHFComposeBarView-prefix.pch"; path = "../Pods-WeshAppTests-PHFComposeBarView/Pods-WeshAppTests-PHFComposeBarView-prefix.pch"; sourceTree = "<group>"; };
-		6105B6C9EA9DA187DD121959 /* Pods-WeshAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshAppTests-resources.sh"; sourceTree = "<group>"; };
-		66738A479C3AAD765ACCF6E5 /* libPods-WeshApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6908DE70AE4DA27E193728A8 /* Pods-WeshAppTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshAppTests-environment.h"; sourceTree = "<group>"; };
-		6A520AD37AB9A0EB0A91F104 /* PHFDelegateChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = PHFDelegateChain.m; sourceTree = "<group>"; };
-		6DCF15F90391C1AD07A7A37D /* Pods-WeshApp-PHFComposeBarView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-PHFComposeBarView-Private.xcconfig"; sourceTree = "<group>"; };
-		72523763BE537F6E94C98E1F /* Pods-WeshAppTests-PHFComposeBarView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-PHFComposeBarView-Private.xcconfig"; path = "../Pods-WeshAppTests-PHFComposeBarView/Pods-WeshAppTests-PHFComposeBarView-Private.xcconfig"; sourceTree = "<group>"; };
-		77166F98565B8A27B51FEBA5 /* libPods-WeshAppTests-PHFComposeBarView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshAppTests-PHFComposeBarView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		771BE996F4EA5448C120E8AC /* Pods-WeshAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		79546E114B52B6E592E4F37A /* libPods-WeshApp-PHFDelegateChain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshApp-PHFDelegateChain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F18BA5779EB443EA72E6309 /* PHFComposeBarView_TextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PHFComposeBarView_TextView.h; path = Classes/PHFComposeBarView_TextView.h; sourceTree = "<group>"; };
-		844771818BFD034161E02540 /* Pods-WeshApp-PHFDelegateChain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-PHFDelegateChain-prefix.pch"; sourceTree = "<group>"; };
-		847F88B6746E16C1446A7579 /* Pods-WeshAppTests-PHFDelegateChain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-PHFDelegateChain.xcconfig"; path = "../Pods-WeshAppTests-PHFDelegateChain/Pods-WeshAppTests-PHFDelegateChain.xcconfig"; sourceTree = "<group>"; };
-		84B60E3FB894DF5777870EED /* Pods-WeshAppTests-PHFComposeBarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-WeshAppTests-PHFComposeBarView-dummy.m"; path = "../Pods-WeshAppTests-PHFComposeBarView/Pods-WeshAppTests-PHFComposeBarView-dummy.m"; sourceTree = "<group>"; };
-		86F52D9DD976A5D071178BAE /* Pods-WeshAppTests-PHFDelegateChain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-WeshAppTests-PHFDelegateChain-dummy.m"; path = "../Pods-WeshAppTests-PHFDelegateChain/Pods-WeshAppTests-PHFDelegateChain-dummy.m"; sourceTree = "<group>"; };
-		89EB9AAE74FFB702D30EAFF9 /* libPods-WeshAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A081739E159CAA09114AA69 /* PHFComposeBarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PHFComposeBarView.h; path = Classes/PHFComposeBarView.h; sourceTree = "<group>"; };
-		961F92C43558BABEF72A3581 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		96449B26D0223E0D65A85F09 /* Pods-WeshApp-PHFComposeBarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-PHFComposeBarView.xcconfig"; sourceTree = "<group>"; };
-		B1F465CF9B15239872555F8D /* PHFComposeBarView_TextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PHFComposeBarView_TextView.m; path = Classes/PHFComposeBarView_TextView.m; sourceTree = "<group>"; };
-		B6B947EA73EC568626F6B4AC /* Pods-WeshApp-PHFDelegateChain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-PHFDelegateChain-dummy.m"; sourceTree = "<group>"; };
-		C48E0D365E552527C8185F14 /* libPods-WeshAppTests-PHFDelegateChain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshAppTests-PHFDelegateChain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF0AEFF99BB3EE017BE7BDF8 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CFD24F28705FE9CBA787D731 /* Pods-WeshAppTests-PHFDelegateChain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-PHFDelegateChain-prefix.pch"; path = "../Pods-WeshAppTests-PHFDelegateChain/Pods-WeshAppTests-PHFDelegateChain-prefix.pch"; sourceTree = "<group>"; };
-		D0FC89982EE51563DF0F3206 /* Pods-WeshApp-PHFComposeBarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-PHFComposeBarView-dummy.m"; sourceTree = "<group>"; };
-		D3E57D0121F57A0DAF086B13 /* Pods-WeshAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D59250768E3A4D058AB785CB /* Pods-WeshApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-dummy.m"; sourceTree = "<group>"; };
-		D77A85CF4CD766B54B74A54C /* Pods-WeshAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		D7F284E0F45F93174628B6F7 /* Pods-WeshApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		DA0C9C0BB9AED87415207B28 /* PHFDelegateChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PHFDelegateChain.h; sourceTree = "<group>"; };
-		DADEDA9148FB8963276D3055 /* Pods-WeshApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshApp-resources.sh"; sourceTree = "<group>"; };
-		E95F70AF19DAFDDC502E9644 /* Pods-WeshApp-PHFDelegateChain-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-PHFDelegateChain-Private.xcconfig"; sourceTree = "<group>"; };
-		F1A13DC0705E663726316AA8 /* Pods-WeshApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.release.xcconfig"; sourceTree = "<group>"; };
-		F4855B3F5C1DFFD909CD6373 /* Pods-WeshAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F62630A67955400FF2BDDA8D /* Pods-WeshApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.debug.xcconfig"; sourceTree = "<group>"; };
+		0D55025D8CE9E1D4DC91BEC0 /* Pods-WeshAppTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshAppTests-environment.h"; sourceTree = "<group>"; };
+		19DB28AC1A7F017B2B6D028C /* Pods-WeshApp-AMScrollingNavbar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-AMScrollingNavbar-Private.xcconfig"; sourceTree = "<group>"; };
+		2117C967A70E66386E126928 /* Pods-WeshAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		22C3C5754A7F9494BA62EA71 /* Pods-WeshApp-AMScrollingNavbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-AMScrollingNavbar-dummy.m"; sourceTree = "<group>"; };
+		2BEC52DE5C4F5B36E6D7F967 /* Pods-WeshAppTests-AMScrollingNavbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-AMScrollingNavbar.xcconfig"; path = "../Pods-WeshAppTests-AMScrollingNavbar/Pods-WeshAppTests-AMScrollingNavbar.xcconfig"; sourceTree = "<group>"; };
+		3A89D533715D32F635764036 /* Pods-WeshApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3AA007B841C1CC8513733738 /* Pods-WeshAppTests-AMScrollingNavbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-WeshAppTests-AMScrollingNavbar-dummy.m"; path = "../Pods-WeshAppTests-AMScrollingNavbar/Pods-WeshAppTests-AMScrollingNavbar-dummy.m"; sourceTree = "<group>"; };
+		4858C09629A406C879F7EA11 /* UIViewController+ScrollingNavbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ScrollingNavbar.m"; path = "AMScrollingNavbar/UIViewController+ScrollingNavbar.m"; sourceTree = "<group>"; };
+		487C39B3C90AF302A4D08D28 /* Pods-WeshApp-AMScrollingNavbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-AMScrollingNavbar-prefix.pch"; sourceTree = "<group>"; };
+		4CCD4BFDD37467DF613CD630 /* Pods-WeshAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshAppTests-resources.sh"; sourceTree = "<group>"; };
+		611D32563E5596683670E95A /* Pods-WeshAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshAppTests-dummy.m"; sourceTree = "<group>"; };
+		8362832B7C04FF1265610B92 /* Pods-WeshApp-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-environment.h"; sourceTree = "<group>"; };
+		883BE2266A15235CCC986255 /* Pods-WeshAppTests-AMScrollingNavbar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-AMScrollingNavbar-Private.xcconfig"; path = "../Pods-WeshAppTests-AMScrollingNavbar/Pods-WeshAppTests-AMScrollingNavbar-Private.xcconfig"; sourceTree = "<group>"; };
+		9396971AA822EAB0BCCB14D6 /* Pods-WeshAppTests-AMScrollingNavbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-AMScrollingNavbar-prefix.pch"; path = "../Pods-WeshAppTests-AMScrollingNavbar/Pods-WeshAppTests-AMScrollingNavbar-prefix.pch"; sourceTree = "<group>"; };
+		970DA305294811C050C89CF4 /* Pods-WeshAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		9BC95471C45DF4E98D45F8AA /* libPods-WeshApp-AMScrollingNavbar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshApp-AMScrollingNavbar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0ACC1B0833FE77827AAD72C /* Pods-WeshAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE83EC80D8AEC4A594F4744C /* Pods-WeshApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.release.xcconfig"; sourceTree = "<group>"; };
+		BA6172F2C2F59A5AF7363891 /* Pods-WeshApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshApp-resources.sh"; sourceTree = "<group>"; };
+		BB5CEAC48A6C60E3C8A941DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C917CC6DF42DF2FF012D3C70 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CE4EC69A903EDF7402106A69 /* Pods-WeshApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-dummy.m"; sourceTree = "<group>"; };
+		D8822DDCB10715ECC0CD4224 /* libPods-WeshAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9F42B3C5C0EF48FD718D82D /* libPods-WeshApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9C235E71204E5E9D0808DA /* libPods-WeshAppTests-AMScrollingNavbar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeshAppTests-AMScrollingNavbar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5A83731403F4F5FC635D993 /* Pods-WeshApp-AMScrollingNavbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-AMScrollingNavbar.xcconfig"; sourceTree = "<group>"; };
+		E7FAF9B85DCBC6596E80D35B /* Pods-WeshAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E8236F2CADF7CD79BB369C55 /* UIViewController+ScrollingNavbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ScrollingNavbar.h"; path = "AMScrollingNavbar/UIViewController+ScrollingNavbar.h"; sourceTree = "<group>"; };
+		F7FF7794F2693D9B477CA3F8 /* Pods-WeshApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		FF9C045D3FB845997F5FEC0E /* Pods-WeshApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		33605D7051CC941B51475FFF /* Frameworks */ = {
+		5AE09BDDD085F9A09DC08FEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				857AA84E8D06270E43311D37 /* Foundation.framework in Frameworks */,
+				181E24923D9D657797FE01EE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		402B4B91D2854C6561B68A0B /* Frameworks */ = {
+		6A3C053F076C05F14E143D90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1A8FA57C24748D6634C6FB5 /* Foundation.framework in Frameworks */,
+				A566EA6D469363CA49CFFADB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6830C1119B299964850885D2 /* Frameworks */ = {
+		9D8442AE7A21C5256D8B1C6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BF9295516636C70405DB6B8 /* Foundation.framework in Frameworks */,
+				E53F81CBAA9769EFEF0A1C1F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D64962BD0179C97DD2C530E /* Frameworks */ = {
+		EF1F28D165E9A873EEC3863E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7C79FD05D3CE8D400F5CD87 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		967F47231D042C46AB241E4F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A2C23A00613A4E104069E6E4 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C4BFDC6397F83754FA38B0A9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F75C1BED249E076BB4A47D63 /* Foundation.framework in Frameworks */,
+				DC0BA6544D3E3C6B27C3D04A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		047474CAEA687146A25038ED /* PHFComposeBarView */ = {
+		113651CCB4C26AF244E5E309 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8A081739E159CAA09114AA69 /* PHFComposeBarView.h */,
-				3C1B8EC1AE237C3E92F0800D /* PHFComposeBarView.m */,
-				2659C0892EE86C54807DEFD9 /* PHFComposeBarView_Button.h */,
-				2FDD65897F0F7F4FBB0E08CF /* PHFComposeBarView_Button.m */,
-				7F18BA5779EB443EA72E6309 /* PHFComposeBarView_TextView.h */,
-				B1F465CF9B15239872555F8D /* PHFComposeBarView_TextView.m */,
-				4A235FFCFFD5A4FE42102764 /* Support Files */,
+				2694B925541AF2B3402F2FB3 /* Pods-WeshApp */,
+				1370FC3DE6E55E98ACDA6158 /* Pods-WeshAppTests */,
 			);
-			path = PHFComposeBarView;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		077089F2ECA0823682A64A75 /* Pods */ = {
+		1370FC3DE6E55E98ACDA6158 /* Pods-WeshAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				047474CAEA687146A25038ED /* PHFComposeBarView */,
-				8929342C1D375C125364436E /* PHFDelegateChain */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2A170880CA33553F84221F08 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				960F4A957AF397858BBE9ACD /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4A235FFCFFD5A4FE42102764 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				96449B26D0223E0D65A85F09 /* Pods-WeshApp-PHFComposeBarView.xcconfig */,
-				6DCF15F90391C1AD07A7A37D /* Pods-WeshApp-PHFComposeBarView-Private.xcconfig */,
-				D0FC89982EE51563DF0F3206 /* Pods-WeshApp-PHFComposeBarView-dummy.m */,
-				18D862C46BFDC1317190FB23 /* Pods-WeshApp-PHFComposeBarView-prefix.pch */,
-				113DD32EA922B1BF5F369227 /* Pods-WeshAppTests-PHFComposeBarView.xcconfig */,
-				72523763BE537F6E94C98E1F /* Pods-WeshAppTests-PHFComposeBarView-Private.xcconfig */,
-				84B60E3FB894DF5777870EED /* Pods-WeshAppTests-PHFComposeBarView-dummy.m */,
-				5B06772BF1C1F3E415524C62 /* Pods-WeshAppTests-PHFComposeBarView-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-WeshApp-PHFComposeBarView";
-			sourceTree = "<group>";
-		};
-		752CA3E20E78531B587175BD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				562F9CA2BFA7844F0B3E6CC7 /* Pods-WeshApp-PHFDelegateChain.xcconfig */,
-				E95F70AF19DAFDDC502E9644 /* Pods-WeshApp-PHFDelegateChain-Private.xcconfig */,
-				B6B947EA73EC568626F6B4AC /* Pods-WeshApp-PHFDelegateChain-dummy.m */,
-				844771818BFD034161E02540 /* Pods-WeshApp-PHFDelegateChain-prefix.pch */,
-				847F88B6746E16C1446A7579 /* Pods-WeshAppTests-PHFDelegateChain.xcconfig */,
-				1E8426E596C3CD8704F9BDFB /* Pods-WeshAppTests-PHFDelegateChain-Private.xcconfig */,
-				86F52D9DD976A5D071178BAE /* Pods-WeshAppTests-PHFDelegateChain-dummy.m */,
-				CFD24F28705FE9CBA787D731 /* Pods-WeshAppTests-PHFDelegateChain-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-WeshApp-PHFDelegateChain";
-			sourceTree = "<group>";
-		};
-		7A008DDBE5558B0037BBBA31 /* Pods-WeshAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				D3E57D0121F57A0DAF086B13 /* Pods-WeshAppTests-acknowledgements.markdown */,
-				D77A85CF4CD766B54B74A54C /* Pods-WeshAppTests-acknowledgements.plist */,
-				0E9E83F31A281B390A13213F /* Pods-WeshAppTests-dummy.m */,
-				6908DE70AE4DA27E193728A8 /* Pods-WeshAppTests-environment.h */,
-				6105B6C9EA9DA187DD121959 /* Pods-WeshAppTests-resources.sh */,
-				F4855B3F5C1DFFD909CD6373 /* Pods-WeshAppTests.debug.xcconfig */,
-				771BE996F4EA5448C120E8AC /* Pods-WeshAppTests.release.xcconfig */,
+				E7FAF9B85DCBC6596E80D35B /* Pods-WeshAppTests-acknowledgements.markdown */,
+				2117C967A70E66386E126928 /* Pods-WeshAppTests-acknowledgements.plist */,
+				611D32563E5596683670E95A /* Pods-WeshAppTests-dummy.m */,
+				0D55025D8CE9E1D4DC91BEC0 /* Pods-WeshAppTests-environment.h */,
+				4CCD4BFDD37467DF613CD630 /* Pods-WeshAppTests-resources.sh */,
+				A0ACC1B0833FE77827AAD72C /* Pods-WeshAppTests.debug.xcconfig */,
+				970DA305294811C050C89CF4 /* Pods-WeshAppTests.release.xcconfig */,
 			);
 			name = "Pods-WeshAppTests";
 			path = "Target Support Files/Pods-WeshAppTests";
 			sourceTree = "<group>";
 		};
-		8929342C1D375C125364436E /* PHFDelegateChain */ = {
+		2694B925541AF2B3402F2FB3 /* Pods-WeshApp */ = {
 			isa = PBXGroup;
 			children = (
-				DA0C9C0BB9AED87415207B28 /* PHFDelegateChain.h */,
-				6A520AD37AB9A0EB0A91F104 /* PHFDelegateChain.m */,
-				752CA3E20E78531B587175BD /* Support Files */,
-			);
-			path = PHFDelegateChain;
-			sourceTree = "<group>";
-		};
-		960F4A957AF397858BBE9ACD /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				961F92C43558BABEF72A3581 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		C47BA85CA29D563FABB12BE5 /* Pods-WeshApp */ = {
-			isa = PBXGroup;
-			children = (
-				5309610E141EB001D2D769C0 /* Pods-WeshApp-acknowledgements.markdown */,
-				D7F284E0F45F93174628B6F7 /* Pods-WeshApp-acknowledgements.plist */,
-				D59250768E3A4D058AB785CB /* Pods-WeshApp-dummy.m */,
-				582E5D19C9F33C5B3F3EA31E /* Pods-WeshApp-environment.h */,
-				DADEDA9148FB8963276D3055 /* Pods-WeshApp-resources.sh */,
-				F62630A67955400FF2BDDA8D /* Pods-WeshApp.debug.xcconfig */,
-				F1A13DC0705E663726316AA8 /* Pods-WeshApp.release.xcconfig */,
+				3A89D533715D32F635764036 /* Pods-WeshApp-acknowledgements.markdown */,
+				F7FF7794F2693D9B477CA3F8 /* Pods-WeshApp-acknowledgements.plist */,
+				CE4EC69A903EDF7402106A69 /* Pods-WeshApp-dummy.m */,
+				8362832B7C04FF1265610B92 /* Pods-WeshApp-environment.h */,
+				BA6172F2C2F59A5AF7363891 /* Pods-WeshApp-resources.sh */,
+				FF9C045D3FB845997F5FEC0E /* Pods-WeshApp.debug.xcconfig */,
+				AE83EC80D8AEC4A594F4744C /* Pods-WeshApp.release.xcconfig */,
 			);
 			name = "Pods-WeshApp";
 			path = "Target Support Files/Pods-WeshApp";
 			sourceTree = "<group>";
 		};
-		D18B534230A5B3FED3503AB8 /* Products */ = {
+		30A9949A97ADC5461E4FB22F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66738A479C3AAD765ACCF6E5 /* libPods-WeshApp.a */,
-				13681F167BE76468015A3407 /* libPods-WeshApp-PHFComposeBarView.a */,
-				79546E114B52B6E592E4F37A /* libPods-WeshApp-PHFDelegateChain.a */,
-				89EB9AAE74FFB702D30EAFF9 /* libPods-WeshAppTests.a */,
-				77166F98565B8A27B51FEBA5 /* libPods-WeshAppTests-PHFComposeBarView.a */,
-				C48E0D365E552527C8185F14 /* libPods-WeshAppTests-PHFDelegateChain.a */,
+				D3699D64F1D62836263C2CDE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		480556A10DD281924C1DB162 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9F42B3C5C0EF48FD718D82D /* libPods-WeshApp.a */,
+				9BC95471C45DF4E98D45F8AA /* libPods-WeshApp-AMScrollingNavbar.a */,
+				D8822DDCB10715ECC0CD4224 /* libPods-WeshAppTests.a */,
+				DD9C235E71204E5E9D0808DA /* libPods-WeshAppTests-AMScrollingNavbar.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F6C2C7D20143A843E188FF5F /* Targets Support Files */ = {
+		80FBDA2B92EE3813BBF361CE = {
 			isa = PBXGroup;
 			children = (
-				C47BA85CA29D563FABB12BE5 /* Pods-WeshApp */,
-				7A008DDBE5558B0037BBBA31 /* Pods-WeshAppTests */,
+				C917CC6DF42DF2FF012D3C70 /* Podfile */,
+				30A9949A97ADC5461E4FB22F /* Frameworks */,
+				D599D88E96EBC345538AD2F4 /* Pods */,
+				480556A10DD281924C1DB162 /* Products */,
+				113651CCB4C26AF244E5E309 /* Targets Support Files */,
 			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F7C009859092550527D4868E = {
+		D3699D64F1D62836263C2CDE /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				CF0AEFF99BB3EE017BE7BDF8 /* Podfile */,
-				2A170880CA33553F84221F08 /* Frameworks */,
-				077089F2ECA0823682A64A75 /* Pods */,
-				D18B534230A5B3FED3503AB8 /* Products */,
-				F6C2C7D20143A843E188FF5F /* Targets Support Files */,
+				BB5CEAC48A6C60E3C8A941DE /* Foundation.framework */,
 			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D599D88E96EBC345538AD2F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E921F9B3096056A10D9A1FA8 /* AMScrollingNavbar */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E4BD80BF9794CFB1B990A936 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5A83731403F4F5FC635D993 /* Pods-WeshApp-AMScrollingNavbar.xcconfig */,
+				19DB28AC1A7F017B2B6D028C /* Pods-WeshApp-AMScrollingNavbar-Private.xcconfig */,
+				22C3C5754A7F9494BA62EA71 /* Pods-WeshApp-AMScrollingNavbar-dummy.m */,
+				487C39B3C90AF302A4D08D28 /* Pods-WeshApp-AMScrollingNavbar-prefix.pch */,
+				2BEC52DE5C4F5B36E6D7F967 /* Pods-WeshAppTests-AMScrollingNavbar.xcconfig */,
+				883BE2266A15235CCC986255 /* Pods-WeshAppTests-AMScrollingNavbar-Private.xcconfig */,
+				3AA007B841C1CC8513733738 /* Pods-WeshAppTests-AMScrollingNavbar-dummy.m */,
+				9396971AA822EAB0BCCB14D6 /* Pods-WeshAppTests-AMScrollingNavbar-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-WeshApp-AMScrollingNavbar";
+			sourceTree = "<group>";
+		};
+		E921F9B3096056A10D9A1FA8 /* AMScrollingNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				E8236F2CADF7CD79BB369C55 /* UIViewController+ScrollingNavbar.h */,
+				4858C09629A406C879F7EA11 /* UIViewController+ScrollingNavbar.m */,
+				E4BD80BF9794CFB1B990A936 /* Support Files */,
+			);
+			path = AMScrollingNavbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		377E8F967C69DD759988B924 /* Headers */ = {
+		C44EDE31099DA06CF2CA0B5C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0775EC509A627356B421B5B /* PHFComposeBarView.h in Headers */,
-				08ABEAB10D3D0F17646DEB87 /* PHFComposeBarView_Button.h in Headers */,
-				DD17935D8114ED57234A4F4B /* PHFComposeBarView_TextView.h in Headers */,
+				FAAF19A7542447726C3EAAC2 /* UIViewController+ScrollingNavbar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		543E8A2E4DF2A3F68120CDC4 /* Headers */ = {
+		E2786583BC15E7818131E88F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058C73369B8793E4AC0E02B0 /* PHFDelegateChain.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59371E123CAA2FB3F3D198D5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				958B3517B0FB9C6780F160D1 /* PHFComposeBarView.h in Headers */,
-				144D2687E02E48254CB7C64F /* PHFComposeBarView_Button.h in Headers */,
-				B4DEBFAB25223DE540A32D7E /* PHFComposeBarView_TextView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D7FA68FC04E9C174D5C2D064 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22B6CABDECC1F8616C578CB4 /* PHFDelegateChain.h in Headers */,
+				029E36F0403AD531490401FF /* UIViewController+ScrollingNavbar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1E9AD215A19EB8D3CA5A0CEA /* Pods-WeshApp-PHFComposeBarView */ = {
+		1E3683AFC801240D60DE3589 /* Pods-WeshApp-AMScrollingNavbar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D78FA66B6D39CCB689257ED5 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-PHFComposeBarView" */;
+			buildConfigurationList = 167027DC26DCD3D1A8A772E2 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-AMScrollingNavbar" */;
 			buildPhases = (
-				0E4E2593FB0249F61C52E70E /* Sources */,
-				33605D7051CC941B51475FFF /* Frameworks */,
-				377E8F967C69DD759988B924 /* Headers */,
+				ECABFFF8E126C92CB3A76102 /* Sources */,
+				EF1F28D165E9A873EEC3863E /* Frameworks */,
+				E2786583BC15E7818131E88F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4170993D81EB57BED8DD3FFA /* PBXTargetDependency */,
 			);
-			name = "Pods-WeshApp-PHFComposeBarView";
-			productName = "Pods-WeshApp-PHFComposeBarView";
-			productReference = 13681F167BE76468015A3407 /* libPods-WeshApp-PHFComposeBarView.a */;
+			name = "Pods-WeshApp-AMScrollingNavbar";
+			productName = "Pods-WeshApp-AMScrollingNavbar";
+			productReference = 9BC95471C45DF4E98D45F8AA /* libPods-WeshApp-AMScrollingNavbar.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		25541FD3B73827D3A4763CEB /* Pods-WeshAppTests-PHFComposeBarView */ = {
+		4443E4FA1D7A00E95DFB9B7D /* Pods-WeshAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E68F03FAFB0022D2AB7BEA22 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-PHFComposeBarView" */;
+			buildConfigurationList = 270F8ED4227E3046E8D3DE67 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */;
 			buildPhases = (
-				1BEF9DAE08F107B8BB3ABC90 /* Sources */,
-				6830C1119B299964850885D2 /* Frameworks */,
-				59371E123CAA2FB3F3D198D5 /* Headers */,
+				189C78AE2EEE2BC1D66093E7 /* Sources */,
+				9D8442AE7A21C5256D8B1C6E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B002951F1C1E215C80F9A287 /* PBXTargetDependency */,
-			);
-			name = "Pods-WeshAppTests-PHFComposeBarView";
-			productName = "Pods-WeshAppTests-PHFComposeBarView";
-			productReference = 77166F98565B8A27B51FEBA5 /* libPods-WeshAppTests-PHFComposeBarView.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		60D2F7B116C5D9DD71809D30 /* Pods-WeshApp-PHFDelegateChain */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A1B4520745B91E752928A3E2 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-PHFDelegateChain" */;
-			buildPhases = (
-				A4B8E13F634C5FBBB31D0864 /* Sources */,
-				967F47231D042C46AB241E4F /* Frameworks */,
-				D7FA68FC04E9C174D5C2D064 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-WeshApp-PHFDelegateChain";
-			productName = "Pods-WeshApp-PHFDelegateChain";
-			productReference = 79546E114B52B6E592E4F37A /* libPods-WeshApp-PHFDelegateChain.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		D9D00D9ECE1F4E369BFDB94C /* Pods-WeshAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0BED53D4800F31FB8A579596 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */;
-			buildPhases = (
-				474D3806DCE23849458CB711 /* Sources */,
-				402B4B91D2854C6561B68A0B /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				044AB7D97C9EAB68EF61115B /* PBXTargetDependency */,
-				015C0C35A5A911766BDBDC98 /* PBXTargetDependency */,
+				F30BCAB0417CB266C44F0964 /* PBXTargetDependency */,
 			);
 			name = "Pods-WeshAppTests";
 			productName = "Pods-WeshAppTests";
-			productReference = 89EB9AAE74FFB702D30EAFF9 /* libPods-WeshAppTests.a */;
+			productReference = D8822DDCB10715ECC0CD4224 /* libPods-WeshAppTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DD6CA87A607C98DCAB6B881A /* Pods-WeshAppTests-PHFDelegateChain */ = {
+		A042FE89E6216CB960ED2C14 /* Pods-WeshApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C4538A57A85308F6028BC98 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-PHFDelegateChain" */;
+			buildConfigurationList = 72BBEEB39931B3D31D47AD9F /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */;
 			buildPhases = (
-				4B68881210FD53731DFCF591 /* Sources */,
-				C4BFDC6397F83754FA38B0A9 /* Frameworks */,
-				543E8A2E4DF2A3F68120CDC4 /* Headers */,
+				F7063525A96294E51F7A492A /* Sources */,
+				6A3C053F076C05F14E143D90 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-WeshAppTests-PHFDelegateChain";
-			productName = "Pods-WeshAppTests-PHFDelegateChain";
-			productReference = C48E0D365E552527C8185F14 /* libPods-WeshAppTests-PHFDelegateChain.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		FEA14A73FB7092CD9314D8F8 /* Pods-WeshApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 812BA3CED1535356C1BAB471 /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */;
-			buildPhases = (
-				C9833B26F7C9341E1670D4C8 /* Sources */,
-				6D64962BD0179C97DD2C530E /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BEC05B96A8AF8D42AD90226 /* PBXTargetDependency */,
-				D983E5A155AAFFA4873A5274 /* PBXTargetDependency */,
+				6569F0AD4B7A6200710F9118 /* PBXTargetDependency */,
 			);
 			name = "Pods-WeshApp";
 			productName = "Pods-WeshApp";
-			productReference = 66738A479C3AAD765ACCF6E5 /* libPods-WeshApp.a */;
+			productReference = D9F42B3C5C0EF48FD718D82D /* libPods-WeshApp.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C4170FD72E3CF6248328A12A /* Pods-WeshAppTests-AMScrollingNavbar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7E25AA877C82248E5429253 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-AMScrollingNavbar" */;
+			buildPhases = (
+				2956A54F272BC1FC1DE65801 /* Sources */,
+				5AE09BDDD085F9A09DC08FEF /* Frameworks */,
+				C44EDE31099DA06CF2CA0B5C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-WeshAppTests-AMScrollingNavbar";
+			productName = "Pods-WeshAppTests-AMScrollingNavbar";
+			productReference = DD9C235E71204E5E9D0808DA /* libPods-WeshAppTests-AMScrollingNavbar.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		446612E25E0BCE879FB6D81B /* Project object */ = {
+		EBD282A3EA15E2452F136C42 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 79871D707A88383E1693FD32 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = E7F461CA2AF4AC67B0EA9F25 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F7C009859092550527D4868E;
-			productRefGroup = D18B534230A5B3FED3503AB8 /* Products */;
+			mainGroup = 80FBDA2B92EE3813BBF361CE;
+			productRefGroup = 480556A10DD281924C1DB162 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEA14A73FB7092CD9314D8F8 /* Pods-WeshApp */,
-				1E9AD215A19EB8D3CA5A0CEA /* Pods-WeshApp-PHFComposeBarView */,
-				60D2F7B116C5D9DD71809D30 /* Pods-WeshApp-PHFDelegateChain */,
-				D9D00D9ECE1F4E369BFDB94C /* Pods-WeshAppTests */,
-				25541FD3B73827D3A4763CEB /* Pods-WeshAppTests-PHFComposeBarView */,
-				DD6CA87A607C98DCAB6B881A /* Pods-WeshAppTests-PHFDelegateChain */,
+				A042FE89E6216CB960ED2C14 /* Pods-WeshApp */,
+				1E3683AFC801240D60DE3589 /* Pods-WeshApp-AMScrollingNavbar */,
+				4443E4FA1D7A00E95DFB9B7D /* Pods-WeshAppTests */,
+				C4170FD72E3CF6248328A12A /* Pods-WeshAppTests-AMScrollingNavbar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0E4E2593FB0249F61C52E70E /* Sources */ = {
+		189C78AE2EEE2BC1D66093E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DF033944A16DDC489EE8CA2 /* PHFComposeBarView.m in Sources */,
-				D1E84B23B58E84E519CF6D63 /* PHFComposeBarView_Button.m in Sources */,
-				EE2BDFE24DEAE7E312AA2360 /* PHFComposeBarView_TextView.m in Sources */,
-				3C27B2344FC596892917AF96 /* Pods-WeshApp-PHFComposeBarView-dummy.m in Sources */,
+				83C3E941EAB5C799C760B564 /* Pods-WeshAppTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1BEF9DAE08F107B8BB3ABC90 /* Sources */ = {
+		2956A54F272BC1FC1DE65801 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756AFF4EC57EF92F9D988DB1 /* PHFComposeBarView.m in Sources */,
-				6392A8B41BE2CE9B017FE123 /* PHFComposeBarView_Button.m in Sources */,
-				7F389FA9D3C9B5F8F587BC57 /* PHFComposeBarView_TextView.m in Sources */,
-				2431F7B68EA6B7B6E91D904F /* Pods-WeshAppTests-PHFComposeBarView-dummy.m in Sources */,
+				6E718292E07F8171A147BC61 /* Pods-WeshAppTests-AMScrollingNavbar-dummy.m in Sources */,
+				5D6A03569BAC747E39084518 /* UIViewController+ScrollingNavbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		474D3806DCE23849458CB711 /* Sources */ = {
+		ECABFFF8E126C92CB3A76102 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70E4D5DEF3CEF3A879262393 /* Pods-WeshAppTests-dummy.m in Sources */,
+				6BCD97549841FAA9D94D8C4A /* Pods-WeshApp-AMScrollingNavbar-dummy.m in Sources */,
+				65D6A2FF6E544105B36A4C59 /* UIViewController+ScrollingNavbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B68881210FD53731DFCF591 /* Sources */ = {
+		F7063525A96294E51F7A492A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5315B0AC4615A97596E411DF /* PHFDelegateChain.m in Sources */,
-				9E0CE394F9BFAFBB069AF93D /* Pods-WeshAppTests-PHFDelegateChain-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4B8E13F634C5FBBB31D0864 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0683DC1AA9A7845D03798A7 /* PHFDelegateChain.m in Sources */,
-				4E71F7D31CBF04D0EBF9D041 /* Pods-WeshApp-PHFDelegateChain-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C9833B26F7C9341E1670D4C8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FEB9DBA8DAEE3CD930310B38 /* Pods-WeshApp-dummy.m in Sources */,
+				A9AC617B64C985E20D30AECE /* Pods-WeshApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		015C0C35A5A911766BDBDC98 /* PBXTargetDependency */ = {
+		6569F0AD4B7A6200710F9118 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-WeshAppTests-PHFDelegateChain";
-			target = DD6CA87A607C98DCAB6B881A /* Pods-WeshAppTests-PHFDelegateChain */;
-			targetProxy = 13E099DFCDE1AE2F77BD8C26 /* PBXContainerItemProxy */;
+			name = "Pods-WeshApp-AMScrollingNavbar";
+			target = 1E3683AFC801240D60DE3589 /* Pods-WeshApp-AMScrollingNavbar */;
+			targetProxy = 123200B58D37E2B953FB0548 /* PBXContainerItemProxy */;
 		};
-		044AB7D97C9EAB68EF61115B /* PBXTargetDependency */ = {
+		F30BCAB0417CB266C44F0964 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-WeshAppTests-PHFComposeBarView";
-			target = 25541FD3B73827D3A4763CEB /* Pods-WeshAppTests-PHFComposeBarView */;
-			targetProxy = B00A027CF9AE2503C735D665 /* PBXContainerItemProxy */;
-		};
-		2BEC05B96A8AF8D42AD90226 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-WeshApp-PHFComposeBarView";
-			target = 1E9AD215A19EB8D3CA5A0CEA /* Pods-WeshApp-PHFComposeBarView */;
-			targetProxy = 85F456F07BB29D35DFBB72B5 /* PBXContainerItemProxy */;
-		};
-		4170993D81EB57BED8DD3FFA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-WeshApp-PHFDelegateChain";
-			target = 60D2F7B116C5D9DD71809D30 /* Pods-WeshApp-PHFDelegateChain */;
-			targetProxy = 3A9DE0F30706AF96C931576A /* PBXContainerItemProxy */;
-		};
-		B002951F1C1E215C80F9A287 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-WeshAppTests-PHFDelegateChain";
-			target = DD6CA87A607C98DCAB6B881A /* Pods-WeshAppTests-PHFDelegateChain */;
-			targetProxy = 547A74DEEA3F058AD662EE0D /* PBXContainerItemProxy */;
-		};
-		D983E5A155AAFFA4873A5274 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-WeshApp-PHFDelegateChain";
-			target = 60D2F7B116C5D9DD71809D30 /* Pods-WeshApp-PHFDelegateChain */;
-			targetProxy = A29EC0C583F361D16B4C5EF5 /* PBXContainerItemProxy */;
+			name = "Pods-WeshAppTests-AMScrollingNavbar";
+			target = C4170FD72E3CF6248328A12A /* Pods-WeshAppTests-AMScrollingNavbar */;
+			targetProxy = 10C96C9F0689347484A9EA12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04DCE2E6399E4A552DCFC1F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E8426E596C3CD8704F9BDFB /* Pods-WeshAppTests-PHFDelegateChain-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-PHFDelegateChain/Pods-WeshAppTests-PHFDelegateChain-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		2F17351559ACBCFE5AA27D20 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1A13DC0705E663726316AA8 /* Pods-WeshApp.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		3E332A1F5574A8A31FDE1A4C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72523763BE537F6E94C98E1F /* Pods-WeshAppTests-PHFComposeBarView-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-PHFComposeBarView/Pods-WeshAppTests-PHFComposeBarView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		60D077E47DEEDF12F9B98F03 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72523763BE537F6E94C98E1F /* Pods-WeshAppTests-PHFComposeBarView-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-PHFComposeBarView/Pods-WeshAppTests-PHFComposeBarView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		6C0053F46C97DA7AC3453E14 /* Release */ = {
+		20942AE857F0E0B42BB69EA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -702,12 +423,12 @@
 			};
 			name = Release;
 		};
-		8E01C88295184E941FFBF541 /* Release */ = {
+		2928EE59D26CC582904A734F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E95F70AF19DAFDDC502E9644 /* Pods-WeshApp-PHFDelegateChain-Private.xcconfig */;
+			baseConfigurationReference = 883BE2266A15235CCC986255 /* Pods-WeshAppTests-AMScrollingNavbar-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-PHFDelegateChain/Pods-WeshApp-PHFDelegateChain-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-AMScrollingNavbar/Pods-WeshAppTests-AMScrollingNavbar-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -718,12 +439,12 @@
 			};
 			name = Release;
 		};
-		9BE8BB95527FCF73F705596B /* Debug */ = {
+		331EFCFBAD075189514784FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E95F70AF19DAFDDC502E9644 /* Pods-WeshApp-PHFDelegateChain-Private.xcconfig */;
+			baseConfigurationReference = 19DB28AC1A7F017B2B6D028C /* Pods-WeshApp-AMScrollingNavbar-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-PHFDelegateChain/Pods-WeshApp-PHFDelegateChain-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-AMScrollingNavbar/Pods-WeshApp-AMScrollingNavbar-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -734,87 +455,39 @@
 			};
 			name = Debug;
 		};
-		B2C7ECAA9748E8D52477E5DA /* Debug */ = {
+		3E9C51EBBD8E6A33AC4DCDD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E8426E596C3CD8704F9BDFB /* Pods-WeshAppTests-PHFDelegateChain-Private.xcconfig */;
+			baseConfigurationReference = A0ACC1B0833FE77827AAD72C /* Pods-WeshAppTests.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-PHFDelegateChain/Pods-WeshAppTests-PHFDelegateChain-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		B5669416F1C5585F2B44CA46 /* Release */ = {
+		410D5D72619EAEAF2F19138C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 771BE996F4EA5448C120E8AC /* Pods-WeshAppTests.release.xcconfig */;
+			baseConfigurationReference = 19DB28AC1A7F017B2B6D028C /* Pods-WeshApp-AMScrollingNavbar-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-AMScrollingNavbar/Pods-WeshApp-AMScrollingNavbar-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		B6B4DBAEC9FBE5075DBA387C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4855B3F5C1DFFD909CD6373 /* Pods-WeshAppTests.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B9EAE1443D015D59E09DD707 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F62630A67955400FF2BDDA8D /* Pods-WeshApp.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		BD691C564009CA0208956999 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DCF15F90391C1AD07A7A37D /* Pods-WeshApp-PHFComposeBarView-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-PHFComposeBarView/Pods-WeshApp-PHFComposeBarView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		EFBF661D74A9DF97D89A343A /* Debug */ = {
+		4781F44266966F3F706A041E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -853,16 +526,64 @@
 			};
 			name = Debug;
 		};
-		FCE62104DBC1D14A64D60E3C /* Release */ = {
+		B71195A8B20D434CC447EFB6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DCF15F90391C1AD07A7A37D /* Pods-WeshApp-PHFComposeBarView-Private.xcconfig */;
+			baseConfigurationReference = 970DA305294811C050C89CF4 /* Pods-WeshAppTests.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-PHFComposeBarView/Pods-WeshApp-PHFComposeBarView-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CF65F550CC960729D81C7B2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 883BE2266A15235CCC986255 /* Pods-WeshAppTests-AMScrollingNavbar-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-AMScrollingNavbar/Pods-WeshAppTests-AMScrollingNavbar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EF02211BC03CC5781D2AA334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF9C045D3FB845997F5FEC0E /* Pods-WeshApp.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FA74EA1C34918B1E6810C934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE83EC80D8AEC4A594F4744C /* Pods-WeshApp.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -872,70 +593,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BED53D4800F31FB8A579596 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */ = {
+		167027DC26DCD3D1A8A772E2 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-AMScrollingNavbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B6B4DBAEC9FBE5075DBA387C /* Debug */,
-				B5669416F1C5585F2B44CA46 /* Release */,
+				331EFCFBAD075189514784FC /* Debug */,
+				410D5D72619EAEAF2F19138C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C4538A57A85308F6028BC98 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-PHFDelegateChain" */ = {
+		270F8ED4227E3046E8D3DE67 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B2C7ECAA9748E8D52477E5DA /* Debug */,
-				04DCE2E6399E4A552DCFC1F9 /* Release */,
+				3E9C51EBBD8E6A33AC4DCDD2 /* Debug */,
+				B71195A8B20D434CC447EFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		79871D707A88383E1693FD32 /* Build configuration list for PBXProject "Pods" */ = {
+		72BBEEB39931B3D31D47AD9F /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EFBF661D74A9DF97D89A343A /* Debug */,
-				6C0053F46C97DA7AC3453E14 /* Release */,
+				EF02211BC03CC5781D2AA334 /* Debug */,
+				FA74EA1C34918B1E6810C934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		812BA3CED1535356C1BAB471 /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */ = {
+		B7E25AA877C82248E5429253 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-AMScrollingNavbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B9EAE1443D015D59E09DD707 /* Debug */,
-				2F17351559ACBCFE5AA27D20 /* Release */,
+				CF65F550CC960729D81C7B2B /* Debug */,
+				2928EE59D26CC582904A734F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1B4520745B91E752928A3E2 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-PHFDelegateChain" */ = {
+		E7F461CA2AF4AC67B0EA9F25 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9BE8BB95527FCF73F705596B /* Debug */,
-				8E01C88295184E941FFBF541 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D78FA66B6D39CCB689257ED5 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-PHFComposeBarView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BD691C564009CA0208956999 /* Debug */,
-				FCE62104DBC1D14A64D60E3C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E68F03FAFB0022D2AB7BEA22 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-PHFComposeBarView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E332A1F5574A8A31FDE1A4C /* Debug */,
-				60D077E47DEEDF12F9B98F03 /* Release */,
+				4781F44266966F3F706A041E /* Debug */,
+				20942AE857F0E0B42BB69EA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 446612E25E0BCE879FB6D81B /* Project object */;
+	rootObject = EBD282A3EA15E2452F136C42 /* Project object */;
 }

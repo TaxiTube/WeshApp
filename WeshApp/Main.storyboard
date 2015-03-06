@@ -108,7 +108,7 @@
                     <connections>
                         <outlet property="containerView" destination="O3Z-1o-vvS" id="a2f-44-B0u"/>
                         <outlet property="handleTextField" destination="xBD-sq-joc" id="5fb-mf-8g0"/>
-                        <segue destination="anB-Gd-xtO" kind="show" identifier="toNearby" id="jf2-kL-dNR"/>
+                        <segue destination="RjB-cQ-qPU" kind="show" identifier="toNearby" id="jhV-6T-ZaT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sv-Df-yY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,7 +120,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="NearbyTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rzE-5d-Xks" customClass="NearbyTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="373" sectionHeaderHeight="22" sectionFooterHeight="22" id="axa-jK-QYu">
-                        <rect key="frame" x="0.0" y="64" width="604" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -246,7 +246,7 @@
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
                                     <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
-                                    <segue destination="lgM-f0-eIl" kind="presentation" identifier="toChannelTVC" modalPresentationStyle="overCurrentContext" id="D6B-sN-EcJ"/>
+                                    <segue destination="1uD-Up-Z2o" kind="presentation" identifier="toChannelTVC" trigger="accessoryAction" modalPresentationStyle="overCurrentContext" id="30J-J6-CcC"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="373" id="MDR-oS-7Yl" customClass="ChannelTableViewCell" customModule="WeshApp">
@@ -400,7 +400,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="hamburgerIcon" id="gO3-Ix-Pem"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" id="nA4-eu-Wvw" customClass="WeshappSegControl" customModule="Designables">
-                            <rect key="frame" x="199.5" y="4.5" width="205" height="35"/>
+                            <rect key="frame" x="197.5" y="4.5" width="205" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Habitat"/>
@@ -416,33 +416,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="604" height="600"/>
                     <connections>
                         <outlet property="segControl" destination="nA4-eu-Wvw" id="2kJ-qA-NOD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyj-mL-zA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4211" y="658"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CMw-N9-EWb">
-            <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="lgM-f0-eIl" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hOU-3Z-ZhR" customClass="WeshappNavBar" customModule="Designables">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="hVp-4W-3xL" kind="relationship" relationship="rootViewController" id="cFJ-eq-B0S"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="81f-Ot-eJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4927" y="669"/>
+            <point key="canvasLocation" x="4036" y="660"/>
         </scene>
         <!--Create ChannelVC-->
         <scene sceneID="Q5o-eI-WnD">
@@ -571,44 +551,48 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4482" y="1740.5"/>
+            <point key="canvasLocation" x="4211" y="1340"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="M5p-XC-axY">
+        <!--Navigation Controller-->
+        <scene sceneID="Jk8-ZO-wdB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="anB-Gd-xtO" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Home" id="Czy-m0-5hw">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="1" vertical="0.0"/>
-                    </tabBarItem>
-                    <toolbarItems/>
+                <navigationController id="RjB-cQ-qPU" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="F21-yI-44M" customClass="WeshappNavBar" customModule="Designables">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dx5-Me-hN5" customClass="WeshappNavBar" customModule="Designables">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="20"/>
-                        </textAttributes>
                     </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1eK-jZ-T8I">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="rzE-5d-Xks" kind="relationship" relationship="rootViewController" id="6c7-CD-Din"/>
+                        <segue destination="rzE-5d-Xks" kind="relationship" relationship="rootViewController" id="CMK-Yd-Hfc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DLL-Ri-N7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSE-dh-pSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="660"/>
+            <point key="canvasLocation" x="3269" y="660"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tvx-Ll-v9Q">
+            <objects>
+                <navigationController id="1uD-Up-Z2o" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lty-h8-an6" customClass="WeshappNavBar" customModule="Designables">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hVp-4W-3xL" kind="relationship" relationship="rootViewController" id="Z4a-hT-XMv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cA-RP-tVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4853" y="660"/>
         </scene>
         <!--ChannelTVC-->
         <scene sceneID="GPv-2b-6WJ">
             <objects>
                 <tableViewController id="hVp-4W-3xL" customClass="ChannelTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="21" id="AP2-wG-SE4">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -772,7 +756,6 @@
                             <outlet property="delegate" destination="hVp-4W-3xL" id="bVs-G1-uu7"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Htd-Vm-lV2"/>
                     <connections>
                         <outlet property="accessoryDock" destination="AlX-qk-58B" id="VAc-SI-V0h"/>
@@ -903,7 +886,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="5720" y="669"/>
+            <point key="canvasLocation" x="5654" y="665"/>
         </scene>
         <!--Channel HeaderVC-->
         <scene sceneID="wrk-sy-LcI">
@@ -1043,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tM-MQ-8zt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6571" y="718"/>
+            <point key="canvasLocation" x="6348" y="615"/>
         </scene>
     </scenes>
     <resources>

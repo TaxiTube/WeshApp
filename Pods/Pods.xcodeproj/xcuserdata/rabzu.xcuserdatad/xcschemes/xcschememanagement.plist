@@ -4,65 +4,53 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-WeshApp-PHFComposeBarView.xcscheme</key>
+		<key>Pods-WeshApp-AMScrollingNavbar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>Pods-WeshApp-PHFDelegateChain.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-WeshApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
-		<key>Pods-WeshAppTests-PHFComposeBarView.xcscheme</key>
+		<key>Pods-WeshAppTests-AMScrollingNavbar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>Pods-WeshAppTests-PHFDelegateChain.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods-WeshAppTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E9AD215A19EB8D3CA5A0CEA</key>
+		<key>1E3683AFC801240D60DE3589</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>25541FD3B73827D3A4763CEB</key>
+		<key>4443E4FA1D7A00E95DFB9B7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60D2F7B116C5D9DD71809D30</key>
+		<key>A042FE89E6216CB960ED2C14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9D00D9ECE1F4E369BFDB94C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD6CA87A607C98DCAB6B881A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FEA14A73FB7092CD9314D8F8</key>
+		<key>C4170FD72E3CF6248328A12A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

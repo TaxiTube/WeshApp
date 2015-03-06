@@ -27,6 +27,52 @@ public class WeshappNavBar: UINavigationBar{
     
     
     func setUp(){
+        
+        //ADD STATUS BAR VIEW
+        let stView = UIView()
+        stView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        stView.intrinsicContentSize()
+        stView.backgroundColor = UIColorFromRGB(0x51c1d2)
+        let viewsDictionary = ["statusBar": stView]
+        self.addSubview(stView)
+        self.layoutMargins = UIEdgeInsetsZero
+        //Margin constraints
+        
+        
+        
+//        var topConstraint = NSLayoutConstraint(item: stView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0 )
+     
+        var topConstraint = NSLayoutConstraint(item: stView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0  )
+        
+        var leftConstraint = NSLayoutConstraint(item: stView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0  )
+        
+        
+        var rightConstraint = NSLayoutConstraint(item: stView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0  )
+        
+        
+        var heightC = NSLayoutConstraint(item: stView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 20)
+        
+//        let heightConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:[statusBar(20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        
+        // self.addConstraint(NSLayoutConstraint(item: stView,
+        //attribute: .Height, relatedBy: .Equal, toItem: self,
+        //attribute: .Height, multiplier: 5, constant: 0))
+//        self.addConstraint(NSLayoutConstraint(item: stView,
+//            attribute: .Width, relatedBy: .Equal, toItem: self,
+//            attribute: .Width, multiplier: 1, constant: 0))
+        self.addConstraint(topConstraint)
+        self.addConstraint(leftConstraint)
+        self.addConstraint(rightConstraint)
+
+        self.addConstraint(heightC)
+        self.layoutIfNeeded()
+        //self.addConstraints(heightConstraints)
+        
+        
+        
+        
+        
+        
         let screenSize  = UIScreen.mainScreen().bounds.size
         frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
         //Removes nav bar 1 px shadow
@@ -89,30 +135,7 @@ public class WeshappNavBar: UINavigationBar{
 //  let titleYPos = self.titleVerticalPositionAdjustmentForBarMetrics(UIBarMetrics.Default)
 // println(" titleYPos \(titleYPos)")
 /*
-ADD STATUS BAR VIEW
-let stView = UIView()
-stView.setTranslatesAutoresizingMaskIntoConstraints(false)
-// stView.intrinsicContentSize()
-stView.backgroundColor = UIColorFromRGB(0x51c1d2)
-let viewsDictionary = ["statusBar": stView]
-// stView.
-self.addSubview(stView)
 
-self.layoutMargins = UIEdgeInsetsZero
-//Margin constraints
-//  let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-[statusBar]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-// let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[statusBar]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
 
-let heightConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:[statusBar(20)]", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-
-// self.addConstraint(NSLayoutConstraint(item: stView,
-//attribute: .Height, relatedBy: .Equal, toItem: self,
-//attribute: .Height, multiplier: 5, constant: 0))
-self.addConstraint(NSLayoutConstraint(item: stView,
-attribute: .Width, relatedBy: .Equal, toItem: self,
-attribute: .Width, multiplier: 1, constant: 0))
-//   self.addConstraints(hConstraints)
-// self.addConstraints(vConstraints)
-self.addConstraints(heightConstraints)
 
 */

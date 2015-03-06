@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A042FE89E6216CB960ED2C14"
-               BuildableName = "libPods-WeshApp.a"
-               BlueprintName = "Pods-WeshApp"
+               BlueprintIdentifier = "C4170FD72E3CF6248328A12A"
+               BuildableName = "libPods-WeshAppTests-AMScrollingNavbar.a"
+               BlueprintName = "Pods-WeshAppTests-AMScrollingNavbar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
