@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C4170FD72E3CF6248328A12A"
+               BlueprintIdentifier = "07809439D837E9AA15389609"
                BuildableName = "libPods-WeshAppTests-AMScrollingNavbar.a"
                BlueprintName = "Pods-WeshAppTests-AMScrollingNavbar"
                ReferencedContainer = "container:Pods.xcodeproj">

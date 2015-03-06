@@ -195,12 +195,11 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         return screenSize.width / 4.11
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("did select")
         dispatch_async(dispatch_get_main_queue()){
             self.performSegueWithIdentifier("toChannelTVC", sender: self)
         }
-    
     }
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -209,13 +208,12 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
                 let navController = segue.destinationViewController as UINavigationController
                 var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
-                
                 // If as Channel else as Profile
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
                 channelVC.channel = channel
                 channelVC.coreDataStack = coreDataStack
                 channelVC.sessionMngr = sessionMngr
-                
+                tableView.deselectRowAtIndexPath(indexPath!, animated: true)
         }
     }
     
