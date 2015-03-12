@@ -105,11 +105,33 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
         backgroundImageView.addSubview(blurView)
         
-        sizeHeaderToFit()
+//        sizeHeaderToFit()
 
 
 
     }
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        
+        self.headerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        var headerWidth = self.headerView.bounds.size.width
+        var temporaryWidthConstraints = NSLayoutConstraint.constraintsWithVisualFormat("[headerView(width)]",
+                                                                        options: nil,
+                                                                        metrics:["width": headerWidth],
+                                                                         views:["headerView": self.headerView])
+
+        self.headerView.addConstraints(temporaryWidthConstraints)
+        
+        
+        sizeHeaderToFit()
+        
+        self.headerView.removeConstraints(temporaryWidthConstraints)
+        
+        self.headerView.setTranslatesAutoresizingMaskIntoConstraints(true)
+
+
+    }
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
