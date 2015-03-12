@@ -22,6 +22,7 @@ class ChannelTableViewCell: UITableViewCell {
     //MARK: Outlets
     @IBOutlet weak var leftView: UIView?
     
+    @IBOutlet weak var elementContainer: UIView!
     @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var totem: UIImageView!
     @IBOutlet weak var title: UILabel!
@@ -336,9 +337,18 @@ class ChannelTableViewCell: UITableViewCell {
             backgroundColor = UIColor.whiteColor()
         }
     }
-    
+   /*
     override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         return true
+    }
+    */
+    func highlightCell(active: Bool){
+        if active {
+            elementContainer.backgroundColor = UIColor(red: 0.914, green: 0.945, blue: 0.949, alpha: 1.000)
+        } else {
+            elementContainer.backgroundColor = UIColor.whiteColor()
+        }
+        
     }
     
 }

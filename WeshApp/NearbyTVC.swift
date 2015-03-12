@@ -200,6 +200,26 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
             self.performSegueWithIdentifier("toChannelTVC", sender: self)
         }
     }
+    
+    
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        cell?.highlightCell(false)
+
+    }
+    
+    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        cell?.highlightCell(true)
+    }
+    
+    
+    
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "toChannelTVC" {
@@ -245,7 +265,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         tableView.endUpdates()
     }
 
-   
+  
     
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

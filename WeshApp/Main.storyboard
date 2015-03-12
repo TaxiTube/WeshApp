@@ -138,7 +138,7 @@
                                                 <constraint firstAttribute="width" secondItem="bOL-bv-wbR" secondAttribute="height" multiplier="1:1" id="t8p-Id-WKz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView" customClass="SelectedCell" customModule="Designables">
+                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView">
                                             <rect key="frame" x="0.0" y="0.0" width="604" height="373"/>
                                             <subviews>
                                                 <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30.5" placeholderIntrinsicHeight="373" restorationIdentifier="leading-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-vK-TFa" userLabel="leading-spacer-image">
@@ -242,6 +242,7 @@
                                     <outlet property="contentViewLeftConstraint" destination="zg2-Av-jHD" id="3BG-Xh-TZ7"/>
                                     <outlet property="contentViewRightConstraint" destination="3nB-Nx-df6" id="aZq-yq-ywz"/>
                                     <outlet property="counter" destination="LaK-yb-f7A" id="4uh-SO-QYh"/>
+                                    <outlet property="elementContainer" destination="4hk-x2-Ts8" id="D3n-H4-RBm"/>
                                     <outlet property="rightView" destination="bOL-bv-wbR" id="9bM-LI-foV"/>
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
