@@ -29,6 +29,13 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     @IBOutlet var accessoryDock: UIView!
     @IBOutlet weak var headerView: UIView!
 
+    @IBOutlet weak var handle: UILabel!
+    
+    @IBOutlet weak var profileName: UILabel!
+    @IBOutlet weak var totem: UIImageView!
+    @IBOutlet weak var channelDesc: WeshappLabel!
+    
+    
     @IBAction func postMessage(sender: AnyObject) {
     
         if textView.text != "" {
@@ -49,9 +56,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navBarItemsSetup()
+        self.setUpHeaderView()
+        self.navBarItemsSetup()
         self.shyNavBarManager.scrollView = self.tableView
-        
      
 
 
@@ -110,6 +117,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
 
     }
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
@@ -141,9 +149,6 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         }
     }
     
-//    func handleTap(recognizer: UITapGestureRecognizer) {
-//        resignFirstResponder()
-//    }
 
     
     //MARK: Navbar actions
@@ -173,23 +178,21 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         }
     }
     
+    private func setUpHeaderView(){
+        handle.text = "#\(channel!.author.handle)"
+        channelDesc.text = channel?.desc
+//        profileName.text =
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - Navigation
-    // Loard Header Cell
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toChannelHeaderVC" {
-            var channelHeaderVC = segue.destinationViewController as? ChannelHeaderVC
-            channelHeaderVC?.channel = channel
-        }
-    }
 
     
-
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
