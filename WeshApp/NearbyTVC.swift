@@ -196,7 +196,6 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("did select")
         dispatch_async(dispatch_get_main_queue()){
             self.performSegueWithIdentifier("toChannelTVC", sender: self)
         }

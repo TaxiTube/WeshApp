@@ -61,7 +61,7 @@
                                             <constraint firstAttribute="width" constant="15" id="F9T-u6-2CQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcE-4A-Oux">
@@ -123,10 +123,10 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="364" selectionStyle="gray" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
+                            <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="364" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" rowHeight="373" id="br7-IC-shW" customClass="ChannelTableViewCell" customModule="WeshApp">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="br7-IC-shW" id="Lpg-BX-d0r">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -138,7 +138,7 @@
                                                 <constraint firstAttribute="width" secondItem="bOL-bv-wbR" secondAttribute="height" multiplier="1:1" id="t8p-Id-WKz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView" customClass="DVColorLockView" customModule="Designables">
+                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView" translatesAutoresizingMaskIntoConstraints="NO" id="4hk-x2-Ts8" userLabel="elementContainerView" customClass="SelectedCell" customModule="Designables">
                                             <rect key="frame" x="0.0" y="0.0" width="604" height="373"/>
                                             <subviews>
                                                 <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30.5" placeholderIntrinsicHeight="373" restorationIdentifier="leading-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-vK-TFa" userLabel="leading-spacer-image">
@@ -636,7 +636,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="29" restorationIdentifier="Title" text="#GreenPanda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-Ee-oYR" userLabel="Title">
-                                                    <rect key="frame" x="199" y="78" width="400.5" height="29"/>
+                                                    <rect key="frame" x="199" y="79" width="400.5" height="29"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -650,7 +650,7 @@
                                                 <constraint firstItem="C8L-3O-KB4" firstAttribute="leading" secondItem="Dsi-dJ-tUi" secondAttribute="trailing" id="E9k-fM-iLG"/>
                                                 <constraint firstAttribute="trailing" secondItem="MJi-cd-rqL" secondAttribute="trailing" id="KKb-RH-pVs"/>
                                                 <constraint firstItem="Dsi-dJ-tUi" firstAttribute="leading" secondItem="0KI-X2-6Xh" secondAttribute="leading" id="NH8-9Y-bzk"/>
-                                                <constraint firstItem="MJi-cd-rqL" firstAttribute="centerY" secondItem="C8L-3O-KB4" secondAttribute="centerY" constant="0.75" id="P5w-5b-fym"/>
+                                                <constraint firstItem="MJi-cd-rqL" firstAttribute="centerY" secondItem="C8L-3O-KB4" secondAttribute="centerY" constant="1" id="P5w-5b-fym"/>
                                                 <constraint firstItem="PL8-Sp-qeD" firstAttribute="leading" secondItem="C8L-3O-KB4" secondAttribute="trailing" id="Qex-Ko-auO"/>
                                                 <constraint firstAttribute="centerY" secondItem="Dsi-dJ-tUi" secondAttribute="centerY" id="Vxb-1m-Azh"/>
                                                 <constraint firstAttribute="centerY" secondItem="C8L-3O-KB4" secondAttribute="centerY" id="lVG-xl-lW1"/>
@@ -670,7 +670,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-0k-JYQ" userLabel="descriptionLabel" customClass="WeshappLabel" customModule="Designables">
                                             <rect key="frame" x="20" y="260" width="560" height="112"/>
                                             <fontDescription key="fontDescription" name="TitilliumText25L-1wt" family="TitilliumText25L" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

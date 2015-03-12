@@ -326,12 +326,19 @@ class ChannelTableViewCell: UITableViewCell {
 //        }
     }
     
+    
+    
     override func setHighlighted(highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         
-//        if(highlighted) {
-//            backgroundColor = UIColor.whiteColor()
-//        }
+        if(highlighted) {
+    
+            backgroundColor = UIColor.whiteColor()
+        }
+    }
+    
+    override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        return true
     }
     
 }

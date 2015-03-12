@@ -15,32 +15,32 @@ import UIKit
 class DVColorLockView:UIView {
     
     
-        override func drawRect(rect: CGRect) {
-            let rectanglePath = UIBezierPath(rect: CGRectMake(frame.minX, frame.minY, frame.width, frame.height))
-            UIColor.whiteColor().setFill()
-            rectanglePath.fill()
-        }
+//        override func drawRect(rect: CGRect) {
+//            let rectanglePath = UIBezierPath(rect: CGRectMake(frame.minX, frame.minY, frame.width, frame.height))
+//            UIColor.whiteColor().setFill()
+//            rectanglePath.fill()
+//        }
 
     
-//     required init(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//       backgroundColor = UIColor.whiteColor()
-//    }
-//    var lockedBackgroundColor:UIColor {
-//        set {
-//            super.backgroundColor = newValue
-//        }
-//        get {
-//            return super.backgroundColor!
-//        }
-//    }
-//    
-//    override var backgroundColor:UIColor? {
-//        set {
-//        }
-//        get {
-//            return super.backgroundColor
-//        }
-//    }
+     required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        backgroundColor = UIColor.whiteColor()
+    }
+    var lockedBackgroundColor:UIColor {
+        set {
+            super.backgroundColor = newValue
+        }
+        get {
+            return super.backgroundColor!
+        }
+    }
+    
+    override var backgroundColor:UIColor? {
+        set {
+        }
+        get {
+            return super.backgroundColor
+        }
+    }
     
 }
