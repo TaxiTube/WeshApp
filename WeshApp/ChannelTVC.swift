@@ -60,21 +60,26 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         self.navBarItemsSetup()
         self.shyNavBarManager.scrollView = self.tableView
      
-
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                          selector: Selector("keyboardWillShow:"),
+                                                              name: UIKeyboardWillShowNotification,
+                                                            object: nil)
+       
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardDidHide:"),
+            name: UIKeyboardDidHideNotification,
+            object: nil)
+     
 
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
-                                             left: tableView.contentInset.left,
-                                           bottom: view.frame.width / 7.2,
-                                            right: tableView.contentInset.right)
+        
+//        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+//                                             left: tableView.contentInset.left,
+//                                           bottom: view.frame.width / 7.2,
+//                                            right: tableView.contentInset.right)
 
-//        let recognizer = UITapGestureRecognizer(target: self, action:Selector("handleTap:"))
-//        recognizer.delegate = self
-//        view.addGestureRecognizer(recognizer)
-        
-        
-        
+   
         let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
         coreDataStack = appDelegate.coreDataStack!
         let managedObjectContext = appDelegate.coreDataStack!.mainContext!
@@ -111,45 +116,22 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
         backgroundImageView.addSubview(blurView)
-        
-//        sizeHeaderToFit()
-
-
-
-    }
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        self.headerView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        var headerWidth = self.headerView.bounds.size.width
-        var temporaryWidthConstraints = NSLayoutConstraint.constraintsWithVisualFormat("[headerView(width)]",
-                                                                        options: nil,
-                                                                        metrics:["width": headerWidth],
-                                                                         views:["headerView": self.headerView])
-
-        self.headerView.addConstraints(temporaryWidthConstraints)
-        
-        
-        sizeHeaderToFit()
-        
-        self.headerView.removeConstraints(temporaryWidthConstraints)
-        
-        self.headerView.setTranslatesAutoresizingMaskIntoConstraints(true)
-
-
-    }
+   }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
     override func viewDidLayoutSubviews() {
         if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
             self.setUpInputAccessoryView()
         }
     }
     
-
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+    }
     
     //MARK: Navbar actions
     private func navBarItemsSetup(){
@@ -162,11 +144,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             style: .Done,
             target: self,
             action: "dismissPressed:")
-//        self.navigationController?.hidesBarsWhenKeyboardAppears = true
-//        self.navigationController?.hidesBarsOnSwipe = true
-//        self.navigationController?.barHideOnSwipeGestureRecognizer.addTarget(self, action: "")
-//        self.navigationController?.hidesBarsWhenVerticallyCompact = true
-//        navigationController?.navigationBar.hidden = false
+
         self.navigationItem.title = channel?.title
     }
     
@@ -251,7 +229,6 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         tableView.endUpdates()
         scrollWallTo(true, animated: true)
     }
-   
     
     //MARK: Scrolling stuff
     func scrollWallTo(bottom:Bool, animated: Bool){
@@ -272,15 +249,25 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             }
         }
      }
-    
-    
-
- 
-    
-    func sizeHeaderToFit(){
+    //MARK: Dynamic UITableViewHeader height calculation
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
         
+        self.headerView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        var headerWidth = self.headerView.bounds.size.width
+        var temporaryWidthConstraints = NSLayoutConstraint.constraintsWithVisualFormat("[headerView(width)]",
+            options: nil,
+            metrics:["width": headerWidth],
+            views:["headerView": self.headerView])
+        
+        self.headerView.addConstraints(temporaryWidthConstraints)
+        sizeHeaderToFit()
+        self.headerView.removeConstraints(temporaryWidthConstraints)
+        self.headerView.setTranslatesAutoresizingMaskIntoConstraints(true)
+    }
+    
+    private func sizeHeaderToFit(){
         var header = tableView.tableHeaderView!
-//      header.setTranslatesAutoresizingMaskIntoConstraints(false)
         header.setNeedsLayout()
         header.layoutIfNeeded()
         var height = header.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
@@ -300,6 +287,8 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
+    
+    
     //Used to setup and chang default constraints height
     func setUpInputAccessoryView(){
 
@@ -329,6 +318,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         
         inputAccessoryViewIsSetUp = true
     }
+    
     //WeshappTextView Deleget method, called if textview number of lines change
     func textViewDidChangeHeight(textView: WeshappTextView) {
         changeTextViewHeight(textView)
@@ -362,7 +352,26 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
      tableView.layoutIfNeeded()
     }
 
+    func keyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+
+        if keyboardSize.height > 200{
+           // scrollWallTo(true, animated: false)
+      //      navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+        
+    }
+    func keyboardDidHide(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+       
+    //    navigationController?.setNavigationBarHidden(false, animated: true)
+       
+        
+    }
     
- 
+   
     
 }

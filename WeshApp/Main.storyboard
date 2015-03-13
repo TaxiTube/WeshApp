@@ -255,68 +255,68 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MDR-oS-7Yl" id="6vJ-TP-HXy">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="z70-Xy-vkL" userLabel="rightView2" customClass="MsgIcon" customModule="Designables">
+                                        <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="z70-Xy-vkL" userLabel="rightView2" customClass="MsgIcon" customModule="Designables">
                                             <rect key="frame" x="231" y="0.0" width="373" height="373"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="z70-Xy-vkL" secondAttribute="height" multiplier="1:1" id="t4t-PR-usz"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="UEr-a1-zz9" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
                                             <rect key="frame" x="-142" y="0.0" width="373" height="373"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="UEr-a1-zz9" secondAttribute="height" multiplier="1:1" id="nI2-Dl-5z0"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" restorationIdentifier="elementContainerView2" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-tR-kUz" userLabel="elementContainerView2">
+                                        <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="elementContainerView2" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-tR-kUz" userLabel="elementContainerView2">
                                             <rect key="frame" x="0.0" y="0.0" width="604" height="373"/>
                                             <subviews>
                                                 <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="345" restorationIdentifier="leading-spacer-image2" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-pE-cfK" userLabel="leading-spacer-image2">
                                                     <rect key="frame" x="0.0" y="14" width="30" height="345"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label2" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-Tb-Q8F" userLabel="image-spacer-label2">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label2" translatesAutoresizingMaskIntoConstraints="NO" id="Vhl-Tb-Q8F" userLabel="image-spacer-label2">
                                                     <rect key="frame" x="121" y="-150" width="24" height="672"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="subTitle2" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-hb-HdO" userLabel="subTitle2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="subTitle2" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-hb-HdO" userLabel="subTitle2">
                                                     <rect key="frame" x="145" y="216" width="459" height="21"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" restorationIdentifier="title-spacer-subtitle2" translatesAutoresizingMaskIntoConstraints="NO" id="J0w-Jf-HFC" userLabel="title-spacer-subtitle2">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" restorationIdentifier="title-spacer-subtitle2" translatesAutoresizingMaskIntoConstraints="NO" id="J0w-Jf-HFC" userLabel="title-spacer-subtitle2">
                                                     <rect key="frame" x="145" y="186" width="43" height="30"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge2" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-LA-sWr" userLabel="14-spacer-rightEdge2">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge2" translatesAutoresizingMaskIntoConstraints="NO" id="FTK-LA-sWr" userLabel="14-spacer-rightEdge2">
                                                     <rect key="frame" x="515" y="172" width="41" height="29"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tV-ld-9BM">
-                                                    <rect key="frame" x="496" y="176" width="18.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tV-ld-9BM">
+                                                    <rect key="frame" x="496" y="180" width="18.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.65098039220000004" green="0.65490196079999996" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="e1O-Vo-bXk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="e1O-Vo-bXk">
                                                     <rect key="frame" x="30" y="141" width="91" height="90.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="e1O-Vo-bXk" secondAttribute="height" multiplier="1:1" id="kI0-a3-zn1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="12" placeholderIntrinsicHeight="81" restorationIdentifier="chevron-spacer-edge2" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-P6-RjS" userLabel="chevron-spacer-edge2">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="12" placeholderIntrinsicHeight="81" restorationIdentifier="chevron-spacer-edge2" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-P6-RjS" userLabel="chevron-spacer-edge2">
                                                     <rect key="frame" x="568" y="123" width="36" height="250"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="4ge-CC-wek" customClass="Chevron" customModule="Designables">
+                                                <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="4ge-CC-wek" customClass="Chevron" customModule="Designables">
                                                     <rect key="frame" x="556" y="160" width="12" height="52"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text2" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-Ba-wGq" userLabel="navigation-spacer-text2">
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text2" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-Ba-wGq" userLabel="navigation-spacer-text2">
                                                     <rect key="frame" x="0.0" y="0.0" width="604" height="123"/>
                                                     <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title2" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zon-lv-Pu1" userLabel="Title2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="Title2" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zon-lv-Pu1" userLabel="Title2">
                                                     <rect key="frame" x="145" y="123" width="367" height="63.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -557,7 +557,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Jk8-ZO-wdB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSE-dh-pSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="RjB-cQ-qPU" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dx5-Me-hN5" customClass="WeshappNavBar" customModule="Designables">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -567,7 +569,6 @@
                         <segue destination="rzE-5d-Xks" kind="relationship" relationship="rootViewController" id="CMK-Yd-Hfc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eSE-dh-pSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3269" y="660"/>
         </scene>
@@ -607,37 +608,37 @@
                                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="3ui-o8-QYn" userLabel="HeaderViewHolder" customClass="BorderView" customModule="Designables">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="392"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="166" translatesAutoresizingMaskIntoConstraints="NO" id="0KI-X2-6Xh" userLabel="TopView" customClass="BorderView" customModule="Designables">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="166" translatesAutoresizingMaskIntoConstraints="NO" id="0KI-X2-6Xh" userLabel="TopView" customClass="BorderView" customModule="Designables">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="317"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="113.5" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-3O-KB4">
-                                                    <rect key="frame" x="36" y="62" width="115" height="115"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="113.5" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-3O-KB4">
+                                                    <rect key="frame" x="36" y="100" width="115" height="115"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="C8L-3O-KB4" secondAttribute="height" multiplier="1:1" id="cmr-ny-hhU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="edge-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="Dsi-dJ-tUi" userLabel="Edge-spacer-Image">
-                                                    <rect key="frame" x="0.0" y="84" width="36.5" height="71"/>
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="edge-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="Dsi-dJ-tUi" userLabel="Edge-spacer-Image">
+                                                    <rect key="frame" x="0.0" y="122" width="36.5" height="71"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="71" id="YbO-7c-GNi"/>
                                                     </constraints>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="71" restorationIdentifier="image-spacer-labels" translatesAutoresizingMaskIntoConstraints="NO" id="PL8-Sp-qeD" userLabel="image-spacer-labels">
-                                                    <rect key="frame" x="151" y="85" width="48.5" height="71"/>
+                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="36" placeholderIntrinsicHeight="71" restorationIdentifier="image-spacer-labels" translatesAutoresizingMaskIntoConstraints="NO" id="PL8-Sp-qeD" userLabel="image-spacer-labels">
+                                                    <rect key="frame" x="151" y="123" width="48.5" height="71"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="71" id="Hqw-lt-f7G"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="20.5" restorationIdentifier="subTitle" text="Sarah Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJi-cd-rqL" userLabel="subTitle">
-                                                    <rect key="frame" x="199" y="110" width="400.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="20.5" restorationIdentifier="subTitle" text="Sarah Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJi-cd-rqL" userLabel="subTitle">
+                                                    <rect key="frame" x="199" y="148" width="400.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="29" restorationIdentifier="Title" text="#GreenPanda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-Ee-oYR" userLabel="Title">
-                                                    <rect key="frame" x="199" y="79" width="400.5" height="29"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="409" placeholderIntrinsicHeight="29" restorationIdentifier="Title" text="#GreenPanda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-Ee-oYR" userLabel="Title">
+                                                    <rect key="frame" x="199" y="117" width="400.5" height="29"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -668,8 +669,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-0k-JYQ" userLabel="descriptionLabel" customClass="WeshappLabel" customModule="Designables">
-                                            <rect key="frame" x="20" y="260" width="560" height="112"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" misplaced="YES" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-0k-JYQ" userLabel="descriptionLabel">
+                                            <rect key="frame" x="20" y="337" width="604" height="35"/>
                                             <fontDescription key="fontDescription" name="TitilliumText25L-1wt" family="TitilliumText25L" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -725,23 +726,23 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="J4t-MH-G8O" userLabel="image-spacer-label">
-                                                    <rect key="frame" x="127" y="0.0" width="18" height="287"/>
+                                                    <rect key="frame" x="186" y="0.0" width="17.5" height="287"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="Title" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="bNa-du-357" userLabel="Title">
-                                                    <rect key="frame" x="145" y="77" width="459" height="21.5"/>
+                                                    <rect key="frame" x="145" y="106" width="459" height="21.5"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="18"/>
                                                     <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="subTitle" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9H-j6-UM7" userLabel="subTitle">
-                                                    <rect key="frame" x="145" y="99" width="459" height="118.5"/>
+                                                    <rect key="frame" x="145" y="128" width="69" height="16"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="13"/>
                                                     <color key="textColor" red="0.6705882352941176" green="0.67450980392156867" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" restorationIdentifier="title-spacer-subtitle" translatesAutoresizingMaskIntoConstraints="NO" id="oJ9-D6-SkE" userLabel="title-spacer-subtitle">
-                                                    <rect key="frame" x="145" y="98" width="43" height="1.5"/>
+                                                    <rect key="frame" x="203" y="127" width="43" height="1.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="top-spacer-heart" translatesAutoresizingMaskIntoConstraints="NO" id="5cY-4w-29b" userLabel="top-spacer-heart">
@@ -752,7 +753,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="B3T-pF-aPf">
-                                                    <rect key="frame" x="36" y="53" width="91" height="90.5"/>
+                                                    <rect key="frame" x="36" y="53" width="150" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="B3T-pF-aPf" secondAttribute="height" multiplier="1:1" id="YCg-Gl-l48"/>
                                                     </constraints>
@@ -762,19 +763,19 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="daC-ng-wkh" customClass="HeartIcon" customModule="Designables">
-                                                    <rect key="frame" x="537.5" y="72.5" width="36" height="32"/>
+                                                    <rect key="frame" x="712" y="72" width="35.5" height="32"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="top-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="Z7x-y2-BxF" userLabel="top-spacer-image">
-                                                    <rect key="frame" x="36" y="0.0" width="91" height="53"/>
+                                                    <rect key="frame" x="36" y="0.0" width="150" height="53"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="date-spacer-desc" translatesAutoresizingMaskIntoConstraints="NO" id="Eio-on-4zl" userLabel="date-spacer-desc">
-                                                    <rect key="frame" x="145" y="217" width="429" height="30"/>
+                                                    <rect key="frame" x="145" y="217" width="604.5" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" misplaced="YES" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="huilhl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WB-Aj-uVR" userLabel="descriptionLabel" customClass="WallPostLabel" customModule="Designables">
-                                                    <rect key="frame" x="145" y="247" width="428.5" height="35"/>
+                                                    <rect key="frame" x="145" y="247" width="604" height="35"/>
                                                     <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="17"/>
                                                     <color key="textColor" red="0.65098039215686276" green="0.65490196078431373" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>

@@ -1,0 +1,6 @@
+framework module BLKFlexibleHeightBar {
+  umbrella header "Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -66,7 +66,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         NSNotificationCenter.defaultCenter().addObserver(     self,
                                                          selector: Selector("animateTextFieldWithKeyboard:"),
                                                              name: UIKeyboardWillShowNotification,
-                                                           object: nil);
+                                                           object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(     self,
                                                          selector: Selector("animateTextFieldWithKeyboard:"),
@@ -205,8 +205,6 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as Double
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as UInt
         
-        
-   
         var maxTextViewY = descTV.frame.origin.y + descTV.frame.height
         var minKeyboardY = keyboardSize.origin.y
         

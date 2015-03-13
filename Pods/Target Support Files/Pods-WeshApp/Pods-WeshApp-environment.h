@@ -6,9 +6,9 @@
 // project.
 
 
-// AMScrollingNavbar
-#define COCOAPODS_POD_AVAILABLE_AMScrollingNavbar
-#define COCOAPODS_VERSION_MAJOR_AMScrollingNavbar 1
-#define COCOAPODS_VERSION_MINOR_AMScrollingNavbar 3
-#define COCOAPODS_VERSION_PATCH_AMScrollingNavbar 2
+// BLKFlexibleHeightBar
+#define COCOAPODS_POD_AVAILABLE_BLKFlexibleHeightBar
+#define COCOAPODS_VERSION_MAJOR_BLKFlexibleHeightBar 1
+#define COCOAPODS_VERSION_MINOR_BLKFlexibleHeightBar 0
+#define COCOAPODS_VERSION_PATCH_BLKFlexibleHeightBar 0
 

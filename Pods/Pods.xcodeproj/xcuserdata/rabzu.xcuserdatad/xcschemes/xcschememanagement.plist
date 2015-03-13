@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-WeshApp-AMScrollingNavbar.xcscheme</key>
+		<key>Pods-WeshApp-BLKFlexibleHeightBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WeshAppTests-AMScrollingNavbar.xcscheme</key>
+		<key>Pods-WeshAppTests-BLKFlexibleHeightBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>07809439D837E9AA15389609</key>
+		<key>857767CC7AEEF8DFE4AC6940</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>41C174DAF683CDC91870835D</key>
+		<key>B816F8BA896C50D407F71EF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A501294B9C6FBBC2ACB89D20</key>
+		<key>CE648A207B8D1940C1057993</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1E6F5B234CBE589E0ABE85E</key>
+		<key>EFE9AA95AE9EC119CFA00488</key>
 		<dict>
 			<key>primary</key>
 			<true/>

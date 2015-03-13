@@ -1,0 +1,6 @@
+framework module Pods_WeshAppTests {
+  umbrella header "Pods-WeshAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

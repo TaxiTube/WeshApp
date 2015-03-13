@@ -21,6 +21,8 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     let screenSize  = UIScreen.mainScreen().bounds.size
   //  var cellsCurrentlyEditing: NSMutableSet?
     var openedCell: ChannelTableViewCell?
+    let proportion: CGFloat = 0.095
+
 
 //    @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var segControl: UISegmentedControl!
@@ -59,15 +61,29 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     
     
     }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
 
-
-
+ 
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
         self.shyNavBarManager.scrollView = self.tableView
 
+        var frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
+        
+            
+        
         tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         
         UIApplication.sharedApplication().statusBarHidden = false
         // Uncomment the following line to preserve selection between presentations
@@ -360,6 +376,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
             return nav
             
     }
+    
    
 
 }
