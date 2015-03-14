@@ -356,8 +356,10 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         let userInfo = notification.userInfo!
         var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
 
+
         if keyboardSize.height > 200{
-           // scrollWallTo(true, animated: false)
+         println("ff")
+        //    self.shyNavBarManager.contract(true)           // scrollWallTo(true, animated: false)
       //      navigationController?.setNavigationBarHidden(true, animated: true)
         }
         
@@ -365,8 +367,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     func keyboardDidHide(notification: NSNotification) {
         let userInfo = notification.userInfo!
         var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        
-       
+
+      //  self.shyNavBarManager.disable = false
+
     //    navigationController?.setNavigationBarHidden(false, animated: true)
        
         
