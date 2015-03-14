@@ -59,17 +59,17 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         self.setUpHeaderView()
         self.navBarItemsSetup()
         self.shyNavBarManager.scrollView = self.tableView
-     
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-                                                          selector: Selector("keyboardWillShow:"),
-                                                              name: UIKeyboardWillShowNotification,
-                                                            object: nil)
-       
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-            selector: Selector("keyboardDidHide:"),
-            name: UIKeyboardDidHideNotification,
-            object: nil)
-     
+//     
+//        NSNotificationCenter.defaultCenter().addObserver(     self,
+//                                                          selector: Selector("keyboardWillShow:"),
+//                                                              name: UIKeyboardWillShowNotification,
+//                                                            object: nil)
+//       
+//        NSNotificationCenter.defaultCenter().addObserver(     self,
+//            selector: Selector("keyboardDidHide:"),
+//            name: UIKeyboardDidHideNotification,
+//            object: nil)
+//     
 
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -117,6 +117,20 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
         backgroundImageView.addSubview(blurView)
    }
+   
+    override func viewWillAppear(animated: Bool) {
+//        self.setNeedsStatusBarAppearanceUpdate()
+//        tableView.setContentOffset(CGPointMake(0.0, -5), animated: true)
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+//        scrollWallTo(true, animated: true)
+      //  scrollWallTo(false, animated: true)
+        
+       // tableView.setContentOffset(CGPointMake(0.0, 0), animated: true)
+       // tableView.scrollRectToVisible(CGRect(x: 0, y: 100, width: 1, height: 1), animated: true)
+    }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
@@ -352,29 +366,29 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
      tableView.layoutIfNeeded()
     }
 
-    func keyboardWillShow(notification: NSNotification) {
-        let userInfo = notification.userInfo!
-        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-
-
-        if keyboardSize.height > 200{
-         println("ff")
-        //    self.shyNavBarManager.contract(true)           // scrollWallTo(true, animated: false)
-      //      navigationController?.setNavigationBarHidden(true, animated: true)
-        }
-        
-    }
-    func keyboardDidHide(notification: NSNotification) {
-        let userInfo = notification.userInfo!
-        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-
-      //  self.shyNavBarManager.disable = false
-
-    //    navigationController?.setNavigationBarHidden(false, animated: true)
-       
-        
-    }
-    
+//    func keyboardWillShow(notification: NSNotification) {
+//        let userInfo = notification.userInfo!
+//        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+//
+//
+//        if keyboardSize.height > 200{
+//         println("ff")
+//        //    self.shyNavBarManager.contract(true)           // scrollWallTo(true, animated: false)
+//      //      navigationController?.setNavigationBarHidden(true, animated: true)
+//        }
+//        
+//    }
+//    func keyboardDidHide(notification: NSNotification) {
+//        let userInfo = notification.userInfo!
+//        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+//
+//      //  self.shyNavBarManager.disable = false
+//
+//    //    navigationController?.setNavigationBarHidden(false, animated: true)
+//       
+//        
+//    }
+//    
    
     
 }
