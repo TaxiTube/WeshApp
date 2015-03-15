@@ -95,6 +95,7 @@
 		D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */; };
 		D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
 		D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
+		D8CE96511AB5F4200015A399 /* FlexibleNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */; };
 		D8D9342D1A288DB00055079E /* NSManageObjectSerializationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */; };
 		D8DA2A351A693F410098C5E6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
 		D8DA2A361A693F4F0098C5E6 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E291A690CCD00FBFED1 /* Badge.swift */; };
@@ -241,6 +242,7 @@
 		D8C6422D1A47594A004A604A /* ChannelTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTVC.swift; sourceTree = "<group>"; };
 		D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostTableViewCell.swift; sourceTree = "<group>"; };
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
+		D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleNavBar.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
 		D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButtonSK.swift; sourceTree = "<group>"; };
 		D8DC68501A337CC800AAF16D /* WeshAppLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeshAppLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -505,6 +507,7 @@
 				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
+				D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				D85A86571A17AFE000398153 /* PostMngr.swift in Sources */,
 				D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */,
 				D82428C71A9A088300CA55D2 /* ChannelHeaderVC.swift in Sources */,
+				D8CE96511AB5F4200015A399 /* FlexibleNavBar.swift in Sources */,
 				B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */,
 				B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */,
 				D8C6422E1A47594A004A604A /* ChannelTVC.swift in Sources */,
