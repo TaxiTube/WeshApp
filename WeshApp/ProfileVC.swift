@@ -18,7 +18,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UIApplication.sharedApplication().statusBarHidden = false
+
         self.setNeedsStatusBarAppearanceUpdate()
 
     

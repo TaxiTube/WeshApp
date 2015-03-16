@@ -42,7 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
           //sessionMngr = SessionMngr(coreDataStack: cds)
         
-        
+            UILabel.appearance().substituteFontName =   "TitilliumText25L-250wt"
+
             
         
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent,
@@ -55,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
  
-    
+    // TODO: SHOULD be deleted
     class func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
@@ -91,4 +92,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
    
 }
-
+ extension UILabel {
+    
+    var substituteFontName : String {
+        get { return self.font.fontName }
+        set { self.font = UIFont(name: newValue, size: self.font.pointSize) }
+    }
+    
+ }

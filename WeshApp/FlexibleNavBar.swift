@@ -25,17 +25,22 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
     private func configureBar(){
         
         self.maximumBarHeight = 200.0
-        self.minimumBarHeight = 65.0
+        self.minimumBarHeight = 20.0
 
-        self.backgroundColor = UIColor(red: 255, green: 89, blue: 5, alpha: 1)
+        
+        self.backgroundColor = UIColor(red: 0x51/255, green: 0xc1/255, blue: 0xd2/255, alpha: 1.0)
        
         
         var nameLabel = UILabel()
         nameLabel.font = UIFont.systemFontOfSize(22.0)
         nameLabel.textColor = UIColor.whiteColor()
+        nameLabel.sizeToFit()
         nameLabel.text = "Jurgena"
         
+        
+        
         var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
+//                initialNameLabelLayoutAttributes.size = nameLabel.frame.size
         initialNameLabelLayoutAttributes.size = nameLabel.sizeThatFits(CGSizeZero)
         initialNameLabelLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5, self.maximumBarHeight - 50.0)
         nameLabel.addLayoutAttributes(initialNameLabelLayoutAttributes, forProgress: 0.0)
@@ -48,6 +53,8 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         
         var finalNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes(existingLayoutAttributes: midwayNameLabelLayoutAttributes)
         finalNameLabelLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5, self.minimumBarHeight - 25.0)
+        finalNameLabelLayoutAttributes.transform = CGAffineTransformMakeScale(0.5, 0.5)
+        finalNameLabelLayoutAttributes.alpha = 0.0
         nameLabel.addLayoutAttributes(finalNameLabelLayoutAttributes, forProgress: 1.0)
         
         self.addSubview(nameLabel)
@@ -58,8 +65,8 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         profileImageView.contentMode = UIViewContentMode.ScaleAspectFill
         profileImageView.clipsToBounds = true
         profileImageView.layer.cornerRadius = 35.0
-        profileImageView.layer.borderWidth = 2.0
-        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+//        profileImageView.layer.borderWidth = 0.0
+//        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         
         var initialProfileImageViewLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
         initialProfileImageViewLayoutAttributes.size = CGSizeMake(70.0, 70.0)
