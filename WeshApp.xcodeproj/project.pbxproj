@@ -70,6 +70,7 @@
 		D885E8941A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */; };
 		D885E8961A8F7C1F00BD8E48 /* MsgIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */; };
 		D885E8971A9005ED00BD8E48 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */; };
+		D88BC8151AB703470034031C /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88BC8141AB703470034031C /* ProfileTVC.swift */; };
 		D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A21A714436008D8D75 /* CrossBarItem.swift */; };
 		D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A41A71485F008D8D75 /* CrossIconSK.swift */; };
 		D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89497841A92AB8C00A491F6 /* BorderView.swift */; };
@@ -217,6 +218,7 @@
 		D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappFriendRequestSK.swift; sourceTree = "<group>"; };
 		D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappMsgIconSK.swift; sourceTree = "<group>"; };
 		D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgIcon.swift; sourceTree = "<group>"; };
+		D88BC8141AB703470034031C /* ProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		D89144A21A714436008D8D75 /* CrossBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossBarItem.swift; sourceTree = "<group>"; };
 		D89144A41A71485F008D8D75 /* CrossIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossIconSK.swift; sourceTree = "<group>"; };
 		D89497841A92AB8C00A491F6 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
 				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
+				D88BC8141AB703470034031C /* ProfileTVC.swift */,
 				D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */,
 			);
 			name = Controller;
@@ -907,6 +910,7 @@
 				D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */,
 				D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */,
 				D89725A11AAA019A003A1A44 /* TLYShyNavBarManager.m in Sources */,
+				D88BC8151AB703470034031C /* ProfileTVC.swift in Sources */,
 				B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */,
 				D89725A71AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m in Sources */,
 				D89725A01AAA019A003A1A44 /* TLYDelegateProxy.m in Sources */,

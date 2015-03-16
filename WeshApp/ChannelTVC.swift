@@ -48,7 +48,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             //postsMngr!.save(coreDataStack!.mainContext!)
             sessionMngr!.broadcastNewPost(post)
             changeTextViewHeight(textView)
-            textView.resignFirstResponder()
+            //textView.resignFirstResponder()
 
         }
     }
@@ -59,17 +59,17 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         self.setUpHeaderView()
         self.navBarItemsSetup()
         self.shyNavBarManager.scrollView = self.tableView
-//     
-//        NSNotificationCenter.defaultCenter().addObserver(     self,
-//                                                          selector: Selector("keyboardWillShow:"),
-//                                                              name: UIKeyboardWillShowNotification,
-//                                                            object: nil)
-//       
-//        NSNotificationCenter.defaultCenter().addObserver(     self,
-//            selector: Selector("keyboardDidHide:"),
-//            name: UIKeyboardDidHideNotification,
-//            object: nil)
-//     
+     
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                          selector: Selector("keyboardWillShow:"),
+                                                              name: UIKeyboardWillShowNotification,
+                                                            object: nil)
+       
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardDidHide:"),
+            name: UIKeyboardDidHideNotification,
+            object: nil)
+     
 
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -366,29 +366,33 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
      tableView.layoutIfNeeded()
     }
 
-//    func keyboardWillShow(notification: NSNotification) {
-//        let userInfo = notification.userInfo!
-//        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-//
-//
-//        if keyboardSize.height > 200{
-//         println("ff")
-//        //    self.shyNavBarManager.contract(true)           // scrollWallTo(true, animated: false)
-//      //      navigationController?.setNavigationBarHidden(true, animated: true)
-//        }
-//        
-//    }
-//    func keyboardDidHide(notification: NSNotification) {
-//        let userInfo = notification.userInfo!
-//        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-//
-//      //  self.shyNavBarManager.disable = false
-//
-//    //    navigationController?.setNavigationBarHidden(false, animated: true)
-//       
-//        
-//    }
-//    
+    func keyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+
+
+        if keyboardSize.height > 200{
+            
+            tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+                left: tableView.contentInset.left,
+                bottom: keyboardSize.height,
+                right: tableView.contentInset.right)
+            
+            scrollWallTo(true, animated: true)
+       
+        }
+        
+    }
+    func keyboardDidHide(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+
+        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+            left: tableView.contentInset.left,
+            bottom: view.frame.width / 7.2,
+            right: tableView.contentInset.right)
+    }
+    
    
     
 }

@@ -25,13 +25,16 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         // Setup the bar
         self.myCustomBar = FlexibleNavBar(frame: CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 100.0))
-        var behaviorDefiner = SquareCashStyleBehaviorDefiner()
+        
+        var behaviorDefiner = SquareCashStyleBehaviorDefinerForTableView()
         behaviorDefiner.addSnappingPositionProgress(0.0, forProgressRangeStart: 0.0, end: 0.5)
         behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
         behaviorDefiner.snappingEnabled = true
         behaviorDefiner.elasticMaximumHeightAtTop = true
+       
         self.myCustomBar?.behaviorDefiner = behaviorDefiner
-
+        //self.tableView?.delegate = self.myCustomBar!.behaviorDefiner as? UITableViewDelegate
+        
         self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
         self.tableView.delegate =  self.delegateSplitter as? UITableViewDelegate
     

@@ -24,9 +24,12 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
     
     private func configureBar(){
         
-        self.maximumBarHeight = 200.0
+        self.maximumBarHeight = 150.0
         self.minimumBarHeight = 65.0
+
         self.backgroundColor = UIColor(red: 255, green: 89, blue: 5, alpha: 1)
+       
+        
         var nameLabel = UILabel()
         nameLabel.font = UIFont.systemFontOfSize(22.0)
         nameLabel.textColor = UIColor.whiteColor()
