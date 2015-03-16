@@ -8,6 +8,8 @@
 #import "SquareCashStyleBehaviorDefiner.h"
 #import "UIView+BLKFlexibleHeightBarSubview.h"
 #import "SquareCashStyleBehaviorDefinerForTableView.h"
+#import "BLKDelegateSplitterForTableView.h"
+
 
 
 FOUNDATION_EXPORT double BLKFlexibleHeightBarVersionNumber;

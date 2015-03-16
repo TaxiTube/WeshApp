@@ -34,8 +34,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
        
         self.myCustomBar?.behaviorDefiner = behaviorDefiner
         //self.tableView?.delegate = self.myCustomBar!.behaviorDefiner as? UITableViewDelegate
-        
-        self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
+         
+        self.delegateSplitter = BLKDelegateSplitterForTableView(firstDelegate: behaviorDefiner, secondDelegate: self)
         self.tableView.delegate =  self.delegateSplitter as? UITableViewDelegate
     
         self.view.addSubview(self.myCustomBar!)

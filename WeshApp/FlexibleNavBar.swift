@@ -24,7 +24,7 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
     
     private func configureBar(){
         
-        self.maximumBarHeight = 150.0
+        self.maximumBarHeight = 200.0
         self.minimumBarHeight = 65.0
 
         self.backgroundColor = UIColor(red: 255, green: 89, blue: 5, alpha: 1)
@@ -39,6 +39,8 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         initialNameLabelLayoutAttributes.size = nameLabel.sizeThatFits(CGSizeZero)
         initialNameLabelLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5, self.maximumBarHeight - 50.0)
         nameLabel.addLayoutAttributes(initialNameLabelLayoutAttributes, forProgress: 0.0)
+        
+        
         
         var midwayNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes(existingLayoutAttributes: initialNameLabelLayoutAttributes)
         midwayNameLabelLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5, (self.maximumBarHeight - self.minimumBarHeight) * 0.4 + self.minimumBarHeight - 50.0)
@@ -70,7 +72,7 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         
         var finalProfileImageViewLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes(existingLayoutAttributes: midwayProfileImageViewLayoutAttributes)
         
-        finalProfileImageViewLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5, (self.maximumBarHeight - self.minimumBarHeight) * 0.64 + self.minimumBarHeight-110.0)
+        finalProfileImageViewLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5, (self.maximumBarHeight - self.minimumBarHeight) * 0.64 + self.minimumBarHeight - 110.0)
         finalProfileImageViewLayoutAttributes.transform = CGAffineTransformMakeScale(0.5, 0.5)
         finalProfileImageViewLayoutAttributes.alpha = 0.0
         profileImageView.addLayoutAttributes(finalProfileImageViewLayoutAttributes, forProgress: 0.5)

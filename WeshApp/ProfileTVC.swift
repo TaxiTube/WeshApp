@@ -30,12 +30,12 @@ class ProfileTVC: UITableViewController {
         behaviorDefiner.elasticMaximumHeightAtTop = true
         
         self.myCustomBar?.behaviorDefiner = behaviorDefiner
-        self.tableView?.delegate = self.myCustomBar!.behaviorDefiner as? UITableViewDelegate
         
         self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
-        //self.tableView.delegate =  self.delegateSplitter as? UITableViewDelegate
+        self.tableView.delegate =  self.delegateSplitter as? UITableViewDelegate
         
         self.view.addSubview(self.myCustomBar!)
+        
         // Setup the table view
         //self.tableView(registerClass:UITableViewCell.classForCoder, forCellReuseIdentifier:"cell")
         self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight, 0.0, 0.0, 0.0)

@@ -38,6 +38,8 @@
 		C4EE350FCB8FF8C56EEFC6CF /* BLKDelegateSplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D2D89B65AB6E08368611E8 /* BLKDelegateSplitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C84A3ED64165678857632E9F /* BLKDelegateSplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CF891BBEB4D1871827C52 /* BLKDelegateSplitter.m */; };
 		CDD838C2479788C91346AE91 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7942805A075114CD1DF0543 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D88BC8171AB70CC30034031C /* BLKDelegateSplitterForTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D88BC8161AB70CC30034031C /* BLKDelegateSplitterForTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D88BC81A1AB70D020034031C /* BLKDelegateSplitterForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D88BC8181AB70CFF0034031C /* BLKDelegateSplitterForTableView.m */; };
 		D8D0FA051AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D0FA041AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m */; };
 		D8D0FA071AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D0FA061AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA10FEE50C61E9E98A34B399 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871BA39B88C6AFCCCB534499 /* Foundation.framework */; };
@@ -117,6 +119,8 @@
 		C35C58A41CB00D837A412017 /* Pods-WeshAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshAppTests-dummy.m"; sourceTree = "<group>"; };
 		CFE5F13593D24A53F0F56669 /* Pods_WeshAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D346C41A9299933AD9C7F4EF /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h"; sourceTree = "<group>"; };
+		D88BC8161AB70CC30034031C /* BLKDelegateSplitterForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLKDelegateSplitterForTableView.h; sourceTree = "<group>"; };
+		D88BC8181AB70CFF0034031C /* BLKDelegateSplitterForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLKDelegateSplitterForTableView.m; sourceTree = "<group>"; };
 		D8D0FA041AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareCashStyleBehaviorDefinerForTableView.m; sourceTree = "<group>"; };
 		D8D0FA061AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCashStyleBehaviorDefinerForTableView.h; sourceTree = "<group>"; };
 		DD0182B1BA67093F2D13912B /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h"; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				D8D0FA061AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h */,
 				D8D0FA041AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m */,
 				04FC19EED844A84ACF0F8151 /* Support Files */,
+				D88BC8161AB70CC30034031C /* BLKDelegateSplitterForTableView.h */,
+				D88BC8181AB70CFF0034031C /* BLKDelegateSplitterForTableView.m */,
 			);
 			path = BLKFlexibleHeightBar;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				738E8DE5DC03918F3F6952F4 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */,
 				4FE5D47C8870505BA8BF9FBC /* FacebookStyleBarBehaviorDefiner.h in Headers */,
 				D8D0FA071AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h in Headers */,
+				D88BC8171AB70CC30034031C /* BLKDelegateSplitterForTableView.h in Headers */,
 				EF80E7E5B54F25EB7CD0026F /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h in Headers */,
 				838142CBFE34BB476414EC0C /* SquareCashStyleBehaviorDefiner.h in Headers */,
 				52A41030C00E23214C114A1E /* UIView+BLKFlexibleHeightBarSubview.h in Headers */,
@@ -461,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84A3ED64165678857632E9F /* BLKDelegateSplitter.m in Sources */,
+				D88BC81A1AB70D020034031C /* BLKDelegateSplitterForTableView.m in Sources */,
 				742CC1B07EA21E8C7B6631F8 /* BLKFlexibleHeightBar.m in Sources */,
 				334B79B8D1BA398BB9A45EAB /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */,
 				400FB51ABCC3B5C2EF27013E /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */,
