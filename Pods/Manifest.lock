@@ -1,10 +1,13 @@
 PODS:
   - BLKFlexibleHeightBar (1.0.0)
+  - RNFrostedSidebar (0.2.0)
 
 DEPENDENCIES:
   - BLKFlexibleHeightBar (~> 1.0)
+  - RNFrostedSidebar (~> 0.2)
 
 SPEC CHECKSUMS:
   BLKFlexibleHeightBar: 57c72b4e7e24497ca8c44d9aa94e44ed748f135b
+  RNFrostedSidebar: f1d95d9b2627f13cc10e75d36e751a623eec079c
 
 COCOAPODS: 0.36.0.rc.1

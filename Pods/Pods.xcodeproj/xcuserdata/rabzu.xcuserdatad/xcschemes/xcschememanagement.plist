@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-WeshApp-RNFrostedSidebar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WeshApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-WeshAppTests-BLKFlexibleHeightBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-WeshAppTests-RNFrostedSidebar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>857767CC7AEEF8DFE4AC6940</key>
+		<key>2C91D024B3FB0029195D0DE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B816F8BA896C50D407F71EF0</key>
+		<key>2D37D941E40F6DF7C9F6D2F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE648A207B8D1940C1057993</key>
+		<key>95F6AD073411C09D2E3B9E25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EFE9AA95AE9EC119CFA00488</key>
+		<key>BE46F9D47FBF24C15418BF64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA00A108DE8B315D31B6392A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB5C925C0DDB7AD4E8438DEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

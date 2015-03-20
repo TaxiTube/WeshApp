@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1AS-H4-MMc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b6R-pb-CYx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -118,13 +118,13 @@
         <!--ProfileVC-->
         <scene sceneID="zjZ-c1-aQh">
             <objects>
-                <viewController id="1AS-H4-MMc" customClass="ProfileVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="profileVC" storyboardIdentifier="profileVC" modalTransitionStyle="crossDissolve" id="1AS-H4-MMc" customClass="ProfileVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XJj-eq-Z2D"/>
                         <viewControllerLayoutGuide type="bottom" id="mvq-xl-gEM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rad-ft-5xL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ll6-cw-shh">
@@ -160,14 +160,16 @@
                             <constraint firstItem="ll6-cw-shh" firstAttribute="top" secondItem="Rad-ft-5xL" secondAttribute="top" id="iRJ-f6-urw"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="l94-b5-G1s"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="ll6-cw-shh" id="0UA-xl-c94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29D-mg-xhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4040" y="-57"/>
+            <point key="canvasLocation" x="4840" y="61"/>
         </scene>
         <!--NearbyTVC-->
         <scene sceneID="e3h-X4-9HJ">
@@ -301,7 +303,7 @@
                                     <outlet property="subTitle" destination="Qn2-NO-5Mc" id="aoe-M8-D1V"/>
                                     <outlet property="title" destination="bmf-DG-atO" id="pZV-G0-KSM"/>
                                     <outlet property="totem" destination="ay7-lS-0df" id="GRJ-gP-rUt"/>
-                                    <segue destination="1uD-Up-Z2o" kind="presentation" identifier="toChannelTVC" trigger="accessoryAction" modalPresentationStyle="overCurrentContext" id="30J-J6-CcC"/>
+                                    <segue destination="hVp-4W-3xL" kind="show" identifier="toChannelTVC" id="16p-fC-zc6"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileCell" rowHeight="373" id="MDR-oS-7Yl" customClass="ChannelTableViewCell" customModule="WeshApp">
@@ -453,7 +455,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="H8w-3K-E6V">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="hamburgerIcon" id="gO3-Ix-Pem"/>
+                        <barButtonItem key="leftBarButtonItem" image="hamburgerIcon" id="gO3-Ix-Pem">
+                            <connections>
+                                <action selector="showMenu:" destination="rzE-5d-Xks" id="w4b-AT-N7V"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" id="nA4-eu-Wvw" customClass="WeshappSegControl" customModule="Designables">
                             <rect key="frame" x="197.5" y="4.5" width="205" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -473,6 +479,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="segControl" destination="nA4-eu-Wvw" id="2kJ-qA-NOD"/>
+                        <segue destination="1AS-H4-MMc" kind="custom" identifier="nearbyToProfile" id="Eks-by-RdM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyj-mL-zA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,35 +615,11 @@
             </objects>
             <point key="canvasLocation" x="4036" y="1458"/>
         </scene>
-        <!--ProfileTVC-->
-        <scene sceneID="lsM-ZZ-XhJ">
-            <objects>
-                <tableViewController id="kUb-uj-v7u" customClass="ProfileTVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lfB-F8-sUT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="eNu-Tj-GZN">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eNu-Tj-GZN" id="Pgw-m6-Gzf">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="kUb-uj-v7u" id="wvg-mc-lOn"/>
-                            <outlet property="delegate" destination="kUb-uj-v7u" id="vk5-Mc-VCJ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="znp-lU-02C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="-83"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jk8-ZO-wdB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSE-dh-pSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="ySP-QG-tna" customClass="NavigationControllerDelegate" customModule="WeshApp" customModuleProvider="target"/>
                 <navigationController id="RjB-cQ-qPU" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -645,30 +628,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
+                        <outlet property="delegate" destination="ySP-QG-tna" id="iYf-gS-Krq"/>
                         <segue destination="rzE-5d-Xks" kind="relationship" relationship="rootViewController" id="CMK-Yd-Hfc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eSE-dh-pSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3269" y="660"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Tvx-Ll-v9Q">
-            <objects>
-                <navigationController id="1uD-Up-Z2o" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lty-h8-an6" customClass="WeshappNavBar" customModule="Designables">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="hVp-4W-3xL" kind="relationship" relationship="rootViewController" id="Z4a-hT-XMv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2cA-RP-tVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4853" y="660"/>
         </scene>
         <!--ChannelTVC-->
         <scene sceneID="GPv-2b-6WJ">
@@ -1065,7 +1030,25 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="5570" y="660"/>
+            <point key="canvasLocation" x="4822" y="815"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ewi-79-Nzl">
+            <objects>
+                <viewController id="qdH-Vj-gvI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oaY-zc-l1s"/>
+                        <viewControllerLayoutGuide type="bottom" id="9w9-hj-4Vr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3jb-9Q-BKl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bx-Iz-pDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4822" y="1493"/>
         </scene>
         <!--Channel HeaderVC-->
         <scene sceneID="wrk-sy-LcI">

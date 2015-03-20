@@ -4,7 +4,7 @@
 
 
 #import <BLKFlexibleHeightBar/BLKFlexibleHeightBar.h>
-
+#import <RNFrostedSidebar/RNFrostedSidebar.h>
 //#import "SquareCashStyleBehaviorDefiner.h"
 //#import "BLKFlexibleHeightBarBehaviorDefiner.h"
 //#import "BLKFlexibleHeightBarSubviewLayoutAttributes.h"

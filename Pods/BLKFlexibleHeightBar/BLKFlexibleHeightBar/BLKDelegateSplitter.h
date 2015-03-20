@@ -26,7 +26,7 @@
  In the BLKFlexibleHeightBar library, this pattern becomes necessary when a UITableView sets its delegate to an instance of `BLKFlexibleHeightBarBehaviorDefiner` but also wants another class to act as the UITableViewDelegate.
  */
 
-@interface BLKDelegateSplitter : NSObject <NSObject>
+@interface BLKDelegateSplitter : NSObject <UITableViewDelegate>
 
 /**
  The first delegate.

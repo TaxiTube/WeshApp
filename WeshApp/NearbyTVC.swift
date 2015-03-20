@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import Designables
+import RNFrostedSidebar
 
-class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
+class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate,RNFrostedSidebarDelegate {
 
     var badgeFetchedRC: NSFetchedResultsController!
     var channelFetechedRC: NSFetchedResultsController!
@@ -22,9 +23,60 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
   //  var cellsCurrentlyEditing: NSMutableSet?
     var openedCell: ChannelTableViewCell?
     let proportion: CGFloat = 0.095
+    var callout: RNFrostedSidebar?
+    let transitionManager = TransitionManager()
+
+   
+    @IBAction func showMenu(sender: UIBarButtonItem) {
+           callout!.show()
+    }
+    
+    private func setUpMenu(){
+        
+        let images = [ UIImage(named: "Notifications")!,
+                       UIImage(named: "NearBy")!,
+                       UIImage(named: "Chat")!,
+                       UIImage(named: "Profile")!,
+                       UIImage(named: "Settings")!]
+        
+       let colors = [UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()]
+       callout = RNFrostedSidebar(images: images , selectedIndices:  NSIndexSet(index: 1), borderColors: colors)
+       callout?.tintColor = UIColor(red: 0x01/255, green: 0x51/255, blue: 0x5d/255, alpha: 0.5)
+       callout!.delegate = self
+     
+    }
+    
+     func sidebar(sidebar: RNFrostedSidebar!, didTapItemAtIndex index: UInt) {
+        switch index{
+            //notification centre
+            case 0:
+                sidebar.dismissAnimated(true)
+            //nearby
+            case 1:
+                sidebar.dismissAnimated(true)
+            //chat
+            case 2:
+                sidebar.dismissAnimated(true)
+            //profile
+            case 3:
+                sidebar.dismissAnimated(true)
+                
+//                dispatch_async(dispatch_get_main_queue()){
+//                    self.performSegueWithIdentifier("nearbyToProfile", sender: self)
+//                }
+                
+                var profileVC = self.storyboard?.instantiateViewControllerWithIdentifier("profileVC") as UIViewController
+//                self.performSegueWithIdentifier("nearbyToProfile", sender: self)
+
+                self.navigationController?.showViewController(profileVC, sender: self)
+            //settings
+            case 4:
+                sidebar.dismissAnimated(true)
+            default: break
+        }
+    }
 
 
-//    @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var segControl: UISegmentedControl!
     
     //MARK: Segmentation Control
@@ -56,28 +108,23 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
                 completion: { (v:Bool) in ()})
        
         default:
-            break;
+            break
         }
     
     
-    }
-    
-    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
     }
 
  
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.shyNavBarManager.scrollView = self.tableView
+        self.navigationController!.navigationBarHidden = false
 
-        var frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
+        setUpMenu()
+       // self.shyNavBarManager.scrollView = self.tableView
+
+
+//        var frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
         
             
         
@@ -91,7 +138,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
 
         let font = UIFont(name: "TitilliumText25L-250wt", size: 5.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: font ]
+                                                  NSFontAttributeName: font ]
         
 //        var backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
 //        backButton.setTitleTextAttributes(titleDict, forState: UIControlState.Normal)
@@ -131,11 +178,15 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         
        // cellsCurrentlyEditing = NSMutableSet()
     }
-    
-    override func viewDidAppear(animated: Bool) {
-//        self.navigationController!.navigationBarHidden = false
-
+    override func viewWillAppear(animated: Bool) {
+        
+        self.navigationController!.navigationBarHidden = false
     }
+//    override func viewDidAppear(animated: Bool) {
+//
+//                self.navigationController!.navigationBarHidden = false
+//
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -211,12 +262,12 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
         return screenSize.width / 4.11
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        dispatch_async(dispatch_get_main_queue()){
-            self.performSegueWithIdentifier("toChannelTVC", sender: self)
-        }
-    }
-    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+////        dispatch_async(dispatch_get_main_queue()){
+////            self.performSegueWithIdentifier("toChannelTVC", sender: self)
+////        }
+//    }
+//    
     
     override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
@@ -240,16 +291,28 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "toChannelTVC" {
 //                self.navigationController!.navigationBarHidden = true
-                let navController = segue.destinationViewController as UINavigationController
-                var channelVC = navController.topViewController as ChannelTVC
+                let channelVC = segue.destinationViewController as ChannelTVC
+                channelVC.transitioningDelegate = self.transitionManager
+//                var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 // If as Channel else as Profile
+                
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
                 channelVC.channel = channel
                 channelVC.coreDataStack = coreDataStack
                 channelVC.sessionMngr = sessionMngr
                 tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+                
+
+        } else if segue.identifier == "nearbyToProfile"{
+                
+                var profileVC = segue.destinationViewController as ProfileVC
+//                var profileVC = navController.topViewController as ProfileVC
+
+                profileVC.transitioningDelegate = self.transitionManager
+
         }
+        
     }
     
     //MARK: NSFetchedResultsController Delegate methods

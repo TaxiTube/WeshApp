@@ -58,7 +58,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
         self.setUpHeaderView()
         self.navBarItemsSetup()
-        self.shyNavBarManager.scrollView = self.tableView
+//        self.shyNavBarManager.scrollView = self.tableView
      
         NSNotificationCenter.defaultCenter().addObserver(     self,
                                                           selector: Selector("keyboardWillShow:"),
@@ -116,6 +116,7 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
         backgroundImageView.addSubview(blurView)
+        
    }
    
     override func viewWillAppear(animated: Bool) {

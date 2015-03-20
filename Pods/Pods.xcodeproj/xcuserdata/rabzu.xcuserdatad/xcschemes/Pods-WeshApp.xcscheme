@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE648A207B8D1940C1057993"
+               BlueprintIdentifier = "2D37D941E40F6DF7C9F6D2F6"
                BuildableName = "Pods_WeshApp.framework"
                BlueprintName = "Pods-WeshApp"
                ReferencedContainer = "container:Pods.xcodeproj">

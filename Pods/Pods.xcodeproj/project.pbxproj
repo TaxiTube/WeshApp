@@ -7,370 +7,515 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05C6E922E267DF0B5099334D /* SquareCashStyleBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A00A40C6514D0BA76D9A72 /* SquareCashStyleBehaviorDefiner.m */; };
-		06A86505BB2B016CFBB20B36 /* Pods-WeshApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A6A74264ABF6B3A4366422E /* Pods-WeshApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0BBE0BFE596AD8CAD7471E14 /* FacebookStyleBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BED30803CB8FB3C2A499CCA /* FacebookStyleBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0BE6B11DE89640729702B836 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAE477CB190CDD36D71B593 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */; };
-		0D85E8D67651145ED94FB343 /* Pods-WeshAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25BC480AC843697902965298 /* Pods-WeshAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		14BC41155C119D5322BFE13C /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 920A3CE3A3587502C5450530 /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m */; };
-		177E30606AF4DEDA9F447D68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871BA39B88C6AFCCCB534499 /* Foundation.framework */; };
-		180227876DC65DFEA596C1E4 /* UIView+BLKFlexibleHeightBarSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C0F160F9E2FB6C6015CB4E /* UIView+BLKFlexibleHeightBarSubview.m */; };
-		334B79B8D1BA398BB9A45EAB /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = B637573632B9ADBE9363983D /* BLKFlexibleHeightBarBehaviorDefiner.m */; };
-		3B4F218441B5CAE141A947E4 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B94F142284F542A6EB551DE /* BLKFlexibleHeightBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		400FB51ABCC3B5C2EF27013E /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAE477CB190CDD36D71B593 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */; };
-		4FE5D47C8870505BA8BF9FBC /* FacebookStyleBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BED30803CB8FB3C2A499CCA /* FacebookStyleBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51A229A5D3A843BF1C03AED3 /* BLKFlexibleHeightBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 21CC0DEEC3930D224D84FD67 /* BLKFlexibleHeightBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		52A41030C00E23214C114A1E /* UIView+BLKFlexibleHeightBarSubview.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DE32089382A9B0A75DE1429 /* UIView+BLKFlexibleHeightBarSubview.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63F3627843935672CC6FC7A5 /* BLKFlexibleHeightBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 21CC0DEEC3930D224D84FD67 /* BLKFlexibleHeightBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E82484894256A47EA6498C2 /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DD0182B1BA67093F2D13912B /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		726B5CF1312AE588E3702F71 /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 337F0D60587C460C7705B51C /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m */; };
-		738E8DE5DC03918F3F6952F4 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7942805A075114CD1DF0543 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		742CC1B07EA21E8C7B6631F8 /* BLKFlexibleHeightBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AE63167C1DA9FDBA5A9D5 /* BLKFlexibleHeightBar.m */; };
-		7536D88E9F1573162FC41B39 /* UIView+BLKFlexibleHeightBarSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C0F160F9E2FB6C6015CB4E /* UIView+BLKFlexibleHeightBarSubview.m */; };
-		7878EEEA79E5FF869EF98340 /* SquareCashStyleBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A00A40C6514D0BA76D9A72 /* SquareCashStyleBehaviorDefiner.m */; };
-		7DD3231D1FB4DD88DC244A04 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B94F142284F542A6EB551DE /* BLKFlexibleHeightBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		838142CBFE34BB476414EC0C /* SquareCashStyleBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD4DE2853EC1D8FB3404B11 /* SquareCashStyleBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		843250759BB84387CB9DB068 /* SquareCashStyleBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD4DE2853EC1D8FB3404B11 /* SquareCashStyleBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89DEE9CDCD5582D0119E3EB8 /* BLKDelegateSplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D2D89B65AB6E08368611E8 /* BLKDelegateSplitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99498AE02F56CEE598A8EB08 /* UIView+BLKFlexibleHeightBarSubview.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DE32089382A9B0A75DE1429 /* UIView+BLKFlexibleHeightBarSubview.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F28A86BC350F4E69FDCAE2A /* FacebookStyleBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 447288EED9563DEE21869A50 /* FacebookStyleBarBehaviorDefiner.m */; };
-		B0C11D95D75E3031AAE5B51B /* BLKDelegateSplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CF891BBEB4D1871827C52 /* BLKDelegateSplitter.m */; };
-		C4EE350FCB8FF8C56EEFC6CF /* BLKDelegateSplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 26D2D89B65AB6E08368611E8 /* BLKDelegateSplitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C84A3ED64165678857632E9F /* BLKDelegateSplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CF891BBEB4D1871827C52 /* BLKDelegateSplitter.m */; };
-		CDD838C2479788C91346AE91 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = E7942805A075114CD1DF0543 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D88BC8171AB70CC30034031C /* BLKDelegateSplitterForTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D88BC8161AB70CC30034031C /* BLKDelegateSplitterForTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D88BC81A1AB70D020034031C /* BLKDelegateSplitterForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D88BC8181AB70CFF0034031C /* BLKDelegateSplitterForTableView.m */; };
-		D8D0FA051AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D0FA041AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m */; };
-		D8D0FA071AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D0FA061AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA10FEE50C61E9E98A34B399 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871BA39B88C6AFCCCB534499 /* Foundation.framework */; };
-		DADC440952CE742BDB48D770 /* FacebookStyleBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 447288EED9563DEE21869A50 /* FacebookStyleBarBehaviorDefiner.m */; };
-		E2B35F7903AD2B78778959AE /* Pods-WeshApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 054F2643DD775A6508132972 /* Pods-WeshApp-dummy.m */; };
-		E37950A93B4EC9BDEC51D886 /* Pods-WeshAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C58A41CB00D837A412017 /* Pods-WeshAppTests-dummy.m */; };
-		EAE0922119B79C87BFFBBB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871BA39B88C6AFCCCB534499 /* Foundation.framework */; };
-		ECC6D4885C9DBF738CC0B15A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871BA39B88C6AFCCCB534499 /* Foundation.framework */; };
-		EF80E7E5B54F25EB7CD0026F /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D346C41A9299933AD9C7F4EF /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F98AEC318AACB23845E8F818 /* BLKFlexibleHeightBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AE63167C1DA9FDBA5A9D5 /* BLKFlexibleHeightBar.m */; };
-		FC7DAEFA7F02813003389B92 /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = B637573632B9ADBE9363983D /* BLKFlexibleHeightBarBehaviorDefiner.m */; };
+		019D677F4D663D69CB10285C /* Pods-WeshApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DF8F85064058CC108CAC71 /* Pods-WeshApp-dummy.m */; };
+		0F1F752BF4221F3250359482 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DB09477D1C0E09BC3A026 /* RNFrostedSidebar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0FF99896B53FF24C5289602E /* SquareCashStyleBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 4538D739FCD9EF57FA8CEA5C /* SquareCashStyleBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		109B8827FDD4C9F14F1E6229 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1434C1ADE4202D87990F30 /* Foundation.framework */; };
+		1463EB43E88C73A8F373286D /* Pods-WeshAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A8B9F47A0F4A65850447B36 /* Pods-WeshAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16E23375EBCBF9B50DEF7FB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1434C1ADE4202D87990F30 /* Foundation.framework */; };
+		1E37156D954EA89CCA2663B4 /* RNFrostedSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DB09477D1C0E09BC3A026 /* RNFrostedSidebar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1FE97950C574340009F4E839 /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A7BC7820A806B8458C8C9 /* BLKFlexibleHeightBarBehaviorDefiner.m */; };
+		280EF0745E517A2D059797D5 /* Pods-WeshAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A745E703583B0DE1301FA /* Pods-WeshAppTests-dummy.m */; };
+		2E03F5453F72255794C02683 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1434C1ADE4202D87990F30 /* Foundation.framework */; };
+		2F96D3DC69A46372524AC32D /* BLKFlexibleHeightBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 329DFDDB9876F587C05288B2 /* BLKFlexibleHeightBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		33EDCCBA6F830393461D5179 /* Pods-WeshApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F297DACFEC756F1236902D36 /* Pods-WeshApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FB3359607AD091254BDE14 /* BLKFlexibleHeightBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EDF81A4AB6EE45E29CA2D /* BLKFlexibleHeightBar.m */; };
+		38046342F5F0F6B5C59222BF /* SquareCashStyleBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 460872AA899C4AAC36F12D49 /* SquareCashStyleBehaviorDefiner.m */; };
+		399D8560D6BCEAAA2DB97FD2 /* Pods-WeshAppTests-RNFrostedSidebar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C57F389AA57EA521355495B5 /* Pods-WeshAppTests-RNFrostedSidebar-dummy.m */; };
+		44B7FDCDC140BEC965980858 /* BLKFlexibleHeightBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9EDF81A4AB6EE45E29CA2D /* BLKFlexibleHeightBar.m */; };
+		4A7E226B71B356625FF641A6 /* Pods-WeshAppTests-RNFrostedSidebar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2F1A74D48A678485159D68B /* Pods-WeshAppTests-RNFrostedSidebar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		508C285A5D7A9DBA806B08BA /* BLKDelegateSplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 415FEE64A63C88D266A79DDB /* BLKDelegateSplitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51FEB9145D9821BBB6CAD1C4 /* RNFrostedSidebar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FBB13ACC9D9D43CB9B74A72 /* RNFrostedSidebar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52AC6382DE44C93FD6E0E6F3 /* RNFrostedSidebar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FBB13ACC9D9D43CB9B74A72 /* RNFrostedSidebar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52B6DEECAFF983C8DD5C8EA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1434C1ADE4202D87990F30 /* Foundation.framework */; };
+		53AE59CAC04786BE545635F7 /* Pods-WeshApp-RNFrostedSidebar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C68CD82D142BDDB7F1FDB4 /* Pods-WeshApp-RNFrostedSidebar-dummy.m */; };
+		5CDF5FA033D24EA5CC341FEC /* BLKFlexibleHeightBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 329DFDDB9876F587C05288B2 /* BLKFlexibleHeightBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60204550663BC3FF56AFC621 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4288A47F234F85E9DAF9A0 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63C690D31CE7B26C7C8CE3B6 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = D82ACEA549F765F84BBB0DE9 /* BLKFlexibleHeightBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		741A044AEFD355D596195B22 /* FacebookStyleBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE7E073AC4976DF739C7941 /* FacebookStyleBarBehaviorDefiner.m */; };
+		7520755308B0AD474232E7A3 /* BLKDelegateSplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FEF6D761C1785CF1B1C2A8 /* BLKDelegateSplitter.m */; };
+		78AD4EA31F920B90CCAF5F43 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F020D598BF99DE982843EA0 /* QuartzCore.framework */; };
+		7CC4FDA736971C059767BC97 /* UIView+BLKFlexibleHeightBarSubview.h in Headers */ = {isa = PBXBuildFile; fileRef = 90E7DC6DF387C8678275E983 /* UIView+BLKFlexibleHeightBarSubview.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DAFAC14654AA4330B45CEEA /* UIView+BLKFlexibleHeightBarSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 660AA66CD9F5EE90717AAD49 /* UIView+BLKFlexibleHeightBarSubview.m */; };
+		899B0930AAE8C41AE148458B /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2716F574E64C57E226816640 /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m */; };
+		9115F36A434B3D1DB3796613 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = FD4288A47F234F85E9DAF9A0 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92B648BDB3C3FDA6F13817FD /* SquareCashStyleBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 460872AA899C4AAC36F12D49 /* SquareCashStyleBehaviorDefiner.m */; };
+		9E1A19870E36C4E0BC5CB3A6 /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6081721FCF5D71C29B79BB7C /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F570B7B559117085FAC763C /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BB07E26955BC7D98C44B1691 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */; };
+		AA1A248C9F06EC464A4C3A54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1434C1ADE4202D87990F30 /* Foundation.framework */; };
+		BCA4FE768D929979AF2F1B66 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BB07E26955BC7D98C44B1691 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */; };
+		BD2D7ED615E91821299E66F5 /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E0F576FA245A609E2E6B7AB /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C99429822E9956B797A4CFD0 /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D86DFE9723B22A8FA59BA /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m */; };
+		CAC68C6B9776F69FDD50795E /* BLKDelegateSplitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 415FEE64A63C88D266A79DDB /* BLKDelegateSplitter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4CB74C9362F32C4E446C54C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1434C1ADE4202D87990F30 /* Foundation.framework */; };
+		D5EFEE4B9804569ED89E0039 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = D82ACEA549F765F84BBB0DE9 /* BLKFlexibleHeightBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC0E98D6E300721A40C81F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F020D598BF99DE982843EA0 /* QuartzCore.framework */; };
+		DCD3BABF94CF312C11DEB631 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0559CDD549197B0CF0192948 /* Accelerate.framework */; };
+		DDD6A0C222E377F9E3E507D6 /* UIView+BLKFlexibleHeightBarSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 660AA66CD9F5EE90717AAD49 /* UIView+BLKFlexibleHeightBarSubview.m */; };
+		E3530A103CE66735E8C2997F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0559CDD549197B0CF0192948 /* Accelerate.framework */; };
+		E4F829863970BF53EFC36F7C /* UIView+BLKFlexibleHeightBarSubview.h in Headers */ = {isa = PBXBuildFile; fileRef = 90E7DC6DF387C8678275E983 /* UIView+BLKFlexibleHeightBarSubview.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EECEBCF51ED3293EF3FC6630 /* Pods-WeshApp-RNFrostedSidebar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C1EA649EF4EA8FA32F0F2D9 /* Pods-WeshApp-RNFrostedSidebar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0308AB9EDE75BB0EE9D7ECD /* FacebookStyleBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF94D555D551DE2D026A0B6 /* FacebookStyleBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4FE3DFD4DD9A0C68823493F /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A7BC7820A806B8458C8C9 /* BLKFlexibleHeightBarBehaviorDefiner.m */; };
+		F89EC556CD60FF9D901B6E9B /* FacebookStyleBarBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF94D555D551DE2D026A0B6 /* FacebookStyleBarBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8BFFCB307C5223571BCE950 /* FacebookStyleBarBehaviorDefiner.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE7E073AC4976DF739C7941 /* FacebookStyleBarBehaviorDefiner.m */; };
+		FA6081972D8188E62795A749 /* BLKDelegateSplitter.m in Sources */ = {isa = PBXBuildFile; fileRef = A5FEF6D761C1785CF1B1C2A8 /* BLKDelegateSplitter.m */; };
+		FD4E5336C860ED6FCBDFB7B8 /* SquareCashStyleBehaviorDefiner.h in Headers */ = {isa = PBXBuildFile; fileRef = 4538D739FCD9EF57FA8CEA5C /* SquareCashStyleBehaviorDefiner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		11F1BC77442FE88D790DA11B /* PBXContainerItemProxy */ = {
+		45600551408F0D20C5A603A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4EFBFC52FC717C497FABD726 /* Project object */;
+			containerPortal = 2488EF23AB8E86D2E17DCB9F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 857767CC7AEEF8DFE4AC6940;
+			remoteGlobalIDString = 95F6AD073411C09D2E3B9E25;
 			remoteInfo = "Pods-WeshAppTests-BLKFlexibleHeightBar";
 		};
-		5B62EA5C4D4B47ACC5AAC975 /* PBXContainerItemProxy */ = {
+		69A5989B8934E278AB979901 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4EFBFC52FC717C497FABD726 /* Project object */;
+			containerPortal = 2488EF23AB8E86D2E17DCB9F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B816F8BA896C50D407F71EF0;
+			remoteGlobalIDString = FB5C925C0DDB7AD4E8438DEF;
+			remoteInfo = "Pods-WeshApp-RNFrostedSidebar";
+		};
+		A8ED16D40AC8949ACD906D20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2488EF23AB8E86D2E17DCB9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE46F9D47FBF24C15418BF64;
 			remoteInfo = "Pods-WeshApp-BLKFlexibleHeightBar";
+		};
+		D637B4293430950B33DF8829 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2488EF23AB8E86D2E17DCB9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C91D024B3FB0029195D0DE5;
+			remoteInfo = "Pods-WeshAppTests-RNFrostedSidebar";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		054F2643DD775A6508132972 /* Pods-WeshApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-dummy.m"; sourceTree = "<group>"; };
-		0CFD5A72FDCCE5085206EE78 /* Pods-WeshAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshAppTests-frameworks.sh"; sourceTree = "<group>"; };
-		0DF921118CBDE6E98AAD88EF /* Pods-WeshApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		125C00D318D15DBA0C96252B /* Pods-WeshApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshApp-resources.sh"; sourceTree = "<group>"; };
-		1525F29C67B24ACFA9FE4F49 /* Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch"; sourceTree = "<group>"; };
-		1A41C64C85C8CDDACC2F0921 /* Pods-WeshAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1C5CF891BBEB4D1871827C52 /* BLKDelegateSplitter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKDelegateSplitter.m; path = BLKFlexibleHeightBar/BLKDelegateSplitter.m; sourceTree = "<group>"; };
-		200FD83C6925B4250ED016B1 /* BLKFlexibleHeightBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLKFlexibleHeightBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21CC0DEEC3930D224D84FD67 /* BLKFlexibleHeightBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKFlexibleHeightBar.h; path = BLKFlexibleHeightBar/BLKFlexibleHeightBar.h; sourceTree = "<group>"; };
-		24C0F160F9E2FB6C6015CB4E /* UIView+BLKFlexibleHeightBarSubview.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BLKFlexibleHeightBarSubview.m"; path = "BLKFlexibleHeightBar/UIView+BLKFlexibleHeightBarSubview.m"; sourceTree = "<group>"; };
-		25BC480AC843697902965298 /* Pods-WeshAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshAppTests-umbrella.h"; sourceTree = "<group>"; };
-		26C92E194D9ADDCCED9756F0 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		26D2D89B65AB6E08368611E8 /* BLKDelegateSplitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKDelegateSplitter.h; path = BLKFlexibleHeightBar/BLKDelegateSplitter.h; sourceTree = "<group>"; };
-		2DE32089382A9B0A75DE1429 /* UIView+BLKFlexibleHeightBarSubview.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BLKFlexibleHeightBarSubview.h"; path = "BLKFlexibleHeightBar/UIView+BLKFlexibleHeightBarSubview.h"; sourceTree = "<group>"; };
-		2F67D6D21808A642D829805C /* BLKFlexibleHeightBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLKFlexibleHeightBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		337F0D60587C460C7705B51C /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m"; sourceTree = "<group>"; };
-		3B94F142284F542A6EB551DE /* BLKFlexibleHeightBarBehaviorDefiner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKFlexibleHeightBarBehaviorDefiner.h; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarBehaviorDefiner.h; sourceTree = "<group>"; };
-		3DEDD69A99B53452423711A2 /* Pods-WeshApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeshApp.modulemap"; sourceTree = "<group>"; };
-		447288EED9563DEE21869A50 /* FacebookStyleBarBehaviorDefiner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FacebookStyleBarBehaviorDefiner.m; path = BLKFlexibleHeightBar/FacebookStyleBarBehaviorDefiner.m; sourceTree = "<group>"; };
-		4A16F5C965DB9A6E73470467 /* Pods-WeshAppTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshAppTests-environment.h"; sourceTree = "<group>"; };
-		5A6A74264ABF6B3A4366422E /* Pods-WeshApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-umbrella.h"; sourceTree = "<group>"; };
-		5BB92D404700C310444BDCAE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Info.plist"; sourceTree = "<group>"; };
-		5BED30803CB8FB3C2A499CCA /* FacebookStyleBarBehaviorDefiner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FacebookStyleBarBehaviorDefiner.h; path = BLKFlexibleHeightBar/FacebookStyleBarBehaviorDefiner.h; sourceTree = "<group>"; };
-		5C34E207A7F921E8C776BAE3 /* Pods-WeshAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		629EAB6589158F110B59CB65 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6335F89E7C7666D6C50854C2 /* Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap"; sourceTree = "<group>"; };
-		6C1F8AB8D410B26360C87860 /* Pods-WeshApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.release.xcconfig"; sourceTree = "<group>"; };
-		871BA39B88C6AFCCCB534499 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		879AE452C75F1991B84E8D8E /* Pods_WeshApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FBF5EF3E0219DEFDBBAF1EA /* Pods-WeshAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshAppTests-resources.sh"; sourceTree = "<group>"; };
-		8FD4DE2853EC1D8FB3404B11 /* SquareCashStyleBehaviorDefiner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SquareCashStyleBehaviorDefiner.h; path = BLKFlexibleHeightBar/SquareCashStyleBehaviorDefiner.h; sourceTree = "<group>"; };
-		920A3CE3A3587502C5450530 /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-BLKFlexibleHeightBar-dummy.m"; sourceTree = "<group>"; };
-		939AE63167C1DA9FDBA5A9D5 /* BLKFlexibleHeightBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKFlexibleHeightBar.m; path = BLKFlexibleHeightBar/BLKFlexibleHeightBar.m; sourceTree = "<group>"; };
-		98008226EFA84014D6C1757F /* Pods-WeshApp-BLKFlexibleHeightBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-BLKFlexibleHeightBar.xcconfig"; sourceTree = "<group>"; };
-		9C050DEC83E028743FBD08D1 /* Pods-WeshAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeshAppTests.modulemap"; sourceTree = "<group>"; };
-		A0A00A40C6514D0BA76D9A72 /* SquareCashStyleBehaviorDefiner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SquareCashStyleBehaviorDefiner.m; path = BLKFlexibleHeightBar/SquareCashStyleBehaviorDefiner.m; sourceTree = "<group>"; };
-		A6E0434D37F8A75767971EEE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFA0D5FA75FCDCE2CB005F85 /* Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig"; sourceTree = "<group>"; };
-		B01D8090F1F29F18A70757DE /* Pods-WeshApp-BLKFlexibleHeightBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeshApp-BLKFlexibleHeightBar.modulemap"; sourceTree = "<group>"; };
-		B50D556599C8EFD5FEB538FD /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig"; sourceTree = "<group>"; };
-		B527AED15097FF0980C252FC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B637573632B9ADBE9363983D /* BLKFlexibleHeightBarBehaviorDefiner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKFlexibleHeightBarBehaviorDefiner.m; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarBehaviorDefiner.m; sourceTree = "<group>"; };
-		BB3965DB3C9B1A3244037AB9 /* Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch"; sourceTree = "<group>"; };
-		BCAE477CB190CDD36D71B593 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKFlexibleHeightBarSubviewLayoutAttributes.m; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarSubviewLayoutAttributes.m; sourceTree = "<group>"; };
-		BD0E73AFD7A923F4AD73B814 /* Pods-WeshAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		C35C58A41CB00D837A412017 /* Pods-WeshAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshAppTests-dummy.m"; sourceTree = "<group>"; };
-		CFE5F13593D24A53F0F56669 /* Pods_WeshAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D346C41A9299933AD9C7F4EF /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h"; sourceTree = "<group>"; };
-		D88BC8161AB70CC30034031C /* BLKDelegateSplitterForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLKDelegateSplitterForTableView.h; sourceTree = "<group>"; };
-		D88BC8181AB70CFF0034031C /* BLKDelegateSplitterForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLKDelegateSplitterForTableView.m; sourceTree = "<group>"; };
-		D8D0FA041AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareCashStyleBehaviorDefinerForTableView.m; sourceTree = "<group>"; };
-		D8D0FA061AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareCashStyleBehaviorDefinerForTableView.h; sourceTree = "<group>"; };
-		DD0182B1BA67093F2D13912B /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h"; sourceTree = "<group>"; };
-		E3D6613345FDFBB8172CDB69 /* Pods-WeshAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E63E15730EFBDBC25AAA4969 /* Pods-WeshApp-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-environment.h"; sourceTree = "<group>"; };
-		E7942805A075114CD1DF0543 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKFlexibleHeightBarSubviewLayoutAttributes.h; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarSubviewLayoutAttributes.h; sourceTree = "<group>"; };
-		EA141D696356EAA60DA83A6A /* Pods-WeshApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		EAC26A2236C13F9A3692CABA /* Pods-WeshApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshApp-frameworks.sh"; sourceTree = "<group>"; };
-		F0FCD0C46986577AC21255B3 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig"; sourceTree = "<group>"; };
-		FE3F9BFDD1DA72FE1DC78456 /* Pods-WeshApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.debug.xcconfig"; sourceTree = "<group>"; };
+		002D86DFE9723B22A8FA59BA /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-BLKFlexibleHeightBar-dummy.m"; sourceTree = "<group>"; };
+		00D33174306F76FAC7553CB7 /* Pods-WeshAppTests-RNFrostedSidebar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-RNFrostedSidebar-prefix.pch"; path = "../Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar-prefix.pch"; sourceTree = "<group>"; };
+		0559CDD549197B0CF0192948 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		09CE01D902EACD13EDF205B0 /* Pods-WeshApp-RNFrostedSidebar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeshApp-RNFrostedSidebar.modulemap"; sourceTree = "<group>"; };
+		0A7064384FF22A482092659B /* BLKFlexibleHeightBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLKFlexibleHeightBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A77DC256359DC2BF4DD84B9 /* Pods-WeshAppTests-RNFrostedSidebar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-RNFrostedSidebar-Private.xcconfig"; path = "../Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar-Private.xcconfig"; sourceTree = "<group>"; };
+		0C8A745E703583B0DE1301FA /* Pods-WeshAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshAppTests-dummy.m"; sourceTree = "<group>"; };
+		0C9EDF81A4AB6EE45E29CA2D /* BLKFlexibleHeightBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKFlexibleHeightBar.m; path = BLKFlexibleHeightBar/BLKFlexibleHeightBar.m; sourceTree = "<group>"; };
+		142927FBCEA8CA2BFBF4925B /* Pods-WeshAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A39EE037C6B31FD60CAB91D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Info.plist"; sourceTree = "<group>"; };
+		1DA0144B2DBDEF31D6A9BB51 /* Pods-WeshApp-RNFrostedSidebar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-RNFrostedSidebar-prefix.pch"; sourceTree = "<group>"; };
+		201B785C1244DDB610948F93 /* Pods-WeshApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeshApp.modulemap"; sourceTree = "<group>"; };
+		253ACCCFCB2E92E0BC77AD4F /* Pods-WeshAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		2716F574E64C57E226816640 /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m"; sourceTree = "<group>"; };
+		27414BEBA81969ADD652EF0A /* Pods-WeshApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshApp-frameworks.sh"; sourceTree = "<group>"; };
+		2C9643C8D9554680B9DD2BE5 /* Pods_WeshAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		329DFDDB9876F587C05288B2 /* BLKFlexibleHeightBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKFlexibleHeightBar.h; path = BLKFlexibleHeightBar/BLKFlexibleHeightBar.h; sourceTree = "<group>"; };
+		3704AF45011BC1AF9CECEFFE /* Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch"; sourceTree = "<group>"; };
+		39943477FD88F9E3854FE5B4 /* RNFrostedSidebar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNFrostedSidebar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39C68CD82D142BDDB7F1FDB4 /* Pods-WeshApp-RNFrostedSidebar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-RNFrostedSidebar-dummy.m"; sourceTree = "<group>"; };
+		3A8B9F47A0F4A65850447B36 /* Pods-WeshAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshAppTests-umbrella.h"; sourceTree = "<group>"; };
+		3E0F576FA245A609E2E6B7AB /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h"; sourceTree = "<group>"; };
+		415FEE64A63C88D266A79DDB /* BLKDelegateSplitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKDelegateSplitter.h; path = BLKFlexibleHeightBar/BLKDelegateSplitter.h; sourceTree = "<group>"; };
+		41BE547E75A35F54B42B0164 /* Pods-WeshAppTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshAppTests-environment.h"; sourceTree = "<group>"; };
+		4538D739FCD9EF57FA8CEA5C /* SquareCashStyleBehaviorDefiner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SquareCashStyleBehaviorDefiner.h; path = BLKFlexibleHeightBar/SquareCashStyleBehaviorDefiner.h; sourceTree = "<group>"; };
+		460872AA899C4AAC36F12D49 /* SquareCashStyleBehaviorDefiner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SquareCashStyleBehaviorDefiner.m; path = BLKFlexibleHeightBar/SquareCashStyleBehaviorDefiner.m; sourceTree = "<group>"; };
+		4896597F2BB9EB00D8A12B49 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig"; sourceTree = "<group>"; };
+		4A871B514AD1892F334ACF16 /* Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig"; sourceTree = "<group>"; };
+		4ACF916ADDA0A6C8FBF52CF0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C1EA649EF4EA8FA32F0F2D9 /* Pods-WeshApp-RNFrostedSidebar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-RNFrostedSidebar-umbrella.h"; sourceTree = "<group>"; };
+		514EAFACA5BD7405AB1980F6 /* Pods_WeshApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A07D35BFA4B258F32033814 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A748A2186484BA3E0A99C91 /* RNFrostedSidebar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNFrostedSidebar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6081721FCF5D71C29B79BB7C /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h"; sourceTree = "<group>"; };
+		64205B4185D7B5DD676D4F76 /* Pods-WeshApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		660AA66CD9F5EE90717AAD49 /* UIView+BLKFlexibleHeightBarSubview.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BLKFlexibleHeightBarSubview.m"; path = "BLKFlexibleHeightBar/UIView+BLKFlexibleHeightBarSubview.m"; sourceTree = "<group>"; };
+		669F1873F86328A547A6FDC5 /* Pods-WeshAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeshAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		6C639EA5A538E236E38E15F4 /* Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap"; sourceTree = "<group>"; };
+		6C9F3B8A3A9190883BEDDD71 /* Pods-WeshAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshAppTests-resources.sh"; sourceTree = "<group>"; };
+		6F3DB09477D1C0E09BC3A026 /* RNFrostedSidebar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFrostedSidebar.m; sourceTree = "<group>"; };
+		74240B8CFBAC5CC1697A5997 /* BLKFlexibleHeightBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLKFlexibleHeightBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1434C1ADE4202D87990F30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		85AF2F6F3FF82396659CB414 /* Pods-WeshApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshApp-resources.sh"; sourceTree = "<group>"; };
+		8AAE375839BAA9204FFC3B4F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8F020D598BF99DE982843EA0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		8FA3E16A3F749E0E2731FC67 /* Pods-WeshApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.debug.xcconfig"; sourceTree = "<group>"; };
+		90E7DC6DF387C8678275E983 /* UIView+BLKFlexibleHeightBarSubview.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BLKFlexibleHeightBarSubview.h"; path = "BLKFlexibleHeightBar/UIView+BLKFlexibleHeightBarSubview.h"; sourceTree = "<group>"; };
+		90F55C71EA3D6D1A0EE1190A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91F26F49294231C3B12CAE01 /* Pods-WeshApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp.release.xcconfig"; sourceTree = "<group>"; };
+		974CC61989029D8E96FA9B4B /* Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch"; sourceTree = "<group>"; };
+		9FB868B17E430D3F59E6709E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FBB13ACC9D9D43CB9B74A72 /* RNFrostedSidebar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFrostedSidebar.h; sourceTree = "<group>"; };
+		A5FEF6D761C1785CF1B1C2A8 /* BLKDelegateSplitter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKDelegateSplitter.m; path = BLKFlexibleHeightBar/BLKDelegateSplitter.m; sourceTree = "<group>"; };
+		A84AABE3233CBBED3E930431 /* Pods-WeshApp-RNFrostedSidebar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-RNFrostedSidebar.xcconfig"; sourceTree = "<group>"; };
+		AD349F533DA2491D88ADAB08 /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig"; path = "../Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig"; sourceTree = "<group>"; };
+		B0E583E12DE976B341EEE6C1 /* Pods-WeshApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B7804945B1931EC76A244F6E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-WeshAppTests-RNFrostedSidebar/Info.plist"; sourceTree = "<group>"; };
+		BB07E26955BC7D98C44B1691 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKFlexibleHeightBarSubviewLayoutAttributes.m; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarSubviewLayoutAttributes.m; sourceTree = "<group>"; };
+		BCE0B55D9FA33A4D6A2F8B09 /* Pods-WeshApp-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-environment.h"; sourceTree = "<group>"; };
+		BDF94D555D551DE2D026A0B6 /* FacebookStyleBarBehaviorDefiner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FacebookStyleBarBehaviorDefiner.h; path = BLKFlexibleHeightBar/FacebookStyleBarBehaviorDefiner.h; sourceTree = "<group>"; };
+		BF07CB44E4E8FF2D74E7E1D2 /* Pods-WeshApp-RNFrostedSidebar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-RNFrostedSidebar-Private.xcconfig"; sourceTree = "<group>"; };
+		C2F1A74D48A678485159D68B /* Pods-WeshAppTests-RNFrostedSidebar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-WeshAppTests-RNFrostedSidebar-umbrella.h"; path = "../Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar-umbrella.h"; sourceTree = "<group>"; };
+		C57F389AA57EA521355495B5 /* Pods-WeshAppTests-RNFrostedSidebar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-WeshAppTests-RNFrostedSidebar-dummy.m"; path = "../Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar-dummy.m"; sourceTree = "<group>"; };
+		C62506D9BF9EF1911C7CB955 /* Pods-WeshAppTests-RNFrostedSidebar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeshAppTests-RNFrostedSidebar.xcconfig"; path = "../Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar.xcconfig"; sourceTree = "<group>"; };
+		CA528986B8762FC604948223 /* Pods-WeshApp-BLKFlexibleHeightBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeshApp-BLKFlexibleHeightBar.xcconfig"; sourceTree = "<group>"; };
+		CDB7A5A6EC0236C0D3BD8C9E /* Pods-WeshAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeshAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D6C86654DBB3F4E8E1ACC296 /* Pods-WeshAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeshAppTests-frameworks.sh"; sourceTree = "<group>"; };
+		D7B35AF3B492AECAD55438C1 /* Pods-WeshAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeshAppTests.modulemap"; sourceTree = "<group>"; };
+		D82ACEA549F765F84BBB0DE9 /* BLKFlexibleHeightBarBehaviorDefiner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKFlexibleHeightBarBehaviorDefiner.h; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarBehaviorDefiner.h; sourceTree = "<group>"; };
+		DDD141AD5453014370F30050 /* Pods-WeshAppTests-RNFrostedSidebar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-WeshAppTests-RNFrostedSidebar.modulemap"; path = "../Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar.modulemap"; sourceTree = "<group>"; };
+		DE1A7BC7820A806B8458C8C9 /* BLKFlexibleHeightBarBehaviorDefiner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BLKFlexibleHeightBarBehaviorDefiner.m; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarBehaviorDefiner.m; sourceTree = "<group>"; };
+		F297DACFEC756F1236902D36 /* Pods-WeshApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeshApp-umbrella.h"; sourceTree = "<group>"; };
+		F54AAF1D4AA264F38931ED85 /* Pods-WeshApp-BLKFlexibleHeightBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeshApp-BLKFlexibleHeightBar.modulemap"; sourceTree = "<group>"; };
+		F8DF8F85064058CC108CAC71 /* Pods-WeshApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeshApp-dummy.m"; sourceTree = "<group>"; };
+		FD4288A47F234F85E9DAF9A0 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BLKFlexibleHeightBarSubviewLayoutAttributes.h; path = BLKFlexibleHeightBar/BLKFlexibleHeightBarSubviewLayoutAttributes.h; sourceTree = "<group>"; };
+		FDE7E073AC4976DF739C7941 /* FacebookStyleBarBehaviorDefiner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FacebookStyleBarBehaviorDefiner.m; path = BLKFlexibleHeightBar/FacebookStyleBarBehaviorDefiner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4A446CA62D86AE672D020A83 /* Frameworks */ = {
+		3F19EF21B77A5E4EAC39B938 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA10FEE50C61E9E98A34B399 /* Foundation.framework in Frameworks */,
+				AA1A248C9F06EC464A4C3A54 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58F9F018D4484E6CBD34F0D8 /* Frameworks */ = {
+		418F8F086EB25674E441A609 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE0922119B79C87BFFBBB08 /* Foundation.framework in Frameworks */,
+				DCD3BABF94CF312C11DEB631 /* Accelerate.framework in Frameworks */,
+				2E03F5453F72255794C02683 /* Foundation.framework in Frameworks */,
+				78AD4EA31F920B90CCAF5F43 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		800E5162E920D9F635DF2F1F /* Frameworks */ = {
+		492CF06CBEFDE8E58E5616FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177E30606AF4DEDA9F447D68 /* Foundation.framework in Frameworks */,
+				D4CB74C9362F32C4E446C54C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A530876012C228FE0312CF27 /* Frameworks */ = {
+		91CF38CB0A8F7876333F9085 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC6D4885C9DBF738CC0B15A /* Foundation.framework in Frameworks */,
+				16E23375EBCBF9B50DEF7FB0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB45A2E78BFA642DBF1C2361 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B6DEECAFF983C8DD5C8EA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85363D947EC7F16835DD908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3530A103CE66735E8C2997F /* Accelerate.framework in Frameworks */,
+				109B8827FDD4C9F14F1E6229 /* Foundation.framework in Frameworks */,
+				DAC0E98D6E300721A40C81F9 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04FC19EED844A84ACF0F8151 /* Support Files */ = {
+		17A09B6988229AC5C8DBE5EF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A6E0434D37F8A75767971EEE /* Info.plist */,
-				5BB92D404700C310444BDCAE /* Info.plist */,
-				B01D8090F1F29F18A70757DE /* Pods-WeshApp-BLKFlexibleHeightBar.modulemap */,
-				98008226EFA84014D6C1757F /* Pods-WeshApp-BLKFlexibleHeightBar.xcconfig */,
-				F0FCD0C46986577AC21255B3 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */,
-				920A3CE3A3587502C5450530 /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m */,
-				BB3965DB3C9B1A3244037AB9 /* Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch */,
-				D346C41A9299933AD9C7F4EF /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h */,
-				6335F89E7C7666D6C50854C2 /* Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap */,
-				AFA0D5FA75FCDCE2CB005F85 /* Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig */,
-				B50D556599C8EFD5FEB538FD /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */,
-				337F0D60587C460C7705B51C /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m */,
-				1525F29C67B24ACFA9FE4F49 /* Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch */,
-				DD0182B1BA67093F2D13912B /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h */,
+				90F55C71EA3D6D1A0EE1190A /* Info.plist */,
+				1A39EE037C6B31FD60CAB91D /* Info.plist */,
+				F54AAF1D4AA264F38931ED85 /* Pods-WeshApp-BLKFlexibleHeightBar.modulemap */,
+				CA528986B8762FC604948223 /* Pods-WeshApp-BLKFlexibleHeightBar.xcconfig */,
+				4896597F2BB9EB00D8A12B49 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */,
+				002D86DFE9723B22A8FA59BA /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m */,
+				3704AF45011BC1AF9CECEFFE /* Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch */,
+				3E0F576FA245A609E2E6B7AB /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h */,
+				6C639EA5A538E236E38E15F4 /* Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap */,
+				4A871B514AD1892F334ACF16 /* Pods-WeshAppTests-BLKFlexibleHeightBar.xcconfig */,
+				AD349F533DA2491D88ADAB08 /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */,
+				2716F574E64C57E226816640 /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m */,
+				974CC61989029D8E96FA9B4B /* Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch */,
+				6081721FCF5D71C29B79BB7C /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar";
 			sourceTree = "<group>";
 		};
-		09678B76E63A203DFEA53CE7 /* Targets Support Files */ = {
+		4727C613CE99F71CE9B1715A /* RNFrostedSidebar */ = {
 			isa = PBXGroup;
 			children = (
-				6EF1E5B7375702696CDB4BBF /* Pods-WeshApp */,
-				8EDF52210871C6AADEED7159 /* Pods-WeshAppTests */,
+				9FBB13ACC9D9D43CB9B74A72 /* RNFrostedSidebar.h */,
+				6F3DB09477D1C0E09BC3A026 /* RNFrostedSidebar.m */,
+				C3A5190530C638482DA64FB2 /* Support Files */,
 			);
-			name = "Targets Support Files";
+			path = RNFrostedSidebar;
 			sourceTree = "<group>";
 		};
-		6376B58273280F52615B8382 /* Products */ = {
+		4AB122E33B94740984A81E5D /* Pods-WeshAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				200FD83C6925B4250ED016B1 /* BLKFlexibleHeightBar.framework */,
-				2F67D6D21808A642D829805C /* BLKFlexibleHeightBar.framework */,
-				879AE452C75F1991B84E8D8E /* Pods_WeshApp.framework */,
-				CFE5F13593D24A53F0F56669 /* Pods_WeshAppTests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6EF1E5B7375702696CDB4BBF /* Pods-WeshApp */ = {
-			isa = PBXGroup;
-			children = (
-				629EAB6589158F110B59CB65 /* Info.plist */,
-				3DEDD69A99B53452423711A2 /* Pods-WeshApp.modulemap */,
-				0DF921118CBDE6E98AAD88EF /* Pods-WeshApp-acknowledgements.markdown */,
-				EA141D696356EAA60DA83A6A /* Pods-WeshApp-acknowledgements.plist */,
-				054F2643DD775A6508132972 /* Pods-WeshApp-dummy.m */,
-				E63E15730EFBDBC25AAA4969 /* Pods-WeshApp-environment.h */,
-				EAC26A2236C13F9A3692CABA /* Pods-WeshApp-frameworks.sh */,
-				125C00D318D15DBA0C96252B /* Pods-WeshApp-resources.sh */,
-				5A6A74264ABF6B3A4366422E /* Pods-WeshApp-umbrella.h */,
-				FE3F9BFDD1DA72FE1DC78456 /* Pods-WeshApp.debug.xcconfig */,
-				6C1F8AB8D410B26360C87860 /* Pods-WeshApp.release.xcconfig */,
-			);
-			name = "Pods-WeshApp";
-			path = "Target Support Files/Pods-WeshApp";
-			sourceTree = "<group>";
-		};
-		722954711E6224EFF465B8A0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				728D999424E138041AF6CF87 /* BLKFlexibleHeightBar */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		728D999424E138041AF6CF87 /* BLKFlexibleHeightBar */ = {
-			isa = PBXGroup;
-			children = (
-				26D2D89B65AB6E08368611E8 /* BLKDelegateSplitter.h */,
-				1C5CF891BBEB4D1871827C52 /* BLKDelegateSplitter.m */,
-				21CC0DEEC3930D224D84FD67 /* BLKFlexibleHeightBar.h */,
-				939AE63167C1DA9FDBA5A9D5 /* BLKFlexibleHeightBar.m */,
-				3B94F142284F542A6EB551DE /* BLKFlexibleHeightBarBehaviorDefiner.h */,
-				B637573632B9ADBE9363983D /* BLKFlexibleHeightBarBehaviorDefiner.m */,
-				E7942805A075114CD1DF0543 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */,
-				BCAE477CB190CDD36D71B593 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */,
-				5BED30803CB8FB3C2A499CCA /* FacebookStyleBarBehaviorDefiner.h */,
-				447288EED9563DEE21869A50 /* FacebookStyleBarBehaviorDefiner.m */,
-				8FD4DE2853EC1D8FB3404B11 /* SquareCashStyleBehaviorDefiner.h */,
-				A0A00A40C6514D0BA76D9A72 /* SquareCashStyleBehaviorDefiner.m */,
-				2DE32089382A9B0A75DE1429 /* UIView+BLKFlexibleHeightBarSubview.h */,
-				24C0F160F9E2FB6C6015CB4E /* UIView+BLKFlexibleHeightBarSubview.m */,
-				D8D0FA061AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h */,
-				D8D0FA041AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m */,
-				04FC19EED844A84ACF0F8151 /* Support Files */,
-				D88BC8161AB70CC30034031C /* BLKDelegateSplitterForTableView.h */,
-				D88BC8181AB70CFF0034031C /* BLKDelegateSplitterForTableView.m */,
-			);
-			path = BLKFlexibleHeightBar;
-			sourceTree = "<group>";
-		};
-		8EDF52210871C6AADEED7159 /* Pods-WeshAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				B527AED15097FF0980C252FC /* Info.plist */,
-				9C050DEC83E028743FBD08D1 /* Pods-WeshAppTests.modulemap */,
-				E3D6613345FDFBB8172CDB69 /* Pods-WeshAppTests-acknowledgements.markdown */,
-				5C34E207A7F921E8C776BAE3 /* Pods-WeshAppTests-acknowledgements.plist */,
-				C35C58A41CB00D837A412017 /* Pods-WeshAppTests-dummy.m */,
-				4A16F5C965DB9A6E73470467 /* Pods-WeshAppTests-environment.h */,
-				0CFD5A72FDCCE5085206EE78 /* Pods-WeshAppTests-frameworks.sh */,
-				8FBF5EF3E0219DEFDBBAF1EA /* Pods-WeshAppTests-resources.sh */,
-				25BC480AC843697902965298 /* Pods-WeshAppTests-umbrella.h */,
-				1A41C64C85C8CDDACC2F0921 /* Pods-WeshAppTests.debug.xcconfig */,
-				BD0E73AFD7A923F4AD73B814 /* Pods-WeshAppTests.release.xcconfig */,
+				4ACF916ADDA0A6C8FBF52CF0 /* Info.plist */,
+				D7B35AF3B492AECAD55438C1 /* Pods-WeshAppTests.modulemap */,
+				CDB7A5A6EC0236C0D3BD8C9E /* Pods-WeshAppTests-acknowledgements.markdown */,
+				669F1873F86328A547A6FDC5 /* Pods-WeshAppTests-acknowledgements.plist */,
+				0C8A745E703583B0DE1301FA /* Pods-WeshAppTests-dummy.m */,
+				41BE547E75A35F54B42B0164 /* Pods-WeshAppTests-environment.h */,
+				D6C86654DBB3F4E8E1ACC296 /* Pods-WeshAppTests-frameworks.sh */,
+				6C9F3B8A3A9190883BEDDD71 /* Pods-WeshAppTests-resources.sh */,
+				3A8B9F47A0F4A65850447B36 /* Pods-WeshAppTests-umbrella.h */,
+				142927FBCEA8CA2BFBF4925B /* Pods-WeshAppTests.debug.xcconfig */,
+				253ACCCFCB2E92E0BC77AD4F /* Pods-WeshAppTests.release.xcconfig */,
 			);
 			name = "Pods-WeshAppTests";
 			path = "Target Support Files/Pods-WeshAppTests";
 			sourceTree = "<group>";
 		};
-		A5BC819A9F371B2C1D91AAD9 = {
+		51E9B037A4A4B5B94633E3D5 = {
 			isa = PBXGroup;
 			children = (
-				26C92E194D9ADDCCED9756F0 /* Podfile */,
-				FADB15C272BD7820D7EFD172 /* Frameworks */,
-				722954711E6224EFF465B8A0 /* Pods */,
-				6376B58273280F52615B8382 /* Products */,
-				09678B76E63A203DFEA53CE7 /* Targets Support Files */,
+				8AAE375839BAA9204FFC3B4F /* Podfile */,
+				68D99ABF0D06EF0A72D4881A /* Frameworks */,
+				94D56EF7F8F894FD4855A8BA /* Pods */,
+				EC8523DAB521D9000E60BEF9 /* Products */,
+				70FE43C15839FF8B232D41C3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D105BBE05B497428CE41BE23 /* iOS */ = {
+		68D99ABF0D06EF0A72D4881A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				871BA39B88C6AFCCCB534499 /* Foundation.framework */,
+				BA03E3877CA4C7323149EEF9 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70FE43C15839FF8B232D41C3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F45079D7896286A8B090FD6 /* Pods-WeshApp */,
+				4AB122E33B94740984A81E5D /* Pods-WeshAppTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7F45079D7896286A8B090FD6 /* Pods-WeshApp */ = {
+			isa = PBXGroup;
+			children = (
+				9FB868B17E430D3F59E6709E /* Info.plist */,
+				201B785C1244DDB610948F93 /* Pods-WeshApp.modulemap */,
+				B0E583E12DE976B341EEE6C1 /* Pods-WeshApp-acknowledgements.markdown */,
+				64205B4185D7B5DD676D4F76 /* Pods-WeshApp-acknowledgements.plist */,
+				F8DF8F85064058CC108CAC71 /* Pods-WeshApp-dummy.m */,
+				BCE0B55D9FA33A4D6A2F8B09 /* Pods-WeshApp-environment.h */,
+				27414BEBA81969ADD652EF0A /* Pods-WeshApp-frameworks.sh */,
+				85AF2F6F3FF82396659CB414 /* Pods-WeshApp-resources.sh */,
+				F297DACFEC756F1236902D36 /* Pods-WeshApp-umbrella.h */,
+				8FA3E16A3F749E0E2731FC67 /* Pods-WeshApp.debug.xcconfig */,
+				91F26F49294231C3B12CAE01 /* Pods-WeshApp.release.xcconfig */,
+			);
+			name = "Pods-WeshApp";
+			path = "Target Support Files/Pods-WeshApp";
+			sourceTree = "<group>";
+		};
+		94D56EF7F8F894FD4855A8BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2901CEE5CCC2242F743FE3D /* BLKFlexibleHeightBar */,
+				4727C613CE99F71CE9B1715A /* RNFrostedSidebar */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA03E3877CA4C7323149EEF9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0559CDD549197B0CF0192948 /* Accelerate.framework */,
+				7D1434C1ADE4202D87990F30 /* Foundation.framework */,
+				8F020D598BF99DE982843EA0 /* QuartzCore.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		FADB15C272BD7820D7EFD172 /* Frameworks */ = {
+		C2901CEE5CCC2242F743FE3D /* BLKFlexibleHeightBar */ = {
 			isa = PBXGroup;
 			children = (
-				D105BBE05B497428CE41BE23 /* iOS */,
+				415FEE64A63C88D266A79DDB /* BLKDelegateSplitter.h */,
+				A5FEF6D761C1785CF1B1C2A8 /* BLKDelegateSplitter.m */,
+				329DFDDB9876F587C05288B2 /* BLKFlexibleHeightBar.h */,
+				0C9EDF81A4AB6EE45E29CA2D /* BLKFlexibleHeightBar.m */,
+				D82ACEA549F765F84BBB0DE9 /* BLKFlexibleHeightBarBehaviorDefiner.h */,
+				DE1A7BC7820A806B8458C8C9 /* BLKFlexibleHeightBarBehaviorDefiner.m */,
+				FD4288A47F234F85E9DAF9A0 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h */,
+				BB07E26955BC7D98C44B1691 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m */,
+				BDF94D555D551DE2D026A0B6 /* FacebookStyleBarBehaviorDefiner.h */,
+				FDE7E073AC4976DF739C7941 /* FacebookStyleBarBehaviorDefiner.m */,
+				4538D739FCD9EF57FA8CEA5C /* SquareCashStyleBehaviorDefiner.h */,
+				460872AA899C4AAC36F12D49 /* SquareCashStyleBehaviorDefiner.m */,
+				90E7DC6DF387C8678275E983 /* UIView+BLKFlexibleHeightBarSubview.h */,
+				660AA66CD9F5EE90717AAD49 /* UIView+BLKFlexibleHeightBarSubview.m */,
+				17A09B6988229AC5C8DBE5EF /* Support Files */,
 			);
-			name = Frameworks;
+			path = BLKFlexibleHeightBar;
+			sourceTree = "<group>";
+		};
+		C3A5190530C638482DA64FB2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A07D35BFA4B258F32033814 /* Info.plist */,
+				B7804945B1931EC76A244F6E /* Info.plist */,
+				09CE01D902EACD13EDF205B0 /* Pods-WeshApp-RNFrostedSidebar.modulemap */,
+				A84AABE3233CBBED3E930431 /* Pods-WeshApp-RNFrostedSidebar.xcconfig */,
+				BF07CB44E4E8FF2D74E7E1D2 /* Pods-WeshApp-RNFrostedSidebar-Private.xcconfig */,
+				39C68CD82D142BDDB7F1FDB4 /* Pods-WeshApp-RNFrostedSidebar-dummy.m */,
+				1DA0144B2DBDEF31D6A9BB51 /* Pods-WeshApp-RNFrostedSidebar-prefix.pch */,
+				4C1EA649EF4EA8FA32F0F2D9 /* Pods-WeshApp-RNFrostedSidebar-umbrella.h */,
+				DDD141AD5453014370F30050 /* Pods-WeshAppTests-RNFrostedSidebar.modulemap */,
+				C62506D9BF9EF1911C7CB955 /* Pods-WeshAppTests-RNFrostedSidebar.xcconfig */,
+				0A77DC256359DC2BF4DD84B9 /* Pods-WeshAppTests-RNFrostedSidebar-Private.xcconfig */,
+				C57F389AA57EA521355495B5 /* Pods-WeshAppTests-RNFrostedSidebar-dummy.m */,
+				00D33174306F76FAC7553CB7 /* Pods-WeshAppTests-RNFrostedSidebar-prefix.pch */,
+				C2F1A74D48A678485159D68B /* Pods-WeshAppTests-RNFrostedSidebar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-WeshApp-RNFrostedSidebar";
+			sourceTree = "<group>";
+		};
+		EC8523DAB521D9000E60BEF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74240B8CFBAC5CC1697A5997 /* BLKFlexibleHeightBar.framework */,
+				0A7064384FF22A482092659B /* BLKFlexibleHeightBar.framework */,
+				514EAFACA5BD7405AB1980F6 /* Pods_WeshApp.framework */,
+				2C9643C8D9554680B9DD2BE5 /* Pods_WeshAppTests.framework */,
+				39943477FD88F9E3854FE5B4 /* RNFrostedSidebar.framework */,
+				5A748A2186484BA3E0A99C91 /* RNFrostedSidebar.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		17AD8679CF8AFFAF6FD9EDEB /* Headers */ = {
+		2A85F04F71DCEA5643812C3F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4EE350FCB8FF8C56EEFC6CF /* BLKDelegateSplitter.h in Headers */,
-				63F3627843935672CC6FC7A5 /* BLKFlexibleHeightBar.h in Headers */,
-				7DD3231D1FB4DD88DC244A04 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */,
-				738E8DE5DC03918F3F6952F4 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */,
-				4FE5D47C8870505BA8BF9FBC /* FacebookStyleBarBehaviorDefiner.h in Headers */,
-				D8D0FA071AB6190B0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.h in Headers */,
-				D88BC8171AB70CC30034031C /* BLKDelegateSplitterForTableView.h in Headers */,
-				EF80E7E5B54F25EB7CD0026F /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h in Headers */,
-				838142CBFE34BB476414EC0C /* SquareCashStyleBehaviorDefiner.h in Headers */,
-				52A41030C00E23214C114A1E /* UIView+BLKFlexibleHeightBarSubview.h in Headers */,
+				508C285A5D7A9DBA806B08BA /* BLKDelegateSplitter.h in Headers */,
+				2F96D3DC69A46372524AC32D /* BLKFlexibleHeightBar.h in Headers */,
+				D5EFEE4B9804569ED89E0039 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */,
+				9115F36A434B3D1DB3796613 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */,
+				F0308AB9EDE75BB0EE9D7ECD /* FacebookStyleBarBehaviorDefiner.h in Headers */,
+				BD2D7ED615E91821299E66F5 /* Pods-WeshApp-BLKFlexibleHeightBar-umbrella.h in Headers */,
+				0FF99896B53FF24C5289602E /* SquareCashStyleBehaviorDefiner.h in Headers */,
+				E4F829863970BF53EFC36F7C /* UIView+BLKFlexibleHeightBarSubview.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3B3CDCF280E8A280E928D4B1 /* Headers */ = {
+		3788871A9A7BA6FCB39280ED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D85E8D67651145ED94FB343 /* Pods-WeshAppTests-umbrella.h in Headers */,
+				CAC68C6B9776F69FDD50795E /* BLKDelegateSplitter.h in Headers */,
+				5CDF5FA033D24EA5CC341FEC /* BLKFlexibleHeightBar.h in Headers */,
+				63C690D31CE7B26C7C8CE3B6 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */,
+				60204550663BC3FF56AFC621 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */,
+				F89EC556CD60FF9D901B6E9B /* FacebookStyleBarBehaviorDefiner.h in Headers */,
+				9E1A19870E36C4E0BC5CB3A6 /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h in Headers */,
+				FD4E5336C860ED6FCBDFB7B8 /* SquareCashStyleBehaviorDefiner.h in Headers */,
+				7CC4FDA736971C059767BC97 /* UIView+BLKFlexibleHeightBarSubview.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6DE40A1CE16F560A8084AF79 /* Headers */ = {
+		5F4134A8628C0B7A756E13FF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06A86505BB2B016CFBB20B36 /* Pods-WeshApp-umbrella.h in Headers */,
+				1463EB43E88C73A8F373286D /* Pods-WeshAppTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC86DA197A7F794343AC635F /* Headers */ = {
+		7C5219A35113737CD675967D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89DEE9CDCD5582D0119E3EB8 /* BLKDelegateSplitter.h in Headers */,
-				51A229A5D3A843BF1C03AED3 /* BLKFlexibleHeightBar.h in Headers */,
-				3B4F218441B5CAE141A947E4 /* BLKFlexibleHeightBarBehaviorDefiner.h in Headers */,
-				CDD838C2479788C91346AE91 /* BLKFlexibleHeightBarSubviewLayoutAttributes.h in Headers */,
-				0BBE0BFE596AD8CAD7471E14 /* FacebookStyleBarBehaviorDefiner.h in Headers */,
-				6E82484894256A47EA6498C2 /* Pods-WeshAppTests-BLKFlexibleHeightBar-umbrella.h in Headers */,
-				843250759BB84387CB9DB068 /* SquareCashStyleBehaviorDefiner.h in Headers */,
-				99498AE02F56CEE598A8EB08 /* UIView+BLKFlexibleHeightBarSubview.h in Headers */,
+				4A7E226B71B356625FF641A6 /* Pods-WeshAppTests-RNFrostedSidebar-umbrella.h in Headers */,
+				52AC6382DE44C93FD6E0E6F3 /* RNFrostedSidebar.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEE2FD7D9C1A92592FE2339C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EECEBCF51ED3293EF3FC6630 /* Pods-WeshApp-RNFrostedSidebar-umbrella.h in Headers */,
+				51FEB9145D9821BBB6CAD1C4 /* RNFrostedSidebar.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85A2C0F48A6F1A5D3FEE36E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33EDCCBA6F830393461D5179 /* Pods-WeshApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		857767CC7AEEF8DFE4AC6940 /* Pods-WeshAppTests-BLKFlexibleHeightBar */ = {
+		2C91D024B3FB0029195D0DE5 /* Pods-WeshAppTests-RNFrostedSidebar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D86924428EC554755D0F21D3 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-BLKFlexibleHeightBar" */;
+			buildConfigurationList = 4EB0F6C31212C2D8531FDB58 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-RNFrostedSidebar" */;
 			buildPhases = (
-				9164C319426F9D49AE4F01BE /* Sources */,
-				58F9F018D4484E6CBD34F0D8 /* Frameworks */,
-				EC86DA197A7F794343AC635F /* Headers */,
+				DFD2BFBE7F894A085B4EE507 /* Sources */,
+				D85363D947EC7F16835DD908 /* Frameworks */,
+				7C5219A35113737CD675967D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-WeshAppTests-RNFrostedSidebar";
+			productName = "Pods-WeshAppTests-RNFrostedSidebar";
+			productReference = 5A748A2186484BA3E0A99C91 /* RNFrostedSidebar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2D37D941E40F6DF7C9F6D2F6 /* Pods-WeshApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E9F788EA4B704B196AC852B /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */;
+			buildPhases = (
+				39B4FFD87DC99F19A0A7F411 /* Sources */,
+				91CF38CB0A8F7876333F9085 /* Frameworks */,
+				F85A2C0F48A6F1A5D3FEE36E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B40223A4C79BE598C950DA6E /* PBXTargetDependency */,
+				6E3EE9744AE3154878BA8AD6 /* PBXTargetDependency */,
+			);
+			name = "Pods-WeshApp";
+			productName = "Pods-WeshApp";
+			productReference = 514EAFACA5BD7405AB1980F6 /* Pods_WeshApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		95F6AD073411C09D2E3B9E25 /* Pods-WeshAppTests-BLKFlexibleHeightBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A41F6BBFDDD71FEFF444885 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-BLKFlexibleHeightBar" */;
+			buildPhases = (
+				52B97E2E25D48DC934396BF7 /* Sources */,
+				492CF06CBEFDE8E58E5616FE /* Frameworks */,
+				3788871A9A7BA6FCB39280ED /* Headers */,
 			);
 			buildRules = (
 			);
@@ -378,16 +523,16 @@
 			);
 			name = "Pods-WeshAppTests-BLKFlexibleHeightBar";
 			productName = "Pods-WeshAppTests-BLKFlexibleHeightBar";
-			productReference = 2F67D6D21808A642D829805C /* BLKFlexibleHeightBar.framework */;
+			productReference = 0A7064384FF22A482092659B /* BLKFlexibleHeightBar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B816F8BA896C50D407F71EF0 /* Pods-WeshApp-BLKFlexibleHeightBar */ = {
+		BE46F9D47FBF24C15418BF64 /* Pods-WeshApp-BLKFlexibleHeightBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6470B272C8A629817AAA970 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-BLKFlexibleHeightBar" */;
+			buildConfigurationList = 4E829E030882588D9897200A /* Build configuration list for PBXNativeTarget "Pods-WeshApp-BLKFlexibleHeightBar" */;
 			buildPhases = (
-				41498C0DCCF342EC938FF404 /* Sources */,
-				800E5162E920D9F635DF2F1F /* Frameworks */,
-				17AD8679CF8AFFAF6FD9EDEB /* Headers */,
+				7373BE05B39769D48C19D9DC /* Sources */,
+				BB45A2E78BFA642DBF1C2361 /* Frameworks */,
+				2A85F04F71DCEA5643812C3F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -395,399 +540,171 @@
 			);
 			name = "Pods-WeshApp-BLKFlexibleHeightBar";
 			productName = "Pods-WeshApp-BLKFlexibleHeightBar";
-			productReference = 200FD83C6925B4250ED016B1 /* BLKFlexibleHeightBar.framework */;
+			productReference = 74240B8CFBAC5CC1697A5997 /* BLKFlexibleHeightBar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CE648A207B8D1940C1057993 /* Pods-WeshApp */ = {
+		FA00A108DE8B315D31B6392A /* Pods-WeshAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB3B0CEE8E8E2A5CDE4B33AE /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */;
+			buildConfigurationList = 3A56118AB1B1ACF61B2BCD32 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */;
 			buildPhases = (
-				D6363B92B8C89CE001A4A0C9 /* Sources */,
-				A530876012C228FE0312CF27 /* Frameworks */,
-				6DE40A1CE16F560A8084AF79 /* Headers */,
+				6CF9E626C751E37704E7473A /* Sources */,
+				3F19EF21B77A5E4EAC39B938 /* Frameworks */,
+				5F4134A8628C0B7A756E13FF /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E57E4BC229731865C4578DB5 /* PBXTargetDependency */,
-			);
-			name = "Pods-WeshApp";
-			productName = "Pods-WeshApp";
-			productReference = 879AE452C75F1991B84E8D8E /* Pods_WeshApp.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EFE9AA95AE9EC119CFA00488 /* Pods-WeshAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BA8F294B26135A6E63328334 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */;
-			buildPhases = (
-				FBB060E9AFABBE8842629993 /* Sources */,
-				4A446CA62D86AE672D020A83 /* Frameworks */,
-				3B3CDCF280E8A280E928D4B1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9FD5DE6B0C7A425747CB6697 /* PBXTargetDependency */,
+				227FAA600294F0252364050D /* PBXTargetDependency */,
+				1A93F2EC90AF19B4E6AEDFC1 /* PBXTargetDependency */,
 			);
 			name = "Pods-WeshAppTests";
 			productName = "Pods-WeshAppTests";
-			productReference = CFE5F13593D24A53F0F56669 /* Pods_WeshAppTests.framework */;
+			productReference = 2C9643C8D9554680B9DD2BE5 /* Pods_WeshAppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB5C925C0DDB7AD4E8438DEF /* Pods-WeshApp-RNFrostedSidebar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6E0516C4EB021970BBE5760 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-RNFrostedSidebar" */;
+			buildPhases = (
+				D6ECDE7AA505BB8B5AF517D1 /* Sources */,
+				418F8F086EB25674E441A609 /* Frameworks */,
+				EEE2FD7D9C1A92592FE2339C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-WeshApp-RNFrostedSidebar";
+			productName = "Pods-WeshApp-RNFrostedSidebar";
+			productReference = 39943477FD88F9E3854FE5B4 /* RNFrostedSidebar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4EFBFC52FC717C497FABD726 /* Project object */ = {
+		2488EF23AB8E86D2E17DCB9F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 39456A0F8B52B6DCBE7046C1 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 697F8FC2B824AED5C0ED6997 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = A5BC819A9F371B2C1D91AAD9;
-			productRefGroup = 6376B58273280F52615B8382 /* Products */;
+			mainGroup = 51E9B037A4A4B5B94633E3D5;
+			productRefGroup = EC8523DAB521D9000E60BEF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE648A207B8D1940C1057993 /* Pods-WeshApp */,
-				B816F8BA896C50D407F71EF0 /* Pods-WeshApp-BLKFlexibleHeightBar */,
-				EFE9AA95AE9EC119CFA00488 /* Pods-WeshAppTests */,
-				857767CC7AEEF8DFE4AC6940 /* Pods-WeshAppTests-BLKFlexibleHeightBar */,
+				2D37D941E40F6DF7C9F6D2F6 /* Pods-WeshApp */,
+				BE46F9D47FBF24C15418BF64 /* Pods-WeshApp-BLKFlexibleHeightBar */,
+				FB5C925C0DDB7AD4E8438DEF /* Pods-WeshApp-RNFrostedSidebar */,
+				FA00A108DE8B315D31B6392A /* Pods-WeshAppTests */,
+				95F6AD073411C09D2E3B9E25 /* Pods-WeshAppTests-BLKFlexibleHeightBar */,
+				2C91D024B3FB0029195D0DE5 /* Pods-WeshAppTests-RNFrostedSidebar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		41498C0DCCF342EC938FF404 /* Sources */ = {
+		39B4FFD87DC99F19A0A7F411 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84A3ED64165678857632E9F /* BLKDelegateSplitter.m in Sources */,
-				D88BC81A1AB70D020034031C /* BLKDelegateSplitterForTableView.m in Sources */,
-				742CC1B07EA21E8C7B6631F8 /* BLKFlexibleHeightBar.m in Sources */,
-				334B79B8D1BA398BB9A45EAB /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */,
-				400FB51ABCC3B5C2EF27013E /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */,
-				9F28A86BC350F4E69FDCAE2A /* FacebookStyleBarBehaviorDefiner.m in Sources */,
-				14BC41155C119D5322BFE13C /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m in Sources */,
-				D8D0FA051AB618FF0074BBA5 /* SquareCashStyleBehaviorDefinerForTableView.m in Sources */,
-				7878EEEA79E5FF869EF98340 /* SquareCashStyleBehaviorDefiner.m in Sources */,
-				180227876DC65DFEA596C1E4 /* UIView+BLKFlexibleHeightBarSubview.m in Sources */,
+				019D677F4D663D69CB10285C /* Pods-WeshApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9164C319426F9D49AE4F01BE /* Sources */ = {
+		52B97E2E25D48DC934396BF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0C11D95D75E3031AAE5B51B /* BLKDelegateSplitter.m in Sources */,
-				F98AEC318AACB23845E8F818 /* BLKFlexibleHeightBar.m in Sources */,
-				FC7DAEFA7F02813003389B92 /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */,
-				0BE6B11DE89640729702B836 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */,
-				DADC440952CE742BDB48D770 /* FacebookStyleBarBehaviorDefiner.m in Sources */,
-				726B5CF1312AE588E3702F71 /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m in Sources */,
-				05C6E922E267DF0B5099334D /* SquareCashStyleBehaviorDefiner.m in Sources */,
-				7536D88E9F1573162FC41B39 /* UIView+BLKFlexibleHeightBarSubview.m in Sources */,
+				7520755308B0AD474232E7A3 /* BLKDelegateSplitter.m in Sources */,
+				44B7FDCDC140BEC965980858 /* BLKFlexibleHeightBar.m in Sources */,
+				1FE97950C574340009F4E839 /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */,
+				BCA4FE768D929979AF2F1B66 /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */,
+				F8BFFCB307C5223571BCE950 /* FacebookStyleBarBehaviorDefiner.m in Sources */,
+				899B0930AAE8C41AE148458B /* Pods-WeshAppTests-BLKFlexibleHeightBar-dummy.m in Sources */,
+				92B648BDB3C3FDA6F13817FD /* SquareCashStyleBehaviorDefiner.m in Sources */,
+				DDD6A0C222E377F9E3E507D6 /* UIView+BLKFlexibleHeightBarSubview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6363B92B8C89CE001A4A0C9 /* Sources */ = {
+		6CF9E626C751E37704E7473A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2B35F7903AD2B78778959AE /* Pods-WeshApp-dummy.m in Sources */,
+				280EF0745E517A2D059797D5 /* Pods-WeshAppTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FBB060E9AFABBE8842629993 /* Sources */ = {
+		7373BE05B39769D48C19D9DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E37950A93B4EC9BDEC51D886 /* Pods-WeshAppTests-dummy.m in Sources */,
+				FA6081972D8188E62795A749 /* BLKDelegateSplitter.m in Sources */,
+				37FB3359607AD091254BDE14 /* BLKFlexibleHeightBar.m in Sources */,
+				F4FE3DFD4DD9A0C68823493F /* BLKFlexibleHeightBarBehaviorDefiner.m in Sources */,
+				9F570B7B559117085FAC763C /* BLKFlexibleHeightBarSubviewLayoutAttributes.m in Sources */,
+				741A044AEFD355D596195B22 /* FacebookStyleBarBehaviorDefiner.m in Sources */,
+				C99429822E9956B797A4CFD0 /* Pods-WeshApp-BLKFlexibleHeightBar-dummy.m in Sources */,
+				38046342F5F0F6B5C59222BF /* SquareCashStyleBehaviorDefiner.m in Sources */,
+				7DAFAC14654AA4330B45CEEA /* UIView+BLKFlexibleHeightBarSubview.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6ECDE7AA505BB8B5AF517D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53AE59CAC04786BE545635F7 /* Pods-WeshApp-RNFrostedSidebar-dummy.m in Sources */,
+				0F1F752BF4221F3250359482 /* RNFrostedSidebar.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFD2BFBE7F894A085B4EE507 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				399D8560D6BCEAAA2DB97FD2 /* Pods-WeshAppTests-RNFrostedSidebar-dummy.m in Sources */,
+				1E37156D954EA89CCA2663B4 /* RNFrostedSidebar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9FD5DE6B0C7A425747CB6697 /* PBXTargetDependency */ = {
+		1A93F2EC90AF19B4E6AEDFC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-WeshAppTests-RNFrostedSidebar";
+			target = 2C91D024B3FB0029195D0DE5 /* Pods-WeshAppTests-RNFrostedSidebar */;
+			targetProxy = D637B4293430950B33DF8829 /* PBXContainerItemProxy */;
+		};
+		227FAA600294F0252364050D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-WeshAppTests-BLKFlexibleHeightBar";
-			target = 857767CC7AEEF8DFE4AC6940 /* Pods-WeshAppTests-BLKFlexibleHeightBar */;
-			targetProxy = 11F1BC77442FE88D790DA11B /* PBXContainerItemProxy */;
+			target = 95F6AD073411C09D2E3B9E25 /* Pods-WeshAppTests-BLKFlexibleHeightBar */;
+			targetProxy = 45600551408F0D20C5A603A5 /* PBXContainerItemProxy */;
 		};
-		E57E4BC229731865C4578DB5 /* PBXTargetDependency */ = {
+		6E3EE9744AE3154878BA8AD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-WeshApp-RNFrostedSidebar";
+			target = FB5C925C0DDB7AD4E8438DEF /* Pods-WeshApp-RNFrostedSidebar */;
+			targetProxy = 69A5989B8934E278AB979901 /* PBXContainerItemProxy */;
+		};
+		B40223A4C79BE598C950DA6E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-WeshApp-BLKFlexibleHeightBar";
-			target = B816F8BA896C50D407F71EF0 /* Pods-WeshApp-BLKFlexibleHeightBar */;
-			targetProxy = 5B62EA5C4D4B47ACC5AAC975 /* PBXContainerItemProxy */;
+			target = BE46F9D47FBF24C15418BF64 /* Pods-WeshApp-BLKFlexibleHeightBar */;
+			targetProxy = A8ED16D40AC8949ACD906D20 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0DC41B3FFD8C383F1712279B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE3F9BFDD1DA72FE1DC78456 /* Pods-WeshApp.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp/Pods-WeshApp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_WeshApp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2CA5535071917B0B6BB05FA5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0FCD0C46986577AC21255B3 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = BLKFlexibleHeightBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		471FF0B0F6C3A7A3533404E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		4C5D37AF2CF440F068E79928 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C1F8AB8D410B26360C87860 /* Pods-WeshApp.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp/Pods-WeshApp.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_WeshApp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6840909EB39B3B1FD96206CB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0FCD0C46986577AC21255B3 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BLKFlexibleHeightBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6A6AE81DA53F598C8068BC52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A41C64C85C8CDDACC2F0921 /* Pods-WeshAppTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests/Pods-WeshAppTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_WeshAppTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6FD6A896564CDA9A06DF9760 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B50D556599C8EFD5FEB538FD /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = BLKFlexibleHeightBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CB51BD7C6DD76058D438206B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD0E73AFD7A923F4AD73B814 /* Pods-WeshAppTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests/Pods-WeshAppTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_WeshAppTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CEA6CF36745A37938D9C8AA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B50D556599C8EFD5FEB538FD /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = BLKFlexibleHeightBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EEDB6FB4724025152B321ADE /* Debug */ = {
+		043B049B9FA17EE81DBEC482 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -826,55 +743,439 @@
 			};
 			name = Debug;
 		};
+		046C080083ED112DAD7E329A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4896597F2BB9EB00D8A12B49 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BLKFlexibleHeightBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		07AA013459A71926B71A850C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF07CB44E4E8FF2D74E7E1D2 /* Pods-WeshApp-RNFrostedSidebar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-RNFrostedSidebar/Pods-WeshApp-RNFrostedSidebar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp-RNFrostedSidebar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp-RNFrostedSidebar/Pods-WeshApp-RNFrostedSidebar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RNFrostedSidebar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		11291AC2218AC45A5D346780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F26F49294231C3B12CAE01 /* Pods-WeshApp.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp/Pods-WeshApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WeshApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3DE8F8740DAC7949C158DB87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FA3E16A3F749E0E2731FC67 /* Pods-WeshApp.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp/Pods-WeshApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WeshApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5C6309BCB0D6D4C2B70E2F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A77DC256359DC2BF4DD84B9 /* Pods-WeshAppTests-RNFrostedSidebar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests-RNFrostedSidebar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RNFrostedSidebar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7A1D537C4094478371E0D838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD349F533DA2491D88ADAB08 /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = BLKFlexibleHeightBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		852652349286A40DF534BF27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF07CB44E4E8FF2D74E7E1D2 /* Pods-WeshApp-RNFrostedSidebar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-RNFrostedSidebar/Pods-WeshApp-RNFrostedSidebar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp-RNFrostedSidebar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp-RNFrostedSidebar/Pods-WeshApp-RNFrostedSidebar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RNFrostedSidebar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		855870EC3B59CECCD8E66579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD349F533DA2491D88ADAB08 /* Pods-WeshAppTests-BLKFlexibleHeightBar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests-BLKFlexibleHeightBar/Pods-WeshAppTests-BLKFlexibleHeightBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = BLKFlexibleHeightBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		89BC3666DED7CF4526C47757 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD0405545B2663B78F9299D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4896597F2BB9EB00D8A12B49 /* Pods-WeshApp-BLKFlexibleHeightBar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshApp-BLKFlexibleHeightBar/Pods-WeshApp-BLKFlexibleHeightBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = BLKFlexibleHeightBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EE6BBB75D6B96FF6F5C76D50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 142927FBCEA8CA2BFBF4925B /* Pods-WeshAppTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests/Pods-WeshAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WeshAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EF8B2081B26AE8149508B95D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A77DC256359DC2BF4DD84B9 /* Pods-WeshAppTests-RNFrostedSidebar-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests-RNFrostedSidebar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests-RNFrostedSidebar/Pods-WeshAppTests-RNFrostedSidebar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RNFrostedSidebar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA245DD2D3075E6C96155AD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 253ACCCFCB2E92E0BC77AD4F /* Pods-WeshAppTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeshAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-WeshAppTests/Pods-WeshAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WeshAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39456A0F8B52B6DCBE7046C1 /* Build configuration list for PBXProject "Pods" */ = {
+		2E9F788EA4B704B196AC852B /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EEDB6FB4724025152B321ADE /* Debug */,
-				471FF0B0F6C3A7A3533404E4 /* Release */,
+				3DE8F8740DAC7949C158DB87 /* Debug */,
+				11291AC2218AC45A5D346780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA8F294B26135A6E63328334 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */ = {
+		3A41F6BBFDDD71FEFF444885 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-BLKFlexibleHeightBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A6AE81DA53F598C8068BC52 /* Debug */,
-				CB51BD7C6DD76058D438206B /* Release */,
+				7A1D537C4094478371E0D838 /* Debug */,
+				855870EC3B59CECCD8E66579 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB3B0CEE8E8E2A5CDE4B33AE /* Build configuration list for PBXNativeTarget "Pods-WeshApp" */ = {
+		3A56118AB1B1ACF61B2BCD32 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0DC41B3FFD8C383F1712279B /* Debug */,
-				4C5D37AF2CF440F068E79928 /* Release */,
+				EE6BBB75D6B96FF6F5C76D50 /* Debug */,
+				FA245DD2D3075E6C96155AD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D86924428EC554755D0F21D3 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-BLKFlexibleHeightBar" */ = {
+		4E829E030882588D9897200A /* Build configuration list for PBXNativeTarget "Pods-WeshApp-BLKFlexibleHeightBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6FD6A896564CDA9A06DF9760 /* Debug */,
-				CEA6CF36745A37938D9C8AA4 /* Release */,
+				046C080083ED112DAD7E329A /* Debug */,
+				BD0405545B2663B78F9299D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6470B272C8A629817AAA970 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-BLKFlexibleHeightBar" */ = {
+		4EB0F6C31212C2D8531FDB58 /* Build configuration list for PBXNativeTarget "Pods-WeshAppTests-RNFrostedSidebar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6840909EB39B3B1FD96206CB /* Debug */,
-				2CA5535071917B0B6BB05FA5 /* Release */,
+				5C6309BCB0D6D4C2B70E2F09 /* Debug */,
+				EF8B2081B26AE8149508B95D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		697F8FC2B824AED5C0ED6997 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043B049B9FA17EE81DBEC482 /* Debug */,
+				89BC3666DED7CF4526C47757 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6E0516C4EB021970BBE5760 /* Build configuration list for PBXNativeTarget "Pods-WeshApp-RNFrostedSidebar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07AA013459A71926B71A850C /* Debug */,
+				852652349286A40DF534BF27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4EFBFC52FC717C497FABD726 /* Project object */;
+	rootObject = 2488EF23AB8E86D2E17DCB9F /* Project object */;
 }
