@@ -1,9 +1,9 @@
 //
-//  LocalChannelTVC.swift
+//  NearbyVC.swift
 //  WeshApp
 //
-//  Created by z.kakabadze on 25/10/2014.
-//  Copyright (c) 2014 WeshApp. All rights reserved.
+//  Created by rabzu on 20/03/2015.
+//  Copyright (c) 2015 WeshApp. All rights reserved.
 //
 
 import UIKit
@@ -11,8 +11,9 @@ import CoreData
 import Designables
 import RNFrostedSidebar
 
-class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate,RNFrostedSidebarDelegate {
-
+class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate,RNFrostedSidebarDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     var badgeFetchedRC: NSFetchedResultsController!
     var channelFetechedRC: NSFetchedResultsController!
     var currentFetchedRC : NSFetchedResultsController!
@@ -20,17 +21,17 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     var sessionMngr: SessionMngr?
     let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
     let screenSize  = UIScreen.mainScreen().bounds.size
-  //  var cellsCurrentlyEditing: NSMutableSet?
+    //  var cellsCurrentlyEditing: NSMutableSet?
     var openedCell: ChannelTableViewCell?
     let proportion: CGFloat = 0.095
     var callout: RNFrostedSidebar?
     let transitionManager = TransitionManager()
-
-   
-    @IBAction func showMenu(sender: UIBarButtonItem) {
-           callout!.show()
-    }
     
+    
+//    @IBAction func showMenu(sender: UIBarButtonItem) {
+//           callout!.show()
+//    }
+//    
     private func setUpMenu(){
         
         let images = [ UIImage(named: "Notifications")!,
@@ -77,42 +78,42 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     }
 
 
-    @IBOutlet weak var segControl: UISegmentedControl!
+//    @IBOutlet weak var segControl: UISegmentedControl!
     
     //MARK: Segmentation Control
-    @IBAction func segmentChanged(sender: UISegmentedControl) {
-        switch segControl.selectedSegmentIndex
-        {
-        case 0:
-           currentFetchedRC = channelFetechedRC
-           var error: NSError? = nil
-           if (!currentFetchedRC.performFetch(&error))  {
-            println("Error: \(error?.localizedDescription)") }
-           //animation
-           UIView.transitionWithView(self.tableView, duration: 0.35,
-                                                      options: UIViewAnimationOptions.TransitionFlipFromLeft,
-                                                   animations: { self.tableView.reloadData() },
-                                                   completion: { (v:Bool) in ()})
-          
-        case 1:
-            currentFetchedRC = badgeFetchedRC
-            var error: NSError? = nil
-            if (!currentFetchedRC.performFetch(&error))  {
-                println("Error: \(error?.localizedDescription)") }
-            //animation
-            UIView.transitionWithView(self.tableView, duration: 0.35,
-                options: UIViewAnimationOptions.TransitionFlipFromRight,
-                animations: {
-                    self.tableView.reloadData()
-                },
-                completion: { (v:Bool) in ()})
-       
-        default:
-            break
-        }
-    
-    
-    }
+//    @IBAction func segmentChanged(sender: UISegmentedControl) {
+//        switch segControl.selectedSegmentIndex
+//        {
+//        case 0:
+//           currentFetchedRC = channelFetechedRC
+//           var error: NSError? = nil
+//           if (!currentFetchedRC.performFetch(&error))  {
+//            println("Error: \(error?.localizedDescription)") }
+//           //animation
+//           UIView.transitionWithView(self.tableView, duration: 0.35,
+//                                                      options: UIViewAnimationOptions.TransitionFlipFromLeft,
+//                                                   animations: { self.tableView.reloadData() },
+//                                                   completion: { (v:Bool) in ()})
+//          
+//        case 1:
+//            currentFetchedRC = badgeFetchedRC
+//            var error: NSError? = nil
+//            if (!currentFetchedRC.performFetch(&error))  {
+//                println("Error: \(error?.localizedDescription)") }
+//            //animation
+//            UIView.transitionWithView(self.tableView, duration: 0.35,
+//                options: UIViewAnimationOptions.TransitionFlipFromRight,
+//                animations: {
+//                    self.tableView.reloadData()
+//                },
+//                completion: { (v:Bool) in ()})
+//       
+//        default:
+//            break
+//        }
+//    
+//    
+//    }
 
  
     //MARK: Set up
@@ -145,7 +146,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
 //        backButton.setTitleTextAttributes(titleDict, forState: UIControlState.Normal)
    
 //        self.navigationItem.backBarButtonItem = backButton
-//        
+//
         
         sessionMngr = appDelegate.sessionMngr
         coreDataStack = appDelegate.coreDataStack!
@@ -194,42 +195,50 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     }
 
     // MARK: - Number of Sections
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return currentFetchedRC.sections!.count
     }
     
     // MARK: - Number of Rows
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = currentFetchedRC.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     // MARK: - Cell for Row at IndexPath
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: ChannelTableViewCell?
-        switch segControl.selectedSegmentIndex
-        {
-            case 0:
-                 cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
-                let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
-                cell!.title.text = channel.title
-                //TODO if name is known show real name instead
-                cell!.subTitle.text = channel.author.handle
-            
-                //TODO: cell!.image     =
-                //Todo Count number of posts the channe has cell!.counter =
-                
-            case 1:
-                 cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
-                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
-                cell!.title.text  = badge.handle
-                //TODO if name is known show real name instead
-                //TODO: cell!.image =
-                //Todo Count number of channels the authork has cell!.counter =
+//        switch segControl.selectedSegmentIndex
+//        {
+//            case 0:
+//                 cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
+//                let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
+//                cell!.title.text = channel.title
+//                //TODO if name is known show real name instead
+//                cell!.subTitle.text = channel.author.handle
+//            
+//                //TODO: cell!.image     =
+//                //Todo Count number of posts the channe has cell!.counter =
+//                
+//            case 1:
+//                 cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
+//                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
+//                cell!.title.text  = badge.handle
+//                //TODO if name is known show real name instead
+//                //TODO: cell!.image =
+//                //Todo Count number of channels the authork has cell!.counter =
+//
+//
+//            default:
+//                break;
+//        }
+        
+        
+        cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
+        let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
+        cell!.title.text = channel.title
+        //TODO if name is known show real name instead
+        cell!.subTitle.text = channel.author.handle
 
-
-            default:
-                break;
-        }
             let view1 = UIView()
         let v = UIView()
         v.backgroundColor = UIColor.grayColor()
@@ -258,7 +267,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     }
     
     //Is called before cellForRowAtIndexPath
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return screenSize.width / 4.11
     }
@@ -268,19 +277,19 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
 ////            self.performSegueWithIdentifier("toChannelTVC", sender: self)
 ////        }
 //    }
-//    
+//
     
-    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+     func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
         cell?.highlightCell(false)
 
     }
     
-    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
 
         var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
         cell?.highlightCell(true)
@@ -348,7 +357,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
   
     
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return false
     }
@@ -384,7 +393,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
          //tableView.scrollEnabled = true
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+     func scrollViewDidScroll(scrollView: UIScrollView) {
         if let oc = openedCell?{
             oc.closeCell()
         }

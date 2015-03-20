@@ -87,8 +87,12 @@
 		D8A443411ABB65E10030F01E /* FullAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */; };
 		D8A443431ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */; };
 		D8A443441ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */; };
-		D8A443461ABB9BFD0030F01E /* channelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A443451ABB9BFD0030F01E /* channelCell.xib */; };
-		D8A443471ABB9BFD0030F01E /* channelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A443451ABB9BFD0030F01E /* channelCell.xib */; };
+		D8A4434F1ABBA2380030F01E /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */; };
+		D8A443501ABBA2380030F01E /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */; };
+		D8A443521ABBA2900030F01E /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */; };
+		D8A443531ABBA2900030F01E /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */; };
+		D8A443581ABBA8090030F01E /* NearbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A443571ABBA8090030F01E /* NearbyVC.swift */; };
+		D8A443591ABBA8090030F01E /* NearbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A443571ABBA8090030F01E /* NearbyVC.swift */; };
 		D8A842451A9BB817001F1030 /* WeshappUsefullFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A842441A9BB817001F1030 /* WeshappUsefullFunctions.swift */; };
 		D8A8424B1A9BBD2D001F1030 /* WallPostLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */; };
 		D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD361A112C3300F40134 /* CoreDataStack.swift */; };
@@ -241,7 +245,9 @@
 		D89725A61AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BetterLayoutGuides.m"; sourceTree = "<group>"; };
 		D89762051ABB626700A02FB2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
-		D8A443451ABB9BFD0030F01E /* channelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = channelCell.xib; sourceTree = "<group>"; };
+		D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
+		D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		D8A443571ABBA8090030F01E /* NearbyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyVC.swift; sourceTree = "<group>"; };
 		D8A842441A9BB817001F1030 /* WeshappUsefullFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappUsefullFunctions.swift; sourceTree = "<group>"; };
 		D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostLabel.swift; sourceTree = "<group>"; };
 		D8BD20601AB345FC006F860F /* libPods-WeshApp-BLKFlexibleHeightBar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WeshApp-BLKFlexibleHeightBar.a"; path = "Pods/../build/Debug-iphoneos/libPods-WeshApp-BLKFlexibleHeightBar.a"; sourceTree = "<group>"; };
@@ -513,6 +519,7 @@
 				B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */,
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
 				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
+				D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */,
 				D8C6422D1A47594A004A604A /* ChannelTVC.swift */,
 				D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */,
 				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
@@ -522,7 +529,8 @@
 				D8CE96501AB5F4200015A399 /* ProfileNavBar.swift */,
 				D89762051ABB626700A02FB2 /* TransitionManager.swift */,
 				D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */,
-				D8A443451ABB9BFD0030F01E /* channelCell.xib */,
+				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
+				D8A443571ABBA8090030F01E /* NearbyVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -740,11 +748,12 @@
 				B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */,
 				D81FFDC11A0BF94500C6294B /* misc in Resources */,
 				B36E686A1A6C4798002B951A /* TitilliumText25L.otf in Resources */,
-				D8A443461ABB9BFD0030F01E /* channelCell.xib in Resources */,
 				B36E686B1A6C4798002B951A /* TitilliumText25L001.otf in Resources */,
 				B36E686E1A6C4798002B951A /* TitilliumText25L004.otf in Resources */,
 				B36E686C1A6C4798002B951A /* TitilliumText25L002.otf in Resources */,
 				B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */,
+				D8A443521ABBA2900030F01E /* ProfileTableViewCell.xib in Resources */,
+				D8A4434F1ABBA2380030F01E /* ChannelTableViewCell.xib in Resources */,
 				B3D9F5B119F93AA400BF6257 /* Images.xcassets in Resources */,
 				D87C9BA11A2B88D1002834C3 /* messi.jpg in Resources */,
 			);
@@ -754,7 +763,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A443471ABB9BFD0030F01E /* channelCell.xib in Resources */,
+				D8A443501ABBA2380030F01E /* ChannelTableViewCell.xib in Resources */,
+				D8A443531ABBA2900030F01E /* ProfileTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +912,7 @@
 				B3CB2E281A690CCD00FBFED1 /* Tags.swift in Sources */,
 				B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */,
 				D8C224461A83E68F00CD083B /* ChannelTableViewCell.swift in Sources */,
+				D8A443581ABBA8090030F01E /* NearbyVC.swift in Sources */,
 				B3CB2E2C1A690CCD00FBFED1 /* Profile.swift in Sources */,
 				B3CB2E241A690CCC00FBFED1 /* Channel.swift in Sources */,
 				D89762061ABB626700A02FB2 /* TransitionManager.swift in Sources */,
@@ -969,6 +980,7 @@
 				D8C0FD611A127B5D00F40134 /* ProfileMngrTest.swift in Sources */,
 				D8DA2A351A693F410098C5E6 /* Post.swift in Sources */,
 				D8A443411ABB65E10030F01E /* FullAddVC.swift in Sources */,
+				D8A443591ABBA8090030F01E /* NearbyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
