@@ -12,7 +12,7 @@ import BLKFlexibleHeightBar
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var profile:Profile?
-    private var myCustomBar: ProfileNavBar?
+    private var myCustomBar: FlexibleNavBar?
     private var  delegateSplitter: BLKDelegateSplitter?
     
     let screenSize  = UIScreen.mainScreen().bounds.size
@@ -30,21 +30,13 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
-        
         UIApplication.sharedApplication().statusBarHidden = false
-        self.setNeedsStatusBarAppearanceUpdate()
-
-    
         
+        self.setNeedsStatusBarAppearanceUpdate()
         // Setup the bar
         let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 100.0)
-        
-        
-        
-        self.myCustomBar = ProfileNavBar(frame: frame, max: CGFloat(200.0), min: CGFloat(70), handle: "Jurgen", name: "Dach Von Kloss", screenSize: screenSize)
+        self.myCustomBar = FlexibleNavBar(frame: frame, max: CGFloat(200.0), min: CGFloat(70), handle: "Jurgen", name: "Dach Von Kloss")
         
         var behaviorDefiner = SquareCashStyleBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress(0.0, forProgressRangeStart: 0.0, end: 0.5)

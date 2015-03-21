@@ -8,48 +8,68 @@
 
 import UIKit
 
-public class WeshappSegControl: UISegmentedControl {
-    
-    public override init(frame: CGRect){
-     super.init(frame: frame)
-       // setTranslatesAutoresizingMaskIntoConstraints(false)
+ public class WeshappSegControl: UISegmentedControl {
+     let selectedColour = UIColor(red: 0xff/255, green: 0x59/255, blue: 0x59/255, alpha: 1.0)
+     override init(frame: CGRect){
+        super.init(frame: frame)
+        
     }
     
-    required public init(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
-        //setTranslatesAutoresizingMaskIntoConstraints(false)
+    required  public init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+      
+        
+    }
+
+    required override public init(items: [AnyObject]!) {
+        super.init(items: items)
+ 
+    }
+    
+    public convenience init(frame: CGRect, items: [String]){
+    
+        self.init(frame: frame)
+        
+        for i in 0...items.count - 1{
+            self.insertSegmentWithTitle(items[i], atIndex: i, animated: false)
+        }
+        self.selectedSegmentIndex = 0
+        setUp()
+    }
+    
+    
+     func setUp(){
+        
+        var segLeft = subviews[0] as UIView
+        var segRight = subviews[1] as UIView
+        
+        segLeft.tintColor = selectedColour
+        segRight.tintColor =  UIColor.whiteColor()
         
         var font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
-
+        
         setTitleTextAttributes(titleDict, forState: UIControlState.Selected)
-       
+        
         font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
         setTitleTextAttributes([NSFontAttributeName: font ], forState: UIControlState.Normal)
+       
+//        segLeft.tintColor = UIColor(red: 0xff/255, green: 0x59/255, blue: 0x59/255, alpha: 1.0)
+    
+        
+       
 
-        
-        var segRight = self.subviews[0] as UIView
-        var segLeft = self.subviews[1] as UIView
-        segLeft.tintColor = UIColorFromRGB(0xff5959)
-        
     }
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     
     
-    public override func didChangeValueForKey(key: String) {
+    override public func didChangeValueForKey(key: String) {
         let subviews = self.subviews
-        var segLeft = subviews[1] as UIView
-        var segRight = subviews[0] as UIView
+        var segLeft = subviews[0] as UIView
+        var segRight = subviews[1] as UIView
         
-        let selectedColour = UIColorFromRGB(0xff5959)
+       
         switch self.selectedSegmentIndex{
             case 0:
                 segLeft.tintColor = selectedColour
@@ -61,14 +81,4 @@ public class WeshappSegControl: UISegmentedControl {
         }
     }
     
-    
-    
-    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
 }

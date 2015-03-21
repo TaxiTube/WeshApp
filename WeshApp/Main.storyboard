@@ -99,6 +99,8 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="RbA-u9-i5C"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="containerView" destination="O3Z-1o-vvS" id="a2f-44-B0u"/>
                         <outlet property="handleTextField" destination="xBD-sq-joc" id="5fb-mf-8g0"/>
@@ -206,6 +208,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="segControl" destination="nA4-eu-Wvw" id="2kJ-qA-NOD"/>
                     </connections>
@@ -341,14 +344,16 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4036" y="1458"/>
+            <point key="canvasLocation" x="4036" y="1584"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jk8-ZO-wdB">
             <objects>
-                <navigationController id="RjB-cQ-qPU" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="RjB-cQ-qPU" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dx5-Me-hN5" customClass="WeshappNavBar" customModule="Designables">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -790,6 +795,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OUA-BB-koS"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2SA-at-V2F" id="BRr-WH-Yjz"/>
                     </connections>

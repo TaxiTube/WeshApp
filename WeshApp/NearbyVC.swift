@@ -10,10 +10,22 @@ import UIKit
 import CoreData
 import Designables
 import RNFrostedSidebar
+import BLKFlexibleHeightBar
 
 class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate,RNFrostedSidebarDelegate {
     
+    
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    private var myCustomBar: FlexibleNavBar?
+    private var delegateSplitter: BLKDelegateSplitter?
+    private let navbarProportion: CGFloat = 4.87
+    
+    
     var badgeFetchedRC: NSFetchedResultsController!
     var channelFetechedRC: NSFetchedResultsController!
     var currentFetchedRC : NSFetchedResultsController!
@@ -119,8 +131,13 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.navigationBarHidden = false
 
+//        self.navigationController!.navigationBarHidden = true
+//        self.navigationController!.setNavigationBarHidden(true, animated: false)
+
+
+        setUpNavBar()
+        
         setUpMenu()
        // self.shyNavBarManager.scrollView = self.tableView
 
@@ -180,10 +197,9 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         
        // cellsCurrentlyEditing = NSMutableSet()
     }
-    override func viewWillAppear(animated: Bool) {
-        
-        self.navigationController!.navigationBarHidden = false
-    }
+    
+    
+   
 //    override func viewDidAppear(animated: Bool) {
 //
 //                self.navigationController!.navigationBarHidden = false
@@ -193,6 +209,36 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: set up navbar
+    private func setUpNavBar(){
+        self.setNeedsStatusBarAppearanceUpdate()
+        
+        // Setup the bar
+        let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
+        
+        
+        let maxHeight = screenSize.width / navbarProportion
+        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20))
+        
+        var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
+        behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
+        behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
+        behaviorDefiner.snappingEnabled = true
+//        behaviorDefiner.elasticMaximumHeightAtTop = true
+        
+        self.myCustomBar?.behaviorDefiner = behaviorDefiner
+        
+        
+        self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
+        self.tableView.delegate =  self.delegateSplitter
+        
+        self.view.addSubview(self.myCustomBar!)
+        // Setup the table view
+        //self.tableView(registerClass:UITableViewCell.classForCoder, forCellReuseIdentifier:"cell")
+        self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight - 20, 0.0, 0.0, 0.0)
+    }
+    
 
     // MARK: - Number of Sections
      func numberOfSectionsInTableView(tableView: UITableView) -> Int {
