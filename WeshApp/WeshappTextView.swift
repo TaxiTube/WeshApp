@@ -87,9 +87,6 @@ public class WeshappTextView: UITextView{
         }
     }
     func heightDidChange()->Bool{
-        
-
-        
         if initialNumRows != numberOfLines(){
             initialNumRows = numberOfLines()
             return true

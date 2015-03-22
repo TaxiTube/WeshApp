@@ -111,62 +111,6 @@
             </objects>
             <point key="canvasLocation" x="2542" y="660"/>
         </scene>
-        <!--ProfileVC-->
-        <scene sceneID="zjZ-c1-aQh">
-            <objects>
-                <viewController restorationIdentifier="profileVC" storyboardIdentifier="profileVC" modalTransitionStyle="crossDissolve" id="1AS-H4-MMc" customClass="ProfileVC" customModule="WeshApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XJj-eq-Z2D"/>
-                        <viewControllerLayoutGuide type="bottom" id="mvq-xl-gEM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Rad-ft-5xL">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ll6-cw-shh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="qIb-CH-O5I" style="IBUITableViewCellStyleDefault" id="3dh-BM-RzM">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3dh-BM-RzM" id="zXf-I7-jFW">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qIb-CH-O5I">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="1AS-H4-MMc" id="hSD-So-JL8"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="mvq-xl-gEM" firstAttribute="top" secondItem="ll6-cw-shh" secondAttribute="bottom" id="9wY-Yo-DSC"/>
-                            <constraint firstItem="ll6-cw-shh" firstAttribute="leading" secondItem="Rad-ft-5xL" secondAttribute="leading" id="XVN-bc-fR3"/>
-                            <constraint firstAttribute="trailing" secondItem="ll6-cw-shh" secondAttribute="trailing" id="YPc-QY-jMB"/>
-                            <constraint firstItem="ll6-cw-shh" firstAttribute="top" secondItem="Rad-ft-5xL" secondAttribute="top" id="iRJ-f6-urw"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="l94-b5-G1s"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="tableView" destination="ll6-cw-shh" id="0UA-xl-c94"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="29D-mg-xhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4742" y="64"/>
-        </scene>
         <!--NearbyTVC-->
         <scene sceneID="e3h-X4-9HJ">
             <objects>
@@ -244,7 +188,7 @@
                                 <color key="textColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="WHAT ARE YOU MOOING ABOUT" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-Ik-lut" customClass="BorderTextView" customModule="WeshAppLibrary">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="WHAT ARE YOU MOOING ABOUT" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-Ik-lut" customClass="WeshappTextView" customModule="WeshAppLibrary">
                                 <rect key="frame" x="33" y="349.5" width="534" height="186.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="12"/>
@@ -763,7 +707,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="4822" y="815"/>
+            <point key="canvasLocation" x="4821" y="708"/>
         </scene>
         <!--NearbyVC-->
         <scene sceneID="ewi-79-Nzl">
@@ -799,6 +743,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2SA-at-V2F" id="BRr-WH-Yjz"/>
+                        <segue destination="hVp-4W-3xL" kind="show" identifier="toChannelVC" id="TR8-hE-aCO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bx-Iz-pDC" userLabel="First Responder" sceneMemberID="firstResponder"/>

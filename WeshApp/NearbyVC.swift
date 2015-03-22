@@ -16,28 +16,35 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     
     
-    @IBOutlet weak var tableView: UITableView!
     
-    
+    //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
     private var delegateSplitter: BLKDelegateSplitter?
     private let navbarProportion: CGFloat = 4.87
-    
-    
-    var badgeFetchedRC: NSFetchedResultsController!
-    var channelFetechedRC: NSFetchedResultsController!
-    var currentFetchedRC : NSFetchedResultsController!
-    var coreDataStack: CoreDataStack!
-    var sessionMngr: SessionMngr?
-    let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
-    let screenSize  = UIScreen.mainScreen().bounds.size
-    //  var cellsCurrentlyEditing: NSMutableSet?
-    var openedCell: ChannelTableViewCell?
-    let proportion: CGFloat = 0.095
-    var callout: RNFrostedSidebar?
-    let transitionManager = TransitionManager()
     var segControl: WeshappSegControl!
+    
+    
+    
+    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    private let screenSize  = UIScreen.mainScreen().bounds.size
+    private let proportion: CGFloat = 0.095
 
+    //MARK:Model Proerties. CoreData
+    private var badgeFetchedRC: NSFetchedResultsController!
+    private var channelFetechedRC: NSFetchedResultsController!
+    private var currentFetchedRC : NSFetchedResultsController!
+    private var coreDataStack: CoreDataStack!
+    private var sessionMngr: SessionMngr?
+    
+   //MARK: Menu
+    private var callout: RNFrostedSidebar?
+    //MARK:Transition management
+    let transitionManager = TransitionManager()
+
+    //MARK: TableView stuff
+    var openedCell: ChannelTableViewCell?
+    @IBOutlet weak var tableView: UITableView!
+    
     
 //    @IBAction func showMenu(sender: UIBarButtonItem) {
 //           callout!.show()
@@ -131,38 +138,21 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.navigationController!.navigationBarHidden = true
-//        self.navigationController!.setNavigationBarHidden(true, animated: false)
-
-
+        UIApplication.sharedApplication().statusBarHidden = false
+        
         setUpNavBar()
         setUpMenu()
-       // self.shyNavBarManager.scrollView = self.tableView
 
-
-//        var frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
-        
         self.tableView.registerNib(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: "channelCell")
         self.tableView.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCell")
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        //Set weshapp light gray seperator
+        self.tableView.separatorColor = UIColor(red: 0xf7/255, green: 0xf7/255, blue: 0xf7/255, alpha: 1)
         
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
-
-        
-        UIApplication.sharedApplication().statusBarHidden = false
         // Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = true
 
-        let font = UIFont(name: "TitilliumText25L-250wt", size: 5.0)!
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                                                  NSFontAttributeName: font ]
-        
-//        var backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-//        backButton.setTitleTextAttributes(titleDict, forState: UIControlState.Normal)
-   
-//        self.navigationItem.backBarButtonItem = backButton
-//
-        
         sessionMngr = appDelegate.sessionMngr
         coreDataStack = appDelegate.coreDataStack!
       
@@ -173,8 +163,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
                                                       managedObjectContext: appDelegate.coreDataStack!.mainContext!,
                                                         sectionNameKeyPath: nil,
                                                                  cacheName: nil)
-       
-        //TODO: Filter my badge out
+       //TODO: Filter my badge out
         let badgeFetchRequest = NSFetchRequest(entityName: "Badge")
         let badgeSortDescriptor = NSSortDescriptor(key: "handle", ascending: true)
 
@@ -193,16 +182,9 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
             println("Error: \(error?.localizedDescription)")
         }
         
-       // cellsCurrentlyEditing = NSMutableSet()
     }
     
-    
-   
-//    override func viewDidAppear(animated: Bool) {
-//
-//                self.navigationController!.navigationBarHidden = false
-//
-//    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -210,17 +192,14 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     
     
-    let segControlWidthProp: CGFloat = 0.54
-    let segControlHeightToWidth:CGFloat = 12.76
-    //MARK: set up navbar
+    //MARK: set up navbar using BLKFlexibleHeightBar
+    
     private func setUpNavBar(){
         self.setNeedsStatusBarAppearanceUpdate()
+        let segControlWidthProp: CGFloat = 0.54
+        let segControlHeightToWidth:CGFloat = 12.76
         
         // Setup the bar
-        let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
-        
-        
-        
         let maxHeight = screenSize.width / navbarProportion
         //Setup the segmentation contorl
         let segControlframe = CGRectMake(20, 20, screenSize.width * segControlWidthProp,
@@ -230,23 +209,22 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         self.segControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
         self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 0)
         self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 1)
+        
+        let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
         self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20),  centreItem: segControl)
         
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
         behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
         behaviorDefiner.snappingEnabled = true
-//        behaviorDefiner.elasticMaximumHeightAtTop = true
         
         self.myCustomBar?.behaviorDefiner = behaviorDefiner
-        
-        
+
+        //Assigns tow delegates
         self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
         self.tableView.delegate =  self.delegateSplitter
         
         self.view.addSubview(self.myCustomBar!)
-        // Setup the table view
-        //self.tableView(registerClass:UITableViewCell.classForCoder, forCellReuseIdentifier:"cell")
         self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight - 20, 0.0, 0.0, 0.0)
     }
     
@@ -323,12 +301,15 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         return screenSize.width / 4.11
     }
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-////        dispatch_async(dispatch_get_main_queue()){
-////            self.performSegueWithIdentifier("toChannelTVC", sender: self)
-////        }
-//    }
-//
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier("toChannelVC", sender: self)
+//        dispatch_async(dispatch_get_main_queue()){
+//            self.performSegueWithIdentifier("toChannelTVC", sender: self)
+//        }
+        
+    }
+
     
      func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
@@ -350,7 +331,8 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "toChannelTVC" {
+        
+            if segue.identifier == "toChannelVC" {
 //                self.navigationController!.navigationBarHidden = true
                 let channelVC = segue.destinationViewController as ChannelTVC
                 channelVC.transitioningDelegate = self.transitionManager
