@@ -10,11 +10,15 @@ import Foundation
 import Designables
 import BLKFlexibleHeightBar
 
+
+
 class FlexibleNavBar: BLKFlexibleHeightBar{
     
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         
     }
     
@@ -23,16 +27,18 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         self.configureProfileBar(max, min: min, handle: handle, name: name)
     }
     
-    convenience init(frame: CGRect, max: CGFloat, min: CGFloat){
+    convenience init(frame: CGRect, max: CGFloat, min: CGFloat,  centreItem:UIView?){
         self.init(frame: frame)
-        self.configureBar(max, min: min)
+        self.configureBar(max, min: min, centreItem: centreItem)
     }
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureBar(max: CGFloat, min: CGFloat){
+   
+    
+    private func configureBar(max: CGFloat, min: CGFloat, centreItem:UIView?){
     
         
         self.maximumBarHeight = max
@@ -40,48 +46,47 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         self.clipsToBounds = true
         
         self.backgroundColor = UIColor(red: 0x51/255, green: 0xc1/255, blue: 0xd2/255, alpha: 1.0)
+    
+        if let segControl = centreItem?{
+            
+           
+            
+          
+            
+            //        segControl starting position: when bar is open
+            var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
+            
+            initialNameLabelLayoutAttributes.center = CGPointMake(self.bounds.width * 0.5, (maximumBarHeight + 20) * 0.5)
+            
+//            initialNameLabelLayoutAttributes.size = CGSize(width: self.frame.width * segControlWidthProp,
+//                height: self.frame.width / segControlHeightToWidth)
+//            initialNameLabelLayoutAttributes.zIndex = 1024
+            initialNameLabelLayoutAttributes.size = segControl.sizeThatFits(CGSizeZero)
+            
+            segControl.addLayoutAttributes(initialNameLabelLayoutAttributes, forProgress: 0.0)
+            var finalNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes(existingLayoutAttributes: initialNameLabelLayoutAttributes)
+            
+            finalNameLabelLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5,
+                self.minimumBarHeight * 0.25)
+            //        finalNameLabelLayoutAttributes.transform = CGAffineTransformMakeScale(0.5, 0.5)
+            finalNameLabelLayoutAttributes.alpha = 0.0
+            segControl.addLayoutAttributes(finalNameLabelLayoutAttributes, forProgress: 1.0)
+            
+            self.addSubview(segControl)
+        }
         
-        let segControlWidthProp: CGFloat = 0.54
-        let segControlHeightToWidth:CGFloat = 12.76
         
-        // Setup the segmentation contorl
-        let segControlframe = CGRectMake(20, 20, self.frame.width * segControlWidthProp,
-                                                   self.frame.width / segControlHeightToWidth)
         
-        var segControl = WeshappSegControl( frame: segControlframe, items: ["Channels", "People"])
-//        var segControl = UITextField(frame: segControlframe)
-        segControl.setWidth(self.frame.width * segControlWidthProp/2, forSegmentAtIndex: 0)
-         segControl.setWidth(self.frame.width * segControlWidthProp/2, forSegmentAtIndex: 1)
-
-//        segControl starting position: when bar is open
-        var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
-        
-        initialNameLabelLayoutAttributes.center = CGPointMake(self.bounds.width * 0.5, (maximumBarHeight + 20) * 0.5)
-        initialNameLabelLayoutAttributes.size = CGSize(width: self.frame.width * segControlWidthProp,
-                                                      height: self.frame.width / segControlHeightToWidth)
-        initialNameLabelLayoutAttributes.zIndex = 1024
-        initialNameLabelLayoutAttributes.size = segControl.sizeThatFits(CGSizeZero)
-
-        segControl.addLayoutAttributes(initialNameLabelLayoutAttributes, forProgress: 0.0)
         
 
 //        //Midposition
 //        var midwayNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes(existingLayoutAttributes: initialNameLabelLayoutAttributes)
 //        midwayNameLabelLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5,
 //            (self.maximumBarHeight - self.minimumBarHeight) * 0.4 + self.minimumBarHeight * 0.3)
-//        
+//
 //        segControl.addLayoutAttributes(midwayNameLabelLayoutAttributes, forProgress: 0.6)
-//        
+//
         
-        var finalNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes(existingLayoutAttributes: initialNameLabelLayoutAttributes)
-        
-        finalNameLabelLayoutAttributes.center = CGPointMake(self.frame.size.width * 0.5,
-                                                self.minimumBarHeight * 0.25)
-        //        finalNameLabelLayoutAttributes.transform = CGAffineTransformMakeScale(0.5, 0.5)
-                finalNameLabelLayoutAttributes.alpha = 0.0
-        segControl.addLayoutAttributes(finalNameLabelLayoutAttributes, forProgress: 1.0)
-        
-        self.addSubview(segControl)
     
     }
     

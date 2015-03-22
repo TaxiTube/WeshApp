@@ -8,9 +8,14 @@
 
 import UIKit
 
- public class WeshappSegControl: UISegmentedControl {
+ public class WeshappSegControl: UISegmentedControl, UIGestureRecognizerDelegate {
+    
+    let font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
+    var isRight = false
+
      let selectedColour = UIColor(red: 0xff/255, green: 0x59/255, blue: 0x59/255, alpha: 1.0)
-     override init(frame: CGRect){
+    
+    override init(frame: CGRect){
         super.init(frame: frame)
         
     }
@@ -29,6 +34,8 @@ import UIKit
     public convenience init(frame: CGRect, items: [String]){
     
         self.init(frame: frame)
+        let recognizer = UITapGestureRecognizer (target: self, action:Selector("handleTap:"))
+        recognizer.delegate = self
         
         for i in 0...items.count - 1{
             self.insertSegmentWithTitle(items[i], atIndex: i, animated: false)
@@ -46,13 +53,12 @@ import UIKit
         segLeft.tintColor = selectedColour
         segRight.tintColor =  UIColor.whiteColor()
         
-        var font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         
         setTitleTextAttributes(titleDict, forState: UIControlState.Selected)
         
-        font = UIFont(name: "TitilliumText25L-250wt", size: 15.0)!
+
         setTitleTextAttributes([NSFontAttributeName: font ], forState: UIControlState.Normal)
        
 //        segLeft.tintColor = UIColor(red: 0xff/255, green: 0x59/255, blue: 0x59/255, alpha: 1.0)
@@ -66,8 +72,8 @@ import UIKit
     
     override public func didChangeValueForKey(key: String) {
         let subviews = self.subviews
-        var segLeft = subviews[0] as UIView
-        var segRight = subviews[1] as UIView
+        var segLeft = subviews[1] as UIView
+        var segRight = subviews[0] as UIView
         
        
         switch self.selectedSegmentIndex{
@@ -80,5 +86,20 @@ import UIKit
             default: break
         }
     }
+    
+    
+    public  func handleTap(recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state  == UIGestureRecognizerState.Began{
+            self.selectedSegmentIndex = 0
+
+            isRight = true
+        }else if recognizer.state  == UIGestureRecognizerState.Ended{
+            self.selectedSegmentIndex = 1
+
+            isRight = false
+        }
+        setNeedsDisplay()
+    }
+
     
 }

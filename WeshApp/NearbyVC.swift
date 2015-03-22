@@ -16,8 +16,6 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     
     
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -38,7 +36,8 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     let proportion: CGFloat = 0.095
     var callout: RNFrostedSidebar?
     let transitionManager = TransitionManager()
-    
+    var segControl: WeshappSegControl!
+
     
 //    @IBAction func showMenu(sender: UIBarButtonItem) {
 //           callout!.show()
@@ -90,42 +89,42 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
 
 
-//    @IBOutlet weak var segControl: UISegmentedControl!
     
-    //MARK: Segmentation Control
-//    @IBAction func segmentChanged(sender: UISegmentedControl) {
-//        switch segControl.selectedSegmentIndex
-//        {
-//        case 0:
-//           currentFetchedRC = channelFetechedRC
-//           var error: NSError? = nil
-//           if (!currentFetchedRC.performFetch(&error))  {
-//            println("Error: \(error?.localizedDescription)") }
-//           //animation
-//           UIView.transitionWithView(self.tableView, duration: 0.35,
-//                                                      options: UIViewAnimationOptions.TransitionFlipFromLeft,
-//                                                   animations: { self.tableView.reloadData() },
-//                                                   completion: { (v:Bool) in ()})
-//          
-//        case 1:
-//            currentFetchedRC = badgeFetchedRC
-//            var error: NSError? = nil
-//            if (!currentFetchedRC.performFetch(&error))  {
-//                println("Error: \(error?.localizedDescription)") }
-//            //animation
-//            UIView.transitionWithView(self.tableView, duration: 0.35,
-//                options: UIViewAnimationOptions.TransitionFlipFromRight,
-//                animations: {
-//                    self.tableView.reloadData()
-//                },
-//                completion: { (v:Bool) in ()})
-//       
-//        default:
-//            break
-//        }
-//    
-//    
-//    }
+//    MARK: Segmentation Control
+    func segmentChanged(sender: UISegmentedControl) {
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            currentFetchedRC = channelFetechedRC
+            var error: NSError? = nil
+            if (!currentFetchedRC.performFetch(&error))  {
+                println("Error: \(error?.localizedDescription)")
+            }
+            
+            //animation
+            UIView.transitionWithView(self.tableView, duration: 0.35,
+                                                      options: UIViewAnimationOptions.TransitionCrossDissolve,
+                                                   animations: { self.tableView.reloadData() },
+                                                   completion: { (v:Bool) in ()})
+          
+        case 1:
+            currentFetchedRC = badgeFetchedRC
+            var error: NSError? = nil
+            if (!currentFetchedRC.performFetch(&error))  {
+                println("Error: \(error?.localizedDescription)") }
+            //animation
+            UIView.transitionWithView(self.tableView, duration: 0.35,
+                options: UIViewAnimationOptions.TransitionCrossDissolve,
+                animations: {
+                    self.tableView.reloadData()
+                },
+                completion: { (v:Bool) in ()})
+       
+        default:
+            break
+        }
+    
+    
+    }
 
  
     //MARK: Set up
@@ -137,7 +136,6 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 
 
         setUpNavBar()
-        
         setUpMenu()
        // self.shyNavBarManager.scrollView = self.tableView
 
@@ -210,6 +208,10 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    let segControlWidthProp: CGFloat = 0.54
+    let segControlHeightToWidth:CGFloat = 12.76
     //MARK: set up navbar
     private func setUpNavBar(){
         self.setNeedsStatusBarAppearanceUpdate()
@@ -218,8 +220,17 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
         
         
+        
         let maxHeight = screenSize.width / navbarProportion
-        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20))
+        //Setup the segmentation contorl
+        let segControlframe = CGRectMake(20, 20, screenSize.width * segControlWidthProp,
+                                                 screenSize.width / segControlHeightToWidth)
+        
+        self.segControl = WeshappSegControl(frame: segControlframe, items: ["Species", "Habitat"] )
+        self.segControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
+        self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 0)
+        self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 1)
+        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20),  centreItem: segControl)
         
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
@@ -253,39 +264,33 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     // MARK: - Cell for Row at IndexPath
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: ChannelTableViewCell?
-//        switch segControl.selectedSegmentIndex
-//        {
-//            case 0:
-//                 cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
-//                let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
-//                cell!.title.text = channel.title
-//                //TODO if name is known show real name instead
-//                cell!.subTitle.text = channel.author.handle
-//            
-//                //TODO: cell!.image     =
-//                //Todo Count number of posts the channe has cell!.counter =
-//                
-//            case 1:
-//                 cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
-//                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
-//                cell!.title.text  = badge.handle
-//                //TODO if name is known show real name instead
-//                //TODO: cell!.image =
-//                //Todo Count number of channels the authork has cell!.counter =
-//
-//
-//            default:
-//                break;
-//        }
-        
-        
-        cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
-        let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
-        cell!.title.text = channel.title
-        //TODO if name is known show real name instead
-        cell!.subTitle.text = channel.author.handle
+        switch segControl.selectedSegmentIndex
+        {
+            case 0:
+                 cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
+                let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
+                cell!.title.text = channel.title
+                //TODO if name is known show real name instead
+                cell!.subTitle.text = channel.author.handle
+            
+                //TODO: cell!.image     =
+                //Todo Count number of posts the channe has cell!.counter =
+                
+            case 1:
+                 cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
+                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
+                cell!.title.text  = badge.handle
+                //TODO if name is known show real name instead
+                //TODO: cell!.image =
+                //Todo Count number of channels the authork has cell!.counter =
 
-            let view1 = UIView()
+
+            default:
+                break;
+        }
+        
+ 
+        let view1 = UIView()
         let v = UIView()
         v.backgroundColor = UIColor.grayColor()
         cell?.selectedBackgroundView = v
