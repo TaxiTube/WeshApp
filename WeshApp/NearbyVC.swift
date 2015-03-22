@@ -147,12 +147,9 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         self.tableView.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCell")
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        //Set weshapp light gray seperator
-        self.tableView.separatorColor = UIColor(red: 0xf7/255, green: 0xf7/255, blue: 0xf7/255, alpha: 1)
+        //Set weshapp light gray seperator EFEFF4
+        self.tableView.separatorColor = UIColor(red: 0xEF/255, green: 0xEF/255, blue: 0xF4/255, alpha: 1)
         
-        // Uncomment the following line to preserve selection between presentations
-//         self.clearsSelectionOnViewWillAppear = true
-
         sessionMngr = appDelegate.sessionMngr
         coreDataStack = appDelegate.coreDataStack!
       
