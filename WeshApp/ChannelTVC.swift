@@ -25,12 +25,9 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     private var inputAccessoryViewIsSetUp: Bool = false
 
     @IBOutlet weak var textView: WeshappTextView!
-
     @IBOutlet var accessoryDock: UIView!
     @IBOutlet weak var headerView: UIView!
-
     @IBOutlet weak var handle: UILabel!
-    
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var totem: UIImageView!
     @IBOutlet weak var channelDesc: WeshappLabel!
@@ -55,11 +52,13 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.setUpHeaderView()
         self.navBarItemsSetup()
 //        self.shyNavBarManager.scrollView = self.tableView
      
+        self.tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        
         NSNotificationCenter.defaultCenter().addObserver(     self,
                                                           selector: Selector("keyboardWillShow:"),
                                                               name: UIKeyboardWillShowNotification,

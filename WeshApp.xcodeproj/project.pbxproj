@@ -108,6 +108,8 @@
 		D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */; };
 		D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
 		D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
+		D8CE21F31AC0B6470004A387 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */; };
+		D8CE21F51AC0B9C90004A387 /* ChannelTVCHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CE21F41AC0B9C90004A387 /* ChannelTVCHeader.xib */; };
 		D8CE96511AB5F4200015A399 /* FlexibleNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */; };
 		D8D9342D1A288DB00055079E /* NSManageObjectSerializationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */; };
 		D8DA2A351A693F410098C5E6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
@@ -260,6 +262,8 @@
 		D8C6422D1A47594A004A604A /* ChannelTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTVC.swift; sourceTree = "<group>"; };
 		D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostTableViewCell.swift; sourceTree = "<group>"; };
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
+		D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		D8CE21F41AC0B9C90004A387 /* ChannelTVCHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTVCHeader.xib; sourceTree = "<group>"; };
 		D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleNavBar.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
 		D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButtonSK.swift; sourceTree = "<group>"; };
@@ -531,6 +535,8 @@
 				D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */,
 				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
 				D8A443571ABBA8090030F01E /* NearbyVC.swift */,
+				D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */,
+				D8CE21F41AC0B9C90004A387 /* ChannelTVCHeader.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CE21F51AC0B9C90004A387 /* ChannelTVCHeader.xib in Resources */,
 				B31FB3C31A6DAEC800A2D734 /* Main.storyboard in Resources */,
 				B36E686D1A6C4798002B951A /* TitilliumText25L003.otf in Resources */,
 				B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */,
@@ -754,6 +761,7 @@
 				B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */,
 				D8A443521ABBA2900030F01E /* ProfileTableViewCell.xib in Resources */,
 				D8A4434F1ABBA2380030F01E /* ChannelTableViewCell.xib in Resources */,
+				D8CE21F31AC0B6470004A387 /* PostTableViewCell.xib in Resources */,
 				B3D9F5B119F93AA400BF6257 /* Images.xcassets in Resources */,
 				D87C9BA11A2B88D1002834C3 /* messi.jpg in Resources */,
 			);
