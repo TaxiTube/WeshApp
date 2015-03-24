@@ -24,7 +24,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     var segControl: WeshappSegControl!
     
     
-    
+    //MARK: Size properties
     private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
     private let screenSize  = UIScreen.mainScreen().bounds.size
     private let proportion: CGFloat = 0.095

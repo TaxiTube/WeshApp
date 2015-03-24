@@ -18,8 +18,6 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
     }
     
     convenience init(frame: CGRect, max: CGFloat, min: CGFloat, handle: String, name: String){

@@ -34,7 +34,6 @@
 		B3CB2E2C1A690CCD00FBFED1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */; };
 		B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
 		B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */; };
-		B3D6CBE919FC4E510025140E /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
 		B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
 		B3D9F5B119F93AA400BF6257 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F5B019F93AA400BF6257 /* Images.xcassets */; };
 		B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F5B219F93AA400BF6257 /* LaunchScreen.xib */; };
@@ -73,11 +72,6 @@
 		D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A21A714436008D8D75 /* CrossBarItem.swift */; };
 		D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A41A71485F008D8D75 /* CrossIconSK.swift */; };
 		D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89497841A92AB8C00A491F6 /* BorderView.swift */; };
-		D89725A01AAA019A003A1A44 /* TLYDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D897259B1AAA019A003A1A44 /* TLYDelegateProxy.m */; };
-		D89725A11AAA019A003A1A44 /* TLYShyNavBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D897259D1AAA019A003A1A44 /* TLYShyNavBarManager.m */; };
-		D89725A21AAA019A003A1A44 /* TLYShyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D897259F1AAA019A003A1A44 /* TLYShyViewController.m */; };
-		D89725A71AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D89725A41AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m */; };
-		D89725A81AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m in Sources */ = {isa = PBXBuildFile; fileRef = D89725A61AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m */; };
 		D89762061ABB626700A02FB2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89762051ABB626700A02FB2 /* TransitionManager.swift */; };
 		D8A4433C1ABB65BE0030F01E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */; };
 		D8A4433D1ABB65BE0030F01E /* FlexibleNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */; };
@@ -106,10 +100,8 @@
 		D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */; };
 		D8C642601A4C7725004A604A /* WallPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */; };
 		D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */; };
-		D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBE819FC4E510025140E /* NearbyTVC.swift */; };
 		D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
 		D8CE21F31AC0B6470004A387 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */; };
-		D8CE21F51AC0B9C90004A387 /* ChannelTVCHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CE21F41AC0B9C90004A387 /* ChannelTVCHeader.xib */; };
 		D8CE96511AB5F4200015A399 /* FlexibleNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */; };
 		D8D9342D1A288DB00055079E /* NSManageObjectSerializationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */; };
 		D8DA2A351A693F410098C5E6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
@@ -199,7 +191,6 @@
 		B3CB2E2B1A690CCD00FBFED1 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		B3CB2E331A690ECE00FBFED1 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
-		B3D6CBE819FC4E510025140E /* NearbyTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyTVC.swift; sourceTree = "<group>"; };
 		B3D9F5A119F93AA400BF6257 /* WeshApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeshApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D9F5A519F93AA400BF6257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -235,16 +226,6 @@
 		D89144A21A714436008D8D75 /* CrossBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossBarItem.swift; sourceTree = "<group>"; };
 		D89144A41A71485F008D8D75 /* CrossIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossIconSK.swift; sourceTree = "<group>"; };
 		D89497841A92AB8C00A491F6 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
-		D897259A1AAA019A003A1A44 /* TLYDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYDelegateProxy.h; sourceTree = "<group>"; };
-		D897259B1AAA019A003A1A44 /* TLYDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYDelegateProxy.m; sourceTree = "<group>"; };
-		D897259C1AAA019A003A1A44 /* TLYShyNavBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyNavBarManager.h; sourceTree = "<group>"; };
-		D897259D1AAA019A003A1A44 /* TLYShyNavBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyNavBarManager.m; sourceTree = "<group>"; };
-		D897259E1AAA019A003A1A44 /* TLYShyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLYShyViewController.h; sourceTree = "<group>"; };
-		D897259F1AAA019A003A1A44 /* TLYShyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLYShyViewController.m; sourceTree = "<group>"; };
-		D89725A31AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TLYSwizzlingHelpers.h"; sourceTree = "<group>"; };
-		D89725A41AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TLYSwizzlingHelpers.m"; sourceTree = "<group>"; };
-		D89725A51AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BetterLayoutGuides.h"; sourceTree = "<group>"; };
-		D89725A61AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BetterLayoutGuides.m"; sourceTree = "<group>"; };
 		D89762051ABB626700A02FB2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTableViewCell.xib; sourceTree = "<group>"; };
@@ -263,7 +244,6 @@
 		D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostTableViewCell.swift; sourceTree = "<group>"; };
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
 		D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
-		D8CE21F41AC0B9C90004A387 /* ChannelTVCHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelTVCHeader.xib; sourceTree = "<group>"; };
 		D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleNavBar.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
 		D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButtonSK.swift; sourceTree = "<group>"; };
@@ -448,7 +428,6 @@
 		B3D9F5A319F93AA400BF6257 /* WeshApp */ = {
 			isa = PBXGroup;
 			children = (
-				D89725A91AAA01AA003A1A44 /* TLYShyNavBar */,
 				B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */,
 				B3D8495C1A01106100D4286A /* Model */,
 				D81FFDBF1A0BEBA900C6294B /* Controller */,
@@ -522,7 +501,6 @@
 			children = (
 				B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */,
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
-				B3D6CBE819FC4E510025140E /* NearbyTVC.swift */,
 				D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */,
 				D8C6422D1A47594A004A604A /* ChannelTVC.swift */,
 				D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */,
@@ -536,7 +514,6 @@
 				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
 				D8A443571ABBA8090030F01E /* NearbyVC.swift */,
 				D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */,
-				D8CE21F41AC0B9C90004A387 /* ChannelTVCHeader.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -547,23 +524,6 @@
 				D87C9BA01A2B88D1002834C3 /* messi.jpg */,
 			);
 			name = "Test Images";
-			sourceTree = "<group>";
-		};
-		D89725A91AAA01AA003A1A44 /* TLYShyNavBar */ = {
-			isa = PBXGroup;
-			children = (
-				D89725A31AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.h */,
-				D89725A41AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m */,
-				D89725A51AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.h */,
-				D89725A61AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m */,
-				D897259A1AAA019A003A1A44 /* TLYDelegateProxy.h */,
-				D897259B1AAA019A003A1A44 /* TLYDelegateProxy.m */,
-				D897259C1AAA019A003A1A44 /* TLYShyNavBarManager.h */,
-				D897259D1AAA019A003A1A44 /* TLYShyNavBarManager.m */,
-				D897259E1AAA019A003A1A44 /* TLYShyViewController.h */,
-				D897259F1AAA019A003A1A44 /* TLYShyViewController.m */,
-			);
-			name = TLYShyNavBar;
 			sourceTree = "<group>";
 		};
 		D8DC68511A337CC800AAF16D /* WeshAppLibrary */ = {
@@ -749,7 +709,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8CE21F51AC0B9C90004A387 /* ChannelTVCHeader.xib in Resources */,
 				B31FB3C31A6DAEC800A2D734 /* Main.storyboard in Resources */,
 				B36E686D1A6C4798002B951A /* TitilliumText25L003.otf in Resources */,
 				B36E686F1A6C4798002B951A /* TitilliumText25L005.otf in Resources */,
@@ -915,7 +874,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D89725A21AAA019A003A1A44 /* TLYShyViewController.m in Sources */,
 				D8C6425F1A4C71C2004A604A /* WallPostTableViewCell.swift in Sources */,
 				B3CB2E281A690CCD00FBFED1 /* Tags.swift in Sources */,
 				B3CB2E341A690ECE00FBFED1 /* Post.swift in Sources */,
@@ -933,20 +891,15 @@
 				B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */,
 				B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */,
 				D8C6422E1A47594A004A604A /* ChannelTVC.swift in Sources */,
-				B3D6CBE919FC4E510025140E /* NearbyTVC.swift in Sources */,
 				B3D9F5CE19F93C4500BF6257 /* SplashVC.swift in Sources */,
-				D89725A81AAA01A1003A1A44 /* UIViewController+BetterLayoutGuides.m in Sources */,
 				B3CB2E2A1A690CCD00FBFED1 /* Badge.swift in Sources */,
 				D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */,
 				B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */,
 				B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */,
 				D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */,
 				D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */,
-				D89725A11AAA019A003A1A44 /* TLYShyNavBarManager.m in Sources */,
 				B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */,
 				D8A443431ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */,
-				D89725A71AAA01A1003A1A44 /* NSObject+TLYSwizzlingHelpers.m in Sources */,
-				D89725A01AAA019A003A1A44 /* TLYDelegateProxy.m in Sources */,
 				B362BD031A5A667D0028B280 /* WeshApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -978,7 +931,6 @@
 				D81FE27D1A236BC9006F8E62 /* SessionMngrTest.swift in Sources */,
 				D871CB5B1A1FD9890024C7B7 /* ChannelMngr.swift in Sources */,
 				D8C6422F1A47594A004A604A /* ChannelTVC.swift in Sources */,
-				D8CADF0A1A2F311E00DD43C8 /* NearbyTVC.swift in Sources */,
 				D8A4433C1ABB65BE0030F01E /* ProfileVC.swift in Sources */,
 				D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */,
 				D8DA2A391A693F630098C5E6 /* Tags.swift in Sources */,
