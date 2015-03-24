@@ -38,15 +38,12 @@
 		B3D9F5B119F93AA400BF6257 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F5B019F93AA400BF6257 /* Images.xcassets */; };
 		B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D9F5B219F93AA400BF6257 /* LaunchScreen.xib */; };
 		B3D9F5CE19F93C4500BF6257 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */; };
-		B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */; };
 		B3E5E66419FD6226000B8FB1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */; };
 		B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
 		D81FE27D1A236BC9006F8E62 /* SessionMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81FE27C1A236BC9006F8E62 /* SessionMngrTest.swift */; };
 		D81FE27E1A237266006F8E62 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
 		D81FE27F1A2377B4006F8E62 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
 		D81FFDC11A0BF94500C6294B /* misc in Resources */ = {isa = PBXBuildFile; fileRef = D81FFDC01A0BF94500C6294B /* misc */; };
-		D82428C71A9A088300CA55D2 /* ChannelHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */; };
-		D82428C81A9A0BF800CA55D2 /* ChannelHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */; };
 		D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
 		D85A86571A17AFE000398153 /* PostMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* PostMngr.swift */; };
 		D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */; };
@@ -69,8 +66,6 @@
 		D885E8941A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */; };
 		D885E8961A8F7C1F00BD8E48 /* MsgIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */; };
 		D885E8971A9005ED00BD8E48 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */; };
-		D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A21A714436008D8D75 /* CrossBarItem.swift */; };
-		D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89144A41A71485F008D8D75 /* CrossIconSK.swift */; };
 		D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89497841A92AB8C00A491F6 /* BorderView.swift */; };
 		D89762061ABB626700A02FB2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89762051ABB626700A02FB2 /* TransitionManager.swift */; };
 		D8A4433C1ABB65BE0030F01E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */; };
@@ -78,7 +73,6 @@
 		D8A4433E1ABB65BE0030F01E /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89762051ABB626700A02FB2 /* TransitionManager.swift */; };
 		D8A4433F1ABB65D60030F01E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */; };
 		D8A443401ABB65DB0030F01E /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */; };
-		D8A443411ABB65E10030F01E /* FullAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */; };
 		D8A443431ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */; };
 		D8A443441ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */; };
 		D8A4434F1ABBA2380030F01E /* ChannelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */; };
@@ -102,6 +96,12 @@
 		D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */; };
 		D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D9F5A619F93AA400BF6257 /* AppDelegate.swift */; };
 		D8CE21F31AC0B6470004A387 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */; };
+		D8CE22041AC1CE9F0004A387 /* BurgerSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE22031AC1CE9F0004A387 /* BurgerSK.swift */; };
+		D8CE22061AC1CEC50004A387 /* BurgerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE22051AC1CEC50004A387 /* BurgerItem.swift */; };
+		D8CE22081AC219C90004A387 /* PlusSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE22071AC219C90004A387 /* PlusSK.swift */; };
+		D8CE220A1AC219DB0004A387 /* PlusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE22091AC219DB0004A387 /* PlusItem.swift */; };
+		D8CE22531AC227D00004A387 /* CrossSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE22521AC227D00004A387 /* CrossSK.swift */; };
+		D8CE22551AC228090004A387 /* CrossItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE22541AC228090004A387 /* CrossItem.swift */; };
 		D8CE96511AB5F4200015A399 /* FlexibleNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */; };
 		D8D9342D1A288DB00055079E /* NSManageObjectSerializationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */; };
 		D8DA2A351A693F410098C5E6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CB2E331A690ECE00FBFED1 /* Post.swift */; };
@@ -199,14 +199,12 @@
 		B3D9F5B919F93AA400BF6257 /* WeshAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeshAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D9F5BE19F93AA400BF6257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
-		B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullAddVC.swift; sourceTree = "<group>"; };
 		B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		B3EB823E1A028CE500235E03 /* SessionContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionContainer.swift; sourceTree = "<group>"; };
 		C48C3D7D8C40BE2F21389F2C /* Pods_WeshAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeshAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D805DD971A9F619000D940A8 /* WeshApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeshApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		D81FE27C1A236BC9006F8E62 /* SessionMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngrTest.swift; sourceTree = "<group>"; };
 		D81FFDC01A0BF94500C6294B /* misc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = misc; sourceTree = "<group>"; };
-		D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelHeaderVC.swift; sourceTree = "<group>"; };
 		D84BDF791A09494E004390D8 /* SessionMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngr.swift; sourceTree = "<group>"; };
 		D85A86561A17AFE000398153 /* PostMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMngr.swift; sourceTree = "<group>"; };
 		D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptMngrTest.swift; sourceTree = "<group>"; };
@@ -223,8 +221,6 @@
 		D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappFriendRequestSK.swift; sourceTree = "<group>"; };
 		D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappMsgIconSK.swift; sourceTree = "<group>"; };
 		D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgIcon.swift; sourceTree = "<group>"; };
-		D89144A21A714436008D8D75 /* CrossBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossBarItem.swift; sourceTree = "<group>"; };
-		D89144A41A71485F008D8D75 /* CrossIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossIconSK.swift; sourceTree = "<group>"; };
 		D89497841A92AB8C00A491F6 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		D89762051ABB626700A02FB2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +240,12 @@
 		D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallPostTableViewCell.swift; sourceTree = "<group>"; };
 		D8CADF041A2E237700DD43C8 /* LocalChannelListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalChannelListTest.swift; sourceTree = "<group>"; };
 		D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		D8CE22031AC1CE9F0004A387 /* BurgerSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BurgerSK.swift; sourceTree = "<group>"; };
+		D8CE22051AC1CEC50004A387 /* BurgerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BurgerItem.swift; sourceTree = "<group>"; };
+		D8CE22071AC219C90004A387 /* PlusSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusSK.swift; sourceTree = "<group>"; };
+		D8CE22091AC219DB0004A387 /* PlusItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusItem.swift; sourceTree = "<group>"; };
+		D8CE22521AC227D00004A387 /* CrossSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossSK.swift; sourceTree = "<group>"; };
+		D8CE22541AC228090004A387 /* CrossItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossItem.swift; sourceTree = "<group>"; };
 		D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleNavBar.swift; sourceTree = "<group>"; };
 		D8D9342C1A288DB00055079E /* NSManageObjectSerializationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManageObjectSerializationTest.swift; sourceTree = "<group>"; };
 		D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappRedButtonSK.swift; sourceTree = "<group>"; };
@@ -324,34 +326,25 @@
 		B36E68431A6C3AF7002B951A /* Designables */ = {
 			isa = PBXGroup;
 			children = (
-				D8F334391A9AB0890028918C /* WeshappHeartSK.swift */,
-				D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */,
-				D8EF20941A96C5930033230C /* SmileyIcon.swift */,
-				D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */,
-				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
-				D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */,
-				D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */,
-				D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */,
-				D885E88F1A8F74F000BD8E48 /* FriendRequest.swift */,
-				D885E88B1A8F691A00BD8E48 /* WeshappPlayPauseSK.swift */,
-				D885E88D1A8F695800BD8E48 /* PlayPause.swift */,
-				D877FA8C1A87B6EB00C0334B /* WeshappChevronSK.swift */,
-				D877FA8E1A87B71500C0334B /* Chevron.swift */,
 				B36E68461A6C3AF7002B951A /* Designables.h */,
-				D89144A41A71485F008D8D75 /* CrossIconSK.swift */,
-				D89144A21A714436008D8D75 /* CrossBarItem.swift */,
+				D8CE22021AC1CE330004A387 /* StyleKit */,
+				D8EF20941A96C5930033230C /* SmileyIcon.swift */,
+				D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */,
+				D885E88F1A8F74F000BD8E48 /* FriendRequest.swift */,
+				D885E88D1A8F695800BD8E48 /* PlayPause.swift */,
+				D877FA8E1A87B71500C0334B /* Chevron.swift */,
 				D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */,
 				D8DC687C1A338FAA00AAF16D /* GreenButton.swift */,
 				D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */,
 				D8DC68801A338FAA00AAF16D /* TextFieldSendView.swift */,
 				B36E68611A6C3B88002B951A /* WeshappTextField.swift */,
-				B36E68441A6C3AF7002B951A /* Supporting Files */,
 				B32E559F1A74EC13007F88B0 /* WeshappNavBar.swift */,
-				D87D58FD1A7A536C002ADA13 /* WeshappSegControl.swift */,
 				D87051891A7C3E000081484A /* WeshappLabel.swift */,
 				D89497841A92AB8C00A491F6 /* BorderView.swift */,
 				D8F3343B1A9AB0A40028918C /* HeartIcon.swift */,
 				D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */,
+				D8CE220B1AC219EB0004A387 /* NavBarItems */,
+				B36E68441A6C3AF7002B951A /* Supporting Files */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -501,18 +494,16 @@
 			children = (
 				B3D9F5CD19F93C4500BF6257 /* SplashVC.swift */,
 				B3D6CBC419FBD7160025140E /* CreateChannelVC.swift */,
-				D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */,
 				D8C6422D1A47594A004A604A /* ChannelTVC.swift */,
-				D82428C61A9A088300CA55D2 /* ChannelHeaderVC.swift */,
 				D8C224451A83E68F00CD083B /* ChannelTableViewCell.swift */,
 				D8C6425E1A4C71C2004A604A /* WallPostTableViewCell.swift */,
-				B3E5E66119FD4B66000B8FB1 /* FullAddVC.swift */,
 				B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */,
 				D8CE96501AB5F4200015A399 /* FlexibleNavBar.swift */,
 				D89762051ABB626700A02FB2 /* TransitionManager.swift */,
 				D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */,
-				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
 				D8A443571ABBA8090030F01E /* NearbyVC.swift */,
+				D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */,
+				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
 				D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */,
 			);
 			name = Controller;
@@ -524,6 +515,43 @@
 				D87C9BA01A2B88D1002834C3 /* messi.jpg */,
 			);
 			name = "Test Images";
+			sourceTree = "<group>";
+		};
+		D8CE22021AC1CE330004A387 /* StyleKit */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE220C1AC21A110004A387 /* NavBarItems */,
+				D8F334391A9AB0890028918C /* WeshappHeartSK.swift */,
+				D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */,
+				D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */,
+				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
+				D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */,
+				D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */,
+				D885E88B1A8F691A00BD8E48 /* WeshappPlayPauseSK.swift */,
+				D877FA8C1A87B6EB00C0334B /* WeshappChevronSK.swift */,
+			);
+			name = StyleKit;
+			sourceTree = "<group>";
+		};
+		D8CE220B1AC219EB0004A387 /* NavBarItems */ = {
+			isa = PBXGroup;
+			children = (
+				D87D58FD1A7A536C002ADA13 /* WeshappSegControl.swift */,
+				D8CE22051AC1CEC50004A387 /* BurgerItem.swift */,
+				D8CE22091AC219DB0004A387 /* PlusItem.swift */,
+				D8CE22541AC228090004A387 /* CrossItem.swift */,
+			);
+			name = NavBarItems;
+			sourceTree = "<group>";
+		};
+		D8CE220C1AC21A110004A387 /* NavBarItems */ = {
+			isa = PBXGroup;
+			children = (
+				D8CE22521AC227D00004A387 /* CrossSK.swift */,
+				D8CE22071AC219C90004A387 /* PlusSK.swift */,
+				D8CE22031AC1CE9F0004A387 /* BurgerSK.swift */,
+			);
+			name = NavBarItems;
 			sourceTree = "<group>";
 		};
 		D8DC68511A337CC800AAF16D /* WeshAppLibrary */ = {
@@ -842,10 +870,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CE22061AC1CEC50004A387 /* BurgerItem.swift in Sources */,
 				D877FA8D1A87B6EB00C0334B /* WeshappChevronSK.swift in Sources */,
 				B32E55A01A74EC13007F88B0 /* WeshappNavBar.swift in Sources */,
 				B39062621A72875E00F6B048 /* GreenButton.swift in Sources */,
 				B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */,
+				D8CE22081AC219C90004A387 /* PlusSK.swift in Sources */,
+				D8CE22041AC1CE9F0004A387 /* BurgerSK.swift in Sources */,
 				D877FA8F1A87B71500C0334B /* Chevron.swift in Sources */,
 				D885E8971A9005ED00BD8E48 /* OrangeButton.swift in Sources */,
 				D885E8941A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift in Sources */,
@@ -853,14 +884,15 @@
 				D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */,
 				D885E88E1A8F695800BD8E48 /* PlayPause.swift in Sources */,
 				D8EF20951A96C5930033230C /* SmileyIcon.swift in Sources */,
-				D89144A51A71485F008D8D75 /* CrossIconSK.swift in Sources */,
 				D86857641AA2C3990003F214 /* WeshappTextView.swift in Sources */,
-				D89144A31A714436008D8D75 /* CrossBarItem.swift in Sources */,
 				D885E8961A8F7C1F00BD8E48 /* MsgIcon.swift in Sources */,
 				D870518A1A7C3E000081484A /* WeshappLabel.swift in Sources */,
 				B36E68621A6C3B88002B951A /* WeshappTextField.swift in Sources */,
 				D8EF20931A96C57F0033230C /* WeshappSmileIconSK.swift in Sources */,
 				D885E8901A8F74F000BD8E48 /* FriendRequest.swift in Sources */,
+				D8CE22551AC228090004A387 /* CrossItem.swift in Sources */,
+				D8CE22531AC227D00004A387 /* CrossSK.swift in Sources */,
+				D8CE220A1AC219DB0004A387 /* PlusItem.swift in Sources */,
 				D87D58FE1A7A536C002ADA13 /* WeshappSegControl.swift in Sources */,
 				D8DAE4B81A94D65100AAF247 /* WeshappRedButtonSK.swift in Sources */,
 				D885E8921A8F754500BD8E48 /* WeshappFriendRequestSK.swift in Sources */,
@@ -886,9 +918,7 @@
 				B3CB2E261A690CCD00FBFED1 /* ProfilePhoto.swift in Sources */,
 				D85A86571A17AFE000398153 /* PostMngr.swift in Sources */,
 				D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */,
-				D82428C71A9A088300CA55D2 /* ChannelHeaderVC.swift in Sources */,
 				D8CE96511AB5F4200015A399 /* FlexibleNavBar.swift in Sources */,
-				B3E5E66219FD4B66000B8FB1 /* FullAddVC.swift in Sources */,
 				B3D9F5A719F93AA400BF6257 /* AppDelegate.swift in Sources */,
 				D8C6422E1A47594A004A604A /* ChannelTVC.swift in Sources */,
 				B3D9F5CE19F93C4500BF6257 /* SplashVC.swift in Sources */,
@@ -925,7 +955,6 @@
 				D81FE27F1A2377B4006F8E62 /* SessionContainer.swift in Sources */,
 				D8CADF051A2E237700DD43C8 /* LocalChannelListTest.swift in Sources */,
 				D85A86671A1972A700398153 /* ChannelMngrTest.swift in Sources */,
-				D82428C81A9A0BF800CA55D2 /* ChannelHeaderVC.swift in Sources */,
 				D8C642601A4C7725004A604A /* WallPostTableViewCell.swift in Sources */,
 				D8DA2A371A693F520098C5E6 /* Channel.swift in Sources */,
 				D81FE27D1A236BC9006F8E62 /* SessionMngrTest.swift in Sources */,
@@ -939,7 +968,6 @@
 				D8A4433D1ABB65BE0030F01E /* FlexibleNavBar.swift in Sources */,
 				D8C0FD611A127B5D00F40134 /* ProfileMngrTest.swift in Sources */,
 				D8DA2A351A693F410098C5E6 /* Post.swift in Sources */,
-				D8A443411ABB65E10030F01E /* FullAddVC.swift in Sources */,
 				D8A443591ABBA8090030F01E /* NearbyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

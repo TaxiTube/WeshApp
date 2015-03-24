@@ -21,8 +21,8 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     private var myCustomBar: FlexibleNavBar?
     private var delegateSplitter: BLKDelegateSplitter?
     private let navbarProportion: CGFloat = 4.87
-    var segControl: WeshappSegControl!
-    
+    private var segControl: WeshappSegControl!
+
     
     //MARK: Size properties
     private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
@@ -45,11 +45,11 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     var openedCell: ChannelTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: menu
+    func showMenu(sender: UIView) {
+        callout!.show()
+    }
     
-//    @IBAction func showMenu(sender: UIBarButtonItem) {
-//           callout!.show()
-//    }
-//    
     private func setUpMenu(){
         
         let images = [ UIImage(named: "Notifications")!,
@@ -99,7 +99,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
 //    MARK: Segmentation Control
     func segmentChanged(sender: UISegmentedControl) {
-        switch segControl.selectedSegmentIndex {
+        switch sender.selectedSegmentIndex {
         case 0:
             currentFetchedRC = channelFetechedRC
             var error: NSError? = nil
@@ -171,7 +171,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
                                                        cacheName: nil)
         
         
-        currentFetchedRC  = channelFetechedRC
+        currentFetchedRC = channelFetechedRC
         currentFetchedRC.delegate = self
         
         var error: NSError? = nil
@@ -192,6 +192,8 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     //MARK: set up navbar using BLKFlexibleHeightBar
     
     private func setUpNavBar(){
+        
+        
         self.setNeedsStatusBarAppearanceUpdate()
         let segControlWidthProp: CGFloat = 0.54
         let segControlHeightToWidth:CGFloat = 12.76
@@ -207,8 +209,33 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 0)
         self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 1)
         
+        
+        //Menu Burger Item
+        let burgerWidthProp: CGFloat = 0.05
+        let burgerHeightToWidth: CGFloat = 21.91
+        let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
+                                             screenSize.width / burgerHeightToWidth)
+        let burgerItem = BurgerItem(frame: burgerframe)
+        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchDown)
+        burgerItem.addTarget(burgerItem, action: "touchDown:", forControlEvents: .TouchDown)
+        burgerItem.addTarget(burgerItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
+        
+        //Plus item
+        //Sqaure size
+        let plusWidthProp: CGFloat = 19.1025
+        let plusframe = CGRectMake(20, 20, screenSize.width / plusWidthProp,
+                                           screenSize.width / plusWidthProp)
+        let plusItem = PlusItem(frame: plusframe)
+        plusItem.addTarget(self, action: "handlePopover:", forControlEvents: .TouchDown)
+        plusItem.addTarget(plusItem, action: "touchDown:", forControlEvents: .TouchDown)
+        plusItem.addTarget(plusItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
+        plusItem.addTarget(plusItem, action: "touchUpInside:", forControlEvents: .TouchUpOutside)
+        plusItem.addTarget(plusItem, action: "touchUpInside:", forControlEvents: .TouchCancel)
+
+        
         let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
-        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20),  centreItem: segControl)
+        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: segControl, rightItem: plusItem)
+        
         
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
@@ -332,7 +359,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
             if segue.identifier == "toChannelVC" {
 //                self.navigationController!.navigationBarHidden = true
                 let channelVC = segue.destinationViewController as ChannelTVC
-                channelVC.transitioningDelegate = self.transitionManager
+//                channelVC.transitioningDelegate = self.transitionManager
 //                var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 // If as Channel else as Profile
@@ -432,11 +459,11 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 
     
     //MARK: Popover controller
-    @IBAction func handlePopover(sender: UIBarButtonItem) {
+    @IBAction func handlePopover(sender: UIView) {
         let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
         popoverVC.modalPresentationStyle = .Popover
         if let popoverController = popoverVC.popoverPresentationController {
-            popoverController.barButtonItem = sender
+            //popoverController.barButtonItem = sender
             //popoverController.sourceRect = sender.bounds
             popoverController.permittedArrowDirections = .Any
             

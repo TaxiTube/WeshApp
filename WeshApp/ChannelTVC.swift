@@ -171,7 +171,29 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                                           attributes: titleDict)
         channelTitleLabel.sizeToFit()
         
-        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20),  centreItem: channelTitleLabel)
+        //Menu Burger Item
+        let burgerWidthProp: CGFloat = 0.05
+        let burgerHeightToWidth: CGFloat = 21.91
+        let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
+            screenSize.width / burgerHeightToWidth)
+       let burgerItem = BurgerItem(frame: burgerframe)
+        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchDown)
+        burgerItem.addTarget(burgerItem, action: "touchDown:", forControlEvents: .TouchDown)
+        burgerItem.addTarget(burgerItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
+        
+        //Plus item
+        //Sqaure size
+        let crossWidthProp: CGFloat = 19.1025
+        let crossframe = CGRectMake(20, 20, screenSize.width / crossWidthProp,
+                                            screenSize.width / crossWidthProp)
+       let crossItem = PlusItem(frame: crossframe)
+        crossItem.addTarget(self, action: "dismissPressed:", forControlEvents: .TouchDown)
+        crossItem.addTarget(crossItem, action: "touchDown:", forControlEvents: .TouchDown)
+        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
+        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchUpOutside)
+        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchCancel)
+        
+        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: channelTitleLabel, rightItem: crossItem)
         
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
@@ -190,13 +212,13 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     
 
-//
-//    func dismissPressed(sender: AnyObject) {
-//        //        navigationController?.popToRootViewControllerAnimated(true)
+
+    func dismissPressed(sender: AnyObject) {
+                navigationController?.popViewControllerAnimated(true)
 //        NSOperationQueue.mainQueue().addOperationWithBlock(){
 //            self.dismissViewControllerAnimated(true, completion: nil)
 //        }
-//    }
+    }
     
     private func setUpHeaderView(){
         handle.text = "#\(channel!.author.handle)"
