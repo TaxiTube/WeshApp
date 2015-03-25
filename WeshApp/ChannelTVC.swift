@@ -177,21 +177,18 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
             screenSize.width / burgerHeightToWidth)
        let burgerItem = BurgerItem(frame: burgerframe)
-        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchDown)
-        burgerItem.addTarget(burgerItem, action: "touchDown:", forControlEvents: .TouchDown)
-        burgerItem.addTarget(burgerItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
-        
+        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchUpInside)
+    
+
         //Plus item
         //Sqaure size
         let crossWidthProp: CGFloat = 19.1025
         let crossframe = CGRectMake(20, 20, screenSize.width / crossWidthProp,
                                             screenSize.width / crossWidthProp)
-       let crossItem = PlusItem(frame: crossframe)
-        crossItem.addTarget(self, action: "dismissPressed:", forControlEvents: .TouchDown)
-        crossItem.addTarget(crossItem, action: "touchDown:", forControlEvents: .TouchDown)
-        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
-        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchUpOutside)
-        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchCancel)
+       let crossItem = CrossItem(frame: crossframe)
+        crossItem.addTarget(self, action: "dismissPressed:", forControlEvents: .TouchUpInside)
+      
+//        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchCancel)
         
         self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: channelTitleLabel, rightItem: crossItem)
         

@@ -216,21 +216,18 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
                                              screenSize.width / burgerHeightToWidth)
         let burgerItem = BurgerItem(frame: burgerframe)
-        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchDown)
-        burgerItem.addTarget(burgerItem, action: "touchDown:", forControlEvents: .TouchDown)
-        burgerItem.addTarget(burgerItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
-        
+        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchUpInside)
+    
+
         //Plus item
         //Sqaure size
         let plusWidthProp: CGFloat = 19.1025
         let plusframe = CGRectMake(20, 20, screenSize.width / plusWidthProp,
                                            screenSize.width / plusWidthProp)
         let plusItem = PlusItem(frame: plusframe)
-        plusItem.addTarget(self, action: "handlePopover:", forControlEvents: .TouchDown)
-        plusItem.addTarget(plusItem, action: "touchDown:", forControlEvents: .TouchDown)
-        plusItem.addTarget(plusItem, action: "touchUpInside:", forControlEvents: .TouchUpInside)
-        plusItem.addTarget(plusItem, action: "touchUpInside:", forControlEvents: .TouchUpOutside)
-        plusItem.addTarget(plusItem, action: "touchUpInside:", forControlEvents: .TouchCancel)
+        plusItem.addTarget(self, action: "handlePopover:", forControlEvents: .TouchUpInside)
+     
+
 
         
         let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
