@@ -39,7 +39,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
    //MARK: Menu
     private var callout: RNFrostedSidebar?
     //MARK:Transition management
-    let transitionManager = TransitionManager()
+//    let transitionManager = TransitionManager()
 
     //MARK: TableView stuff
     var openedCell: ChannelTableViewCell?
@@ -84,10 +84,10 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 //                    self.performSegueWithIdentifier("nearbyToProfile", sender: self)
 //                }
                 
-                var profileVC = self.storyboard?.instantiateViewControllerWithIdentifier("profileVC") as UIViewController
-//                self.performSegueWithIdentifier("nearbyToProfile", sender: self)
+//                var profileVC = self.storyboard?.instantiateViewControllerWithIdentifier("profileVC") as UIViewController
+                self.performSegueWithIdentifier("nearbyToProfile", sender: self)
 
-                self.navigationController?.showViewController(profileVC, sender: self)
+//                self.navigationController?.showViewController(profileVC, sender: self)
             //settings
             case 4:
                 sidebar.dismissAnimated(true)
@@ -376,7 +376,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
                 var profileVC = segue.destinationViewController as ProfileVC
 //                var profileVC = navController.topViewController as ProfileVC
 
-                profileVC.transitioningDelegate = self.transitionManager
+//                profileVC.transitioningDelegate = self.transitionManager
 
         }
         
