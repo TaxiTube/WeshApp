@@ -375,6 +375,8 @@
                             <constraint firstItem="PyV-pr-14d" firstAttribute="top" secondItem="Xej-FK-0gV" secondAttribute="top" id="gJt-hc-GTi"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="accessoryDock" destination="AlX-qk-58B" id="Kyq-Vs-1Uc"/>
                         <outlet property="channelDesc" destination="U87-uE-zVN" id="Sy3-eZ-XYa"/>

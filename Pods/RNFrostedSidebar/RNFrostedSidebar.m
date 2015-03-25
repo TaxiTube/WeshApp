@@ -169,7 +169,8 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, assign) NSInteger itemIndex;
-@property (nonatomic, strong) UIColor *originalBackgroundColor;
+@property (nonatomic, strong) UIColor *darkerBackgroundColor;
+@property (nonatomic, strong) UIColor *lightBackgroundColor;
 
 @end
 
@@ -181,6 +182,8 @@
         _imageView.backgroundColor = [UIColor clearColor];
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_imageView];
+        
+        
     }
     return self;
 }
@@ -189,41 +192,49 @@
     [super layoutSubviews];
     
     CGFloat inset = self.bounds.size.height/2;
-    self.imageView.frame = CGRectMake(0, 0, inset, inset);
+    self.imageView.frame = CGRectMake(0, 0,  self.bounds.size.width, self.bounds.size.width);
     self.imageView.center = CGPointMake(inset, inset);
+    
+    
 }
 
 - (void)setOriginalBackgroundColor:(UIColor *)originalBackgroundColor {
-    _originalBackgroundColor = originalBackgroundColor;
-    self.backgroundColor = originalBackgroundColor;
+    
+    float r, g, b, a;
+    float darkenFactor = 0.3f;
+ 
+    
+   _darkerBackgroundColor = [UIColor colorWithWhite:MAX(r - darkenFactor, 0.0) alpha:a];
+    _lightBackgroundColor = originalBackgroundColor;
+    self.backgroundColor =  _darkerBackgroundColor;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
-    float r, g, b, a;
-    float darkenFactor = 0.3f;
-    UIColor *darkerColor;
-    if ([self.originalBackgroundColor getRed:&r green:&g blue:&b alpha:&a]) {
-        darkerColor = [UIColor colorWithRed:MAX(r - darkenFactor, 0.0) green:MAX(g - darkenFactor, 0.0) blue:MAX(b - darkenFactor, 0.0) alpha:a];
-    }
-    else if ([self.originalBackgroundColor getWhite:&r alpha:&a]) {
-        darkerColor = [UIColor colorWithWhite:MAX(r - darkenFactor, 0.0) alpha:a];
-    }
-    else {
-        @throw @"Item color should be RGBA or White/Alpha in order to darken the button color.";
-    }
-    self.backgroundColor = darkerColor;
+//    float r, g, b, a;
+//    float darkenFactor = 0.3f;
+//    UIColor *darkerColor;
+//    if ([self.originalBackgroundColor getRed:&r green:&g blue:&b alpha:&a]) {
+//        darkerColor = [UIColor colorWithRed:MAX(r - darkenFactor, 0.0) green:MAX(g - darkenFactor, 0.0) blue:MAX(b - darkenFactor, 0.0) alpha:a];
+//    }
+//    else if ([self.originalBackgroundColor getWhite:&r alpha:&a]) {
+//        darkerColor = [UIColor colorWithWhite:MAX(r - darkenFactor, 0.0) alpha:a];
+//    }
+//    else {
+//        @throw @"Item color should be RGBA or White/Alpha in order to darken the button color.";
+//    }
+    self.backgroundColor = self.lightBackgroundColor;
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
-    self.backgroundColor = self.originalBackgroundColor;
+    self.backgroundColor = self.darkerBackgroundColor;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];
-    self.backgroundColor = self.originalBackgroundColor;
+    self.backgroundColor = self.darkerBackgroundColor;
 }
 
 @end

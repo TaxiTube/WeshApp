@@ -12,7 +12,7 @@ import Designables
 import RNFrostedSidebar
 import BLKFlexibleHeightBar
 
-class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate,RNFrostedSidebarDelegate {
+class NearbyVC: WeshappViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
     
     
     
@@ -37,64 +37,23 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     private var sessionMngr: SessionMngr?
     
    //MARK: Menu
-    private var callout: RNFrostedSidebar?
+//    private var callout: RNFrostedSidebar?
+    
     //MARK:Transition management
 //    let transitionManager = TransitionManager()
 
-    //MARK: TableView stuff
+    //MARK: TableView stuffr
     var openedCell: ChannelTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
+    
+
+
     //MARK: menu
     func showMenu(sender: UIView) {
-        callout!.show()
+        self.showMenu()
     }
     
-    private func setUpMenu(){
-        
-        let images = [ UIImage(named: "Notifications")!,
-                       UIImage(named: "NearBy")!,
-                       UIImage(named: "Chat")!,
-                       UIImage(named: "Profile")!,
-                       UIImage(named: "Settings")!]
-        
-       let colors = [UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor(), UIColor.whiteColor()]
-       callout = RNFrostedSidebar(images: images , selectedIndices:  NSIndexSet(index: 1), borderColors: colors)
-       callout?.tintColor = UIColor(red: 0x01/255, green: 0x51/255, blue: 0x5d/255, alpha: 0.5)
-       callout!.delegate = self
-     
-    }
-    
-     func sidebar(sidebar: RNFrostedSidebar!, didTapItemAtIndex index: UInt) {
-        switch index{
-            //notification centre
-            case 0:
-                sidebar.dismissAnimated(true)
-            //nearby
-            case 1:
-                sidebar.dismissAnimated(true)
-            //chat
-            case 2:
-                sidebar.dismissAnimated(true)
-            //profile
-            case 3:
-                sidebar.dismissAnimated(true)
-                
-//                dispatch_async(dispatch_get_main_queue()){
-//                    self.performSegueWithIdentifier("nearbyToProfile", sender: self)
-//                }
-                
-//                var profileVC = self.storyboard?.instantiateViewControllerWithIdentifier("profileVC") as UIViewController
-                self.performSegueWithIdentifier("nearbyToProfile", sender: self)
-
-//                self.navigationController?.showViewController(profileVC, sender: self)
-            //settings
-            case 4:
-                sidebar.dismissAnimated(true)
-            default: break
-        }
-    }
-
 
     
 //    MARK: Segmentation Control
@@ -141,7 +100,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         UIApplication.sharedApplication().statusBarHidden = false
         
         setUpNavBar()
-        setUpMenu()
+
 
         self.tableView.registerNib(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: "channelCell")
         self.tableView.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCell")

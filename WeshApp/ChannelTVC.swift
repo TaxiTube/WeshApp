@@ -13,7 +13,7 @@ import Designables
 import BLKFlexibleHeightBar
 
 
-class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate {
+class ChannelTVC: WeshappViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate {
 
     //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
@@ -153,9 +153,13 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
+    //MARK: menu
+    func showMenu(sender: UIView) {
+        self.showMenu()
+    }
+    
     
     //MARK: Navbar actions
-
     private func setUpNavBar(){
         self.setNeedsStatusBarAppearanceUpdate()
         // Setup the bar
@@ -185,10 +189,9 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let crossWidthProp: CGFloat = 19.1025
         let crossframe = CGRectMake(20, 20, screenSize.width / crossWidthProp,
                                             screenSize.width / crossWidthProp)
-       let crossItem = CrossItem(frame: crossframe)
+        let crossItem = CrossItem(frame: crossframe)
         crossItem.addTarget(self, action: "dismissPressed:", forControlEvents: .TouchUpInside)
       
-//        crossItem.addTarget(crossItem, action: "touchUpInside:", forControlEvents: .TouchCancel)
         
         self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: channelTitleLabel, rightItem: crossItem)
         

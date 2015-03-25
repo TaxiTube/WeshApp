@@ -66,6 +66,10 @@
 		D885E8941A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */; };
 		D885E8961A8F7C1F00BD8E48 /* MsgIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */; };
 		D885E8971A9005ED00BD8E48 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */; };
+		D88C423A1AC3228B00F95FDC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C42391AC3228B00F95FDC /* Menu.swift */; };
+		D88C423B1AC3228B00F95FDC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C42391AC3228B00F95FDC /* Menu.swift */; };
+		D88C423D1AC326C500F95FDC /* WeshappViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C423C1AC326C500F95FDC /* WeshappViewController.swift */; };
+		D88C423E1AC326C500F95FDC /* WeshappViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88C423C1AC326C500F95FDC /* WeshappViewController.swift */; };
 		D89497851A92AB8C00A491F6 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89497841A92AB8C00A491F6 /* BorderView.swift */; };
 		D89762061ABB626700A02FB2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89762051ABB626700A02FB2 /* TransitionManager.swift */; };
 		D8A4433C1ABB65BE0030F01E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E5E66319FD6226000B8FB1 /* ProfileVC.swift */; };
@@ -222,6 +226,8 @@
 		D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappFriendRequestSK.swift; sourceTree = "<group>"; };
 		D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappMsgIconSK.swift; sourceTree = "<group>"; };
 		D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgIcon.swift; sourceTree = "<group>"; };
+		D88C42391AC3228B00F95FDC /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		D88C423C1AC326C500F95FDC /* WeshappViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappViewController.swift; sourceTree = "<group>"; };
 		D89497841A92AB8C00A491F6 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		D89762051ABB626700A02FB2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		D8A443421ABB8F610030F01E /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -507,6 +513,8 @@
 				D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */,
 				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
 				D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */,
+				D88C42391AC3228B00F95FDC /* Menu.swift */,
+				D88C423C1AC326C500F95FDC /* WeshappViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -930,8 +938,10 @@
 				D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */,
 				B3B149561A65348300E08EAA /* BadgeMngr.swift in Sources */,
 				B3D6CBC519FBD7160025140E /* CreateChannelVC.swift in Sources */,
+				D88C423D1AC326C500F95FDC /* WeshappViewController.swift in Sources */,
 				D8C0FD371A112C3300F40134 /* CoreDataStack.swift in Sources */,
 				D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */,
+				D88C423A1AC3228B00F95FDC /* Menu.swift in Sources */,
 				B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */,
 				D8A443431ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */,
 				B362BD031A5A667D0028B280 /* WeshApp.xcdatamodeld in Sources */,
@@ -947,6 +957,7 @@
 				D8C224471A83E6DE00CD083B /* ChannelTableViewCell.swift in Sources */,
 				D81FE27E1A237266006F8E62 /* SessionMngr.swift in Sources */,
 				D871CB591A1FD9890024C7B7 /* CoreDataStack.swift in Sources */,
+				D88C423E1AC326C500F95FDC /* WeshappViewController.swift in Sources */,
 				D8DA2A381A693F600098C5E6 /* Profile.swift in Sources */,
 				D871CB5A1A1FD9890024C7B7 /* PostMngr.swift in Sources */,
 				D8A443441ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */,
@@ -968,6 +979,7 @@
 				D8CADF0B1A2F313600DD43C8 /* AppDelegate.swift in Sources */,
 				D8DA2A391A693F630098C5E6 /* Tags.swift in Sources */,
 				D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */,
+				D88C423B1AC3228B00F95FDC /* Menu.swift in Sources */,
 				D8A4433E1ABB65BE0030F01E /* TransitionManager.swift in Sources */,
 				D8A4433D1ABB65BE0030F01E /* FlexibleNavBar.swift in Sources */,
 				D8C0FD611A127B5D00F40134 /* ProfileMngrTest.swift in Sources */,
