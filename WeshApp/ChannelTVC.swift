@@ -13,7 +13,7 @@ import Designables
 import BLKFlexibleHeightBar
 
 
-class ChannelTVC: WeshappViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate {
+class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate {
 
     //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
@@ -153,10 +153,10 @@ class ChannelTVC: WeshappViewController, UITableViewDelegate, UITableViewDataSou
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    //MARK: menu
-    func showMenu(sender: UIView) {
-        self.showMenu()
-    }
+//    //MARK: menu
+//    func showMenu(sender: UIView) {
+//        self.showMenu()
+//    }
     
     
     //MARK: Navbar actions
@@ -198,7 +198,7 @@ class ChannelTVC: WeshappViewController, UITableViewDelegate, UITableViewDataSou
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
         behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
-        behaviorDefiner.snappingEnabled = true
+        behaviorDefiner.snappingEnabled = false
         
         self.myCustomBar?.behaviorDefiner = behaviorDefiner
         

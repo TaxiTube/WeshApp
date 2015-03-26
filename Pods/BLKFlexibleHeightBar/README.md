@@ -1,10 +1,9 @@
-# BLKFlexibleHeightBar
-
+<img src="http://foxweb.marist.edu/users/stbk/TitleImage.png" alt="BLKFlexibleHeightBar" width="600"/> 
 
 ## Create condensing header bars like those seen in the Facebook, Square Cash, and Safari iOS apps.
 
-<img src="http://foxweb.marist.edu/users/stbk/SquareCashDemo.gif" alt="Square Cash Style Bar" width="300"/> 
-<img src="http://foxweb.marist.edu/users/stbk/FacebookDemo.gif" alt="Square Cash Style Bar" width="300"/>
+<img src="http://foxweb.marist.edu/users/stbk/SquareCashDemo2.gif" alt="Square Cash Style Bar" width="300"/> 
+<img src="http://foxweb.marist.edu/users/stbk/FacebookDemo2.gif" alt="Square Cash Style Bar" width="300"/>
 
 `BLKFlexibleHeightBar` allows you to create header bars with flexible heights. Often, this sort of UI paradigm is used to hide chrome and make room for more content as a user is scrolling. This is seen in third party apps like Facebook and Square Cash, as well as first party apps like Safari.
 
@@ -13,8 +12,14 @@
 * Immediate subviews of a flexible height bar define how they want to look and where they want to be depending on the height of the bar. Properties like frame, transform, and alpha can all vary depending on the current height of the bar.
 * A bar's behavior can be defined using a behavior definer instance. A behavior definer can be created to emulate Safari's header behavior, Facebook's header behavior, or something entirely new. Behaviors are completely modular and aren't coupled with the appearence of the bar.
 
+Due to this library's modular, extensible nature, you are not limited to any one look or any one feel. *What UICollectionView does for presenting collections of data, `BLKFlexibleHeightBar` does for creating header bars.*
 
 ## How do I install it?
+### CocoaPods Installation
+1. Add `pod 'BLKFlexibleHeightBar'` to your project's Podfile.
+2. Run `pod install`.
+
+### Manual Installation
 1. Clone this repo or click "Download ZIP" on the side.
 2. Copy all of the files in the "BLKFlexibleHeightBar" folder into your project. You probably want to check the box that says "Copy items if needed" as well as make sure that the target you want to add the files to is checked.
 
@@ -153,7 +158,6 @@ It may be useful to make other calculations outside of `-scrollViewDidScroll:`. 
 ## TODO
 * Include a `SafariStyleBehaviorDefiner` (uses velocity, not just scroll position).
 * Support for **Auto Layout** based layout attributes would simplify some of the trickier bar designs, removing the need to perform final frame and size calculations yourself when defining layout attributes.
-* Figure out how this could play nicely with **UINavigationBar**
 
 ## Let me know what you think!
 You can get in touch with me via Twitter [@BKyourway19](http://twitter.com/BKyourway19)

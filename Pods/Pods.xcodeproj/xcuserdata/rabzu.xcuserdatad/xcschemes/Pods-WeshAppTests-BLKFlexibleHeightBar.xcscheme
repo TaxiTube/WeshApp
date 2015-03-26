@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95F6AD073411C09D2E3B9E25"
+               BlueprintIdentifier = "8119855439AB9491FC38840B"
                BuildableName = "BLKFlexibleHeightBar.framework"
                BlueprintName = "Pods-WeshAppTests-BLKFlexibleHeightBar"
                ReferencedContainer = "container:Pods.xcodeproj">

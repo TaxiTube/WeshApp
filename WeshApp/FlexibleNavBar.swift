@@ -10,6 +10,9 @@ import Foundation
 import Designables
 import BLKFlexibleHeightBar
 
+extension BLKDelegateSplitter: UITableViewDelegate{
+    
+}
 
 
 class FlexibleNavBar: BLKFlexibleHeightBar{
