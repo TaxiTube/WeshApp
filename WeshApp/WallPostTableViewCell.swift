@@ -17,6 +17,11 @@ class WallPostTableViewCell: UITableViewCell {
     
 
     //MARK: Initialisation
+    //This method is called on every single object that is unarchived from a nib file,
+    //after all outlets/actions have been set up. If initWithCoder:
+    //is the beginning of the nib unarchiving process, then awakeFromNib is the end.
+    //It signals to the object that all objects have been unarchived and that all
+    //of its connections are available
     override func awakeFromNib() {
         super.awakeFromNib()
  
@@ -25,16 +30,17 @@ class WallPostTableViewCell: UITableViewCell {
     }
     override  init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        println("style \(self.post)")
+
     
     }
     
-    
+    //This method is the initializer for all archived objects.
+    //As objects stored in nibs are archived objects, this is
+    //the initializer used when loading an object from a nib.
+    //At the time it's called, the object is being deserialized from the nib,
+    //but outlets/actions are not yet hooked up.
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//           println("coder \(self.post)")
-       
-        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

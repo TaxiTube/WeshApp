@@ -7,28 +7,24 @@
 //
 
 import UIKit
-
+//TODO: Implement heart icon delegate to send like
 public class HeartIcon: UIView, UIGestureRecognizerDelegate {
 
-      var isPressed  = false
+    var isPressed  = false
     override public func drawRect(rect: CGRect) {
         
         
         WeshappHeartSK.drawHearIcon(frame: rect, hrtActive: isPressed, hrtInactive: !isPressed)
-        let recognizer = UILongPressGestureRecognizer (target: self, action:Selector("handleTap:"))
-        recognizer.minimumPressDuration = 0.01
+        let recognizer = UITapGestureRecognizer (target: self, action:Selector("handleTap:"))
+
         recognizer.delegate = self
+        self.addGestureRecognizer(recognizer)
+
     }
     
     public func handleTap(recognizer: UILongPressGestureRecognizer) {
         
-        println("heartshou")
-        if recognizer.state  == UIGestureRecognizerState.Began{
-            
-            isPressed = true
-        }else if recognizer.state  == UIGestureRecognizerState.Ended{
-            isPressed = false
-        }
+        isPressed = !isPressed
         setNeedsDisplay()
     }
 

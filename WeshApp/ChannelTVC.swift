@@ -10,10 +10,17 @@ import UIKit
 import CoreData
 import WeshAppLibrary
 import Designables
+import BLKFlexibleHeightBar
 
 
-class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate {
+class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate {
 
+    //MARK: NavBar properties
+    private var myCustomBar: FlexibleNavBar?
+    private var delegateSplitter: BLKDelegateSplitter?
+    private let navbarProportion: CGFloat = 4.87
+    
+    //MARK: Model CoreData stuff
     var channel: Channel?
     var fetchedResultsController : NSFetchedResultsController!
     var coreDataStack: CoreDataStack!
@@ -21,19 +28,26 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     var postMngr: PostMngr?
     var sessionMngr: SessionMngr?
 
-    var textViewHeightConstraint: NSLayoutConstraint?
+    //MARK: InputAccessoryView stuff
+    private var textViewHeightConstraint: NSLayoutConstraint?
     private var inputAccessoryViewIsSetUp: Bool = false
 
-    @IBOutlet weak var textView: WeshappTextView!
-
-    @IBOutlet var accessoryDock: UIView!
-    @IBOutlet weak var headerView: UIView!
-
-    @IBOutlet weak var handle: UILabel!
     
+    //MARK: InputAccessoryView outlets
+    @IBOutlet weak var textView: WeshappTextView!
+    @IBOutlet var accessoryDock: UIView!
+    
+    //MARK: TableView Header stuff
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var handle: UILabel!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var totem: UIImageView!
-    @IBOutlet weak var channelDesc: WeshappLabel!
+    @IBOutlet weak var channelDesc: UILabel!
+    
+    //TableView
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     
     
     @IBAction func postMessage(sender: AnyObject) {
@@ -48,38 +62,47 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
             //postsMngr!.save(coreDataStack!.mainContext!)
             sessionMngr!.broadcastNewPost(post)
             changeTextViewHeight(textView)
-            textView.resignFirstResponder()
+            //textView.resignFirstResponder()
 
         }
     }
     
+    
+    
+    //MARK: ViewDid
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.setUpNavBar()
         self.setUpHeaderView()
-        self.navBarItemsSetup()
-        self.shyNavBarManager.scrollView = self.tableView
-//     
-//        NSNotificationCenter.defaultCenter().addObserver(     self,
-//                                                          selector: Selector("keyboardWillShow:"),
-//                                                              name: UIKeyboardWillShowNotification,
-//                                                            object: nil)
-//       
-//        NSNotificationCenter.defaultCenter().addObserver(     self,
-//            selector: Selector("keyboardDidHide:"),
-//            name: UIKeyboardDidHideNotification,
-//            object: nil)
-//     
+        
+        self.tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        self.tableView.separatorColor = UIColor.clearColor()
+        self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
+       
+        //Inset required due to inputAccessoryView
+        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+            left: tableView.contentInset.left,
+            bottom: view.frame.width / 7.2,
+            right: tableView.contentInset.right)
+        
 
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                          selector: Selector("keyboardWillShow:"),
+                                                              name: UIKeyboardWillShowNotification,
+                                                            object: nil)
+       
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                         selector: Selector("keyboardDidHide:"),
+                                                             name: UIKeyboardDidHideNotification,
+                                                           object: nil)
+        //Required for dynamic Cells
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
-                                             left: tableView.contentInset.left,
-                                           bottom: view.frame.width / 7.2,
-                                            right: tableView.contentInset.right)
 
-   
+        //TODO: Move to New method
         let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
         coreDataStack = appDelegate.coreDataStack!
         let managedObjectContext = appDelegate.coreDataStack!.mainContext!
@@ -106,35 +129,32 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
         
 
-        tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
         
-        tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.backgroundColor = UIColor.clearColor()
         let backgroundImageView = UIImageView()
-         tableView.backgroundView = backgroundImageView
+        self.tableView.backgroundView = backgroundImageView
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
-        backgroundImageView.addSubview(blurView)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+//        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
+//        backgroundImageView.addSubview(blurView)
+        
    }
-   
-    override func viewWillAppear(animated: Bool) {
-//        self.setNeedsStatusBarAppearanceUpdate()
-//        tableView.setContentOffset(CGPointMake(0.0, -5), animated: true)
-
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func viewDidAppear(animated: Bool) {
-//        scrollWallTo(true, animated: true)
-      //  scrollWallTo(false, animated: true)
-        
-       // tableView.setContentOffset(CGPointMake(0.0, 0), animated: true)
-       // tableView.scrollRectToVisible(CGRect(x: 0, y: 100, width: 1, height: 1), animated: true)
+        self.becomeFirstResponder()
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    
+    
     
     override func viewDidLayoutSubviews() {
         if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
@@ -142,38 +162,79 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
         }
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-        
+    
+    
+    //MARK: menu
+    func showMenu(sender: UIView) {
+        NSNotificationCenter.defaultCenter().postNotificationName("ShowMenu", object: self)
     }
+    
     
     //MARK: Navbar actions
-    private func navBarItemsSetup(){
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "crossIcon.png"),
-            style: .Done,
-            target: self,
-            action: "dismissPressed:")
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "hamburgerIcon.png"),
-            style: .Done,
-            target: self,
-            action: "dismissPressed:")
+    private func setUpNavBar(){
+        self.setNeedsStatusBarAppearanceUpdate()
+        // Setup the bar
+        let maxHeight = screenSize.width / navbarProportion
 
-        self.navigationItem.title = channel?.title
-    }
+        let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
+        let channelTitleLabel = UILabel()
+        
+        let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                                                  NSFontAttributeName: font ]
+        channelTitleLabel.attributedText = NSAttributedString(string: self.channel!.title,
+                                                          attributes: titleDict)
+        channelTitleLabel.sizeToFit()
+        
+        //Menu Burger Item
+        let burgerWidthProp: CGFloat = 0.05
+        let burgerHeightToWidth: CGFloat = 21.91
+        let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
+            screenSize.width / burgerHeightToWidth)
+       let burgerItem = BurgerItem(frame: burgerframe)
+        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchUpInside)
     
 
+        //Plus item
+        //Sqaure size
+        let crossWidthProp: CGFloat = 19.1025
+        let crossframe = CGRectMake(20, 20, screenSize.width / crossWidthProp,
+                                            screenSize.width / crossWidthProp)
+        let crossItem = CrossItem(frame: crossframe)
+        crossItem.addTarget(self, action: "dismissPressed:", forControlEvents: .TouchUpInside)
+      
+        
+        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: channelTitleLabel, rightItem: crossItem)
+        
+        var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
+        behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
+        behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
+        behaviorDefiner.snappingEnabled = false
+        
+        self.myCustomBar?.behaviorDefiner = behaviorDefiner
+        
+        //Assigns tow delegates
+        self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
+        self.tableView.delegate =  self.delegateSplitter
+        
+        self.view.addSubview(self.myCustomBar!)
+        self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight - 20, 0.0, 0.0, 0.0)
+    }
+    
+    
+
+
     func dismissPressed(sender: AnyObject) {
-        //        navigationController?.popToRootViewControllerAnimated(true)
-        NSOperationQueue.mainQueue().addOperationWithBlock(){
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+                navigationController?.popViewControllerAnimated(true)
+//        NSOperationQueue.mainQueue().addOperationWithBlock(){
+//            self.dismissViewControllerAnimated(true, completion: nil)
+//        }
     }
     
     private func setUpHeaderView(){
         handle.text = "#\(channel!.author.handle)"
         channelDesc.text = channel?.desc
-//        profileName.text =
+        //TODO:profileName.text =
         
     }
     
@@ -186,32 +247,32 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
 
     
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return  fetchedResultsController.sections!.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
 
   
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as WallPostTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? WallPostTableViewCell
         let post = fetchedResultsController.objectAtIndexPath(indexPath) as Post
 
         //cell.nameLabel.text = post.sender.firstName
-        cell.post?.text = post.post
-        cell.date?.text = timeAgoSinceDate(post.date, true)
-        cell.backgroundColor = UIColor.clearColor()
+        cell!.post?.text = post.post
+        cell!.date?.text = timeAgoSinceDate(post.date, true)
+        cell!.backgroundColor = UIColor.clearColor()
   
-        return cell
+        return cell!
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
     //MARK: NSFetchedResultsController Delegate methods
@@ -299,11 +360,11 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
     }
     
     override func canBecomeFirstResponder() -> Bool {
-        return true
+        return false
     }
     
     
-    //Used to setup and chang default constraints height
+    //Used to setup and change default constraints height
     func setUpInputAccessoryView(){
 
         //Set Weshapp Delagete
@@ -366,29 +427,33 @@ class ChannelTVC: UITableViewController, NSFetchedResultsControllerDelegate, UIG
      tableView.layoutIfNeeded()
     }
 
-//    func keyboardWillShow(notification: NSNotification) {
-//        let userInfo = notification.userInfo!
-//        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-//
-//
-//        if keyboardSize.height > 200{
-//         println("ff")
-//        //    self.shyNavBarManager.contract(true)           // scrollWallTo(true, animated: false)
-//      //      navigationController?.setNavigationBarHidden(true, animated: true)
-//        }
-//        
-//    }
-//    func keyboardDidHide(notification: NSNotification) {
-//        let userInfo = notification.userInfo!
-//        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-//
-//      //  self.shyNavBarManager.disable = false
-//
-//    //    navigationController?.setNavigationBarHidden(false, animated: true)
-//       
-//        
-//    }
-//    
+    func keyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+
+
+        if keyboardSize.height > 200{
+            
+            tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+                left: tableView.contentInset.left,
+                bottom: keyboardSize.height,
+                right: tableView.contentInset.right)
+            
+            scrollWallTo(true, animated: true)
+       
+        }
+        
+    }
+    func keyboardDidHide(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+
+        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+            left: tableView.contentInset.left,
+            bottom: view.frame.width / 7.2,
+            right: tableView.contentInset.right)
+    }
+    
    
     
 }

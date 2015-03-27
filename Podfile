@@ -3,10 +3,12 @@
 use_frameworks!
 target 'WeshApp' do
 pod 'BLKFlexibleHeightBar', '~> 1.0'
+pod 'RNFrostedSidebar', '~> 0.2'
 end
 
 target 'WeshAppTests' do
 pod 'BLKFlexibleHeightBar', '~> 1.0'
+pod 'RNFrostedSidebar', '~> 0.2'
 end
 
 target 'WeshAppLibrary' do

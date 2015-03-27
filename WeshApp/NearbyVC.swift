@@ -1,44 +1,75 @@
 //
-//  LocalChannelTVC.swift
+//  NearbyVC.swift
 //  WeshApp
 //
-//  Created by z.kakabadze on 25/10/2014.
-//  Copyright (c) 2014 WeshApp. All rights reserved.
+//  Created by rabzu on 20/03/2015.
+//  Copyright (c) 2015 WeshApp. All rights reserved.
 //
 
 import UIKit
 import CoreData
 import Designables
+import RNFrostedSidebar
+import BLKFlexibleHeightBar
 
-class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
-
-    var badgeFetchedRC: NSFetchedResultsController!
-    var channelFetechedRC: NSFetchedResultsController!
-    var currentFetchedRC : NSFetchedResultsController!
-    var coreDataStack: CoreDataStack!
-    var sessionMngr: SessionMngr?
-    let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
-    let screenSize  = UIScreen.mainScreen().bounds.size
-  //  var cellsCurrentlyEditing: NSMutableSet?
-    var openedCell: ChannelTableViewCell?
-    let proportion: CGFloat = 0.095
-
-
-//    @IBOutlet weak var leftView: UIView!
-    @IBOutlet weak var segControl: UISegmentedControl!
+class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
     
-    //MARK: Segmentation Control
-    @IBAction func segmentChanged(sender: UISegmentedControl) {
-        switch segControl.selectedSegmentIndex
-        {
+    
+    
+    
+    //MARK: NavBar properties
+    private var myCustomBar: FlexibleNavBar?
+    private var delegateSplitter: BLKDelegateSplitter?
+    private let navbarProportion: CGFloat = 4.87
+    private var segControl: WeshappSegControl!
+
+    
+    //MARK: Size properties
+    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    private let screenSize  = UIScreen.mainScreen().bounds.size
+    private let proportion: CGFloat = 0.095
+
+    //MARK:Model Proerties. CoreData
+    private var badgeFetchedRC: NSFetchedResultsController!
+    private var channelFetechedRC: NSFetchedResultsController!
+    private var currentFetchedRC : NSFetchedResultsController!
+    private var coreDataStack: CoreDataStack!
+    private var sessionMngr: SessionMngr?
+    
+   //MARK: Menu
+//    private var callout: RNFrostedSidebar?
+    
+    //MARK:Transition management
+//    let transitionManager = TransitionManager()
+
+    //MARK: TableView stuffr
+    var openedCell: ChannelTableViewCell?
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+
+
+    //MARK: menu
+    func showMenu(sender: UIView) {
+//        self.showMenu()
+          NSNotificationCenter.defaultCenter().postNotificationName("ShowMenu", object: self)
+    }
+    
+
+    
+//    MARK: Segmentation Control
+    func segmentChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
         case 0:
-           currentFetchedRC = channelFetechedRC
-           var error: NSError? = nil
-           if (!currentFetchedRC.performFetch(&error))  {
-            println("Error: \(error?.localizedDescription)") }
-           //animation
-           UIView.transitionWithView(self.tableView, duration: 0.35,
-                                                      options: UIViewAnimationOptions.TransitionFlipFromLeft,
+            currentFetchedRC = channelFetechedRC
+            var error: NSError? = nil
+            if (!currentFetchedRC.performFetch(&error))  {
+                println("Error: \(error?.localizedDescription)")
+            }
+            
+            //animation
+            UIView.transitionWithView(self.tableView, duration: 0.35,
+                                                      options: UIViewAnimationOptions.TransitionCrossDissolve,
                                                    animations: { self.tableView.reloadData() },
                                                    completion: { (v:Bool) in ()})
           
@@ -49,55 +80,35 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
                 println("Error: \(error?.localizedDescription)") }
             //animation
             UIView.transitionWithView(self.tableView, duration: 0.35,
-                options: UIViewAnimationOptions.TransitionFlipFromRight,
+                options: UIViewAnimationOptions.TransitionCrossDissolve,
                 animations: {
                     self.tableView.reloadData()
                 },
                 completion: { (v:Bool) in ()})
        
         default:
-            break;
+            break
         }
     
     
-    }
-    
-    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
     }
 
  
     //MARK: Set up
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.shyNavBarManager.scrollView = self.tableView
 
-        var frame = CGRectMake(0.0, 0.0, screenSize.width, screenSize.height * proportion)
-        
-            
-        
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
-
-        
         UIApplication.sharedApplication().statusBarHidden = false
-        // Uncomment the following line to preserve selection between presentations
-//         self.clearsSelectionOnViewWillAppear = true
-
-        let font = UIFont(name: "TitilliumText25L-250wt", size: 5.0)!
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: font ]
         
-//        var backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-//        backButton.setTitleTextAttributes(titleDict, forState: UIControlState.Normal)
-   
-//        self.navigationItem.backBarButtonItem = backButton
-//        
+        setUpNavBar()
+
+
+        self.tableView.registerNib(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: "channelCell")
+        self.tableView.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCell")
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        //Set weshapp light gray seperator EFEFF4
+        self.tableView.separatorColor = UIColor(red: 0xEF/255, green: 0xEF/255, blue: 0xF4/255, alpha: 1)
         
         sessionMngr = appDelegate.sessionMngr
         coreDataStack = appDelegate.coreDataStack!
@@ -109,8 +120,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
                                                       managedObjectContext: appDelegate.coreDataStack!.mainContext!,
                                                         sectionNameKeyPath: nil,
                                                                  cacheName: nil)
-       
-        //TODO: Filter my badge out
+       //TODO: Filter my badge out
         let badgeFetchRequest = NSFetchRequest(entityName: "Badge")
         let badgeSortDescriptor = NSSortDescriptor(key: "handle", ascending: true)
 
@@ -121,7 +131,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
                                                        cacheName: nil)
         
         
-        currentFetchedRC  = channelFetechedRC
+        currentFetchedRC = channelFetechedRC
         currentFetchedRC.delegate = self
         
         var error: NSError? = nil
@@ -129,30 +139,89 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
             println("Error: \(error?.localizedDescription)")
         }
         
-       // cellsCurrentlyEditing = NSMutableSet()
     }
     
-    override func viewDidAppear(animated: Bool) {
-//        self.navigationController!.navigationBarHidden = false
 
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    //MARK: set up navbar using BLKFlexibleHeightBar
+    
+    private func setUpNavBar(){
+        
+        
+        self.setNeedsStatusBarAppearanceUpdate()
+        let segControlWidthProp: CGFloat = 0.54
+        let segControlHeightToWidth:CGFloat = 12.76
+        
+        // Setup the bar
+        let maxHeight = screenSize.width / navbarProportion
+        //Setup the segmentation contorl
+        let segControlframe = CGRectMake(20, 20, screenSize.width * segControlWidthProp,
+                                                 screenSize.width / segControlHeightToWidth)
+        
+        self.segControl = WeshappSegControl(frame: segControlframe, items: ["Species", "Habitat"] )
+        self.segControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
+        self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 0)
+        self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 1)
+        
+        
+        //Menu Burger Item
+        let burgerWidthProp: CGFloat = 0.05
+        let burgerHeightToWidth: CGFloat = 21.91
+        let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
+                                             screenSize.width / burgerHeightToWidth)
+        let burgerItem = BurgerItem(frame: burgerframe)
+        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchUpInside)
+    
+
+        //Plus item
+        //Sqaure size
+        let plusWidthProp: CGFloat = 19.1025
+        let plusframe = CGRectMake(20, 20, screenSize.width / plusWidthProp,
+                                           screenSize.width / plusWidthProp)
+        let plusItem = PlusItem(frame: plusframe)
+        plusItem.addTarget(self, action: "handlePopover:", forControlEvents: .TouchUpInside)
+     
+
+
+        
+        let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
+        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: segControl, rightItem: plusItem)
+        
+        
+        var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
+        behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
+        behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
+        behaviorDefiner.snappingEnabled = true
+        
+        self.myCustomBar?.behaviorDefiner = behaviorDefiner
+
+        //Assigns tow delegates
+        self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
+        self.tableView.delegate =  self.delegateSplitter
+        
+        self.view.addSubview(self.myCustomBar!)
+        self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight - 20, 0.0, 0.0, 0.0)
+    }
+    
 
     // MARK: - Number of Sections
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return currentFetchedRC.sections!.count
     }
     
     // MARK: - Number of Rows
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = currentFetchedRC.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     // MARK: - Cell for Row at IndexPath
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: ChannelTableViewCell?
         switch segControl.selectedSegmentIndex
         {
@@ -178,7 +247,9 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
             default:
                 break;
         }
-            let view1 = UIView()
+        
+ 
+        let view1 = UIView()
         let v = UIView()
         v.backgroundColor = UIColor.grayColor()
         cell?.selectedBackgroundView = v
@@ -206,29 +277,32 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     }
     
     //Is called before cellForRowAtIndexPath
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return screenSize.width / 4.11
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        dispatch_async(dispatch_get_main_queue()){
-            self.performSegueWithIdentifier("toChannelTVC", sender: self)
-        }
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.performSegueWithIdentifier("toChannelVC", sender: self)
+//        dispatch_async(dispatch_get_main_queue()){
+//            self.performSegueWithIdentifier("toChannelTVC", sender: self)
+//        }
+        
     }
+
     
-    
-    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+     func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
         cell?.highlightCell(false)
 
     }
     
-    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
 
         var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
         cell?.highlightCell(true)
@@ -238,18 +312,31 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
     
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "toChannelTVC" {
+        
+            if segue.identifier == "toChannelVC" {
 //                self.navigationController!.navigationBarHidden = true
-                let navController = segue.destinationViewController as UINavigationController
-                var channelVC = navController.topViewController as ChannelTVC
+                let channelVC = segue.destinationViewController as ChannelTVC
+//                channelVC.transitioningDelegate = self.transitionManager
+//                var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 // If as Channel else as Profile
+                
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
                 channelVC.channel = channel
                 channelVC.coreDataStack = coreDataStack
                 channelVC.sessionMngr = sessionMngr
                 tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+                
+
+        } else if segue.identifier == "nearbyToProfile"{
+                
+                var profileVC = segue.destinationViewController as ProfileVC
+//                var profileVC = navController.topViewController as ProfileVC
+
+//                profileVC.transitioningDelegate = self.transitionManager
+
         }
+        
     }
     
     //MARK: NSFetchedResultsController Delegate methods
@@ -284,7 +371,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
   
     
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return false
     }
@@ -320,7 +407,7 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
          //tableView.scrollEnabled = true
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+     func scrollViewDidScroll(scrollView: UIScrollView) {
         if let oc = openedCell?{
             oc.closeCell()
         }
@@ -329,11 +416,11 @@ class NearbyTVC: UITableViewController, NSFetchedResultsControllerDelegate,UIPop
 
     
     //MARK: Popover controller
-    @IBAction func handlePopover(sender: UIBarButtonItem) {
+    @IBAction func handlePopover(sender: UIView) {
         let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
         popoverVC.modalPresentationStyle = .Popover
         if let popoverController = popoverVC.popoverPresentationController {
-            popoverController.barButtonItem = sender
+            //popoverController.barButtonItem = sender
             //popoverController.sourceRect = sender.bounds
             popoverController.permittedArrowDirections = .Any
             

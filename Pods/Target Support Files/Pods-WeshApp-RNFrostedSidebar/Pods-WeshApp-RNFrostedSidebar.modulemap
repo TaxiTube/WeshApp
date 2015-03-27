@@ -1,0 +1,6 @@
+framework module RNFrostedSidebar {
+  umbrella header "Pods-WeshApp-RNFrostedSidebar-umbrella.h"
+
+  export *
+  module * { export * }
+}

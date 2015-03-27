@@ -13,11 +13,11 @@ public class Chevron: UIView {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.clearColor()
     }
 
    public required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.clearColor()
     }
     
     
