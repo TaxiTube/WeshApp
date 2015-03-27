@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let coreDataStack: CoreDataStack? = CoreDataStack()
     var sessionMngr: SessionMngr!
-    var menu: Menu?
+   
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                return true
             }
           //sessionMngr = SessionMngr(coreDataStack: cds)
-            menu = Menu()
+          
             UILabel.appearance().substituteFontName =   "TitilliumText25L-250wt"
             
             

@@ -65,19 +65,26 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             //textView.resignFirstResponder()
 
         }
-    } 
+    }
+    
+    
     
     //MARK: ViewDid
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setUpNavBar()
+        self.setUpHeaderView()
+        
         self.tableView.registerNib(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive
        
-        
-        self.setUpHeaderView()
-        self.setUpNavBar()
+        //Inset required due to inputAccessoryView
+        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+            left: tableView.contentInset.left,
+            bottom: view.frame.width / 7.2,
+            right: tableView.contentInset.right)
         
 
         
@@ -94,11 +101,6 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        //Inset required due to inputAccessoryView
-        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
-                                             left: tableView.contentInset.left,
-                                           bottom: view.frame.width / 7.2,
-                                            right: tableView.contentInset.right)
 
         //TODO: Move to New method
         let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
@@ -132,17 +134,27 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let backgroundImageView = UIImageView()
         self.tableView.backgroundView = backgroundImageView
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
-        backgroundImageView.addSubview(blurView)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+//        let blurView = UIVisualEffectView(effect: blurEffect)
+//        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
+//        backgroundImageView.addSubview(blurView)
         
    }
-   
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.becomeFirstResponder()
+    }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    
+    
     
     override func viewDidLayoutSubviews() {
         if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
@@ -150,13 +162,12 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+    
+    
+    //MARK: menu
+    func showMenu(sender: UIView) {
+        NSNotificationCenter.defaultCenter().postNotificationName("ShowMenu", object: self)
     }
-//    //MARK: menu
-//    func showMenu(sender: UIView) {
-//        self.showMenu()
-//    }
     
     
     //MARK: Navbar actions
@@ -223,7 +234,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     private func setUpHeaderView(){
         handle.text = "#\(channel!.author.handle)"
         channelDesc.text = channel?.desc
-//        profileName.text =
+        //TODO:profileName.text =
         
     }
     
@@ -345,16 +356,15 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     //MARK: InputAccessoryView
     //Return your custom input accessory view
     override var inputAccessoryView: UIView! {
-        
         return accessoryDock
     }
     
     override func canBecomeFirstResponder() -> Bool {
-        return true
+        return false
     }
     
     
-    //Used to setup and chang default constraints height
+    //Used to setup and change default constraints height
     func setUpInputAccessoryView(){
 
         //Set Weshapp Delagete

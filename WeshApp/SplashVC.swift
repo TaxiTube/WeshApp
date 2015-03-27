@@ -34,11 +34,13 @@ class SplashVC: UIViewController {
             NSUserDefaults.standardUserDefaults().synchronize()
             println(NSUserDefaults.standardUserDefaults().dataForKey("handle"))
 
-            self.performSegueWithIdentifier("toNearby", sender:self)
+            self.performSegueWithIdentifier("toMain", sender:self)
         }
     }
     
-     
+    override func viewDidLoad() {
+        self.hidesBottomBarWhenPushed   = true
+    }
     
     
     
@@ -59,7 +61,7 @@ class SplashVC: UIViewController {
     }
     override func viewDidAppear(animated: Bool) {
       if connectionIsSet{
-            self.performSegueWithIdentifier("toNearby", sender:self)
+            self.performSegueWithIdentifier("toMain", sender:self)
         }
     }
         

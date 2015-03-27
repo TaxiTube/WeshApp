@@ -12,7 +12,7 @@ import Designables
 import RNFrostedSidebar
 import BLKFlexibleHeightBar
 
-class NearbyVC: WeshappViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
+class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
     
     
     
@@ -51,7 +51,8 @@ class NearbyVC: WeshappViewController, UITableViewDelegate, UITableViewDataSourc
 
     //MARK: menu
     func showMenu(sender: UIView) {
-        self.showMenu()
+//        self.showMenu()
+          NSNotificationCenter.defaultCenter().postNotificationName("ShowMenu", object: self)
     }
     
 
