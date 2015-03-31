@@ -45,7 +45,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var channelDesc: UILabel!
     
     //TableView
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: DockedTableView!
     
     
     
@@ -128,25 +128,34 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
 
         
+        self.tableView.accessoryDock = self.accessoryDock
+        self.tableView.becomeFirstResponder()
 
-        
         self.tableView.backgroundColor = UIColor.clearColor()
         let backgroundImageView = UIImageView()
         self.tableView.backgroundView = backgroundImageView
         
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-//        let blurView = UIVisualEffectView(effect: blurEffect)
-//        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
-//        backgroundImageView.addSubview(blurView)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
+        backgroundImageView.addSubview(blurView)
         
    }
     
     deinit {
+        println("dealloc")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    override func viewWillAppear(animated: Bool) {
+
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        self.becomeFirstResponder()
+      
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -157,8 +166,11 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     
     override func viewDidLayoutSubviews() {
-        if (!inputAccessoryViewIsSetUp && tableView.inputAccessoryView? != nil){
+       self.updateViewConstraints()
+        if (!inputAccessoryViewIsSetUp && self.tableView.inputAccessoryView? != nil){
+            
             self.setUpInputAccessoryView()
+            
         }
     }
     
@@ -354,28 +366,20 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
    
     //MARK: InputAccessoryView
-    //Return your custom input accessory view
-    override var inputAccessoryView: UIView! {
-        return accessoryDock
-    }
-    
-    override func canBecomeFirstResponder() -> Bool {
-        return false
-    }
-    
-    
     //Used to setup and change default constraints height
     func setUpInputAccessoryView(){
 
         //Set Weshapp Delagete
-        textView.weshappDelegate = self
+        self.textView.weshappDelegate = self
         
-        //Not sure when to use this: tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
-        var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
+        //Not sure when to use this: 
+        self.tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+        var constraints:[NSLayoutConstraint] = self.tableView.inputAccessoryView!.constraints() as Array
         //find default constraint
         for (c: NSLayoutConstraint) in constraints{
             if c.firstAttribute == NSLayoutAttribute.Height{
                 c.constant = screenSize.width / 7.5
+                 inputAccessoryViewIsSetUp = true
                 break
             }
         }
@@ -388,10 +392,10 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                              multiplier: 1,
                                                constant: (screenSize.width / 7.5))
 
-        tableView.inputAccessoryView!.addConstraint(self.textViewHeightConstraint!)
-        tableView.updateConstraints()
+        self.tableView.inputAccessoryView!.addConstraint(self.textViewHeightConstraint!)
+        self.tableView.updateConstraints()
         
-        inputAccessoryViewIsSetUp = true
+       
     }
     
     //WeshappTextView Deleget method, called if textview number of lines change
@@ -404,7 +408,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         var max = CGFloat.max
         var sizeThatFitsTextView = self.textView.sizeThatFits(CGSizeMake(self.textView.frame.size.width, max ))
         
-        var constraints:[NSLayoutConstraint] = tableView.inputAccessoryView!.constraints() as Array
+        var constraints:[NSLayoutConstraint] = self.tableView.inputAccessoryView!.constraints() as Array
         
         for  (c: NSLayoutConstraint) in constraints{
             if c.firstAttribute == NSLayoutAttribute.Height {
@@ -424,7 +428,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                 
             }
         }
-     tableView.layoutIfNeeded()
+     self.tableView.layoutIfNeeded()
     }
 
     func keyboardWillShow(notification: NSNotification) {
@@ -434,7 +438,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
         if keyboardSize.height > 200{
             
-            tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+            self.tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
                 left: tableView.contentInset.left,
                 bottom: keyboardSize.height,
                 right: tableView.contentInset.right)
@@ -448,7 +452,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let userInfo = notification.userInfo!
         var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
 
-        tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
+        self.tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
             left: tableView.contentInset.left,
             bottom: view.frame.width / 7.2,
             right: tableView.contentInset.right)

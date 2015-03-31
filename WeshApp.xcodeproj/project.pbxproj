@@ -45,6 +45,8 @@
 		D81FE27F1A2377B4006F8E62 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
 		D81FFDC11A0BF94500C6294B /* misc in Resources */ = {isa = PBXBuildFile; fileRef = D81FFDC01A0BF94500C6294B /* misc */; };
 		D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
+		D851EE9F1ACADAF200F14AC2 /* DockedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */; };
+		D851EEA01ACADBBF00F14AC2 /* DockedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */; };
 		D85A86571A17AFE000398153 /* PostMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* PostMngr.swift */; };
 		D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */; };
 		D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
@@ -208,6 +210,7 @@
 		D81FE27C1A236BC9006F8E62 /* SessionMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngrTest.swift; sourceTree = "<group>"; };
 		D81FFDC01A0BF94500C6294B /* misc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = misc; sourceTree = "<group>"; };
 		D84BDF791A09494E004390D8 /* SessionMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngr.swift; sourceTree = "<group>"; };
+		D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DockedTableView.swift; sourceTree = "<group>"; };
 		D85A86561A17AFE000398153 /* PostMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMngr.swift; sourceTree = "<group>"; };
 		D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptMngrTest.swift; sourceTree = "<group>"; };
 		D85A86601A196C3100398153 /* ChannelMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngr.swift; sourceTree = "<group>"; };
@@ -510,6 +513,7 @@
 				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
 				D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */,
 				D8A7C3C81AC49A7C00EFDAE2 /* MenuController.swift */,
+				D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -938,6 +942,7 @@
 				D8C0FD5D1A1279DE00F40134 /* ProfileMngr.swift in Sources */,
 				B3EB823F1A028CE500235E03 /* SessionContainer.swift in Sources */,
 				D8A443431ABB8F610030F01E /* NavigationControllerDelegate.swift in Sources */,
+				D851EE9F1ACADAF200F14AC2 /* DockedTableView.swift in Sources */,
 				B362BD031A5A667D0028B280 /* WeshApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -975,6 +980,7 @@
 				D8A4433E1ABB65BE0030F01E /* TransitionManager.swift in Sources */,
 				D8A4433D1ABB65BE0030F01E /* FlexibleNavBar.swift in Sources */,
 				D8C0FD611A127B5D00F40134 /* ProfileMngrTest.swift in Sources */,
+				D851EEA01ACADBBF00F14AC2 /* DockedTableView.swift in Sources */,
 				D8DA2A351A693F410098C5E6 /* Post.swift in Sources */,
 				D8A443591ABBA8090030F01E /* NearbyVC.swift in Sources */,
 			);

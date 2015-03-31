@@ -248,7 +248,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PyV-pr-14d">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PyV-pr-14d" customClass="DockedTableView" customModule="WeshApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="100" id="bZN-X3-jvX" userLabel="HeaderView">
@@ -326,7 +326,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.36402799289999999" blue="0.26662053769999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                             <constraints>
                                                 <constraint firstItem="zDU-gB-5aI" firstAttribute="width" secondItem="Mcl-uw-W8L" secondAttribute="width" multiplier="0.191" id="4xI-C2-L7w"/>
                                                 <constraint firstItem="JoE-8c-v23" firstAttribute="width" secondItem="Mcl-uw-W8L" secondAttribute="width" multiplier="0.06" id="C7A-aW-QP4"/>
@@ -391,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLJ-5E-ecY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" id="AlX-qk-58B" userLabel="accessoryDock" customClass="BorderView" customModule="Designables">
-                    <rect key="frame" x="0.0" y="0.0" width="588" height="84"/>
+                    <rect key="frame" x="0.0" y="0.0" width="588" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" restorationIdentifier="elementBox" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-vX-GrO" userLabel="elementBox">
