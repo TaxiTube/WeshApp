@@ -97,6 +97,15 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                                          selector: Selector("keyboardDidHide:"),
                                                              name: UIKeyboardDidHideNotification,
                                                            object: nil)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                    selector: Selector("showInputAccessoryView:"),
+                                                        name: "MenuDidHide",
+                                                      object: nil)
+        
+        
+        
         //Required for dynamic Cells
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -131,14 +140,8 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.tableView.accessoryDock = self.accessoryDock
         self.tableView.becomeFirstResponder()
 
-        self.tableView.backgroundColor = UIColor.clearColor()
-        let backgroundImageView = UIImageView()
-        self.tableView.backgroundView = backgroundImageView
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
-        backgroundImageView.addSubview(blurView)
+
+     
         
    }
     
@@ -147,15 +150,34 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     override func viewDidDisappear(animated: Bool) {
+        super.viewDidAppear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func viewWillAppear(animated: Bool) {
-
+        super.viewWillAppear(animated)
+        
+        self.tableView.backgroundColor = UIColor.clearColor()
+        let backgroundImageView = UIImageView()
+        self.tableView.backgroundView = backgroundImageView
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
+        backgroundImageView.addSubview(blurView)
+      
     }
+   
     
     override func viewDidAppear(animated: Bool) {
+      super.viewDidAppear(animated)
+        self.tableView.flashScrollIndicators()
       
+        
+    }
+    
+    func showInputAccessoryView(sender: UIView){
+        self.tableView.becomeFirstResponder()
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -372,7 +394,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         //Set Weshapp Delagete
         self.textView.weshappDelegate = self
         
-        //Not sure when to use this: 
+        //Not sure when to use this:
         self.tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
         var constraints:[NSLayoutConstraint] = self.tableView.inputAccessoryView!.constraints() as Array
         //find default constraint

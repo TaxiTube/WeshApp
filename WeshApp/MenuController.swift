@@ -116,7 +116,15 @@ class MenuController: UITabBarController, RNFrostedSidebarDelegate {
     }
     
     func sidebar(sidebar: RNFrostedSidebar!, didShowOnScreenAnimated animatedYesOrNo: Bool) {
-//        sidebar.becomeFirstResponder()
+            sidebar.becomeFirstResponder()
+        println("appear")
+    }
+    
+//    - (void)sidebar:(RNFrostedSidebar *)sidebar didDismissFromScreenAnimated:(BOOL)animatedYesOrNo;
+    func sidebar(sidebar: RNFrostedSidebar!, didDismissFromScreenAnimated animatedYesOrNo: Bool) {
+        NSNotificationCenter.defaultCenter().postNotificationName("MenuDidHide", object: self)
+
+        sidebar.resignFirstResponder()
     }
     
     /*

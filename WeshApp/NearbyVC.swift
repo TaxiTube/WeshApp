@@ -147,7 +147,10 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.flashScrollIndicators()  
+    }
     
     //MARK: set up navbar using BLKFlexibleHeightBar
     
