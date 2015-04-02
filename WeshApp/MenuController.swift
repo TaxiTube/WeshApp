@@ -61,8 +61,6 @@ class MenuController: UITabBarController, RNFrostedSidebarDelegate {
     //MARK: menu
     func showMenu(notification: NSNotification) {
         
-    
-
         obj = notification.object as? ChannelTVC
         callout!.show()
         callout!.becomeFirstResponder()
@@ -99,14 +97,6 @@ class MenuController: UITabBarController, RNFrostedSidebarDelegate {
             sidebar.dismissAnimated(true)
         case 3://profile
             sidebar.dismissAnimated(true)
-//            self.performSegueWithIdentifier("nearbyToProfile", sender: self)
-            dispatch_async(dispatch_get_main_queue(), {
-                println("Currently dispatched asynchronously")
-                  self.obj?.tableView.becomeFirstResponder()
-            })
-           
-            
-            
             self.selectedIndex = 1
             
         case 4:

@@ -32,7 +32,7 @@ class ChannelTableViewCell: UITableViewCell {
     @IBOutlet weak var contentViewLeftConstraint: NSLayoutConstraint!
     
     //MARK properties
-    var delegate: ChannetlTableViewCellDelegate?
+    var  delegate: ChannetlTableViewCellDelegate?
     private var panRecognizer: UIPanGestureRecognizer?
     private var panStartPoint: CGPoint?
     private var startingRightConstant: CGFloat?
@@ -63,18 +63,11 @@ class ChannelTableViewCell: UITableViewCell {
     
     private func setUpPan(){
         self.layer.backgroundColor = UIColor.whiteColor().CGColor
-        
         panRecognizer = UIPanGestureRecognizer(target: self, action: "panThisCell:")
         panRecognizer!.delegate = self
         addGestureRecognizer(panRecognizer!)
     }
-    //MARK: Superview functions
 
-//    override func drawRect(rect: CGRect) {
-//        let rectanglePath = UIBezierPath(rect: CGRectMake(frame.minX, frame.minY, frame.width, frame.height))
-//        UIColor.whiteColor().setFill()
-//        rectanglePath.fill()
-//    }
     
    //MARK: Handle Pan Gesures
     func panThisCell(pan: UIPanGestureRecognizer){
@@ -251,7 +244,7 @@ class ChannelTableViewCell: UITableViewCell {
 
         //Delegate
         if (notifyDelegate) {
-            delegate!.cellDidOpen(self)
+            delegate?.cellDidOpen(self)
         }
 
         //1. If the cell started open and the constraint is already at the full open value, just bail

@@ -18,7 +18,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
     private var delegateSplitter: BLKDelegateSplitter?
-    private let navbarProportion: CGFloat = 4.87
+   
     
     //MARK: Model CoreData stuff
     var channel: Channel?
@@ -103,7 +103,12 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                                     selector: Selector("showInputAccessoryView:"),
                                                         name: "MenuDidHide",
                                                       object: nil)
+       
         
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                    selector: Selector("dismissPressed:"),
+                                                        name: "SegueBack",
+                                                      object: nil)
         
         
         //Required for dynamic Cells
@@ -136,14 +141,10 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             println("Error: \(error?.localizedDescription)")
         }
 
-        
+        //Create assign tableview its inputAccessoryView
         self.tableView.accessoryDock = self.accessoryDock
         self.tableView.becomeFirstResponder()
-
-
-     
-        
-   }
+    }
     
     deinit {
         println("dealloc")
@@ -156,19 +157,10 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.tableView.backgroundColor = UIColor.clearColor()
-        let backgroundImageView = UIImageView()
-        self.tableView.backgroundView = backgroundImageView
-        
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
-        backgroundImageView.addSubview(blurView)
+       
       
     }
    
-    
     override func viewDidAppear(animated: Bool) {
       super.viewDidAppear(animated)
         self.tableView.flashScrollIndicators()
@@ -180,15 +172,9 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.tableView.becomeFirstResponder()
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    
-    
-    
-    override func viewDidLayoutSubviews() {
+   override func viewDidLayoutSubviews() {
        self.updateViewConstraints()
+        self.addBlur()
         if (!inputAccessoryViewIsSetUp && self.tableView.inputAccessoryView? != nil){
             
             self.setUpInputAccessoryView()
@@ -196,19 +182,29 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
     }
     
-    
-    
-    //MARK: menu
-    func showMenu(sender: UIView) {
-        NSNotificationCenter.defaultCenter().postNotificationName("ShowMenu", object: self)
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     
+    func addBlur(){
+        
+        self.tableView.backgroundColor = UIColor.clearColor()
+        let backgroundImageView = UIImageView()
+        self.tableView.backgroundView = backgroundImageView
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = CGRectMake(0, 0, tableView.bounds.width, tableView.bounds.height)
+        backgroundImageView.addSubview(blurView)
+    }
+    
+
     //MARK: Navbar actions
     private func setUpNavBar(){
         self.setNeedsStatusBarAppearanceUpdate()
         // Setup the bar
-        let maxHeight = screenSize.width / navbarProportion
+//        leet maxHeight = screenSize.width / navbarProportion
 
         let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
         let channelTitleLabel = UILabel()
@@ -219,26 +215,10 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         channelTitleLabel.attributedText = NSAttributedString(string: self.channel!.title,
                                                           attributes: titleDict)
         channelTitleLabel.sizeToFit()
-        
-        //Menu Burger Item
-        let burgerWidthProp: CGFloat = 0.05
-        let burgerHeightToWidth: CGFloat = 21.91
-        let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
-            screenSize.width / burgerHeightToWidth)
-       let burgerItem = BurgerItem(frame: burgerframe)
-        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchUpInside)
-    
-
-        //Plus item
-        //Sqaure size
-        let crossWidthProp: CGFloat = 19.1025
-        let crossframe = CGRectMake(20, 20, screenSize.width / crossWidthProp,
-                                            screenSize.width / crossWidthProp)
-        let crossItem = CrossItem(frame: crossframe)
-        crossItem.addTarget(self, action: "dismissPressed:", forControlEvents: .TouchUpInside)
       
+    
         
-        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: channelTitleLabel, rightItem: crossItem)
+        self.myCustomBar = FlexibleNavBar(frame: frame, centreItem: channelTitleLabel, rightItem: .Cross)
         
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
@@ -260,9 +240,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
     func dismissPressed(sender: AnyObject) {
                 navigationController?.popViewControllerAnimated(true)
-//        NSOperationQueue.mainQueue().addOperationWithBlock(){
-//            self.dismissViewControllerAnimated(true, completion: nil)
-//        }
+
     }
     
     private func setUpHeaderView(){

@@ -47,10 +47,14 @@
 		D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
 		D851EE9F1ACADAF200F14AC2 /* DockedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */; };
 		D851EEA01ACADBBF00F14AC2 /* DockedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */; };
+		D851EEA21ACC755000F14AC2 /* MyProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D851EEA11ACC755000F14AC2 /* MyProfileCell.xib */; };
+		D851EEA31ACC755000F14AC2 /* MyProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D851EEA11ACC755000F14AC2 /* MyProfileCell.xib */; };
 		D85A86571A17AFE000398153 /* PostMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86561A17AFE000398153 /* PostMngr.swift */; };
 		D85A865D1A17BFBE00398153 /* TranscriptMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */; };
 		D85A86611A196C3100398153 /* ChannelMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86601A196C3100398153 /* ChannelMngr.swift */; };
 		D85A86671A1972A700398153 /* ChannelMngrTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A86661A1972A700398153 /* ChannelMngrTest.swift */; };
+		D85D0A4A1ACDCF2000E68588 /* WClockIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D0A491ACDCF2000E68588 /* WClockIcon.swift */; };
+		D85D0A4C1ACDD04700E68588 /* WClockIconSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D0A4B1ACDD04700E68588 /* WClockIconSK.swift */; };
 		D86857641AA2C3990003F214 /* WeshappTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */; };
 		D870518A1A7C3E000081484A /* WeshappLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87051891A7C3E000081484A /* WeshappLabel.swift */; };
 		D871CB581A1FD97E0024C7B7 /* ProfileMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0FD5C1A1279DE00F40134 /* ProfileMngr.swift */; };
@@ -211,10 +215,13 @@
 		D81FFDC01A0BF94500C6294B /* misc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = misc; sourceTree = "<group>"; };
 		D84BDF791A09494E004390D8 /* SessionMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngr.swift; sourceTree = "<group>"; };
 		D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DockedTableView.swift; sourceTree = "<group>"; };
+		D851EEA11ACC755000F14AC2 /* MyProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileCell.xib; sourceTree = "<group>"; };
 		D85A86561A17AFE000398153 /* PostMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostMngr.swift; sourceTree = "<group>"; };
 		D85A865C1A17BFBE00398153 /* TranscriptMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscriptMngrTest.swift; sourceTree = "<group>"; };
 		D85A86601A196C3100398153 /* ChannelMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngr.swift; sourceTree = "<group>"; };
 		D85A86661A1972A700398153 /* ChannelMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelMngrTest.swift; sourceTree = "<group>"; };
+		D85D0A491ACDCF2000E68588 /* WClockIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WClockIcon.swift; sourceTree = "<group>"; };
+		D85D0A4B1ACDD04700E68588 /* WClockIconSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WClockIconSK.swift; sourceTree = "<group>"; };
 		D87051891A7C3E000081484A /* WeshappLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappLabel.swift; sourceTree = "<group>"; };
 		D877FA8C1A87B6EB00C0334B /* WeshappChevronSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeshappChevronSK.swift; sourceTree = "<group>"; };
 		D877FA8E1A87B71500C0334B /* Chevron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chevron.swift; sourceTree = "<group>"; };
@@ -352,6 +359,7 @@
 				D8A8424A1A9BBD2D001F1030 /* WallPostLabel.swift */,
 				D8CE220B1AC219EB0004A387 /* NavBarItems */,
 				B36E68441A6C3AF7002B951A /* Supporting Files */,
+				D85D0A491ACDCF2000E68588 /* WClockIcon.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -512,6 +520,7 @@
 				D8A443511ABBA2900030F01E /* ProfileTableViewCell.xib */,
 				D8A4434E1ABBA2380030F01E /* ChannelTableViewCell.xib */,
 				D8CE21F21AC0B6470004A387 /* PostTableViewCell.xib */,
+				D851EEA11ACC755000F14AC2 /* MyProfileCell.xib */,
 				D8A7C3C81AC49A7C00EFDAE2 /* MenuController.swift */,
 				D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */,
 			);
@@ -529,6 +538,7 @@
 		D8CE22021AC1CE330004A387 /* StyleKit */ = {
 			isa = PBXGroup;
 			children = (
+				D85D0A4B1ACDD04700E68588 /* WClockIconSK.swift */,
 				D8CE220C1AC21A110004A387 /* NavBarItems */,
 				D8F334391A9AB0890028918C /* WeshappHeartSK.swift */,
 				D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */,
@@ -753,6 +763,7 @@
 				D81FFDC11A0BF94500C6294B /* misc in Resources */,
 				B36E686A1A6C4798002B951A /* TitilliumText25L.otf in Resources */,
 				B36E686B1A6C4798002B951A /* TitilliumText25L001.otf in Resources */,
+				D851EEA21ACC755000F14AC2 /* MyProfileCell.xib in Resources */,
 				B36E686E1A6C4798002B951A /* TitilliumText25L004.otf in Resources */,
 				B36E686C1A6C4798002B951A /* TitilliumText25L002.otf in Resources */,
 				B3D9F5B419F93AA400BF6257 /* LaunchScreen.xib in Resources */,
@@ -768,6 +779,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D851EEA31ACC755000F14AC2 /* MyProfileCell.xib in Resources */,
 				D8A443501ABBA2380030F01E /* ChannelTableViewCell.xib in Resources */,
 				D8A443531ABBA2900030F01E /* ProfileTableViewCell.xib in Resources */,
 			);
@@ -902,6 +914,8 @@
 				D8EF20931A96C57F0033230C /* WeshappSmileIconSK.swift in Sources */,
 				D885E8901A8F74F000BD8E48 /* FriendRequest.swift in Sources */,
 				D8CE22551AC228090004A387 /* CrossItem.swift in Sources */,
+				D85D0A4A1ACDCF2000E68588 /* WClockIcon.swift in Sources */,
+				D85D0A4C1ACDD04700E68588 /* WClockIconSK.swift in Sources */,
 				D8CE22531AC227D00004A387 /* CrossSK.swift in Sources */,
 				D8CE220A1AC219DB0004A387 /* PlusItem.swift in Sources */,
 				D87D58FE1A7A536C002ADA13 /* WeshappSegControl.swift in Sources */,

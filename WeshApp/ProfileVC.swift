@@ -7,16 +7,42 @@
 //
 
 import UIKit
+import CoreData
+import WeshAppLibrary
+import Designables
 import BLKFlexibleHeightBar
 
-class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, ChannetlTableViewCellDelegate {
 
-    var profile:Profile?
+    //MARK:Model Proerties. CoreData
+    private var badgeFetchedRC: NSFetchedResultsController!
+    private var channelFetechedRC: NSFetchedResultsController!
+    private var coreDataStack: CoreDataStack!
+    private var sessionMngr: SessionMngr?
+    
+    
+    //MARK: Size properties
+    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    private let screenSize  = UIScreen.mainScreen().bounds.size
+    private let proportion: CGFloat = 0.095
+    
+    //MARK: TableView stuffr
+    var openedCell: ChannelTableViewCell?
+    
+    var badge: Badge?
+    
+    
     private var myCustomBar: FlexibleNavBar?
     private var  delegateSplitter: BLKDelegateSplitter?
     
-    let screenSize  = UIScreen.mainScreen().bounds.size
-     let proportion: CGFloat = 0.095
+//    let proportion: CGFloat = 0.095
+    
+//    var name: UILabel?
+    var totem:UIImageView?
+    var handle: UILabel?
+    var profileName: UILabel?
+    
+    @IBOutlet weak var tableView: UITableView!
     
     
     required init(coder aDecoder: NSCoder) {
@@ -27,64 +53,60 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.init()
     }
   
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavbar()
         UIApplication.sharedApplication().statusBarHidden = false
         
-        self.setNeedsStatusBarAppearanceUpdate()
-        // Setup the bar
-        let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 100.0)
-        self.myCustomBar = FlexibleNavBar(frame: frame, max: CGFloat(200.0), min: CGFloat(70), handle: "Jurgen", name: "Dach Von Kloss")
-        
-        var behaviorDefiner = SquareCashStyleBehaviorDefiner()
-        behaviorDefiner.addSnappingPositionProgress(0.0, forProgressRangeStart: 0.0, end: 0.5)
-        behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
-        behaviorDefiner.snappingEnabled = true
-        behaviorDefiner.elasticMaximumHeightAtTop = true
+        self.tableView.registerNib(UINib(nibName: "MyProfileCell", bundle: nil), forCellReuseIdentifier: "profileCell")
        
-        self.myCustomBar?.behaviorDefiner = behaviorDefiner
-
-         
-        self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
-        self.tableView.delegate =  self.delegateSplitter
-    
-        self.view.addSubview(self.myCustomBar!)
-        // Setup the table view
-        //self.tableView(registerClass:UITableViewCell.classForCoder, forCellReuseIdentifier:"cell")
-        self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight, 0.0, 0.0, 0.0)
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
+        //Set weshapp light gray seperator EFEFF4
+        self.tableView.separatorColor = UIColor(red: 0xEF/255, green: 0xEF/255, blue: 0xF4/255, alpha: 1)
         
-        var closeButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        closeButton.setImage(UIImage(named: "crossIcon"), forState: UIControlState.Normal)
+        sessionMngr = appDelegate.sessionMngr
+        coreDataStack = appDelegate.coreDataStack!
         
-        closeButton.frame = CGRectMake(self.myCustomBar!.frame.size.width - 40.0, 25.0, 30.0, 30.0)
+        if badge == nil{
+            self.badge = appDelegate.sessionMngr.myBadge
+        }
         
-        closeButton.tintColor = UIColor.whiteColor()
-        
-        closeButton.addTarget(self, action:"closeViewController:", forControlEvents:UIControlEvents.TouchUpInside)
-        self.myCustomBar?.addSubview(closeButton)
-        
-        
-        
-        var menuButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        menuButton.setImage(UIImage(named: "hamburgerIcon"), forState: UIControlState.Normal)
-        
-        menuButton.frame = CGRectMake(15.0, 25.0, 30.0, 30.0)
-        
-        menuButton.tintColor = UIColor.whiteColor()
-        
-        menuButton.addTarget(self, action:"closeViewController:", forControlEvents:UIControlEvents.TouchUpInside)
-        self.myCustomBar?.addSubview(menuButton)
+        fetchFromCoreData()
         
     }
+    
+    func fetchFromCoreData(){
+        let channelFetchRequest = NSFetchRequest(entityName: "Channel")
+        let channelSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        
+        channelFetchRequest.sortDescriptors = [channelSortDescriptor]
+//        channelFetchRequest.predicate = NSPredicate(format: "Channel.author == %@", self.badge!)
+        
+        channelFetechedRC = NSFetchedResultsController(fetchRequest: channelFetchRequest,
+                                               managedObjectContext: appDelegate.coreDataStack!.mainContext!,
+                                                 sectionNameKeyPath: nil,
+                                                          cacheName: nil)
+        
+        
+        channelFetechedRC.delegate = self
+        //Fetching with NSFetchedResultsController returns a Boolean to denote success or failure.
+        var error: NSError? = nil
+        if (!channelFetechedRC.performFetch(&error))  {
+            println("Error: \(error?.localizedDescription)")
+        }
+    }
+    
+    
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(animated: Bool) {
-//        self.navigationController?.navigationBarHidden = true
+        super.viewDidAppear(animated)
+        self.tableView.flashScrollIndicators()
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -92,6 +114,17 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        self.navigationController?.navigationBarHidden = false
     }
 
+    func setUpData(){
+        self.handle?.text = self.badge?.handle
+
+        //self.totem =  UIImageView(image: UIImage(named: self.badge?.totem!))
+        self.totem =  UIImageView(image: UIImage(named:"Lion"))
+//        if let n = self.badge?.profile. {
+//            self.name?.text = n
+//        }
+        
+    }
+    
     func closeViewController(sender: UIButton){
 //        self.navigationController?.popViewControllerAnimated(true)
                             self.navigationController?.popViewControllerAnimated(true)
@@ -109,20 +142,115 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - Number of Sections
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return channelFetechedRC.sections!.count
+    }
+    //Is called before cellForRowAtIndexPath
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return screenSize.width / 4.11
     }
     
     // MARK: - Number of Rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 40
+        let sectionInfo = channelFetechedRC.sections![section] as NSFetchedResultsSectionInfo
+        return sectionInfo.numberOfObjects
     }
+    
     // MARK: - Cell for Row at IndexPath
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
 
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as?  UITableViewCell
-         cell!.textLabel?.text = "jurgen"
+        var cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
+        let channel = channelFetechedRC.objectAtIndexPath(indexPath) as Channel
+        cell!.title.text = channel.title
+        //TODO if name is known show real name instead
+        cell!.subTitle.text = timeAgoSinceDate(channel.date, true)
         
+        //TODO: cell!.image     =
+        //Todo Count number of posts the channe has cell!.counter =
+        cell!.delegate = self
         return cell!
     }
+    
+//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "My Habitat"
+//    }
+    
+    //MARK: ChannetlTableViewCellDelegate
+    func pauseAction(){
+        println("Pause Action pressed")
+    }
+    
+    func cellDidOpen(cell: ChannelTableViewCell) {
+        
+        if cell != openedCell{
+            if let oc = openedCell?{
+                
+                openedCell!.closeCell()
+            }
+            openedCell = cell
+        }
+        
+        //stop scrolling
+        var currentEditingIndexPath = tableView.indexPathForCell(cell)
+        //self.cellsCurrentlyEditing?.addObject(currentEditingIndexPath!)
+    }
+    
+    func cellDidClose(cell: ChannelTableViewCell) {
+        if cell == openedCell{
+            openedCell = nil
+        }
+        //continue scrolling
+        var currentEditingIndexPath = tableView.indexPathForCell(cell)
+        // self.cellsCurrentlyEditing?.removeObject(currentEditingIndexPath!)
+        //tableView.scrollEnabled = true
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if let oc = openedCell?{
+            oc.closeCell()
+        }
+    }
+    
+ 
+    
+    private func setUpNavbar(){
+        self.setNeedsStatusBarAppearanceUpdate()
+        
+        //name init
+        
+        //totem init
+        var profileImageView = UIImageView(image: UIImage(named: "Lion"))
+
+        //handle init
+        
+        
+        
+        // Setup the bar
+        let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 100.0)
+        self.handle = UILabel()
+        self.handle?.text  = "#Jurgen"
+        self.profileName = UILabel()
+        self.profileName?.text = "Dach Von Kloss"
+        
+        self.myCustomBar = FlexibleNavBar(frame: frame, handle: self.handle!,  name: self.profileName, totem: profileImageView, rightItem: .Cross )
+        
+        var behaviorDefiner = SquareCashStyleBehaviorDefiner()
+        behaviorDefiner.addSnappingPositionProgress(0.0, forProgressRangeStart: 0.0, end: 0.5)
+        behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
+        behaviorDefiner.snappingEnabled = true
+        behaviorDefiner.elasticMaximumHeightAtTop = true
+        
+        self.myCustomBar?.behaviorDefiner = behaviorDefiner
+        
+        
+        self.delegateSplitter = BLKDelegateSplitter(firstDelegate: behaviorDefiner, secondDelegate: self)
+        self.tableView.delegate =  self.delegateSplitter
+        
+        self.view.addSubview(self.myCustomBar!)
+        // Setup the table view
+        //self.tableView(registerClass:UITableViewCell.classForCoder, forCellReuseIdentifier:"cell")
+        self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight, 0.0, 0.0, 0.0)
+     }
+    
+    
 }

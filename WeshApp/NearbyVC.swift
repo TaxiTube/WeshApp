@@ -20,7 +20,6 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
     private var delegateSplitter: BLKDelegateSplitter?
-    private let navbarProportion: CGFloat = 4.87
     private var segControl: WeshappSegControl!
 
     
@@ -46,52 +45,6 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     var openedCell: ChannelTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
-    
-
-
-    //MARK: menu
-    func showMenu(sender: UIView) {
-//        self.showMenu()
-          NSNotificationCenter.defaultCenter().postNotificationName("ShowMenu", object: self)
-    }
-    
-
-    
-//    MARK: Segmentation Control
-    func segmentChanged(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            currentFetchedRC = channelFetechedRC
-            var error: NSError? = nil
-            if (!currentFetchedRC.performFetch(&error))  {
-                println("Error: \(error?.localizedDescription)")
-            }
-            
-            //animation
-            UIView.transitionWithView(self.tableView, duration: 0.35,
-                                                      options: UIViewAnimationOptions.TransitionCrossDissolve,
-                                                   animations: { self.tableView.reloadData() },
-                                                   completion: { (v:Bool) in ()})
-          
-        case 1:
-            currentFetchedRC = badgeFetchedRC
-            var error: NSError? = nil
-            if (!currentFetchedRC.performFetch(&error))  {
-                println("Error: \(error?.localizedDescription)") }
-            //animation
-            UIView.transitionWithView(self.tableView, duration: 0.35,
-                options: UIViewAnimationOptions.TransitionCrossDissolve,
-                animations: {
-                    self.tableView.reloadData()
-                },
-                completion: { (v:Bool) in ()})
-       
-        default:
-            break
-        }
-    
-    
-    }
 
  
     //MARK: Set up
@@ -101,12 +54,22 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         UIApplication.sharedApplication().statusBarHidden = false
         
         setUpNavBar()
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+                                                        selector: Selector("handlePopover:"),
+                                                            name: "DoPopover",
+                                                          object: nil)
+        
+        
 
 
         self.tableView.registerNib(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: "channelCell")
         self.tableView.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCell")
+//        self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         //Set weshapp light gray seperator EFEFF4
         self.tableView.separatorColor = UIColor(red: 0xEF/255, green: 0xEF/255, blue: 0xF4/255, alpha: 1)
         
@@ -117,9 +80,9 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         let channelSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         channelFetchRequest.sortDescriptors = [channelSortDescriptor]
         channelFetechedRC = NSFetchedResultsController(fetchRequest: channelFetchRequest,
-                                                      managedObjectContext: appDelegate.coreDataStack!.mainContext!,
-                                                        sectionNameKeyPath: nil,
-                                                                 cacheName: nil)
+                                               managedObjectContext: appDelegate.coreDataStack!.mainContext!,
+                                                 sectionNameKeyPath: nil,
+                                                        cacheName: nil)
        //TODO: Filter my badge out
         let badgeFetchRequest = NSFetchRequest(entityName: "Badge")
         let badgeSortDescriptor = NSSortDescriptor(key: "handle", ascending: true)
@@ -133,7 +96,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         
         currentFetchedRC = channelFetechedRC
         currentFetchedRC.delegate = self
-        
+        //Fetching with NSFetchedResultsController returns a Boolean to denote success or failure.
         var error: NSError? = nil
         if (!currentFetchedRC.performFetch(&error))  {
             println("Error: \(error?.localizedDescription)")
@@ -149,7 +112,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.flashScrollIndicators()  
+        self.tableView.flashScrollIndicators()
     }
     
     //MARK: set up navbar using BLKFlexibleHeightBar
@@ -161,8 +124,6 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         let segControlWidthProp: CGFloat = 0.54
         let segControlHeightToWidth:CGFloat = 12.76
         
-        // Setup the bar
-        let maxHeight = screenSize.width / navbarProportion
         //Setup the segmentation contorl
         let segControlframe = CGRectMake(20, 20, screenSize.width * segControlWidthProp,
                                                  screenSize.width / segControlHeightToWidth)
@@ -173,28 +134,8 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         self.segControl.setWidth(screenSize.width * segControlWidthProp / 2, forSegmentAtIndex: 1)
         
         
-        //Menu Burger Item
-        let burgerWidthProp: CGFloat = 0.05
-        let burgerHeightToWidth: CGFloat = 21.91
-        let burgerframe = CGRectMake(20, 20, screenSize.width * burgerWidthProp,
-                                             screenSize.width / burgerHeightToWidth)
-        let burgerItem = BurgerItem(frame: burgerframe)
-        burgerItem.addTarget(self, action: "showMenu:", forControlEvents: .TouchUpInside)
-    
-
-        //Plus item
-        //Sqaure size
-        let plusWidthProp: CGFloat = 19.1025
-        let plusframe = CGRectMake(20, 20, screenSize.width / plusWidthProp,
-                                           screenSize.width / plusWidthProp)
-        let plusItem = PlusItem(frame: plusframe)
-        plusItem.addTarget(self, action: "handlePopover:", forControlEvents: .TouchUpInside)
-     
-
-
-        
         let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 20.0)
-        self.myCustomBar = FlexibleNavBar(frame: frame, max: maxHeight , min: CGFloat(20), leftItem: burgerItem, centreItem: segControl, rightItem: plusItem)
+        self.myCustomBar = FlexibleNavBar(frame: frame, centreItem: segControl, rightItem: .Plus)
         
         
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
@@ -212,6 +153,45 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight - 20, 0.0, 0.0, 0.0)
     }
     
+    
+    
+    
+    //    MARK: Segmentation Control
+    func segmentChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            currentFetchedRC = channelFetechedRC
+            var error: NSError? = nil
+            if (!currentFetchedRC.performFetch(&error))  {
+                println("Error: \(error?.localizedDescription)")
+            }
+            
+            //animation
+            UIView.transitionWithView(self.tableView, duration: 0.35,
+                options: UIViewAnimationOptions.TransitionCrossDissolve,
+                animations: { self.tableView.reloadData() },
+                completion: { (v:Bool) in ()})
+            
+        case 1:
+            currentFetchedRC = badgeFetchedRC
+            var error: NSError? = nil
+            if (!currentFetchedRC.performFetch(&error))  {
+                println("Error: \(error?.localizedDescription)") }
+            //animation
+            UIView.transitionWithView(self.tableView, duration: 0.35,
+                options: UIViewAnimationOptions.TransitionCrossDissolve,
+                animations: {
+                    self.tableView.reloadData()
+                },
+                completion: { (v:Bool) in ()})
+            
+        default:
+            break
+        }
+        
+        
+    }
+
 
     // MARK: - Number of Sections
      func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -286,12 +266,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
     
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         self.performSegueWithIdentifier("toChannelVC", sender: self)
-//        dispatch_async(dispatch_get_main_queue()){
-//            self.performSegueWithIdentifier("toChannelTVC", sender: self)
-//        }
-        
     }
 
     
@@ -419,7 +394,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 
     
     //MARK: Popover controller
-    @IBAction func handlePopover(sender: UIView) {
+    func handlePopover(sender: UIView) {
         let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
         popoverVC.modalPresentationStyle = .Popover
         if let popoverController = popoverVC.popoverPresentationController {
