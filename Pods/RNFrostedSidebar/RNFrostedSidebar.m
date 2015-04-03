@@ -277,6 +277,7 @@ static RNFrostedSidebar *rn_frostedMenu;
         _itemViews = [NSMutableArray array];
         _tintColor = [UIColor colorWithWhite:0.2 alpha:0.73];
         _borderWidth = 2;
+        
         _itemBackgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.25];
         
         if (colors) {

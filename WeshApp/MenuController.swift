@@ -11,6 +11,7 @@ import RNFrostedSidebar
 
 
 extension RNFrostedSidebar{
+    
     public override func canBecomeFirstResponder() -> Bool {
         return true
     }
@@ -18,6 +19,9 @@ extension RNFrostedSidebar{
 
 class MenuController: UITabBarController, RNFrostedSidebarDelegate {
 
+    let screenSize  = UIScreen.mainScreen().bounds.size
+
+    
     var obj: ChannelTVC?
     let images = [ UIImage(named: "notifications")!,
         UIImage(named: "nearBy")!,
@@ -46,6 +50,8 @@ class MenuController: UITabBarController, RNFrostedSidebarDelegate {
     }
     private func setUpMenu(){
         callout = RNFrostedSidebar(images: images, selectedIndices: NSIndexSet(index: 1), borderColors: colors)
+        callout!.width = screenSize.width / 4.4
+        callout!.itemSize = CGSizeMake(screenSize.width / 7.14, screenSize.width / 7.14)
         callout!.delegate = self
         callout!.tintColor = UIColor(red: 0x01/255, green: 0x51/255, blue: 0x5d/255, alpha: 0.5)
         
