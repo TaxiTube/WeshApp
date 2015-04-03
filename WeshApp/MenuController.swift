@@ -107,7 +107,6 @@ class MenuController: UITabBarController, RNFrostedSidebarDelegate {
     
     func sidebar(sidebar: RNFrostedSidebar!, didShowOnScreenAnimated animatedYesOrNo: Bool) {
             sidebar.becomeFirstResponder()
-        println("appear")
     }
     
 //    - (void)sidebar:(RNFrostedSidebar *)sidebar didDismissFromScreenAnimated:(BOOL)animatedYesOrNo;

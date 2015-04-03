@@ -21,7 +21,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Tc-FW-En0" id="zvy-nE-Xph">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-oP-SiM" userLabel="rightView2" customClass="MsgIcon" customModule="Designables">
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-oP-SiM" userLabel="rightView2" customClass="PlayPause" customModule="Designables">
                         <rect key="frame" x="227" y="0.0" width="373" height="373"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="YXc-oP-SiM" secondAttribute="height" multiplier="1:1" id="D84-Km-GRF"/>
@@ -52,7 +52,7 @@
                                 <rect key="frame" x="492.5" y="172" width="41" height="29"/>
                                 <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-03-wd0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="counter" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-03-wd0" userLabel="counter">
                                 <rect key="frame" x="492" y="175" width="18.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="15"/>
                                 <color key="textColor" red="0.65098039220000004" green="0.65490196079999996" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -171,7 +171,7 @@
                 <outlet property="contentView" destination="zvy-nE-Xph" id="HVn-UJ-sGd"/>
                 <outlet property="contentViewLeftConstraint" destination="ZHl-IY-h9f" id="HLu-cN-Mr1"/>
                 <outlet property="contentViewRightConstraint" destination="f2e-q0-dFw" id="heE-Ur-L8a"/>
-                <outlet property="counter" destination="q64-hh-dWi" id="eAq-5G-uEK"/>
+                <outlet property="counter" destination="hwY-03-wd0" id="YgM-Pb-w0j"/>
                 <outlet property="leftView" destination="c1Z-7M-qab" id="lC9-c2-fyw"/>
                 <outlet property="rightView" destination="YXc-oP-SiM" id="Zov-4H-GfC"/>
                 <outlet property="subTitle" destination="uxp-Hd-aCE" id="m1E-YD-bjL"/>

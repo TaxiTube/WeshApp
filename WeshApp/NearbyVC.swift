@@ -216,15 +216,17 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
                 cell!.subTitle.text = channel.author.handle
             
                 //TODO: cell!.image     =
-                //Todo Count number of posts the channe has cell!.counter =
-                
+                //Todo Count number of posts the channe has 
+                 cell!.counter.text = String(channel.posts.count)
+            
             case 1:
                  cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
                 let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
                 cell!.title.text  = badge.handle
                 //TODO if name is known show real name instead
                 //TODO: cell!.image =
-                //Todo Count number of channels the authork has cell!.counter =
+                //Todo Count number of channels the authork has 
+                 cell!.counter.text = String(badge.channels.count)
 
 
             default:

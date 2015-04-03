@@ -22,12 +22,13 @@ class ChannelTableViewCell: UITableViewCell {
     //MARK: Outlets
     @IBOutlet weak var leftView: UIView?
     
+    @IBOutlet weak var counter: UILabel!
     @IBOutlet weak var elementContainer: UIView!
     @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var totem: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subTitle: UILabel!
-    @IBOutlet weak var counter: NSLayoutConstraint!
+
     @IBOutlet weak var contentViewRightConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentViewLeftConstraint: NSLayoutConstraint!
     

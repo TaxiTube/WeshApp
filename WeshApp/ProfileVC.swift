@@ -168,6 +168,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         //TODO: cell!.image     =
         //Todo Count number of posts the channe has cell!.counter =
         cell!.delegate = self
+        cell!.counter.text = String(channel.posts.count)
         return cell!
     }
     

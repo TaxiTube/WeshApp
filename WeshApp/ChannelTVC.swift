@@ -87,29 +87,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             right: tableView.contentInset.right)
         
 
-        
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-                                                          selector: Selector("keyboardWillShow:"),
-                                                              name: UIKeyboardWillShowNotification,
-                                                            object: nil)
-       
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-                                                         selector: Selector("keyboardDidHide:"),
-                                                             name: UIKeyboardDidHideNotification,
-                                                           object: nil)
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-                                                    selector: Selector("showInputAccessoryView:"),
-                                                        name: "MenuDidHide",
-                                                      object: nil)
-       
-        
-        NSNotificationCenter.defaultCenter().addObserver(     self,
-                                                    selector: Selector("dismissPressed:"),
-                                                        name: "SegueBack",
-                                                      object: nil)
-        
+
         
         //Required for dynamic Cells
         tableView.estimatedRowHeight = 88.0
@@ -157,8 +135,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-       
-      
+        setUpNotifications()
     }
    
     override func viewDidAppear(animated: Bool) {
@@ -458,6 +435,32 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             right: tableView.contentInset.right)
     }
     
+    
+    func setUpNotifications(){
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardWillShow:"),
+            name: UIKeyboardWillShowNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("keyboardDidHide:"),
+            name: UIKeyboardDidHideNotification,
+            object: nil)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("showInputAccessoryView:"),
+            name: "MenuDidHide",
+            object: nil)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(     self,
+            selector: Selector("dismissPressed:"),
+            name: "SegueBack",
+            object: nil)
+        
+    }
    
     
 }
