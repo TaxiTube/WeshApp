@@ -40,7 +40,7 @@ class ChannelTableViewCell: UITableViewCell {
     
     
     
-
+    var isClosed:Bool?
 
     
     //MARK: Initialisation
@@ -63,6 +63,7 @@ class ChannelTableViewCell: UITableViewCell {
     }
     
     private func setUpPan(){
+        self.isClosed = true
         self.layer.backgroundColor = UIColor.whiteColor().CGColor
         panRecognizer = UIPanGestureRecognizer(target: self, action: "panThisCell:")
         panRecognizer!.delegate = self
@@ -206,7 +207,8 @@ class ChannelTableViewCell: UITableViewCell {
     //MARK: Constraint handling
     //Close the cell
    private  func resetConstraintToZero(animated: Bool, notifyDelegate: Bool){
-        
+        self.isClosed = true
+
         //Delegate
         if (notifyDelegate) {
             delegate!.cellDidClose(self)
@@ -242,7 +244,7 @@ class ChannelTableViewCell: UITableViewCell {
     
     //Open the cell
    private func setConstraintToShowAllButtons(animated: Bool, notifyDelegate: Bool){
-
+        self.isClosed = false
         //Delegate
         if (notifyDelegate) {
             delegate?.cellDidOpen(self)
@@ -250,7 +252,6 @@ class ChannelTableViewCell: UITableViewCell {
 
         //1. If the cell started open and the constraint is already at the full open value, just bail
         if !(startingRightConstant == buttonTotalWidth() && contentViewRightConstraint.constant == buttonTotalWidth()) {
-            
             //2
             contentViewLeftConstraint.constant = -buttonTotalWidth() - kBounceValue
             contentViewRightConstraint.constant = buttonTotalWidth() + kBounceValue
@@ -342,7 +343,10 @@ class ChannelTableViewCell: UITableViewCell {
         } else {
             elementContainer.backgroundColor = UIColor.whiteColor()
         }
-        
     }
-    
+
+    override func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+         println(isClosed!)
+        return self.isClosed!
+    }
 }
