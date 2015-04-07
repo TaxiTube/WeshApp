@@ -21,7 +21,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Tc-FW-En0" id="zvy-nE-Xph">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-oP-SiM" userLabel="rightView2" customClass="PlayPause" customModule="Designables">
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="rightView2" translatesAutoresizingMaskIntoConstraints="NO" id="YXc-oP-SiM" userLabel="rightView2" customClass="WDeleteButton" customModule="Designables">
                         <rect key="frame" x="227" y="0.0" width="373" height="373"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="YXc-oP-SiM" secondAttribute="height" multiplier="1:1" id="D84-Km-GRF"/>

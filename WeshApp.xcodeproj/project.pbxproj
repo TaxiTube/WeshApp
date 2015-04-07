@@ -44,6 +44,9 @@
 		D81FE27E1A237266006F8E62 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
 		D81FE27F1A2377B4006F8E62 /* SessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EB823E1A028CE500235E03 /* SessionContainer.swift */; };
 		D81FFDC11A0BF94500C6294B /* misc in Resources */ = {isa = PBXBuildFile; fileRef = D81FFDC01A0BF94500C6294B /* misc */; };
+		D848C4E91AD4364800A88BB5 /* WDeleteSK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D848C4E81AD4364800A88BB5 /* WDeleteSK.swift */; };
+		D848C4EB1AD436D000A88BB5 /* WDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D848C4EA1AD436D000A88BB5 /* WDeleteButton.swift */; };
+		D848C4ED1AD4382D00A88BB5 /* WCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D848C4EC1AD4382D00A88BB5 /* WCellButton.swift */; };
 		D84BDF7A1A09494E004390D8 /* SessionMngr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BDF791A09494E004390D8 /* SessionMngr.swift */; };
 		D851EE9F1ACADAF200F14AC2 /* DockedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */; };
 		D851EEA01ACADBBF00F14AC2 /* DockedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */; };
@@ -213,6 +216,9 @@
 		D805DD971A9F619000D940A8 /* WeshApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeshApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		D81FE27C1A236BC9006F8E62 /* SessionMngrTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngrTest.swift; sourceTree = "<group>"; };
 		D81FFDC01A0BF94500C6294B /* misc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = misc; sourceTree = "<group>"; };
+		D848C4E81AD4364800A88BB5 /* WDeleteSK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDeleteSK.swift; sourceTree = "<group>"; };
+		D848C4EA1AD436D000A88BB5 /* WDeleteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDeleteButton.swift; sourceTree = "<group>"; };
+		D848C4EC1AD4382D00A88BB5 /* WCellButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCellButton.swift; sourceTree = "<group>"; };
 		D84BDF791A09494E004390D8 /* SessionMngr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMngr.swift; sourceTree = "<group>"; };
 		D851EE9E1ACADAF200F14AC2 /* DockedTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DockedTableView.swift; sourceTree = "<group>"; };
 		D851EEA11ACC755000F14AC2 /* MyProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileCell.xib; sourceTree = "<group>"; };
@@ -343,10 +349,9 @@
 				B36E68461A6C3AF7002B951A /* Designables.h */,
 				D8CE22021AC1CE330004A387 /* StyleKit */,
 				D8EF20941A96C5930033230C /* SmileyIcon.swift */,
-				D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */,
-				D885E88F1A8F74F000BD8E48 /* FriendRequest.swift */,
-				D885E88D1A8F695800BD8E48 /* PlayPause.swift */,
+				D848C4EE1AD4449B00A88BB5 /* CellButtons */,
 				D877FA8E1A87B71500C0334B /* Chevron.swift */,
+				D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */,
 				D8DC687B1A338FAA00AAF16D /* WeshappTextView.swift */,
 				D8DC687C1A338FAA00AAF16D /* GreenButton.swift */,
 				D8DC687F1A338FAA00AAF16D /* OrangeButton.swift */,
@@ -527,6 +532,29 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		D848C4EE1AD4449B00A88BB5 /* CellButtons */ = {
+			isa = PBXGroup;
+			children = (
+				D848C4EC1AD4382D00A88BB5 /* WCellButton.swift */,
+				D885E8951A8F7C1F00BD8E48 /* MsgIcon.swift */,
+				D848C4EA1AD436D000A88BB5 /* WDeleteButton.swift */,
+				D885E88F1A8F74F000BD8E48 /* FriendRequest.swift */,
+				D885E88D1A8F695800BD8E48 /* PlayPause.swift */,
+			);
+			name = CellButtons;
+			sourceTree = "<group>";
+		};
+		D848C4EF1AD444C200A88BB5 /* CellButtonSK */ = {
+			isa = PBXGroup;
+			children = (
+				D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */,
+				D848C4E81AD4364800A88BB5 /* WDeleteSK.swift */,
+				D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */,
+				D885E88B1A8F691A00BD8E48 /* WeshappPlayPauseSK.swift */,
+			);
+			name = CellButtonSK;
+			sourceTree = "<group>";
+		};
 		D87B3B721A21305800AF3508 /* Test Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,11 +570,8 @@
 				D8CE220C1AC21A110004A387 /* NavBarItems */,
 				D8F334391A9AB0890028918C /* WeshappHeartSK.swift */,
 				D8EF20921A96C57F0033230C /* WeshappSmileIconSK.swift */,
-				D8DAE4B71A94D65100AAF247 /* WeshappRedButtonSK.swift */,
 				B31FB3BE1A6DA91C00A2D734 /* WeshappRedButton.swift */,
-				D885E8931A8F7C0C00BD8E48 /* WeshappMsgIconSK.swift */,
-				D885E8911A8F754500BD8E48 /* WeshappFriendRequestSK.swift */,
-				D885E88B1A8F691A00BD8E48 /* WeshappPlayPauseSK.swift */,
+				D848C4EF1AD444C200A88BB5 /* CellButtonSK */,
 				D877FA8C1A87B6EB00C0334B /* WeshappChevronSK.swift */,
 			);
 			name = StyleKit;
@@ -896,8 +921,10 @@
 				D877FA8D1A87B6EB00C0334B /* WeshappChevronSK.swift in Sources */,
 				B32E55A01A74EC13007F88B0 /* WeshappNavBar.swift in Sources */,
 				B39062621A72875E00F6B048 /* GreenButton.swift in Sources */,
+				D848C4ED1AD4382D00A88BB5 /* WCellButton.swift in Sources */,
 				B31FB3BF1A6DA91C00A2D734 /* WeshappRedButton.swift in Sources */,
 				D8CE22081AC219C90004A387 /* PlusSK.swift in Sources */,
+				D848C4E91AD4364800A88BB5 /* WDeleteSK.swift in Sources */,
 				D8CE22041AC1CE9F0004A387 /* BurgerSK.swift in Sources */,
 				D877FA8F1A87B71500C0334B /* Chevron.swift in Sources */,
 				D885E8971A9005ED00BD8E48 /* OrangeButton.swift in Sources */,
@@ -915,6 +942,7 @@
 				D885E8901A8F74F000BD8E48 /* FriendRequest.swift in Sources */,
 				D8CE22551AC228090004A387 /* CrossItem.swift in Sources */,
 				D85D0A4A1ACDCF2000E68588 /* WClockIcon.swift in Sources */,
+				D848C4EB1AD436D000A88BB5 /* WDeleteButton.swift in Sources */,
 				D85D0A4C1ACDD04700E68588 /* WClockIconSK.swift in Sources */,
 				D8CE22531AC227D00004A387 /* CrossSK.swift in Sources */,
 				D8CE220A1AC219DB0004A387 /* PlusItem.swift in Sources */,

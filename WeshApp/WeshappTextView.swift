@@ -25,7 +25,7 @@ public class WeshappTextView: UITextView{
     
     @IBInspectable var placeholderColor: UIColor  = UIColor(white:0.80, alpha:1)
     
-    public var weshappDelegate: WeshappUITextViewDelegate?
+    public weak var weshappDelegate: WeshappUITextViewDelegate?
     
     var initialNumRows: Int!
 
