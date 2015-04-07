@@ -35,9 +35,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     private var coreDataStack: CoreDataStack!
     private var sessionMngr: SessionMngr?
     
-   //MARK: Menu
-//    private var callout: RNFrostedSidebar?
-    
+
     //MARK:Transition management
 //    let transitionManager = TransitionManager()
 
@@ -203,7 +201,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         let sectionInfo = currentFetchedRC.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
-    // MARK: - Cell for Row at IndexPath
+    // MARK: - TableView Stuff
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: ChannelTableViewCell?
         switch segControl.selectedSegmentIndex
@@ -289,7 +287,6 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
     
     
-    
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -303,8 +300,8 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
                 
                 let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
                 channelVC.channel = channel
-                channelVC.coreDataStack = coreDataStack
-                channelVC.sessionMngr = sessionMngr
+            //    channelVC.coreDataStack = coreDataStack
+             //   channelVC.sessionMngr = sessionMngr
                 tableView.deselectRowAtIndexPath(indexPath!, animated: true)
                 
 
@@ -314,9 +311,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 //                var profileVC = navController.topViewController as ProfileVC
 
 //                profileVC.transitioningDelegate = self.transitionManager
-
         }
-        
     }
     
     //MARK: NSFetchedResultsController Delegate methods

@@ -17,7 +17,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
     //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
-    private var delegateSplitter: BLKDelegateSplitter?
+    private weak var delegateSplitter: BLKDelegateSplitter?
    
     
     //MARK: Model CoreData stuff
@@ -27,6 +27,8 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let screenSize  = UIScreen.mainScreen().bounds.size
     var postMngr: PostMngr?
     var sessionMngr: SessionMngr?
+    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+
 
     //MARK: InputAccessoryView stuff
     private var textViewHeightConstraint: NSLayoutConstraint?
@@ -35,20 +37,24 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     //MARK: InputAccessoryView outlets
     @IBOutlet weak var textView: WeshappTextView!
-    @IBOutlet var accessoryDock: UIView!
+    @IBOutlet weak var accessoryDock: UIView!
     
     //MARK: TableView Header stuff
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var handle: UILabel!
+    @IBOutlet weak var handle: UIButton!
     @IBOutlet weak var profileName: UILabel!
-    @IBOutlet weak var totem: UIImageView!
+    @IBOutlet weak var totemButton: UIButton!
     @IBOutlet weak var channelDesc: UILabel!
     
     //TableView
     @IBOutlet weak var tableView: DockedTableView!
     
+    @IBAction func totemPressed(sender: UIButton) {
+        self.performSegueWithIdentifier("channeltoProfile", sender: self)
+    }
     
-    
+
+
     
     @IBAction func postMessage(sender: AnyObject) {
     
@@ -92,6 +98,11 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         //Required for dynamic Cells
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+        //Set up model
+        self.sessionMngr = self.appDelegate.sessionMngr
+        self.coreDataStack = self.appDelegate.coreDataStack!
         
 
         //TODO: Move to New method
@@ -177,6 +188,34 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
 
+    
+    //MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "channelToProfile" {
+            //                self.navigationController!.navigationBarHidden = true
+            let profileVC = segue.destinationViewController as ProfileVC
+            //                channelVC.transitioningDelegate = self.transitionManager
+            //                var channelVC = navController.topViewController as ChannelTVC
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            // If as Channel else as Profile
+            
+            //let profile = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
+            profileVC.badge = channel?.author
+           // channelVC.coreDataStack = coreDataStack
+           // channelVC.sessionMngr = sessionMngr
+            tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+            
+            
+        } else if segue.identifier == "nearbyToProfile"{
+            
+            var profileVC = segue.destinationViewController as ProfileVC
+            //                var profileVC = navController.topViewController as ProfileVC
+            
+            //                profileVC.transitioningDelegate = self.transitionManager
+        }
+    }
+
     //MARK: Navbar actions
     private func setUpNavBar(){
         self.setNeedsStatusBarAppearanceUpdate()
@@ -221,7 +260,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     private func setUpHeaderView(){
-        handle.text = "#\(channel!.author.handle)"
+        self.handle.titleLabel?.text = "#\(channel!.author.handle)"
         channelDesc.text = channel?.desc
         //TODO:profileName.text =
         

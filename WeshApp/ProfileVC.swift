@@ -15,7 +15,6 @@ import BLKFlexibleHeightBar
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, ChannetlTableViewCellDelegate {
 
     //MARK:Model Proerties. CoreData
-    private var badgeFetchedRC: NSFetchedResultsController!
     private var channelFetechedRC: NSFetchedResultsController!
     private var coreDataStack: CoreDataStack!
     private var sessionMngr: SessionMngr?
@@ -44,7 +43,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    //MARK: Initialisation
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -56,7 +55,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNavbar()
+//        setUpNavbar()
         UIApplication.sharedApplication().statusBarHidden = false
         
         self.tableView.registerNib(UINib(nibName: "MyProfileCell", bundle: nil), forCellReuseIdentifier: "profileCell")
@@ -67,38 +66,19 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         //Set weshapp light gray seperator EFEFF4
         self.tableView.separatorColor = UIColor(red: 0xEF/255, green: 0xEF/255, blue: 0xF4/255, alpha: 1)
         
-        sessionMngr = appDelegate.sessionMngr
-        coreDataStack = appDelegate.coreDataStack!
+        self.sessionMngr = appDelegate.sessionMngr
+        self.coreDataStack = appDelegate.coreDataStack!
         
         if badge == nil{
             self.badge = appDelegate.sessionMngr.myBadge
         }
         
         fetchFromCoreData()
-        
+        setUpData()
+        setUpNavbar()
+
     }
-    
-    func fetchFromCoreData(){
-        let channelFetchRequest = NSFetchRequest(entityName: "Channel")
-        let channelSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        
-        channelFetchRequest.sortDescriptors = [channelSortDescriptor]
-//        channelFetchRequest.predicate = NSPredicate(format: "Channel.author == %@", self.badge!)
-        
-        channelFetechedRC = NSFetchedResultsController(fetchRequest: channelFetchRequest,
-                                               managedObjectContext: appDelegate.coreDataStack!.mainContext!,
-                                                 sectionNameKeyPath: nil,
-                                                          cacheName: nil)
-        
-        
-        channelFetechedRC.delegate = self
-        //Fetching with NSFetchedResultsController returns a Boolean to denote success or failure.
-        var error: NSError? = nil
-        if (!channelFetechedRC.performFetch(&error))  {
-            println("Error: \(error?.localizedDescription)")
-        }
-    }
-    
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -113,17 +93,29 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
 
 //        self.navigationController?.navigationBarHidden = false
     }
-
-    func setUpData(){
-        self.handle?.text = self.badge?.handle
-
-        //self.totem =  UIImageView(image: UIImage(named: self.badge?.totem!))
-        self.totem =  UIImageView(image: UIImage(named:"Lion"))
-//        if let n = self.badge?.profile. {
-//            self.name?.text = n
-//        }
+    
+    func fetchFromCoreData(){
+        let channelFetchRequest = NSFetchRequest(entityName: "Channel")
+        let channelSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         
+        channelFetchRequest.sortDescriptors = [channelSortDescriptor]
+        //        channelFetchRequest.predicate = NSPredicate(format: "Channel.author == %@", self.badge!)
+        
+        channelFetechedRC = NSFetchedResultsController(fetchRequest: channelFetchRequest,
+            managedObjectContext: appDelegate.coreDataStack!.mainContext!,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        
+        
+        channelFetechedRC.delegate = self
+        //Fetching with NSFetchedResultsController returns a Boolean to denote success or failure.
+        var error: NSError? = nil
+        if (!channelFetechedRC.performFetch(&error))  {
+            println("Error: \(error?.localizedDescription)")
+        }
     }
+    
+
     
     func closeViewController(sender: UIButton){
 //        self.navigationController?.popViewControllerAnimated(true)
@@ -156,7 +148,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         return sectionInfo.numberOfObjects
     }
     
-    // MARK: - Cell for Row at IndexPath
+    // MARK: - TableView Stuff
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
 
         var cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
@@ -172,9 +164,55 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         return cell!
     }
     
-//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "My Habitat"
-//    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("profileToChannel", sender: self)
+    }
+    
+    
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        cell?.highlightCell(false)
+        
+    }
+    
+    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        cell?.highlightCell(true)
+    }
+    
+    //MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "profileToChannel" {
+            //                self.navigationController!.navigationBarHidden = true
+            let channelVC = segue.destinationViewController as ChannelTVC
+            //                channelVC.transitioningDelegate = self.transitionManager
+            //                var channelVC = navController.topViewController as ChannelTVC
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            // If as Channel else as Profile
+            
+            let channel = channelFetechedRC.objectAtIndexPath(indexPath!) as Channel
+            channelVC.channel = channel
+            channelVC.coreDataStack = coreDataStack
+            channelVC.sessionMngr = sessionMngr
+            tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+            
+            
+        } else if segue.identifier == "nearbyToProfile"{
+            
+            var profileVC = segue.destinationViewController as ProfileVC
+            //                var profileVC = navController.topViewController as ProfileVC
+            
+            //                profileVC.transitioningDelegate = self.transitionManager
+        }
+    }
+    
+    
     
     //MARK: ChannetlTableViewCellDelegate
     func pauseAction(){
@@ -212,7 +250,18 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         }
     }
     
- 
+    func setUpData(){
+        self.handle = UILabel()
+        self.handle?.text = "#\(self.badge!.handle)"
+        self.handle?.sizeToFit()
+
+        //self.totem =  UIImageView(image: UIImage(named: self.badge?.totem!))
+        self.totem =  UIImageView(image: UIImage(named:"Lion"))
+        //        if let n = self.badge?.profile. {
+        //            self.name?.text = n
+        //        }
+        
+    }
     
     private func setUpNavbar(){
         self.setNeedsStatusBarAppearanceUpdate()
@@ -228,8 +277,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         
         // Setup the bar
         let frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), 100.0)
-        self.handle = UILabel()
-        self.handle?.text  = "#Jurgen"
+//        self.handle = UILabel()
+//        self.handle?.text  = "#Jurgen"
         self.profileName = UILabel()
         self.profileName?.text = "Dach Von Kloss"
         
