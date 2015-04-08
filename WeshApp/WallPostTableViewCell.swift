@@ -8,13 +8,24 @@
 
 import UIKit
 
-class WallPostTableViewCell: UITableViewCell {
+//MARK: Protocol
+protocol PostCellDelegate: class{
+    func showProfilePressed(indexPath: NSIndexPath?)
+}
 
+class WallPostTableViewCell: UITableViewCell {
+    
+    //Store index of the post cell in a tableview
+    var indexPath: NSIndexPath?
+    weak var  delegate: PostCellDelegate?
+
+    
     @IBOutlet weak var handle: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var totem: UIImageView!
+    @IBOutlet weak var totem: UIButton!
     @IBOutlet weak var post: UILabel!
     
+    @IBOutlet weak var counter: UILabel!
 
     //MARK: Initialisation
     //This method is called on every single object that is unarchived from a nib file,
@@ -30,10 +41,11 @@ class WallPostTableViewCell: UITableViewCell {
     }
     override  init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-    
     }
-    
+    //Tell delegate that that profile has been pressed
+    @IBAction func showProfile(sender: UIButton) {
+        self.delegate!.showProfilePressed(self.indexPath)
+    }
     //This method is the initializer for all archived objects.
     //As objects stored in nibs are archived objects, this is
     //the initializer used when loading an object from a nib.
@@ -41,6 +53,8 @@ class WallPostTableViewCell: UITableViewCell {
     //but outlets/actions are not yet hooked up.
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+      
+
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -50,6 +64,10 @@ class WallPostTableViewCell: UITableViewCell {
     }
  
     func setUp(){
+//        self.handle.titleLabel?.numberOfLines = 1
+        self.handle.sizeToFit()
+//        self.handle.titleLabel?.sizeToFit()
+//        self.handle.titleLabel?.sizeThatFits(handle.bounds.size)
         post.preferredMaxLayoutWidth = post.bounds.size.width
         handle.preferredMaxLayoutWidth = handle.bounds.size.width
         date.preferredMaxLayoutWidth = date.bounds.size.width

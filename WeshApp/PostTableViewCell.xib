@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -10,6 +10,8 @@
             <string>TitilliumText25L-400wt</string>
         </mutableArray>
         <mutableArray key="TitilliumText25L004.otf">
+            <string>TitilliumText25L-250wt</string>
+            <string>TitilliumText25L-250wt</string>
             <string>TitilliumText25L-250wt</string>
             <string>TitilliumText25L-250wt</string>
         </mutableArray>
@@ -30,59 +32,77 @@
                                 <rect key="frame" x="0.0" y="0.0" width="36" height="287"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="jm2-xP-Pn8" userLabel="image-spacer-label">
-                                <rect key="frame" x="186" y="0.0" width="17.5" height="287"/>
+                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="672" restorationIdentifier="image-spacer-label" translatesAutoresizingMaskIntoConstraints="NO" id="jm2-xP-Pn8" userLabel="image-spacer-label">
+                                <rect key="frame" x="125" y="0.0" width="17.5" height="287"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="Title1" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jcM-io-WaA" userLabel="Title1">
-                                <rect key="frame" x="145" y="106" width="459" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title1" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="jcM-io-WaA" userLabel="Title1">
+                                <rect key="frame" x="142" y="74" width="457.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="subTitle1" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-QN-DMT" userLabel="subTitle1">
-                                <rect key="frame" x="142.5" y="98" width="457.5" height="124.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="subTitle1" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-QN-DMT" userLabel="subTitle1">
+                                <rect key="frame" x="142" y="98" width="457.5" height="123.5"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="13"/>
                                 <color key="textColor" red="0.6705882353" green="0.67450980390000004" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="24" restorationIdentifier="title-spacer-subtitle" translatesAutoresizingMaskIntoConstraints="NO" id="Wl7-G7-v6V" userLabel="title-spacer-subtitle">
-                                <rect key="frame" x="203" y="127" width="43" height="1.5"/>
+                                <rect key="frame" x="142" y="96" width="43" height="1.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="top-spacer-heart" translatesAutoresizingMaskIntoConstraints="NO" id="6Ui-aE-4Yf" userLabel="top-spacer-heart">
-                                <rect key="frame" x="532.5" y="0.0" width="41" height="72.5"/>
+                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="12" placeholderIntrinsicHeight="81" restorationIdentifier="chevron-spacer-edge" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-yW-q0l" userLabel="chevron-spacer-edge">
+                                <rect key="frame" x="570" y="0.0" width="30" height="287"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="hUS-ce-6IB" customClass="HeartIcon" customModule="Designables">
+                                <rect key="frame" x="534.5" y="72" width="35" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="top-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="coc-X9-t8k" userLabel="top-spacer-image">
+                                <rect key="frame" x="36" y="0.0" width="89" height="53"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="date-spacer-desc" translatesAutoresizingMaskIntoConstraints="NO" id="R1L-bz-TSK" userLabel="date-spacer-desc">
+                                <rect key="frame" x="143" y="222" width="426" height="29.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" misplaced="YES" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="huilhl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec0-9y-naY" userLabel="descriptionLabel" customClass="WallPostLabel" customModule="Designables">
+                                <rect key="frame" x="142" y="252" width="427" height="35"/>
+                                <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="17"/>
+                                <color key="textColor" red="0.65098039220000004" green="0.65490196079999996" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="Counter" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPs-bw-NUw" userLabel="Counter">
+                                <rect key="frame" x="499" y="81" width="10" height="20.5"/>
+                                <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="13"/>
+                                <color key="textColor" red="0.31764705882352939" green="0.75686274509803919" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-x3-vwT" userLabel="TotemBtn">
+                                <rect key="frame" x="36" y="53" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="K0g-x3-vwT" secondAttribute="height" multiplier="1:1" id="ru7-3Y-aaA"/>
+                                </constraints>
+                                <state key="normal" image="Lion">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showProfile:" destination="B1o-yo-ttI" eventType="touchUpInside" id="Isd-p3-adf"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="top-spacer-heart" translatesAutoresizingMaskIntoConstraints="NO" id="6Ui-aE-4Yf" userLabel="top-spacer-heart">
+                                <rect key="frame" x="529" y="0.0" width="41" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="PXv-r9-pPI"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Lion" translatesAutoresizingMaskIntoConstraints="NO" id="TRw-fs-1SX">
-                                <rect key="frame" x="36" y="53" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TRw-fs-1SX" secondAttribute="height" multiplier="1:1" id="QVV-TP-fLP"/>
-                                </constraints>
-                            </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="12" placeholderIntrinsicHeight="81" restorationIdentifier="chevron-spacer-edge" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-yW-q0l" userLabel="chevron-spacer-edge">
-                                <rect key="frame" x="573.5" y="0.0" width="30" height="287"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="hUS-ce-6IB" customClass="HeartIcon" customModule="Designables">
-                                <rect key="frame" x="712" y="72" width="35.5" height="32"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="top-spacer-image" translatesAutoresizingMaskIntoConstraints="NO" id="coc-X9-t8k" userLabel="top-spacer-image">
-                                <rect key="frame" x="36" y="0.0" width="150" height="53"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="date-spacer-desc" translatesAutoresizingMaskIntoConstraints="NO" id="R1L-bz-TSK" userLabel="date-spacer-desc">
-                                <rect key="frame" x="145" y="217" width="604.5" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" placeholderIntrinsicWidth="604" placeholderIntrinsicHeight="35" restorationIdentifier="descriptionLabel" text="huilhl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec0-9y-naY" userLabel="descriptionLabel" customClass="WallPostLabel" customModule="Designables">
-                                <rect key="frame" x="142" y="252" width="427" height="35"/>
-                                <fontDescription key="fontDescription" name="TitilliumText25L-400wt" family="TitilliumText25L" pointSize="17"/>
-                                <color key="textColor" red="0.65098039220000004" green="0.65490196079999996" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01T-Uw-JFB">
+                                <rect key="frame" x="143" y="75.5" width="83.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -92,14 +112,19 @@
                             <constraint firstItem="coc-X9-t8k" firstAttribute="leading" secondItem="M9u-nA-F18" secondAttribute="trailing" id="7T3-uU-jqg"/>
                             <constraint firstAttribute="trailing" secondItem="jcM-io-WaA" secondAttribute="trailing" id="7qV-iA-27r"/>
                             <constraint firstItem="pdm-yW-q0l" firstAttribute="leading" secondItem="ec0-9y-naY" secondAttribute="trailing" id="7yt-ku-wwO"/>
+                            <constraint firstItem="K0g-x3-vwT" firstAttribute="top" secondItem="coc-X9-t8k" secondAttribute="bottom" id="8BB-E9-aKp"/>
                             <constraint firstItem="pdm-yW-q0l" firstAttribute="leading" secondItem="6Ui-aE-4Yf" secondAttribute="trailing" id="A21-aZ-uIK"/>
+                            <constraint firstItem="K0g-x3-vwT" firstAttribute="centerY" secondItem="Wl7-G7-v6V" secondAttribute="centerY" id="Akp-kh-xIm"/>
                             <constraint firstItem="pdm-yW-q0l" firstAttribute="leading" secondItem="hUS-ce-6IB" secondAttribute="trailing" id="BWq-8I-wkh"/>
                             <constraint firstItem="jm2-xP-Pn8" firstAttribute="leading" secondItem="coc-X9-t8k" secondAttribute="trailing" id="C08-dC-tcE"/>
+                            <constraint firstItem="hUS-ce-6IB" firstAttribute="leading" secondItem="sPs-bw-NUw" secondAttribute="trailing" constant="7" id="CGa-Tb-8Jq"/>
                             <constraint firstItem="R1L-bz-TSK" firstAttribute="leading" secondItem="jm2-xP-Pn8" secondAttribute="trailing" id="CZD-IW-Vus"/>
+                            <constraint firstItem="01T-Uw-JFB" firstAttribute="leading" secondItem="jm2-xP-Pn8" secondAttribute="trailing" id="DCL-Uq-vMm"/>
                             <constraint firstItem="coc-X9-t8k" firstAttribute="top" secondItem="gT8-Kx-wgn" secondAttribute="top" id="EFT-qj-JIp"/>
                             <constraint firstItem="M9u-nA-F18" firstAttribute="width" secondItem="gT8-Kx-wgn" secondAttribute="width" multiplier="0.06" id="EuZ-L2-GrK"/>
                             <constraint firstAttribute="top" secondItem="pdm-yW-q0l" secondAttribute="top" id="FMd-iD-P6W"/>
                             <constraint firstItem="M9u-nA-F18" firstAttribute="top" secondItem="gT8-Kx-wgn" secondAttribute="top" id="FlW-cZ-0Kq"/>
+                            <constraint firstItem="jm2-xP-Pn8" firstAttribute="leading" secondItem="K0g-x3-vwT" secondAttribute="trailing" id="IRG-eO-idQ"/>
                             <constraint firstAttribute="trailing" secondItem="3kB-QN-DMT" secondAttribute="trailing" id="IW9-Q3-CBK"/>
                             <constraint firstItem="jm2-xP-Pn8" firstAttribute="top" secondItem="gT8-Kx-wgn" secondAttribute="top" id="JRG-z2-eXa"/>
                             <constraint firstAttribute="trailing" secondItem="pdm-yW-q0l" secondAttribute="trailing" id="Jj3-fo-ief"/>
@@ -110,27 +135,31 @@
                             <constraint firstItem="R1L-bz-TSK" firstAttribute="top" secondItem="3kB-QN-DMT" secondAttribute="bottom" id="Lr4-HL-q0Z"/>
                             <constraint firstItem="hUS-ce-6IB" firstAttribute="top" secondItem="6Ui-aE-4Yf" secondAttribute="bottom" id="NjR-FF-JL8"/>
                             <constraint firstAttribute="width" secondItem="coc-X9-t8k" secondAttribute="height" multiplier="11.36" id="RUb-zr-RTh"/>
-                            <constraint firstItem="jm2-xP-Pn8" firstAttribute="leading" secondItem="TRw-fs-1SX" secondAttribute="trailing" id="SXX-8M-y8N"/>
                             <constraint firstItem="6Ui-aE-4Yf" firstAttribute="top" secondItem="gT8-Kx-wgn" secondAttribute="top" id="Tdi-5P-R0b"/>
-                            <constraint firstItem="TRw-fs-1SX" firstAttribute="top" secondItem="coc-X9-t8k" secondAttribute="bottom" id="UTu-jo-Q7s"/>
                             <constraint firstItem="pdm-yW-q0l" firstAttribute="leading" secondItem="R1L-bz-TSK" secondAttribute="trailing" id="VSg-ux-OLs"/>
-                            <constraint firstItem="Wl7-G7-v6V" firstAttribute="centerY" secondItem="TRw-fs-1SX" secondAttribute="centerY" id="WsI-PU-HLB"/>
                             <constraint firstItem="jm2-xP-Pn8" firstAttribute="width" secondItem="gT8-Kx-wgn" secondAttribute="width" multiplier="0.03" id="Wv1-ks-Bmj"/>
+                            <constraint firstItem="K0g-x3-vwT" firstAttribute="width" secondItem="gT8-Kx-wgn" secondAttribute="width" multiplier="0.15" id="Zyp-3Q-Tfo"/>
                             <constraint firstItem="jcM-io-WaA" firstAttribute="leading" secondItem="jm2-xP-Pn8" secondAttribute="trailing" id="afQ-c4-hEx"/>
                             <constraint firstItem="ec0-9y-naY" firstAttribute="top" secondItem="R1L-bz-TSK" secondAttribute="bottom" id="bPs-FV-LiC"/>
                             <constraint firstItem="3kB-QN-DMT" firstAttribute="top" secondItem="Wl7-G7-v6V" secondAttribute="bottom" id="hhx-Ul-iio"/>
                             <constraint firstItem="Wl7-G7-v6V" firstAttribute="top" secondItem="jcM-io-WaA" secondAttribute="bottom" id="i9g-DR-FbM"/>
                             <constraint firstItem="hUS-ce-6IB" firstAttribute="width" secondItem="gT8-Kx-wgn" secondAttribute="width" multiplier="0.06" id="ijz-Af-ihb"/>
                             <constraint firstItem="ec0-9y-naY" firstAttribute="leading" secondItem="jm2-xP-Pn8" secondAttribute="trailing" id="kBz-5E-nyg"/>
+                            <constraint firstItem="K0g-x3-vwT" firstAttribute="leading" secondItem="M9u-nA-F18" secondAttribute="trailing" id="mFr-CK-QrW"/>
                             <constraint firstAttribute="bottom" secondItem="ec0-9y-naY" secondAttribute="bottom" id="maa-3F-0AO"/>
+                            <constraint firstItem="sPs-bw-NUw" firstAttribute="centerY" secondItem="hUS-ce-6IB" secondAttribute="centerY" constant="-2" id="mqE-lW-lyl"/>
                             <constraint firstAttribute="bottom" secondItem="M9u-nA-F18" secondAttribute="bottom" id="p6P-B2-sJk"/>
                             <constraint firstItem="Wl7-G7-v6V" firstAttribute="height" secondItem="gT8-Kx-wgn" secondAttribute="width" multiplier="0.003" id="pGO-R0-7hV"/>
                             <constraint firstAttribute="width" secondItem="hUS-ce-6IB" secondAttribute="height" multiplier="18.75" id="r67-BI-tcs"/>
-                            <constraint firstItem="TRw-fs-1SX" firstAttribute="width" secondItem="gT8-Kx-wgn" secondAttribute="width" multiplier="0.15" id="uWv-XS-Rfz"/>
                             <constraint firstItem="3kB-QN-DMT" firstAttribute="leading" secondItem="jm2-xP-Pn8" secondAttribute="trailing" id="umO-W1-6Lx"/>
                             <constraint firstAttribute="bottom" secondItem="pdm-yW-q0l" secondAttribute="bottom" id="vId-Q9-uWZ"/>
-                            <constraint firstItem="TRw-fs-1SX" firstAttribute="leading" secondItem="M9u-nA-F18" secondAttribute="trailing" id="wM7-uR-bTR"/>
+                            <constraint firstItem="Wl7-G7-v6V" firstAttribute="top" secondItem="01T-Uw-JFB" secondAttribute="bottom" id="wgs-rB-OiT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jcM-io-WaA"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -143,10 +172,11 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="counter" destination="sPs-bw-NUw" id="FEx-fL-Dxu"/>
                 <outlet property="date" destination="3kB-QN-DMT" id="RzQ-qg-n64"/>
-                <outlet property="handle" destination="jcM-io-WaA" id="fuw-Av-ccL"/>
+                <outlet property="handle" destination="01T-Uw-JFB" id="KoL-6c-npZ"/>
                 <outlet property="post" destination="ec0-9y-naY" id="38S-pP-gAc"/>
-                <outlet property="totem" destination="TRw-fs-1SX" id="gYP-GJ-L0H"/>
+                <outlet property="totem" destination="K0g-x3-vwT" id="VhD-kM-7kB"/>
             </connections>
         </tableViewCell>
     </objects>

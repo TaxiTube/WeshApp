@@ -10,13 +10,14 @@ import UIKit
 import Designables
 
 //MARK: Protocol
-protocol ChannetlTableViewCellDelegate{
+protocol ChannetlTableViewCellDelegate: class{
         func pauseAction()
         func cellDidOpen(cell: ChannelTableViewCell)
         func cellDidClose(cell: ChannelTableViewCell)
 }
 
 class ChannelTableViewCell: UITableViewCell {
+    
     
     private let kBounceValue: CGFloat = 20.0
     //MARK: Outlets
@@ -33,7 +34,7 @@ class ChannelTableViewCell: UITableViewCell {
     @IBOutlet weak var contentViewLeftConstraint: NSLayoutConstraint!
     
     //MARK properties
-    var  delegate: ChannetlTableViewCellDelegate?
+    weak var  delegate: ChannetlTableViewCellDelegate?
     private var panRecognizer: UIPanGestureRecognizer?
     private var panStartPoint: CGPoint?
     private var startingRightConstant: CGFloat?

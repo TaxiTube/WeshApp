@@ -13,7 +13,7 @@ import Designables
 import BLKFlexibleHeightBar
 
 
-class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate {
+class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIGestureRecognizerDelegate, WeshappUITextViewDelegate, PostCellDelegate {
 
     //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
@@ -50,7 +50,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var tableView: DockedTableView!
     
     @IBAction func totemPressed(sender: UIButton) {
-        self.performSegueWithIdentifier("channeltoProfile", sender: self)
+        self.performSegueWithIdentifier("ChannelToProfile", sender: self)
     }
     
 
@@ -192,7 +192,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "channelToProfile" {
+        if segue.identifier == "ChannelToProfile" {
             //                self.navigationController!.navigationBarHidden = true
             let profileVC = segue.destinationViewController as ProfileVC
             //                channelVC.transitioningDelegate = self.transitionManager
@@ -207,7 +207,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             tableView.deselectRowAtIndexPath(indexPath!, animated: true)
             
             
-        } else if segue.identifier == "nearbyToProfile"{
+        } else if segue.identifier == "..."{
             
             var profileVC = segue.destinationViewController as ProfileVC
             //                var profileVC = navController.topViewController as ProfileVC
@@ -292,10 +292,18 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? WallPostTableViewCell
         let post = fetchedResultsController.objectAtIndexPath(indexPath) as Post
 
-        //cell.nameLabel.text = post.sender.firstName
+        cell!.indexPath = indexPath
+        cell!.delegate = self
+//        cell!.handle.preferredMaxLayoutWidth = handle.bounds.size.width
+        cell!.handle.text = "#\(post.sender.handle)"
+//         cell!.handle.sizeToFit()
+//        cell!.handle.layoutIfNeeded()
+
         cell!.post?.text = post.post
         cell!.date?.text = timeAgoSinceDate(post.date, true)
         cell!.backgroundColor = UIColor.clearColor()
+//        cell!.layoutSubviews()
+
   
         return cell!
     }
@@ -331,6 +339,12 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
         tableView.endUpdates()
         scrollWallTo(true, animated: true)
+    }
+    //MARK: Post cell delegate
+    func showProfilePressed(indexPath: NSIndexPath?) {
+        println("index")   
+        self.tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.None)
+        self.performSegueWithIdentifier("ChannelToProfile", sender: self)
     }
     
     //MARK: Scrolling stuff
@@ -473,6 +487,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             bottom: view.frame.width / 7.2,
             right: tableView.contentInset.right)
     }
+    
     
     
     func setUpNotifications(){

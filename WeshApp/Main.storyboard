@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b6R-pb-CYx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b6R-pb-CYx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -401,7 +401,7 @@
                         <outlet property="tableView" destination="PyV-pr-14d" id="Gc8-vW-prd"/>
                         <outlet property="textView" destination="cev-6x-vgV" id="4Wm-LM-HuA"/>
                         <outlet property="totemButton" destination="AMO-MZ-lGs" id="dC1-Lk-hym"/>
-                        <segue destination="zbw-by-SNH" kind="show" identifier="channeltoProfile" id="TMr-Vm-RWJ"/>
+                        <segue destination="zbw-by-SNH" kind="show" identifier="ChannelToProfile" id="TMr-Vm-RWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLJ-5E-ecY" userLabel="First Responder" sceneMemberID="firstResponder"/>
