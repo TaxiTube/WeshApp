@@ -28,7 +28,7 @@ import WeshAppLibrary
     func createChannel(title: String, desc: String, date: NSDate, author: Badge) -> Channel? {
             
         let channel =  NSEntityDescription.insertNewObjectForEntityForName("Channel",
-                            inManagedObjectContext: self.managedObjectContext) as Channel
+                            inManagedObjectContext: self.managedObjectContext) as! Channel
 
         channel.title = title
         channel.desc = desc
@@ -52,7 +52,7 @@ import WeshAppLibrary
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
             case let Result.Success(box):
-                return box.unbox.first as Channel?
+                return box.unbox.first as! Channel?
             case let Result.Failure(error):
                 println("Error getting profile. Error code: \(error.code)")
                 return nil
@@ -67,7 +67,7 @@ import WeshAppLibrary
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
         case let Result.Success(box):
-            return box.unbox.first as Channel?
+            return box.unbox.first as! Channel?
         case let Result.Failure(error):
             println("Error getting profile. Error code: \(error.code)")
             return nil

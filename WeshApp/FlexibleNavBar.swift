@@ -105,7 +105,7 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         
         self.backgroundColor = UIColor(red: 0x51/255, green: 0xc1/255, blue: 0xd2/255, alpha: 1.0)
     
-        if let segControl = centreItem?{
+        if let segControl = centreItem{
             
             //segControl starting position: when bar is open
             var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
@@ -122,7 +122,7 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
             self.addSubview(segControl)
         }
         
-        if let item = leftItem?{
+        if let item = leftItem{
             //STARTING
             var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
             initialNameLabelLayoutAttributes.center = CGPointMake(self.bounds.width * leftItemXMargin, (max + statusBarHeight) * 0.5)
@@ -137,7 +137,7 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
             self.addSubview(item)
         }
         
-        if let item = rightItem?{
+        if let item = rightItem{
             //STARTING
             var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
             
@@ -163,18 +163,12 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         self.maximumBarHeight = max
         self.minimumBarHeight = min
         
-        
-        
-        
-        
-        self.backgroundColor = UIColor(red: 0x51/255, green: 0xc1/255, blue: 0xd2/255, alpha: 1.0)
+         self.backgroundColor = UIColor(red: 0x51/255, green: 0xc1/255, blue: 0xd2/255, alpha: 1.0)
         
         //self.configureBar(min, min: min, leftItem: leftItem, centreItem: nil, rightItem: rightItem)
         
-        if let item = leftItem?{
+        if let item = leftItem{
             //STARTING
-            
-            
             var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
             initialNameLabelLayoutAttributes.center = CGPointMake(self.bounds.width * leftItemXMargin, (min + statusBarHeight) * 0.5)
             initialNameLabelLayoutAttributes.size = item.sizeThatFits(CGSizeZero)
@@ -183,7 +177,7 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
              self.addSubview(item)
         }
         
-        if let item = rightItem?{
+        if let item = rightItem{
             //STARTING
             var initialNameLabelLayoutAttributes = BLKFlexibleHeightBarSubviewLayoutAttributes()
             
@@ -225,11 +219,6 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         
         self.addSubview(totem)
         
-        
-        
-        
-        
-        
         let handleYFactor: CGFloat = 14.15
         handle.font = UIFont.systemFontOfSize(22.0)
         handle.textColor = UIColor.whiteColor()
@@ -265,7 +254,7 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
         self.addSubview(handle)
         
         
-        if let n = name?{
+        if let n = name{
             
             
             
@@ -304,9 +293,6 @@ class FlexibleNavBar: BLKFlexibleHeightBar{
             
         self.addSubview(n)
         }
-        
-        
-        
     }
     
     

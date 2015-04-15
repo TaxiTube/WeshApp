@@ -24,7 +24,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 
     
     //MARK: Size properties
-    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    private let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
     private let screenSize  = UIScreen.mainScreen().bounds.size
     private let proportion: CGFloat = 0.095
 
@@ -198,7 +198,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     // MARK: - Number of Rows
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = currentFetchedRC.sections![section] as NSFetchedResultsSectionInfo
+        let sectionInfo = currentFetchedRC.sections![section] as! NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     // MARK: - TableView Stuff
@@ -208,7 +208,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         {
             case 0:
                  cell = tableView.dequeueReusableCellWithIdentifier("channelCell", forIndexPath: indexPath) as? ChannelTableViewCell
-                let channel = currentFetchedRC.objectAtIndexPath(indexPath) as Channel
+                let channel = currentFetchedRC.objectAtIndexPath(indexPath) as! Channel
                 cell!.title.text = channel.title
                 //TODO if name is known show real name instead
                 cell!.subTitle.text = channel.author.handle
@@ -219,7 +219,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
             
             case 1:
                  cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
-                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as Badge
+                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as! Badge
                 cell!.title.text  = badge.handle
                 //TODO if name is known show real name instead
                 //TODO: cell!.image =
@@ -275,14 +275,14 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
     
      func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! ChannelTableViewCell?
         cell?.highlightCell(false)
 
     }
     
      func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
 
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! ChannelTableViewCell?
         cell?.highlightCell(true)
     }
     
@@ -292,13 +292,13 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         
             if segue.identifier == "toChannelVC" {
 //                self.navigationController!.navigationBarHidden = true
-                let channelVC = segue.destinationViewController as ChannelTVC
+                let channelVC = segue.destinationViewController as! ChannelTVC
 //                channelVC.transitioningDelegate = self.transitionManager
 //                var channelVC = navController.topViewController as ChannelTVC
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 // If as Channel else as Profile
                 
-                let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as Channel
+                let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as! Channel
                 channelVC.channel = channel
             //    channelVC.coreDataStack = coreDataStack
              //   channelVC.sessionMngr = sessionMngr
@@ -307,7 +307,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 
         } else if segue.identifier == "nearbyToProfile"{
                 
-                var profileVC = segue.destinationViewController as ProfileVC
+                var profileVC = segue.destinationViewController as! ProfileVC
 //                var profileVC = navController.topViewController as ProfileVC
 
 //                profileVC.transitioningDelegate = self.transitionManager
@@ -315,31 +315,31 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
     
     //MARK: NSFetchedResultsController Delegate methods
-    func controllerWillChangeContent(controller: NSFetchedResultsController!) {
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
         tableView.beginUpdates()
     }
     
     func controller (controller: NSFetchedResultsController,
        didChangeObject anObject: AnyObject,
-          atIndexPath indexPath: NSIndexPath!,
+          atIndexPath indexPath: NSIndexPath?,
              forChangeType type: NSFetchedResultsChangeType,
-                   newIndexPath: NSIndexPath!) {
+                   newIndexPath: NSIndexPath?) {
     
         switch type {
             case .Insert:
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+                tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             case .Delete:
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             case .Update:
-                let cell = tableView.cellForRowAtIndexPath(indexPath) //as TeamCell
+                let cell = tableView.cellForRowAtIndexPath(indexPath!) //as TeamCell
                 //configureCell(cell, indexPath: indexPath)
-            case .Move: tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-                        tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+            case .Move: tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+                        tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             default: break
         }
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController!) {
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
     }
 
@@ -360,7 +360,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     func cellDidOpen(cell: ChannelTableViewCell) {
 
         if cell != openedCell{
-            if let oc = openedCell?{
+            if let oc = openedCell{
                 
                 openedCell!.closeCell()
             }
@@ -383,7 +383,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
     
      func scrollViewDidScroll(scrollView: UIScrollView) {
-        if let oc = openedCell?{
+        if let oc = openedCell{
             oc.closeCell()
         }
     }
@@ -392,7 +392,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     //MARK: Popover controller
     func handlePopover(sender: UIView) {
-        let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as UIViewController
+        let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("createChannelPopover") as! UIViewController
         popoverVC.modalPresentationStyle = .Popover
         if let popoverController = popoverVC.popoverPresentationController {
             //popoverController.barButtonItem = sender
@@ -407,18 +407,18 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
     
     // MARK: - UIPopoverPresentationControllerDelegate
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .OverFullScreen
     }
     
     
-    func presentationController(              controller: UIPresentationController!,
-        viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
+    func presentationController(              controller: UIPresentationController,
+        viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
             
             var navbar = navigationController!.navigationBar
             var titleLabel = UILabel()
             let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
-            let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+            let titleDict = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                 NSFontAttributeName: font ]
             titleLabel.attributedText = NSAttributedString(string: "Create Habitat",
                 attributes: titleDict)

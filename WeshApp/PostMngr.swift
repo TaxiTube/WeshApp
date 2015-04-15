@@ -19,7 +19,7 @@ import CoreData
     
     func createPost(msg: String, channel: Channel?, date: NSDate, sender: Badge?)->Post?{
         
-        let post =  NSEntityDescription.insertNewObjectForEntityForName("Post", inManagedObjectContext: self.managedObjectContext) as Post
+        let post =  NSEntityDescription.insertNewObjectForEntityForName("Post", inManagedObjectContext: self.managedObjectContext) as! Post
 
         post.post = msg
         post.date = date

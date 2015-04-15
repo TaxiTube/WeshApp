@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let cds = coreDataStack {
             
             // Check if we are running as test or not
-            let environment = NSProcessInfo.processInfo().environment as [String : AnyObject]
+            let environment = NSProcessInfo.processInfo().environment as! [String : AnyObject]
             let isTest = (environment["XCInjectBundle"] as? String)?.pathExtension == "xctest"
             // Create the module name
             if !isTest{
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }else{
               
                 var storyboard = UIStoryboard(name:"Main", bundle:NSBundle(forClass: self.dynamicType))
-                var vc = storyboard.instantiateViewControllerWithIdentifier("SplashVC") as UIViewController
+                var vc = storyboard.instantiateViewControllerWithIdentifier("SplashVC") as! UIViewController
                 vc.loadView()
                 // Set root view controller and make windows visible
                 //window = UIWindow(frame:UIScreen.mainScreen().bounds)

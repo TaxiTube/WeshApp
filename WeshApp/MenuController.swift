@@ -1,4 +1,4 @@
-//
+
 //  MenuController.swift
 //  WeshApp
 //
@@ -32,7 +32,7 @@ class MenuController: UITabBarController, RNFrostedSidebarDelegate, UIGestureRec
                   UIColor.whiteColor()]
     
     var callout: RNFrostedSidebar?
-    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    private let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()

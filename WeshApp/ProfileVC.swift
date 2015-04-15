@@ -21,7 +21,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     
     //MARK: Size properties
-    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    private let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
     private let screenSize  = UIScreen.mainScreen().bounds.size
     private let proportion: CGFloat = 0.095
     
@@ -48,7 +48,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         super.init(coder: aDecoder)
     }
     
-    convenience override init() {
+    convenience  init() {
         self.init()
     }
   
@@ -144,7 +144,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     
     // MARK: - Number of Rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = channelFetechedRC.sections![section] as NSFetchedResultsSectionInfo
+        let sectionInfo = channelFetechedRC.sections![section] as! NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     
@@ -152,7 +152,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
 
         var cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
-        let channel = channelFetechedRC.objectAtIndexPath(indexPath) as Channel
+        let channel = channelFetechedRC.objectAtIndexPath(indexPath) as! Channel
         cell!.title.text = channel.title
         //TODO if name is known show real name instead
         cell!.subTitle.text = timeAgoSinceDate(channel.date, true)
@@ -174,14 +174,14 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     }
     
     func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! ChannelTableViewCell?
         cell?.highlightCell(false)
         
     }
     
     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
         
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as ChannelTableViewCell?
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! ChannelTableViewCell?
         cell?.highlightCell(true)
     }
     
@@ -190,13 +190,13 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
         
         if segue.identifier == "profileToChannel" {
             //                self.navigationController!.navigationBarHidden = true
-            let channelVC = segue.destinationViewController as ChannelTVC
+            let channelVC = segue.destinationViewController as! ChannelTVC
             //                channelVC.transitioningDelegate = self.transitionManager
             //                var channelVC = navController.topViewController as ChannelTVC
             let indexPath = self.tableView.indexPathForSelectedRow()
             // If as Channel else as Profile
             
-            let channel = channelFetechedRC.objectAtIndexPath(indexPath!) as Channel
+            let channel = channelFetechedRC.objectAtIndexPath(indexPath!) as! Channel
             channelVC.channel = channel
             channelVC.coreDataStack = coreDataStack
             channelVC.sessionMngr = sessionMngr
@@ -205,7 +205,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
             
         } else if segue.identifier == "nearbyToProfile"{
             
-            var profileVC = segue.destinationViewController as ProfileVC
+            var profileVC = segue.destinationViewController as! ProfileVC
             //                var profileVC = navController.topViewController as ProfileVC
             
             //                profileVC.transitioningDelegate = self.transitionManager
@@ -222,7 +222,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     func cellDidOpen(cell: ChannelTableViewCell) {
         
         if cell != openedCell{
-            if let oc = openedCell?{
+            if let oc = openedCell{
                 
                 openedCell!.closeCell()
             }
@@ -245,7 +245,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, N
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if let oc = openedCell?{
+        if let oc = openedCell{
             oc.closeCell()
         }
     }

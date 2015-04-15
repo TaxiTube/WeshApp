@@ -26,7 +26,7 @@ import UIKit
         
     }
 
-    required override public init(items: [AnyObject]!) {
+    required override public init(items: [AnyObject]) {
         super.init(items: items)
  
     }
@@ -47,13 +47,13 @@ import UIKit
     
      func setUp(){
         
-        var segLeft = subviews[0] as UIView
-        var segRight = subviews[1] as UIView
+        var segLeft = subviews[0] as! UIView
+        var segRight = subviews[1] as! UIView
         
         segLeft.tintColor = selectedColour
         segRight.tintColor =  UIColor.whiteColor()
         
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+        let titleDict = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         
         setTitleTextAttributes(titleDict, forState: UIControlState.Selected)
@@ -72,8 +72,8 @@ import UIKit
     
     override public func didChangeValueForKey(key: String) {
         let subviews = self.subviews
-        var segLeft = subviews[1] as UIView
-        var segRight = subviews[0] as UIView
+        var segLeft = subviews[1] as! UIView
+        var segRight = subviews[0] as! UIView
         
        
         switch self.selectedSegmentIndex{

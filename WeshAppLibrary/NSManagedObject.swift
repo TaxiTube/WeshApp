@@ -26,10 +26,10 @@ extension NSManagedObject{
 
         //println("Going through Object attributes...")
         for (attr, _) in attributes{
-            var value: AnyObject? = self.valueForKey(attr as String)
+            var value: AnyObject? = self.valueForKey(attr as! String)
             if value != nil {
                 if let v = value as? NSCoding{
-                    dict[attr as String]  = value!
+                    dict[attr as! String]  = value!
                 }else{
                     println("Attribute is not NSCoding complient")
                 }
@@ -39,7 +39,7 @@ extension NSManagedObject{
 
         //println("Going through Object relationships...")
         for (rel, _) in relationships{
-            var value: AnyObject? = self.valueForKey(rel as String)
+            var value: AnyObject? = self.valueForKey(rel as! String)
             switch value {
                 // To-many relationship
                 case let relatedObjects as NSSet:
@@ -49,14 +49,14 @@ extension NSManagedObject{
                     for object in relatedObjects {
                         if !localTraversalHistory.containsObject(object){
                             dictSet.append(
-                                (object as NSManagedObject).toDictionaryWithTraversal(traversalHistory: localTraversalHistory))
+                                (object as! NSManagedObject).toDictionaryWithTraversal(traversalHistory: localTraversalHistory))
                         }
                     }
-                    dict[rel as String] =  dictSet
+                    dict[rel as! String] =  dictSet
                 // To-one relationship
                 case let object as NSManagedObject where !localTraversalHistory.containsObject(object) :
                     // Call toDictionary on the referenced object and put the result back into our dictionary.
-                    dict[rel as String] =  object.toDictionaryWithTraversal(traversalHistory: localTraversalHistory)
+                    dict[rel as! String] =  object.toDictionaryWithTraversal(traversalHistory: localTraversalHistory)
                 default: break
                     // there are two types of nil
                     //1. non initialised/set attribtues/objects
@@ -116,8 +116,8 @@ extension NSManagedObject{
     // Class method that transforms NSObjects from Dictionaries into NSManagedObjects. the method creates an NSObject which is then populated
    public class func fromDictionary(dict: [String: AnyObject])(context: NSManagedObjectContext)->NSManagedObject{
 
-        let name = dict["class"]! as String
-        var newObject =  NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: context) as NSManagedObject
+        let name = dict["class"]! as! String
+        var newObject =  NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: context) as! NSManagedObject
         return newObject.populateFromDictionary(dict)!
    }
     

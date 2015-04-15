@@ -17,7 +17,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
     //MARK: NavBar properties
     private var myCustomBar: FlexibleNavBar?
-    private weak var delegateSplitter: BLKDelegateSplitter?
+    private var delegateSplitter: BLKDelegateSplitter?
    
     
     //MARK: Model CoreData stuff
@@ -27,7 +27,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let screenSize  = UIScreen.mainScreen().bounds.size
     var postMngr: PostMngr?
     var sessionMngr: SessionMngr?
-    private let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+    private let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
 
 
     //MARK: InputAccessoryView stuff
@@ -106,7 +106,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
 
         //TODO: Move to New method
-        let appDelegate = UIApplication.sharedApplication().delegate! as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate! as! AppDelegate
         coreDataStack = appDelegate.coreDataStack!
         let managedObjectContext = appDelegate.coreDataStack!.mainContext!
         let fetchRequest = NSFetchRequest(entityName: "Post")
@@ -163,7 +163,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
    override func viewDidLayoutSubviews() {
        self.updateViewConstraints()
         self.addBlur()
-        if (!inputAccessoryViewIsSetUp && self.tableView.inputAccessoryView? != nil){
+        if (!inputAccessoryViewIsSetUp && self.tableView.inputAccessoryView != nil){
             
             self.setUpInputAccessoryView()
             
@@ -194,7 +194,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         if segue.identifier == "ChannelToProfile" {
             //                self.navigationController!.navigationBarHidden = true
-            let profileVC = segue.destinationViewController as ProfileVC
+            let profileVC = segue.destinationViewController as! ProfileVC
             //                channelVC.transitioningDelegate = self.transitionManager
             //                var channelVC = navController.topViewController as ChannelTVC
             let indexPath = self.tableView.indexPathForSelectedRow()
@@ -209,7 +209,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             
         } else if segue.identifier == "..."{
             
-            var profileVC = segue.destinationViewController as ProfileVC
+            var profileVC = segue.destinationViewController as! ProfileVC
             //                var profileVC = navController.topViewController as ProfileVC
             
             //                profileVC.transitioningDelegate = self.transitionManager
@@ -226,7 +226,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let channelTitleLabel = UILabel()
         
         let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+        let titleDict = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         channelTitleLabel.attributedText = NSAttributedString(string: self.channel!.title,
                                                           attributes: titleDict)
@@ -239,7 +239,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
         behaviorDefiner.addSnappingPositionProgress( 0.0, forProgressRangeStart: 0.0, end: 0.5)
         behaviorDefiner.addSnappingPositionProgress( 1.0, forProgressRangeStart: 0.5, end: 1.0)
-        behaviorDefiner.snappingEnabled = false
+        behaviorDefiner.snappingEnabled = true
         
         self.myCustomBar?.behaviorDefiner = behaviorDefiner
         
@@ -282,7 +282,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
 
      func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        let sectionInfo = fetchedResultsController.sections![section] as! NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
 
@@ -290,7 +290,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as? WallPostTableViewCell
-        let post = fetchedResultsController.objectAtIndexPath(indexPath) as Post
+        let post = fetchedResultsController.objectAtIndexPath(indexPath) as! Post
 
         cell!.indexPath = indexPath
         cell!.delegate = self
@@ -312,31 +312,31 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         return 0
     }
     //MARK: NSFetchedResultsController Delegate methods
-    func controllerWillChangeContent(controller: NSFetchedResultsController!) {
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
         tableView.beginUpdates()
     }
     
     func controller ( controller: NSFetchedResultsController,
         didChangeObject anObject: AnyObject,
-           atIndexPath indexPath: NSIndexPath!,
+           atIndexPath indexPath: NSIndexPath?,
               forChangeType type: NSFetchedResultsChangeType,
-                    newIndexPath: NSIndexPath!) {
+                    newIndexPath: NSIndexPath?) {
             
         switch type {
             case .Insert:
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+                tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             case .Delete:
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             case .Update:
-                let cell = tableView.cellForRowAtIndexPath(indexPath) //as TeamCell
+                let cell = tableView.cellForRowAtIndexPath(indexPath!) //as TeamCell
                 //configureCell(cell, indexPath: indexPath)
-            case .Move: tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-                        tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Automatic)
+            case .Move: tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+                        tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             default: break
         }
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController!) {
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
         scrollWallTo(true, animated: true)
     }
@@ -350,7 +350,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     //MARK: Scrolling stuff
     func scrollWallTo(bottom:Bool, animated: Bool){
     
-        let sectionInfo = fetchedResultsController.sections![0] as NSFetchedResultsSectionInfo
+        let sectionInfo = fetchedResultsController.sections![0] as! NSFetchedResultsSectionInfo
         if sectionInfo.numberOfObjects != 0 {
             var iPath: NSIndexPath?
             if bottom{
@@ -404,7 +404,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         //Not sure when to use this:
         self.tableView.inputAccessoryView!.autoresizingMask = UIViewAutoresizing.FlexibleHeight
-        var constraints:[NSLayoutConstraint] = self.tableView.inputAccessoryView!.constraints() as Array
+        var constraints:[NSLayoutConstraint] = self.tableView.inputAccessoryView!.constraints() as! Array
         //find default constraint
         for (c: NSLayoutConstraint) in constraints{
             if c.firstAttribute == NSLayoutAttribute.Height{
@@ -438,7 +438,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         var max = CGFloat.max
         var sizeThatFitsTextView = self.textView.sizeThatFits(CGSizeMake(self.textView.frame.size.width, max ))
         
-        var constraints:[NSLayoutConstraint] = self.tableView.inputAccessoryView!.constraints() as Array
+        var constraints:[NSLayoutConstraint] = self.tableView.inputAccessoryView!.constraints() as! Array
         
         for  (c: NSLayoutConstraint) in constraints{
             if c.firstAttribute == NSLayoutAttribute.Height {
@@ -463,7 +463,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
     func keyboardWillShow(notification: NSNotification) {
         let userInfo = notification.userInfo!
-        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 
 
         if keyboardSize.height > 200{
@@ -480,7 +480,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     func keyboardDidHide(notification: NSNotification) {
         let userInfo = notification.userInfo!
-        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 
         self.tableView.contentInset = UIEdgeInsets(top: tableView.contentInset.top,
             left: tableView.contentInset.left,

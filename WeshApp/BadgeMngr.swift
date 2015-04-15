@@ -27,7 +27,7 @@ struct BadgeMngr {
     //MARK: Create Badge object in the managedObjectContext
     func createBadge(handle: String, peerID: MCPeerID, totem: String) -> Badge? {
             
-            let badge = NSEntityDescription.insertNewObjectForEntityForName("Badge", inManagedObjectContext: self.managedObjectContext) as Badge
+            let badge = NSEntityDescription.insertNewObjectForEntityForName("Badge", inManagedObjectContext: self.managedObjectContext) as! Badge
             
             badge.handle  = handle
             badge.peerID = peerID
@@ -48,7 +48,7 @@ struct BadgeMngr {
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
             case let Result.Success(box):
-                return box.unbox.first as Badge?
+                return box.unbox.first as! Badge?
             case let Result.Failure(error):
                 println("Error getting profile. Error code: \(error.code)")
                 return nil
@@ -64,8 +64,8 @@ struct BadgeMngr {
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
             case let Result.Success(box):
-                let badge = (box.unbox.first as Badge?)
-                return badge?.channels as [Channel]?
+                let badge = (box.unbox.first as! Badge?)
+                return badge?.channels as! [Channel]?
             case let Result.Failure(error):
                 println("Error getting profile. Error code: \(error.code)")
                 return nil
@@ -80,7 +80,7 @@ struct BadgeMngr {
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
             case let Result.Success(box):
-                let p = box.unbox.first as Badge
+                let p = box.unbox.first as! Badge
                 managedObjectContext.deleteObject(p)
                 println("profile deleted \(p.peerID.displayName)")
             case let Result.Failure(error):

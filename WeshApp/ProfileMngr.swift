@@ -33,10 +33,10 @@ import WeshAppLibrary
                         photo: NSData) -> Profile? {
             
             let profile = NSEntityDescription.insertNewObjectForEntityForName("Profile",
-                            inManagedObjectContext: self.managedObjectContext) as Profile
+                            inManagedObjectContext: self.managedObjectContext) as! Profile
 
             let profilePhoto = NSEntityDescription.insertNewObjectForEntityForName("ProfilePhoto",
-                                    inManagedObjectContext: self.managedObjectContext) as ProfilePhoto
+                                    inManagedObjectContext: self.managedObjectContext) as! ProfilePhoto
 
             
                                 
@@ -64,14 +64,14 @@ import WeshAppLibrary
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
             case let Result.Success(box):
-                return box.unbox.first as Profile?
+                return box.unbox.first as! Profile?
             case let Result.Failure(error):
                 println("Error getting profile. Error code: \(error.code)")
                 return nil
         }
     }
     func getOnlineProfiles(myProfile: Profile?) -> [Profile]?{
-        let peerID = myProfile!.peerID as MCPeerID
+        let peerID = myProfile!.peerID as! MCPeerID
         let fetchRequest = NSFetchRequest(entityName: "Profile")
         fetchRequest.predicate = NSPredicate(format: "peerID != %@", peerID)
         
@@ -93,7 +93,7 @@ import WeshAppLibrary
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
         case let Result.Success(box):
-            let p = box.unbox.first as Profile
+            let p = box.unbox.first as! Profile
              managedObjectContext.deleteObject(p)
             println("profile deleted \(p.peerID.displayName)")
         case let Result.Failure(error):

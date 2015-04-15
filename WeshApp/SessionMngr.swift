@@ -20,23 +20,18 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     private var advertiser:  MCNearbyServiceAdvertiser?
     private var  browser: MCNearbyServiceBrowser?
     //MARK: Persistance store and Core Data Properties
-    private let coreDataStack: CoreDataStack!
+    private let coreDataStack: CoreDataStack?
     //private let myProfileMngr: ProfileMngr!
-    private let badgeMngr: BadgeMngr!
-    private let postMngr: PostMngr!
-    private let channelMngr: ChannelMngr!
+    private let badgeMngr: BadgeMngr?
+    private let postMngr: PostMngr?
+    private let channelMngr: ChannelMngr?
     
     //let profile: Profile?
     var myBadge: Badge?
     private let post: Post?
   
    
-    
-  
-    //MARK: Initialisation
-    override init(){
-        super.init()
-    }
+ 
     //On dealloc clean up the session by disconnecting from it.
     deinit {
         println("cleanup")
@@ -45,24 +40,26 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     }
     
    public init(coreDataStack: CoreDataStack){
-    super.init()
-  
+    
         self.coreDataStack = coreDataStack
         //TODO: Lazy initialisation
         badgeMngr = BadgeMngr(managedObjectContext: coreDataStack.mainContext!,
-                                         coreDataStack: coreDataStack)
+                                     coreDataStack: coreDataStack)
         postMngr = PostMngr(managedObjectContext: coreDataStack.mainContext!,
-                                               coreDataStack: coreDataStack)
+                                   coreDataStack: coreDataStack)
         channelMngr = ChannelMngr(managedObjectContext: coreDataStack.mainContext!,
-                                         coreDataStack: coreDataStack)
+                                    coreDataStack: coreDataStack)
+        self.post = nil
+        super.init()
+
     }
     func setUpConnection(handle: String, totem: String = "") -> Bool{
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if let peerIDData = defaults.dataForKey("peerID"){
-            myPeerID = NSKeyedUnarchiver.unarchiveObjectWithData(peerIDData) as MCPeerID
+            myPeerID = NSKeyedUnarchiver.unarchiveObjectWithData(peerIDData) as! MCPeerID
             sessionContainer = SessionContainer(myPeerID: myPeerID)
-            myBadge = badgeMngr.getBadge(myPeerID)
+            myBadge = badgeMngr!.getBadge(myPeerID)
             //println("old PeerID \(myBadge!.peerID.displayName)")
         } else {
             myPeerID = MCPeerID(displayName: handle)
@@ -73,8 +70,8 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             defaults.setObject(Data, forKey: "peerID")
             defaults.synchronize()
             //To Do: Creating profile
-            myBadge = badgeMngr.createBadge(handle, peerID: myPeerID, totem: totem)
-            badgeMngr.save(coreDataStack.mainContext!)
+            myBadge = badgeMngr!.createBadge(handle, peerID: myPeerID, totem: totem)
+            badgeMngr!.save(coreDataStack!.mainContext!)
             //println("new peerID created \(myPeerID.displayName)" )
         }
         activatePeer()
@@ -159,7 +156,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     //Incoming
     func receivedData(#senderPeer: MCPeerID, data: NSData){
      
-        let unserializedDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as [String: AnyObject]
+        let unserializedDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [String: AnyObject]
         
         //unserializedDict["channelID"]
         /*
@@ -181,19 +178,19 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
                 
                 //println(channelObject.author.firstName)
                 
-                    if let senderBadge = badgeMngr.getBadge(senderPeer){
+                    if let senderBadge = badgeMngr!.getBadge(senderPeer){
                        // myProfileMngr.insertChannel(senderProfile, channel: channelObject)
-                        channelMngr.insertBadge(channelObject, badge: senderBadge)
+                        channelMngr!.insertBadge(channelObject, badge: senderBadge)
                     }else{
                         println("NO SUCH PROFILE DETECTED IN CORE DATA!")
                         
                     }
             
             case let postObject as Post:
-               let channel = channelMngr.getChannelByID(postObject.channelID)
+               let channel = channelMngr!.getChannelByID(postObject.channelID)
                if let c = channel {
                     //println("post for channel \(c.title) post message: \(postObject.message)")
-                    postMngr.createPost(postObject.post,
+                    postMngr!.createPost(postObject.post,
                                         channel: channel,
                                            date: postObject.date,
                                          sender: postObject.sender)
@@ -239,7 +236,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     // MARK: Browsing delegate
     public func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!,  withDiscoveryInfo info: [NSObject : AnyObject]!){
         
-        if let dict = info?{
+        if let dict = info{
             //println(dict["author"])
         }
         //in order to avoid simlutenaour invitaiton accepting
@@ -262,12 +259,12 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
                           invitationHandler: ((Bool, MCSession!) -> Void)!){
             
             println("received invitation from:\(peerID!.displayName) ")
-            let connectedPeers =  sessionContainer.session.connectedPeers as [MCPeerID]
+            let connectedPeers =  sessionContainer.session.connectedPeers as! [MCPeerID]
             if !contains(connectedPeers, peerID!){
                 invitationHandler(true, sessionContainer.session)
                 //TODO: create a new badge
                 //TODO: Receive Totem Via Context
-                badgeMngr.createBadge(peerID.displayName, peerID: peerID, totem: "")
+                badgeMngr!.createBadge(peerID.displayName, peerID: peerID, totem: "")
             }
     }
     

@@ -25,7 +25,7 @@ public class CoreDataStack {
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "io.WeshApp" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+        return urls[urls.count-1] as! NSURL
         }()
     
     
@@ -40,7 +40,7 @@ public class CoreDataStack {
         let managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
         
         // Check if we are running as test or not
-        let environment = NSProcessInfo.processInfo().environment as [String : AnyObject]
+        let environment = NSProcessInfo.processInfo().environment as! [String : AnyObject]
         let isTest = (environment["XCInjectBundle"] as? String)?.pathExtension == "xctest"
         
         // Create the module name
@@ -49,7 +49,7 @@ public class CoreDataStack {
         // Create a new managed object model with updated entity class names
         var newEntities = [] as [NSEntityDescription]
         for (_, entity) in enumerate(managedObjectModel.entities) {
-            let newEntity = entity.copy() as NSEntityDescription
+            let newEntity = entity.copy() as! NSEntityDescription
             newEntity.managedObjectClassName = "\(moduleName).\(entity.name)"
             newEntities.append(newEntity)
         }
@@ -81,11 +81,11 @@ public class CoreDataStack {
                                                                 error: &error){
             coordinator = nil
             // Report any error we got.
-            let dict = NSMutableDictionary()
+            var dict = [NSObject: AnyObject]()
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
-            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict )
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(error), \(error!.userInfo)")
@@ -137,8 +137,8 @@ public class CoreDataStack {
         }
         context.performBlock() {
             var error: NSError? = nil
-            if !(context.obtainPermanentIDsForObjects(context.insertedObjects.allObjects, error: &error)) {
-                NSLog("Error obtaining permanent IDs for \(context.insertedObjects.allObjects), \(error)")
+            if !(context.obtainPermanentIDsForObjects(Array(context.insertedObjects)  , error: &error)) {
+                NSLog("Error obtaining permanent IDs for \(Array(context.insertedObjects)), \(error)")
             }
             
             if context.hasChanges && !context.save(&error) {
@@ -155,8 +155,8 @@ public class CoreDataStack {
         //
         context.performBlock() {
             var error: NSError? = nil
-            if !(context.obtainPermanentIDsForObjects(context.insertedObjects.allObjects, error: &error)) {
-                NSLog("Error obtaining permanent IDs for \(context.insertedObjects.allObjects), \(error)")
+            if !(context.obtainPermanentIDsForObjects(Array(context.insertedObjects), error: &error)) {
+                NSLog("Error obtaining permanent IDs for \(Array(context.insertedObjects)), \(error)")
             }
             
             if context.hasChanges && !context.save(&error) {

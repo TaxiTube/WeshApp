@@ -25,7 +25,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
 
     //MARK: Properties
     var appDelegate: AppDelegate {
-       return UIApplication.sharedApplication().delegate! as AppDelegate
+       return UIApplication.sharedApplication().delegate! as! AppDelegate
     }
     var coreDataStack: CoreDataStack?{
         return  appDelegate.coreDataStack
@@ -132,11 +132,11 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
         button.layoutMargins = UIEdgeInsetsZero
         blurView.layoutMargins = UIEdgeInsetsZero
        
-        let viewsDictionary = ["top":topLayoutGuide,"bottom":button, "blur": blurView]
+        let viewsDictionary = ["top":topLayoutGuide,"bottom":button, "blur": blurView] as [NSObject : AnyObject]
 
         //Margin constraints
-        let vConstraints: NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[blur]-(-8)-[bottom]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-        let hConstraints: NSArray =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-(-8)-[blur]-(-8)-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[blur]-(-8)-[bottom]|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
+        let hConstraints =  NSLayoutConstraint.constraintsWithVisualFormat("H:|-(-8)-[blur]-(-8)-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
        
         view.addConstraints(vConstraints)
         view.addConstraints(hConstraints)
@@ -146,7 +146,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     //MARK: TextField delegate methods
-    func textFieldShouldReturn(textField: UITextField!) -> Bool
+    func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         titleTF.resignFirstResponder()
         descTV.resignFirstResponder()
@@ -169,13 +169,12 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     //MARK: TextView
-    func textViewDidBeginEditing(textView: UITextView) -> Bool{
-        
+    
+    func textViewDidBeginEditing(textView: UITextView) {
         descTV.text = text
         descTV.textColor = UIColor.blackColor()
-        
-        return true
     }
+
     func textViewDidEndEditing(textView: UITextView){
         text = descTV.text
         if text == "" {
@@ -185,10 +184,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
             descTV.text = placeHolderTextTV
          }
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        titleTF.resignFirstResponder()
-        return true
-    }
+    
+    
+
    
   
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
@@ -201,9 +199,9 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     func animateTextFieldWithKeyboard(notification: NSNotification) {
         
         let userInfo = notification.userInfo!
-        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as Double
-        let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as UInt
+        var keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double
+        let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as! UInt
         
         var maxTextViewY = descTV.frame.origin.y + descTV.frame.height
         var minKeyboardY = keyboardSize.origin.y

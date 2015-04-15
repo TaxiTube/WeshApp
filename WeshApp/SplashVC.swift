@@ -18,7 +18,7 @@ class SplashVC: UIViewController {
     private var connectionIsSet: Bool = false
 
     private var appDelegate: AppDelegate{
-        return UIApplication.sharedApplication().delegate! as AppDelegate
+        return UIApplication.sharedApplication().delegate! as! AppDelegate
     }
     
     @IBOutlet weak var handleTextField: UITextField!

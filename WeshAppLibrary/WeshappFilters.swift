@@ -18,7 +18,7 @@ public class WeshappFilters {
             filter.setValue(faceImage, forKey: "InputImage")
             filter.setValue(wallpaperImage, forKey: "inputBackgroundImage")
             let cropRect = faceImage.extent()
-            var outputImage: CIImage = filter.valueForKey(kCIOutputImageKey) as CIImage
+            var outputImage: CIImage = filter.valueForKey(kCIOutputImageKey) as! CIImage
         
              return outputImage.imageByCroppingToRect(cropRect)
         }

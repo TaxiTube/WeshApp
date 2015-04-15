@@ -94,7 +94,7 @@ public class WeshappNavBar: UINavigationBar{
         }
         
         let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+        let titleDict = [NSForegroundColorAttributeName: UIColor.whiteColor(),
                                                   NSFontAttributeName: font ]
         titleTextAttributes = titleDict
     }
