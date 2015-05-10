@@ -25,6 +25,8 @@ public class WeshappTextView: UITextView{
     
     @IBInspectable var placeholderColor: UIColor  = UIColor(white:0.80, alpha:1)
     
+    //A boolean that tracks wheather the placeholder is showing or not
+    private var showPlaceholder = true
     public weak var weshappDelegate: WeshappUITextViewDelegate?
     
     var initialNumRows: Int!
@@ -68,6 +70,7 @@ public class WeshappTextView: UITextView{
     
 
     func beginEditing(notification: NSNotification){
+        self.showPlaceholder = false
         if placeholder == self.text {
             self.text = ""
             self.textColor = realTextColor
@@ -83,6 +86,7 @@ public class WeshappTextView: UITextView{
     func end(notification: NSNotification){
         if self.text == "" {
             self.text = placeholder
+            self.showPlaceholder = true
             self.textColor = placeholderColor
         }
     }
@@ -95,7 +99,13 @@ public class WeshappTextView: UITextView{
         }
         
     }
-    
+    //get mempty text if placeholder is visible
+    public func getText() -> String{
+        if self.showPlaceholder  == true {
+            return ""
+        }
+        return self.text
+    }
 
     public func numberOfLines() -> Int{
         

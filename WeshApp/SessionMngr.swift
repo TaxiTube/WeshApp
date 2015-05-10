@@ -35,6 +35,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     //On dealloc clean up the session by disconnecting from it.
     deinit {
         println("cleanup")
+        self.coreDataStack!.saveContext(coreDataStack!.mainContext!)
         advertiser!.stopAdvertisingPeer()
         sessionContainer.session.disconnect()
     }
@@ -94,22 +95,18 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     
        //1. send my channels
     
-     /*
-        
         if myBadge!.channels.count > 0{
            
-            var profileDict = profile!.toDictionary()
-            
-            
-
-            let data = NSKeyedArchiver.archivedDataWithRootObject(profileDict)
+            var myBadgeDict = myBadge!.toDictionary()
+            println(myBadgeDict)
+            let data = NSKeyedArchiver.archivedDataWithRootObject(myBadgeDict)
             //println("data siza: \(data.length)")
             sessionContainer.multicastMsg(data)
         
          }else{
-               println("\(profile!.firstName) has no Channels")
+               println("\(myBadge!.handle) has no Channels")
         }
-        */
+       
     
     }
      
@@ -119,8 +116,8 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             
             var channelDict = newChannel.toDictionary()
             //do not transmit author or transcirpts
-            channelDict.removeValueForKey("author")
-            channelDict.removeValueForKey("posts")
+            //channelDict.removeValueForKey("author")
+            //channelDict.removeValueForKey("posts")
           
             let data = NSKeyedArchiver.archivedDataWithRootObject(channelDict)
             //println("Channel data size: \(data.length)")
@@ -138,8 +135,8 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             //wall post: Multicast
             if let p = post{
                 var postDict = p.toDictionary()
-                postDict.removeValueForKey("channel")
-                postDict.removeValueForKey("sender")
+              //  postDict.removeValueForKey("channel")
+               // postDict.removeValueForKey("sender")
                 postDict.removeValueForKey("receivers")
                 
                 let data = NSKeyedArchiver.archivedDataWithRootObject(postDict)
@@ -148,7 +145,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
         }
     }
     func deleteProfile(peerID: MCPeerID){
-        //badgeMngr.deletePeer(peerID)
+        badgeMngr!.deletePeer(peerID)
     }
 
     
@@ -157,7 +154,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     func receivedData(#senderPeer: MCPeerID, data: NSData){
      
         let unserializedDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [String: AnyObject]
-        
+        println(unserializedDict)
         //unserializedDict["channelID"]
         /*
         if let channel = channelMngr.getChannelByID(){
@@ -166,8 +163,14 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
         }
         */
         let object = NSManagedObject.fromDictionary(unserializedDict)(context:myBadge!.managedObjectContext!)
-        
+       
         switch object{
+            case let badge as Badge:
+                println("badge received \(badge.handle)")
+//                var c: Channel = badge.channels.anyObject() as! Channel
+//                var p :Post = c.posts.anyObject() as! Post
+//                println(p.sender)
+            
             case let profileObject as Profile:
                 //TODO: Profiel received when data is Requested
                 println("profile received \(profileObject.firstName)")
@@ -176,7 +179,6 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
                 //TODO: Perform fetchign on privateQ
                 //If channel already exists do not update
                 
-                //println(channelObject.author.firstName)
                 
                     if let senderBadge = badgeMngr!.getBadge(senderPeer){
                        // myProfileMngr.insertChannel(senderProfile, channel: channelObject)

@@ -20,7 +20,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     @IBOutlet weak var button: WeshappRedButton!
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var descTV: UITextView!
+    @IBOutlet weak var descTV: WeshappTextView!
     @IBOutlet weak var handleLable: UILabel!
 
     //MARK: Properties
@@ -39,17 +39,17 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
      
     //MARK: Actions
     @IBAction func goLive(sender: AnyObject) {
-        UIApplication.sharedApplication().statusBarHidden = false
+//        UIApplication.sharedApplication().statusBarHidden = false
         let channelMngr = ChannelMngr(managedObjectContext: coreDataStack!.mainContext!,
                                              coreDataStack: coreDataStack!)
         if titleTF.text != "" {
             let channel = channelMngr.createChannel(titleTF.text,
-                                                    desc: descTV.text,
+                                                    desc: descTV.getText(),
                                                     date: NSDate(),
                                                   author: sessionMngr.myBadge!)
             sessionMngr.broadcastNewChannel(channel)
         }
-        channelMngr.save(coreDataStack!.mainContext!)
+       // channelMngr.save(coreDataStack!.mainContext!)
         dismissViewControllerAnimated(true, completion: nil)
 
     }
@@ -74,7 +74,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
                                                            object: nil)
         
         //imageView.image = getTotemImage()
-        //TODO: get totem image from the array
+        //TODO: get totem image from the array 
         
         handleLable.text = "#" + sessionMngr.myBadge!.handle
         addBlur()
@@ -99,7 +99,7 @@ class CreateChannelVC: UIViewController, UITextViewDelegate, UIGestureRecognizer
     }
     
     func dismissPressed(sender: AnyObject) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
  

@@ -11,6 +11,7 @@ import CoreData
 import Designables
 import RNFrostedSidebar
 import BLKFlexibleHeightBar
+import MultipeerConnectivity
 
 class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  NSFetchedResultsControllerDelegate,UIPopoverPresentationControllerDelegate, ChannetlTableViewCellDelegate {
     
@@ -64,42 +65,14 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 
         self.tableView.registerNib(UINib(nibName: "ChannelTableViewCell", bundle: nil), forCellReuseIdentifier: "channelCell")
         self.tableView.registerNib(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileCell")
-//        self.tableView.delegate = self
+        //self.tableView.delegate =  self
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         //Set weshapp light gray seperator EFEFF4
         self.tableView.separatorColor = UIColor(red: 0xEF/255, green: 0xEF/255, blue: 0xF4/255, alpha: 1)
         
-        sessionMngr = appDelegate.sessionMngr
-        coreDataStack = appDelegate.coreDataStack!
-      
-        let channelFetchRequest = NSFetchRequest(entityName: "Channel")
-        let channelSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        channelFetchRequest.sortDescriptors = [channelSortDescriptor]
-        channelFetechedRC = NSFetchedResultsController(fetchRequest: channelFetchRequest,
-                                               managedObjectContext: appDelegate.coreDataStack!.mainContext!,
-                                                 sectionNameKeyPath: nil,
-                                                        cacheName: nil)
-       //TODO: Filter my badge out
-        let badgeFetchRequest = NSFetchRequest(entityName: "Badge")
-        let badgeSortDescriptor = NSSortDescriptor(key: "handle", ascending: true)
-
-        badgeFetchRequest.sortDescriptors = [badgeSortDescriptor]
-        badgeFetchedRC = NSFetchedResultsController(fetchRequest: badgeFetchRequest,
-                                            managedObjectContext: appDelegate.coreDataStack!.mainContext!,
-                                              sectionNameKeyPath: nil,
-                                                       cacheName: nil)
-        
-        
-        currentFetchedRC = channelFetechedRC
-        currentFetchedRC.delegate = self
-        //Fetching with NSFetchedResultsController returns a Boolean to denote success or failure.
-        var error: NSError? = nil
-        if (!currentFetchedRC.performFetch(&error))  {
-            println("Error: \(error?.localizedDescription)")
-        }
-        
+        self.fetchedResultController()
     }
     
 
@@ -113,10 +86,54 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         self.tableView.flashScrollIndicators()
     }
     
+    //MARK: Set up FetchedResultController
+    private func fetchedResultController(){
+        
+        sessionMngr = appDelegate.sessionMngr
+        coreDataStack = appDelegate.coreDataStack!
+        
+        let channelFetchRequest = NSFetchRequest(entityName: "Channel")
+        let channelSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        
+        channelFetchRequest.sortDescriptors = [channelSortDescriptor]
+        channelFetechedRC = NSFetchedResultsController(fetchRequest: channelFetchRequest,
+            managedObjectContext: appDelegate.coreDataStack!.mainContext!,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        
+        
+//        lazy var moderateVenuePredicate: NSPredicate = { var predicate =
+//            NSPredicate(format: "priceInfo.priceCategory == %@", "$$") return predicate!
+//            }()
+//        
+        //TODO: Filter my badge out
+        let badgeFetchRequest = NSFetchRequest(entityName: "Badge")
+        let badgeSortDescriptor = NSSortDescriptor(key: "handle", ascending: true)
+        
+        let myPeerID  =  sessionMngr!.myBadge!.peerID as! MCPeerID
+        
+        badgeFetchRequest.predicate =  NSPredicate(format: "peerID != %@", myPeerID)
+        badgeFetchRequest.sortDescriptors = [badgeSortDescriptor]
+        
+        badgeFetchedRC = NSFetchedResultsController(fetchRequest: badgeFetchRequest,
+                                            managedObjectContext: appDelegate.coreDataStack!.mainContext!,
+                                              sectionNameKeyPath: nil,
+                                                       cacheName: nil)
+        
+        currentFetchedRC = channelFetechedRC
+        currentFetchedRC.delegate = self
+        //Fetching with NSFetchedResultsController returns a Boolean to denote success or failure.
+        var error: NSError? = nil
+        if (!currentFetchedRC.performFetch(&error))  {
+            println("Error: \(error?.localizedDescription)")
+        }
+    }
+
+    
+    
     //MARK: set up navbar using BLKFlexibleHeightBar
     
     private func setUpNavBar(){
-        
         
         self.setNeedsStatusBarAppearanceUpdate()
         let segControlWidthProp: CGFloat = 0.54
@@ -151,10 +168,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         self.tableView.contentInset = UIEdgeInsetsMake(self.myCustomBar!.maximumBarHeight - 20, 0.0, 0.0, 0.0)
     }
     
-    
-    
-    
-    //    MARK: Segmentation Control
+    //MARK: Segmentation Control
     func segmentChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -201,9 +215,13 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
         let sectionInfo = currentFetchedRC.sections![section] as! NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
+    
     // MARK: - TableView Stuff
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       
+        
         var cell: ChannelTableViewCell?
+        
         switch segControl.selectedSegmentIndex
         {
             case 0:
@@ -219,26 +237,28 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
             
             case 1:
                  cell = tableView.dequeueReusableCellWithIdentifier("profileCell", forIndexPath: indexPath) as? ChannelTableViewCell
-                let badge = currentFetchedRC.objectAtIndexPath(indexPath) as! Badge
-                cell!.title.text  = badge.handle
-                //TODO if name is known show real name instead
-                //TODO: cell!.image =
-                //Todo Count number of channels the authork has 
-                 cell!.counter.text = String(badge.channels.count)
-
-
+                 let badge = currentFetchedRC.objectAtIndexPath(indexPath) as! Badge
+               
+        
+                    cell!.title.text  = badge.handle
+                    //TODO if name is known show real name instead
+                    //TODO: cell!.image =
+                    //Todo Count number of channels the authork has
+                    cell!.counter.text = String(badge.channels.count)
+            
             default:
                 break;
         }
         
  
-        let view1 = UIView()
-        let v = UIView()
-        v.backgroundColor = UIColor.grayColor()
-        cell?.selectedBackgroundView = v
-        cell!.layoutSubviews()
+//        let view1 = UIView()
+//        let v = UIView()
+//        v.backgroundColor = UIColor.grayColor()
+//        cell?.selectedBackgroundView = v
+//        cell!.layoutSubviews()
+//        cell!.contentView
+
         cell!.delegate = self
-        cell!.contentView
         /*
         if cellsCurrentlyEditing!.containsObject(indexPath){
             cell!.openCell()
@@ -267,6 +287,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("toChannelVC", sender: self)
+        
     }
 
     
@@ -290,20 +311,20 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     //MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-            if segue.identifier == "toChannelVC" {
+        if segue.identifier == "toChannelVC" {
 //                self.navigationController!.navigationBarHidden = true
-                let channelVC = segue.destinationViewController as! ChannelTVC
+            let channelVC = segue.destinationViewController as! ChannelTVC
 //                channelVC.transitioningDelegate = self.transitionManager
-//                var channelVC = navController.topViewController as ChannelTVC
-                let indexPath = self.tableView.indexPathForSelectedRow()
-                // If as Channel else as Profile
+//              var channelVC = navController.topViewController as ChannelTVC
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            // If as Channel else as Profile
                 
-                let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as! Channel
-                channelVC.channel = channel
+            let channel = currentFetchedRC.objectAtIndexPath(indexPath!) as! Channel
+            channelVC.channel = channel
             //    channelVC.coreDataStack = coreDataStack
-             //   channelVC.sessionMngr = sessionMngr
-                tableView.deselectRowAtIndexPath(indexPath!, animated: true)
-                
+            //   channelVC.sessionMngr = sessionMngr
+            tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+            
 
         } else if segue.identifier == "nearbyToProfile"{
                 
@@ -324,17 +345,18 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
           atIndexPath indexPath: NSIndexPath?,
              forChangeType type: NSFetchedResultsChangeType,
                    newIndexPath: NSIndexPath?) {
-    
+
         switch type {
             case .Insert:
                 tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             case .Delete:
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-            case .Update:
-                let cell = tableView.cellForRowAtIndexPath(indexPath!) //as TeamCell
+//            case .Update:
+//                let cell = tableView.cellForRowAtIndexPath(indexPath!) //as TeamCell
                 //configureCell(cell, indexPath: indexPath)
-            case .Move: tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-                        tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+            case .Move:
+                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
+                tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             default: break
         }
     }
@@ -417,11 +439,11 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
             
             var navbar = navigationController!.navigationBar
             var titleLabel = UILabel()
-            let font = UIFont(name: "TitilliumText25L-250wt", size: 19.0)!
+            let font = UIFont(name: "TitilliumText25L-250wt", size: 22.0)!
             let titleDict = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                NSFontAttributeName: font ]
-            titleLabel.attributedText = NSAttributedString(string: "Create Habitat",
-                attributes: titleDict)
+                                        NSFontAttributeName: font ]
+            titleLabel.attributedText = NSAttributedString(string: "Create Channel",
+                                                       attributes: titleDict)
             titleLabel.sizeToFit()
             
             var nav = UINavigationController(navigationBarClass: navbar.classForCoder, toolbarClass: nil)

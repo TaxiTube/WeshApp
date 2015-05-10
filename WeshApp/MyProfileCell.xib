@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -27,7 +27,7 @@
                             <constraint firstAttribute="width" secondItem="YXc-oP-SiM" secondAttribute="height" multiplier="1:1" id="D84-Km-GRF"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="c1Z-7M-qab" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="104" placeholderIntrinsicHeight="87" restorationIdentifier="leftView" translatesAutoresizingMaskIntoConstraints="NO" id="c1Z-7M-qab" userLabel="leftView" customClass="FriendRequest" customModule="Designables">
                         <rect key="frame" x="-146" y="66" width="373" height="373"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="c1Z-7M-qab" secondAttribute="height" multiplier="1:1" id="XvX-NC-WGc"/>
@@ -48,12 +48,12 @@
                                 <rect key="frame" x="24" y="186" width="43" height="30"/>
                                 <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge2" translatesAutoresizingMaskIntoConstraints="NO" id="qpO-dR-rGT" userLabel="14-spacer-rightEdge2">
-                                <rect key="frame" x="492.5" y="172" width="41" height="29"/>
+                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="41" placeholderIntrinsicHeight="29" restorationIdentifier="14-spacer-rightEdge2" translatesAutoresizingMaskIntoConstraints="NO" id="qpO-dR-rGT" userLabel="14-spacer-rightEdge2">
+                                <rect key="frame" x="493" y="172" width="41" height="29"/>
                                 <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="counter" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-03-wd0" userLabel="counter">
-                                <rect key="frame" x="492" y="175" width="18.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="counter" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-03-wd0" userLabel="counter">
+                                <rect key="frame" x="492" y="175" width="19" height="21"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="15"/>
                                 <color key="textColor" red="0.65098039220000004" green="0.65490196079999996" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -62,8 +62,8 @@
                                 <rect key="frame" x="564" y="123" width="36" height="250"/>
                                 <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="17g-Gh-dWu" customClass="Chevron" customModule="Designables">
-                                <rect key="frame" x="533.5" y="160" width="30" height="52"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="43" translatesAutoresizingMaskIntoConstraints="NO" id="17g-Gh-dWu" customClass="Chevron" customModule="Designables">
+                                <rect key="frame" x="534" y="160" width="30" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="43" placeholderIntrinsicHeight="15" restorationIdentifier="navigation-spacer-text2" translatesAutoresizingMaskIntoConstraints="NO" id="Hjp-0j-3hK" userLabel="navigation-spacer-text2">
@@ -71,26 +71,26 @@
                                 <color key="backgroundColor" red="0.77917850379999998" green="0.26264891550000002" blue="0.1094871972" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="Title2" text="#DenisBull" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC5-wB-CFR" userLabel="Title2">
-                                <rect key="frame" x="24" y="123" width="484" height="63.5"/>
+                                <rect key="frame" x="24" y="123" width="484" height="64"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="nP0-Ka-qxi" customClass="WClockIcon" customModule="Designables">
-                                <rect key="frame" x="24" y="216" width="17" height="16.5"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="nP0-Ka-qxi" customClass="WClockIcon" customModule="Designables">
+                                <rect key="frame" x="24" y="216" width="17" height="17"/>
                                 <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nP0-Ka-qxi" secondAttribute="height" multiplier="1:1" id="QYF-Qm-dnu"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="subTitle2" text="Denis Burns" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxp-Hd-aCE" userLabel="subTitle2">
-                                <rect key="frame" x="47" y="216" width="552.5" height="21"/>
+                                <rect key="frame" x="47" y="216" width="553" height="21"/>
                                 <fontDescription key="fontDescription" name="TitilliumText25L-250wt" family="TitilliumText25L" pointSize="13"/>
                                 <color key="textColor" red="0.6705882353" green="0.67450980390000004" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-4K-nvJ" userLabel="clock_spcr_title2">
-                                <rect key="frame" x="44.5" y="216" width="6.5" height="32.5"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-4K-nvJ" userLabel="clock_spcr_title2">
+                                <rect key="frame" x="45" y="216" width="7" height="33"/>
                                 <color key="backgroundColor" red="1" green="0.36402799289999999" blue="0.26662053769999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32.5" id="TEF-JY-D4W"/>

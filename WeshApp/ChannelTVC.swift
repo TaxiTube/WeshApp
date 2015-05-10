@@ -64,7 +64,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                                                  sender: sessionMngr!.myBadge)
     
             textView.text = ""
-            //TODO: Decide whether after commenting on a channel wall, the channle persists
+            //TODO: Decide whether after commenting on a channel wall, the channle persists -> Not from here
             //postsMngr!.save(coreDataStack!.mainContext!)
             sessionMngr!.broadcastNewPost(post)
             changeTextViewHeight(textView)
@@ -78,7 +78,6 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     //MARK: ViewDid
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setUpNavBar()
         self.setUpHeaderView()
         
@@ -136,7 +135,8 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     }
     
     deinit {
-        println("dealloc")
+        self.tableView.delegate = nil
+        println("ChannelTVC dealloc")
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -255,8 +255,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
 
     func dismissPressed(sender: AnyObject) {
-                navigationController?.popViewControllerAnimated(true)
-
+        navigationController?.popViewControllerAnimated(true)
     }
     
     private func setUpHeaderView(){
@@ -294,6 +293,7 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
         cell!.indexPath = indexPath
         cell!.delegate = self
+        println(post)
 //        cell!.handle.preferredMaxLayoutWidth = handle.bounds.size.width
         cell!.handle.text = "#\(post.sender.handle)"
 //         cell!.handle.sizeToFit()

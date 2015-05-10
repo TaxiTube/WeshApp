@@ -34,8 +34,9 @@ struct BadgeMngr {
             badge.totem  = totem
         
             //coreDataStack.saveContext(self.managedObjectContext)
-             return badge
+            return badge
     }
+    
     func save(context: NSManagedObjectContext!){
         coreDataStack.saveContext(context)
     }
