@@ -59,7 +59,26 @@ protocol SessionContainerDelegate{
         }
        
     }
-    
+    // Helper method for human readable printing of MCSessionState.  This state is per peer.
+    func unicast(data: NSData, sendTo: MCPeerID)->Bool{
+        
+        let results = self.session.connectedPeers.filter {$0 as! MCPeerID == sendTo}
+        if (results.count > 0) {
+            var error : NSError?
+            session.sendData(data,
+                toPeers: [sendTo],
+                withMode: MCSessionSendDataMode.Unreliable,
+                error: &error)
+            if error != nil {
+                print("Error sending data: \(error?.localizedDescription)")
+                return false
+            }
+            return true
+        }else{
+            return false
+        }
+        
+    }
    
    
     // MARK: Session Delegate

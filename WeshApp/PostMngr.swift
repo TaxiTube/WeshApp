@@ -1,5 +1,6 @@
 import Foundation
 import CoreData
+import MultipeerConnectivity
 
 
   struct PostMngr{
@@ -17,13 +18,15 @@ import CoreData
         coreDataStack.saveContext(context)
     }
     
-    func createPost(msg: String, channel: Channel?, date: NSDate, sender: Badge?)->Post?{
+    func createPost(msg: String, channel: Channel?, date: NSDate, sender: Badge?, location: String? = nil , author: AnyObject )->Post?{
         
         let post =  NSEntityDescription.insertNewObjectForEntityForName("Post", inManagedObjectContext: self.managedObjectContext) as! Post
 
         post.post = msg
         post.date = date
-
+        post.author = author as! MCPeerID
+        
+        // sender can be nil
         if let s = sender { 
             post.sender = s
         }
@@ -32,6 +35,11 @@ import CoreData
             post.channel = c
             post.channelID = c.channelID
         }
+        
+        if let l = location{
+            post.location = l
+        }
+        
         return post
     }
     

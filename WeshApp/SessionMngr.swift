@@ -94,19 +94,24 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     func deviceConnected(newPeerID: MCPeerID){
     
        //1. send my channels
+
+//       if myBadge!.channels.count > 0{
     
-        if myBadge!.channels.count > 0{
-           
             var myBadgeDict = myBadge!.toDictionary()
-            println(myBadgeDict)
+            //println(myBadgeDict)
+            myBadgeDict.removeValueForKey("sentMsgs")
             let data = NSKeyedArchiver.archivedDataWithRootObject(myBadgeDict)
             //println("data siza: \(data.length)")
-            sessionContainer.multicastMsg(data)
+            sessionContainer.unicast(data, sendTo: newPeerID)
         
-         }else{
-               println("\(myBadge!.handle) has no Channels")
-        }
-       
+//         }else{
+        //TODO: create a new badge
+        //TODO: Receive Totem Via Context
+//            self.badgeMngr!.createBadge(newPeerID.displayName, peerID: newPeerID, totem: "")
+
+//               println("\(myBadge!.handle) has no Channels")
+//        }
+    
     
     }
      
@@ -116,7 +121,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             
             var channelDict = newChannel.toDictionary()
             //do not transmit author or transcirpts
-            //channelDict.removeValueForKey("author")
+            channelDict.removeValueForKey("author")
             //channelDict.removeValueForKey("posts")
           
             let data = NSKeyedArchiver.archivedDataWithRootObject(channelDict)
@@ -134,11 +139,14 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
         }else{
             //wall post: Multicast
             if let p = post{
-                var postDict = p.toDictionary()
-              //  postDict.removeValueForKey("channel")
-               // postDict.removeValueForKey("sender")
-                postDict.removeValueForKey("receivers")
                 
+                var postDict = p.toDictionary()
+                    postDict.removeValueForKey("channel")
+                    postDict.removeValueForKey("sender")
+                //postDict.removeValueForKey("receivers")
+//                println(post)
+//                println("!!!!!!!!!!!!!!! post dict !!!!!!!!!!!!!!!!!!!!!!!")
+//                println(postDict)
                 let data = NSKeyedArchiver.archivedDataWithRootObject(postDict)
                 sessionContainer.multicastMsg(data)
             }
@@ -154,7 +162,7 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
     func receivedData(#senderPeer: MCPeerID, data: NSData){
      
         let unserializedDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [String: AnyObject]
-        println(unserializedDict)
+     
         //unserializedDict["channelID"]
         /*
         if let channel = channelMngr.getChannelByID(){
@@ -174,13 +182,14 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             case let profileObject as Profile:
                 //TODO: Profiel received when data is Requested
                 println("profile received \(profileObject.firstName)")
+            
             case let channelObject as Channel:
                 //get profile(using peerID) and insert the channel in its array
                 //TODO: Perform fetchign on privateQ
                 //If channel already exists do not update
                 
-                
                     if let senderBadge = badgeMngr!.getBadge(senderPeer){
+                        println("CHANNEL!")
                        // myProfileMngr.insertChannel(senderProfile, channel: channelObject)
                         channelMngr!.insertBadge(channelObject, badge: senderBadge)
                     }else{
@@ -191,12 +200,15 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
             case let postObject as Post:
                let channel = channelMngr!.getChannelByID(postObject.channelID)
                if let c = channel {
+//                   println(unserializedDict)
                     //println("post for channel \(c.title) post message: \(postObject.message)")
+                    let author: AnyObject = postObject.author
                     postMngr!.createPost(postObject.post,
                                         channel: channel,
                                            date: postObject.date,
-                                         sender: postObject.sender)
-                    //TODO: Save context once channel is followed 
+                                         sender: postObject.sender,
+                                         author: author)
+                    //TODO: Save context once channel is followed
                 }else{
                     println("No channel found")
             }
@@ -266,9 +278,13 @@ public class SessionMngr: NSObject, SessionContainerDelegate, MCNearbyServiceAdv
                 invitationHandler(true, sessionContainer.session)
                 //TODO: create a new badge
                 //TODO: Receive Totem Via Context
-                badgeMngr!.createBadge(peerID.displayName, peerID: peerID, totem: "")
+//                badgeMngr!.createBadge(peerID.displayName, peerID: peerID, totem: "")
             }
     }
     
+    func getPostAuthor(author: AnyObject)->String{
+        let id = author as! MCPeerID
+        return id.displayName
+    }
  
 }

@@ -101,7 +101,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
             sectionNameKeyPath: nil,
             cacheName: nil)
         
-        
+        println(channelFetechedRC)
 //        lazy var moderateVenuePredicate: NSPredicate = { var predicate =
 //            NSPredicate(format: "priceInfo.priceCategory == %@", "$$") return predicate!
 //            }()
@@ -119,6 +119,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
                                             managedObjectContext: appDelegate.coreDataStack!.mainContext!,
                                               sectionNameKeyPath: nil,
                                                        cacheName: nil)
+        println(badgeFetchedRC)
         
         currentFetchedRC = channelFetechedRC
         currentFetchedRC.delegate = self
@@ -337,6 +338,7 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     
     //MARK: NSFetchedResultsController Delegate methods
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        println("begin updets \(controller)")
         tableView.beginUpdates()
     }
     
@@ -348,13 +350,17 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
 
         switch type {
             case .Insert:
+                println("insert")
                 tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             case .Delete:
+                println("delete")
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-//            case .Update:
+            case .Update:
+             println("update")
 //                let cell = tableView.cellForRowAtIndexPath(indexPath!) //as TeamCell
                 //configureCell(cell, indexPath: indexPath)
             case .Move:
+                println("move")
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
                 tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
             default: break
@@ -362,7 +368,8 @@ class NearbyVC: UIViewController, UITableViewDelegate, UITableViewDataSource,  N
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        tableView.endUpdates()
+          println("end updates")
+          tableView.endUpdates()
     }
 
   

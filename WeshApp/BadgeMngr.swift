@@ -1,4 +1,4 @@
-//
+
 //  BadgeMngr.swift
 //  WeshApp
 //
@@ -81,9 +81,16 @@ struct BadgeMngr {
         
         switch fetchRequestWrapper(managedObjectContext)(fetchRequest: fetchRequest){
             case let Result.Success(box):
+                
                 let p = box.unbox.first as! Badge
                 managedObjectContext.deleteObject(p)
                 println("profile deleted \(p.peerID.displayName)")
+
+                var error: NSError? = nil
+                
+                if (!managedObjectContext.save(&error)){
+                    println("save error")
+                }
             case let Result.Failure(error):
                 println("Error getting profile. Error code: \(error.code)")
         }

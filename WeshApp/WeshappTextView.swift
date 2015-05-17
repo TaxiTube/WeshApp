@@ -8,8 +8,8 @@
 
 import UIKit
 
-public protocol WeshappUITextViewDelegate: UITextViewDelegate{
-    func textViewDidChangeHeight(textView: WeshappTextView)
+@objc public protocol WeshappUITextViewDelegate: UITextViewDelegate{
+    optional func textViewDidChangeHeight(textView: WeshappTextView)
 }
 
 
@@ -27,7 +27,7 @@ public class WeshappTextView: UITextView{
     
     //A boolean that tracks wheather the placeholder is showing or not
     private var showPlaceholder = true
-    public weak var weshappDelegate: WeshappUITextViewDelegate?
+    public var weshappDelegate: WeshappUITextViewDelegate?
     
     var initialNumRows: Int!
 
@@ -79,7 +79,9 @@ public class WeshappTextView: UITextView{
     func editingChanged(notification: NSNotification){
 //        println("text changed  \(initialContentSize.height)")
         if heightDidChange() {
-           weshappDelegate!.textViewDidChangeHeight(self)
+            if let wd  = self.weshappDelegate {
+                wd.textViewDidChangeHeight!(self)
+            }
         }
     }
     

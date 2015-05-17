@@ -1,4 +1,3 @@
-
 //  ChannelWallTVC.swift
 //  WeshApp
 //
@@ -60,9 +59,10 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
         if textView.text != "" {
             let post = postMngr!.createPost(textView.text, channel: channel,
-                                                                   date: NSDate(),
-                                                                 sender: sessionMngr!.myBadge)
-    
+                                                              date: NSDate(),
+                                                            sender: sessionMngr!.myBadge,
+                                                            author: sessionMngr!.myBadge!.peerID)
+            
             textView.text = ""
             //TODO: Decide whether after commenting on a channel wall, the channle persists -> Not from here
             //postsMngr!.save(coreDataStack!.mainContext!)
@@ -73,7 +73,10 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         }
     }
     
-    
+    //TODO: add reverseGeoCode location
+    private func getLocation()->String?{
+        return nil
+    }
     
     //MARK: ViewDid
     override func viewDidLoad() {
@@ -232,8 +235,6 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                                                           attributes: titleDict)
         channelTitleLabel.sizeToFit()
       
-    
-        
         self.myCustomBar = FlexibleNavBar(frame: frame, centreItem: channelTitleLabel, rightItem: .Cross)
         
         var behaviorDefiner = FacebookStyleBarBehaviorDefiner()
@@ -293,9 +294,9 @@ class ChannelTVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
 
         cell!.indexPath = indexPath
         cell!.delegate = self
-        println(post)
 //        cell!.handle.preferredMaxLayoutWidth = handle.bounds.size.width
-        cell!.handle.text = "#\(post.sender.handle)"
+        let authorHandle = sessionMngr!.getPostAuthor(post.author)
+        cell!.handle.text = "#\(authorHandle)"
 //         cell!.handle.sizeToFit()
 //        cell!.handle.layoutIfNeeded()
 
